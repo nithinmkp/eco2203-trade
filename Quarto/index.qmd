@@ -1,0 +1,238 @@
+---
+title: "ECO 2203 — International Trade and Policy in Agriculture"
+format:
+  html:
+    toc: false
+---
+
+```{=html}
+<div class="hero">
+  <div class="course-code">ECO 2203 · Undergraduate Course · 2026</div>
+  <h1>International Trade and Policy in Agriculture</h1>
+  <p class="subtitle">A rigorous introduction to trade theory, open-economy macroeconomics,<br>
+  and agricultural trade institutions — with Indian data throughout.</p>
+  <div class="meta">
+    <div class="meta-item"><span class="label">Instructor</span> Nithin M</div>
+    <div class="meta-item"><span class="label">Department</span> Development Economics</div>
+    <div class="meta-item"><span class="label">Schedule</span> Wednesdays &amp; Saturdays</div>
+    <div class="meta-item"><span class="label">Period</span> April 25 – August 22, 2026</div>
+    <div class="meta-item"><span class="label">Hours</span> 36 Theory Hours · 18 Lectures</div>
+  </div>
+</div>
+```
+
+```{=html}
+<div class="info-grid">
+  <div class="info-card">
+    <div class="card-label">Course Code</div>
+    <div class="card-value">ECO 2203</div>
+  </div>
+  <div class="info-card">
+    <div class="card-label">Lecture Format</div>
+    <div class="card-value">Interactive Slides (RevealJS) with R figures</div>
+  </div>
+  <div class="info-card">
+    <div class="card-label">Primary Textbook</div>
+    <div class="card-value">Salvatore — International Economics (2013)</div>
+  </div>
+  <div class="info-card">
+    <div class="card-label">Secondary Textbook</div>
+    <div class="card-value">Appleyard &amp; Field — International Economics</div>
+  </div>
+</div>
+```
+
+## About This Course {.section-heading}
+
+This course provides a systematic treatment of international trade theory and policy,
+with particular emphasis on India's agricultural trade. We begin with the classical
+foundations — Mercantilism, Absolute Advantage, and Comparative Advantage — and
+progress through modern trade theory (Heckscher–Ohlin, Stolper–Samuelson, Rybczynski),
+trade policy instruments (tariffs, quotas, subsidies, dumping), and open-economy
+macroeconomics (Balance of Payments, Foreign Exchange, Mundell–Fleming).
+
+The second half of the course focuses on international institutions: the WTO, the
+Agreement on Agriculture, SPS/TBT measures, and India's own export infrastructure
+(APEDA, MPEDA, DGFT). All lectures use recent Indian trade data and are illustrated
+with R/ggplot2 figures.
+
+---
+
+## Lecture Schedule {.section-heading}
+
+```{=html}
+<div class="schedule-wrap">
+<table class="schedule">
+  <thead>
+    <tr>
+      <th style="width:36px">#</th>
+      <th style="width:115px">Date</th>
+      <th>Lecture Title</th>
+      <th style="width:140px;text-align:center">Slides</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="lec-num">1</td>
+      <td class="lec-date">Apr 25, 2026</td>
+      <td class="lec-title">Introduction to International Trade</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture01_Introduction.html">HTML</a> <a class="btn-pdf" href="Lecture01_Introduction.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">2</td>
+      <td class="lec-date">May 2, 2026</td>
+      <td class="lec-title">Features of International Trade</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture02_Features.html">HTML</a> <a class="btn-pdf" href="Lecture02_Features.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">3</td>
+      <td class="lec-date">May 9, 2026</td>
+      <td class="lec-title">Classical Theories: Mercantilism to Smith</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture03_Theories_I.html">HTML</a> <a class="btn-pdf" href="Lecture03_Theories_I.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">4</td>
+      <td class="lec-date">May 16, 2026</td>
+      <td class="lec-title">Comparative Advantage — Ricardo &amp; Opportunity Cost</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture04_Comparative_Advantage.html">HTML</a> <a class="btn-pdf" href="Lecture04_Comparative_Advantage.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">5</td>
+      <td class="lec-date">May 23, 2026</td>
+      <td class="lec-title">Modern Trade Theory — Heckscher–Ohlin &amp; Lewis</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture05_Modern_Theory.html">HTML</a> <a class="btn-pdf" href="Lecture05_Modern_Theory.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">6</td>
+      <td class="lec-date">May 30, 2026</td>
+      <td class="lec-title">Terms of Trade, Free Trade &amp; FTAs</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture06_Terms_of_Trade.html">HTML</a> <a class="btn-pdf" href="Lecture06_Terms_of_Trade.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">7</td>
+      <td class="lec-date">Jun 6, 2026</td>
+      <td class="lec-title">Protectionism I — Tariffs &amp; Quotas</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture07_Protectionism_I.html">HTML</a> <a class="btn-pdf" href="Lecture07_Protectionism_I.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">8</td>
+      <td class="lec-date">Jun 13, 2026</td>
+      <td class="lec-title">Protectionism II — Subsidies, Dumping &amp; Cartels</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture08_Protectionism_II.html">HTML</a> <a class="btn-pdf" href="Lecture08_Protectionism_II.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">9</td>
+      <td class="lec-date">Jun 20, 2026</td>
+      <td class="lec-title">Balance of Trade &amp; Balance of Payments</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture09_BoT_BoP.html">HTML</a> <a class="btn-pdf" href="Lecture09_BoT_BoP.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">10</td>
+      <td class="lec-date">Jun 27, 2026</td>
+      <td class="lec-title">India's External Sector — Trade and Reserves</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture10_India_External_Sector.html">HTML</a> <a class="btn-pdf" href="Lecture10_India_External_Sector.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">11</td>
+      <td class="lec-date">Jul 4, 2026</td>
+      <td class="lec-title">Foreign Exchange — Rates and Determination</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture11_Foreign_Exchange_I.html">HTML</a> <a class="btn-pdf" href="Lecture11_Foreign_Exchange_I.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">12</td>
+      <td class="lec-date">Jul 11, 2026</td>
+      <td class="lec-title">Forex Market — Instruments and Policy</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture12_Forex_Market.html">HTML</a> <a class="btn-pdf" href="Lecture12_Forex_Market.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">13</td>
+      <td class="lec-date">Jul 18, 2026</td>
+      <td class="lec-title">WTO — Origin, Structure and Functions</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture13_WTO.html">HTML</a> <a class="btn-pdf" href="Lecture13_WTO.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">14</td>
+      <td class="lec-date">Jul 25, 2026</td>
+      <td class="lec-title">Agreement on Agriculture</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture14_Agreement_on_Agriculture.html">HTML</a> <a class="btn-pdf" href="Lecture14_Agreement_on_Agriculture.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">15</td>
+      <td class="lec-date">Aug 1, 2026</td>
+      <td class="lec-title">SPS Measures and Codex Alimentarius</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture15_SPS_Codex.html">HTML</a> <a class="btn-pdf" href="Lecture15_SPS_Codex.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">16</td>
+      <td class="lec-date">Aug 8, 2026</td>
+      <td class="lec-title">Export Procedures and Documentation</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture16_Export_Procedures.html">HTML</a> <a class="btn-pdf" href="Lecture16_Export_Procedures.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">17</td>
+      <td class="lec-date">Aug 15, 2026 ⁺</td>
+      <td class="lec-title">Agricultural Export Promotion Organizations</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture17_Export_Organizations.html">HTML</a> <a class="btn-pdf" href="Lecture17_Export_Organizations.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td class="lec-num">18</td>
+      <td class="lec-date">Aug 22, 2026</td>
+      <td class="lec-title">India's Agricultural Trade &amp; Foreign Trade Policy</td>
+      <td class="lec-links"><a class="btn-html" href="Lecture18_India_Agri_Trade_Policy.html">HTML</a> <a class="btn-pdf" href="Lecture18_India_Agri_Trade_Policy.pdf">PDF</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p style="font-size:0.82rem;color:#6c757d;margin-top:-0.5rem;">
+  ⁺ August 15 is Independence Day — class may be rescheduled. Confirm with the department.
+</p>
+```
+
+---
+
+## Textbooks {.section-heading}
+
+```{=html}
+<div class="textbook-grid">
+  <div class="textbook-card">
+    <div class="tb-authors">Dominick Salvatore</div>
+    <div class="tb-title">International Economics, 11th Edition</div>
+    <div class="tb-detail">Wiley, 2013 &nbsp;·&nbsp; <em>Primary text</em></div>
+    <div style="margin-top:0.5rem;font-size:0.82rem;color:#495057;">
+      Key chapters: 2–5 (Trade Theory), 8–9 (Policy), 13–15 (BoP/Forex)
+    </div>
+  </div>
+  <div class="textbook-card">
+    <div class="tb-authors">Dennis Appleyard &amp; Alfred Field</div>
+    <div class="tb-title">International Economics, 8th Edition</div>
+    <div class="tb-detail">McGraw-Hill &nbsp;·&nbsp; <em>Secondary text</em></div>
+    <div style="margin-top:0.5rem;font-size:0.82rem;color:#495057;">
+      Key chapters: 14 (Tariff welfare), 17–21 (BoP/Forex)
+    </div>
+  </div>
+  <div class="textbook-card">
+    <div class="tb-authors">WTO / APEDA / RBI / DGCI&amp;S</div>
+    <div class="tb-title">India Trade Data &amp; Policy Documents</div>
+    <div class="tb-detail">Current — used in all 18 lectures</div>
+    <div style="margin-top:0.5rem;font-size:0.82rem;color:#495057;">
+      FY2024 agricultural trade statistics, BoP data, FTP 2023–28
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## Course Design Notes {.section-heading}
+
+All lecture slides are built in **Quarto RevealJS** and include:
+
+- **ggplot2 figures** using live R code — all data embedded in slides (no external files required)
+- **LaTeX mathematics** — PPF/IC diagrams, welfare decompositions, Marshall–Lerner condition, Mundell–Fleming IS-LM-BP
+- **India-first examples** — every theoretical concept anchored to Indian agricultural trade data
+- Pedagogical approach inspired by **MIT 14.54 (International Trade)**
+- Notation follows **Salvatore (2013)**: Nation 1/Nation 2, Commodity X/Y, welfare areas *a, b, c, d*
+
+```{=html}
+<div style="height:1.5rem;"></div>
+```

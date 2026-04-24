@@ -1,0 +1,1340 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+  aspectratio=169,
+]{beamer}
+\newif\ifbibliography
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% remove section numbering
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{section title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{subsection title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+% ============================================================
+%  ECO 2203 — Beamer Metropolis Theme Preamble
+%  Course: International Trade and Policy in Agriculture
+%  Instructor: Nithin M, Department of Development Economics
+% ============================================================
+
+% MUST be first: load Metropolis theme before \metroset and colour overrides
+\usetheme{metropolis}
+
+% Only load packages not already provided by pandoc's beamer template
+\usepackage{amsmath,amssymb}
+
+% ---- Brand colours -----------------------------------------
+\definecolor{brandblue}{HTML}{012169}
+\definecolor{brandgold}{HTML}{B9975B}
+\definecolor{lightblue}{HTML}{E8EDF5}
+
+% ---- Metropolis colour overrides ---------------------------
+% Main palette
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=brandgold}
+\setbeamercolor{example text}{fg=brandblue!70!black}
+
+% Title slide
+\setbeamercolor{title}{fg=white,bg=brandblue}
+\setbeamercolor{subtitle}{fg=brandgold}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{institute}{fg=brandgold!80!white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{title page header}{fg=white,bg=brandblue}
+
+% Frametitle bar
+\setbeamercolor{frametitle}{fg=white,bg=brandblue}
+
+% Progress bar → gold
+\setbeamercolor{progress bar}{fg=brandgold,bg=brandblue!30}
+\setbeamercolor{title separator}{fg=brandgold}
+\setbeamercolor{progress bar in head/foot}{fg=brandgold,bg=brandblue!20}
+\setbeamercolor{progress bar in section page}{fg=brandgold,bg=brandblue!20}
+
+% Blocks
+\setbeamercolor{block title}{bg=brandblue,fg=white}
+\setbeamercolor{block body}{bg=lightblue,fg=black}
+\setbeamercolor{block title alerted}{bg=brandgold,fg=white}
+\setbeamercolor{block body alerted}{bg=brandgold!12,fg=black}
+\setbeamercolor{block title example}{bg=brandblue!70!black,fg=white}
+\setbeamercolor{block body example}{bg=brandblue!8,fg=black}
+
+% Structure / lists
+\setbeamercolor{structure}{fg=brandblue}
+\setbeamercolor{section in toc}{fg=brandblue}
+\setbeamercolor{itemize item}{fg=brandblue}
+\setbeamercolor{itemize subitem}{fg=brandgold}
+\setbeamercolor{enumerate item}{fg=brandblue}
+\setbeamercolor{description item}{fg=brandblue}
+
+% ---- Metropolis options ------------------------------------
+\metroset{
+  progressbar    = frametitle,   % gold bar under frametitle
+  sectionpage    = none,
+  numbering      = fraction,
+  block          = fill
+}
+
+% ---- Fonts (Metropolis uses Fira Sans; fallback gracefully) -
+\setbeamerfont{title}{size=\Large,series=\bfseries}
+\setbeamerfont{subtitle}{size=\normalsize,series=\mdseries}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries}
+\setbeamerfont{caption}{size=\footnotesize}
+
+% ---- Footer: course info + slide number --------------------
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.0ex,dp=1ex]{footline}%
+    \hspace{0.8em}%
+    {\footnotesize\color{brandblue!60}%
+      ECO 2203 \textbar{} International Trade and Policy in Agriculture
+      \hfill Nithin M \hfill
+      \insertframenumber{}/\inserttotalframenumber\hspace{0.8em}}%
+  \end{beamercolorbox}%
+}
+
+% ---- Misc --------------------------------------------------
+\setlength{\parskip}{0.25em}
+\setbeamertemplate{navigation symbols}{}
+
+% tighter column sep for side-by-side content
+\setlength{\columnsep}{0.8em}
+
+% Fix: make \label truly robust in moving arguments (Quarto generates
+% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
+% DeclareRobustCommand creates a self-protecting robust version.
+\makeatletter
+\let\quarto@originallabel\label
+\DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
+\makeatother
+
+% Prevent figures from overflowing Beamer frames.
+% width=\linewidth: scale to text width (already Quarto default);
+% height=0.6\textheight: cap height so figures never push past the frame bottom.
+% keepaspectratio: never distort — whichever constraint binds first wins.
+\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Introduction to International Trade},
+  pdfauthor={Nithin M},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Introduction to International Trade}
+\subtitle{ECO 2203 \textbar{} International Trade and Policy in
+Agriculture}
+\author{Nithin M}
+\date{2026-04-25}
+\institute{Department of Development Economics}
+
+\begin{document}
+\frame{\titlepage}
+
+
+\section{Part I: Setting the Stage}\label{part-i-setting-the-stage}
+
+\begin{frame}{Course Overview: ECO 2203}
+\phantomsection\label{course-overview-eco-2203}
+\textbf{What this course is about}
+
+\begin{itemize}
+\tightlist
+\item
+  The economics of trade between nations --- with a focus on
+  \textbf{agricultural commodities}
+\item
+  Why countries trade, who gains, who loses, and what policy should do
+  about it
+\item
+  India's position in global agricultural trade and key policy
+  instruments
+\end{itemize}
+
+\textbf{Learning objectives}
+
+\begin{itemize}
+\tightlist
+\item
+  Master classical and modern theories of trade
+\item
+  Analyse India's agricultural trade flows and policy environment
+\item
+  Evaluate trade policy tools: tariffs, quotas, subsidies, SPS measures
+\item
+  Apply WTO frameworks to real agricultural trade disputes
+\end{itemize}
+
+\textbf{Assessment:} Mid-semester exam (30\%) · End-semester exam (40\%)
+· Term paper (20\%) · Participation (10\%)
+\end{frame}
+
+\begin{frame}{Course Roadmap: Lectures 1--9}
+\phantomsection\label{course-roadmap-lectures-19}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Lec & Topic & Date \\
+\midrule\noalign{}
+\endhead
+1 & Introduction to International Trade & Apr 28 \\
+2 & Features \& Internal vs International Trade & May 5 \\
+3 & Theories I --- Mercantilism \& Absolute Advantage & May 12 \\
+4 & Theories II --- Comparative Advantage & May 19 \\
+5 & Theories III --- Factor Endowments (H-O Model) & May 26 \\
+\bottomrule\noalign{}
+\end{longtable}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Lec & Topic & Date \\
+\midrule\noalign{}
+\endhead
+6 & New Trade Theory \& Intra-Industry Trade & Jun 2 \\
+7 & Terms of Trade \& Trade Gains & Jun 9 \\
+8 & Trade Policy: Tariffs & Jun 16 \\
+9 & Trade Policy: Non-Tariff Barriers & Jun 23 \\
+\bottomrule\noalign{}
+\end{longtable}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Course Roadmap: Lectures 10--18}
+\phantomsection\label{course-roadmap-lectures-1018}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Lec & Topic & Date \\
+\midrule\noalign{}
+\endhead
+10 & Balance of Payments \& Exchange Rates & Jun 30 \\
+11 & WTO Framework \& Agreements & Jul 7 \\
+12 & Agreement on Agriculture (AoA) & Jul 14 \\
+13 & SPS \& TBT Measures in Agriculture & Jul 21 \\
+14 & India's Foreign Trade Policy & Jul 28 \\
+\bottomrule\noalign{}
+\end{longtable}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Lec & Topic & Date \\
+\midrule\noalign{}
+\endhead
+15 & Regional Trade Agreements --- ASEAN, SAFTA & Aug 4 \\
+16 & Agricultural Price Policy \& Trade & Aug 11 \\
+17 & Food Security and Trade Nexus & Aug 18 \\
+18 & Contemporary Issues \& Revision & Aug 25 \\
+\bottomrule\noalign{}
+\end{longtable}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{What is International Trade?}
+\phantomsection\label{what-is-international-trade}
+\textbf{Definition}
+
+\begin{quote}
+International trade is the \textbf{cross-border exchange} of goods,
+services, and capital between residents of different countries.
+\end{quote}
+
+\textbf{Three dimensions of trade}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Merchandise trade} --- physical goods: rice, wheat, machinery,
+  petroleum
+\item
+  \textbf{Services trade} --- IT services, tourism, financial services,
+  education
+\item
+  \textbf{Capital flows} --- foreign direct investment, portfolio
+  investment, remittances
+\end{itemize}
+
+\textbf{Why it matters for agricultural economists}
+
+\begin{itemize}
+\tightlist
+\item
+  India earns \textasciitilde₹3.6 lakh crore from agricultural exports
+  annually
+\item
+  Global price signals directly affect domestic farm prices
+\item
+  WTO rules constrain domestic agricultural support policies
+\end{itemize}
+
+\textbf{Core insight:} Trade is fundamentally about countries doing what
+they are relatively better at, and exchanging the surplus --- creating
+gains for all participants.
+\end{frame}
+
+\begin{frame}{Why Do Nations Trade?}
+\phantomsection\label{why-do-nations-trade}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\textbf{Supply-side reasons}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Resource endowments} --- India has fertile Indo-Gangetic
+  plains; Brazil has Amazon basin → different agricultural outputs
+\item
+  \textbf{Technology differences} --- Netherlands uses precision
+  horticulture; India relies on labour-intensive methods
+\item
+  \textbf{Specialization gains} --- Focusing on fewer products reduces
+  unit cost
+\item
+  \textbf{Economies of scale} --- Large production runs lower average
+  cost (e.g., Thai rice mills)
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\textbf{Demand-side reasons}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Product variety} --- Consumers want Darjeeling tea \emph{and}
+  Colombian coffee
+\item
+  \textbf{Seasonal complementarity} --- Southern hemisphere harvests
+  when Northern hemisphere is off-season
+\item
+  \textbf{Income growth} --- Rising incomes raise demand for diverse
+  food products
+\end{itemize}
+
+\textbf{Fundamental driver}
+
+\begin{itemize}
+\tightlist
+\item
+  Countries differ in \textbf{opportunity costs} of production
+\item
+  Differences in opportunity costs → gains from specialisation and trade
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Part II: The Scale of Global
+Trade}\label{part-ii-the-scale-of-global-trade}
+
+\begin{frame}{Scale of Global Trade}
+\phantomsection\label{scale-of-global-trade}
+\begin{columns}[T]
+\begin{column}{0.55\linewidth}
+\textbf{Global merchandise trade (2023)}
+
+\begin{itemize}
+\tightlist
+\item
+  Total value: \textbf{\textasciitilde\$25 trillion} (WTO, 2024)
+\item
+  Services trade: \textbf{\textasciitilde\$7 trillion}
+\item
+  Combined: \textasciitilde\$32 trillion --- roughly 30\% of world GDP
+\end{itemize}
+
+\textbf{Top three traders (merchandise, 2023)}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Rank & Country/Bloc & Share \\
+\midrule\noalign{}
+\endhead
+1 & China & 14.2\% \\
+2 & United States & 11.3\% \\
+3 & European Union & 14.8\% \\
+\bottomrule\noalign{}
+\end{longtable}
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\textbf{Long-run growth: merchandise exports}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Year & Value (USD trillion) \\
+\midrule\noalign{}
+\endhead
+1950 & 0.06 \\
+1970 & 0.31 \\
+1990 & 3.5 \\
+2000 & 6.5 \\
+2010 & 15.3 \\
+2020 & 17.6 \\
+2023 & 25.0 \\
+\bottomrule\noalign{}
+\end{longtable}
+
+\emph{Trade has grown \textasciitilde400× since 1950, far outpacing GDP
+growth}
+\end{column}
+\end{columns}
+
+\textbf{Factoid:} Global merchandise trade contracted only twice since
+1950 --- during the 2008--09 financial crisis and the 2020 COVID shock.
+\end{frame}
+
+\begin{frame}{India in Global Trade}
+\phantomsection\label{india-in-global-trade}
+\begin{columns}[T]
+\begin{column}{0.55\linewidth}
+\textbf{India's trade position (FY2024)}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Indicator & Value \\
+\midrule\noalign{}
+\endhead
+Merchandise exports & \$437 billion \\
+Merchandise imports & \$678 billion \\
+Merchandise trade deficit & --\$241 billion \\
+Services exports & \textasciitilde\$340 billion \\
+Services imports & \textasciitilde\$180 billion \\
+Services trade surplus & +\$160 billion \\
+\textbf{Total merchandise trade} & \textbf{\$1.18 trillion} \\
+\bottomrule\noalign{}
+\end{longtable}
+
+\textbf{Global rank:} {18th} in merchandise exports (WTO 2023)
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\textbf{Key observations}
+
+\begin{itemize}
+\tightlist
+\item
+  India runs a \textbf{large merchandise deficit} but a significant
+  \textbf{services surplus}
+\item
+  IT/BPO services dominate services exports (\textasciitilde\$200B)
+\item
+  Merchandise deficit driven mainly by \textbf{crude oil} and
+  \textbf{gold} imports
+\item
+  Agriculture consistently contributes a \textbf{trade surplus}
+\item
+  Remittances (\textasciitilde\$120B in FY2024) are the largest single
+  source of foreign exchange
+\end{itemize}
+
+India's overall current account deficit is modest (\textasciitilde1\% of
+GDP) because the services surplus and remittances partially offset the
+merchandise deficit.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{India's Trade: The Big Picture}
+\phantomsection\label{indias-trade-the-big-picture}
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Lecture01_Introduction_files/figure-beamer/fig-india-trade-trend-1.pdf}}
+
+}
+
+\caption{\label{fig-india-trade-trend}India's Merchandise Trade
+(FY2015--FY2024, USD billion) Source: DGCI\&S / Ministry of Commerce and
+Industry, GoI.}
+
+\end{figure}%
+
+\textbf{Key insight:} India's trade deficit widened sharply post-2020.
+Exports plateaued at \textasciitilde\$440--450B while imports surged to
+\textasciitilde\$870B --- largely driven by oil, gold, and electronics.
+\end{frame}
+
+\begin{frame}{India's Agricultural Trade: FY2024}
+\phantomsection\label{indias-agricultural-trade-fy2024}
+\begin{columns}[T]
+\begin{column}{0.55\linewidth}
+\textbf{Top agricultural exports}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Commodity & Value (USD bn) \\
+\midrule\noalign{}
+\endhead
+Rice (Basmati + Non-Basmati) & 10.4 \\
+Marine products & 7.6 \\
+Spices & 3.7 \\
+Buffalo meat & 3.5 \\
+Sugar & 2.8 \\
+Cotton & 2.2 \\
+Coffee & 1.2 \\
+Castor oil & 1.1 \\
+\textbf{Total agri exports} & \textbf{\textasciitilde43.7} \\
+\bottomrule\noalign{}
+\end{longtable}
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\textbf{Top agricultural imports}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Commodity & Value (USD bn) \\
+\midrule\noalign{}
+\endhead
+Edible oils (palm, soy) & 12--14 \\
+Pulses & 3.0 \\
+Cashew (raw) & 1.8 \\
+Fresh fruits & 1.5 \\
+Spices (select) & 0.8 \\
+\textbf{Total agri imports} & \textbf{\textasciitilde28.2} \\
+\bottomrule\noalign{}
+\end{longtable}
+
+\textbf{Agricultural trade surplus:} {\textasciitilde\$15.5 billion}
+
+\emph{Source: APEDA / DGCI\&S, 2024}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{India's Agricultural Trade Profile}
+\phantomsection\label{indias-agricultural-trade-profile}
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Lecture01_Introduction_files/figure-beamer/fig-agri-exports-1.pdf}}
+
+}
+
+\caption{\label{fig-agri-exports}India's Agricultural Exports by
+Commodity, FY2024 (USD billion) Source: APEDA Annual Report 2023--24.}
+
+\end{figure}%
+\end{frame}
+
+\begin{frame}{Agriculture's Share in India's Trade}
+\phantomsection\label{agricultures-share-in-indias-trade}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\textbf{Export side}
+
+\begin{itemize}
+\tightlist
+\item
+  Agriculture: {\textasciitilde11\%} of total merchandise exports
+  (\$43.7B of \$437B)
+\item
+  Petroleum products: \textasciitilde17\%
+\item
+  Engineering goods: \textasciitilde26\%
+\item
+  Gems \& jewellery: \textasciitilde10\%
+\item
+  Chemicals: \textasciitilde8\%
+\end{itemize}
+
+Agriculture is \textbf{India's second-largest net foreign exchange
+earner} after services
+
+\textbf{India's strengths:} rice, spices, marine products, cotton ---
+all labour-intensive, climate-favoured commodities
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\textbf{Import side}
+
+\begin{itemize}
+\tightlist
+\item
+  Edible oils: India imports \textbf{60--65\%} of its edible oil
+  requirement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Palm oil: Indonesia, Malaysia
+  \item
+    Soybean oil: Argentina, Brazil
+  \end{itemize}
+\item
+  Pulses: Canada, Australia, Myanmar
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textasciitilde25\% of domestic requirement imported
+  \end{itemize}
+\item
+  Raw cashew: West Africa, Vietnam
+\end{itemize}
+
+\textbf{Vulnerability:} India's dependence on imported edible oils
+(\textasciitilde\$13B/yr) exposes food inflation to global price shocks,
+as seen in 2021--22 when palm oil prices spiked 50\%.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{India's Position in Global Agricultural Trade}
+\phantomsection\label{indias-position-in-global-agricultural-trade}
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Lecture01_Introduction_files/figure-beamer/fig-global-share-1.pdf}}
+
+}
+
+\caption{\label{fig-global-share}Major Agricultural Exporters: Global
+Market Share (2023) Source: WTO, World Agricultural Trade Statistics
+2024.}
+
+\end{figure}%
+
+India holds \textbf{2.8\%} of world agricultural exports --- 7th
+globally --- but punches below its weight given its agricultural size.
+Significant scope to expand market share in rice, spices, and processed
+foods.
+\end{frame}
+
+\section{Part III: Key Concepts and
+Context}\label{part-iii-key-concepts-and-context}
+
+\begin{frame}{Key Concepts We Will Need}
+\phantomsection\label{key-concepts-we-will-need}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\textbf{Theory concepts}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Comparative advantage} --- trade based on \emph{relative}, not
+  absolute, efficiency (Ricardo)
+\item
+  \textbf{Terms of trade} --- ratio of export prices to import prices;
+  determines how much a country gains from trade
+\item
+  \textbf{Factor endowments} --- land, labour, capital abundance shapes
+  what countries export (Heckscher-Ohlin)
+\item
+  \textbf{Intra-industry trade} --- two-way trade in similar products
+  (India exports basmati rice, imports parboiled rice)
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\textbf{Policy concepts}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Tariff} --- tax on imports; raises domestic price above world
+  price
+\item
+  \textbf{Non-Tariff Barrier (NTB)} --- quotas, SPS standards, licensing
+\item
+  \textbf{Balance of Payments (BoP)} --- accounting of all international
+  transactions
+\item
+  \textbf{Exchange rate} --- price of one currency in terms of another;
+  a stronger rupee makes exports more expensive
+\item
+  \textbf{Trade balance} --- exports minus imports; positive = surplus,
+  negative = deficit
+\end{itemize}
+\end{column}
+\end{columns}
+
+\textbf{How these connect:} Comparative advantage explains \emph{what}
+countries trade; terms of trade determine \emph{how much} they gain;
+tariffs and NTBs determine \emph{how much} trade actually occurs.
+\end{frame}
+
+\begin{frame}{Why Study International Trade?}
+\phantomsection\label{why-study-international-trade}
+\textbf{Policy relevance for India}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Foreign Trade Policy 2023--28} targets \$2 trillion in
+  merchandise + services exports by 2030
+
+  \begin{itemize}
+  \tightlist
+  \item
+    From \$777B (FY2023) to \$2T in 7 years --- requires
+    \textasciitilde14.5\% annual growth
+  \end{itemize}
+\item
+  \textbf{WTO commitments} constrain India's ability to protect domestic
+  agriculture
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Aggregate Measurement of Support (AMS) limits; tariff bindings
+  \end{itemize}
+\item
+  \textbf{Farmer income} --- \textasciitilde50\% of India's workforce in
+  agriculture; export markets expand income opportunities
+\item
+  \textbf{Food security} --- Import policy on pulses and oilseeds
+  directly affects 1.4 billion people
+\end{itemize}
+
+\textbf{Academic relevance}
+
+\begin{itemize}
+\tightlist
+\item
+  Fastest-growing sub-field in development economics
+\item
+  Links to climate change (Scope 3 emissions in supply chains), gender
+  (women in agri-export supply chains), and technology (digital trade in
+  services)
+\end{itemize}
+
+\textbf{Bottom line:} International trade policy is \emph{agricultural
+policy} in India. They cannot be studied in isolation.
+\end{frame}
+
+\begin{frame}{What Makes Agricultural Trade Special?}
+\phantomsection\label{what-makes-agricultural-trade-special}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\textbf{Biological \& physical features}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Perishability} --- fresh produce, milk, meat have short
+  shelf-lives → need cold chains, quick clearance
+\item
+  \textbf{Seasonality} --- harvests are discrete events; supply is lumpy
+\item
+  \textbf{Bulkiness} --- grain, sugar, cotton: high weight-to-value
+  ratio → high freight costs
+\item
+  \textbf{Sanitary risks} --- food-borne pathogens cross borders with
+  commodities → SPS measures justified
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\textbf{Economic \& political features}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Food security concern} --- governments intervene to ensure
+  domestic supply; export bans, import duty waivers are common
+\item
+  \textbf{Price volatility} --- weather, pests, and speculation create
+  large price swings; farmers and consumers are both affected
+\item
+  \textbf{Political economy} --- large farm lobbies in US, EU, India
+  influence trade policy disproportionately
+\item
+  \textbf{WTO special treatment} --- Agreement on Agriculture has
+  special provisions for developing countries (Special and Differential
+  Treatment)
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{India's Major Trading Partners (FY2024)}
+\phantomsection\label{indias-major-trading-partners-fy2024}
+\begin{columns}[T]
+\begin{column}{0.55\linewidth}
+\textbf{Top 5 merchandise export destinations}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Rank & Country & Share of exports \\
+\midrule\noalign{}
+\endhead
+1 & United States & \textasciitilde18\% \\
+2 & UAE & \textasciitilde6.5\% \\
+3 & Netherlands & \textasciitilde4.2\% \\
+4 & China & \textasciitilde3.8\% \\
+5 & Bangladesh & \textasciitilde3.5\% \\
+\bottomrule\noalign{}
+\end{longtable}
+
+\textbf{Agricultural export destinations (key)}
+
+\begin{itemize}
+\tightlist
+\item
+  Rice: Bangladesh, Benin, Ivory Coast, Nepal
+\item
+  Spices: USA, China, Vietnam
+\item
+  Marine: USA, EU, Japan, China
+\end{itemize}
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\textbf{Top 5 merchandise import sources}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Rank & Country & Share of imports \\
+\midrule\noalign{}
+\endhead
+1 & China & \textasciitilde15\% \\
+2 & UAE & \textasciitilde7.5\% \\
+3 & USA & \textasciitilde6.2\% \\
+4 & Russia & \textasciitilde5.8\% \\
+5 & Saudi Arabia & \textasciitilde5.4\% \\
+\bottomrule\noalign{}
+\end{longtable}
+
+\textbf{Gravity model logic:} India trades most with large (USA, China)
+or geographically close (UAE, Bangladesh) economies --- a pattern we
+will formalise in Lecture 2.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Composition of India's Merchandise Exports}
+\phantomsection\label{composition-of-indias-merchandise-exports}
+\begin{columns}[T]
+\begin{column}{0.55\linewidth}
+\textbf{Major export categories (FY2024, approx.)}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Category & Value (USD bn) & Share \\
+\midrule\noalign{}
+\endhead
+Engineering goods & 112 & 25.6\% \\
+Petroleum products & 78 & 17.8\% \\
+Gems \& jewellery & 44 & 10.1\% \\
+Chemicals & 36 & 8.2\% \\
+\textbf{Agriculture \& allied} & \textbf{44} & \textbf{10.1\%} \\
+Textiles \& apparel & 35 & 8.0\% \\
+Electronic goods & 29 & 6.6\% \\
+Other & 59 & 13.5\% \\
+\bottomrule\noalign{}
+\end{longtable}
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\textbf{Key observations}
+
+\begin{itemize}
+\tightlist
+\item
+  Engineering goods = India's largest export category; grew from 12\% in
+  2000 to 26\% in 2024
+\item
+  Agriculture has held a \textbf{stable \textasciitilde10--12\%} share
+  for two decades
+\item
+  Petroleum products is a \textbf{re-export} story --- India refines
+  imported crude and re-exports
+\item
+  Electronic goods rising fast (mobile phones, semiconductors policy)
+\item
+  \textbf{Structural transformation:} India's export basket is gradually
+  diversifying away from pure commodities
+\end{itemize}
+
+India's export ambition: move up the value chain from raw agri
+commodities to processed food products
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Part IV: Policy and
+Frameworks}\label{part-iv-policy-and-frameworks}
+
+\begin{frame}{Foreign Trade Policy 2023-28: Five Pillars}
+\phantomsection\label{foreign-trade-policy-2023-28-five-pillars}
+\textbf{Foreign Trade Policy (FTP) 2023--28: Key pillars}
+
+\begin{enumerate}
+\tightlist
+\item
+  \textbf{Export target:} \$2 trillion merchandise + services exports by
+  2030
+\item
+  \textbf{Districts as Export Hubs (DEH):} Identify 1 product per
+  district with export potential; provide targeted support
+\item
+  \textbf{ECGC coverage:} Expanded Export Credit Guarantee Corporation
+  cover to de-risk exporters, especially MSMEs
+\item
+  \textbf{Remission of Duties and Taxes on Exported Products (RoDTEP):}
+  Replace old MEIS; neutralise embedded taxes
+\item
+  \textbf{E-commerce exports:} Dedicated policy for cross-border
+  e-commerce; target \$200--300B by 2030
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{FTP 2023-28: Agriculture-Specific Provisions}
+\phantomsection\label{ftp-2023-28-agriculture-specific-provisions}
+\textbf{Agricultural trade--specific provisions}
+
+\begin{itemize}
+\tightlist
+\item
+  Agri-specific chapters supporting APEDA-registered exporters
+\item
+  GI tag promotion (Darjeeling tea, Alphonso mangoes, Basmati rice)
+\item
+  Simplification of phytosanitary certification processes
+\end{itemize}
+
+FTP 2023--28 is notably continuity-oriented --- it builds on previous
+policy architecture rather than a radical overhaul, reflecting India's
+cautious approach to trade liberalisation.
+\end{frame}
+
+\begin{frame}{A Preview: The Basic Trade Model}
+\phantomsection\label{a-preview-the-basic-trade-model}
+\textbf{Production Possibility Frontier (PPF) --- conceptual preview}
+
+\begin{columns}[T]
+\begin{column}{0.55\linewidth}
+\textbf{Without trade (autarky)}
+
+\begin{itemize}
+\tightlist
+\item
+  A country produces \emph{and} consumes on its PPF
+\item
+  The slope of the PPF at the consumption point = the domestic relative
+  price
+\item
+  Example: India producing only rice and wheat --- the trade-off between
+  them is fixed by domestic technology
+\end{itemize}
+
+\textbf{With trade (open economy)}
+
+\begin{itemize}
+\tightlist
+\item
+  World price ratio differs from domestic price ratio
+\item
+  Country specialises in the good where it has comparative advantage
+\item
+  Consumption point can now lie \textbf{outside} the PPF
+\item
+  \emph{Both} countries gain --- consumption of both goods increases
+\end{itemize}
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\textbf{The core result:}
+
+Trade allows a country to \textbf{consume beyond its production
+possibilities} --- the equivalent of getting something for nothing,
+achieved through specialisation and exchange.
+
+\textbf{Upcoming lectures will formalise:}
+
+\begin{itemize}
+\tightlist
+\item
+  Why the world price differs from the autarky price (Lec 3--5)
+\item
+  How much each country gains --- terms of trade (Lec 7)
+\item
+  What tariffs do to this picture (Lec 8)
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Key Definitions}
+\phantomsection\label{key-definitions}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\textbf{Trade flows}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Exports} --- goods/services sold to foreign residents; flow of
+  goods out, money in
+\item
+  \textbf{Imports} --- goods/services bought from foreign residents;
+  flow of goods in, money out
+\item
+  \textbf{Trade balance} = Exports − Imports
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Positive → trade surplus
+  \item
+    Negative → trade deficit
+  \end{itemize}
+\item
+  \textbf{Visible trade} --- physical merchandise (rice, cars, oil)
+\item
+  \textbf{Invisible trade} --- services, remittances, investment income
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\textbf{Balance of Payments}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Current account} --- trade in goods + services + remittances +
+  investment income
+\item
+  \textbf{Capital account} --- financial flows: FDI, portfolio
+  investment, loans
+\item
+  \textbf{BoP identity:} Current account + Capital account = 0
+  (approximately)
+\end{itemize}
+
+\textbf{Exchange rate}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Nominal exchange rate} --- ₹/USD; e.g., ₹83 = \$1
+\item
+  \textbf{Real exchange rate} --- adjusts for price level differences;
+  determines \emph{actual} competitiveness
+\item
+  \textbf{Appreciation} → exports become more expensive → reduces export
+  competitiveness
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Summary: Why International Trade Matters}
+\phantomsection\label{summary-why-international-trade-matters}
+\textbf{Four reasons international trade is essential for India}
+
+\begin{enumerate}
+\item
+  \textbf{Growth engine:} Trade has been central to every development
+  success story --- Japan, South Korea, China, and now India's IT sector
+\item
+  \textbf{Consumer welfare:} Trade gives 1.4 billion Indians access to
+  goods they cannot produce cheaply at home --- edible oils,
+  electronics, fertilisers
+\item
+  \textbf{Farmer incomes:} Export markets for rice, spices, and marine
+  products support millions of rural households; global price
+  transmission improves farm income signals
+\item
+  \textbf{Policy discipline:} WTO commitments and trade agreements
+  create external pressure for domestic policy reform --- reducing
+  market distortions that hurt productivity
+\end{enumerate}
+
+\textbf{India's challenge:} Integrating deeply into global value chains
+while protecting food security and farm incomes --- the central tension
+this course will explore.
+\end{frame}
+
+\begin{frame}{Key Takeaways: Lecture 1}
+\phantomsection\label{key-takeaways-lecture-1}
+\textbf{What we covered today}
+
+\begin{itemize}
+\tightlist
+\item
+  International trade = cross-border exchange of goods, services, and
+  capital
+\item
+  Global merchandise trade: \textbf{\textasciitilde\$25 trillion
+  (2023)}; services: \textbf{\textasciitilde\$7 trillion}
+\item
+  India ranks \textbf{18th} in merchandise exports; total trade
+  \textasciitilde\$1.18 trillion (FY2024)
+\item
+  Agricultural exports: \textbf{\$43.7 billion} (FY2024) --- rice,
+  marine, spices, cotton dominate
+\item
+  India has a \textbf{structural agricultural trade surplus}
+  (\textasciitilde\$15.5B) that helps offset the merchandise deficit
+\item
+  Agricultural trade is special: perishability, food security,
+  seasonality, and political economy all matter
+\item
+  FTP 2023--28 targets \$2 trillion in exports --- an ambitious but
+  achievable goal
+\end{itemize}
+
+\textbf{Questions to think about before next lecture:}
+
+\begin{enumerate}
+\tightlist
+\item
+  Why does India ban rice exports during domestic inflation? Who
+  benefits, who loses?
+\item
+  If India has absolute advantage in producing rice, why does Bangladesh
+  also export rice?
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Next Lecture: Lecture 2}
+\phantomsection\label{next-lecture-lecture-2}
+\begin{columns}[T]
+\begin{column}{0.6\linewidth}
+\textbf{Features of International Trade} \emph{(May 5, 2026)}
+
+We will cover:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Salient features} of international trade that distinguish it
+  from domestic trade
+\item
+  \textbf{Immobility of factors} --- why labour and capital don't flow
+  freely across borders
+\item
+  \textbf{Currency and exchange risk} --- how rupee movements affect
+  export competitiveness
+\item
+  \textbf{Internal vs international trade} --- a systematic comparison
+\item
+  \textbf{Advantages and disadvantages} of trade --- with India-specific
+  examples
+\item
+  \textbf{India's edible oil import dependence} --- a case study in
+  vulnerability
+\item
+  \textbf{The gravity model} --- intuition and India examples
+\end{itemize}
+\end{column}
+
+\begin{column}{0.4\linewidth}
+\textbf{Suggested reading}
+
+\begin{itemize}
+\tightlist
+\item
+  Krugman, Obstfeld \& Melitz, \emph{International Economics}, Ch. 1
+\item
+  APEDA Annual Report 2023--24 (summary statistics)
+\item
+  FTP 2023--28, Chapter 1 (overview)
+\end{itemize}
+
+\textbf{Data to explore}
+
+\begin{itemize}
+\tightlist
+\item
+  DGCI\&S trade statistics (commerce.gov.in)
+\item
+  WTO Statistics Portal
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Appendix}\label{appendix}
+
+\begin{frame}{Additional Resources}
+\phantomsection\label{additional-resources}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\textbf{Further Reading}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{International Economics} --- Salvatore (Ch. 1)
+\item
+  \emph{International Economics} --- Appleyard \& Field (Ch. 1)
+\item
+  RBI/DGCI\&S/APEDA databases for latest data
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\textbf{Key Data Sources}
+
+\begin{itemize}
+\tightlist
+\item
+  DGCI\&S: India's merchandise trade
+\item
+  RBI: Balance of payments data\\
+\item
+  APEDA: Agricultural export statistics
+\item
+  WTO: Tariff and trade databases
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+
+\end{document}

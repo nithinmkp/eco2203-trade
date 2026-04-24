@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nithin M">
+<meta name="dcterms.date" content="2026-06-06">
+
+<title>Protectionism I — Tariffs &amp; Quotas – ECO 2203</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f3746951f800101ea2ade33225c42268.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ECO 2203 — International Trade &amp; Policy in Agriculture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lecture07_Protectionism_I.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="Lecture07_Protectionism_I.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Protectionism I — Tariffs &amp; Quotas</h1>
+<p class="subtitle lead">ECO 2203 | International Trade and Policy in Agriculture</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nithin M </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Development Economics
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 6, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<hr>
+<section id="section" class="level1 section">
+<h1 class="section"></h1>
+<div style="text-align:center; margin-top: 2em;">
+<p><strong>Lecture 7</strong></p>
+<p><span class="hi" style="font-size:1.8em;">Protectionism I</span></p>
+<p>Tariffs &amp; Quotas</p>
+</div>
+<hr>
+<section id="recap-free-trade-and-its-limits" class="level2">
+<h2 class="anchored" data-anchor-id="recap-free-trade-and-its-limits">Recap: Free Trade and Its Limits</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Comparative advantage</strong> says free trade maximises global welfare.</p>
+<ul>
+<li>Resources flow to most efficient uses</li>
+<li>Both countries gain from specialisation</li>
+<li>Prices converge across borders</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>But reality differs:</strong></p>
+<p>Most countries protect agriculture. India levies average tariffs of <strong>~36%</strong> on farm goods. Why?</p>
+</div>
+</div>
+</div>
+<p><strong>Today’s question:</strong> When — if ever — is protection economically justified?</p>
+<hr>
+</section>
+<section id="overview-of-protectionist-instruments" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-protectionist-instruments">Overview of Protectionist Instruments</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Instrument</th>
+<th>Mechanism</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tariff</strong></td>
+<td>Tax on imports</td>
+<td>India palm oil duty 100%</td>
+</tr>
+<tr class="even">
+<td><strong>Quota</strong></td>
+<td>Quantity limit</td>
+<td>TRQ on wheat</td>
+</tr>
+<tr class="odd">
+<td><strong>Export subsidy</strong></td>
+<td>Payment to exporters</td>
+<td>US Farm Bill</td>
+</tr>
+<tr class="even">
+<td><strong>Anti-dumping duty</strong></td>
+<td>Penalty for below-cost pricing</td>
+<td>India vs Chinese garlic</td>
+</tr>
+<tr class="odd">
+<td><strong>NTB / SPS / TBT</strong></td>
+<td>Standards, labelling, sanitary rules</td>
+<td>Pesticide MRLs</td>
+</tr>
+<tr class="even">
+<td><strong>VER</strong></td>
+<td>Exporter self-limits</td>
+<td>Japan autos to USA</td>
+</tr>
+</tbody>
+</table>
+<div class="keybox">
+<p><strong>Lectures 7–8</strong> cover each instrument in turn. NTBs revisited in Lecture 15.</p>
+</div>
+<hr>
+</section>
+<section id="the-case-for-protection" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="the-case-for-protection">The Case for Protection</h2>
+<p>Six main arguments:</p>
+<ol type="1">
+<li><strong>Infant industry</strong> — temporary protection allows domestic industry to reach scale</li>
+<li><strong>Food security / national security</strong> — strategic self-sufficiency</li>
+<li><strong>Employment protection</strong> — preserve rural livelihoods</li>
+<li><strong>Optimal tariff</strong> — large-country terms-of-trade argument</li>
+<li><strong>Revenue</strong> — government finances via import duties</li>
+<li><strong>Anti-dumping</strong> — level the playing field against predatory foreign pricing</li>
+</ol>
+<div class="methodbox">
+<p><strong>Economic validity:</strong> Infant industry and optimal tariff have theoretical foundations. Employment, revenue, and food security are <em>political economy</em> arguments — valid as policy goals but do not imply trade restriction is the <em>best</em> tool.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-i-tariffs" class="level1 section">
+<h1 class="section">Part I: Tariffs</h1>
+<hr>
+<section id="what-is-a-tariff" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-tariff">What is a Tariff?</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>A <strong>tariff</strong> is a tax levied on imported goods at the border.</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><span class="hi">Specific tariff</span>: fixed amount per unit <em>e.g.</em> ₹500 per tonne of wheat</li>
+<li><span class="hi-gold">Ad valorem tariff</span>: percentage of import value <em>e.g.</em> 50% on wheat (India)</li>
+<li><span class="hi">Compound tariff</span>: specific + ad valorem combined</li>
+</ul>
+<p><strong>India uses primarily ad valorem tariffs</strong> across agricultural commodities.</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>Effect of a tariff:</strong></p>
+<p><span class="math display">\[P_{domestic} = P_{world} + t\]</span></p>
+<ul>
+<li>Domestic price rises</li>
+<li>Domestic production rises</li>
+<li>Imports fall</li>
+<li>Consumer surplus falls</li>
+<li>Government earns revenue</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="baseline-free-trade-welfare" class="level2">
+<h2 class="anchored" data-anchor-id="baseline-free-trade-welfare">Baseline: Free Trade Welfare</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Pw <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Pautarky <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">50</span>, <span class="at">xend=</span><span class="dv">100</span>, <span class="at">yend=</span><span class="dv">0</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">10</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">50</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span>Pw, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">70</span>), <span class="at">y=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">15</span>,<span class="dv">15</span>), <span class="at">fill=</span><span class="st">"#012169"</span>, <span class="at">alpha=</span><span class="fl">0.15</span>) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>), <span class="at">y=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">15</span>), <span class="at">fill=</span><span class="st">"#B9975B"</span>, <span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">10</span>, <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">70</span>, <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">10</span>, <span class="at">y=</span><span class="dv">3</span>, <span class="at">label=</span><span class="st">"Qs=10"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">70</span>, <span class="at">y=</span><span class="dv">3</span>, <span class="at">label=</span><span class="st">"Qd=70"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">102</span>, <span class="at">y=</span><span class="dv">0</span>, <span class="at">label=</span><span class="st">"D"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="dv">50</span>, <span class="at">label=</span><span class="st">"S"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">105</span>, <span class="at">y=</span>Pw, <span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"Pw = "</span>, Pw), <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">35</span>, <span class="at">y=</span><span class="dv">35</span>, <span class="at">label=</span><span class="st">"CS"</span>, <span class="at">size=</span><span class="dv">5</span>, <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">fontface=</span><span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">5</span>, <span class="at">y=</span><span class="dv">13</span>, <span class="at">label=</span><span class="st">"PS"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">fontface=</span><span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">40</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">label=</span><span class="st">"Imports = 60"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">110</span>), <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">55</span>), <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Free Trade Equilibrium"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"At world price Pw=15: Qs=10, Qd=70, Imports=60"</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Quantity"</span>, <span class="at">y=</span><span class="st">"Price (₹/unit)"</span>) <span class="sc">+</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-free-trade" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-free-trade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture07_Protectionism_I_files/figure-html/fig-free-trade-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-free-trade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Free Trade: Domestic Supply, Demand, and World Price Source: Author’s illustration.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="keybox">
+<p><strong>Free trade baseline:</strong> <span class="math inline">\(D: P = 50 - Q/2\)</span> · <span class="math inline">\(S: P = 10 + Q/2\)</span> · <span class="math inline">\(P_w = 15\)</span></p>
+<p>At <span class="math inline">\(P_w=15\)</span>: domestic supply <span class="math inline">\(Q_s=10\)</span>, domestic demand <span class="math inline">\(Q_d=70\)</span>, <strong>imports = 60 units</strong>.</p>
+</div>
+<hr>
+</section>
+<section id="partial-equilibrium-analysis-of-a-tariff" class="level2">
+<h2 class="anchored" data-anchor-id="partial-equilibrium-analysis-of-a-tariff">Partial Equilibrium Analysis of a Tariff</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Free trade equilibrium at <span class="math inline">\(P_w\)</span>:</strong></p>
+<ul>
+<li>Domestic supply: <span class="math inline">\(Q_s^0\)</span></li>
+<li>Domestic demand: <span class="math inline">\(Q_d^0\)</span></li>
+<li>Imports: <span class="math inline">\(M_0 = Q_d^0 - Q_s^0\)</span></li>
+</ul>
+<p><strong>After tariff <span class="math inline">\(t\)</span>: domestic price → <span class="math inline">\(P_w + t\)</span>:</strong></p>
+<ul>
+<li>Domestic supply rises: <span class="math inline">\(Q_s^1 &gt; Q_s^0\)</span></li>
+<li>Domestic demand falls: <span class="math inline">\(Q_d^1 &lt; Q_d^0\)</span></li>
+<li>Imports: <span class="math inline">\(M_1 = Q_d^1 - Q_s^1 &lt; M_0\)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Welfare triangles:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Effect</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Consumer surplus</td>
+<td>↓ (trapezoid <em>A+B+C+D</em>)</td>
+</tr>
+<tr class="even">
+<td>Producer surplus</td>
+<td>↑ (rectangle <em>A</em>)</td>
+</tr>
+<tr class="odd">
+<td>Govt revenue</td>
+<td>↑ (rectangle <em>C</em>)</td>
+</tr>
+<tr class="even">
+<td><span class="hi-red">Deadweight loss</span></td>
+<td>↑ (triangles <em>B + D</em>)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlightbox">
+<p><strong>Triangle <em>B</em></strong> = production distortion loss</p>
+<p><strong>Triangle <em>D</em></strong> = consumption distortion loss</p>
+<p>Both are pure efficiency loss.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="effect-of-a-tariff-welfare-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="effect-of-a-tariff-welfare-analysis">Effect of a Tariff — Welfare Analysis</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Pw <span class="ot">&lt;-</span> <span class="dv">15</span>; t <span class="ot">&lt;-</span> <span class="dv">10</span>; Pt <span class="ot">&lt;-</span> Pw <span class="sc">+</span> t</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Qd_free   <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span>Pw   <span class="co"># 70</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Qs_free   <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">20</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>Pw   <span class="co"># 10</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Qd_tariff <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span>Pt   <span class="co"># 50</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>Qs_tariff <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">20</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>Pt   <span class="co"># 30</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">50</span>, <span class="at">xend=</span><span class="dv">100</span>, <span class="at">yend=</span><span class="dv">0</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">10</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">50</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span>Pw, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span>Pt, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Area A: PS gain rectangle</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>           <span class="at">x=</span><span class="fu">c</span>(Qs_free, Qs_tariff, Qs_tariff, Qs_free), </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">y=</span><span class="fu">c</span>(Pw, Pw, Pt, Pt), </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill=</span><span class="st">"#B9975B"</span>, <span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(Qs_free<span class="sc">+</span>Qs_tariff)<span class="sc">/</span><span class="dv">2</span>, <span class="at">y=</span>(Pw<span class="sc">+</span>Pt)<span class="sc">/</span><span class="dv">2</span>, <span class="at">label=</span><span class="st">"A</span><span class="sc">\n</span><span class="st">(PS gain)"</span>, </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">3</span>, <span class="at">fontface=</span><span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Area B: DWL production triangle</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">x=</span><span class="fu">c</span>(Qs_free, Qs_tariff, Qs_free),</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>           <span class="at">y=</span><span class="fu">c</span>(Pw, Pw, Pt),</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill=</span><span class="st">"red"</span>, <span class="at">alpha=</span><span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>Qs_free<span class="sc">+</span><span class="dv">2</span>, <span class="at">y=</span>Pw<span class="sc">+</span><span class="dv">3</span>, <span class="at">label=</span><span class="st">"B"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">fontface=</span><span class="st">"bold"</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Area C: tariff revenue rectangle</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>           <span class="at">x=</span><span class="fu">c</span>(Qs_tariff, Qd_tariff, Qd_tariff, Qs_tariff),</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>           <span class="at">y=</span><span class="fu">c</span>(Pw, Pw, Pt, Pt),</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill=</span><span class="st">"purple"</span>, <span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(Qs_tariff<span class="sc">+</span>Qd_tariff)<span class="sc">/</span><span class="dv">2</span>, <span class="at">y=</span>(Pw<span class="sc">+</span>Pt)<span class="sc">/</span><span class="dv">2</span>, <span class="at">label=</span><span class="st">"C</span><span class="sc">\n</span><span class="st">(Tariff</span><span class="sc">\n</span><span class="st">Revenue)"</span>, </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">3</span>, <span class="at">fontface=</span><span class="st">"bold"</span>, <span class="at">color=</span><span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Area D: DWL consumption triangle</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>,</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>           <span class="at">x=</span><span class="fu">c</span>(Qd_tariff, Qd_free, Qd_tariff),</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>           <span class="at">y=</span><span class="fu">c</span>(Pt, Pw, Pw),</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill=</span><span class="st">"red"</span>, <span class="at">alpha=</span><span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>Qd_free<span class="dv">-3</span>, <span class="at">y=</span>Pw<span class="sc">+</span><span class="dv">3</span>, <span class="at">label=</span><span class="st">"D"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">fontface=</span><span class="st">"bold"</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">107</span>, <span class="at">y=</span>Pw, <span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"Pw="</span>,Pw), <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">107</span>, <span class="at">y=</span>Pt, <span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"Pt="</span>,Pt), <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="fu">c</span>(Qs_free,Qs_tariff,Qd_tariff,Qd_free), <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>Qs_free,   <span class="at">y=</span><span class="dv">2</span>, <span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"Qs="</span>,Qs_free),      <span class="at">size=</span><span class="fl">2.8</span>) <span class="sc">+</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>Qs_tariff, <span class="at">y=</span><span class="dv">2</span>, <span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"Qs'="</span>,Qs_tariff),   <span class="at">size=</span><span class="fl">2.8</span>) <span class="sc">+</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>Qd_tariff, <span class="at">y=</span><span class="dv">2</span>, <span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"Qd'="</span>,Qd_tariff),   <span class="at">size=</span><span class="fl">2.8</span>) <span class="sc">+</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>Qd_free,   <span class="at">y=</span><span class="dv">2</span>, <span class="at">label=</span><span class="fu">paste0</span>(<span class="st">"Qd="</span>,Qd_free),      <span class="at">size=</span><span class="fl">2.8</span>) <span class="sc">+</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">102</span>, <span class="at">y=</span><span class="dv">0</span>, <span class="at">label=</span><span class="st">"D"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="dv">52</span>, <span class="at">label=</span><span class="st">"S"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">115</span>), <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">55</span>), <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Effect of a Specific Tariff (t = 10)"</span>,</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"CS falls by A+B+C+D; PS rises by A; Revenue = C; DWL = B+D"</span>,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Quantity"</span>, <span class="at">y=</span><span class="st">"Price"</span>) <span class="sc">+</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-tariff-welfare" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tariff-welfare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture07_Protectionism_I_files/figure-html/fig-tariff-welfare-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tariff-welfare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Specific Tariff t=10: CS Lost, PS Gained, DWL Triangles Source: Author’s illustration.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="welfare-accounting-the-tariff-identity" class="level2">
+<h2 class="anchored" data-anchor-id="welfare-accounting-the-tariff-identity">Welfare Accounting: The Tariff Identity</h2>
+<p><span class="math display">\[\Delta CS = -(A + B + C + D)\]</span></p>
+<p><span class="math display">\[\Delta PS = +A\]</span></p>
+<p><span class="math display">\[\text{Tariff Revenue} = +C\]</span></p>
+<p><span class="math display">\[\boxed{\Delta \text{National Welfare} = -(B + D)}\]</span></p>
+<p>Where:</p>
+<ul>
+<li><strong>B</strong> = <em>production distortion loss</em> — resources wastefully drawn into domestic production</li>
+<li><strong>D</strong> = <em>consumption distortion loss</em> — consumers wastefully priced out of the market</li>
+</ul>
+<div class="keybox">
+<p><strong>For a small country:</strong> the tariff always reduces national welfare by the deadweight loss triangles <span class="math inline">\(B + D\)</span>.</p>
+<p><strong>Numerical example:</strong> With <span class="math inline">\(t=10\)</span>, <span class="math inline">\(P_w=15\)</span>: - <span class="math inline">\(\Delta CS = -(A+B+C+D)\)</span>; <span class="math inline">\(B = \tfrac{1}{2}(30{-}10)(25{-}15) = 100\)</span>; <span class="math inline">\(D = \tfrac{1}{2}(70{-}50)(25{-}15) = 100\)</span> - <span class="math inline">\(B = \frac{1}{2}(30-10)(25-15) = 100\)</span>; <span class="math inline">\(D = \frac{1}{2}(70-50)(25-15) = 100\)</span>; <strong>DWL = 200</strong></p>
+</div>
+<hr>
+</section>
+<section id="winners-and-losers-from-a-tariff" class="level2">
+<h2 class="anchored" data-anchor-id="winners-and-losers-from-a-tariff">Winners and Losers from a Tariff</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Effect</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="hi-green">Domestic producers</span></td>
+<td><strong>Gain</strong></td>
+<td>Higher domestic price, expand output</td>
+</tr>
+<tr class="even">
+<td><span class="hi-red">Consumers</span></td>
+<td><strong>Lose</strong></td>
+<td>Pay higher price, consume less</td>
+</tr>
+<tr class="odd">
+<td><span class="hi-gold">Government</span></td>
+<td><strong>Gain revenue</strong></td>
+<td>Tariff × import volume</td>
+</tr>
+<tr class="even">
+<td><strong>Net welfare (small country)</strong></td>
+<td><strong>Loss</strong></td>
+<td>DWL = <em>B + D</em></td>
+</tr>
+</tbody>
+</table>
+<div class="keybox">
+<p><strong>Small country assumption:</strong> Country is a price taker — the tariff does not affect the world price.</p>
+<p><strong>Large country exception:</strong> If India’s import demand is large enough to move world prices, a tariff can improve India’s <em>terms of trade</em> → <strong>optimal tariff</strong> (see later).</p>
+</div>
+<hr>
+</section>
+<section id="indias-agricultural-tariff-structure" class="level2">
+<h2 class="anchored" data-anchor-id="indias-agricultural-tariff-structure">India’s Agricultural Tariff Structure</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>WTO commitments (FY2024):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Bound</th>
+<th>Applied</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All goods</td>
+<td>48.5%</td>
+<td>13.8%</td>
+</tr>
+<tr class="even">
+<td>Agriculture</td>
+<td><strong>113.5%</strong></td>
+<td><strong>36.4%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>“<strong>Water in the tariff</strong>” = gap between bound and applied rates. India retains large room to raise tariffs without breaching WTO commitments.</p>
+</div><div class="column" style="width:45%;">
+<p><strong>Selected high-tariff items:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Commodity</th>
+<th>Applied duty</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Palm oil</td>
+<td>100% (basic + AIDC)</td>
+</tr>
+<tr class="even">
+<td>Sugar</td>
+<td>100%</td>
+</tr>
+<tr class="odd">
+<td>Wheat</td>
+<td>50%</td>
+</tr>
+<tr class="even">
+<td>Maize</td>
+<td>60%</td>
+</tr>
+<tr class="odd">
+<td>Milk (SMP)</td>
+<td>60%</td>
+</tr>
+</tbody>
+</table>
+<div class="highlightbox">
+<p>India’s bound rate of ~114% is one of the <strong>highest among G20 nations</strong> for agriculture.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="indias-agricultural-tariff-profile" class="level2">
+<h2 class="anchored" data-anchor-id="indias-agricultural-tariff-profile">India’s Agricultural Tariff Profile</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tariff_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">commodity =</span> <span class="fu">c</span>(<span class="st">"Palm Oil"</span>, <span class="st">"Sunflower Oil"</span>, <span class="st">"Wheat"</span>, <span class="st">"Pulses"</span>, <span class="st">"Sugar"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Skimmed Milk</span><span class="sc">\n</span><span class="st">Powder"</span>, <span class="st">"Maize"</span>, <span class="st">"Soybean</span><span class="sc">\n</span><span class="st">Meal"</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">tariff_rate =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">38</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">60</span>, <span class="dv">60</span>, <span class="dv">30</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Edible Oil"</span>, <span class="st">"Edible Oil"</span>, <span class="st">"Cereals"</span>, <span class="st">"Pulses"</span>, <span class="st">"Sugar"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>           <span class="st">"Dairy"</span>, <span class="st">"Cereals"</span>, <span class="st">"Oilseeds"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>tariff_data <span class="ot">&lt;-</span> tariff_data <span class="sc">|&gt;</span> <span class="fu">arrange</span>(tariff_rate) <span class="sc">|&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">commodity=</span><span class="fu">factor</span>(commodity, <span class="at">levels=</span>commodity))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tariff_data, <span class="fu">aes</span>(<span class="at">x=</span>commodity, <span class="at">y=</span>tariff_rate, <span class="at">fill=</span>type)) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width=</span><span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">paste0</span>(tariff_rate, <span class="st">"%"</span>)), <span class="at">hjust=</span><span class="sc">-</span><span class="fl">0.1</span>, <span class="at">size=</span><span class="fl">3.2</span>) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette=</span><span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"India's MFN Applied Tariff Rates: Key Agricultural Commodities (2024)"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"India uses high tariffs to protect domestic agriculture — WTO bound rates are higher still"</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="st">"MFN Applied Tariff Rate (%)"</span>, <span class="at">fill=</span><span class="st">"Category"</span>) <span class="sc">+</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">115</span>)) <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-india-tariffs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-india-tariffs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture07_Protectionism_I_files/figure-html/fig-india-tariffs-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-india-tariffs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: India: Applied MFN Tariff Rates on Key Agricultural Imports (2024) Source: WTO, Tariff Profiles (2024); DGFT.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-tariff-rate-quota-trq" class="level2">
+<h2 class="anchored" data-anchor-id="the-tariff-rate-quota-trq">The Tariff Rate Quota (TRQ)</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>A <strong>TRQ</strong> combines two tariff levels:</p>
+<ol type="1">
+<li><strong>Within-quota tariff (low):</strong> applies to a fixed import volume</li>
+<li><strong>Over-quota tariff (high):</strong> applies to imports beyond the quota</li>
+</ol>
+<p><strong>Effect:</strong></p>
+<ul>
+<li>Allows <em>some</em> imports cheaply → food security</li>
+<li>Discourages <em>large</em> imports → protects producers</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>India’s TRQs under WTO AoA:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Commodity</th>
+<th>In-quota duty</th>
+<th>Over-quota</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Maize</td>
+<td>15%</td>
+<td>60%</td>
+</tr>
+<tr class="even">
+<td>Skimmed milk</td>
+<td>15%</td>
+<td>60%</td>
+</tr>
+<tr class="odd">
+<td>Crude soybean oil</td>
+<td>45%</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p>TRQs were bound at Uruguay Round (1994). India rarely fills its TRQ allocations.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="case-study-indias-palm-oil-import-duty" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-indias-palm-oil-import-duty">Case Study: India’s Palm Oil Import Duty</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Timeline:</strong></p>
+<ul>
+<li><strong>2017:</strong> Basic duty 0% (edible oil prices rising)</li>
+<li><strong>2020:</strong> Raised to 37.5% (protecting oilseed farmers)</li>
+<li><strong>2021:</strong> Basic + AIDC + SWS ≈ <strong>100%</strong> effective duty</li>
+</ul>
+<p><strong>Rationale:</strong> Protect domestic oilseed farmers (soybean, groundnut, mustard).</p>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>The dilemma:</strong></p>
+<p>India imports <strong>~14 million tonnes/year</strong> of edible oils — 60% of consumption. Cannot substitute quickly.</p>
+<ul>
+<li>Farmers in MP, Rajasthan gain</li>
+<li>Urban consumers lose</li>
+<li>Food inflation rises</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="keybox">
+<p><strong>Terms of trade argument partially valid:</strong> India is the world’s largest palm oil importer — its import demand moves global prices. A tariff improves India’s ToT at the cost of Malaysian/Indonesian exporters.</p>
+</div>
+<hr>
+</section>
+<section id="effective-rate-of-protection-erp" class="level2">
+<h2 class="anchored" data-anchor-id="effective-rate-of-protection-erp">Effective Rate of Protection (ERP)</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Nominal tariff</strong> = tariff on the final good.</p>
+<p><strong>ERP</strong> = protection on <em>value added</em> in production, accounting for tariffs on <em>inputs</em>.</p>
+<p><span class="math display">\[\text{ERP} = \frac{t_f - \sum a_i t_i}{1 - \sum a_i}\]</span></p>
+<p>where <span class="math inline">\(t_f\)</span> = nominal tariff on final good, <span class="math inline">\(t_i\)</span> = tariff on input <span class="math inline">\(i\)</span>, <span class="math inline">\(a_i\)</span> = input share in value.</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>Example: Sugar processing</strong></p>
+<ul>
+<li>Tariff on sugar (final): 100%</li>
+<li>Tariff on sugarcane (input): 0%</li>
+<li>Input share: ~70%</li>
+</ul>
+<p><span class="math display">\[\text{ERP} = \frac{0.10 - 0}{1 - 0.70} \approx 333\%\]</span></p>
+<p><strong>ERP &gt;&gt; nominal tariff</strong> = “tariff escalation” — processing stages protected far more than raw material.</p>
+</div>
+</div>
+</div>
+<div class="highlightbox">
+<p>India’s tariff structure commonly exhibits cascading — protecting processing industries at the expense of downstream consumers and raw material exporters.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-ii-quotas" class="level1 section">
+<h1 class="section">Part II: Quotas</h1>
+<hr>
+<section id="what-is-an-import-quota" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-import-quota">What is an Import Quota?</h2>
+<p>A <strong>quota</strong> is a quantitative restriction — it sets the <em>maximum volume</em> of a good that may be imported in a given period.</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>How it works:</strong></p>
+<ol type="1">
+<li>Government announces quota (e.g., 1 million tonnes of wheat)</li>
+<li>Import licences issued (to traders, state agencies, or by auction)</li>
+<li>Once quota filled, further imports blocked</li>
+<li>Domestic price rises until supply + quota = demand</li>
+</ol>
+</div><div class="column" style="width:45%;">
+<div class="keybox">
+<p><strong>Quota rent:</strong></p>
+<p>The gap between domestic and world price × quota volume = <strong>quota rent</strong>.</p>
+<p>Who captures the rent? - If licences <strong>auctioned</strong> → government - If licences <strong>given away</strong> → importers (or exporters under VER)</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="import-quota-same-effect-different-mechanism" class="level2">
+<h2 class="anchored" data-anchor-id="import-quota-same-effect-different-mechanism">Import Quota — Same Effect, Different Mechanism</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Pw <span class="ot">&lt;-</span> <span class="dv">15</span>; Pt <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Qs_free <span class="ot">&lt;-</span> <span class="dv">10</span>; Qd_free <span class="ot">&lt;-</span> <span class="dv">70</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Qs_q <span class="ot">&lt;-</span> <span class="dv">30</span>; Qd_q <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>quota <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">50</span>, <span class="at">xend=</span><span class="dv">100</span>, <span class="at">yend=</span><span class="dv">0</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">10</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">50</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span>quota, <span class="at">y=</span><span class="dv">10</span>, <span class="at">xend=</span><span class="dv">80</span><span class="sc">+</span>quota, <span class="at">yend=</span><span class="dv">50</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">95</span>, <span class="at">y=</span><span class="dv">48</span>, <span class="at">label=</span><span class="st">"S + Quota"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span>Pw, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span>Pt, <span class="at">linetype=</span><span class="st">"solid"</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">107</span>, <span class="at">y=</span>Pw, <span class="at">label=</span><span class="st">"Pw=15"</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">107</span>, <span class="at">y=</span>Pt, <span class="at">label=</span><span class="st">"New P=25"</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x=</span><span class="fu">c</span>(Qs_q, Qd_q, Qd_q, Qs_q), <span class="at">y=</span><span class="fu">c</span>(Pw, Pw, Pt, Pt),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill=</span><span class="st">"#9966CC"</span>, <span class="at">alpha=</span><span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(Qs_q<span class="sc">+</span>Qd_q)<span class="sc">/</span><span class="dv">2</span>, <span class="at">y=</span>(Pw<span class="sc">+</span>Pt)<span class="sc">/</span><span class="dv">2</span>, <span class="at">label=</span><span class="st">"Quota Rent</span><span class="sc">\n</span><span class="st">(who gets it?)"</span>, </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">3</span>, <span class="at">fontface=</span><span class="st">"bold"</span>, <span class="at">color=</span><span class="st">"#9966CC"</span>) <span class="sc">+</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x=</span><span class="fu">c</span>(Qs_free, Qs_q, Qs_free), <span class="at">y=</span><span class="fu">c</span>(Pw, Pw, Pt), <span class="at">fill=</span><span class="st">"red"</span>, <span class="at">alpha=</span><span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x=</span><span class="fu">c</span>(Qd_q, Qd_free, Qd_q), <span class="at">y=</span><span class="fu">c</span>(Pt, Pw, Pw), <span class="at">fill=</span><span class="st">"red"</span>, <span class="at">alpha=</span><span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>Qs_free<span class="sc">+</span><span class="dv">3</span>, <span class="at">y=</span>Pw<span class="sc">+</span><span class="dv">3</span>, <span class="at">label=</span><span class="st">"B"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">fontface=</span><span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>Qd_free<span class="dv">-3</span>, <span class="at">y=</span>Pw<span class="sc">+</span><span class="dv">3</span>, <span class="at">label=</span><span class="st">"D"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">fontface=</span><span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">102</span>, <span class="at">y=</span><span class="dv">0</span>, <span class="at">label=</span><span class="st">"D"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">115</span>), <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">55</span>)) <span class="sc">+</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Import Quota: Same DWL as Tariff, but Quota Rent May Go to Foreigners"</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Quota limits imports to 20 units → domestic price rises to 25 (same as tariff equivalent)"</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Quantity"</span>, <span class="at">y=</span><span class="st">"Price"</span>) <span class="sc">+</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-quota" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quota-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture07_Protectionism_I_files/figure-html/fig-quota-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quota-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Import Quota: Quantity Restriction Creates Quota Rent Instead of Revenue Source: Author’s illustration.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="tariff-vs-quota-revenue-vs-rent" class="level2">
+<h2 class="anchored" data-anchor-id="tariff-vs-quota-revenue-vs-rent">Tariff vs Quota: Revenue vs Rent</h2>
+<p><strong>Key difference in revenue allocation:</strong></p>
+<p><span class="math display">\[\text{Tariff: Revenue} = t \times M \quad \text{(goes to government)}\]</span></p>
+<p><span class="math display">\[\text{Quota: Rent} = (P_t - P_w) \times \bar{M} \quad \text{(may go to foreign exporters)}\]</span></p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>When quota rent goes to foreigners:</strong></p>
+<ul>
+<li>If import licences are given free to foreign exporters (as in a VER)</li>
+<li>The domestic economy loses the tariff-equivalent rectangle <em>C</em></li>
+<li>Net welfare loss = <span class="math inline">\(B + C + D\)</span> &gt; tariff welfare loss of <span class="math inline">\(B + D\)</span></li>
+</ul>
+<p><strong>When quota rent stays domestic:</strong></p>
+<ul>
+<li>If licences are <em>auctioned</em> to domestic importers</li>
+<li>Domestic economy captures rent = equivalent to tariff</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>Implication for policy:</strong></p>
+<p>If quota rents accrue to foreign exporters, quotas are <strong>worse than equivalent tariffs</strong> — the domestic economy loses both the DWL and the revenue.</p>
+<p>This is why economists generally prefer tariffs over quotas, and why WTO’s GATT Article XI prohibits quotas.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="tariff-vs-quota-similarities-and-differences" class="level2">
+<h2 class="anchored" data-anchor-id="tariff-vs-quota-similarities-and-differences">Tariff vs Quota: Similarities and Differences</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Tariff</th>
+<th>Quota</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Domestic price</td>
+<td>Rises</td>
+<td>Rises</td>
+</tr>
+<tr class="even">
+<td>Domestic production</td>
+<td>Rises</td>
+<td>Rises</td>
+</tr>
+<tr class="odd">
+<td>Imports</td>
+<td>Fall</td>
+<td>Fall (fixed)</td>
+</tr>
+<tr class="even">
+<td>Government revenue</td>
+<td><strong>Yes — tariff revenue</strong></td>
+<td>Only if licences auctioned</td>
+</tr>
+<tr class="odd">
+<td>Flexibility under demand shock</td>
+<td>Adjusts automatically</td>
+<td>Quantity fixed — price volatile</td>
+</tr>
+<tr class="even">
+<td>Transparency</td>
+<td>More transparent</td>
+<td>Less — hidden in licensing</td>
+</tr>
+<tr class="odd">
+<td>WTO legality</td>
+<td>Bound and transparent</td>
+<td>Mostly prohibited (GATT Art XI)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlightbox">
+<p><strong>Key asymmetry:</strong> Under a tariff, if demand rises, imports rise (at fixed tariff price). Under a quota, imports are fixed — domestic price must rise to clear the market. Quotas are more price-volatile and less transparent.</p>
+</div>
+<hr>
+</section>
+<section id="indias-quantitative-restrictions-history" class="level2">
+<h2 class="anchored" data-anchor-id="indias-quantitative-restrictions-history">India’s Quantitative Restrictions: History</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Pre-2001:</strong> India maintained extensive QRs on agricultural imports citing <strong>balance of payments</strong> reasons (GATT Article XVIII:B).</p>
+<ul>
+<li>QRs on hundreds of agricultural product lines</li>
+<li>Effective near-ban on many imports</li>
+</ul>
+<p><strong>2001:</strong> USA challenged India’s QRs at WTO. <strong>Panel ruling:</strong> India’s BoP situation no longer justified QRs. India removed most agricultural QRs.</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>Post-2001 shift:</strong></p>
+<p>India replaced QRs with <strong>high tariffs</strong> — achieving similar protection through a WTO-consistent instrument.</p>
+<p>“Tariffication” converted quantity restrictions to price restrictions.</p>
+<p>Tariff flexibility (“water”) provides buffer for future protection.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-optimal-tariff-argument" class="level2">
+<h2 class="anchored" data-anchor-id="the-optimal-tariff-argument">The Optimal Tariff Argument</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>For a <strong>large country</strong>, an import tariff reduces demand for imports → world price falls → terms of trade improve.</p>
+<p><strong>Optimal tariff</strong> = tariff that maximises net welfare gain:</p>
+<p><span class="math display">\[t^* = \frac{1}{\varepsilon_x^*}\]</span></p>
+<p>where <span class="math inline">\(\varepsilon_x^*\)</span> = foreign export supply elasticity.</p>
+<p>More inelastic foreign supply → higher optimal tariff.</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>India’s case (palm oil):</strong></p>
+<p>India = 15% of world palm oil demand. Malaysian/Indonesian export supply somewhat inelastic.</p>
+<p>→ India can depress world palm oil prices with a tariff → Terms of trade gain partially offsets DWL</p>
+<p><strong>Caveat:</strong> Retaliation risk. If Malaysia retaliates on Indian exports (spices, pharmaceuticals), net welfare impact uncertain.</p>
+</div>
+</div>
+</div>
+<div class="highlightbox">
+<p><strong>Optimal tariff is the only trade-restriction argument that raises national welfare in economic theory</strong> — and only for large countries.</p>
+</div>
+<hr>
+</section>
+<section id="infant-industry-protection-indias-experience" class="level2">
+<h2 class="anchored" data-anchor-id="infant-industry-protection-indias-experience">Infant Industry Protection: India’s Experience</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Argument:</strong> A nascent domestic industry cannot compete initially due to:</p>
+<ul>
+<li>High startup costs (scale economies not yet reached)</li>
+<li>Learning-by-doing not yet accumulated</li>
+<li>Missing domestic supply chains</li>
+</ul>
+<p><strong>Temporary</strong> protection allows the industry to mature → eventually competitive.</p>
+<p><strong>Post-Independence India:</strong> Bombay Plan (1944) — protect everything. Led to License Raj.</p>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>Agriculture examples:</strong></p>
+<ul>
+<li><strong>Green Revolution:</strong> seed, fertiliser, irrigation subsidised → Indian wheat/rice went from deficit to surplus</li>
+<li><strong>Oilseeds:</strong> Technology Mission on Oilseeds (1986) used tariff + R&amp;D → raised productivity</li>
+<li><strong>Sugar:</strong> Protected since 1932 — never “grown up.” Chronic intervention = perennial inefficiency.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="keybox">
+<p><strong>Key insight:</strong> Protection that never ends becomes a permanent rent transfer from consumers to producers, not an investment in future competitiveness.</p>
+</div>
+<hr>
+</section>
+<section id="voluntary-export-restraints-vers" class="level2">
+<h2 class="anchored" data-anchor-id="voluntary-export-restraints-vers">Voluntary Export Restraints (VERs)</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>A <strong>VER</strong> occurs when an exporting country “voluntarily” restricts its exports to a trading partner — usually under diplomatic pressure.</p>
+<p><strong>Classic example:</strong> Japan limited auto exports to USA in the 1980s.</p>
+<p><strong>Effect:</strong> Like a quota but the <em>quota rent accrues to the exporter</em> (not the importer government).</p>
+<p><strong>WTO:</strong> VERs are now illegal under Article 11 of WTO Safeguards Agreement (post-Uruguay Round).</p>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>India-adjacent example:</strong></p>
+<p>India’s 2023 rice export restrictions raised world prices — effectively a VER from the perspective of importing nations like Bangladesh, Benin, and Senegal.</p>
+<p>India’s rice export controls demonstrated India’s market power as the world’s dominant rice exporter.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="non-tariff-barriers-ntbs-preview" class="level2">
+<h2 class="anchored" data-anchor-id="non-tariff-barriers-ntbs-preview">Non-Tariff Barriers (NTBs): Preview</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>NTBs</strong> are behind-the-border measures that restrict trade without an explicit tariff or quota:</p>
+<ul>
+<li><strong>SPS (Sanitary &amp; Phytosanitary):</strong> food safety, animal/plant health standards</li>
+<li><strong>TBT (Technical Barriers to Trade):</strong> labelling, packaging, quality standards</li>
+<li><strong>Licensing requirements</strong></li>
+<li><strong>Customs procedures and delays</strong></li>
+<li><strong>State trading monopolies</strong></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="keybox">
+<p><strong>The “new protectionism”:</strong></p>
+<p>As tariffs have fallen under WTO, NTBs have risen to replace them.</p>
+<p>India’s rejection of GM soybean imports (SPS), EU’s pesticide MRLs on Indian spices, and USA’s countervailing duties on Indian shrimp are all NTB-related disputes.</p>
+<p><strong>Detailed treatment: Lecture 15.</strong></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="summary-tariffs-and-quotas" class="level2">
+<h2 class="anchored" data-anchor-id="summary-tariffs-and-quotas">Summary: Tariffs and Quotas</h2>
+<div class="keybox">
+<p><strong>Core findings:</strong></p>
+<ol type="1">
+<li><p><strong>Tariffs</strong> raise domestic prices, protect producers, generate government revenue, but impose deadweight losses <span class="math inline">\(B + D\)</span> on the economy.</p></li>
+<li><p><strong>Quotas</strong> have similar price effects but create quota rents (often captured by private importers or foreign exporters) and are more price-volatile.</p></li>
+<li><p>India uses <strong>high bound tariffs as a buffer</strong> — “water in the tariff” provides policy space without WTO violation.</p></li>
+<li><p>The <strong>ERP</strong> often exceeds the nominal tariff due to tariff escalation in India’s structure.</p></li>
+<li><p><strong>Optimal tariff</strong> is the only theoretically valid welfare-raising argument — and only for large countries like India in palm oil.</p></li>
+<li><p>Welfare identity: <span class="math inline">\(\Delta W = -(B+D)\)</span> for small country; may be positive for large country at optimal tariff.</p></li>
+</ol>
+</div>
+<div class="highlightbox">
+<p><strong>India’s agricultural protection architecture:</strong> High applied tariffs + TRQs + licensing + SPS/NTBs = multi-layered protection. WTO constraints bind only at the margins.</p>
+</div>
+<hr>
+</section>
+<section id="next-lecture" class="level2">
+<h2 class="anchored" data-anchor-id="next-lecture">Next Lecture</h2>
+<div class="methodbox">
+<p><strong>Lecture 8 — Protectionism II: Subsidies, Dumping &amp; Cartels</strong> <em>June 16, 2026</em></p>
+<ul>
+<li>Export subsidies and their effects on world markets</li>
+<li>India’s MSP and WTO’s Amber Box rules</li>
+<li>Fertiliser subsidies and trade distortion</li>
+<li>Dumping: definition, types, anti-dumping duties</li>
+<li>India as the world’s top anti-dumping user</li>
+<li>Agricultural cartels and commodity agreements</li>
+<li>India’s rice export ban (2023) as market power exercise</li>
+</ul>
+</div>
+<div class="highlightbox">
+<p><strong>Preparation:</strong> Read Krugman, Obstfeld &amp; Melitz, Ch. 9 (Export Subsidies and Import Quotas). Review India’s WTO notification on domestic support (2022).</p>
+</div>
+</section>
+</section>
+<section id="appendix" class="level1" data-background-color="#1a3a5c">
+<h1 data-background-color="#1a3a5c">Appendix</h1>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section id="additional-resources" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Additional Resources</h2><div class="quarto-appendix-contents">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Further Reading</strong></p>
+<ul>
+<li><em>International Economics</em> — Salvatore (Ch. 9-11)</li>
+<li><em>International Economics</em> — Appleyard &amp; Field (Ch. 9-11)</li>
+<li>RBI/DGCI&amp;S/APEDA databases for latest data</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Key Data Sources</strong></p>
+<ul>
+<li>DGCI&amp;S: India’s merchandise trade</li>
+<li>RBI: Balance of payments data<br>
+</li>
+<li>APEDA: Agricultural export statistics</li>
+<li>WTO: Tariff and trade databases</li>
+</ul>
+</div>
+</div>
+
+
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Department of Development Economics · ECO 2203</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Nithin M · 2026</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

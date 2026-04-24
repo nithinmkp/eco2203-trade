@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nithin M">
+<meta name="dcterms.date" content="2026-07-11">
+
+<title>lecture12_forex_market – ECO 2203</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f3746951f800101ea2ade33225c42268.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ECO 2203 — International Trade &amp; Policy in Agriculture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lecture12_Forex_Market.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 12: Foreign Exchange Market — Instruments and Policy</h1>
+<p class="subtitle lead">ECO 2203 | International Trade and Policy in Agriculture</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nithin M </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Development Economics
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 11, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="forex-market-exchange-rate-systems-and-open-economy-macro" class="level2" data-background-gradient="linear-gradient(135deg, #1a3c5e 0%, #2d6a9f 100%)">
+<h2 data-background-gradient="linear-gradient(135deg, #1a3c5e 0%, #2d6a9f 100%)" class="anchored" data-anchor-id="forex-market-exchange-rate-systems-and-open-economy-macro">Forex Market: Exchange Rate Systems and Open Economy Macro</h2>
+<div style="color: white; font-size: 1.1em; margin-top: 1em;">
+<p>From exchange rate regimes to the Mundell-Fleming model — how monetary and fiscal policy interact with the exchange rate, and what this means for agricultural exporters and importers.</p>
+</div>
+</section>
+<section id="recap-what-we-learned-in-lecture-11" class="level2">
+<h2 class="anchored" data-anchor-id="recap-what-we-learned-in-lecture-11">Recap: What We Learned in Lecture 11</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Key equations from Lecture 11:</strong></p>
+<p>Exchange rate notation: <span class="math display">\[e = \frac{\text{units of domestic currency}}{\text{unit of foreign currency}}\]</span></p>
+<p>Absolute PPP: <span class="math display">\[e = \frac{P_d}{P_f}\]</span></p>
+<p>Relative PPP: <span class="math display">\[\frac{\Delta e}{e} = \pi_d - \pi_f\]</span></p>
+<p>Uncovered Interest Parity (UIP): <span class="math display">\[i = i^* + \frac{E(e_{t+1}) - e_t}{e_t}\]</span></p>
+</div><div class="column" style="width:45%;">
+<div class="keybox">
+<p><strong>Key numerical takeaways:</strong></p>
+<ul>
+<li>INR/USD spot rate ≈ <strong>₹83.5/$</strong></li>
+<li>India CPI inflation ≈ 5–6%; US ≈ 2–3%</li>
+<li>Relative PPP predicts <strong>3–4% annual INR depreciation</strong></li>
+<li>UIP equilibrium: <span class="math inline">\(i_{India} - i_{US} \approx\)</span> expected depreciation</li>
+<li>Repo rate India: <strong>6.5%</strong>; Fed funds: <strong>5.25–5.5%</strong></li>
+<li>Differential ≈ 1–1.25% — below PPP-implied depreciation, suggesting some expected appreciation or risk premium</li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Building on Lecture 11:</strong> We now know <em>why</em> exchange rates move (PPP, UIP, interest differentials). Today we study <em>what regime</em> India operates under — managed float vs fixed vs free float — and <em>how macroeconomic policy</em> (fiscal and monetary) works differently under each regime using the <strong>Mundell-Fleming model</strong>. We also cover the practical tools — forward markets, hedging — that agricultural traders use to manage currency risk.</p>
+</section>
+<section id="exchange-rate-systems-i-free-float-and-managed-float" class="level2">
+<h2 class="anchored" data-anchor-id="exchange-rate-systems-i-free-float-and-managed-float">Exchange Rate Systems (I): Free Float and Managed Float</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 34%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Description</th>
+<th>India Relevance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Free float</strong></td>
+<td>Market determines exchange rate; central bank does not intervene</td>
+<td>USA, UK, Eurozone — India’s major trading partners operate under this system</td>
+</tr>
+<tr class="even">
+<td><strong>Managed float</strong></td>
+<td>CB intervenes to smooth volatility but does not target a specific level</td>
+<td><strong>India’s current system</strong> (since 1993 post-LERMS); RBI smooths but allows gradual adjustment</td>
+</tr>
+</tbody>
+</table>
+<div class="highlightbox">
+<p><strong>India’s choice:</strong> Managed float since 1993 (post-LERMS). RBI intervenes to smooth but does not target a specific level. This preserves monetary policy independence while preventing destabilising volatility.</p>
+</div>
+</section>
+<section id="exchange-rate-systems-ii-fixed-and-intermediate-regimes" class="level2">
+<h2 class="anchored" data-anchor-id="exchange-rate-systems-ii-fixed-and-intermediate-regimes">Exchange Rate Systems (II): Fixed and Intermediate Regimes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 34%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Description</th>
+<th>India Relevance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Crawling peg</strong></td>
+<td>Regular small, pre-announced adjustments to the peg</td>
+<td>Chile historically; some SAARC neighbours use variants</td>
+</tr>
+<tr class="even">
+<td><strong>Fixed/pegged</strong></td>
+<td>CB maintains exchange rate at a predetermined target using reserves</td>
+<td>Gulf states (USD peg); pre-1991 India maintained a <em>de facto</em> fixed rate</td>
+</tr>
+<tr class="odd">
+<td><strong>Currency board</strong></td>
+<td>100% foreign reserve backing for domestic currency at fixed rate</td>
+<td>Argentina 1991–2001 (collapsed); Hong Kong (ongoing)</td>
+</tr>
+<tr class="even">
+<td><strong>Currency union</strong></td>
+<td>Single shared currency across multiple countries</td>
+<td>Eurozone; CFA Franc zone in West/Central Africa</td>
+</tr>
+</tbody>
+</table>
+<div class="methodbox">
+<p><strong>Historical lesson for India:</strong> India maintained a <em>de facto</em> fixed rate through the 1980s. By 1991: BoP crisis forced a 44% devaluation. Post-crisis shift to managed float was the correct policy response.</p>
+</div>
+</section>
+<section id="fixed-vs-flexible-trade-offs-for-agricultural-economies" class="level2">
+<h2 class="anchored" data-anchor-id="fixed-vs-flexible-trade-offs-for-agricultural-economies">Fixed vs Flexible: Trade-offs for Agricultural Economies</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Fixed Regime Analysis:</strong></p>
+<ul>
+<li>✅ <strong>Stability for trade contracts:</strong> importers and exporters know the rate — a rice exporter signing a 12-month supply contract can price in INR without currency risk</li>
+<li>✅ <strong>Low inflation discipline:</strong> CB cannot print money freely (reserves constrain it)</li>
+<li>❌ <strong>Currency crises:</strong> if domestic inflation erodes competitiveness, the fixed rate becomes overvalued → speculative attacks → forced devaluation</li>
+<li>❌ <strong>Monetary policy lost:</strong> CB cannot adjust interest rates independently (Mundell-Fleming, fixed rate case)</li>
+<li>❌ <strong>Reserve depletion:</strong> defending the peg requires unlimited reserves</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Flexible Regime Analysis:</strong></p>
+<ul>
+<li>✅ <strong>Automatic stabilisation:</strong> trade deficit → INR weakens → exports become cheaper → deficit corrects</li>
+<li>✅ <strong>Monetary policy works:</strong> RBI can set repo rate independently of the Fed</li>
+<li>❌ <strong>Volatility harms trade:</strong> a rice exporter signing 6-month contracts faces price risk — even if the crop yield is known, INR/USD at delivery is unknown</li>
+<li>❌ <strong>Imported inflation:</strong> depreciation raises cost of edible oil, fertiliser, crude oil — all critical agri inputs</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="case-study-indias-1991-exchange-rate-crisis" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-indias-1991-exchange-rate-crisis">Case Study: India’s 1991 Exchange Rate Crisis</h2>
+<div class="methodbox">
+<p><strong>India’s 1991 crisis — the case for managed float:</strong></p>
+<p>India maintained a <em>de facto</em> fixed rate through the 1980s. By 1991: BoP deficit widened, reserves fell to $1.2B (barely 2 weeks of import cover), credit rating downgraded. India was forced to <strong>devalue 44% in two days</strong> (July 1–3, 1991). Post-crisis, India adopted the Liberalised Exchange Rate Management System (LERMS) in 1992, transitioning to a managed float by 1993. The lesson: a fixed rate without adequate reserves and fiscal discipline is a crisis waiting to happen.</p>
+</div>
+</section>
+<section id="the-impossible-trinity-statement-and-intuition" class="level2">
+<h2 class="anchored" data-anchor-id="the-impossible-trinity-statement-and-intuition">The Impossible Trinity: Statement and Intuition</h2>
+<p><strong>Statement:</strong> A country <strong>CANNOT</strong> simultaneously maintain all three of:</p>
+<ol type="1">
+<li>🔒 <strong>Fixed exchange rate</strong> (<span class="math inline">\(e = \bar{e}\)</span>)</li>
+<li>🌐 <strong>Free capital mobility</strong> (<span class="math inline">\(CF\)</span> unconstrained)</li>
+<li>🏦 <strong>Independent monetary policy</strong> (<span class="math inline">\(i \neq i^*\)</span>)</li>
+</ol>
+<p><strong>Mathematical intuition:</strong> Under a fixed rate (<span class="math inline">\(e = \bar{e}\)</span>) and free capital (<span class="math inline">\(CF\)</span> unconstrained), UIP forces <span class="math inline">\(i = i^*\)</span>. Then monetary policy (<span class="math inline">\(M\)</span>) cannot change <span class="math inline">\(i\)</span> independently — any attempt to lower <span class="math inline">\(i\)</span> below <span class="math inline">\(i^*\)</span> triggers capital outflow, forcing the CB to sell reserves to defend the peg, which contracts <span class="math inline">\(M\)</span> back.</p>
+<p><span class="math display">\[\{e_{\text{fixed}}\} \cup \{CF_{\text{free}}\} \cup \{MP_{\text{independent}}\}: \text{ choose any TWO}\]</span></p>
+<div class="keybox">
+<p><strong>India’s trilemma choice:</strong> Managed float (partial exchange rate flexibility) + selective capital controls (FPI restrictions, ECB limits) = partial monetary independence. A pragmatic middle path.</p>
+</div>
+</section>
+<section id="the-impossible-trinity-country-examples" class="level2">
+<h2 class="anchored" data-anchor-id="the-impossible-trinity-country-examples">The Impossible Trinity: Country Examples</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Fixed rate?</th>
+<th>Free capital?</th>
+<th>Monetary independence?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USA (free float)</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>Eurozone</td>
+<td>✓ (intra-EU)</td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr class="odd">
+<td>China (capital controls)</td>
+<td>✓</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>India (managed float)</td>
+<td>Partial</td>
+<td>Partial</td>
+<td>Partial</td>
+</tr>
+<tr class="odd">
+<td>Argentina 1991–2001</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗ → Crisis!</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="india-and-the-impossible-trinity" class="level2">
+<h2 class="anchored" data-anchor-id="india-and-the-impossible-trinity">India and the Impossible Trinity</h2>
+<p><strong>India’s capital account structure:</strong></p>
+<ul>
+<li><strong>FDI:</strong> largely free — automatic route for most sectors</li>
+<li><strong>FPI (Foreign Portfolio Investment):</strong> restricted — SEBI-regulated limits on equity and debt holdings by foreign investors</li>
+<li><strong>ECB (External Commercial Borrowing):</strong> regulated — sector-specific limits, end-use restrictions, all-in cost ceilings</li>
+</ul>
+<p><strong>RBI maintains independent monetary policy:</strong></p>
+<ul>
+<li>Repo rate currently <strong>6.5%</strong> (June 2026) despite US Fed at <strong>5.25–5.5%</strong></li>
+<li>If India fully opened the capital account, carry trade would force UIP: either the rupee would appreciate sharply to equalise returns, OR RBI would have to cut rates to match the US Fed</li>
+</ul>
+<div class="highlightbox">
+<p><strong>2013 Taper Tantrum — proof of concept:</strong></p>
+<p>When Bernanke signalled Fed tapering (May 2013), capital fled emerging markets. India’s <em>partial</em> capital openness was enough to expose it: rupee fell ₹56 → ₹68 in weeks (-18%). RBI was forced to raise rates sharply to 7.25% and tighten capital controls temporarily. Full capital openness would have made this worse. Selective capital controls preserved room for monetary manoeuvre.</p>
+</div>
+<p><strong>Agricultural angle:</strong> Capital account policy affects rupee stability, which directly affects agri export competitiveness and the cost of imported inputs (edible oil, fertiliser). A sudden capital-flight-driven depreciation hurts edible oil importers; a sudden appreciation hurts rice and cotton exporters.</p>
+</section>
+<section id="the-mundell-fleming-model-open-economy-is-lm" class="level2">
+<h2 class="anchored" data-anchor-id="the-mundell-fleming-model-open-economy-is-lm">The Mundell-Fleming Model: Open Economy IS-LM</h2>
+<p><strong>Description:</strong> IS-LM extended for the open economy with a Balance of Payments equilibrium condition.</p>
+<p><strong>Three equations:</strong></p>
+<p><span class="math display">\[IS: Y = C(Y-T) + I(i) + G + NX(e, Y, Y^*)\]</span></p>
+<p><span class="math display">\[LM: \frac{M}{P} = L(i, Y)\]</span></p>
+<p><span class="math display">\[BP: 0 = NX(e, Y, Y^*) + CF(i - i^*)\]</span></p>
+<p><strong>Where:</strong></p>
+<ul>
+<li>$NX = $ net exports — falls when <span class="math inline">\(Y\)</span> rises (more imports); rises when <span class="math inline">\(e\)</span> rises (depreciation makes exports cheaper)</li>
+<li>$CF = $ capital flows — rises when <span class="math inline">\(i\)</span> rises relative to world rate <span class="math inline">\(i^*\)</span></li>
+<li><span class="math inline">\(BP = 0\)</span> at external balance — the BoP equilibrium condition</li>
+</ul>
+<p><strong>BP curve in <span class="math inline">\((Y, i)\)</span> space:</strong> Upward sloping — higher <span class="math inline">\(Y\)</span> → more imports → BoP deficit → need higher <span class="math inline">\(i\)</span> to attract offsetting capital inflow.</p>
+<div class="methodbox">
+<p><strong>Capital mobility and BP slope:</strong> With <em>high</em> capital mobility, small changes in <span class="math inline">\(i\)</span> generate large capital flows → BP curve is nearly <strong>flat</strong> (horizontal at <span class="math inline">\(i = i^*\)</span> under perfect mobility). With <em>low</em> capital mobility, large changes in <span class="math inline">\(i\)</span> are needed → BP curve is <strong>steep</strong>. India: intermediate case, moderate upward slope.</p>
+</div>
+</section>
+<section id="mf-model-fixed-exchange-rate-fiscal-policy-effective-monetary-ineffective" class="level2">
+<h2 class="anchored" data-anchor-id="mf-model-fixed-exchange-rate-fiscal-policy-effective-monetary-ineffective">MF Model: Fixed Exchange Rate — Fiscal Policy Effective, Monetary Ineffective</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel 1: Fiscal expansion under fixed rate (effective)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>p_fiscal <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">20</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">2</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="fl">2.2</span>, <span class="at">label=</span><span class="st">"IS"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">32</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">xend=</span><span class="dv">92</span>, <span class="at">yend=</span><span class="dv">2</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">94</span>, <span class="at">y=</span><span class="fl">2.2</span>, <span class="at">label=</span><span class="st">"IS'"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">20</span>, <span class="at">y=</span><span class="dv">2</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">12</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">label=</span><span class="st">"LM"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">7</span>, <span class="at">linetype=</span><span class="st">"dotdash"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">85</span>, <span class="at">y=</span><span class="fl">7.5</span>, <span class="at">label=</span><span class="st">"BP (i=i*)"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">50</span>, <span class="at">y=</span><span class="dv">7</span>), <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">62</span>, <span class="at">y=</span><span class="dv">7</span>), <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">48</span>, <span class="at">y=</span><span class="fl">7.8</span>, <span class="at">label=</span><span class="st">"E1"</span>, <span class="at">size=</span><span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">64</span>, <span class="at">y=</span><span class="fl">7.8</span>, <span class="at">label=</span><span class="st">"E2</span><span class="sc">\n</span><span class="st">(Y rises!)"</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">52</span>, <span class="at">y=</span><span class="dv">7</span>, <span class="at">xend=</span><span class="dv">60</span>, <span class="at">yend=</span><span class="dv">7</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>)), <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">56</span>, <span class="at">y=</span><span class="fl">5.8</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"G↑ → IS shifts right</span><span class="sc">\n</span><span class="st">Fixed rate: LM adjusts via</span><span class="sc">\n</span><span class="st">reserve inflow → Y↑"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="fl">2.8</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">hjust=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Fiscal Expansion (G↑): EFFECTIVE"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Fixed rate + capital mobility: no crowding out"</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Output (Y)"</span>, <span class="at">y=</span><span class="st">"Interest Rate (i)"</span>) <span class="sc">+</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">100</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel 2: Monetary expansion under fixed rate (ineffective)</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>p_monetary <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">20</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">2</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="fl">2.2</span>, <span class="at">label=</span><span class="st">"IS"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">20</span>, <span class="at">y=</span><span class="dv">2</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">12</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">label=</span><span class="st">"LM"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">32</span>, <span class="at">y=</span><span class="dv">2</span>, <span class="at">xend=</span><span class="dv">92</span>, <span class="at">yend=</span><span class="dv">12</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">94</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">label=</span><span class="st">"LM'"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">7</span>, <span class="at">linetype=</span><span class="st">"dotdash"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">85</span>, <span class="at">y=</span><span class="fl">7.5</span>, <span class="at">label=</span><span class="st">"BP (i=i*)"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">50</span>, <span class="at">y=</span><span class="dv">7</span>), <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">62</span>, <span class="at">y=</span><span class="dv">4</span>), <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">48</span>, <span class="at">y=</span><span class="fl">7.8</span>, <span class="at">label=</span><span class="st">"E1"</span>, <span class="at">size=</span><span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">64</span>, <span class="at">y=</span><span class="fl">3.5</span>, <span class="at">label=</span><span class="st">"E' (temp)"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">67</span>, <span class="at">y=</span><span class="dv">6</span>, <span class="at">xend=</span><span class="dv">57</span>, <span class="at">yend=</span><span class="fl">6.5</span>,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>)), <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">68</span>, <span class="at">y=</span><span class="fl">6.3</span>,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"M↑ → i falls → capital</span><span class="sc">\n</span><span class="st">outflow → CB sells USD</span><span class="sc">\n</span><span class="st">→ M contracts back</span><span class="sc">\n</span><span class="st">→ LM returns to LM!"</span>,</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="fl">2.7</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Monetary Expansion (M↑): INEFFECTIVE"</span>,</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Fixed rate: M expansion fully offset by reserve loss"</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Output (Y)"</span>, <span class="at">y=</span><span class="st">"Interest Rate (i)"</span>) <span class="sc">+</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">100</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>p_fiscal <span class="sc">+</span> p_monetary <span class="sc">+</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">title=</span><span class="st">"Mundell-Fleming: Fixed Exchange Rate Regime"</span>,</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle=</span><span class="st">"Key result: Fiscal policy highly effective; Monetary policy completely ineffective"</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-mf-fixed" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mf-fixed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-mf-fixed-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mf-fixed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Mundell-Fleming Fixed Rate: Fiscal Expansion is Effective; Monetary Expansion is Not Source: Author’s illustration after Mundell (1963) and Fleming (1962).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Mathematical mechanism — why monetary policy fails under fixed rate:</strong></p>
+<p>Under fixed <span class="math inline">\(e\)</span>: <span class="math inline">\(M\uparrow \Rightarrow i\downarrow \Rightarrow\)</span> capital outflow <span class="math inline">\(\Rightarrow\)</span> BoP deficit <span class="math inline">\(\Rightarrow\)</span> CB sells reserves <span class="math inline">\(\Rightarrow M\)</span> contracts back to original level.</p>
+<p><strong>Agricultural policy implication:</strong> Under a fixed rate, only government spending (e.g., irrigation subsidies, MSP support operations, fertiliser subsidies) can stimulate the farm economy — not RBI rate cuts. The RBI is powerless to lower borrowing costs for farmers if the exchange rate is pegged.</p>
+</section>
+<section id="mf-model-flexible-exchange-rate-monetary-effective-fiscal-crowded-out" class="level2">
+<h2 class="anchored" data-anchor-id="mf-model-flexible-exchange-rate-monetary-effective-fiscal-crowded-out">MF Model: Flexible Exchange Rate — Monetary Effective, Fiscal Crowded Out</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel 1: Monetary expansion under flexible (effective)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p_mon_flex <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">20</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">2</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="fl">2.2</span>, <span class="at">label=</span><span class="st">"IS"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">32</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">xend=</span><span class="dv">92</span>, <span class="at">yend=</span><span class="dv">2</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">94</span>, <span class="at">y=</span><span class="fl">2.2</span>, <span class="at">label=</span><span class="st">"IS'"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">20</span>, <span class="at">y=</span><span class="dv">2</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">12</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">label=</span><span class="st">"LM"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">32</span>, <span class="at">y=</span><span class="dv">2</span>, <span class="at">xend=</span><span class="dv">92</span>, <span class="at">yend=</span><span class="dv">12</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">94</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">label=</span><span class="st">"LM'"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">7</span>, <span class="at">linetype=</span><span class="st">"dotdash"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">85</span>, <span class="at">y=</span><span class="fl">7.5</span>, <span class="at">label=</span><span class="st">"BP (i=i*)"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">50</span>, <span class="at">y=</span><span class="dv">7</span>), <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">68</span>, <span class="at">y=</span><span class="dv">7</span>), <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">48</span>, <span class="at">y=</span><span class="fl">7.8</span>, <span class="at">label=</span><span class="st">"E1"</span>, <span class="at">size=</span><span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">70</span>, <span class="at">y=</span><span class="fl">7.8</span>, <span class="at">label=</span><span class="st">"E2</span><span class="sc">\n</span><span class="st">(Y rises!)"</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">52</span>, <span class="at">y=</span><span class="dv">7</span>, <span class="at">xend=</span><span class="dv">66</span>, <span class="at">yend=</span><span class="dv">7</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>)), <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">56</span>, <span class="at">y=</span><span class="fl">5.3</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"M↑ → i↓ → capital outflow</span><span class="sc">\n</span><span class="st">→ currency depreciates</span><span class="sc">\n</span><span class="st">→ NX↑ → IS shifts right</span><span class="sc">\n</span><span class="st">→ Y rises at same i*"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="fl">2.7</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">hjust=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Monetary Expansion (M↑): EFFECTIVE"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Depreciation channel boosts NX and output"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Output (Y)"</span>, <span class="at">y=</span><span class="st">"Interest Rate (i)"</span>) <span class="sc">+</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">100</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel 2: Fiscal expansion under flexible (ineffective - crowded out)</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>p_fisc_flex <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">20</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">2</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="fl">2.2</span>, <span class="at">label=</span><span class="st">"IS"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">32</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">xend=</span><span class="dv">92</span>, <span class="at">yend=</span><span class="dv">2</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">94</span>, <span class="at">y=</span><span class="fl">2.2</span>, <span class="at">label=</span><span class="st">"IS'"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">20</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">2</span>), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>, <span class="at">linetype=</span><span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">20</span>, <span class="at">y=</span><span class="dv">2</span>, <span class="at">xend=</span><span class="dv">80</span>, <span class="at">yend=</span><span class="dv">12</span>), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">82</span>, <span class="at">y=</span><span class="dv">12</span>, <span class="at">label=</span><span class="st">"LM"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">7</span>, <span class="at">linetype=</span><span class="st">"dotdash"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">85</span>, <span class="at">y=</span><span class="fl">7.5</span>, <span class="at">label=</span><span class="st">"BP (i=i*)"</span>, <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">50</span>, <span class="at">y=</span><span class="dv">7</span>), <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">62</span>, <span class="at">y=</span><span class="dv">10</span>), <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">48</span>, <span class="at">y=</span><span class="fl">7.8</span>, <span class="at">label=</span><span class="st">"E1 = E2"</span>, <span class="at">size=</span><span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">64</span>, <span class="at">y=</span><span class="fl">10.5</span>, <span class="at">label=</span><span class="st">"E' (temp)"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">62</span>, <span class="at">y=</span><span class="fl">9.5</span>, <span class="at">xend=</span><span class="dv">55</span>, <span class="at">yend=</span><span class="dv">8</span>,</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>)), <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">63</span>, <span class="at">y=</span><span class="fl">8.5</span>,</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"G↑ → IS shifts right</span><span class="sc">\n</span><span class="st">→ i rises → capital inflow</span><span class="sc">\n</span><span class="st">→ INR appreciates</span><span class="sc">\n</span><span class="st">→ NX falls → IS shifts back!</span><span class="sc">\n</span><span class="st">Y unchanged."</span>,</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="fl">2.7</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Fiscal Expansion (G↑): CROWDED OUT"</span>,</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Appreciation destroys NX gain — Y returns to E1"</span>,</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Output (Y)"</span>, <span class="at">y=</span><span class="st">"Interest Rate (i)"</span>) <span class="sc">+</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">100</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>)</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>p_mon_flex <span class="sc">+</span> p_fisc_flex <span class="sc">+</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">title=</span><span class="st">"Mundell-Fleming: Flexible Exchange Rate Regime"</span>,</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle=</span><span class="st">"Key result: Monetary policy effective (exchange rate channel); Fiscal policy crowded out via exchange rate appreciation"</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-mf-flexible" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mf-flexible-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-mf-flexible-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mf-flexible-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Mundell-Fleming Flexible Rate: Monetary Policy Effective; Fiscal Policy Crowded Out via Exchange Rate Source: Author’s illustration after Mundell (1963) and Fleming (1962).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Mathematical mechanism — fiscal crowding out under flexible rate:</strong></p>
+<p>Under flexible <span class="math inline">\(e\)</span>: <span class="math inline">\(G\uparrow \Rightarrow Y\uparrow \Rightarrow M_d\uparrow \Rightarrow i\uparrow \Rightarrow\)</span> capital inflow <span class="math inline">\(\Rightarrow\)</span> INR appreciates <span class="math inline">\(\Rightarrow NX\downarrow \Rightarrow Y\)</span> falls back</p>
+<p><strong>Agricultural implication under flexible rate:</strong> RBI rate cuts (monetary easing) boost agri exports via INR depreciation; fiscal spending on agriculture (e.g., PM-KISAN, PMFBY) may be partially crowded out by INR appreciation — reducing export competitiveness even as domestic support rises.</p>
+</section>
+<section id="mundell-fleming-policy-effectiveness-summary" class="level2">
+<h2 class="anchored" data-anchor-id="mundell-fleming-policy-effectiveness-summary">Mundell-Fleming: Policy Effectiveness Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 32%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Policy</th>
+<th>Fixed Rate</th>
+<th>Flexible Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fiscal expansion (G↑)</td>
+<td><strong>Effective</strong> — no crowding out, LM adjusts via reserves</td>
+<td><strong>Ineffective</strong> — crowded out by exchange rate appreciation</td>
+</tr>
+<tr class="even">
+<td>Monetary expansion (M↑)</td>
+<td><strong>Ineffective</strong> — fully offset by reserve loss</td>
+<td><strong>Effective</strong> — works via exchange rate depreciation channel</td>
+</tr>
+<tr class="odd">
+<td>Mechanism</td>
+<td>Reserve flows maintain fixed e</td>
+<td>Exchange rate adjusts to maintain BoP</td>
+</tr>
+</tbody>
+</table>
+<div class="keybox">
+<p><strong>Mundell’s insight (Nobel Prize 2000):</strong> The exchange rate regime determines which instruments of macroeconomic policy are effective. India’s managed float means both instruments have <em>partial</em> effectiveness — neither fully effective nor fully neutralised.</p>
+</div>
+<div class="highlightbox">
+<p><strong>Agricultural policy implication:</strong> Under India’s managed float, RBI rate reductions (monetary easing) can boost INR exports through depreciation — but the effect is partial and conditional on RBI allowing the exchange rate to move. When RBI intervenes to prevent depreciation (to fight inflation), the monetary transmission via exchange rate is blocked.</p>
+</div>
+</section>
+<section id="indias-forex-reserves-from-crisis-to-abundance" class="level2">
+<h2 class="anchored" data-anchor-id="indias-forex-reserves-from-crisis-to-abundance">India’s Forex Reserves: From Crisis to Abundance</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reserves <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2002</span>,<span class="dv">2004</span>,<span class="dv">2006</span>,<span class="dv">2008</span>,<span class="dv">2010</span>,<span class="dv">2012</span>,<span class="dv">2014</span>,<span class="dv">2016</span>,<span class="dv">2018</span>,<span class="dv">2020</span>,<span class="dv">2021</span>,<span class="dv">2022</span>,<span class="dv">2023</span>,<span class="dv">2024</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">reserves_b =</span> <span class="fu">c</span>(<span class="dv">38</span>,<span class="dv">67</span>,<span class="dv">141</span>,<span class="dv">199</span>,<span class="dv">310</span>,<span class="dv">297</span>,<span class="dv">296</span>,<span class="dv">322</span>,<span class="dv">366</span>,<span class="dv">405</span>,<span class="dv">580</span>,<span class="dv">642</span>,<span class="dv">532</span>,<span class="dv">620</span>,<span class="dv">645</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">months_import =</span> <span class="fu">c</span>(<span class="fl">5.1</span>,<span class="fl">9.8</span>,<span class="fl">14.2</span>,<span class="fl">13.4</span>,<span class="fl">9.8</span>,<span class="fl">9.5</span>,<span class="fl">6.8</span>,<span class="fl">8.1</span>,<span class="fl">10.5</span>,<span class="fl">9.2</span>,<span class="fl">15.8</span>,<span class="fl">14.1</span>,<span class="fl">9.4</span>,<span class="fl">11.5</span>,<span class="fl">11.0</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(reserves, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>reserves_b)) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">fill=</span><span class="st">"#012169"</span>, <span class="at">alpha=</span><span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.8</span>) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">2001</span>, <span class="at">y=</span><span class="dv">100</span>, <span class="at">label=</span><span class="st">"1991: $1.2B</span><span class="sc">\n</span><span class="st">(only 2 weeks</span><span class="sc">\n</span><span class="st">import cover!)"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="fl">2.8</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">2001</span>, <span class="at">y=</span><span class="dv">80</span>, <span class="at">xend=</span><span class="dv">2001</span>, <span class="at">yend=</span><span class="dv">45</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.2</span>,<span class="st">"cm"</span>)), <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2024</span>,<span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span><span class="fu">dollar_format</span>(<span class="at">suffix=</span><span class="st">"B"</span>, <span class="at">prefix=</span><span class="st">"$"</span>)) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"India's Forex Reserves (USD Billion)"</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"From $38B (2000) to $645B (2024) — 17x increase"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="st">"USD Billion"</span>) <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(reserves, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>months_import)) <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.8</span>) <span class="sc">+</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">size=</span><span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">3</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">2016</span>, <span class="at">y=</span><span class="fl">3.6</span>, <span class="at">label=</span><span class="st">"Safety threshold: 3 months"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2024</span>,<span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Import Cover (Months of Imports)"</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"India currently has 11 months of import cover — well above the 3-month safety threshold"</span>,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="st">"Months of Imports"</span>) <span class="sc">+</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">/</span> p2 <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"India's Forex Reserves: From Crisis (1991) to Abundance (2024)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-forex-reserves" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-forex-reserves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-forex-reserves-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forex-reserves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: India’s Forex Reserves (USD billion) and Import Cover (months), 2000–2024 Source: RBI, Database on Indian Economy (DBIE).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="math display">\[\text{RBI's forex reserves} \approx \$645\text{B (FY2024)} \approx 11\text{ months of import cover}\]</span></p>
+<p><strong>Safety threshold</strong> = 3 months (Guidotti-Greenspan rule). India’s current buffer gives the RBI substantial firepower to defend the rupee in times of global turbulence. The $645B reserve stockpile is the direct product of 30 years of managed-float reserve accumulation — a deliberate policy choice to never repeat 1991.</p>
+</section>
+<section id="rbi-and-indias-managed-float" class="level2">
+<h2 class="anchored" data-anchor-id="rbi-and-indias-managed-float">RBI and India’s Managed Float</h2>
+<p><strong>How RBI intervenes:</strong></p>
+<ul>
+<li><strong>Depreciation prevention</strong> (INR falls too fast): RBI <strong>sells USD</strong> from reserves, absorbing rupees → reduces money supply → supports INR</li>
+<li><strong>Appreciation prevention</strong> (INR rises too fast): RBI <strong>buys USD</strong>, injecting rupees → increases money supply → weakens INR</li>
+</ul>
+<p><strong>Sterilization mechanism:</strong></p>
+<p><span class="math display">\[\Delta \text{Reserves} + \Delta \text{Domestic Credit} = \Delta M\]</span></p>
+<p>When RBI buys USD → <span class="math inline">\(\Delta M\)</span> (base money rises) → RBI sells G-secs (government securities) to sterilize — absorbing ₹ and keeping money supply neutral.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Depreciation prevention (sell USD):</strong></p>
+<ul>
+<li>Triggered when INR weakens sharply</li>
+<li>E.g., 2022: RBI sold ~$100B as INR slid from ₹74 → ₹83</li>
+<li>Reserves fell from $640B → $530B in 6 months</li>
+<li>Sterilized via reverse repo (absorbing ₹)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Appreciation prevention (buy USD):</strong></p>
+<ul>
+<li>Triggered when large capital inflows strengthen INR</li>
+<li>E.g., 2021: RBI bought ~$67B as FPI inflows surged</li>
+<li>Reserves rose from $580B → $640B</li>
+<li>Sterilized via G-sec sales (absorbing ₹)</li>
+</ul>
+</div>
+</div>
+<div class="keybox">
+<p><strong>RBI’s two-way intervention evidence:</strong> - FY2021: Net purchases ~$67B (preventing appreciation during COVID capital inflows) - FY2022–23: Net sales ~$100B (preventing excessive depreciation) - IMF and US Treasury classification: India is <strong>NOT</strong> a currency manipulator — two-way intervention distinguishes managed float from competitive devaluation.</p>
+</div>
+</section>
+<section id="the-forward-exchange-market" class="level2">
+<h2 class="anchored" data-anchor-id="the-forward-exchange-market">The Forward Exchange Market</h2>
+<p><strong>Forward rate <span class="math inline">\(F\)</span>:</strong> The exchange rate agreed today for currency delivery at a specified future date <span class="math inline">\(T\)</span>.</p>
+<p><strong>Forward premium/discount formula:</strong></p>
+<p><span class="math display">\[\text{Forward premium on USD} = \frac{F - E}{E} \times \frac{12}{n} \times 100\%\]</span></p>
+<p>where <span class="math inline">\(n\)</span> = months to delivery, <span class="math inline">\(E\)</span> = current spot rate, <span class="math inline">\(F\)</span> = forward rate.</p>
+<p><strong>Numerical example:</strong></p>
+<p><span class="math inline">\(E = ₹83.5/\$\)</span>, <span class="math inline">\(F\)</span> (3-month) <span class="math inline">\(= ₹84.2/\$\)</span>:</p>
+<p><span class="math display">\[\text{Forward premium} = \frac{84.2-83.5}{83.5} \times 4 \times 100 = 3.35\%\text{ p.a.}\]</span></p>
+<p><strong>Covered Interest Parity (CIP)</strong> ensures: Forward premium <span class="math inline">\(\approx i_{India} - i_{USA}\)</span> (otherwise riskless arbitrage profits exist).</p>
+<p><strong>Participants in India’s forward market:</strong></p>
+<ul>
+<li>RBI-regulated Authorised Dealer (AD) banks</li>
+<li>FEDAI (Foreign Exchange Dealers Association of India) — sets market conventions</li>
+<li>Corporates with genuine underlying forex exposure (exporters, importers, MNCs)</li>
+<li>Since 2019: limited speculative participation allowed in exchange-traded currency futures</li>
+</ul>
+<div class="methodbox">
+<p><strong>Who uses forward markets in agriculture?</strong></p>
+<ul>
+<li><strong>Large agri exporters:</strong> ITC (rice, wheat), KRBL (basmati rice), Adani Agri — use forward sales to lock in INR realisation on USD export proceeds</li>
+<li><strong>Edible oil importers:</strong> Adani Wilmar, Ruchi Soya — use forward purchases to lock in INR cost of palm oil imports</li>
+<li><strong>Fertiliser importers:</strong> IFFCO, Coromandel — use forwards for urea/DAP import cost certainty</li>
+<li><strong>Small farmers and FPOs:</strong> virtually no direct access — forward contracts require minimum $250,000 face value in OTC market</li>
+</ul>
+</div>
+</section>
+<section id="hedging-with-forward-contracts" class="level2">
+<h2 class="anchored" data-anchor-id="hedging-with-forward-contracts">Hedging with Forward Contracts</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>e_future <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">78</span>, <span class="dv">92</span>, <span class="at">by=</span><span class="fl">0.25</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>unhedged <span class="ot">&lt;-</span> e_future <span class="sc">*</span> <span class="dv">10</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>hedged_rate <span class="ot">&lt;-</span> <span class="fl">84.2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>hedged <span class="ot">&lt;-</span> <span class="fu">rep</span>(hedged_rate <span class="sc">*</span> <span class="dv">10</span>, <span class="fu">length</span>(e_future))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df_hedge <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">e_future =</span> e_future,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">unhedged =</span> unhedged,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">hedged =</span> hedged</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>df_hedge_below <span class="ot">&lt;-</span> df_hedge[df_hedge<span class="sc">$</span>e_future <span class="sc">&lt;=</span> hedged_rate, ]</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>df_hedge_above <span class="ot">&lt;-</span> df_hedge[df_hedge<span class="sc">$</span>e_future <span class="sc">&gt;=</span> hedged_rate, ]</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_hedge, <span class="fu">aes</span>(<span class="at">x=</span>e_future)) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data=</span>df_hedge_below,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x=</span>e_future, <span class="at">ymin=</span>unhedged, <span class="at">ymax=</span>hedged),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill=</span><span class="st">"darkgreen"</span>, <span class="at">alpha=</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data=</span>df_hedge_above,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x=</span>e_future, <span class="at">ymin=</span>hedged, <span class="at">ymax=</span>unhedged),</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill=</span><span class="st">"#cc0000"</span>, <span class="at">alpha=</span><span class="fl">0.15</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>unhedged, <span class="at">color=</span><span class="st">"Unhedged (spot rate risk)"</span>), <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>hedged, <span class="at">color=</span><span class="st">"Hedged (forward at ₹84.2/$)"</span>), <span class="at">linewidth=</span><span class="fl">1.5</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span>hedged_rate, <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">color=</span><span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">80</span>, <span class="at">y=</span><span class="dv">826</span>, <span class="at">label=</span><span class="st">"Hedging protects</span><span class="sc">\n</span><span class="st">exporter here</span><span class="sc">\n</span><span class="st">(INR appreciates)"</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">87.5</span>, <span class="at">y=</span><span class="dv">854</span>, <span class="at">label=</span><span class="st">"Opportunity cost:</span><span class="sc">\n</span><span class="st">forgo this gain</span><span class="sc">\n</span><span class="st">(INR depreciates further)"</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#cc0000"</span>) <span class="sc">+</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"Unhedged (spot rate risk)"</span><span class="ot">=</span><span class="st">"#012169"</span>,</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Hedged (forward at ₹84.2/$)"</span><span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Rice Exporter: Hedging $10M Receivable with 3-Month Forward Contract"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Forward rate = ₹84.2/$. Hedging locks in ₹842M. Below ₹84.2: hedge wins; above: foregone upside."</span>,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Future Spot Rate (₹ per $)"</span>, <span class="at">y=</span><span class="st">"INR Received (crores)"</span>,</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">color=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-hedging" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hedging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-hedging-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hedging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Currency Hedging: A Rice Exporter’s Forward Contract vs Unhedged Position Source: Author’s illustration.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="keybox">
+<p><strong>Who hedges in India’s agricultural sector?</strong></p>
+<p>Large corporates (ITC, Adani Agri, KRBL) hedge routinely. Minimum OTC forward contract: typically <strong>$250,000</strong> — above most small exporters’ scale.</p>
+<p><strong>SEBI currency futures (NSE/BSE):</strong> Smaller lot sizes (₹1 lakh in USD/INR futures contract = ~$1,200) — far more accessible for smaller players. However, requires margin account and daily mark-to-market — a new administrative burden.</p>
+</div>
+</section>
+<section id="exchange-rate-pass-through" class="level2">
+<h2 class="anchored" data-anchor-id="exchange-rate-pass-through">Exchange Rate Pass-Through</h2>
+<p><strong>Definition:</strong> The <strong>pass-through coefficient</strong> <span class="math inline">\(\psi\)</span> measures how much of an exchange rate change is reflected in domestic import prices.</p>
+<p><span class="math display">\[\psi = \frac{\% \Delta P^{import}}{\% \Delta e}\]</span></p>
+<ul>
+<li>If <span class="math inline">\(\psi = 1\)</span> (<strong>complete pass-through</strong>): 10% INR depreciation → 10% rise in import prices (exporters maintain foreign-currency price)</li>
+<li>If <span class="math inline">\(\psi &lt; 1\)</span> (<strong>incomplete</strong>): foreign exporters absorb some of the change in their margins (especially for branded/differentiated goods)</li>
+</ul>
+<p><strong>General formula:</strong></p>
+<p><span class="math display">\[\Delta P^{import} = \psi \cdot \Delta e + \text{world price change}\]</span></p>
+<p><strong>India estimates:</strong></p>
+<ul>
+<li><strong>Edible oil:</strong> <span class="math inline">\(\psi \approx 0.7\)</span>–<span class="math inline">\(0.85\)</span> (high — palm oil is homogeneous, world price sets import price)</li>
+<li><strong>Manufactured imports:</strong> <span class="math inline">\(\psi \approx 0.4\)</span>–<span class="math inline">\(0.6\)</span> (lower — brand and quality differentiation)</li>
+<li><strong>Petroleum products:</strong> <span class="math inline">\(\psi \approx 0.9\)</span> (nearly complete — global commodity)</li>
+</ul>
+<div class="highlightbox">
+<p><strong>India’s edible oil channel:</strong></p>
+<p>₹10 depreciation per dollar (e.g., ₹75 → ₹85) → palm oil domestic price rises ~₹8–9 per litre (pass-through ≈ 80%). At India’s <strong>20 million tonne</strong> annual edible oil consumption (~1.4 billion litres), a ₹9/litre rise = ₹12,600 crore additional annual cost for consumers. This is a direct <strong>food security and inflation</strong> consequence of INR depreciation — exchange rate policy and food price policy are inseparable.</p>
+</div>
+</section>
+<section id="inr-depreciation-and-agricultural-exports" class="level2">
+<h2 class="anchored" data-anchor-id="inr-depreciation-and-agricultural-exports">INR Depreciation and Agricultural Exports</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>agri_inr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">inr_usd =</span> <span class="fu">c</span>(<span class="fl">45.7</span>,<span class="fl">46.7</span>,<span class="fl">53.4</span>,<span class="fl">60.1</span>,<span class="fl">61.0</span>,<span class="fl">65.5</span>,<span class="fl">67.1</span>,<span class="fl">65.1</span>,<span class="fl">69.9</span>,<span class="fl">70.4</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>              <span class="fl">74.1</span>,<span class="fl">73.9</span>,<span class="fl">76.2</span>,<span class="fl">82.6</span>,<span class="fl">83.5</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">agri_exports =</span> <span class="fu">c</span>(<span class="dv">18</span>,<span class="dv">26</span>,<span class="dv">36</span>,<span class="dv">39</span>,<span class="dv">42</span>,<span class="dv">43</span>,<span class="dv">34</span>,<span class="dv">33</span>,<span class="dv">38</span>,<span class="dv">40</span>,<span class="dv">41</span>,<span class="dv">50</span>,<span class="dv">53</span>,<span class="dv">54</span>,<span class="dv">53</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(agri_inr, <span class="fu">aes</span>(<span class="at">x=</span>inr_usd, <span class="at">y=</span>agri_exports)) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>, <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">fill=</span><span class="st">"#B9975B"</span>, <span class="at">alpha=</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>year), <span class="at">nudge_y=</span><span class="fl">0.9</span>, <span class="at">size=</span><span class="fl">2.8</span>, <span class="at">color=</span><span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"INR/USD Rate vs India's Agricultural Exports (FY2010–FY2024)"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Positive correlation: weaker INR generally associated with higher agri exports (USD terms)"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"INR per USD (year average)"</span>, <span class="at">y=</span><span class="st">"Agri Exports (USD Billion)"</span>) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-inr-agri-exports" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inr-agri-exports-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-inr-agri-exports-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inr-agri-exports-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: INR/USD Rate vs India’s Agricultural Export Value (FY2010–FY2024) Source: RBI (exchange rate); APEDA / DGCI&amp;S (export value).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Interpretation:</strong> Correlation <span class="math inline">\(r \approx +0.85\)</span> — weaker INR generally associated with higher agri exports in USD terms (and much higher in INR terms).</p>
+<p><strong>Caveat:</strong> Causation runs both ways, and global demand also matters (e.g., China’s soybean demand, Middle East rice demand). The correlation reflects both the price competitiveness effect and the common driver of global commodity cycles.</p>
+<p><strong>2013–14 rice export boom:</strong> INR fell from ₹53 → ₹61 (depreciation of 15%). India’s rice exports rose 35% in USD terms — India became the world’s largest rice exporter, displacing Thailand.</p>
+<div class="keybox">
+<p><strong>Competitiveness arithmetic:</strong></p>
+<p>At ₹83/$ vs ₹75/$: Indian rice is effectively <strong>10.7% cheaper</strong> for foreign buyers (since they pay in USD, and more INR are now received per dollar exported). This is a direct price competitiveness gain — equivalent to a 10.7% export subsidy, but achieved through exchange rate movement rather than fiscal expenditure.</p>
+</div>
+</section>
+<section id="indias-edible-oil-vulnerability" class="level2">
+<h2 class="anchored" data-anchor-id="indias-edible-oil-vulnerability">India’s Edible Oil Vulnerability</h2>
+<p><strong>India’s edible oil import dependence:</strong></p>
+<ul>
+<li>Imports: <strong>14–16 million tonnes</strong> annually (~$14–18 billion)</li>
+<li>Sources: Malaysia/Indonesia (palm oil ~8 Mt), Argentina/Brazil (soy oil ~3 Mt), Ukraine/Russia (sunflower ~3 Mt)</li>
+<li>Import dependence: ~65% of domestic consumption</li>
+</ul>
+<p><strong>Exchange rate and import bill arithmetic:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 35%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Exchange Rate</th>
+<th>Palm Oil Cost (₹/tonne)</th>
+<th>Annual Bill (for 10 Mt palm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>₹75/$</td>
+<td>₹67,500</td>
+<td>₹67,500 crore</td>
+</tr>
+<tr class="even">
+<td>₹80/$</td>
+<td>₹72,000</td>
+<td>₹72,000 crore</td>
+</tr>
+<tr class="odd">
+<td>₹85/$</td>
+<td>₹76,500</td>
+<td>₹76,500 crore (+13.3%)</td>
+</tr>
+</tbody>
+</table>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Fiscal cost and duty adjustment:</strong></p>
+<p>India uses <strong>import duty adjustments</strong> as a shock absorber: - Normal: Basic Customs Duty (BCD) on crude palm oil = 15% - During price spikes: duty cut to 0% (done in 2022–23) - AIDC (Agriculture Infrastructure Development Cess) also adjusted - But: zero is the floor — further duty cuts impossible once at zero - Exchange rate depreciation <strong>cannot</strong> be offset by duty reductions once duties hit zero</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>Inflation arithmetic:</strong></p>
+<p>If INR depreciates 10% and import duty is already zero: - Palm oil price rises ~8–9% (pass-through ≈ 85%) - Cooking oil retail prices follow with 4–6 week lag - CPI food index weight of edible oils: ~3.5% - 8% rise in edible oils → +0.28 percentage points on headline CPI - RBI tolerance band: 2–6% — a 0.28pp shock is material</p>
+<p><strong>Lesson:</strong> Exchange rate is an uncontrollable external variable that directly affects domestic food security through the edible oil channel.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="managing-currency-risk-in-agricultural-trade" class="level2">
+<h2 class="anchored" data-anchor-id="managing-currency-risk-in-agricultural-trade">Managing Currency Risk in Agricultural Trade</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Agri Exporters</strong> <em>(risk: INR appreciates, reducing INR revenue)</em></p>
+<ul>
+<li><strong>Natural hedge:</strong> match USD receivables with USD payables — if exporter also imports inputs (packaging, machinery) in USD</li>
+<li><strong>Forward sales:</strong> lock in ₹/$ today for future USD receipt — eliminate downside but sacrifice upside</li>
+<li><strong>Export credit in USD (ECB):</strong> borrow in USD, repay with export proceeds — no currency conversion needed</li>
+<li><strong>Put options on USD:</strong> right to sell USD at floor price — limits downside while retaining upside if INR depreciates further</li>
+<li><strong>Invoice in INR</strong> (for niche/branded exports — Darjeeling tea, GI products — where buyer accepts INR pricing)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Agri Importers</strong> <em>(risk: INR depreciates, raising ₹ cost)</em></p>
+<ul>
+<li><strong>Forward purchases:</strong> lock in ₹/$ for future USD payment — certainty on import cost</li>
+<li><strong>Call options on USD:</strong> right to buy USD at ceiling price — caps cost if INR weakens, retains benefit if INR strengthens</li>
+<li><strong>Invoice in INR</strong> (where possible — limited for commodity imports, as palm oil/soy are priced in USD globally)</li>
+<li><strong>Stock more when rate is favorable:</strong> build inventory at ₹75/$ to avoid exposure at ₹83/$</li>
+<li><strong>Rupee-denominated import contracts:</strong> India negotiating with some suppliers (UAE, Russia) for INR-denominated trade</li>
+</ul>
+</div>
+</div>
+<div class="keybox">
+<p><strong>Policy gap — the small farmer problem:</strong></p>
+<p>Most small farmers and village-level exporters have <strong>NO access</strong> to these instruments. The entire forex risk is absorbed upstream in the supply chain (by the aggregator/exporter), who discounts the farmgate price as compensation for bearing this risk. A farmer in Amritsar selling basmati to an exporter is effectively subsidising the exporter’s hedging costs through a lower farmgate price. This is an equity and market structure issue at the intersection of forex markets and agricultural trade.</p>
+</div>
+</section>
+<section id="bop-and-the-current-account-deficit-the-agricultural-connection" class="level2">
+<h2 class="anchored" data-anchor-id="bop-and-the-current-account-deficit-the-agricultural-connection">BoP and the Current Account Deficit: The Agricultural Connection</h2>
+<p><strong>BoP structure:</strong></p>
+<p><span class="math display">\[\text{Current Account} + \text{Capital Account} + \text{Financial Account} = 0\]</span></p>
+<p>India’s current account deficit (CAD) averages <strong>1.5–2.5% of GDP</strong> (relatively moderate by emerging market standards).</p>
+<p><strong>Main CAD drivers:</strong></p>
+<p><span class="math display">\[CAD = TB_{merch} + TB_{services} + \text{Remittances} + \text{Primary income}\]</span></p>
+<p>FY2024 approximate: <span class="math inline">\(-\$300B + \$150B + \$100B + (-\$30B) \approx -\$80B \text{ CAD}\)</span></p>
+<p><strong>Agricultural trade balance — a current account bright spot:</strong></p>
+<ul>
+<li>India’s agri trade balance: typically a <strong>surplus of ~$20–25B</strong> (FY2024: ~$25B net)</li>
+<li>This surplus partially offsets the oil import bill (~$200B) and gold imports (~$40B)</li>
+</ul>
+<div class="highlightbox">
+<p><strong>Agriculture’s role in India’s BoP:</strong></p>
+<p>India’s agricultural export surplus (~$25B in FY2024) is a meaningful contributor to current account balance. The major items: rice (~$10B), spices (~$4B), sugar (~$3B), marine products (~$7B), cotton (~$2B). Exchange rate depreciation that boosts agri exports <strong>directly helps the BoP</strong> by expanding this surplus — which in turn reduces pressure on the RBI to defend the rupee.</p>
+<p><strong>The policy feedback loop:</strong> Weaker INR → higher agri exports → better BoP → less reserve depletion → less pressure on INR → partial self-correction. This is the open economy automatic stabiliser at work.</p>
+</div>
+</section>
+<section id="key-takeaways-lecture-12" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways-lecture-12">Key Takeaways: Lecture 12</h2>
+<div class="keybox">
+<p><strong>Five core concepts from Lecture 12:</strong></p>
+</div>
+<ol type="1">
+<li><p><strong>Exchange rate regimes:</strong> Free float (USA), managed float (India), fixed (Gulf). India’s managed float (post-1993) preserves partial monetary independence at the cost of active reserve management ($645B stockpile).</p></li>
+<li><p><strong>Impossible Trinity:</strong> Cannot have all three of fixed rate + free capital + monetary independence. India chooses partial versions of all three — a pragmatic compromise that gives flexibility without full commitment to any extreme.</p></li>
+<li><p><strong>Mundell-Fleming model:</strong></p>
+<ul>
+<li><em>Fixed rate</em>: Fiscal policy effective (<span class="math inline">\(G\uparrow \Rightarrow Y\uparrow\)</span>); Monetary policy ineffective (<span class="math inline">\(M\uparrow\)</span> offset by reserve loss)</li>
+<li><em>Flexible rate</em>: Monetary policy effective (<span class="math inline">\(M\uparrow \Rightarrow e\uparrow \Rightarrow NX\uparrow \Rightarrow Y\uparrow\)</span>); Fiscal crowded out by appreciation</li>
+</ul></li>
+<li><p><strong>Hedging:</strong> Forward contracts lock in exchange rate for future transactions; essential for large agri exporters/importers. CIP ensures forward premium = interest differential. Small farmers cannot access these instruments — a key equity gap.</p></li>
+<li><p><strong>Agriculture–exchange rate nexus:</strong> Depreciation helps rice/cotton/spice exporters (direct competitiveness); hurts edible oil/fertiliser importers (cost inflation); RBI’s managed float attempts to balance these competing interests through two-way intervention.</p></li>
+</ol>
+</section>
+<section id="exchange-rates-as-agricultural-trade-policy" class="level2">
+<h2 class="anchored" data-anchor-id="exchange-rates-as-agricultural-trade-policy">Exchange Rates as Agricultural Trade Policy</h2>
+<p><strong>Exchange rate policy IS trade policy in disguise:</strong></p>
+<p>A country that keeps its currency undervalued effectively <strong>subsidises all its exports</strong> and <strong>taxes all its imports</strong> — without any WTO-notifiable expenditure.</p>
+<p><strong>China’s managed undervaluation (2000s):</strong></p>
+<ul>
+<li>RMB/USD held artificially low through massive reserve accumulation ($3T+)</li>
+<li>Made Chinese agri exports (garlic, processed food, aquaculture) highly competitive globally</li>
+<li>Undercut Indian agri exporters in third markets — without any explicit subsidy</li>
+</ul>
+<p><strong>Brazil’s floating BRL — competitive depreciation by market:</strong></p>
+<ul>
+<li>BRL/USD fell ~50% in 2015–16 (from BRL 2.5 → BRL 4.0/$)</li>
+<li>Made Brazilian soy, beef, chicken dramatically cheaper in USD terms</li>
+<li>Directly hurt Indian soy farmers and agri exporters in overlapping markets</li>
+<li>India had no “WTO case” — Brazil’s depreciation was market-driven, not policy-directed</li>
+</ul>
+<p><strong>India’s REER concern:</strong></p>
+<ul>
+<li>If India’s <strong>Real Effective Exchange Rate (REER)</strong> rises (INR appreciates in real terms relative to trading partners), agri exports face headwind regardless of domestic MSP levels</li>
+<li>REER = nominal exchange rate × (domestic price level / foreign price level) — captures competitiveness</li>
+<li>India’s REER has trended upward since 2014 (relatively higher inflation than trading partners + nominal rupee stability)</li>
+</ul>
+<div class="methodbox">
+<p><strong>WTO and exchange rates — a critical gap:</strong></p>
+<p>WTO disciplines <strong>agricultural subsidies</strong> (AoA Agreement) but does <strong>NOT</strong> discipline exchange rate policy. Countries can gain large competitive advantages in agricultural trade through currency policy — without violating WTO commitments. This is a major structural asymmetry in international trade rules: a $1B MSP subsidy is notifiable and challengeable; a $50B reserve accumulation that undervalues the currency is not. The IMF (not WTO) has jurisdiction on exchange rate manipulation — but enforcement is weak.</p>
+</div>
+</section>
+<section id="next-lecture-balance-of-payments-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="next-lecture-balance-of-payments-analysis">Next Lecture: Balance of Payments Analysis</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Lecture 13 (July 18, 2026):</strong></p>
+<p><em>Balance of Payments: Structure, Adjustment, and Agricultural Trade</em></p>
+<p>We will cover:</p>
+<ul>
+<li>Current account, capital account, financial account structure</li>
+<li>BoP adjustment mechanisms: automatic (price-specie flow, income adjustment) vs policy-driven</li>
+<li><strong>Marshall-Lerner condition:</strong> when does depreciation improve the trade balance?</li>
+<li><strong>J-curve effect:</strong> short-run vs long-run response to depreciation</li>
+<li>India’s current account deficit: causes and sustainability</li>
+<li>Agricultural trade’s role in India’s BoP (FY2024: ~$25B surplus)</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="methodbox">
+<p><strong>Bridge from today:</strong></p>
+<p>Today we studied:</p>
+<ul>
+<li>What exchange rate regime India operates under</li>
+<li>How policy (fiscal/monetary) works under different regimes (Mundell-Fleming)</li>
+<li>How RBI manages the float and reserves</li>
+<li>Hedging and agricultural trade implications</li>
+</ul>
+<p>Next: we zoom into the <strong>current account</strong> — the scorecard of a country’s trade with the world — and study how it adjusts when it falls into deficit.</p>
+<p><em>Reading: Salvatore Ch 12–13; Appleyard Ch 18–19</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="appendix" class="level1" data-background-color="#1a3a5c">
+<h1 data-background-color="#1a3a5c">Appendix</h1>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section id="additional-resources" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Additional Resources</h2><div class="quarto-appendix-contents">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Further Reading</strong></p>
+<ul>
+<li><em>International Economics</em> — Salvatore (Ch. 15-16)</li>
+<li><em>International Economics</em> — Appleyard &amp; Field (Ch. 15-16)</li>
+<li>RBI/DGCI&amp;S/APEDA databases for latest data</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Key Data Sources</strong></p>
+<ul>
+<li>DGCI&amp;S: India’s merchandise trade</li>
+<li>RBI: Balance of payments data<br>
+</li>
+<li>APEDA: Agricultural export statistics</li>
+<li>WTO: Tariff and trade databases</li>
+</ul>
+</div>
+</div>
+
+
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Department of Development Economics · ECO 2203</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Nithin M · 2026</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

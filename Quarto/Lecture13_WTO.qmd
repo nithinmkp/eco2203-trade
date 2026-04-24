@@ -1,0 +1,940 @@
+﻿---
+title: "Lecture 13: WTO — Origin, Structure and Functions"
+subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+author: "Nithin M"
+institute: "Department of Development Economics"
+date: "July 18, 2026"
+format:
+  revealjs:
+    theme: [default, emory-clean.scss]
+    slide-number: true
+    chalkboard: true
+    transition: slide
+    incremental: false
+    smaller: false
+    scrollable: true
+    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    code-fold: true
+    code-summary: "Show R code"
+  beamer:
+    aspectratio: 169
+    theme: metropolis
+    toc: false
+    section-titles: false
+    include-in-header: beamer-preamble.tex
+    keep-tex: false
+execute:
+  warning: false
+---
+
+## Recap: Lecture 12 {.smaller}
+
+**Lecture 12** examined the **foreign exchange market** — how currencies are priced, how the exchange rate affects export competitiveness, and how India manages the rupee.
+
+::: {.columns}
+::: {.column width="55%"}
+**Key ideas from Lecture 12:**
+
+- Exchange rate as the price of international trade
+- Real exchange rate determines competitiveness
+- RBI intervention in the forex market
+- Currency depreciation ↑ export attractiveness
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**The Bridge to Today**
+
+Trade actually happens through the forex system — but **what rules govern the trade itself?**
+
+Who decides that a country cannot ban imports arbitrarily? Who enforces fair competition?
+
+→ Enter the **World Trade Organization**
+:::
+:::
+:::
+
+---
+
+# From GATT to WTO
+
+---
+
+## GATT to WTO: A Brief History {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**General Agreement on Tariffs and Trade (1947)**
+
+- Signed Oct 1947; entered into force Jan 1948
+- **23 original contracting parties** (provisional — never ratified by US Congress)
+- Goal: reduce tariffs and quantitative restrictions
+- Eight negotiating rounds over 47 years:
+
+| Round | Year | Key Focus |
+|-------|------|-----------|
+| Geneva | 1947 | Tariff cuts |
+| Dillon | 1960–61 | Tariff cuts |
+| Kennedy | 1964–67 | Tariff + anti-dumping |
+| Tokyo | 1973–79 | NTBs |
+| **Uruguay** | **1986–94** | **Agriculture, services, WTO** |
+:::
+::: {.column width="50%"}
+**Why GATT Failed Agriculture**
+
+::: {.methodbox}
+**Three critical weaknesses:**
+
+1. **No enforcement** — "diplomatic" dispute resolution, losing party could block adoption of panel report
+2. **Agriculture excluded** — US/EU "waivers" exempted farm support from discipline
+3. **No services, no IP** — growing share of world trade uncovered
+:::
+
+::: {.keybox}
+WTO replaced GATT on **January 1, 1995** as a permanent international organisation with legal personality, headquarters in Geneva.
+:::
+:::
+:::
+
+---
+
+## The Uruguay Round (1986–1994) {.smaller}
+
+::: {.highlightbox}
+**The most ambitious multilateral trade negotiation in history** — 8 years, 123 countries, launched in Punta del Este, Uruguay
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+**What was new:**
+
+- 🌾 **Agriculture** — AoA for the first time
+- 🏢 **Services** — General Agreement on Trade in Services (GATS)
+- 💡 **Intellectual Property** — TRIPS Agreement
+- 🔨 **Binding dispute settlement** — no more blocking
+
+**Signed at:** Marrakesh, Morocco — **April 15, 1994** (Marrakesh Agreement)
+
+**India's role:** Active participant; founding WTO member
+:::
+::: {.column width="50%"}
+**Uruguay Round Achievements**
+
+- Tariff cuts on industrial goods: ~40%
+- Agriculture: brought under multilateral discipline for first time
+- Services: GATS framework established
+- Intellectual property: TRIPS agreement
+- Dispute settlement: binding DSU mechanism
+- WTO: permanent institution created
+- Single undertaking: all-or-nothing package
+
+::: {.methodbox}
+**Single Undertaking Principle:** "Nothing is agreed until everything is agreed" — countries had to accept the entire package, preventing cherry-picking.
+:::
+:::
+:::
+
+---
+
+## Global Trade vs GDP Growth Index {.center}
+
+```{r}
+#| label: fig-trade-gdp
+#| fig-cap: "Global Trade vs GDP Growth Index (2000-2023)\nSource: WTO, World Trade Statistical Review 2024; World Bank, WDI."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+library(tidyr)
+
+df <- data.frame(
+  year  = c(2000, 2005, 2008, 2010, 2015, 2019, 2020, 2021, 2023),
+  Trade = c(55,   75,   85,   87,   100,  108,  95,   115,  118),
+  GDP   = c(70,   85,   90,   92,   100,  110,  100,  108,  115)
+)
+
+df_long <- pivot_longer(df, cols = c(Trade, GDP),
+                        names_to = "Series", values_to = "Index")
+
+ggplot(df_long, aes(x = year, y = Index, color = Series, group = Series)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 2.5) +
+  annotate("text", x = 2020, y = 88,
+           label = "COVID-19\ndrop", color = "#C84B31",
+           size = 3.2, fontface = "bold") +
+  annotate("segment", x = 2020, xend = 2020, y = 92, yend = 97,
+           color = "#C84B31",
+           arrow = arrow(length = unit(0.18, "cm"))) +
+  scale_color_manual(
+    values = c("Trade" = "#012169", "GDP" = "#B9975B"),
+    labels = c("Trade Volume Index", "GDP Volume Index")
+  ) +
+  scale_x_continuous(breaks = c(2000, 2005, 2008, 2010, 2015, 2019, 2020, 2021, 2023)) +
+  scale_y_continuous(limits = c(50, 125)) +
+  labs(
+    title    = "Global Trade vs GDP Growth Index (2000-2023)",
+    subtitle = "Index: 2015 = 100",
+    x = "Year", y = "Index (2015 = 100)", color = NULL
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom")
+```
+
+---
+
+## WTO at a Glance {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**Key Facts (2024)**
+
+| Item | Detail |
+|------|--------|
+| Headquarters | Geneva, Switzerland |
+| Members | **166** (as of 2024) |
+| Founded | January 1, 1995 |
+| India | **Founding member** |
+| Budget | ~CHF 197 million/year |
+| Staff | ~700 |
+| Official languages | English, French, Spanish |
+
+**Two-thirds of members are developing countries** — WTO is not a "rich country club"
+:::
+::: {.column width="50%"}
+::: {.keybox}
+**Director-General:**
+
+**Ngozi Okonjo-Iweala**
+(Since February 1, 2021)
+
+- First **woman** DG in WTO history
+- First **African** DG in WTO history
+- Former Finance Minister of Nigeria
+- Former World Bank Managing Director
+
+Re-appointed for second term (2025–2029)
+:::
+
+::: {.highlightbox}
+India has been a founding and **strategically active** member — one of the most influential developing country voices at the WTO
+:::
+:::
+:::
+
+---
+
+## WTO Membership Growth {.center}
+
+```{r}
+#| label: fig-wto-membership
+#| fig-cap: "WTO Membership Growth (1995-2024)\nSource: WTO Secretariat."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+
+df_mem <- data.frame(
+  year    = c(1995, 2000, 2005, 2010, 2015, 2020, 2024),
+  members = c(76,   140,  148,  153,  162,  164,  166)
+)
+
+ggplot(df_mem, aes(x = year, y = members)) +
+  geom_line(color = "#012169", linewidth = 1.3) +
+  geom_point(color = "#012169", size = 3.5) +
+  geom_text(
+    data = subset(df_mem, year == 2024),
+    aes(label = "166 members\n(2024)"),
+    hjust = -0.1, vjust = 0.5, size = 3.5,
+    color = "#C84B31", fontface = "bold"
+  ) +
+  scale_x_continuous(
+    breaks = c(1995, 2000, 2005, 2010, 2015, 2020, 2024),
+    limits = c(1994, 2028)
+  ) +
+  scale_y_continuous(limits = c(60, 185)) +
+  labs(
+    title = "WTO Membership Growth (1995-2024)",
+    x = "Year", y = "Number of Member Countries"
+  ) +
+  theme_minimal(base_size = 11)
+```
+
+---
+
+# WTO Principles
+
+---
+
+## The Five Core Principles of the WTO {.smaller}
+
+::: {.methodbox}
+**The WTO rulebook rests on five foundational pillars — all member commitments flow from these**
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+**1. Most Favoured Nation (MFN)**
+Non-discrimination among all members: a concession given to one must be given to all.
+*Art. I GATT, Art. II GATS*
+
+**2. National Treatment**
+Imported goods must be treated no less favourably than domestic goods **once inside the border**.
+*Art. III GATT*
+
+**3. Bound Tariffs**
+Members commit to ceiling tariff rates (bound rates) in their schedules — cannot raise above without compensation.
+:::
+::: {.column width="50%"}
+**4. Reciprocity**
+Concessions are exchanged mutually — no free riding. Basis of negotiating rounds.
+
+**5. Transparency**
+Members must notify laws, regulations, and trade measures to the WTO. No hidden barriers.
+
+::: {.highlightbox}
+**Why these matter for India:** India's bound tariff schedule gives it enormous policy space (bound 113% average on agriculture vs. applied ~35%). These principles simultaneously protect India from arbitrary foreign barriers.
+:::
+:::
+:::
+
+---
+
+## MFN in Depth: The India Example {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**How MFN Works**
+
+If India gives the USA a **0% tariff on apples**, under MFN, India must give **the same 0% to ALL WTO members** — Canada, Australia, Chile, New Zealand, China.
+
+You cannot discriminate between WTO members.
+
+**Permitted Exceptions:**
+
+1. **Free Trade Agreements (Art. XXIV GATT):** Deeper preferences within FTA — WTO legal if the FTA covers "substantially all trade"
+2. **GSP (Enabling Clause):** Developed countries can give preferential rates to developing countries unilaterally
+3. **Security exceptions (Art. XXI):** National security justifications
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**India's FTA Example**
+
+India–UAE CEPA (2022):
+- India gives 0% tariff on many UAE goods
+- WTO members do NOT automatically get this rate
+- WTO-legal because CEPA is an FTA under Art. XXIV
+
+But India must ensure CEPA covers substantially all trade — otherwise challenged at WTO
+:::
+
+::: {.methodbox}
+**India's FTA network** (2024): UAE, Mauritius, Japan, South Korea, ASEAN, Singapore, Sri Lanka, Thailand (partial), Australia, EFTA
+:::
+:::
+:::
+
+---
+
+## WTO Organisational Structure {.smaller}
+
+```
+MINISTERIAL CONFERENCE  (Supreme body — every 2 years)
+         │
+   GENERAL COUNCIL  (Day-to-day — Geneva ambassadors)
+    ┌────┴────────────────────────┐
+    │                             │
+Trade Policy Review Body    Dispute Settlement Body (DSB)
+    │
+    ├── Council for Trade in GOODS (GATT)
+    │       ├── Committee on Agriculture
+    │       ├── SPS Committee
+    │       ├── TBT Committee
+    │       ├── Anti-Dumping Committee
+    │       └── Safeguards Committee
+    │
+    ├── Council for Trade in SERVICES (GATS)
+    │
+    └── Council for TRIPS
+```
+
+::: {.highlightbox}
+**India's Geneva Mission** maintains a permanent delegation of ~30 diplomats/trade negotiators to engage all WTO bodies. India chairs or co-chairs several committees.
+:::
+
+---
+
+## Ministerial Conferences: Key Milestones {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+| MC | Location | Year | Key Outcome |
+|----|----------|------|-------------|
+| MC1 | Singapore | 1996 | "Singapore issues": investment, competition, procurement |
+| MC3 | Seattle | 1999 | **Failed** — "Battle of Seattle" |
+| MC4 | **Doha** | 2001 | Launched Doha Development Agenda |
+| MC5 | Cancún | 2003 | **Failed** — G-20 coalition walked out |
+| MC6 | Hong Kong | 2005 | Partial agriculture framework |
+:::
+::: {.column width="50%"}
+| MC | Location | Year | Key Outcome |
+|----|----------|------|-------------|
+| MC9 | **Bali** | 2013 | **TFA + Peace Clause** |
+| MC10 | **Nairobi** | 2015 | Export subsidy elimination |
+| MC11 | Buenos Aires | 2017 | No consensus |
+| MC12 | **Geneva** | 2022 | **Fisheries subsidies** |
+| MC13 | Abu Dhabi | 2024 | E-commerce moratorium extended |
+
+::: {.keybox}
+**India hosted MC6 in Hong Kong context** and has been central to the G-33 and G-20 agricultural coalitions at every MC
+:::
+:::
+:::
+
+---
+
+## Key WTO Agreements — Overview {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+| Agreement | What it covers |
+|-----------|---------------|
+| **AoA** | Agriculture: market access, domestic support, export subsidies |
+| **SPS** | Food safety, animal & plant health measures |
+| **TBT** | Product standards, labelling, testing procedures |
+| **Anti-Dumping** | Duties against below-cost imports |
+| **SCM** | Subsidies & countervailing duties |
+:::
+::: {.column width="50%"}
+| Agreement | What it covers |
+|-----------|---------------|
+| **Safeguards** | Emergency import restrictions |
+| **GATS** | Trade in services (banking, telecom, education) |
+| **TRIPS** | Intellectual property rights |
+| **TFA** | Customs procedures, border facilitation |
+| **Fisheries** | Subsidies for fishing fleets |
+
+::: {.highlightbox}
+**For agricultural trade**, the most important are: AoA, SPS, TBT, Anti-Dumping, and SCM. Lectures 14–16 cover these in depth.
+:::
+:::
+:::
+
+---
+
+## Dispute Settlement Understanding (DSU) {.smaller}
+
+::: {.methodbox}
+**WTO's most important institutional innovation** — binding, rules-based dispute resolution replacing GATT's "diplomatic" process
+:::
+
+::: {.columns}
+::: {.column width="55%"}
+**The DSU Process:**
+
+1. **Consultations** (60 days) — bilateral negotiation
+2. **Panel established** — 3 trade law experts, 6–9 months
+3. **Panel Report** adopted by DSB
+4. **Appellate Body** — 3 of 7 members, 60–90 days
+5. **DSB adoption** — quasi-automatic (reverse consensus)
+6. **Implementation** — reasonable time period
+7. **Retaliation** — if not complied, winning party can suspend concessions
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Appellate Body Crisis**
+
+Since 2017, the **USA has blocked appointments** to the AB — currently non-functional (needs 3 members, has 0 active).
+
+**MPIA:** Multi-Party Interim Appeal Arbitration Arrangement — 53 members (including India) agreed to use arbitration as workaround.
+
+USA objects: AB "overreached" its mandate by creating precedents.
+:::
+:::
+:::
+
+---
+
+## India in WTO Disputes {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**As Complainant (India won):**
+
+::: {.keybox}
+**DS456 — US-India Solar Cells (2016)**
+USA's domestic content requirements for solar panels under the National Solar Mission violated WTO national treatment (Art. III). India won — US had to remove requirements.
+:::
+
+**Other active cases India initiated:** challenges to US steel tariffs, EU carbon measures
+:::
+::: {.column width="50%"}
+**As Respondent (India lost/challenging):**
+
+- **DS265** — EC-India Sugar Subsidies: India's sugar export subsidies found WTO-illegal; India appealing
+- **DS430** — India-Agricultural Products: US challenged India's avian influenza ban on US poultry — India lost on SPS grounds
+- **DS582** — India-IT Tariffs: EU/Japan challenged India's IT product tariffs — India lost
+- **DS541** — India-MEIS: US challenged India's export incentive scheme — India lost
+
+::: {.highlightbox}
+India has participated in **50+ disputes** as complainant, respondent, or third party — reflecting deep WTO engagement
+:::
+:::
+:::
+
+---
+
+## India's WTO Dispute Cases by Partner {.center}
+
+```{r}
+#| label: fig-india-wto-disputes
+#| fig-cap: "India's WTO Dispute Settlement Cases by Partner\nSource: WTO Dispute Settlement Gateway (as of 2024)."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+
+df_ds <- data.frame(
+  country = rep(c("USA", "EU", "Australia", "China", "Brazil", "Pakistan", "Turkey"), 2),
+  role    = rep(c("Complainant", "Respondent"), each = 7),
+  cases   = c(3, 2, 1, 2, 1, 1, 0,
+              6, 4, 2, 0, 1, 0, 1)
+)
+
+df_ds$country <- factor(df_ds$country,
+  levels = c("Turkey", "Pakistan", "Brazil", "China", "Australia", "EU", "USA"))
+
+ggplot(df_ds, aes(x = cases, y = country, fill = role)) +
+  geom_col(position = "dodge", width = 0.65) +
+  scale_fill_manual(values = c("Complainant" = "#012169", "Respondent" = "#B9975B")) +
+  scale_x_continuous(breaks = 0:7) +
+  labs(
+    title = "India's WTO Dispute Settlement Cases by Partner",
+    x = "Number of Cases", y = NULL, fill = "India's Role"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom")
+```
+
+---
+
+## India's WTO Negotiating Coalitions {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**India leads or co-leads multiple developing country coalitions:**
+
+::: {.methodbox}
+**G-33 (Chair: Indonesia, India active)**
+46 developing countries. Demands: Special Products (SP) — exempt sensitive crops from tariff cuts; Special Safeguard Mechanism (SSM) — emergency tariff response to import surges.
+
+**G-20 Agricultural Group (India, Brazil, China, South Africa)**
+Demands deep cuts in US/EU trade-distorting domestic support; improved market access; elimination of export subsidies. **Not to be confused with G20 heads of state summit.**
+
+**NAMA-11:** Developing country coalition on industrial tariff negotiations — resist deep cuts.
+:::
+:::
+::: {.column width="45%"}
+**Why Coalitions Matter**
+
+WTO operates by **consensus** — no voting for most decisions. Coalitions give developing countries blocking power.
+
+::: {.keybox}
+**India's G-33 Asks:**
+- 1.5 billion farmers in developing countries need protection from import surges
+- Special Products: food security crops (rice, wheat, pulses) protected from tariff cuts
+- SSM: right to raise tariffs temporarily if imports surge and hurt local farmers
+:::
+
+India has successfully used these coalitions to block unfavourable outcomes at Cancún (2003) and other MCs.
+:::
+:::
+
+---
+
+## The Doha Development Round {.smaller}
+
+::: {.highlightbox}
+**Launched:** November 2001, Doha, Qatar — framed as a "development round" post-9/11 solidarity
+:::
+
+::: {.columns}
+::: {.column width="55%"}
+**The Doha Agenda:**
+
+- **Agriculture:** deep cuts in US/EU domestic support; improved market access; eliminate export subsidies
+- **Industrial goods (NAMA):** significant tariff cuts
+- **Services (GATS):** further liberalisation
+- **TRIPS & Public Health:** access to medicines for poor countries
+- **Development:** special and differential treatment (S&DT) strengthened
+
+**Why it stalled — the political economy:**
+- USA: Farm Bill politics, Congress won't cut subsidies
+- EU: defensive on sugar, dairy, beef
+- India/China: demand strong SSM for agriculture; resist industrial tariff cuts (NAMA)
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**July 2008 Mini-Ministerial — The Collapse**
+
+India's then-Commerce Minister **Kamal Nath** walked out over SSM provisions. The US wanted an import surge threshold of 140% of base; India demanded 110%. Talks collapsed.
+
+Symbolically important: India prioritised **farmer protection over deal**.
+:::
+
+::: {.keybox}
+Doha Round is effectively **dead as a single undertaking**. Some elements (TFA, fisheries subsidies, export subsidy elimination) have been harvested. The agriculture agenda — the core — remains unresolved after 23+ years.
+:::
+:::
+:::
+
+---
+
+## Trade Facilitation Agreement (TFA, 2017) {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+::: {.keybox}
+**First multilateral agreement fully concluded at WTO** — in force February 22, 2017
+:::
+
+**Key provisions:**
+- **Advance rulings** on tariff classification and origin
+- **Single window** for customs clearance
+- **Expedited release** of perishable goods
+- **Risk-based inspection** (not 100% physical checks)
+- **Transit facilitation** for landlocked countries
+- **Appeal procedures** for customs decisions
+
+**Benefits for India's agri exports:**
+Perishables (mangoes, grapes, vegetables) need fast clearance. TFA obliges importing countries to have expedited procedures.
+:::
+::: {.column width="45%"}
+**India's TFA Implementation:**
+
+::: {.methodbox}
+- **ICEGATE** single window for customs
+- 24/7 operations at major ports
+- Risk-based inspection system (SWIFT)
+- Authorised Economic Operator (AEO) programme
+:::
+
+**Time Release Study (India):**
+
+| Channel | Before | After TFA |
+|---------|--------|-----------|
+| Air cargo | 120 hrs | **49 hrs** |
+| Sea cargo | 180 hrs | **68 hrs** |
+
+::: {.highlightbox}
+World Bank estimates: full TFA implementation could reduce trade costs by **14.3%** for developing countries
+:::
+:::
+:::
+
+---
+
+## WTO Fisheries Subsidies Agreement (MC12, 2022) {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+::: {.methodbox}
+**First new multilateral WTO agreement on fisheries subsidies**
+
+**Prohibits:**
+- Subsidies for Illegal, Unreported, and Unregulated (IUU) fishing
+- Subsidies for fishing overfished stocks
+- Subsidies for fishing in unregulated high seas
+
+**Context:** ~USD 22 billion/year in global fisheries subsidies; fishing stocks critically depleted — 34% overfished globally
+:::
+
+**Developing country flexibilities:**
+- Transition period of 2 years for some provisions
+- Inshore fishing (within 12 nautical miles) largely exempted
+- LDCs: longer transitions
+:::
+::: {.column width="45%"}
+**India's Position and Interests**
+
+::: {.keybox}
+India's concerns:
+- Protect **small-scale traditional fishermen** (Kerala, Tamil Nadu, Andhra Pradesh coastal communities)
+- India's fishing subsidies (fuel subsidy, boat building) support livelihood of ~14 million fishers
+- Demand: developed country distant-water fleets (EU, China, Japan) subsidised for decades — they caused the overfishing problem, not Indian small fishermen
+:::
+
+India negotiated carve-outs for artisanal fishing within national EEZ (200 nautical miles). Still under negotiation for full implementation.
+:::
+:::
+
+---
+
+## WTO and India's Food Security Tension {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**The Policy Conflict**
+
+India's food security system:
+1. **MSP** (Minimum Support Price) set above world prices for wheat and rice
+2. **FCI** procures at MSP from farmers
+3. **PDS** distributes at subsidised rates to poor households
+
+WTO critics argue: purchasing above world prices = **Amber Box support** (trade-distorting domestic support) that must be counted against India's AMS commitment
+
+::: {.methodbox}
+India's defence: The **Fixed External Reference Price (FERP)** used to calculate AMS uses 1986–88 world prices — which were artificially depressed by US/EU subsidies at the time. The baseline is unfair.
+:::
+:::
+::: {.column width="50%"}
+::: {.keybox}
+**The Numbers**
+
+India's rice MSP (FY2024): **₹2,183/quintal**
+
+FERP (1986–88): **USD 116/tonne = ~USD 11.6/quintal**
+
+Current MSP ≈ **USD 26.3/quintal**
+
+AMS = (26.3 − 11.6) × 42 million tonnes procured ≈ **~USD 6.2 billion**
+
+De minimis limit (10% of rice production) ≈ **~USD 2.8 billion**
+
+→ India likely exceeds its de minimis threshold
+→ **Peace Clause protection needed**
+:::
+:::
+:::
+
+---
+
+## The Peace Clause (Bali, 2013) {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**Agreement on Public Stockholding for Food Security**
+
+Bali MC9 (December 2013) — negotiated primarily by **India** under Commerce Minister Anand Sharma
+
+**Protection offered:** WTO members will not formally challenge developing country public stockholding programs even if they technically exceed de minimis AMS limits, **provided:**
+
+1. Program existed before December 2013
+2. Regular, detailed notifications to the WTO Committee on Agriculture
+3. Stocks not released onto world markets at below-market prices
+4. Programme targeted at traditional staple foods and the poor
+
+India notifies rice, wheat, and coarse cereal procurement every year under the Peace Clause.
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**The Catch**
+
+- Agreed as **interim measure** pending permanent solution
+- Nairobi MC10 (2015): committed to finding permanent solution by MC11 (2017) — missed
+- Permanent solution still **not agreed** as of 2024 despite every MC discussing it
+- India's position: permanent solution must include new FERP methodology
+:::
+
+::: {.highlightbox}
+The Peace Clause is India's single most important WTO negotiating achievement in recent years. Without it, India's PDS + FCI procurement system would be legally vulnerable to challenge.
+:::
+:::
+:::
+
+---
+
+## TRIPS and Indian Agriculture {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**TRIPS Agreement (1995):** Patents, copyrights, trademarks, geographical indications, and plant variety protection.
+
+**Key tension for agriculture:** TRIPS Art. 27.3(b) requires protection of plant varieties either through patents or a sui generis system.
+
+**India's response — PPVFRA (2001):**
+Protection of Plant Varieties and Farmers' Rights Act — India's sui generis system
+
+::: {.keybox}
+**Key PPVFRA provisions:**
+- **Breeders' rights:** 15–18 years protection for new varieties
+- **Farmers' right:** to save, use, sow, re-sow, exchange, and sell farm-saved seed (CANNOT sell under breeder's brand)
+- **Researchers' exemption:** use protected variety for research/breeding
+- **National Gene Fund:** benefit-sharing from commercialisation
+:::
+:::
+::: {.column width="45%"}
+**Monsanto Bt Cotton Case**
+
+::: {.methodbox}
+Monsanto held trait patent on Bt cotton gene in India. Charged royalties (trait value) to all seed companies using the Bt technology.
+
+India's seed companies: royalties too high, technology should be accessible.
+
+2021: Supreme Court ruled plant varieties and essentially biological processes are **not patentable** under Indian Patents Act Section 3(j).
+
+Monsanto's patent on Bt gene effectively invalidated in India.
+:::
+
+::: {.highlightbox}
+India resists **TRIPS-plus** obligations pushed in FTA negotiations (longer patent terms, data exclusivity for agrochem companies) that would restrict farmer seed access
+:::
+:::
+:::
+
+---
+
+## India's WTO Schedules and Policy Space {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**India's Bound Tariff Schedule — Agriculture**
+
+| Commodity | Bound | Applied (2024) | "Water" |
+|-----------|-------|----------------|---------|
+| Rice | 80% | 25% | 55% |
+| Wheat | 100% | 40% | 60% |
+| Maize | 60% | 50% | 10% |
+| Sugar | 150% | 100% | 50% |
+| Palm oil | 300% | 100% | 200% |
+| Milk powder | 60% | 30% | 30% |
+
+**Average bound tariff on agriculture: 113.5%**
+**Average applied tariff: ~35%**
+:::
+::: {.column width="50%"}
+::: {.keybox}
+**The "Water in the Tariff" = Policy Space**
+
+The gap between bound and applied tariffs means India can **raise applied tariffs without WTO violation**. This is India's key defensive instrument.
+
+Example: When palm oil imports surged hurting domestic oilseed farmers, India raised the applied tariff from 30% to 100% — still below the 300% bound rate. No WTO violation.
+:::
+
+::: {.methodbox}
+**AMS De Minimis:** 10% of production value (developing country rate — vs. 5% for developed). This is why India gets more space than the US/EU.
+:::
+:::
+:::
+
+---
+
+## Recent WTO Issues Affecting India {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**E-Commerce Moratorium**
+
+Since 1998: WTO members agreed no customs duties on **electronic transmissions** (digital goods, streaming, software downloads).
+
+Extended at every MC including MC13 (Abu Dhabi 2024).
+
+::: {.methodbox}
+**India's position:** End the moratorium. India loses potential tariff revenue on digital goods (music, films, software, data). India and South Africa are the most vocal opponents.
+
+India argues: rich country digital companies benefit most; developing countries lose fiscal revenue.
+:::
+:::
+::: {.column width="50%"}
+**Joint Statement Initiatives (JSIs)**
+
+Plurilateral negotiations outside the main WTO consensus framework:
+- E-commerce JSI (90 members)
+- Investment facilitation JSI
+- Domestic regulation (services)
+
+::: {.highlightbox}
+**India did NOT join** the e-commerce JSI or investment facilitation JSI.
+
+India's concern: JSI outcomes should not become part of WTO multilateral rules without consensus of all 166 members.
+
+Reflects India's **defensive posture** on digital trade — India wants to preserve policy space to regulate data and digital economy.
+:::
+:::
+:::
+
+---
+
+## Key Takeaways: WTO {.smaller}
+
+::: {.keybox}
+**Six Things to Remember from Lecture 13**
+
+1. **WTO replaced GATT on Jan 1, 1995** — the Uruguay Round (1986–94) was the turning point; 166 members, India a founding member
+
+2. **Five core principles:** MFN, National Treatment, Bound Tariffs, Reciprocity, Transparency — these are the rules of the game
+
+3. **DSU is WTO's crown jewel** — binding dispute settlement; India has won and lost important cases; Appellate Body crisis unresolved
+
+4. **Doha Round is effectively dead** — agriculture at the centre of the stalemate; US/EU domestic politics vs. India/developing country demands
+
+5. **Peace Clause (2013) is India's lifeline** — protects MSP-based procurement from WTO challenge; permanent solution still pending
+
+6. **India uses WTO strategically:** high bound tariffs for policy space, G-33/G-20 coalitions for negotiating power, DSU for defending interests
+:::
+
+---
+
+## Next Lecture: Agreement on Agriculture {.smaller}
+
+::: {.columns}
+::: {.column width="60%"}
+**Lecture 14 (July 28, 2026):**
+
+**Agreement on Agriculture (AoA)**
+
+The WTO agreement that **directly governs India's agricultural trade policy**
+
+We will cover:
+
+- **Three Pillars** in depth: Market Access, Domestic Support, Export Competition
+- Tariffication and Tariff Rate Quotas
+- The Three Boxes: Green, Blue, Amber
+- India's AMS challenge — the numbers
+- The Peace Clause revisited in technical detail
+- India's export subsidy constraints
+- Special and Differential Treatment
+:::
+::: {.column width="40%"}
+::: {.highlightbox}
+**Prepare for Lecture 14:**
+
+Think about this question:
+
+*"India provides fertiliser subsidies worth ₹2.25 lakh crore per year. Is this WTO-legal? Which 'box' does it fall in?"*
+
+We will work through the answer systematically using the AoA framework.
+:::
+
+**Reading:**
+- WTO Agreement on Agriculture (full text — 35 pages)
+- CUTS International: *India and WTO Agriculture Negotiations* (2023)
+- Economic Survey 2023-24, Chapter on Agriculture
+:::
+:::
+
+# Appendix {background-color="#1a3a5c"}
+
+## Additional Resources {.appendix}
+
+::: {.columns}
+::: {.column width="50%"}
+**Further Reading**
+
+- *International Economics* — Salvatore (Ch. 12)
+- *International Economics* — Appleyard & Field (Ch. 12)
+- RBI/DGCI&S/APEDA databases for latest data
+:::
+::: {.column width="50%"}
+**Key Data Sources**
+
+- DGCI&S: India's merchandise trade
+- RBI: Balance of payments data  
+- APEDA: Agricultural export statistics
+- WTO: Tariff and trade databases
+:::
+:::

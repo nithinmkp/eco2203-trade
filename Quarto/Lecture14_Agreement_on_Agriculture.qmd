@@ -1,0 +1,1065 @@
+﻿---
+title: "Lecture 14: Agreement on Agriculture"
+subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+author: "Nithin M"
+institute: "Department of Development Economics"
+date: "July 25, 2026"
+format:
+  revealjs:
+    theme: [default, emory-clean.scss]
+    slide-number: true
+    chalkboard: true
+    transition: slide
+    incremental: false
+    smaller: false
+    scrollable: true
+    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    code-fold: true
+    code-summary: "Show R code"
+  beamer:
+    aspectratio: 169
+    theme: metropolis
+    toc: false
+    section-titles: false
+    include-in-header: beamer-preamble.tex
+    keep-tex: false
+execute:
+  warning: false
+---
+
+## Recap: Lecture 13 {.smaller}
+
+**Lecture 13** established the WTO as the institutional framework of international trade.
+
+::: {.columns}
+::: {.column width="55%"}
+**Key ideas from Lecture 13:**
+
+- GATT → WTO (1995): from provisional to permanent
+- Five core principles: MFN, National Treatment, Bound Tariffs, Reciprocity, Transparency
+- DSU: binding dispute settlement
+- India's Peace Clause — protects MSP procurement
+- Doha Round stalemate: agriculture at the core
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Today's Focus**
+
+We zoom into the **Agreement on Agriculture (AoA)** — the specific WTO text that governs how much protection India can give its farmers, how much support the US/EU can give theirs, and how agricultural trade is managed globally.
+
+Three pillars: **Market Access · Domestic Support · Export Competition**
+:::
+:::
+:::
+
+---
+
+## Why Was the AoA Needed? {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**Pre-Uruguay Round Agriculture: A Wild West**
+
+Before 1995, agriculture was essentially **outside GATT discipline**:
+
+- USA had a 1955 GATT waiver exempting its agricultural support programs
+- EU's Common Agricultural Policy (CAP): massive production and export subsidies
+- Result: **global overproduction** of wheat, butter, sugar; chronic dumping on world markets
+
+::: {.methodbox}
+**The dumping problem:**
+In the 1980s, EU butter was sold on world markets at 20% of EU domestic prices. US wheat exports were subsidised by up to 40%. This depressed world prices and **hurt farmers in Australia, Argentina, Brazil, India, and the developing world**.
+:::
+:::
+::: {.column width="45%"}
+**Why This Hurt India**
+
+::: {.keybox}
+Artificially low world prices for wheat and rice:
+- Made Indian exports uncompetitive
+- Provided cheap food imports that undercut domestic prices
+- Reduced incentives for agricultural investment globally
+
+The AoA's promise to the developing world:
+- **Discipline** US/EU subsidies
+- **Reduce** import barriers
+- **Eliminate** export subsidies
+
+Reality: progress has been slow — but the framework now exists.
+:::
+:::
+:::
+
+---
+
+## AoA Structure: The Three Pillars + S&DT {.smaller}
+
+::: {.keybox}
+**Agreement on Agriculture (1995) — 21 Articles + Annexes**
+In force: January 1, 1995 | Implementation period: 1995–2004 (developed), 1995–2005 (developing)
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+**Agreement on Agriculture (1995)**
+
+- **Pillar 1: Market Access**
+  - Tariffication of non-tariff barriers
+  - Bound tariff schedules
+  - Tariff reduction commitments (average 36%)
+  - Minimum access provisions (3–5% of domestic consumption)
+  - Special Safeguard (SSG) clause
+
+- **Pillar 2: Domestic Support**
+  - Aggregate Measurement of Support (AMS) reduction (20% for developed, 13.3% for developing)
+  - Green Box: non-distorting (exempt)
+  - Blue Box: production-limiting (exempt)
+  - Amber Box: trade-distorting (limited)
+  - De minimis provisions
+
+- **Pillar 3: Export Competition**
+  - Export subsidy reduction/elimination
+  - Export credit disciplines
+:::
+::: {.column width="50%"}
+**Special and Differential Treatment (S&DT)**
+
+::: {.methodbox}
+Developing countries get:
+- Longer implementation periods (10 vs. 6 years)
+- Smaller reduction commitments (24% vs. 36% tariff cuts; 13% vs. 24% domestic support cuts)
+- Higher de minimis thresholds (10% vs. 5%)
+- Continued input subsidies for poor farmers
+- Continued investment subsidies for agricultural development
+
+**India fully utilises all S&DT provisions**
+:::
+:::
+:::
+
+---
+
+# Pillar 1 — Market Access
+
+---
+
+## Tariffication: Converting NTBs to Tariffs {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**What is Tariffication?**
+
+Before 1995: Countries protected agriculture through:
+- Import quotas (how much can come in)
+- Variable levies (duty adjusts to keep domestic prices stable)
+- Minimum import prices
+- Voluntary export restraints
+
+AoA Article 4: **All these NTBs converted to tariff equivalents** (bound tariff rates in WTO schedules) by 1995.
+
+**The Reduction Commitment:**
+
+| Country | Average Cut | Minimum/Product | Period |
+|---------|-------------|-----------------|--------|
+| Developed | 36% | 15% | 6 years |
+| Developing | 24% | 10% | 10 years |
+| LDCs | None | None | — |
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**"Dirty Tariffication"**
+
+Many developed countries set artificially **high tariff equivalents** when converting their NTBs — overstating the protection level to preserve policy space.
+
+Example: Canada's tariff on butter: **298%**; on chicken: **238%**
+
+This gave rich countries huge "water in the tariff" even after the required cuts.
+
+India negotiated high bound rates (113% average) for similar reasons — policy space for future flexibility.
+:::
+:::
+:::
+
+---
+
+## AoA Tariff Reduction Commitments {.center}
+
+```{r}
+#| label: fig-aoa-tariff-reduction
+#| fig-cap: "AoA Tariff Reduction Commitments: Developed vs Developing\nSource: WTO, Agreement on Agriculture; UNCTAD."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+library(tidyr)
+
+df_tar <- data.frame(
+  round_num  = c(0, 1, 2, 3),
+  round_lbl  = c("Base\n(1986-88)", "Uruguay Round\n(1995)",
+                 "Doha\n(stalled)", "Target\n(proposed)"),
+  Developed  = c(0, 36, 36, 54),
+  Developing = c(0, 24, 24, 36)
+)
+
+df_long <- pivot_longer(df_tar, cols = c(Developed, Developing),
+                        names_to = "Group", values_to = "Reduction")
+
+ggplot(df_long, aes(x = round_num, y = Reduction,
+                    color = Group, group = Group)) +
+  geom_step(linewidth = 1.2) +
+  geom_point(size = 3) +
+  annotate("rect", xmin = 1.55, xmax = 2.45, ymin = -1, ymax = 58,
+           fill = "#C84B31", alpha = 0.08) +
+  annotate("text", x = 2, y = 54,
+           label = "Doha stalled\n(no progress)",
+           color = "#C84B31", size = 3, fontface = "italic") +
+  scale_color_manual(values = c("Developed" = "#012169", "Developing" = "#B9975B")) +
+  scale_x_continuous(
+    breaks = 0:3,
+    labels = df_tar$round_lbl
+  ) +
+  scale_y_continuous(limits = c(-2, 62)) +
+  labs(
+    title = "AoA Tariff Reduction Commitments: Developed vs Developing",
+    subtitle = "Average percentage cut from Uruguay Round base tariffs",
+    x = NULL, y = "Average Tariff Cut (%)", color = NULL
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom")
+```
+
+---
+
+## Tariff Rate Quotas (TRQs) {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**How TRQs Work**
+
+Where post-tariffication tariffs were extremely high, **TRQs** were created to ensure minimum market access:
+
+- **In-quota tariff:** lower rate (e.g., 15%) applied to a specified quantity
+- **Out-of-quota tariff:** higher rate (e.g., 60%) applied to quantities above the quota
+
+```
+Imports
+  ↑
+  │ Out-of-quota tariff = 60%
+  │ ───────────────────────────
+  │ In-quota tariff = 15%     ← TRQ fills here
+  └─────────────────────────→ Volume
+        Quota quantity
+```
+
+**Minimum access commitment:** 5% of domestic consumption by end of implementation period
+:::
+::: {.column width="45%"}
+**India's TRQ Commitments**
+
+::: {.methodbox}
+India has TRQs for:
+
+| Product | In-quota rate | Out-of-quota |
+|---------|--------------|--------------|
+| Wheat | 50% | 100% |
+| Rice (non-PDS) | 70% | 80% |
+| Maize | 15% | 60% |
+| Sunflower oil | 100% | 100% |
+| Cotton | 5% | 10% |
+:::
+
+::: {.keybox}
+**Most Indian TRQ quotas are never filled** — because even the in-quota tariff is high enough to limit imports below the quota. India's TRQs are symbolic: the real protection is the bound tariff, not the TRQ.
+:::
+:::
+:::
+
+---
+
+## India's Bound Tariffs: Agricultural Products {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**"Water in the Tariff" — India's Policy Flexibility**
+
+| Product | Bound (%) | Applied (2024, %) | Water (%) |
+|---------|-----------|-------------------|-----------|
+| Rice | 80 | 25 | **55** |
+| Wheat | 100 | 40 | **60** |
+| Maize | 60 | 50 | **10** |
+| Sugar | 150 | 100 | **50** |
+| Crude palm oil | 300 | 100 | **200** |
+| Refined palm oil | 300 | 100 | **200** |
+| Chickpeas | 100 | 50 | **50** |
+| Milk powder (SMP) | 60 | 30 | **30** |
+| Onions | 100 | 0 | **100** |
+:::
+::: {.column width="50%"}
+::: {.keybox}
+**How India Used This Space — Palm Oil**
+
+In 2018–19, domestic oilseed farmers (soybean, groundnut, sunflower) were hurt by cheap imported palm oil from Malaysia and Indonesia.
+
+India **raised the applied tariff** on crude palm oil from 30% to 100% (still below bound 300%).
+
+This protected domestic edible oil industry without violating WTO — no dispute case possible.
+
+Then in 2021, India **lowered it again** to reduce consumer food prices during inflation. Flexible policy instrument.
+:::
+
+::: {.highlightbox}
+The large tariff "water" is India's most important defensive trade policy instrument for agriculture
+:::
+:::
+:::
+
+---
+
+## Special Safeguard (SSG) vs. SSM {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**Special Safeguard (SSG) — AoA Article 5**
+
+Allows additional tariff duties **automatically** (no injury investigation needed) when:
+- **Volume trigger:** imports exceed 125% of average imports in previous 3 years; OR
+- **Price trigger:** import price falls more than 10% below average 1986–88 price
+
+**Only available to countries that tariffied their NTBs** — mainly developed countries and a few developing countries that had NTBs pre-1995.
+
+::: {.methodbox}
+India cannot invoke the SSG on most products because India used high bound tariffs, not tariffication of all NTBs. India has SSG access for only ~6 products.
+:::
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**Special Safeguard Mechanism (SSM)**
+
+**What developing countries want (Doha)**
+
+An SSM would allow all developing countries to temporarily raise tariffs beyond bound levels when imports surge or prices fall — without the SSG's historical eligibility restriction.
+
+Key disagreement (2008 collapse): At what threshold can the SSM be triggered? USA wanted 140% of import volume; India demanded 110%.
+
+**SSM not agreed** — one of the main reasons the Doha Round collapsed.
+:::
+:::
+:::
+
+---
+
+# Pillar 2 — Domestic Support
+
+---
+
+## Aggregate Measurement of Support (AMS) {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**What is AMS?**
+
+A measure of the total trade-distorting domestic support given to agriculture by a government.
+
+**Formula for product-specific AMS:**
+
+$$\text{AMS} = (\text{Administered Price} - \text{FERP}) \times \text{Eligible Production}$$
+
+where:
+- **Administered Price** = MSP or procurement price
+- **FERP** = Fixed External Reference Price (average world price, 1986–88)
+- **Eligible Production** = quantity actually purchased at administered price
+
+**Non-product-specific AMS:** Sum of general input subsidies (fertiliser, power, irrigation, credit) across all crops
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Why the FERP is controversial**
+
+The FERP is fixed at **1986–88 world prices** — when US and EU subsidies were at their peak, artificially depressing world prices.
+
+Rice FERP: **USD 116/tonne** (1986–88 world price)
+
+Current world price (2024): ~**USD 450–500/tonne**
+
+So the "ceiling" against which India's MSP is measured is a 40-year-old, distorted baseline. India argues this systematically overestimates India's support and underestimates rich country support.
+:::
+
+::: {.methodbox}
+Developing country de minimis: **10%** of production value (5% for developed countries)
+:::
+:::
+:::
+
+---
+
+## The Three Boxes: Traffic Light Analogy {.smaller}
+
+::: {.columns}
+::: {.column width="33%"}
+::: {.keybox}
+**🟢 GREEN BOX**
+
+*Allowed — no limit*
+
+Criteria:
+- Government-funded
+- No price support
+- Minimal trade distortion
+
+Includes:
+- Agricultural research
+- Extension services
+- Pest/disease control
+- Infrastructure
+- Food security stockholding (with conditions)
+- Decoupled income support
+- Environmental programs
+:::
+:::
+::: {.column width="33%"}
+::: {.methodbox}
+**🔵 BLUE BOX**
+
+*Permitted conditionally*
+
+Payments under **production-limiting programs**
+
+Used primarily by EU (old area payments) and USA (counter-cyclical payments tied to historical acreage, not current production)
+
+Less relevant for India — India doesn't formally claim Blue Box, though some argue certain schemes could qualify
+:::
+:::
+::: {.column width="33%"}
+::: {.highlightbox}
+**🟡 AMBER BOX**
+
+*Restricted — must not exceed AMS commitment*
+
+All trade-distorting support: MSP procurement, input price subsidies tied to specific products
+
+Subject to de minimis threshold:
+- Product-specific: 10% of that product's value
+- Non-product-specific: 10% of total agri output value
+
+India's AMS commitment: India has no scheduled AMS reduction commitment — it must only stay within de minimis (10%)
+:::
+:::
+:::
+
+---
+
+## India's Agricultural Support by WTO Box {.center}
+
+```{r}
+#| label: fig-india-box-subsidies
+#| fig-cap: "India's Agricultural Support by WTO Box (FY2020)\nSource: India's WTO Domestic Support Notifications; Ministry of Agriculture, GoI."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+
+df_box <- data.frame(
+  box   = c("Green Box\n(Exempt)",
+            "Amber Box\n(Capped)",
+            "Blue Box\n(N/A for India)"),
+  value = c(32.5, 5.8, 0),
+  color = c("#2E7D32", "#B9975B", "#90CAF9")
+)
+
+df_box$box <- factor(df_box$box, levels = df_box$box)
+
+ggplot(df_box, aes(x = box, y = value, fill = box)) +
+  geom_col(width = 0.5, show.legend = FALSE) +
+  geom_text(
+    aes(label = ifelse(value > 0, paste0("$", value, "B"), "N/A")),
+    vjust = -0.5, size = 4, fontface = "bold"
+  ) +
+  annotate("segment", x = 1.65, xend = 2.35, y = 9.0, yend = 9.0,
+           color = "#C84B31", linewidth = 0.8, linetype = "dashed") +
+  annotate("text", x = 2, y = 10.5,
+           label = "De Minimis limit ~$8.6B\n(10% of agri output value)",
+           color = "#C84B31", size = 3.2) +
+  scale_fill_manual(values = c(
+    "Green Box\n(Exempt)"          = "#2E7D32",
+    "Amber Box\n(Capped)"          = "#B9975B",
+    "Blue Box\n(N/A for India)"    = "#90CAF9"
+  )) +
+  scale_y_continuous(limits = c(0, 38), expand = expansion(mult = c(0, 0.06))) +
+  labs(
+    title    = "India's Agricultural Support by WTO Box (FY2020)",
+    subtitle = "Green Box: Research, Extension, PSH Storage  |  Amber Box: Input subsidies (MSP)",
+    x = NULL, y = "USD Billion"
+  ) +
+  theme_minimal(base_size = 11)
+```
+
+---
+
+## Green Box: What India Can and Cannot Claim {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**India's Legitimate Green Box Programs**
+
+::: {.keybox}
+Programs India can legitimately classify as Green Box:
+
+- **ICAR research programs** — rice varieties, disease resistance, HYV seeds
+- **Krishi Vigyan Kendras (KVKs)** — 731 farm science centres across India
+- **Agricultural extension services** — ATMA, ARYA programs
+- **National Food Security Act** — *food security stockholding* (subject to conditions)
+- **Pradhan Mantri Krishi Sinchayee Yojana** — irrigation infrastructure
+- **PM-KISAN** — ₹6,000/year decoupled income transfer to 110 million farmers
+- **Crop insurance (PMFBY)** — part may qualify as decoupled
+:::
+:::
+::: {.column width="45%"}
+**What India CANNOT Claim as Green Box**
+
+::: {.methodbox}
+**MSP procurement system** is NOT Green Box because:
+
+1. It involves price support (FCI buys at above-market MSP)
+2. It is linked to the quantity produced and sold to government
+3. It distorts production decisions — farmers produce more rice/wheat for FCI procurement than they would at market prices
+
+→ MSP procurement falls in the **Amber Box**
+→ Subject to de minimis limit
+→ Protected only by Peace Clause
+:::
+
+::: {.highlightbox}
+PM-KISAN, if truly decoupled (paid regardless of what crop is grown or how much), is a legitimate Green Box payment. India has been expanding this.
+:::
+:::
+:::
+
+---
+
+## India's Amber Box Challenge: The Numbers {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**Calculating India's Rice AMS (FY2023–24)**
+
+| Item | Value |
+|------|-------|
+| MSP for paddy (common) | ₹2,183/quintal ≈ **USD 26.3/quintal** |
+| FERP (1986–88 world price) | USD 116/tonne = **USD 11.6/quintal** |
+| Support per quintal | USD 26.3 − USD 11.6 = **USD 14.7/quintal** |
+| Total procurement by FCI | ~**42 million tonnes** |
+| **Total rice AMS** | USD 14.7 × 420,000 quintals per tonne... |
+
+Calculation: USD 14.7/quintal × 420 million quintals = **~USD 6.2 billion**
+
+::: {.methodbox}
+De minimis limit (10% of rice production value):
+Rice output ~120 MT × ~USD 250/tonne = USD 30B × 10% = **~USD 3 billion threshold**
+
+India's rice AMS (**USD 6.2B**) **exceeds** the de minimis limit (**USD 3B**)
+:::
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**Why India Is Technically in Violation**
+
+India's rice AMS exceeds its 10% de minimis limit. Without the Peace Clause:
+
+→ Any WTO member could bring a dispute case
+→ Panel could find India in violation
+→ India would need to either cut MSP or reduce procurement
+
+This is why the **Peace Clause is not optional for India** — it is existential for India's food security architecture.
+
+**India's counter-argument:** Update the FERP to current world prices. AMS would then be **negative** (MSP < current world price for rice and wheat).
+:::
+:::
+:::
+
+---
+
+## Peace Clause: Technical Details {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**Bali Ministerial Decision on Public Stockholding**
+*(MC9, December 2013 — India's biggest recent WTO win)*
+
+**Conditions for Peace Clause protection:**
+
+1. Program **existed before December 31, 2013** (India's FCI procurement qualifies)
+2. **Annual notification** to WTO Committee on Agriculture with detailed data on:
+   - Stocks procured, average prices, distribution
+   - Assessment of trade distortion impact
+3. Stocks **not exported below acquisition cost** — cannot be used to dump food on world markets
+4. Program **targets the poor** — National Food Security Act 2013 explicitly does this (75% rural, 50% urban population)
+
+::: {.keybox}
+India has notified its public stockholding program **every year** since 2013
+:::
+:::
+::: {.column width="45%"}
+**The Permanent Solution Problem**
+
+::: {.methodbox}
+MC10 Nairobi (2015): "Ministerial Decision affirms that the Peace Clause will remain in force until a permanent solution is found."
+
+Committed to permanent solution by **MC11 (2017)** — missed.
+
+Each subsequent MC: reaffirmed commitment — no solution.
+
+India's demands for permanent solution:
+1. Update FERP to current world prices OR base year of 2014–16
+2. Include food inflation adjustment
+3. No conditions on which crops qualify
+:::
+
+::: {.highlightbox}
+The FERP update would essentially solve India's problem — at current world prices, India's MSP is often below market, making AMS negative. USA/EU resist this change as it would expose their own support programs.
+:::
+:::
+:::
+
+---
+
+## Non-Product-Specific Support: India's Fertiliser Subsidy {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**The Fertiliser Subsidy Problem**
+
+India's fertiliser subsidy (FY2023–24): **₹2.25 lakh crore (~USD 27 billion)**
+
+This is a **non-product-specific** subsidy — available to all crops, not tied to any specific commodity.
+
+Goes into the **non-product-specific AMS pool:**
+
+| Subsidy | Approximate Value (FY24) |
+|---------|-------------------------|
+| Fertiliser | ₹2,25,000 crore |
+| Power subsidy to agriculture | ₹80,000–90,000 crore |
+| Irrigation water subsidy | ₹30,000 crore |
+| Agri credit subvention | ₹20,000 crore |
+| **Total NPS AMS** | **~₹3.5–4.5 lakh crore** |
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**India's WTO Argument**
+
+Non-product-specific AMS de minimis: **10% of total agricultural output value**
+
+India's total agri GVA (2023–24): ~₹24 lakh crore (~USD 288B)
+
+De minimis threshold: **USD 28.8 billion**
+
+India's total NPS support: ~USD 42–55 billion
+
+→ India likely exceeds NPS de minimis too
+
+**India's defence:** 
+- Most subsidies benefit small/marginal farmers (eligible for S&DT input subsidies)
+- Investment subsidies for agriculture exempt per AoA Annex 2
+- S&DT permits input subsidies for low-income resource-poor farmers
+:::
+
+::: {.methodbox}
+India has never submitted a formal AMS notification to WTO — technically still in "due restraint" (pre-Bali practice). This opacity is itself a WTO violation risk.
+:::
+:::
+:::
+
+---
+
+# Pillar 3 — Export Competition
+
+---
+
+## Export Subsidies: History and Elimination {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**AoA Article 9 — Export Subsidy Disciplines**
+
+Original Uruguay Round commitments (developed countries):
+- Reduce export subsidy **value** by **36%** (from 1986–90 base)
+- Reduce subsidised export **volumes** by **21%**
+- Over 6-year implementation period
+
+Developing countries: 24% value cut, 14% volume cut over 10 years
+
+**What counted as export subsidies:** Direct payments, government stock selling below cost, export credit at below-market rates, food aid as export dumping, payments to marketing boards for exports
+
+::: {.keybox}
+**Nairobi MC10 (December 2015):** Developed countries committed to **eliminate** export subsidies immediately for most products (by end-2018 for almost all). Developing countries: 2023 for most, 2018 for some.
+:::
+:::
+::: {.column width="45%"}
+**Who Were the Big Offenders?**
+
+::: {.methodbox}
+**EU Common Agricultural Policy:**
+Peak export subsidy bill (1992): **€10 billion/year**
+Used to export surplus wheat, butter, cheese, beef, and sugar at 40–60% below domestic prices.
+
+Hurt: Argentina (wheat), Australia (dairy), Brazil (sugar), India (rice, cotton)
+
+**USA:** Export Enhancement Program (EEP) subsidised wheat exports to Eastern Europe and developing countries
+
+Both programs dramatically wound down after AoA and Nairobi — a genuine WTO success story
+:::
+
+::: {.highlightbox}
+The elimination of EU and US agricultural export subsidies (largely achieved by 2020) is one of the AoA's real achievements — reduced price depression in world markets
+:::
+:::
+:::
+
+---
+
+## India's Export Support: WTO Legal? {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**India Does Not Have Scheduled Export Subsidy Commitments**
+
+India never committed to reduce or eliminate export subsidies in its WTO schedule — because India historically didn't use them. This gives flexibility.
+
+**But India has used export support programs:**
+
+::: {.methodbox}
+**MEIS (Merchandise Exports from India Scheme):**
+- Duty credit scrips for exporters
+- USA challenged it in DS541 (2019)
+- WTO Panel ruled MEIS **violated** AoA export subsidy disciplines
+- India discontinued MEIS
+- Replaced by **RoDTEP** (Remission of Duties and Taxes on Export Products)
+:::
+:::
+::: {.column width="45%"}
+**RoDTEP: India's Current Export Support**
+
+::: {.keybox}
+India's argument: RoDTEP is a **legitimate tax refund** — it refunds embedded taxes that cannot be claimed back otherwise (state levies, mandi taxes, electricity duty). This is NOT a subsidy but a correction of tax cascading.
+
+WTO principle: Exported goods should not bear domestic taxes. Duty drawback is permitted.
+
+If RoDTEP refunds only actual embedded taxes (no more, no less), it is WTO-consistent.
+
+Risk: If rates are set above actual embedded taxes, the excess becomes a subsidy.
+:::
+
+::: {.highlightbox}
+**APEDA, MAI, TMA** schemes (marketing assistance) — India argues these are Green Box general services (market promotion, not direct export subsidies)
+:::
+:::
+:::
+
+---
+
+## Export Restrictions: AoA Article 12 {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**When India Bans Agricultural Exports**
+
+AoA Article 12: When imposing food export restrictions or prohibitions for food security:
+1. **Notify** the WTO in advance
+2. **Consider the effects** on importing countries' food security
+3. **Consult** if any member requests
+
+**India's August 2023 Export Restrictions (major case):**
+- **Non-basmati white rice:** Complete export ban (July 20, 2023)
+- **Parboiled rice:** 20% export duty
+- **Broken rice:** Earlier ban (September 2022) continued
+- Reason: Domestic food inflation, El Niño fears, low buffer stocks
+
+India notified WTO but didn't consult affected countries in advance.
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**Who Protested India's Rice Export Restrictions?**
+
+- **Bangladesh:** ~35% of rice imports from India; scrambled for alternatives
+- **Philippines:** Faced sudden shortfall in rice supplies
+- **West African countries** (Senegal, Cameroon, Ivory Coast): dependent on Indian broken rice
+- **Indonesia, Malaysia:** Sought alternative supplies
+
+Several countries formally requested consultations under AoA Art. 12 — **first major use of Art. 12 consultation requests against India**.
+
+India's response: domestic food security is paramount; exported food is subject to sovereign decision.
+:::
+
+::: {.methodbox}
+The episode highlighted the global dependency on Indian rice exports and India's responsibility as the world's largest rice exporter (~40% of global rice trade in 2022)
+:::
+:::
+:::
+
+---
+
+## Special and Differential Treatment for Developing Countries {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**S&DT Provisions in AoA**
+
+::: {.keybox}
+**Market Access:**
+- Smaller tariff cuts: 24% average (vs. 36%)
+- Minimum per product: 10% (vs. 15%)
+- Longer implementation: 10 years (vs. 6)
+
+**Domestic Support:**
+- De minimis: 10% (vs. 5%) of product value
+- Input subsidies for low-income/resource-poor farmers — **not counted in AMS** (AoA Annex 2, Para 4)
+- Investment subsidies for agriculture — **not counted**
+
+**Export Competition:**
+- Developing countries retain right to use export subsidies for transport, marketing to reduce marketing costs
+- Longer phase-out periods
+:::
+:::
+::: {.column width="50%"}
+**India's Use of S&DT**
+
+::: {.methodbox}
+India fully utilises every S&DT provision:
+
+1. **High bound tariffs** — used the 10-year period to bind at high rates
+2. **10% de minimis** — gives India more Amber Box space
+3. **Input subsidy exemption** — fertiliser subsidies targeted to small/marginal farmers (85% of India's 140 million farm households are small/marginal)
+4. **Investment subsidy exemption** — RKVY, PMKSY, agricultural infrastructure investments
+:::
+
+::: {.highlightbox}
+India's 2017 WTO notification: India claimed the input subsidy exemption for fertiliser subsidies benefiting **low-income, resource-poor farmers** — this is the strongest legal shield available.
+:::
+:::
+:::
+
+---
+
+## The Unfinished Doha Agriculture Agenda {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**What Doha Promised on Agriculture**
+
+::: {.methodbox}
+The Doha Development Agenda (2001) mandated "substantial improvements" in:
+
+1. **Market access** — "substantial reductions in tariffs" including elimination of all tariff peaks and escalation
+2. **Domestic support** — "substantial reductions in trade-distorting support" especially Amber Box
+3. **Export competition** — "elimination with a view to phasing out all forms of export subsidies" ✅ (Done at Nairobi 2015)
+:::
+
+**The Sticking Points:**
+
+- USA: refuses to cut overall trade-distorting support (OTDS) significantly; Farm Bill politics
+- EU: defensive on sugar, dairy, poultry
+- India: demands strong SSM; resists deep tariff cuts on sensitive products
+- China: joined WTO 2001; now major power with complex interests
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**Where We Are in 2026**
+
+The Doha Round as a "single undertaking" is dead.
+
+**What has happened:**
+✅ Export subsidy elimination (Nairobi 2015)
+✅ Trade Facilitation Agreement (Bali 2013 / 2017)
+✅ Peace Clause (Bali 2013)
+✅ Fisheries subsidies (MC12 2022)
+
+**What has NOT happened:**
+❌ Substantial Amber Box cuts in US/EU
+❌ Special Safeguard Mechanism (SSM)
+❌ Permanent solution for public stockholding
+❌ Market access improvements (tariff cuts on both sides)
+
+After **30 years**, agriculture remains the most politically contested sector in trade negotiations
+:::
+:::
+:::
+
+---
+
+## AoA and Indian Farmer Welfare: An Assessment {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+**Arguments that AoA helps Indian farmers**
+
+- Disciplines US/EU subsidies that depressed world prices for 40 years
+- Eliminated EU/US export subsidies — raised world prices for wheat, sugar, dairy
+- Forced transparency in domestic support programs
+- Created a framework where India can challenge unfair competition
+
+**Arguments that AoA constrains India**
+
+- Constrains India's ability to provide MSP support beyond de minimis
+- FERP methodology unfair — systematically overestimates India's "distortion"
+- Tariff reduction pressure (even if gradual) limits India's protection for sensitive crops
+- Disciplines India's export support while US subsidies continue under "Green Box" labels
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**Overall Assessment**
+
+India has navigated the AoA remarkably well:
+
+1. **High bound tariffs** = protection without WTO violation
+2. **Peace Clause** = MSP procurement protected
+3. **S&DT** = input subsidies, larger de minimis
+4. **PM-KISAN** = Green Box-compliant income support
+5. **Active coalitions** (G-33, G-20) = blocking unfavourable outcomes
+
+India's domestic support policy is primarily driven by **food security and farmer welfare** — WTO constraints are real but India has worked around them creatively.
+
+The key challenge: **permanent solution** for public stockholding — if this fails, India's MSP system remains legally vulnerable beyond the Peace Clause's diplomatic protection
+:::
+:::
+:::
+
+---
+
+## India Agricultural Trade Balance {.center}
+
+```{r}
+#| label: fig-india-agri-trade
+#| fig-cap: "India Agricultural Trade Balance (FY2019-FY2024, USD Billion)\nSource: APEDA / DGCI&S."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+library(tidyr)
+
+df_trade <- data.frame(
+  year    = c("FY2019","FY2020","FY2021","FY2022","FY2023","FY2024"),
+  Exports = c(32.8, 35.2, 41.3, 50.2, 53.2, 43.7),
+  Imports = c(19.1, 20.3, 19.6, 26.8, 29.3, 27.4)
+)
+
+df_trade$balance <- df_trade$Exports - df_trade$Imports
+df_trade$year    <- factor(df_trade$year, levels = df_trade$year)
+
+df_long_t <- pivot_longer(df_trade, cols = c(Exports, Imports),
+                          names_to = "Type", values_to = "Value")
+
+scale_s <- max(df_long_t$Value) / max(df_trade$balance)
+
+ggplot() +
+  geom_col(data = df_long_t,
+           aes(x = year, y = Value, fill = Type),
+           position = "dodge", width = 0.65) +
+  geom_line(data = df_trade,
+            aes(x = as.numeric(year), y = balance * scale_s, group = 1),
+            color = "#C84B31", linewidth = 1.3) +
+  geom_point(data = df_trade,
+             aes(x = as.numeric(year), y = balance * scale_s),
+             color = "#C84B31", size = 2.5) +
+  scale_fill_manual(values = c("Exports" = "#012169", "Imports" = "#B9975B")) +
+  scale_y_continuous(
+    name     = "USD Billion",
+    sec.axis = sec_axis(~ . / scale_s, name = "Trade Balance (USD Billion)")
+  ) +
+  labs(
+    title   = "India Agricultural Trade Balance (FY2019-FY2024, USD Billion)",
+    x = NULL, fill = NULL,
+    caption = "Red line = Trade Balance (right axis)"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom")
+```
+
+---
+
+## Key Takeaways: Agreement on Agriculture {.smaller}
+
+::: {.keybox}
+**Seven Things to Remember from Lecture 14**
+
+1. **AoA has three pillars:** Market Access (tariffication + TRQs + reductions), Domestic Support (Green/Blue/Amber Boxes + de minimis), Export Competition (subsidy disciplines)
+
+2. **India's bound tariffs average 113.5%** — the "water" in the tariff is India's primary agricultural protection instrument
+
+3. **Three Boxes:** Green = unlimited (research, extension, decoupled payments); Blue = conditional (production-limiting); Amber = limited by de minimis (MSP procurement falls here)
+
+4. **India's MSP procurement for rice likely exceeds 10% de minimis** — protected only by the Peace Clause (Bali 2013)
+
+5. **FERP is the core injustice:** Using 1986–88 world prices (depressed by US/EU subsidies) overstates India's trade distortion. Updating FERP to current prices would solve India's problem
+
+6. **Nairobi 2015 eliminated export subsidies** — a genuine WTO success; India's RoDTEP is a legitimate tax refund scheme (if correctly calibrated)
+
+7. **Doha Round dead** — but AoA framework remains; India must push for permanent public stockholding solution at every MC
+:::
+
+---
+
+## Next Lecture: SPS Measures and Codex Alimentarius {.smaller}
+
+::: {.columns}
+::: {.column width="60%"}
+**Lecture 15 (August 4, 2026):**
+
+**SPS Measures and Codex Alimentarius**
+
+Why Indian spices were pulled from Singapore supermarkets.Why India's shrimp face detention in the USA. Why EU pesticide standards block Indian rice exports.
+
+We will cover:
+
+- **SPS Agreement** — scientific basis, Codex/OIE/IPPC
+- **Codex Alimentarius** — the food code that governs market access
+- **India's export rejection challenges:** spices, shrimp, basmati rice
+- **Case studies:** MDH/Everest spice scandal, Indian aquaculture
+- **India's strategy** for SPS compliance
+:::
+::: {.column width="40%"}
+::: {.highlightbox}
+**Think About This**
+
+In April 2023, **MDH and Everest** — two of India's most iconic spice brands — had their products banned in Singapore and Hong Kong.
+
+The reason: ethylene oxide (a fumigant) detected above permitted limits.
+
+*What standard did they violate? Who sets these standards? Is this genuine food safety — or disguised protectionism?*
+
+We will answer all of these in Lecture 15.
+:::
+
+**Reading:**
+- WTO SPS Agreement (full text)
+- FSSAI Annual Report 2023-24
+- Spices Board of India Export Statistics
+- MPEDA: Aquaculture Export Performance Report
+:::
+:::
+
+# Appendix {background-color="#1a3a5c"}
+
+## Additional Resources {.appendix}
+
+::: {.columns}
+::: {.column width="50%"}
+**Further Reading**
+
+- *International Economics* — Salvatore (Ch. 12)
+- *International Economics* — Appleyard & Field (Ch. 12)
+- RBI/DGCI&S/APEDA databases for latest data
+:::
+::: {.column width="50%"}
+**Key Data Sources**
+
+- DGCI&S: India's merchandise trade
+- RBI: Balance of payments data  
+- APEDA: Agricultural export statistics
+- WTO: Tariff and trade databases
+:::
+:::

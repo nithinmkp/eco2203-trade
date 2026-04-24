@@ -1,0 +1,102 @@
+% ============================================================
+%  ECO 2203 — Beamer Metropolis Theme Preamble
+%  Course: International Trade and Policy in Agriculture
+%  Instructor: Nithin M, Department of Development Economics
+% ============================================================
+
+% MUST be first: load Metropolis theme before \metroset and colour overrides
+\usetheme{metropolis}
+
+% Only load packages not already provided by pandoc's beamer template
+\usepackage{amsmath,amssymb}
+
+% ---- Brand colours -----------------------------------------
+\definecolor{brandblue}{HTML}{012169}
+\definecolor{brandgold}{HTML}{B9975B}
+\definecolor{lightblue}{HTML}{E8EDF5}
+
+% ---- Metropolis colour overrides ---------------------------
+% Main palette
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=brandgold}
+\setbeamercolor{example text}{fg=brandblue!70!black}
+
+% Title slide
+\setbeamercolor{title}{fg=white,bg=brandblue}
+\setbeamercolor{subtitle}{fg=brandgold}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{institute}{fg=brandgold!80!white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{title page header}{fg=white,bg=brandblue}
+
+% Frametitle bar
+\setbeamercolor{frametitle}{fg=white,bg=brandblue}
+
+% Progress bar → gold
+\setbeamercolor{progress bar}{fg=brandgold,bg=brandblue!30}
+\setbeamercolor{title separator}{fg=brandgold}
+\setbeamercolor{progress bar in head/foot}{fg=brandgold,bg=brandblue!20}
+\setbeamercolor{progress bar in section page}{fg=brandgold,bg=brandblue!20}
+
+% Blocks
+\setbeamercolor{block title}{bg=brandblue,fg=white}
+\setbeamercolor{block body}{bg=lightblue,fg=black}
+\setbeamercolor{block title alerted}{bg=brandgold,fg=white}
+\setbeamercolor{block body alerted}{bg=brandgold!12,fg=black}
+\setbeamercolor{block title example}{bg=brandblue!70!black,fg=white}
+\setbeamercolor{block body example}{bg=brandblue!8,fg=black}
+
+% Structure / lists
+\setbeamercolor{structure}{fg=brandblue}
+\setbeamercolor{section in toc}{fg=brandblue}
+\setbeamercolor{itemize item}{fg=brandblue}
+\setbeamercolor{itemize subitem}{fg=brandgold}
+\setbeamercolor{enumerate item}{fg=brandblue}
+\setbeamercolor{description item}{fg=brandblue}
+
+% ---- Metropolis options ------------------------------------
+\metroset{
+  progressbar    = frametitle,   % gold bar under frametitle
+  sectionpage    = none,
+  numbering      = fraction,
+  block          = fill
+}
+
+% ---- Fonts (Metropolis uses Fira Sans; fallback gracefully) -
+\setbeamerfont{title}{size=\Large,series=\bfseries}
+\setbeamerfont{subtitle}{size=\normalsize,series=\mdseries}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries}
+\setbeamerfont{caption}{size=\footnotesize}
+
+% ---- Footer: course info + slide number --------------------
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.0ex,dp=1ex]{footline}%
+    \hspace{0.8em}%
+    {\footnotesize\color{brandblue!60}%
+      ECO 2203 \textbar{} International Trade and Policy in Agriculture
+      \hfill Nithin M \hfill
+      \insertframenumber{}/\inserttotalframenumber\hspace{0.8em}}%
+  \end{beamercolorbox}%
+}
+
+% ---- Misc --------------------------------------------------
+\setlength{\parskip}{0.25em}
+\setbeamertemplate{navigation symbols}{}
+
+% tighter column sep for side-by-side content
+\setlength{\columnsep}{0.8em}
+
+% Fix: make \label truly robust in moving arguments (Quarto generates
+% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
+% DeclareRobustCommand creates a self-protecting robust version.
+\makeatletter
+\let\quarto@originallabel\label
+\DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
+\makeatother
+
+% Prevent figures from overflowing Beamer frames.
+% width=\linewidth: scale to text width (already Quarto default);
+% height=0.6\textheight: cap height so figures never push past the frame bottom.
+% keepaspectratio: never distort — whichever constraint binds first wins.
+\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}

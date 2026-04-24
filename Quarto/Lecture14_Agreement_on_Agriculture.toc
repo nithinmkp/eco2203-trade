@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Pillar 1 --- Market Access}{6}{0}{1}
+\beamer@sectionintoc {2}{Pillar 2 --- Domestic Support}{12}{0}{2}
+\beamer@sectionintoc {3}{Pillar 3 --- Export Competition}{20}{0}{3}
+\beamer@sectionintoc {4}{Appendix}{29}{0}{4}

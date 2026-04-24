@@ -1,0 +1,978 @@
+---
+title: "Terms of Trade, Free Trade & Free Trade Agreements"
+subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+author: "Nithin M"
+institute: "Department of Development Economics"
+date: "May 30, 2026"
+format:
+  revealjs:
+    theme: [default, emory-clean.scss]
+    slide-number: true
+    chalkboard: true
+    transition: slide
+    incremental: false
+    smaller: false
+    scrollable: true
+    code-fold: true
+    code-summary: "Show R code"
+    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+  beamer:
+    aspectratio: 169
+    theme: metropolis
+    toc: false
+    section-titles: false
+    include-in-header: beamer-preamble.tex
+    keep-tex: false
+execute:
+  warning: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(scales)
+library(patchwork)
+options(scipen = 999)
+theme_set(theme_minimal(base_size = 11))
+knitr::opts_chunk$set(echo = knitr::is_html_output())
+```
+
+# Part I: Terms of Trade {background-color="#1a3a5c"}
+
+## Recap: From Theory to Exchange
+
+::: {.columns}
+::: {.column width="60%"}
+**The journey so far:**
+
+| Theory | Core Insight |
+|--------|-------------|
+| Mercantilism | Accumulate gold via export surplus |
+| Absolute Advantage | Export what you produce more efficiently |
+| Comparative Advantage | Export where opportunity cost is lower |
+| Heckscher-Ohlin | Export goods intensive in your abundant factor |
+| Lewis Model | Surplus labour enables low-cost production |
+
+**What these theories explain:** *What* countries trade and *why.*
+
+**What they don't fully answer:**
+
+> At *what price* do countries exchange their exports and imports? And are these prices moving in India's favour?
+
+**→ Terms of Trade**
+:::
+::: {.column width="40%"}
+::: {.highlightbox}
+**Why terms of trade matter:**
+
+Two countries can both have comparative advantage-based trade — but if one country's export prices are falling relative to its import prices, it may be getting poorer even as trade volume grows.
+
+This is the core concern of the **Prebisch-Singer Hypothesis** — and it has profound implications for India's agricultural sector.
+:::
+:::
+:::
+
+## What Are Terms of Trade?
+
+::: {.methodbox}
+**Definition: Terms of Trade**
+
+The rate at which a country's exports exchange for its imports in international markets.
+
+*"How many units of imports can I buy with one unit of exports?"*
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+**Commodity (Net Barter) Terms of Trade:**
+
+$$ToT = \frac{P_X}{P_M} \times 100$$
+
+Where $P_X$ = export price index; $P_M$ = import price index.
+
+**Interpretation:**
+- ToT = 100 → base year benchmark
+- ToT > 100 → terms *improved* (exports buy more imports)
+- ToT < 100 → terms *worsened* (exports buy fewer imports)
+:::
+::: {.column width="50%"}
+::: {.keybox}
+**Other ToT Measures:**
+
+**Gross Barter ToT:**
+$$= \frac{Q_M}{Q_X}$$
+(Physical quantity ratio of imports to exports)
+
+**Income ToT:**
+$$= \frac{P_X \times Q_X}{P_M}$$
+(Export revenue / import price — measures import capacity)
+
+**Single Factoral ToT:**
+$$= ToT \times Z_X$$
+(Adjusts for export sector productivity $Z_X$)
+
+For India's agricultural policy analysis, we primarily use the **commodity ToT**.
+:::
+:::
+:::
+
+## Offer Curves: Deriving the Equilibrium Terms of Trade
+
+::: {.methodbox}
+**Offer Curve (Salvatore, Ch. 4):** Shows the quantity of its export good a nation is *willing to offer* at each terms of trade, in exchange for imports.
+:::
+
+For each possible ToT ratio $\tau = P_X / P_M$, the offer curve traces the export-import combination a country would choose given its preferences and PPF:
+
+$$\text{Nation offers } X(\tau) \text{ exports to obtain } M(\tau) \text{ imports at terms } \tau$$
+
+- As ToT improves (each unit of exports buys more imports), a nation offers more exports
+- **Equilibrium ToT** is determined by the *intersection* of the two nations' offer curves
+- Stability: any deviation from $E^*$ creates excess supply/demand that restores equilibrium
+
+```{r}
+#| label: fig-offer-curves
+#| fig-cap: "Offer Curves: Equilibrium Terms of Trade Between India (Rice) and World (Machinery)\nSource: Author's illustration."
+#| fig-width: 7
+#| fig-height: 4
+
+t <- seq(0.05, 1, by = 0.01)
+
+india_rice <- 100 * t^0.6
+india_mach <-  80 * t^0.4
+
+world_rice <-  80 * t^0.35
+world_mach <- 100 * t^0.65
+
+ggplot() +
+  geom_path(data = data.frame(x = india_rice, y = india_mach),
+            aes(x = x, y = y, colour = "India's offer curve"), linewidth = 1.8) +
+  geom_path(data = data.frame(x = world_rice, y = world_mach),
+            aes(x = x, y = y, colour = "World's offer curve"), linewidth = 1.8) +
+  geom_point(aes(x = 62, y = 58), size = 4, colour = "black") +
+  annotate("text", x = 64, y = 59, label = "E* (Equilibrium ToT)",
+           size = 3.5, hjust = 0) +
+  geom_segment(aes(x = 0, y = 0, xend = 90, yend = 84),
+               linetype = "dashed", colour = "grey50", linewidth = 1) +
+  annotate("text", x = 83, y = 72,
+           label = "ToT ray\n(slope = P_Rice/P_Mach)", size = 3, colour = "grey40") +
+  annotate("text", x = 97, y = 55, label = "India",
+           size = 3.5, colour = "#012169", fontface = "bold") +
+  annotate("text", x = 78, y = 95, label = "World",
+           size = 3.5, colour = "#B9975B", fontface = "bold") +
+  scale_colour_manual(
+    values = c("India's offer curve" = "#012169",
+               "World's offer curve" = "#B9975B")) +
+  labs(title    = "Offer Curves: India (exporting Rice) and World (exporting Machinery)",
+       subtitle = "Equilibrium ToT at E* — India gains more if World offer curve bows outward",
+       x = "India's exports: Rice (units)",
+       y = "India's imports: Machinery (units)",
+       colour = NULL) +
+  scale_x_continuous(limits = c(0, 110)) +
+  scale_y_continuous(limits = c(0, 110)) +
+  theme(legend.position = "bottom")
+```
+
+::: {.fragment}
+::: {.hi}
+**Key insight (Salvatore Ch. 4):** The more inelastic a country's offer curve, the greater its terms-of-trade gain. India's bargaining power in trade improves when its exports are hard to substitute globally (e.g., Basmati rice, specific spices).
+:::
+:::
+
+## Calculating Terms of Trade: Numerical Example
+
+**Scenario:** India exports rice, imports petroleum.
+
+::: {.columns}
+::: {.column width="55%"}
+**Base Year (FY2020):**
+
+- Rice price: **$400/tonne** → index = 100
+- Petroleum price: **$60/barrel** → index = 100
+- **ToT = 100/100 × 100 = 100**
+
+---
+
+**Case 1: Rice price rises to $480/tonne (FY2021)**
+
+- Rice index = 120; Petroleum index = 100
+- **ToT = 120/100 × 100 = 120** → *Terms improved*
+- India can now buy 20% more oil per tonne of rice exported
+
+---
+
+**Case 2: Oil price rises to $90/barrel (FY2022)**
+
+- Rice index = 120; Petroleum index = 150
+- **ToT = 120/150 × 100 = 80** → *Terms worsened*
+- India gets fewer barrels of oil per tonne of rice
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**FY2022 was exactly this scenario:**
+
+- Global commodity supercycle: rice prices rose
+- But: oil price shock after Russia-Ukraine war
+- Fertilizer prices (derived from natural gas) tripled
+- India's agricultural ToT **sharply deteriorated** in FY2022
+
+Farmers received higher output prices but paid much more for inputs → net farm income squeezed despite "improved" rice prices.
+:::
+:::
+:::
+
+## India's Agricultural Terms of Trade: Historical Trends
+
+::: {.columns}
+::: {.column width="60%"}
+**Long-run trends in India's agricultural ToT:**
+
+| Period | Agricultural ToT | Key Driver |
+|--------|-----------------|------------|
+| 1970s–1980s | Declining | Green Revolution supply glut; oil shocks |
+| 1990s | Mixed | Trade liberalization; exchange rate effects |
+| 2002–2011 | Improving | Global commodity supercycle; China demand |
+| 2012–2019 | Broadly flat | Subdued commodity prices globally |
+| 2020–2022 | Sharp deterioration | COVID supply chains + energy price shock |
+| FY2024 | Moderate recovery | Easing energy prices; strong agri exports |
+
+**Structural feature:** Agricultural terms of trade for India are *volatile* — driven by global commodity markets and energy prices.
+:::
+::: {.column width="40%"}
+::: {.keybox}
+**Why ToT Volatility Hurts India's Farmers:**
+
+1. Farm income uncertainty → underinvestment
+2. Input costs (fertilizer, diesel) linked to petroleum prices
+3. Output prices set in global markets India cannot control
+4. Government MSP provides floor price but does not address ToT deterioration
+
+**Policy response:** CACP (Commission for Agricultural Costs and Prices) recommends MSPs to partly insulate farmers from ToT movements.
+:::
+:::
+:::
+
+## India's Agricultural Terms of Trade: 2010–2024
+
+```{r}
+#| label: fig-india-tot
+#| fig-cap: "India's Commodity Terms of Trade (Agricultural Exports vs All Imports), 2010–2024\nSource: RBI Annual Report; DGCI&S."
+#| fig-width: 8
+#| fig-height: 4.5
+
+india_tot <- data.frame(
+  year      = 2010:2024,
+  tot_agri  = c(85, 92, 95, 102, 100, 100, 96, 94, 97, 99, 95, 105, 102, 98, 96),
+  oil_price = c(79, 95, 105, 105,  99,  52, 43, 54, 64, 57, 41,  68,  99, 83, 80)
+)
+
+ggplot(india_tot, aes(x = year)) +
+  geom_line(aes(y = tot_agri,  colour = "Agri ToT index (2015=100)"),
+            linewidth = 1.5) +
+  geom_line(aes(y = oil_price, colour = "Brent crude (USD/bbl)"),
+            linewidth = 1.2, linetype = "dashed") +
+  geom_hline(yintercept = 100, linetype = "dotted", colour = "grey60") +
+  annotate("text", x = 2010.5, y = 102, label = "Base = 100", size = 3, colour = "grey50") +
+  scale_colour_manual(
+    values = c("Agri ToT index (2015=100)" = "#012169",
+               "Brent crude (USD/bbl)"     = "#B9975B")) +
+  scale_x_continuous(breaks = 2010:2024) +
+  labs(title    = "India: Agricultural Terms of Trade vs Oil Prices (2010–2024)",
+       subtitle = "Oil price shocks worsen India's ToT; agri export price booms improve it",
+       x = NULL, y = "Index / Price", colour = NULL) +
+  theme(legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+::: {.fragment}
+::: {.hi-gold}
+**Prebisch-Singer in action:** India's agricultural ToT has broadly stagnated near or below 100 since 2016 — consistent with the long-run deterioration hypothesis. Energy price pass-through via fertilisers and logistics is the proximate channel.
+:::
+:::
+
+## Prebisch-Singer Hypothesis: Theoretical Foundations
+
+::: {.columns}
+::: {.column width="55%"}
+**Raúl Prebisch** (ECLA, 1950) and **Hans Singer** (UN, 1950) — independently:
+
+> *"The long-run terms of trade of primary commodity exporters deteriorate relative to manufactures exporters."*
+
+Formally, the PS hypothesis states that for primary commodity exporters:
+
+$$\frac{d}{dt}\left(\frac{P_{\text{primary}}}{P_{\text{manufactures}}}\right) < 0 \quad \text{(secular deterioration over time)}$$
+
+Two demand-side forces drive this:
+
+$$\varepsilon_{\text{food}}^{M} < 1 \quad \text{(Engel's Law: income elasticity of food demand} < 1\text{)}$$
+$$\varepsilon_{\text{manufactures}}^{M} > 1 \quad \text{(manufactures are income-elastic)}$$
+
+So as world incomes rise, demand for manufactures grows faster than demand for primary goods, driving down the relative price of primary commodities.
+
+**Theoretical reasons:**
+
+1. **Income elasticity:** Demand for food < 1 (Engel's Law) — as incomes rise, food share of spending falls
+2. **Technological substitutes:** Synthetic rubber replaces natural rubber; artificial sweeteners replace sugar
+3. **Market power asymmetry:** Northern manufacturers can resist wage-price pass-through; Southern commodity prices are competitive
+4. **Productivity gains absorbed differently:** In manufactures, productivity → lower prices *and* higher wages; in commodities, productivity → mainly lower prices
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**PS Hypothesis implies:**
+
+Primary commodity exporters should **diversify** into manufacturing and high-value processed goods to escape the terms of trade trap.
+
+$$\text{Escape strategy:} \; P_{\text{primary}} \to P_{\text{processed}} \to P_{\text{manufactures}}$$
+
+This is the intellectual foundation for APEDA's mandate: push India up the value chain.
+:::
+:::
+:::
+
+## Prebisch-Singer: Evidence and India's Experience
+
+::: {.columns}
+::: {.column width="55%"}
+**If agricultural ToT decline over time → India must respond:**
+
+**Strategy 1: Value Addition**
+
+Move from raw commodity exports to processed/packaged exports:
+- Raw spices → essential oils, spice powders, branded retail packs
+- Raw cotton → yarn → fabric → garments
+- Fresh fish → frozen fillets → value-added seafood products
+
+APEDA's (Agricultural and Processed Food Products Export Development Authority) mandate is exactly this.
+
+**Strategy 2: High-Value Diversification**
+
+Shift export basket toward:
+- Basmati rice (premium; RCA ~12)
+- Organic certified produce (higher prices)
+- Floriculture (Netherlands model)
+- Processed food and beverages
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Evidence:**
+
+The evidence is *contested* but broadly supportive:
+
+- Grilli-Yang (1988) commodity index: secular decline in real commodity prices 1900–1987
+- Cuddington (1992): decline present but not uniform across commodities
+- Post-2000 "supercycle" temporarily reversed the trend
+- Post-2011: commodity prices fell again
+
+**For India:** Even if the long-run trend is weak, *volatility* creates serious policy challenges for agricultural planning.
+:::
+
+::: {.keybox}
+**India's Export Composition Shift:**
+
+| Category | FY2015 share | FY2023 share |
+|----------|-------------|-------------|
+| Raw cereals | 35% | 28% |
+| Processed food | 22% | 31% |
+| Marine (value-added) | 18% | 22% |
+| Spice derivatives | 8% | 12% |
+
+Trend: India slowly shifting toward value-added exports — consistent with the P-S prescription.
+:::
+:::
+:::
+
+# Part II: Free Trade — Theory and India's Reality {background-color="#1a3a5c"}
+
+## The Case for Free Trade
+
+::: {.columns}
+::: {.column width="55%"}
+**Standard economic arguments for free trade:**
+
+1. **Comparative advantage gains** — world output maximized; consumption beyond PPF
+2. **Consumer welfare** — lower prices for imported goods
+3. **Economies of scale** — access to larger markets enables scale efficiencies
+4. **Technology transfer** — foreign competition and investment bring technology
+5. **Competition discipline** — domestic inefficiency reduced under import pressure
+6. **Political economy of peace** — trading partners have incentive to maintain peace (Kant's "perpetual peace" through commerce)
+
+**Consensus view:** Free trade raises *aggregate* welfare. The gains to consumers exceed the losses to import-competing producers.
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**How strong is the consensus?**
+
+Nobel laureates supporting free trade (qualified): Samuelson, Krugman, Bhagwati, Sen, Deaton.
+
+But the consensus is increasingly *qualified:*
+- Distributional effects matter (Autor, Dorn, Hanson on China shock)
+- Adjustment costs are large and concentrated
+- Market failures (externalities, infant industries) justify intervention
+- Agriculture is special: food security, livelihoods, culture
+
+The debate is not *whether* to trade but *under what conditions* and *with what safeguards.*
+:::
+:::
+:::
+
+## Economic Arguments for Agricultural Protection
+
+::: {.columns}
+::: {.column width="50%"}
+**Economic arguments:**
+
+1. **Infant industry** — young industries need protection to develop (Hamilton, List, Mill): India's processed food industry
+2. **Terms of trade argument** — large countries can improve ToT by taxing exports/imports (optimal tariff)
+3. **Revenue argument** — agricultural tariffs generate government revenue
+4. **Externalities** — agriculture provides environmental services (biodiversity, groundwater recharge) not priced in markets
+
+**Agriculture's special status in WTO:**
+
+Agriculture is treated differently: Amber Box (trade-distorting), Blue Box, Green Box subsidies — recognizing that pure free trade in agriculture is politically and socially untenable globally.
+:::
+::: {.column width="50%"}
+::: {.keybox}
+**WTO Special Agricultural Status**
+
+The Agreement on Agriculture (AoA, 1995) explicitly recognises agriculture's special character:
+
+- **Green Box:** Domestic support that is non- or minimally trade-distorting — exempt from reduction
+- **Blue Box:** Production-limiting support — exempt
+- **Amber Box:** Trade-distorting support — must be reduced, but not to zero
+- **de minimis provision:** Developing countries may provide up to 10% of value of production without counting toward AMS
+
+This architecture reflects a consensus that pure free trade in agriculture would destabilise rural livelihoods and food security in developing countries.
+:::
+:::
+:::
+
+## Non-Economic and Political Economy Arguments
+
+::: {.columns}
+::: {.column width="50%"}
+::: {.keybox}
+**Non-economic arguments (politically powerful):**
+
+5. **Food security** — strategic autonomy; cannot depend on imports for staple food (India's rice ban logic)
+6. **Rural employment** — 45% of India's workforce; free trade could displace millions
+7. **Cultural preservation** — farming as a way of life, not just an industry
+8. **Poverty concentration** — India's poor are mostly in agriculture; import competition hits them hardest
+:::
+:::
+::: {.column width="50%"}
+::: {.highlightbox}
+**India's Agricultural Tariff Shield**
+
+India applies high bound and applied tariffs on sensitive agricultural commodities:
+
+| Commodity | Applied Tariff |
+|-----------|---------------|
+| Refined palm oil | 100% |
+| Wheat | 50% |
+| Sugar | 100% |
+| Milk powder | 60% |
+| Rice | 100% (non-Basmati) |
+
+Average applied agricultural tariff ~36%; bound tariff ~114%. This large tariff "water" gives India policy space to adjust to domestic supply conditions — consistent with WTO rules under the SSM for developing countries.
+:::
+:::
+:::
+
+## India and Free Trade: A Mixed Record
+
+::: {.methodbox}
+**India's Agricultural Trade Policy Stance**
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+**Liberalized:**
+- Export of rice, wheat, spices, cotton — broadly free (with periodic restrictions)
+- Foreign direct investment in food processing
+- Agri commodity futures markets (SEBI regulation)
+- Most horticultural exports
+
+**Protected:**
+- Edible oils: high tariffs (100% basic customs duty on palm oil)
+- Dairy: SPS barriers and high tariffs
+- Sugar: export subsidies + import tariffs
+- Pulses: periodic import and export restrictions
+:::
+::: {.column width="50%"}
+::: {.keybox}
+**Key Agricultural Tariff Rates (2023):**
+
+| Commodity | Applied Tariff |
+|-----------|---------------|
+| Refined palm oil | 100% |
+| Crude palm oil | 100%* |
+| Wheat | 50% |
+| Sugar | 100% |
+| Milk powder | 60% |
+| Rice | 100% (non-Basmati) |
+
+*Reduced temporarily in 2022–23 to combat inflation
+
+India uses tariffs *flexibly* — adjusting to domestic supply conditions. This is consistent with WTO rules under the SSM (Special Safeguard Mechanism) for developing countries.
+:::
+:::
+:::
+
+# Part III: Free Trade Agreements {background-color="#1a3a5c"}
+
+## What is an FTA?
+
+::: {.methodbox}
+**Levels of Regional Trade Integration (Balassa, 1961)**
+:::
+
+| Level | Description | Example |
+|-------|-------------|---------|
+| **Preferential Trade Arrangement (PTA)** | Reduced (not zero) tariffs on selected goods | India-MERCOSUR PTA |
+| **Free Trade Area (FTA)** | Zero tariffs on most goods between members; each keeps own external tariffs | India-ASEAN FTA |
+| **Customs Union** | FTA + common external tariff | MERCOSUR |
+| **Common Market** | Customs Union + free factor mobility | EU Single Market (pre-2009) |
+| **Economic Union** | Common Market + harmonized economic policies | Eurozone |
+
+::: {.highlightbox}
+India's agreements are mostly **FTAs** (or "CEPAs" — Comprehensive Economic Partnership Agreements, which add services and investment). India has not entered any customs union — and is unlikely to, given its strategic autonomy concerns.
+:::
+
+## India's Major FTAs: An Overview
+
+::: {.columns}
+::: {.column width="55%"}
+**India's active FTAs and CEPAs (as of 2025):**
+
+| Agreement | Year | Type | Key Partners |
+|-----------|------|------|-------------|
+| SAFTA | 2004 | FTA | SAARC nations |
+| ASEAN-India (AIFTA) | 2010 | FTA | 10 ASEAN countries |
+| India-South Korea CEPA | 2010 | CEPA | South Korea |
+| India-Japan CEPA | 2011 | CEPA | Japan |
+| India-UAE CEPA | 2022 | CEPA | UAE |
+| India-Australia ECTA | 2022 | Interim | Australia |
+
+**Under negotiation:**
+- India-UK FTA (ongoing, 2025)
+- India-EU FTA (restarted 2022)
+- India-Canada (stalled)
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Agricultural market access** is the central sticking point in every FTA negotiation:
+
+- India is defensive on dairy (EU, Australia, New Zealand pressure)
+- India is offensive on rice, spices, mangoes, processed foods
+- Developed country partners want India to lower agricultural tariffs
+- India resists, citing food security and rural livelihoods
+
+The asymmetry: developed country agricultural subsidies (EU CAP, US Farm Bill) remain intact even as they demand India liberalize.
+:::
+:::
+:::
+
+## India-UAE CEPA (2022): A New Template
+
+::: {.columns}
+::: {.column width="60%"}
+**Background:**
+
+- Signed: February 18, 2022 — India's first major FTA in a decade
+- Entered into force: May 1, 2022
+- Full name: India-UAE Comprehensive Economic Partnership Agreement
+
+**Agricultural provisions:**
+
+- UAE granted **0% tariff** on 97% of Indian goods (by tariff lines)
+- India's key gains: fruits, vegetables, spices, processed food, cereals
+- UAE = a re-export hub → India's goods gain access to Gulf, Africa, CIS
+- Target: bilateral trade of **$100 billion by 2030** (up from $60B in 2021–22)
+
+**Early agricultural results:**
+
+- First 6 months: agri exports to UAE ≈ ₹2,000 crore
+- Mango exports to UAE up 40% in 2022
+- Spice exports doubled through UAE gateway
+:::
+::: {.column width="40%"}
+::: {.keybox}
+**Why the UAE CEPA was easier:**
+
+UAE does NOT have significant agriculture → no defensive interests to protect.
+
+India could be more aggressive on gaining agri market access.
+
+**Contrast with EU FTA (stuck):**
+
+EU demands India:
+- Cut dairy tariffs (protecting French, Dutch dairy)
+- Open market for EU wines and spirits
+- Reduce wheat and sugar tariffs
+
+India cannot concede without political backlash from farmers' lobbies.
+:::
+:::
+:::
+
+## The ASEAN-India FTA: Gains and Losses
+
+::: {.columns}
+::: {.column width="55%"}
+**ASEAN-India Free Trade Agreement in Goods (2010):**
+
+- Covered ~80% of traded goods; zero/reduced tariffs
+- India's major concern: agricultural imports from Southeast Asia
+
+**What happened post-2010:**
+
+::: {.highlightbox}
+**Palm oil imports from Malaysia and Indonesia:**
+- FY2009: India imported 6.5 MT palm oil
+- FY2015: 9.0 MT (38% increase)
+- Domestic edible oil producers devastated
+:::
+
+**Pepper controversy:**
+- Black pepper imports from Vietnam surged
+- Kerala pepper growers (2 million families) badly hurt
+- Price fell from ₹800/kg to ₹200/kg at farm gate
+- Government ultimately raised duties partially
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**The ASEAN FTA Lesson:**
+
+An FTA that looks balanced on paper can have **asymmetric sectoral effects** in agriculture.
+
+India's mistake: underestimated:
+1. ASEAN agricultural competitiveness (tropical commodities)
+2. Trade diversion effects
+3. Adjustment costs for specific farming communities
+
+**Corrective action taken:**
+- 2023: India raised basic customs duty on edible oils to ~100% despite ASEAN FTA commitments (using permitted safeguard provisions)
+- Effective renegotiation of agricultural elements ongoing
+:::
+:::
+:::
+
+## India's Trade Balance with FTA Partners
+
+```{r}
+#| label: fig-india-fta
+#| fig-cap: "India's Trade Balance with Key FTA Partners (USD billion, FY2024)\nSource: DGCI&S / Ministry of Commerce and Industry, GoI."
+#| fig-width: 8
+#| fig-height: 4.5
+
+fta_data <- data.frame(
+  partner = c("ASEAN\n(AIFTA 2010)", "South Korea\n(CEPA 2010)", "Japan\n(CEPA 2011)",
+              "UAE\n(CEPA 2022)", "Sri Lanka\n(FTA 2000)", "Mauritius\n(CECPA 2021)"),
+  exports  = c(44.0,  7.5,  6.2, 11.5, 5.9, 0.5),
+  imports  = c(87.5, 21.3, 14.8, 34.5, 1.2, 0.2)
+)
+
+fta_long <- tidyr::pivot_longer(fta_data,
+                                cols      = c(exports, imports),
+                                names_to  = "type",
+                                values_to = "value")
+
+ggplot(fta_long, aes(x = partner, y = value, fill = type)) +
+  geom_col(position = "dodge", width = 0.7) +
+  scale_fill_manual(
+    values = c("exports" = "#012169", "imports" = "#B9975B"),
+    labels = c("exports" = "Exports to partner", "imports" = "Imports from partner")) +
+  coord_flip() +
+  labs(title    = "India's Trade with FTA Partners (FY2024, USD Billion)",
+       subtitle = "India runs deficits with most Asian FTA partners — raises trade diversion concerns",
+       x = NULL, y = "USD Billion", fill = NULL) +
+  theme(legend.position = "bottom")
+```
+
+::: {.fragment}
+::: {.hi-gold}
+**Trade diversion concern:** India's deficit with ASEAN ($44B) deepened *after* the 2010 FTA — consistent with trade diversion from efficient global producers to ASEAN partners (particularly palm oil from Indonesia/Malaysia and electronics from Vietnam).
+:::
+:::
+
+## India and RCEP: The Exit Decision
+
+::: {.columns}
+::: {.column width="60%"}
+**RCEP — Regional Comprehensive Economic Partnership:**
+
+- World's largest trade bloc by GDP ($26.2 trillion, 30% of global GDP)
+- Members: 10 ASEAN + China, Japan, South Korea, Australia, New Zealand
+- 7-year negotiation (2012–2019)
+
+**India walked away on November 4, 2019. Why?**
+
+1. **China's agricultural flooding:** India feared cheap Chinese goods (dairy, fruits, vegetables) would devastate domestic producers via zero tariff rules of origin
+2. **New Zealand dairy:** NZ dairy exports would destroy India's cooperatives (Amul model)
+3. **Australian wheat:** Cheap Australian wheat at zero tariff → threat to Indian wheat farmers
+4. **Services asymmetry:** India wanted labour mobility (IT professionals); RCEP offered goods access but not services
+
+PM Modi: *"When I measure the RCEP against the interests of farmers, MSMEs, and industry, I do not get a positive answer."*
+:::
+::: {.column width="40%"}
+::: {.highlightbox}
+**Assessment:**
+
+**Costs of staying out:**
+- Excluded from the world's largest trading bloc
+- Japanese, Korean, ASEAN firms invest in RCEP countries, not India
+- India's export competitiveness in RCEP markets weakened
+
+**Benefits of staying out:**
+- Protected ~150 million dairy farmers
+- Protected paddy/wheat cultivators from Australian/NZ competition
+- Retained policy space for industrial development
+
+**Verdict:** The decision reflected India's correct prioritization of agricultural and rural livelihood protection over trade integration gains. Whether it was the right long-term decision remains debated.
+:::
+:::
+:::
+
+## Trade Creation vs. Trade Diversion
+
+::: {.methodbox}
+**Viner's (1950) Framework for Evaluating FTAs**
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+**Trade Creation:**
+
+An FTA creates trade when it shifts consumption from *high-cost domestic production* to *low-cost partner country production.*
+
+→ **Efficiency-improving**; welfare-enhancing.
+
+**Example:** India-UAE CEPA → India imports UAE petrochemicals more cheaply than domestic production. Cost savings real.
+:::
+::: {.column width="50%"}
+**Trade Diversion:**
+
+An FTA diverts trade when it shifts imports from the *most efficient world producer* to a *less efficient FTA partner.*
+
+→ **Efficiency-reducing**; welfare may fall even as trade rises.
+
+**Example:** If India imports Malaysian palm oil (higher cost) instead of Indonesian palm oil (lower cost) because of ASEAN FTA tariff preferences — trade is *diverted.*
+:::
+:::
+
+::: {.highlightbox}
+**Rule:** An FTA is welfare-improving only if trade *creation* > trade *diversion*. For India's agricultural FTAs, the evidence is mixed — ASEAN FTA likely created significant trade diversion in edible oils, hurting India's net welfare.
+:::
+
+## Trade Creation vs. Trade Diversion: Formal Analysis
+
+The net welfare effect of forming an FTA (Viner, 1950):
+
+$$\Delta W_{\text{FTA}} = \underbrace{TC}_{\substack{\text{efficiency gain:}\\ \text{domestic production} \\ \text{→ cheaper partner}}} - \underbrace{TD}_{\substack{\text{efficiency loss:}\\ \text{cheap ROW imports} \\ \text{→ dearer partner}}}$$
+
+**FTA is welfare-improving if and only if $TC > TD$.**
+
+Conditions that favour trade creation:
+1. Pre-FTA tariffs are **high** (larger production distortions to eliminate)
+2. Partner is **nearly as efficient** as rest-of-world
+3. **High trade volume** between members (more scope for creation)
+4. **Similar factor endowments** (complementary comparative advantages)
+
+```{r}
+#| label: fig-trade-creation
+#| fig-cap: "FTA: Trade Creation (gain, left) vs Trade Diversion (loss, right)\nSource: Author's illustration."
+#| fig-width: 9
+#| fig-height: 5
+
+# Setup: Country A imports good X.
+# Partner B price PB = 8; Rest-of-World price Pw = 6; MFN tariff t = 4.
+# Domestic supply Qs = 2P - 4; Domestic demand Qd = 40 - 2P.
+# Pre-FTA (Pw+t=10): Qs=16, Qd=20, M=4.
+# Post-FTA with B (PB=8): Qs=12, Qd=24, M=12.
+
+p1 <- ggplot() +
+  geom_segment(aes(x = 0, y = 20, xend = 40, yend =  0),
+               colour = "#012169", linewidth = 1.5) +
+  geom_segment(aes(x = 0, y =  2, xend = 36, yend = 20),
+               colour = "#B9975B", linewidth = 1.5) +
+  geom_hline(yintercept = 10, colour = "red",       linetype = "dashed", linewidth = 1) +
+  geom_hline(yintercept =  8, colour = "darkgreen", linetype = "dashed", linewidth = 1) +
+  annotate("polygon", x = c(16, 20, 20, 16), y = c(8, 8, 10, 10),
+           fill = "#B9975B", alpha = 0.4) +
+  annotate("polygon", x = c(20, 24, 20),     y = c(8, 8, 10),
+           fill = "red",    alpha = 0.3) +
+  annotate("polygon", x = c(16, 12, 16),     y = c(10, 8, 8),
+           fill = "red",    alpha = 0.3) +
+  annotate("text", x = 18,   y = 9.0,  label = "PS\nloss",  size = 2.8, colour = "#B9975B") +
+  annotate("text", x = 21.5, y = 8.7,  label = "TC\ngain",  size = 2.8, colour = "darkgreen") +
+  annotate("text", x = 14,   y = 8.7,  label = "TC\ngain",  size = 2.8, colour = "darkgreen") +
+  annotate("text", x = 41,   y = 0.5,  label = "D",         size = 4,   colour = "#012169") +
+  annotate("text", x = 37,   y = 19.5, label = "S",         size = 4,   colour = "#B9975B") +
+  annotate("text", x = 26,   y = 10.5, label = "Pw+t=10",   size = 3,   colour = "red") +
+  annotate("text", x = 26,   y =  7.5, label = "P[B]==8",   size = 3,   colour = "darkgreen", parse = TRUE) +
+  labs(title    = "Trade Creation",
+       subtitle = "Domestic production → cheaper partner imports",
+       x = "Quantity", y = "Price") +
+  scale_x_continuous(limits = c(0, 45)) +
+  theme_minimal(base_size = 10)
+
+p2 <- ggplot() +
+  geom_segment(aes(x = 0, y = 20, xend = 40, yend =  0),
+               colour = "#012169", linewidth = 1.5) +
+  geom_segment(aes(x = 0, y =  2, xend = 36, yend = 20),
+               colour = "#B9975B", linewidth = 1.5) +
+  geom_hline(yintercept = 10, colour = "red",       linetype = "dashed", linewidth = 1) +
+  geom_hline(yintercept =  8, colour = "orange",    linetype = "dashed", linewidth = 1.2) +
+  geom_hline(yintercept =  6, colour = "darkgreen", linetype = "dashed", linewidth = 1) +
+  annotate("polygon",
+           x = c(12, 16, 20, 24, 12),
+           y = c( 8, 10, 10,  8,  8),
+           fill = "orange", alpha = 0.35) +
+  annotate("text", x = 18,   y =  9.0, label = "TD\nloss",      size = 2.8, colour = "darkorange") +
+  annotate("text", x = 26,   y = 10.5, label = "Pw+t=10",       size = 3,   colour = "red") +
+  annotate("text", x = 26,   y =  7.5, label = "P[B]==8~(FTA)", size = 3,   colour = "orange",    parse = TRUE) +
+  annotate("text", x = 26,   y =  5.5, label = "P[w]==6~(ROW)", size = 3,   colour = "darkgreen", parse = TRUE) +
+  annotate("text", x = 41,   y =  0.5, label = "D",             size = 4,   colour = "#012169") +
+  annotate("text", x = 37,   y = 19.5, label = "S",             size = 4,   colour = "#B9975B") +
+  labs(title    = "Trade Diversion",
+       subtitle = "Imports shift from cheap ROW to dearer partner — net welfare loss",
+       x = "Quantity", y = "Price") +
+  scale_x_continuous(limits = c(0, 45)) +
+  theme_minimal(base_size = 10)
+
+p1 + p2 +
+  plot_annotation(
+    title    = "Free Trade Area: Trade Creation (Beneficial) vs Trade Diversion (Harmful)",
+    subtitle = expression(paste("Net welfare = TC ", phantom(x), "-", phantom(x), " TD. FTA beneficial only if TC > TD"))
+  )
+```
+
+## Current FTA Negotiations: Key Issues
+
+::: {.columns}
+::: {.column width="55%"}
+**India-UK FTA (under negotiation, 2025):**
+
+- Largest bilateral negotiation since India-UAE
+- UK wants: lower Indian tariffs on Scotch whisky, luxury cars, financial services
+- India wants: UK visa liberalization for IT professionals; lower tariffs on textiles, garments, processed food
+- **Agricultural sticking points:** UK dairy access, Indian basmati rice in UK market
+
+**India-EU FTA (restarted 2022):**
+
+- Restarted after 8-year gap
+- EU demands: dairy market access, geographical indications (GI) protection, SPS harmonization
+- India demands: visa liberalization, textile market access
+- **Agricultural sticking points:** EU dairy (France, Netherlands), EU wines, Indian mango and rice exports
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**The Common Pattern in All India FTA Negotiations:**
+
+1. **India is defensive** on dairy, edible oils, wines, processed food from developed countries
+2. **India is offensive** on rice, spices, garments, IT services
+3. **Agricultural market access is always the last issue resolved** — or blocks the deal entirely
+4. **The RCEP precedent** haunts all negotiations — India's farmers (and their political representatives) are wary of any deal that opens agricultural markets
+
+Agriculture = the political economy constraint binding all India's FTA negotiations.
+:::
+:::
+:::
+
+## Trade Policy Instruments: A Quick Map
+
+::: {.methodbox}
+**How Countries Restrict Trade (Preview for Lecture 7)**
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+**Tariff instruments:**
+- Basic customs duty (BCD)
+- Countervailing duty (CVD)
+- Anti-dumping duty (ADD)
+- Safeguard duty (temporary)
+
+**Non-tariff barriers:**
+- Quantitative restrictions (quotas)
+- Sanitary and phytosanitary (SPS) measures
+- Technical barriers to trade (TBT)
+- Export subsidies (Amber Box, Blue Box under WTO)
+:::
+::: {.column width="50%"}
+**India's agricultural policy toolkit:**
+
+- **Export restrictions:** MEP (Minimum Export Price), export bans
+- **Import restrictions:** High tariffs, SPS barriers, MRL (Maximum Residue Level) standards
+- **Domestic support:** MSP, PM-KISAN, fertilizer subsidy
+- **Trade facilitation:** APEDA market development, GI tags
+
+**Next lecture (Lecture 7):** Tariffs and quotas in detail — their welfare effects, WTO disciplines, and India's use of these instruments.
+:::
+:::
+:::
+
+## Summary
+
+::: {.keybox}
+**Lecture 6 — Core Concepts**
+
+1. **Terms of Trade** — the export-import price ratio; India's agricultural ToT is volatile and structurally challenged
+
+2. **Prebisch-Singer Hypothesis** — primary commodity prices decline relative to manufactures over the long run; India must move toward value-added exports
+
+3. **Free trade** — maximizes aggregate welfare through comparative advantage, but has distributional consequences; agriculture requires special treatment
+
+4. **FTAs** — second-best instruments driven by political economy; trade creation vs. diversion is the welfare test
+
+5. **India's FTA strategy** — defensive on agriculture; offensive on services and labour-intensive manufactures; RCEP exit reflects agricultural protection priorities
+
+6. **India-UAE CEPA** — India's new template: FTAs with non-agricultural partners are easier to conclude
+
+7. **Key negotiating constraint** — Agricultural market access is the binding constraint in all India's major FTA negotiations
+:::
+
+## Next Lecture: Protectionism — Tariffs and Quotas
+
+::: {.highlightbox}
+**Lecture 7 — June 9, 2026**
+
+**Instruments of Agricultural Protectionism:**
+
+1. **Tariffs** — specific vs. ad valorem; partial and general equilibrium effects; welfare analysis (consumer surplus, producer surplus, government revenue)
+2. **Quotas** — tariff-rate quotas (TRQs) in WTO; welfare effects; rent seeking
+3. **India's tariff structure in agriculture** — bound vs. applied tariffs; tariff water
+4. **Non-tariff barriers** — SPS standards, MRL limits, labelling requirements as instruments of protection
+5. **India's edible oil import protection story** — a case study in the political economy of agricultural tariffs
+
+**Preparation:** Review WTO's Agricultural Agreement (Articles 4–6 on market access) and India's Schedule of Concessions.
+:::
+
+---
+
+*ECO 2203 | Department of Agricultural Economics | Lecture 6 of 12*
+
+# Appendix {background-color="#1a3a5c"}
+
+## Additional Resources {.appendix}
+
+::: {.columns}
+::: {.column width="50%"}
+**Further Reading**
+
+- *International Economics* — Salvatore (Ch. 7-8)
+- *International Economics* — Appleyard & Field (Ch. 7-8)
+- RBI/DGCI&S/APEDA databases for latest data
+:::
+::: {.column width="50%"}
+**Key Data Sources**
+
+- DGCI&S: India's merchandise trade
+- RBI: Balance of payments data  
+- APEDA: Agricultural export statistics
+- WTO: Tariff and trade databases
+:::
+:::

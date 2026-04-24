@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Part I: Setting the Stage}{2}{0}{1}
+\beamer@sectionintoc {2}{Part II: The Scale of Global Trade}{7}{0}{2}
+\beamer@sectionintoc {3}{Part III: Key Concepts and Context}{14}{0}{3}
+\beamer@sectionintoc {4}{Part IV: Policy and Frameworks}{19}{0}{4}
+\beamer@sectionintoc {5}{Appendix}{26}{0}{5}

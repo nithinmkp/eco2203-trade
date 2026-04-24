@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nithin M">
+<meta name="dcterms.date" content="2026-05-09">
+
+<title>lecture03_theories_i – ECO 2203</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f3746951f800101ea2ade33225c42268.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ECO 2203 — International Trade &amp; Policy in Agriculture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lecture03_Theories_I.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Theories of International Trade I</h1>
+<p class="subtitle lead">ECO 2203 | International Trade and Policy in Agriculture</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nithin M </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Development Economics
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 9, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="part-i-the-central-question" class="level1" data-background-color="#E8EDF5">
+<h1 data-background-color="#E8EDF5">Part I: The Central Question</h1>
+<section id="the-central-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-central-question">The Central Question</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Why do countries trade?</strong></p>
+<p>This question has occupied economists for over 500 years. Three broad answers have emerged:</p>
+<div class="fragment">
+<ol type="1">
+<li><strong>Mercantilism (1500–1750):</strong> Trade is a zero-sum competition for power; exports = good, imports = bad; accumulate gold</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li><strong>Absolute Advantage — Adam Smith (1776):</strong> Trade is win-win; each country specialises in what it produces <em>most efficiently</em></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li><strong>Comparative Advantage — David Ricardo (1817):</strong> Even if one country is better at <em>everything</em>, both countries gain from trade based on <em>relative</em> costs</li>
+</ol>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="methodbox">
+<p><strong>Why theory matters for policy</strong></p>
+<p>India bans rice exports → mercantilist instinct (protect domestic supply, accumulate foreign exchange from <em>other</em> goods)</p>
+<p>India signs FTAs → comparative advantage logic (specialise and exchange)</p>
+<p>These theories are not just history — they are the intellectual foundation of every trade policy debate happening right now.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="overview-of-trade-theories-a-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-trade-theories-a-timeline">Overview of Trade Theories: A Timeline</h2>
+<div class="smaller">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th>Theory</th>
+<th>Key Idea</th>
+<th>Main Proponent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1500–1750</td>
+<td><strong>Mercantilism</strong></td>
+<td>Wealth = gold; maximise trade surplus</td>
+<td>Colbert, Mun</td>
+</tr>
+<tr class="even">
+<td>1776</td>
+<td><strong>Absolute Advantage</strong></td>
+<td>Specialise where you are <em>most</em> productive</td>
+<td>Adam Smith</td>
+</tr>
+<tr class="odd">
+<td>1817</td>
+<td><strong>Comparative Advantage</strong></td>
+<td>Specialise where you have <em>lowest opportunity cost</em></td>
+<td>David Ricardo</td>
+</tr>
+<tr class="even">
+<td>1933</td>
+<td><strong>Factor Endowments (H-O)</strong></td>
+<td>Trade reflects relative factor abundance</td>
+<td>Heckscher, Ohlin</td>
+</tr>
+<tr class="odd">
+<td>1953</td>
+<td><strong>Leontief Paradox</strong></td>
+<td>Empirical challenge to H-O</td>
+<td>Leontief</td>
+</tr>
+<tr class="even">
+<td>1970s–80s</td>
+<td><strong>New Trade Theory</strong></td>
+<td>Economies of scale + imperfect competition</td>
+<td>Krugman</td>
+</tr>
+<tr class="odd">
+<td>1990s</td>
+<td><strong>Porter’s Diamond</strong></td>
+<td>Competitive advantage of nations</td>
+<td>Porter</td>
+</tr>
+<tr class="even">
+<td>2000s</td>
+<td><strong>New New Trade Theory</strong></td>
+<td>Firm-level heterogeneity in trade</td>
+<td>Melitz</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keybox">
+<p>Each theory addresses a limitation of the previous one. By Lecture 6, we will have covered the full arc. Today: mercantilism and Smith.</p>
+</div>
+</section>
+</section>
+<section id="part-ii-mercantilism" class="level1" data-background-color="#E8EDF5">
+<h1 data-background-color="#E8EDF5">Part II: Mercantilism</h1>
+<section id="what-is-mercantilism" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-mercantilism">What is Mercantilism?</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Historical context</strong></p>
+<ul>
+<li>Dominant European trade doctrine: approximately 1500–1750 CE</li>
+<li>Era of nation-state formation, colonial expansion, and bullion-based monetary systems</li>
+<li>Gold and silver = the only “real” wealth; paper money not yet trusted</li>
+</ul>
+<p><strong>Core beliefs of mercantilism</strong></p>
+<ul>
+<li><strong>Wealth of a nation = stock of gold and silver</strong> it accumulates</li>
+<li>To accumulate gold → <strong>export more than you import</strong> → trade surplus → gold flows in</li>
+<li>Trade is <strong>zero-sum:</strong> one country’s gain is another’s loss</li>
+<li><strong>State’s role:</strong> Actively promote exports, restrict imports, grant monopolies to favoured companies</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>Key mercantilist idea:</strong></p>
+<p><em>“A nation is rich when it has more gold than other nations.”</em></p>
+<p>This view seems obvious to policymakers even today — which is why understanding and <em>refuting</em> it is so important.</p>
+<p><strong>Modern echo:</strong> When Indian politicians say “we must increase our trade surplus,” they are (often unknowingly) invoking mercantilist logic.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="mercantilist-policies-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="mercantilist-policies-in-practice">Mercantilist Policies in Practice</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Export promotion</strong></p>
+<ul>
+<li><strong>Export subsidies</strong> — government pays domestic producers to lower their export price</li>
+<li><strong>State-supported trading companies</strong> — British East India Company (1600), Dutch VOC (1602): chartered monopolies given exclusive rights to trade with Asia</li>
+<li><strong>Navigation Acts (England, 1651):</strong> Required all trade to be carried in English ships → protect English shipping industry and exclude Dutch competition</li>
+</ul>
+<p><strong>Import restriction</strong></p>
+<ul>
+<li><strong>High import tariffs</strong> — make foreign goods expensive</li>
+<li><strong>Import bans/prohibitions</strong> — on manufactured goods that competed with domestic industries</li>
+<li><strong>Colonialism</strong> — acquire raw material sources and captive markets for manufactured goods</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Evaluation of mercantilist instruments</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 44%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Policy</th>
+<th>Mercantilist rationale</th>
+<th>Modern equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Export subsidies</td>
+<td>Increase gold inflow</td>
+<td>India’s RoDTEP, MEIS</td>
+</tr>
+<tr class="even">
+<td>Import duties</td>
+<td>Keep gold in country</td>
+<td>India’s import tariff schedule</td>
+</tr>
+<tr class="odd">
+<td>State monopolies</td>
+<td>Control strategic trade</td>
+<td>MMTC, STC trading houses</td>
+</tr>
+<tr class="even">
+<td>Colonial extraction</td>
+<td>Secure raw materials</td>
+<td>Resource-seeking FDI</td>
+</tr>
+<tr class="odd">
+<td>Currency undervaluation</td>
+<td>Make exports cheap</td>
+<td>China 2000s, “currency manipulation” debate</td>
+</tr>
+</tbody>
+</table>
+<div class="methodbox">
+<p>Mercantilism was not entirely irrational — for a small open economy trying to industrialise, some “mercantilist” policies (infant industry protection, export subsidies) may be justified. The <em>error</em> is the zero-sum worldview.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="colonial-trade-the-institutional-structure" class="level2">
+<h2 class="anchored" data-anchor-id="colonial-trade-the-institutional-structure">Colonial Trade: The Institutional Structure</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>British mercantilism in India</strong></p>
+<ul>
+<li>India was Britain’s most valuable colonial possession — primary purpose: source raw materials, provide captive market for British manufactures</li>
+<li><strong>Raw material extraction:</strong> Raw cotton from India → Manchester mills → cotton textiles back to India</li>
+<li><strong>De-industrialisation:</strong> India’s famous cotton textile industry (Dhaka muslin, Surat cotton) was systematically destroyed through:
+<ul>
+<li>Zero/low import duties on British textiles entering India</li>
+<li>High export duties on Indian textiles entering Britain</li>
+<li>Physical destruction of Indian weavers’ looms (disputed but documented in some accounts)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>The numbers (Utsa Patnaik, 2018 estimate)</strong></p>
+<p>India transferred <strong>$45 trillion</strong> to Britain between 1765 and 1938 (present-value estimate — debated but widely cited).</p>
+<p>Even conservative estimates show that India’s per capita income <em>fell</em> under British rule — from ~comparable with Britain in 1700 to less than 20% of British levels by 1947.</p>
+<p><strong>Agricultural dimension:</strong> India was forced to grow indigo, opium, and jute for British export markets rather than food crops → contributed to famines (Bengal 1943: 2–3 million deaths)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-drain-of-wealth-naorojis-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="the-drain-of-wealth-naorojis-evidence">The Drain of Wealth: Naoroji’s Evidence</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Dadabhai Naoroji’s Drain Theory</strong></p>
+<ul>
+<li>Naoroji (1901): <em>Poverty and Un-British Rule in India</em></li>
+<li>Calculated that Britain extracted <strong>£200–300 million per year</strong> from India as “drain”</li>
+<li>Home charges: India paid for British administration costs, interest on British-held debt, railway profits</li>
+<li>The mechanism: India exported goods but received paper IOUs rather than gold — a systematic wealth transfer disguised as trade</li>
+<li>Silver drained from India → monetary contraction → deflation → economic stagnation</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="quotebox">
+<p>“England has impoverished India by her own prosperity.” — Dadabhai Naoroji, 1901</p>
+</div>
+<div class="methodbox">
+<p><strong>Modern reassessment:</strong> Economists Utsa Patnaik (2018) and Sashi Tharoor (<em>Inglorious Empire</em>, 2017) updated Naoroji’s estimates. The drain theory remains contested on methodology but its directional conclusion — that colonial trade systematically transferred wealth from India to Britain — is broadly accepted.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="critique-of-mercantilism" class="level2">
+<h2 class="anchored" data-anchor-id="critique-of-mercantilism">Critique of Mercantilism</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>David Hume’s price-specie-flow mechanism (1752)</strong></p>
+<p>Mercantilism has a self-defeating logic:</p>
+<ol type="1">
+<li>Country A runs a trade surplus → gold flows in → money supply rises</li>
+<li>More money → prices rise (quantity theory of money: MV = PQ)</li>
+<li>Higher prices → Country A’s exports become more expensive</li>
+<li>Exports fall, imports rise → trade surplus disappears automatically</li>
+<li>Gold flows back out</li>
+</ol>
+<p><strong>Conclusion:</strong> A trade surplus is <em>self-correcting</em>; mercantilist attempts to maintain it permanently are futile and cause inflation.</p>
+<p><strong>Adam Smith’s critique (1776)</strong></p>
+<ul>
+<li>“Wealth of a nation is not measured by the gold in its vaults but by the goods and services it can produce and consume”</li>
+<li>Trade is <strong>not zero-sum</strong> — both countries gain from specialisation</li>
+<li>Import restrictions reduce the nation’s consumption possibilities</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>The fundamental error of mercantilism</strong></p>
+<p>Mercantilists confused the <strong>means</strong> (gold) with the <strong>end</strong> (well-being of citizens).</p>
+<p>A country with more gold but fewer goods and services is <em>poorer</em>, not richer.</p>
+<p>Smith’s insight: A nation is wealthy when it has a <em>high standard of living</em> — access to abundant, diverse, and cheap goods and services. This requires <em>imports</em>, not just exports.</p>
+</div>
+<div class="highlightbox">
+<p><strong>Modern parallel:</strong> Japan in the 1980s ran huge trade surpluses with the USA. Was Japan richer for it? Its citizens had high savings but <em>lower consumption</em> than Americans with similar incomes — a classic mercantilist outcome.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="mercantilist-arithmetic-why-the-logic-fails" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="mercantilist-arithmetic-why-the-logic-fails">Mercantilist Arithmetic: Why the Logic Fails</h2>
+<p><strong>The mercantilist objective function</strong></p>
+<p>A nation seeks to accumulate gold <span class="math inline">\(G\)</span> by maximising its trade surplus:</p>
+<p><span class="math display">\[\text{Objective: } \max\; G = X - M\]</span></p>
+<p><span class="math display">\[\Rightarrow \text{policy prescriptions: } X \uparrow \text{ (export subsidies)}, \quad M \downarrow \text{ (tariffs, prohibitions, bans)}\]</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>The zero-sum fallacy</strong></p>
+<p>If <em>all</em> <span class="math inline">\(N\)</span> nations simultaneously pursue a surplus:</p>
+<p><span class="math display">\[\sum_{i=1}^{N}(X_i - M_i) = 0 \quad \forall \text{ nations simultaneously}\]</span></p>
+<p>Every export is someone else’s import — the global sum of trade balances is always exactly zero. Mercantilist policies merely <em>redistribute</em> gold among nations; they cannot increase the world’s total gold stock.</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Hume’s price-specie-flow refutation (1752)</strong></p>
+<p>Even a single nation’s surplus is self-correcting:</p>
+<p><span class="math display">\[\text{Gold inflow} \;\Rightarrow\; M_s \uparrow \;\Rightarrow\; P \uparrow \;\Rightarrow\; X \downarrow,\; M \uparrow \;\Rightarrow\; \text{surplus eliminated}\]</span></p>
+<p>Via the quantity theory of money (<span class="math inline">\(MV = PQ\)</span>, with <span class="math inline">\(V, Q\)</span> fixed in the short run):</p>
+<p><span class="math display">\[\Delta G &gt; 0 \;\Rightarrow\; \Delta M_s &gt; 0 \;\Rightarrow\; P \uparrow \;\Rightarrow\; \text{exports become uncompetitive}\]</span></p>
+<div class="methodbox">
+<p>A mercantilist surplus is self-defeating: the very gold inflow it generates raises domestic prices, eroding the export competitiveness that created the surplus.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="smiths-critique-real-wealth-vs-gold" class="level2">
+<h2 class="anchored" data-anchor-id="smiths-critique-real-wealth-vs-gold">Smith’s Critique: Real Wealth vs Gold</h2>
+<p><strong>Smith’s fundamental restatement</strong></p>
+<p>Mercantilists measured national wealth by the gold stock. Smith showed the correct measure is real consumption:</p>
+<p><span class="math display">\[W_{\text{real}} = \frac{\text{goods and services consumed}}{P} \;\neq\; \text{gold stock}\]</span></p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>The trade restriction paradox — applied to India</strong></p>
+<p>If India bans rice exports to keep supply at home:</p>
+<p><span class="math display">\[W_{\text{domestic,rice}} \uparrow \quad \text{(rice cheaper domestically)}\]</span> <span class="math display">\[W_{\text{global}} = 0 \quad \text{(no new rice created — redistributed, not added)}\]</span></p>
+<p>If instead India exports rice and specialises:</p>
+<p><span class="math display">\[W_{\text{global}} \uparrow \quad \text{(specialisation gains; world output expands)}\]</span> <span class="math display">\[W_{\text{India}} \uparrow \quad \text{(farmers earn more; import cheaper goods)}\]</span></p>
+<p><strong>The mercantilist error:</strong> treating the <em>means</em> (gold, foreign exchange) as the <em>end</em> (citizen well-being). A nation with a large foreign exchange reserve but poor citizens has confused instrument with objective.</p>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>Smith on imports</strong></p>
+<blockquote class="blockquote">
+<p><em>“It is the maxim of every prudent master of a family, never to attempt to make at home what it will cost him more to make than to buy.”</em> — Wealth of Nations, Book IV, Ch. 2</p>
+</blockquote>
+<p>Import restrictions are equivalent to a household refusing to buy <em>anything</em> from neighbours — the household makes everything itself, poorly and expensively, in the name of “self-sufficiency.”</p>
+<p>National self-sufficiency achieved through restriction destroys, not creates, real wealth.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="mercantilism-vs-smith-policy-implications" class="level2">
+<h2 class="anchored" data-anchor-id="mercantilism-vs-smith-policy-implications">Mercantilism vs Smith: Policy Implications</h2>
+<div class="smaller">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Mercantilism</th>
+<th>Adam Smith</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Goal</strong></td>
+<td>National power / gold accumulation</td>
+<td>National prosperity / consumption</td>
+</tr>
+<tr class="even">
+<td><strong>View of trade</strong></td>
+<td>Zero-sum: one nation’s gain = another’s loss</td>
+<td>Positive-sum: specialisation grows world output</td>
+</tr>
+<tr class="odd">
+<td><strong>Role of imports</strong></td>
+<td>Evil — gold drains out</td>
+<td>Beneficial — access to cheaper goods</td>
+</tr>
+<tr class="even">
+<td><strong>Role of exports</strong></td>
+<td>Good — gold flows in</td>
+<td>A means to pay for imports</td>
+</tr>
+<tr class="odd">
+<td><strong>State role</strong></td>
+<td>Regulate all trade; grant monopolies</td>
+<td>Laissez-faire; let markets direct resources</td>
+</tr>
+<tr class="even">
+<td><strong>India example (2023)</strong></td>
+<td>Rice/wheat export ban — hoard grain, protect prices</td>
+<td>RCEP/FTA participation — specialise, exchange</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keybox">
+<p><strong>The modern policy echo:</strong> Every time an Indian policymaker imposes an export ban to protect domestic consumers, they invoke mercantilist logic. Every time an economist argues for free trade to raise farmer incomes, they invoke Smith. Both impulses co-exist in India’s agricultural trade policy — understanding the theory clarifies which logic applies when.</p>
+</div>
+</section>
+<section id="neo-mercantilism-export-led-development-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="neo-mercantilism-export-led-development-strategies">Neo-Mercantilism: Export-Led Development Strategies</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Modern mercantilist practices</strong></p>
+<ul>
+<li><strong>Export-led growth strategy</strong> (China, South Korea, Germany): Use undervalued currency and export subsidies to drive export surplus; accumulate foreign exchange reserves</li>
+<li><strong>Currency undervaluation:</strong> China’s renminbi was widely believed to be 20–40% undervalued vs USD in 2000s → made Chinese exports artificially cheap</li>
+<li><strong>“Beggar-thy-neighbour” policies:</strong> Competitive devaluations — my currency devaluation boosts my exports at <em>your</em> expense (zero-sum again)</li>
+<li><strong>Industrial policy for export champions:</strong> China’s $5 trillion in state subsidies to EVs, solar panels (WTO disputes pending)</li>
+</ul>
+<p><strong>India’s position</strong></p>
+<ul>
+<li>India’s FTP 2023–28 target of $2 trillion exports has a mercantilist <em>flavour</em> — emphasises export growth</li>
+<li>But India has also been on the <em>receiving end</em> of neo-mercantilism: cheap Chinese goods flooded Indian markets in 2000s</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="keybox">
+<p><strong>The “China is mercantilist” debate</strong></p>
+<p>China’s strategy 2000–2020: - Kept RMB undervalued by ~20–40% - Provided massive subsidies to export industries - Result: $3T+ in foreign exchange reserves; world’s largest exporter</p>
+<p>Critics (US, EU): This is mercantilism — it harms trading partners through unfair competition</p>
+<p>China’s response: It is development strategy — infant industry protection, just like US and UK did in 19th century</p>
+<p><strong>Who is right?</strong> Both, somewhat. Lecture 14 (India’s FTP) will revisit this.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="neo-mercantilism-critique-and-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="neo-mercantilism-critique-and-assessment">Neo-Mercantilism: Critique and Assessment</h2>
+<div class="keybox">
+<p><strong>Critical Analysis of Neo-Mercantilist Strategies</strong></p>
+<p>While export-led growth produced remarkable results in East Asia (South Korea, Taiwan, China), neo-mercantilism has fundamental limitations:</p>
+<ul>
+<li><strong>Not universally replicable:</strong> If all developing countries simultaneously pursue export surpluses, not all can succeed — the global sum of surpluses must be zero</li>
+<li><strong>Trading partner retaliation:</strong> Persistent surpluses invite countervailing duties, anti-dumping actions, and trade wars (e.g., US-China trade war, 2018–present)</li>
+<li><strong>Domestic welfare cost:</strong> Currency undervaluation raises the cost of imports for domestic consumers; workers in export industries may face poor conditions</li>
+<li><strong>Bretton Woods system collapse (1971):</strong> The original system broke down partly because of mercantilist pressures from surplus countries</li>
+</ul>
+<p><strong>For India:</strong> The challenge is to use strategic export promotion (FTP, APEDA, SEZs) without triggering WTO violations or partner retaliation.</p>
+</div>
+</section>
+</section>
+<section id="part-iii-absolute-advantage-adam-smith" class="level1" data-background-color="#E8EDF5">
+<h1 data-background-color="#E8EDF5">Part III: Absolute Advantage — Adam Smith</h1>
+<section id="adam-smiths-insight" class="level2">
+<h2 class="anchored" data-anchor-id="adam-smiths-insight">Adam Smith’s Insight</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>The context: Wealth of Nations (1776)</strong></p>
+<ul>
+<li>Published the same year as the American Declaration of Independence</li>
+<li>A direct intellectual attack on mercantilism and the colonial trade system</li>
+<li>Argued for <strong>free markets</strong> and <strong>free trade</strong> as the sources of national wealth</li>
+</ul>
+<p><strong>Smith’s core insight on trade</strong></p>
+<blockquote class="blockquote">
+<p><em>“If a foreign country can supply us with a commodity cheaper than we ourselves can make it, better buy it of them with some part of the produce of our own industry, employed in a way in which we have some advantage.”</em> — Adam Smith, <em>Wealth of Nations</em>, Book IV, Ch. 2</p>
+</blockquote>
+<ul>
+<li>Trade is <strong>not zero-sum</strong> — both countries gain</li>
+<li>Each country should produce what it is <strong>best at</strong> — <em>absolute advantage</em></li>
+<li>The standard of living rises when countries specialise and exchange</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="methodbox">
+<p><strong>What is “absolute advantage”?</strong></p>
+<p>Country A has an absolute advantage in producing good X if it can produce <strong>more units of X per unit of labour</strong> (or input) than Country B.</p>
+<p>Equivalently: Country A requires <strong>fewer labour hours</strong> to produce one unit of X than Country B.</p>
+<p>This is about <em>absolute</em> productivity differences — who is objectively more efficient.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="absolute-advantage-formal-definition" class="level2">
+<h2 class="anchored" data-anchor-id="absolute-advantage-formal-definition">Absolute Advantage: Formal Definition</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Setting up the model</strong></p>
+<p>Assumptions (classical simplifications): - Two countries: Country A and Country B - Two goods: Good X and Good Y - One factor of production: Labour - Labour is mobile <em>within</em> each country but <em>immobile</em> between countries - Constant returns to scale (productivity doesn’t change with output) - Full employment in both countries</p>
+<p><strong>Definition</strong></p>
+<p>Country A has an <strong>absolute advantage</strong> in Good X if:</p>
+<p><span class="math display">\[a_{LX}^A &lt; a_{LX}^B\]</span></p>
+<p>where <span class="math inline">\(a_{LX}\)</span> = labour required to produce one unit of Good X.</p>
+<p>Or equivalently, if labour productivity <span class="math inline">\(\frac{1}{a_{LX}^A} &gt; \frac{1}{a_{LX}^B}\)</span></p>
+</div><div class="column" style="width:45%;">
+<p><strong>Productivity table format</strong></p>
+<p>We often present absolute advantage as:</p>
+<p><em>Units of output per worker-day:</em></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Good X</th>
+<th>Good Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Country A</td>
+<td><span class="math inline">\(\frac{1}{a_{LX}^A}\)</span></td>
+<td><span class="math inline">\(\frac{1}{a_{LY}^A}\)</span></td>
+</tr>
+<tr class="even">
+<td>Country B</td>
+<td><span class="math inline">\(\frac{1}{a_{LX}^B}\)</span></td>
+<td><span class="math inline">\(\frac{1}{a_{LY}^B}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Country A has absolute advantage in X if the value in row A, column X <strong>exceeds</strong> the value in row B, column X.</p>
+<div class="highlightbox">
+<p><strong>Smith’s prescription:</strong> A has absolute advantage in X → A should <em>export X</em>. B has absolute advantage in Y → B should <em>export Y</em>. Both specialise → both gain.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="absolute-advantage-india-vs-usa-salvatore-notation" class="level2">
+<h2 class="anchored" data-anchor-id="absolute-advantage-india-vs-usa-salvatore-notation">Absolute Advantage: India vs USA (Salvatore Notation)</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Production possibilities (units per worker-day)</strong></p>
+<p>Following Salvatore (2013, Ch. 2) — two nations, two commodities:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>India</th>
+<th>USA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rice (units/worker-day)</td>
+<td><strong>4</strong></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Wheat (units/worker-day)</td>
+<td>1</td>
+<td><strong>3</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Rice:</strong> India produces 4 vs USA’s 1 → <span class="hi">India has absolute advantage in Rice</span></li>
+<li><strong>Wheat:</strong> USA produces 3 vs India’s 1 → <span class="hi-gold">USA has absolute advantage in Wheat</span></li>
+</ul>
+<p><strong>Opportunity costs (= PPF slopes):</strong></p>
+<p><span class="math display">\[\text{India: OC of 1 Wheat} = 4 \text{ Rice} \quad (\text{steep PPF — Rice-abundant})\]</span> <span class="math display">\[\text{USA: OC of 1 Wheat} = \tfrac{1}{3} \text{ Rice} \quad (\text{flat PPF — Wheat-efficient})\]</span></p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>Labour endowment assumption</strong></p>
+<p>Each country has <strong>40 worker-days</strong> of labour. PPF intercepts:</p>
+<ul>
+<li>India: Rice max <span class="math inline">\(= 40 \times 4 = 160\)</span>; Wheat max <span class="math inline">\(= 40 \times 1 = 40\)</span></li>
+<li>USA: Rice max <span class="math inline">\(= 40 \times 1 = 40\)</span>; Wheat max <span class="math inline">\(= 40 \times 3 = 120\)</span></li>
+</ul>
+<p>PPF equations (linear = constant opportunity cost):</p>
+<p><span class="math display">\[\text{India: } R = 160 - 4W\]</span> <span class="math display">\[\text{USA: } R = 40 - \tfrac{1}{3}W\]</span></p>
+<p>The <strong>slope</strong> of each PPF equals the (negative) opportunity cost of Wheat in terms of Rice — the key signal for specialisation under absolute advantage.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># India: L = 40 worker-days. Rice max = 40×4 = 160; Wheat max = 40×1 = 40</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># PPF: R = 160 - 4W  (OC of 1 Wheat = 4 Rice → steep slope)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># USA: L = 40 worker-days. Rice max = 40×1 = 40; Wheat max = 40×3 = 120</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># PPF: R = 40 - (1/3)W  (OC of 1 Wheat = 1/3 Rice → flat slope)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>wheat_india <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">40</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>rice_india  <span class="ot">&lt;-</span> <span class="dv">160</span> <span class="sc">-</span> <span class="dv">4</span> <span class="sc">*</span> wheat_india</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>wheat_usa <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">120</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>rice_usa  <span class="ot">&lt;-</span> <span class="dv">40</span> <span class="sc">-</span> (<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>) <span class="sc">*</span> wheat_usa</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">w =</span> wheat_india, <span class="at">r =</span> rice_india),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> w, <span class="at">y =</span> r), <span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">20</span>, <span class="at">y =</span> <span class="dv">80</span>), <span class="at">color =</span> <span class="st">"#B9975B"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">22</span>, <span class="at">y =</span> <span class="dv">82</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Autarky</span><span class="sc">\n</span><span class="st">(20W, 80R)"</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">160</span>), <span class="at">color =</span> <span class="st">"darkgreen"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="dv">155</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Full specialisation</span><span class="sc">\n</span><span class="st">(0W, 160R)"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="dv">140</span>, <span class="at">xend =</span> <span class="dv">10</span>, <span class="at">yend =</span> <span class="dv">120</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"cm"</span>)),</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">11</span>, <span class="at">y =</span> <span class="dv">135</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"OC of Wheat = 4 Rice</span><span class="sc">\n</span><span class="st">(steep = Rice-abundant)"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India"</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Absolute advantage in Rice (4 units/worker)"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Wheat (units)"</span>, <span class="at">y =</span> <span class="st">"Rice (units)"</span>) <span class="sc">+</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>)) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">175</span>)) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">13</span>))</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">w =</span> wheat_usa, <span class="at">r =</span> rice_usa),</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> w, <span class="at">y =</span> r), <span class="at">color =</span> <span class="st">"#B9975B"</span>, <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">60</span>, <span class="at">y =</span> <span class="dv">20</span>), <span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">62</span>, <span class="at">y =</span> <span class="dv">21</span>,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Autarky</span><span class="sc">\n</span><span class="st">(60W, 20R)"</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">120</span>, <span class="at">y =</span> <span class="dv">0</span>), <span class="at">color =</span> <span class="st">"darkgreen"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">118</span>, <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Full</span><span class="sc">\n</span><span class="st">specialisation"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">30</span>, <span class="at">y =</span> <span class="dv">30</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"OC of Wheat = 1/3 Rice</span><span class="sc">\n</span><span class="st">(flat = Wheat-efficient)"</span>,</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"USA"</span>,</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Absolute advantage in Wheat (3 units/worker)"</span>,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Wheat (units)"</span>, <span class="at">y =</span> <span class="st">"Rice (units)"</span>) <span class="sc">+</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">135</span>)) <span class="sc">+</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>)) <span class="sc">+</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#B9975B"</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">13</span>))</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> <span class="fu">plot_annotation</span>(</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">title    =</span> <span class="st">"Linear PPFs Under Absolute Advantage (Constant Opportunity Costs)"</span>,</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">"Slope of PPF = opportunity cost. India: steep → Rice-abundant. USA: flat → Wheat-efficient. Each exports its absolute advantage good."</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-linear-ppf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-linear-ppf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture03_Theories_I_files/figure-html/fig-linear-ppf-1.png" class="img-fluid figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linear-ppf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Linear PPFs: India and USA — Absolute Advantage (constant opportunity costs) Source: Author’s illustration.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gains-from-trade-india-and-usa-under-absolute-advantage" class="level2">
+<h2 class="anchored" data-anchor-id="gains-from-trade-india-and-usa-under-absolute-advantage">Gains from Trade: India and USA Under Absolute Advantage</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Without trade — autarky (labour split 50/50)</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>India</th>
+<th>USA</th>
+<th>World</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rice (units)</td>
+<td>80</td>
+<td>20</td>
+<td><strong>100</strong></td>
+</tr>
+<tr class="even">
+<td>Wheat (units)</td>
+<td>20</td>
+<td>60</td>
+<td><strong>80</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>India: 20 workers × 4 = 80 Rice; 20 workers × 1 = 20 Wheat. USA: 20 × 1 = 20 Rice; 20 × 3 = 60 Wheat.</em></p>
+<p><strong>With trade — full specialisation</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>India</th>
+<th>USA</th>
+<th>World</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rice (units)</td>
+<td><strong>160</strong></td>
+<td>0</td>
+<td><strong>160</strong></td>
+</tr>
+<tr class="even">
+<td>Wheat (units)</td>
+<td>0</td>
+<td><strong>120</strong></td>
+<td><strong>120</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>World gains from specialisation:</strong></p>
+<p><span class="math display">\[\Delta \text{Rice} = +60 \text{ units} \quad (+60\%)\]</span> <span class="math display">\[\Delta \text{Wheat} = +40 \text{ units} \quad (+50\%)\]</span></p>
+</div><div class="column" style="width:50%;">
+<div class="keybox">
+<p><strong>Both countries can consume more after trade</strong></p>
+<p>At terms of trade <strong>2 Rice = 1 Wheat</strong> (India exports Rice, imports Wheat):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Autarky</th>
+<th>Post-trade</th>
+<th>Gain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>India — Rice</td>
+<td>80</td>
+<td>120</td>
+<td><strong>+40</strong></td>
+</tr>
+<tr class="even">
+<td>India — Wheat</td>
+<td>20</td>
+<td>20</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>USA — Rice</td>
+<td>20</td>
+<td>40</td>
+<td><strong>+20</strong></td>
+</tr>
+<tr class="even">
+<td>USA — Wheat</td>
+<td>60</td>
+<td>80</td>
+<td><strong>+20</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Both countries consume <strong>outside</strong> their individual PPFs — trade expands the consumption frontier beyond what each country could achieve alone.</p>
+<p><strong>Key insight:</strong> Absolute advantage gives each nation a clear signal about where to specialise — the country that is objectively more productive in a good should produce and export it.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="numerical-example-india-and-bangladesh" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-example-india-and-bangladesh">Numerical Example: India and Bangladesh</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>The production possibilities</strong></p>
+<p>Assume: with <strong>1 worker-day</strong>, each country can produce:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Rice (quintals)</th>
+<th>Jute (metres)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>India</strong></td>
+<td><strong>4</strong></td>
+<td><strong>2</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Bangladesh</strong></td>
+<td><strong>1</strong></td>
+<td><strong>4</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Who has absolute advantage where?</strong></p>
+<ul>
+<li><strong>Rice:</strong> India produces 4 Q vs Bangladesh 1 Q → <span class="hi">India has absolute advantage in rice</span></li>
+<li><strong>Jute:</strong> India produces 2 M vs Bangladesh 4 M → <span class="hi-gold">Bangladesh has absolute advantage in jute</span></li>
+</ul>
+<p><strong>Smith’s recommendation:</strong> India should export rice, Bangladesh should export jute</p>
+</div><div class="column" style="width:45%;">
+<p><strong>Before trade (autarky)</strong></p>
+<p>Assume each country has <strong>100 worker-days</strong> to allocate:</p>
+<ul>
+<li>India divides 50/50: produces 200 Q rice + 100 M jute</li>
+<li>Bangladesh divides 50/50: produces 50 Q rice + 200 M jute</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Rice</th>
+<th>Jute</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>India</td>
+<td>200</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>Bangladesh</td>
+<td>50</td>
+<td>200</td>
+</tr>
+<tr class="odd">
+<td><strong>World total</strong></td>
+<td><strong>250</strong></td>
+<td><strong>300</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="methodbox">
+<p>Now: what happens if each country <em>fully specialises</em> according to absolute advantage?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-gains-from-trade-before-and-after" class="level2">
+<h2 class="anchored" data-anchor-id="the-gains-from-trade-before-and-after">The Gains from Trade: Before and After</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>After full specialisation</strong></p>
+<ul>
+<li>India (100 workers all in rice): produces <strong>400 Q rice</strong>, 0 jute</li>
+<li>Bangladesh (100 workers all in jute): produces 0 rice, <strong>400 M jute</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Rice</th>
+<th>Jute</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>India</td>
+<td>400</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Bangladesh</td>
+<td>0</td>
+<td>400</td>
+</tr>
+<tr class="odd">
+<td><strong>World total</strong></td>
+<td><strong>400</strong></td>
+<td><strong>400</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>World production gain:</strong></p>
+<ul>
+<li>Rice: 250 → 400 (+150 Q, <strong>+60% increase</strong>)</li>
+<li>Jute: 300 → 400 (+100 M, <strong>+33% increase</strong>)</li>
+</ul>
+<p><strong>The world is richer</strong> with specialisation — this extra output is the “gains from trade”</p>
+</div><div class="column" style="width:45%;">
+<p><strong>Consumption after trade</strong></p>
+<p>Suppose they trade at ratio <strong>2Q rice = 2M jute</strong> (terms of trade = 1:1):</p>
+<ul>
+<li>India exports 100 Q rice, imports 100 M jute</li>
+<li>Bangladesh exports 100 M jute, imports 100 Q rice</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Rice (consume)</th>
+<th>Jute (consume)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>India</td>
+<td>300</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>Bangladesh</td>
+<td>100</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Compare to autarky (50/50 split):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Rice gain</th>
+<th>Jute gain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>India</td>
+<td>+100 (+50%)</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Bangladesh</td>
+<td>+50 (+100%)</td>
+<td>+100 (+50%)</td>
+</tr>
+</tbody>
+</table>
+<div class="keybox">
+<p><strong>Both countries consume more</strong> of at least one good — trade is genuinely win-win.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="indias-absolute-advantage-in-agriculture" class="level2">
+<h2 class="anchored" data-anchor-id="indias-absolute-advantage-in-agriculture">India’s Absolute Advantage in Agriculture</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Where India has clear absolute advantage</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 42%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commodity</th>
+<th>India’s global rank</th>
+<th>Key advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Milk production</td>
+<td>#1</td>
+<td>230M+ cattle; Operation Flood legacy</td>
+</tr>
+<tr class="even">
+<td>Pulse production</td>
+<td>#1</td>
+<td>Dryland farming expertise; diverse varieties</td>
+</tr>
+<tr class="odd">
+<td>Spice production</td>
+<td>#1</td>
+<td>Tropical climate; accumulated expertise</td>
+</tr>
+<tr class="even">
+<td>Jute production</td>
+<td>#1 (with Bangladesh)</td>
+<td>Ganga-Brahmaputra delta soils</td>
+</tr>
+<tr class="odd">
+<td>Rice production</td>
+<td>#2 (after China)</td>
+<td>Diverse agro-climates; Green Revolution</td>
+</tr>
+<tr class="even">
+<td>Wheat production</td>
+<td>#2 (after China)</td>
+<td>Punjab-Haryana breadbasket</td>
+</tr>
+<tr class="odd">
+<td>Sugarcane</td>
+<td>#2 (after Brazil)</td>
+<td>Maharashtra, UP climate; Cooperative mills</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why India has these advantages:</strong></p>
+<ul>
+<li>Diverse agro-climatic zones (12 out of 15 major global types)</li>
+<li>Abundant agricultural labour (50% of workforce)</li>
+<li>Long history of cultivation → accumulated knowledge</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>Spices: India’s oldest absolute advantage</strong></p>
+<p>Spices were the original reason Europeans sought trade routes to India. The Portuguese, Dutch, and English colonised trade routes specifically to control the spice trade.</p>
+<p>Today: - India produces ~75% of world’s spices - Exports ~$3.7B in spices (FY2024) - Top markets: USA, China, Vietnam, Thailand - Key commodities: cardamom, pepper, turmeric, chilli, cumin - 52 varieties of spices cultivated</p>
+<p>India’s spice export advantage is a textbook case of absolute advantage based on <em>natural resource endowments</em> + <em>accumulated human capital</em>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="indias-agricultural-productivity-absolute-advantage-indicators" class="level2">
+<h2 class="anchored" data-anchor-id="indias-agricultural-productivity-absolute-advantage-indicators">India’s Agricultural Productivity: Absolute Advantage Indicators</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>labour_prod <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">commodity   =</span> <span class="fu">c</span>(<span class="st">"Basmati Rice"</span>, <span class="st">"Non-Basmati</span><span class="sc">\n</span><span class="st">Rice"</span>, <span class="st">"Cotton"</span>, <span class="st">"Spices</span><span class="sc">\n</span><span class="st">(Pepper)"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Wheat"</span>, <span class="st">"Soybean"</span>, <span class="st">"Maize"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">india_yield =</span> <span class="fu">c</span>(<span class="fl">3.8</span>, <span class="fl">4.1</span>, <span class="fl">2.1</span>, <span class="fl">2.8</span>, <span class="fl">3.5</span>, <span class="fl">1.2</span>, <span class="fl">3.0</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">world_yield =</span> <span class="fu">c</span>(<span class="fl">2.9</span>, <span class="fl">4.4</span>, <span class="fl">2.0</span>, <span class="fl">1.5</span>, <span class="fl">3.5</span>, <span class="fl">2.8</span>, <span class="fl">5.8</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">india_adv   =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>labour_prod <span class="ot">&lt;-</span> labour_prod <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(india_yield <span class="sc">/</span> world_yield) <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">commodity =</span> <span class="fu">factor</span>(commodity, <span class="at">levels =</span> commodity),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">ratio     =</span> <span class="fu">round</span>(india_yield <span class="sc">/</span> world_yield, <span class="dv">2</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(labour_prod, <span class="fu">aes</span>(<span class="at">x =</span> commodity, <span class="at">y =</span> ratio, <span class="at">fill =</span> india_adv)) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(ratio, <span class="st">"x"</span>)), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">size =</span> <span class="fl">3.2</span>) <span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="fl">1.1</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"World average = 1.0"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"#012169"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"#cccccc"</span>),</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"India's absolute advantage"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"Below world average"</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">"India's Yield Productivity Relative to World Average"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Above 1.0x = India produces more per hectare than world average (absolute advantage indicator)"</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"India Yield / World Average Yield"</span>, <span class="at">fill =</span> <span class="cn">NULL</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">2.2</span>)) <span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-specialisation-gains" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-specialisation-gains-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture03_Theories_I_files/figure-html/fig-specialisation-gains-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-specialisation-gains-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: India’s Yield Productivity Relative to World Average — Absolute Advantage Indicators Source: FAO, FAOSTAT (2023).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="methodbox">
+<p><strong>Reading the chart:</strong> Spices (Pepper) at 1.87x and Basmati Rice at 1.31x show the strongest absolute advantage — India produces far more per hectare than the world average. Maize (0.52x) and Soybean (0.43x) show India well below world average — not where export effort should be directed. Cotton (1.05x) and Non-Basmati Rice (0.93x) are near parity — other factors (price, quality, logistics) determine trade patterns.</p>
+</div>
+</section>
+<section id="limitations-of-absolute-advantage-theory" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="limitations-of-absolute-advantage-theory">Limitations of Absolute Advantage Theory</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Theoretical limitations</strong></p>
+<ol type="1">
+<li><strong>Ignores the case where one country is better at everything</strong> — If India has absolute advantage in <em>both</em> rice and jute, Smith’s theory says Bangladesh should not trade → clearly wrong</li>
+<li><strong>Labour-only model</strong> — Ignores capital, land, technology; these matter enormously in agriculture</li>
+<li><strong>Constant returns to scale</strong> — Real agriculture has diminishing returns (limited fertile land); opportunity costs <em>increase</em> as production expands</li>
+<li><strong>Full employment assumption</strong> — In reality, India has seasonal unemployment; trade may employ idle labour rather than divert it</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><strong>Practical limitations</strong></p>
+<ol start="5" type="1">
+<li><strong>Transport costs are ignored</strong> — A commodity with a slight absolute advantage may not be worth trading if freight cost is high (bulk grains)</li>
+<li><strong>No room for trade policy</strong> — The model says free trade is always optimal; ignores infant industry, food security, strategic goods arguments</li>
+<li><strong>No product quality differences</strong> — India exports basmati rice (premium quality) and non-basmati (commodity); absolute advantage theory treats all rice as identical</li>
+<li><strong>Static model</strong> — Absolute advantage can change over time (South Korea had no absolute advantage in electronics in 1960; now it does)</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="the-problem-with-absolute-advantage" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-with-absolute-advantage">The Problem with Absolute Advantage</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>The critical case: What if one country is better at everything?</strong></p>
+<p>Suppose USA vs India:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Wheat (tonnes/worker)</th>
+<th>Software (units/worker)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>USA</strong></td>
+<td><strong>4</strong></td>
+<td><strong>8</strong></td>
+</tr>
+<tr class="even">
+<td><strong>India</strong></td>
+<td><strong>2</strong></td>
+<td><strong>2</strong></td>
+</tr>
+</tbody>
+</table>
+<p>USA has absolute advantage in <strong>both</strong> wheat and software.</p>
+<p><strong>Smith’s theory predicts:</strong> No basis for trade — India has no absolute advantage in anything.</p>
+<p><strong>But we <em>know</em> India and USA trade extensively!</strong></p>
+<ul>
+<li>India exports software services to USA ($80–100B/year)</li>
+<li>India exports agricultural products to USA</li>
+</ul>
+<p><strong>Smith’s theory cannot explain this. Something deeper is at work.</strong></p>
+</div><div class="column" style="width:40%;">
+<div class="highlightbox">
+<p><strong>What Smith missed</strong></p>
+<p>The key is not absolute productivity but <strong>relative</strong> (or comparative) productivity.</p>
+<p>Even though USA is better at <em>both</em> goods, the <em>degree</em> of advantage differs:</p>
+<ul>
+<li>USA is 2× better at wheat (4 vs 2)</li>
+<li>USA is <strong>4× better</strong> at software (8 vs 2)</li>
+</ul>
+<p>USA has a <em>stronger</em> advantage in software → USA should specialise in software</p>
+<p>India has a <em>lesser</em> disadvantage in wheat → India should specialise in wheat</p>
+<p>This is <strong>comparative advantage</strong> — David Ricardo’s great insight.</p>
+</div>
+<div class="methodbox">
+<p>We will prove this formally in <strong>Lecture 4</strong> — but the intuition is: even the worst player on a sports team should play the position they’re <em>least bad</em> at.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="smith-vs-mercantilism-a-summary-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="smith-vs-mercantilism-a-summary-comparison">Smith vs Mercantilism: A Summary Comparison</h2>
+<div class="smaller">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 23%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Mercantilism</th>
+<th>Adam Smith (Absolute Advantage)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Source of national wealth</strong></td>
+<td>Stock of gold and silver</td>
+<td>Productive capacity; goods and services</td>
+</tr>
+<tr class="even">
+<td><strong>Nature of trade</strong></td>
+<td>Zero-sum (one country’s gain = another’s loss)</td>
+<td>Win-win (both countries gain from specialisation)</td>
+</tr>
+<tr class="odd">
+<td><strong>Objective of trade policy</strong></td>
+<td>Maximise exports; minimise imports</td>
+<td>Maximise specialisation; allow free exchange</td>
+</tr>
+<tr class="even">
+<td><strong>Role of government</strong></td>
+<td>Active: subsidise exports, restrict imports, grant monopolies</td>
+<td>Minimal: allow markets to direct specialisation</td>
+</tr>
+<tr class="odd">
+<td><strong>Imports: good or bad?</strong></td>
+<td>Bad — gold flows out</td>
+<td>Good — access to cheaper goods; frees resources for comparative advantage sectors</td>
+</tr>
+<tr class="even">
+<td><strong>Trade balance</strong></td>
+<td>Surplus is the goal</td>
+<td>Irrelevant; what matters is consumption possibilities</td>
+</tr>
+<tr class="odd">
+<td><strong>Colonies</strong></td>
+<td>Essential — raw material source + captive market</td>
+<td>Unnecessary and harmful to the coloniser too (waste of resources)</td>
+</tr>
+<tr class="even">
+<td><strong>Legacy</strong></td>
+<td>Colonial trade systems; modern currency wars</td>
+<td>Foundation of free trade economics; WTO ideology</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="part-iv-india-policy-applications" class="level1" data-background-color="#E8EDF5">
+<h1 data-background-color="#E8EDF5">Part IV: India Policy Applications</h1>
+<section id="india-policy-application-mercantilism-vs-smith-in-real-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="india-policy-application-mercantilism-vs-smith-in-real-decisions">India Policy Application: Mercantilism vs Smith in Real Decisions</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>The rice export ban (2023): a case study</strong></p>
+<p><em>The mercantilist argument for the ban:</em> - Domestic rice prices rising → risk food inflation rising → protect domestic consumers - Keep rice in India → ensure food security → classic mercantilist hoarding of “strategic resources”</p>
+<p><em>The Smithian argument against the ban:</em> - India has absolute (and comparative) advantage in rice → should be <em>exporting</em>, not restricting - Ban reduces income of 30 million paddy farmers - Ban damages long-term export relationships with Bangladesh, Africa - Ban causes global price spike → India blamed for food security crisis in import-dependent countries</p>
+<p><strong>Who won?</strong> The ban was implemented in August 2023 — mercantilist/food security logic prevailed over free trade logic.</p>
+</div><div class="column" style="width:45%;">
+<div class="keybox">
+<p><strong>The deeper tension</strong></p>
+<p>India’s trade policy in agriculture oscillates between two poles:</p>
+<p><strong>Export restrictionism</strong> (mercantilist): Rice ban, wheat ban, sugar export quotas, onion export bans</p>
+<p><strong>Export promotion</strong> (Smithian): FTP 2023–28, APEDA support, RoDTEP, agri-export zones</p>
+<p>Both impulses co-exist because the political economy is complex: consumers want cheap food; farmers want high prices; the government wants foreign exchange; WTO wants compliance.</p>
+<p>There is no simple answer — which is why studying trade theory is so important.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-case-of-indian-spices-absolute-advantage-in-action" class="level2">
+<h2 class="anchored" data-anchor-id="the-case-of-indian-spices-absolute-advantage-in-action">The Case of Indian Spices: Absolute Advantage in Action</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>India’s dominance in global spice markets</strong></p>
+<ul>
+<li><strong>Production:</strong> India produces 75% of world’s spices by volume; 50%+ by value</li>
+<li><strong>Export performance (FY2024):</strong> $3.7 billion; 14% growth over FY2023</li>
+<li><strong>Volume:</strong> ~2.1 million tonnes exported</li>
+</ul>
+<p><strong>Top commodities and destinations</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Spice</th>
+<th>Export value</th>
+<th>Top markets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chilli</td>
+<td>$982M</td>
+<td>USA, Vietnam, Sri Lanka</td>
+</tr>
+<tr class="even">
+<td>Cumin</td>
+<td>$700M</td>
+<td>USA, Bangladesh, China</td>
+</tr>
+<tr class="odd">
+<td>Cardamom</td>
+<td>$350M</td>
+<td>Saudi Arabia, UAE</td>
+</tr>
+<tr class="even">
+<td>Turmeric</td>
+<td>$300M</td>
+<td>Bangladesh, USA</td>
+</tr>
+<tr class="odd">
+<td>Pepper</td>
+<td>$190M</td>
+<td>USA, Vietnam</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Source of absolute advantage:</strong> Specific agro-climatic conditions (Kerala for pepper/cardamom, AP/Rajasthan for chilli/cumin, Tamil Nadu for turmeric) that cannot be replicated at comparable cost elsewhere</p>
+</div><div class="column" style="width:40%;">
+<div class="highlightbox">
+<p><strong>The spice trade: history and economics</strong></p>
+<p>Ancient trade routes from India → Arabian Peninsula → Mediterranean existed for 3,000+ years. Roman records mention importing pepper from India at high prices.</p>
+<p>The search for direct sea routes to India’s spice markets was the primary driver of the “Age of Exploration” — Columbus was looking for a route to India’s spices when he accidentally reached the Americas.</p>
+<p>Today, India’s spice exports are still driven by the same absolute advantage: climate, soils, and accumulated expertise that competitors cannot easily replicate.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-mercantilism-and-absolute-advantage" class="level2">
+<h2 class="anchored" data-anchor-id="summary-mercantilism-and-absolute-advantage">Summary: Mercantilism and Absolute Advantage</h2>
+<div class="keybox">
+<p><strong>Key points from Lecture 3</strong></p>
+<p><strong>Mercantilism (1500–1750):</strong> - Wealth = gold; goal = trade surplus; trade is zero-sum - Led to colonial exploitation, including India’s “drain of wealth” - Critiqued by Hume (price-specie-flow) and Smith (wealth is production, not gold) - Modern echoes: export bans, currency manipulation, FTP export targets</p>
+<p><strong>Absolute Advantage (Adam Smith, 1776):</strong> - Each country should specialise in what it produces most efficiently - Trade is win-win — world production rises with specialisation - India and Bangladesh example: rice vs jute, both gain from specialisation - India’s agricultural absolute advantages: rice, spices, pulses, milk — rooted in climate, labour, and accumulated knowledge</p>
+<p><strong>The fatal limitation:</strong> What if one country is better at <em>everything</em>? Smith cannot explain trade between USA and India. This is the gap Ricardo fills with <strong>comparative advantage</strong>.</p>
+</div>
+</section>
+<section id="key-takeaways-lecture-3" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways-lecture-3">Key Takeaways: Lecture 3</h2>
+<div class="methodbox">
+<p><strong>What we covered today</strong></p>
+<ul>
+<li><strong>Mercantilism:</strong> Trade as power accumulation; maximise surplus; zero-sum worldview → systematically flawed, but echoes persist in modern policy</li>
+<li><strong>Colonial trade in India:</strong> British mercantilism extracted surplus, destroyed Indian textile industry, contributed to Indian poverty → “drain of wealth” (Naoroji)</li>
+<li><strong>Hume and Smith’s critiques:</strong> Trade surpluses are self-correcting (price-specie-flow); real wealth is productive capacity, not gold</li>
+<li><strong>Absolute advantage:</strong> Specialise in what you produce with highest <em>absolute</em> efficiency; trade is win-win → both India and Bangladesh can gain from specialisation in rice and jute</li>
+<li><strong>India’s absolute advantages:</strong> Rice, spices, pulses, milk, jute — rooted in agro-climatic endowments and accumulated human capital</li>
+<li><strong>Fundamental limitation:</strong> Absolute advantage cannot explain trade when one country is more efficient in <em>everything</em> → sets up Ricardo’s comparative advantage</li>
+</ul>
+</div>
+</section>
+<section id="next-lecture-lecture-4" class="level2">
+<h2 class="anchored" data-anchor-id="next-lecture-lecture-4">Next Lecture: Lecture 4</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Theories of International Trade II — Comparative Advantage</strong> <em>(May 19, 2026)</em></p>
+<p>We will cover:</p>
+<ul>
+<li><strong>David Ricardo (1817):</strong> The most profound insight in economics — comparative advantage</li>
+<li><strong>The opportunity cost logic:</strong> Why the <em>relative</em> cost, not absolute cost, determines trade patterns</li>
+<li><strong>Formal model:</strong> Two countries, two goods, with full numerical derivation</li>
+<li><strong>India vs USA example:</strong> Why India exports software services despite USA being more productive in absolute terms</li>
+<li><strong>Production Possibility Frontier (PPF):</strong> Formal diagrammatic treatment</li>
+<li><strong>The gains from trade:</strong> Measured precisely with PPF and consumption possibilities</li>
+<li><strong>Empirical evidence:</strong> Does the Ricardian model predict actual trade patterns?</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="highlightbox">
+<p><strong>Suggested reading</strong></p>
+<ul>
+<li>Krugman, Obstfeld &amp; Melitz, <em>International Economics</em>, Ch. 3</li>
+<li>Ricardo, D. (1817). <em>Principles of Political Economy and Taxation</em>, Ch. 7 (excerpt)</li>
+<li>Goldin, I. and Reinert, K. (2012). <em>Globalization for Development</em>, Ch. 2</li>
+</ul>
+<p><strong>Key question to prepare:</strong></p>
+<p>If India is only half as productive as the USA in <em>all</em> agricultural commodities, should India and USA trade at all? If yes, <em>what</em> should each produce?</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="appendix" class="level1" data-background-color="#1a3a5c">
+<h1 data-background-color="#1a3a5c">Appendix</h1>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section id="additional-resources" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Additional Resources</h2><div class="quarto-appendix-contents">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Further Reading</strong></p>
+<ul>
+<li><em>International Economics</em> — Salvatore (Ch. 2-3)</li>
+<li><em>International Economics</em> — Appleyard &amp; Field (Ch. 2-3)</li>
+<li>RBI/DGCI&amp;S/APEDA databases for latest data</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Key Data Sources</strong></p>
+<ul>
+<li>DGCI&amp;S: India’s merchandise trade</li>
+<li>RBI: Balance of payments data<br>
+</li>
+<li>APEDA: Agricultural export statistics</li>
+<li>WTO: Tariff and trade databases</li>
+</ul>
+</div>
+</div>
+
+
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Department of Development Economics · ECO 2203</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Nithin M · 2026</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nithin M">
+<meta name="dcterms.date" content="2026-08-15">
+
+<title>lecture17_export_organizations – ECO 2203</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f3746951f800101ea2ade33225c42268.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ECO 2203 — International Trade &amp; Policy in Agriculture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lecture17_Export_Organizations.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 17: Agricultural Export Promotion Organizations</h1>
+<p class="subtitle lead">ECO 2203 | International Trade and Policy in Agriculture</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nithin M </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Development Economics
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 15, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="section" class="level1 section">
+<h1 class="section"></h1>
+<div style="text-align:center; margin-top: 2em;">
+<p><strong>Lecture 17</strong></p>
+<p><span class="hi" style="font-size:1.8em;">Agricultural Export Promotion Organizations</span></p>
+<p>The Institutions Behind India’s $43.7 Billion Agricultural Export Ecosystem</p>
+</div>
+<hr>
+<section id="the-institutional-architecture-of-indias-agri-exports" class="level2">
+<h2 class="anchored" data-anchor-id="the-institutional-architecture-of-indias-agri-exports">The Institutional Architecture of India’s Agri Exports</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<p>India’s agricultural export performance does not emerge spontaneously from market forces. It is shaped by a <strong>dense ecosystem of statutory bodies, commodity boards, and promotional agencies</strong> working in parallel.</p>
+<p><strong>Three tiers of the ecosystem:</strong></p>
+<p><strong>Tier 1 — Apex Mandate Bodies:</strong><br>
+APEDA and MPEDA cover the broadest range of products</p>
+<p><strong>Tier 2 — Commodity-Specific Boards:</strong><br>
+Tea, Coffee, Rubber, Spices, Tobacco Boards target specific value chains</p>
+<p><strong>Tier 3 — Quality and Finance Infrastructure:</strong><br>
+EIC (certification), EXIM Bank (trade finance), ECGC (risk cover)</p>
+</div><div class="column" style="width:42%;">
+<div class="highlightbox">
+<p><strong>India’s agri export organizations at a glance:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Body</th>
+<th>Est.</th>
+<th>Ministry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>APEDA</td>
+<td>1985</td>
+<td>Commerce</td>
+</tr>
+<tr class="even">
+<td>MPEDA</td>
+<td>1972</td>
+<td>Commerce</td>
+</tr>
+<tr class="odd">
+<td>Tea Board</td>
+<td>1953</td>
+<td>Commerce</td>
+</tr>
+<tr class="even">
+<td>Coffee Board</td>
+<td>1942</td>
+<td>Commerce</td>
+</tr>
+<tr class="odd">
+<td>Spices Board</td>
+<td>1987</td>
+<td>Commerce</td>
+</tr>
+<tr class="even">
+<td>Rubber Board</td>
+<td>1947</td>
+<td>Commerce</td>
+</tr>
+<tr class="odd">
+<td>Tobacco Board</td>
+<td>1976</td>
+<td>Commerce</td>
+</tr>
+<tr class="even">
+<td>EIC</td>
+<td>1964</td>
+<td>Commerce</td>
+</tr>
+<tr class="odd">
+<td>EXIM Bank</td>
+<td>1982</td>
+<td>Finance</td>
+</tr>
+<tr class="even">
+<td>ECGC</td>
+<td>1957</td>
+<td>Finance</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="apeda-mandate-and-structure" class="level2">
+<h2 class="anchored" data-anchor-id="apeda-mandate-and-structure">APEDA: Mandate and Structure</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>APEDA</strong> — Agricultural and Processed Food Products Export Development Authority</p>
+<ul>
+<li>Established under the <strong>APEDA Act, 1985</strong></li>
+<li>Under the <strong>Ministry of Commerce and Industry</strong></li>
+<li>Headquarters: <strong>New Delhi</strong>; 13 regional offices across India</li>
+</ul>
+<p><strong>Scheduled products:</strong></p>
+<p>APEDA covers <strong>14 scheduled product groups</strong> including fresh produce, processed foods, meat, dairy, cereals, and marine products (see APEDA Act Schedule).</p>
+<div class="keybox">
+<p>APEDA’s scheduled products cover <strong>~60% of India’s agricultural export basket by value.</strong> Rice (basmati) alone accounts for $5.8B of APEDA’s promoted exports.</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>APEDA’s governing structure:</strong></p>
+<ul>
+<li><strong>Chairperson:</strong> IAS officer (Secretary-level appointment)</li>
+<li><strong>Governing Board:</strong> 25 members — government, industry, research, farmers</li>
+<li><strong>Annual budget:</strong> ~₹650 crore (FY2025)</li>
+</ul>
+<p><strong>Funding mechanism:</strong></p>
+<p>APEDA collects a <strong>cess</strong> on APEDA-scheduled exports (₹2 per quintal for most commodities) which funds Market Development Assistance (MDA) grants for trade fair participation, pack houses, and quality testing.</p>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>Full list of APEDA’s 14 scheduled product groups:</p>
+<p>Fresh fruits and vegetables · Processed fruits and vegetables · Meat and poultry products · Dairy products · Confectionery and bakery products · Cereals and cereal products · Groundnut, oilseeds, oil meals · Floriculture and seeds · Plantation crops · Organic products · Alcoholic beverages · Poultry and poultry products · Animal casings · Miscellaneous processed items</p>
+</div>
+<hr>
+</section>
+<section id="apeda-scheduled-product-exports-fy2024" class="level2">
+<h2 class="anchored" data-anchor-id="apeda-scheduled-product-exports-fy2024">APEDA Scheduled Product Exports: FY2024</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df_apeda <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Product =</span> <span class="fu">c</span>(<span class="st">"Non-Basmati Rice"</span>,<span class="st">"Basmati Rice"</span>,<span class="st">"Wheat"</span>,<span class="st">"Other Cereals"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Processed Food"</span>,<span class="st">"Marine Products"</span>,<span class="st">"Spices"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Buffalo Meat"</span>,<span class="st">"Fresh Fruits/Veg"</span>,<span class="st">"Other"</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Value_FY2024 =</span> <span class="fu">c</span>(<span class="fl">6.4</span>, <span class="fl">5.8</span>, <span class="fl">0.7</span>, <span class="fl">0.5</span>, <span class="fl">11.2</span>, <span class="fl">7.6</span>, <span class="fl">3.7</span>, <span class="fl">3.9</span>, <span class="fl">3.1</span>, <span class="fl">0.8</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(Value_FY2024) <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Product =</span> <span class="fu">factor</span>(Product, <span class="at">levels =</span> Product),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">Rank    =</span> dplyr<span class="sc">::</span><span class="fu">row_number</span>())</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_apeda, <span class="fu">aes</span>(<span class="at">x =</span> Value_FY2024, <span class="at">y =</span> Product, <span class="at">fill =</span> Rank)) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.72</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"$"</span>, Value_FY2024, <span class="st">"B"</span>)), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.12</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">colour =</span> <span class="st">"grey25"</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"#a8c4e5"</span>, <span class="at">high =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">14</span>), <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(<span class="st">"$"</span>, x, <span class="st">"B"</span>)) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"APEDA Scheduled Product Exports: FY2024 (USD Billion)"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Total APEDA exports = ~USD 43.7 Billion"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Export Value (USD Billion)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"grey40"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-apeda-products" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-apeda-products-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture17_Export_Organizations_files/figure-html/fig-apeda-products-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-apeda-products-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Processed food is the single largest APEDA export category; marine products rank second. Rice (basmati + non-basmati) together constitute ~28% of the basket. Source: APEDA Annual Report 2023-24.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="apedas-key-functions-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="apedas-key-functions-in-practice">APEDA’s Key Functions in Practice</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>1. Financial Assistance (MDA Grants):</strong></p>
+<ul>
+<li><strong>Infrastructure:</strong> pack houses, pre-cooling facilities, CA stores, vapour heat treatment (VHT) plants — subsidy up to 50% of cost (cap ₹50 lakh–₹3 crore)</li>
+<li><strong>Quality labs:</strong> NABL accreditation support; pesticide residue testing equipment</li>
+<li><strong>Market promotion:</strong> 75% reimbursement of stall cost at international fairs</li>
+</ul>
+<p><strong>2. Quality Standards:</strong></p>
+<ul>
+<li>Issues guidelines for pesticide residue management (grape, mango protocols)</li>
+<li>Coordinates NABL-accredited testing laboratories for certifying shipments</li>
+<li>Manages <strong>Generic India brand</strong> (Incredible India! branding at trade fairs)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>4. Bilateral Market Access Protocols:</strong></p>
+<p>Market access for perishables requires country-to-country pest risk assessment (PRA). APEDA negotiates these protocols:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Protocol</th>
+<th>Country</th>
+<th>Product</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>VHT Protocol</td>
+<td><strong>Japan</strong></td>
+<td>Mango (Alphonso)</td>
+</tr>
+<tr class="even">
+<td>Cold Treatment</td>
+<td><strong>South Korea</strong></td>
+<td>Grapes</td>
+</tr>
+<tr class="odd">
+<td>Systems Approach</td>
+<td><strong>USA</strong></td>
+<td>Mangoes</td>
+</tr>
+<tr class="even">
+<td>Residue Monitoring</td>
+<td><strong>EU</strong></td>
+<td>Grapes, pomegranate</td>
+</tr>
+</tbody>
+</table>
+<div class="highlightbox">
+<p><strong>The Japan mango success story:</strong><br>
+APEDA negotiated a <strong>vapour heat treatment (VHT) protocol</strong> with Japan’s Ministry of Agriculture (MAFF) in 2006. Indian mango exports to Japan grew from near-zero to <strong>$50+ million</strong> in FY2024.</p>
+</div>
+</div>
+</div>
+<div class="notes">
+<p><strong>3. Market Intelligence:</strong></p>
+<ul>
+<li>APEDA’s AgriXchange portal: real-time export statistics, market prices, tariff information for 50+ destinations</li>
+<li>Issues market intelligence reports on key commodities and destinations</li>
+<li>Organises buyer-seller meets (BSMs) in India and abroad</li>
+<li>Publishes commodity-specific export guidelines and market reports</li>
+</ul>
+</div>
+<hr>
+</section>
+<section id="top-10-destinations-for-indias-agricultural-exports" class="level2">
+<h2 class="anchored" data-anchor-id="top-10-destinations-for-indias-agricultural-exports">Top 10 Destinations for India’s Agricultural Exports</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_dest <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Country   =</span> <span class="fu">c</span>(<span class="st">"USA"</span>,<span class="st">"Bangladesh"</span>,<span class="st">"UAE"</span>,<span class="st">"China"</span>,<span class="st">"Saudi Arabia"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Indonesia"</span>,<span class="st">"Malaysia"</span>,<span class="st">"Nepal"</span>,<span class="st">"Vietnam"</span>,<span class="st">"UK"</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Share_Pct =</span> <span class="fu">c</span>(<span class="fl">11.2</span>, <span class="fl">9.8</span>, <span class="fl">8.4</span>, <span class="fl">6.7</span>, <span class="fl">5.3</span>, <span class="fl">4.8</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">3.2</span>, <span class="fl">2.8</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(Share_Pct) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Country =</span> <span class="fu">factor</span>(Country, <span class="at">levels =</span> Country))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_dest, <span class="fu">aes</span>(<span class="at">x =</span> Share_Pct, <span class="at">y =</span> Country)) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">xend =</span> Share_Pct, <span class="at">yend =</span> Country),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">colour =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">1.15</span>) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#B9975B"</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(Share_Pct, <span class="st">"%"</span>)), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.45</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">colour =</span> <span class="st">"grey25"</span>) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">14</span>), <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>)) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"Top 10 Destinations for India's Agricultural Exports (FY2024)"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Share of total agri exports (%)"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Export Share (%)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"grey40"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-agri-destinations" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-agri-destinations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture17_Export_Organizations_files/figure-html/fig-agri-destinations-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-agri-destinations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: USA leads with 11.2% share driven by marine products and spices; Bangladesh and UAE are the next largest markets for rice and meat exports. Source: APEDA Annual Report 2023-24.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="apedas-success-metrics-selected-achievements" class="level2">
+<h2 class="anchored" data-anchor-id="apedas-success-metrics-selected-achievements">APEDA’s Success Metrics: Selected Achievements</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Basmati Rice:</strong></p>
+<ul>
+<li>FY2010 export: $1.5 billion<br>
+</li>
+<li>FY2024 export: <strong>$5.8 billion</strong> (50+ destinations)</li>
+<li>APEDA’s GI application for Basmati at WTO (ongoing): protects brand value</li>
+<li>APEDA basmati traceability: QR code on bags linking to farm, miller, testing report</li>
+</ul>
+<p><strong>Organic Exports:</strong></p>
+<ul>
+<li>FY2024: <strong>$1.1 billion</strong> (50+ countries)</li>
+<li>India: 4th largest organic area globally (4.43 million ha, 4.5 million farmers)</li>
+<li>APEDA manages NPOP (National Programme for Organic Production) — certification, accreditation</li>
+<li>USA (37%) and EU (35%) are top organic destinations</li>
+</ul>
+<p><strong>Fresh Grapes (EU):</strong></p>
+<ul>
+<li>EU had threatened ban due to pesticide residues (2014 crisis)</li>
+<li>APEDA’s Grape Net portal: farmer-level residue monitoring of 1.5 lakh acres</li>
+<li>Residue violations reduced from 180 (2013) to 9 (FY2024)</li>
+<li>Grape exports: <strong>$260 million</strong> FY2024; sustained EU market access</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="keybox">
+<p><strong>APEDA trade fair presence:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Fair</th>
+<th>Location</th>
+<th>India Stall</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gulfood</td>
+<td>Dubai, Feb</td>
+<td>~400 exhibitors</td>
+</tr>
+<tr class="even">
+<td>SIAL</td>
+<td>Paris, Oct</td>
+<td>~150 exhibitors</td>
+</tr>
+<tr class="odd">
+<td>Annapoorna</td>
+<td>Mumbai</td>
+<td>Domestic + buyers</td>
+</tr>
+<tr class="even">
+<td>FMI Show</td>
+<td>Chicago</td>
+<td>Marine, organic</td>
+</tr>
+<tr class="odd">
+<td>WorldFood</td>
+<td>Moscow</td>
+<td>Basmati, spices</td>
+</tr>
+</tbody>
+</table>
+<p>APEDA’s “India Pavilion” concept — government-funded stall space offered to SME exporters at subsidised rates. In FY2024, APEDA facilitated participation of <strong>3,200 exporters</strong> across 47 international fairs.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="india-agricultural-exports-long-run-trend" class="level2">
+<h2 class="anchored" data-anchor-id="india-agricultural-exports-long-run-trend">India Agricultural Exports: Long-run Trend</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>df_trend <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Year_n    =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Year_lbl  =</span> <span class="fu">c</span>(<span class="st">"FY2014"</span>,<span class="st">"FY2015"</span>,<span class="st">"FY2016"</span>,<span class="st">"FY2017"</span>,<span class="st">"FY2018"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">"FY2019"</span>,<span class="st">"FY2020"</span>,<span class="st">"FY2021"</span>,<span class="st">"FY2022"</span>,<span class="st">"FY2023"</span>,<span class="st">"FY2024"</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Exports_B =</span> <span class="fu">c</span>(<span class="fl">23.2</span>, <span class="fl">23.7</span>, <span class="fl">22.8</span>, <span class="fl">24.1</span>, <span class="fl">26.1</span>, <span class="fl">32.8</span>, <span class="fl">35.1</span>, <span class="fl">41.3</span>, <span class="fl">50.2</span>, <span class="fl">53.2</span>, <span class="fl">43.7</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_trend, <span class="fu">aes</span>(<span class="at">x =</span> Year_n, <span class="at">y =</span> Exports_B)) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">fill =</span> <span class="st">"#012169"</span>, <span class="at">alpha =</span> <span class="fl">0.13</span>) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#012169"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df_trend, Year_lbl <span class="sc">==</span> <span class="st">"FY2023"</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">"#C84B31"</span>, <span class="at">size =</span> <span class="dv">6</span>, <span class="at">shape =</span> <span class="dv">1</span>, <span class="at">stroke =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">10</span>, <span class="at">y =</span> <span class="dv">56</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"FY2023 peak: $53.2B"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> <span class="st">"#C84B31"</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x =</span> <span class="dv">11</span>, <span class="at">xend =</span> <span class="dv">11</span>, <span class="at">y =</span> <span class="dv">46</span>, <span class="at">yend =</span> <span class="fl">44.8</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> <span class="st">"#B9975B"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"cm"</span>), <span class="at">type =</span> <span class="st">"closed"</span>)) <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">10.4</span>, <span class="at">y =</span> <span class="fl">48.5</span>,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"FY2024: $43.7B</span><span class="sc">\n</span><span class="st">Rice &amp; onion export bans"</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> <span class="st">"#B9975B"</span>, <span class="at">size =</span> <span class="fl">2.9</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>, <span class="at">labels =</span> df_trend<span class="sc">$</span>Year_lbl) <span class="sc">+</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">60</span>), <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(<span class="st">"$"</span>, x, <span class="st">"B"</span>)) <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India Agricultural Exports: Long-run Trend (USD Billion)"</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"APEDA-promoted product exports, FY2014–FY2024"</span>,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"USD Billion"</span>) <span class="sc">+</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">35</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-apeda-trend" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-apeda-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture17_Export_Organizations_files/figure-html/fig-apeda-trend-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-apeda-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: India’s APEDA-promoted exports grew 2.3x from FY2014 to the FY2023 peak of 53.2B USD, before declining to 43.7B in FY2024 after non-basmati rice and onion export bans. Source: APEDA Annual Report 2023-24.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="mpeda-indias-seafood-export-authority" class="level2">
+<h2 class="anchored" data-anchor-id="mpeda-indias-seafood-export-authority">MPEDA: India’s Seafood Export Authority</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>MPEDA</strong> — Marine Products Export Development Authority</p>
+<ul>
+<li>Established under <strong>MPEDA Act, 1972</strong></li>
+<li>Ministry of Commerce and Industry</li>
+<li>Headquarters: <strong>Kochi, Kerala</strong>; offices in all coastal states</li>
+</ul>
+<p><strong>India’s seafood exports (FY2024):</strong></p>
+<ul>
+<li>Total: <strong>$7.6 billion</strong> (3.5 million MT)</li>
+<li>India: <strong>4th largest</strong> seafood exporter globally (after China, Norway, Vietnam)</li>
+<li>Shrimp: 66% of export value</li>
+<li>Top markets: USA (24%), EU (22%), China (14%), Japan (8%), Southeast Asia (7%)</li>
+</ul>
+<p><strong>Product mix:</strong></p>
+<p>Frozen shrimp · Dried fish · Frozen fish (ribbonfish, pomfret) · Cephalopods (squid, cuttlefish, octopus) · Fresh/chilled fish · Seaweed · Surimi</p>
+<div class="keybox">
+<p><strong>Andhra Pradesh</strong> contributes <strong>70% of India’s shrimp exports</strong> — the largest concentration of aquaculture in the world outside China.</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>MPEDA’s registration system:</strong></p>
+<p>All marine product exporters must register with MPEDA. As of FY2024:</p>
+<ul>
+<li>Processing plants: <strong>1,200+</strong> (EU-approved: 350+)</li>
+<li>Hatcheries: <strong>2,800</strong></li>
+<li>Aquaculture farmers linked: <strong>~1.2 million</strong></li>
+</ul>
+<p><strong>Traceability and CoC (Chain of Custody):</strong></p>
+<p>MPEDA’s CoC system tracks shrimp from farm pond to export container:</p>
+<ol type="1">
+<li>Farm registration (GPS-tagged)</li>
+<li>Feed purchase records (antibiotic-free)</li>
+<li>Harvest sampling (NRCP residue test)</li>
+<li>Processing plant records</li>
+<li>Container ID linked to farm batch</li>
+</ol>
+<p>This traceability is required for EU and USA market access — buyers can scan a QR code and trace any pack of Indian shrimp to the source farm.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="mpeda-quality-systems-and-international-compliance" class="level2">
+<h2 class="anchored" data-anchor-id="mpeda-quality-systems-and-international-compliance">MPEDA: Quality Systems and International Compliance</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>National Residue Control Plan (NRCP):</strong></p>
+<p>The EU requires all third-country seafood exporters to operate an NRCP — a systematic national programme testing for:</p>
+<ul>
+<li>Antibiotics (nitrofurans, chloramphenicol, tetracyclines)</li>
+<li>Heavy metals (mercury, lead, cadmium)</li>
+<li>Pesticide residues</li>
+</ul>
+<p>MPEDA coordinates NRCP testing across states: - 18,000+ samples per year - Tested at CIFT, EIC, and NABL labs - Annual audit by EU’s DG-SANTE (Health and Food Safety)</p>
+<p><strong>Result:</strong> EU has kept Indian seafood on its approved list continuously since 2006 (minor suspension in 2002 was reversed after MPEDA reforms).</p>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>USA FDA import alerts — India’s challenge:</strong></p>
+<p>The USA FDA has issued import alerts on Indian shrimp over antibiotic residues multiple times.</p>
+<p><strong>2022 import alert:</strong> 46 Indian processing plants placed under increased surveillance; exports to USA dipped 8% in FY2023.</p>
+<p><strong>MPEDA’s response:</strong> - Mandatory antibiotic-free certification for all USA-bound shrimp - MPEDA training for 50,000 Andhra farmers on prohibited antibiotics - 3rd party testing at NABL labs (EIC, SGS) before shipment</p>
+<p><strong>Outcome:</strong> USA-bound exports recovered to $1.8B in FY2024.</p>
+<div class="keybox">
+<p>SPS compliance is not a one-time event — it requires continuous investment in testing, farmer training, and government–industry coordination.</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-five-commodity-boards-overview" class="level2">
+<h2 class="anchored" data-anchor-id="the-five-commodity-boards-overview">The Five Commodity Boards: Overview</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Board</th>
+<th>Est.</th>
+<th>HQ</th>
+<th>Key Products</th>
+<th>FY2024 Export</th>
+<th>Top Markets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tea Board</strong></td>
+<td>1953</td>
+<td>Kolkata</td>
+<td>CTC tea, orthodox, green</td>
+<td>~$750M</td>
+<td>Russia, UAE, UK</td>
+</tr>
+<tr class="even">
+<td><strong>Coffee Board</strong></td>
+<td>1942</td>
+<td>Bengaluru</td>
+<td>Arabica, Robusta</td>
+<td>~$1.2B</td>
+<td>Italy, Germany, USA</td>
+</tr>
+<tr class="odd">
+<td><strong>Rubber Board</strong></td>
+<td>1947</td>
+<td>Kottayam</td>
+<td>NR, latex, crepe</td>
+<td>~$250M</td>
+<td>Germany, USA, Italy</td>
+</tr>
+<tr class="even">
+<td><strong>Spices Board</strong></td>
+<td>1987</td>
+<td>Kochi</td>
+<td>Chilli, cumin, cardamom, pepper</td>
+<td>~$3.7B</td>
+<td>China, USA, Vietnam</td>
+</tr>
+<tr class="odd">
+<td><strong>Tobacco Board</strong></td>
+<td>1976</td>
+<td>Guntur</td>
+<td>FCV tobacco, cheroots</td>
+<td>~$800M</td>
+<td>Belgium, Germany, Russia</td>
+</tr>
+</tbody>
+</table>
+<div class="methodbox">
+<p>All five boards perform similar functions: <strong>research, quality standards, market development, financial assistance, and export promotion.</strong> Each has a statutory role in the respective value chain — from regulating auctions (Tea, Tobacco) to issuing GI certificates (Spices Board for Alleppey Green Cardamom).</p>
+</div>
+<hr>
+</section>
+<section id="tea-board-of-india" class="level2">
+<h2 class="anchored" data-anchor-id="tea-board-of-india">Tea Board of India</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>India’s tea sector:</strong></p>
+<ul>
+<li><strong>2nd largest producer globally</strong> (after China): 1.35 billion kg/year (FY2024)</li>
+<li>Domestic consumption: ~1.1 billion kg (India is its own largest consumer)</li>
+<li>Exports: <strong>200–250 million kg (~$750–800 million)</strong></li>
+</ul>
+<p><strong>Tea Board functions:</strong></p>
+<ul>
+<li>Regulates tea auctions: <strong>Kolkata, Guwahati, Coimbatore, Cochin</strong> auction centres</li>
+<li>Tea Research Association (Tocklai, Assam): oldest tropical crop research station in the world (est. 1911)</li>
+<li>Issues <strong>Tea Certificate</strong> for all shipments</li>
+<li>Darjeeling GI: <strong>world’s first GI-tagged tea</strong> (EU recognition 1995, India 2004). 87 registered gardens. ~7 million kg/year.</li>
+</ul>
+<p><strong>Top export markets:</strong> Russia (20%), UAE (18%), UK (12%), USA (7%), Germany (5%)</p>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>Challenges facing Indian tea:</strong></p>
+<ol type="1">
+<li><strong>Competition:</strong> Kenya (low-cost CTC), China (premium green/white), Sri Lanka (strong Ceylon brand)</li>
+<li><strong>Price stagnation:</strong> Assam CTC auction prices have grown only 4% annually since 2015 despite input cost inflation</li>
+<li><strong>Climate risk:</strong> North Bengal tea gardens face erratic monsoon; 2023 drought cut Darjeeling first-flush yield by 30%</li>
+<li><strong>Small-tea growers:</strong> 35% of tea production from 200,000+ small growers (&lt; 10 ha) — difficult to comply with Rainforest Alliance/UTZ standards required by European retail chains</li>
+</ol>
+<p><strong>Tea Board response:</strong> Grameen Krishi Mitra (GKM) extension workers linking small growers to certification. Target: 50% certified by 2028.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="coffee-board-and-spices-board" class="level2">
+<h2 class="anchored" data-anchor-id="coffee-board-and-spices-board">Coffee Board and Spices Board</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Coffee Board of India (est. 1942, Bengaluru):</strong></p>
+<ul>
+<li>India: <strong>3rd largest Arabica producer in Asia</strong></li>
+<li>Production: ~350,000 MT/year</li>
+<li>Exports: <strong>$1.2 billion (FY2024)</strong> — record high; 15% growth over FY2023</li>
+<li><span class="hi">Arabica</span>: Coorg, Chikmagalur (Bababudangiri GI); shade-grown, organic premium</li>
+<li><span class="hi">Robusta</span>: Wayanad, Hassan; used in espresso blends globally</li>
+<li>Top markets: Italy (30%), Germany (18%), Belgium (12%), USA (9%)</li>
+<li>CCRI (Central Coffee Research Institute, Chikmagalur): disease-resistant variety development</li>
+<li>Specialty coffee promotion: India now at World Barista Championship; “Indian single origin” brand growing</li>
+</ul>
+<div class="keybox">
+<p>Coffee Board’s <strong>Café Coffee Day</strong> predecessor was a Board initiative. Domestic coffee consumption now growing 7% annually — youngest coffee drinking demographic globally.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Spices Board of India (est. 1987, Kochi):</strong></p>
+<ul>
+<li>India: <strong>world’s largest spice exporter by value</strong></li>
+<li>109 varieties; 8 million MT production; <strong>4.5 million MT exports</strong></li>
+<li><strong>$3.7 billion (FY2024)</strong> — 5-year CAGR of 12%</li>
+</ul>
+<p><strong>Top export items (FY2024):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Spice</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chilli</td>
+<td>$1.1B</td>
+</tr>
+<tr class="even">
+<td>Spice Oils &amp; Oleoresins</td>
+<td>$800M</td>
+</tr>
+<tr class="odd">
+<td>Cumin</td>
+<td>$720M</td>
+</tr>
+<tr class="even">
+<td>Turmeric</td>
+<td>$200M</td>
+</tr>
+<tr class="odd">
+<td>Cardamom</td>
+<td>$150M</td>
+</tr>
+<tr class="even">
+<td>Pepper</td>
+<td>$140M</td>
+</tr>
+</tbody>
+</table>
+<div class="highlightbox">
+<p><strong>GI products:</strong> Alleppey Green Cardamom, Malabar Black Pepper, Guntur Sannam Chilli, Coorg Orange Cardamom. Premium over non-GI: <strong>20–40%</strong> in EU market.</p>
+<p><strong>SPS challenge:</strong> EU raised MRL concerns on Indian chilli (Sudan Red dye, aflatoxin). Spices Board’s GAP training programme covers 500,000 chilli farmers in Andhra Pradesh.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="export-inspection-council-eic" class="level2">
+<h2 class="anchored" data-anchor-id="export-inspection-council-eic">Export Inspection Council (EIC)</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>EIC</strong> — statutory body under the <strong>Export (Quality Control and Inspection) Act, 1963</strong></p>
+<ul>
+<li>Ministry of Commerce and Industry; HQ New Delhi</li>
+<li>Purpose: independent certification that Indian exports meet quality standards acceptable to importing countries</li>
+</ul>
+<p><strong>Structure:</strong></p>
+<ul>
+<li><strong>5 regional EIOs</strong> (Export Inspection Offices): Mumbai, Chennai, Kochi, Kolkata, Delhi</li>
+<li><strong>40+ sub-offices</strong> in export-intensive centres (Vizag, Surat, Amritsar, Ludhiana)</li>
+<li>Accredited by <strong>EU’s DG-SANTE, USFDA, Japan MHLW, Korean MFDS</strong></li>
+</ul>
+<p><strong>Mandatory certification products:</strong></p>
+<p>Fish and fishery products · Meat and meat products · Poultry products · Dairy products · Egg products · Honey · Organic products · Castor oil · Processed food (for EU, Japan, USA)</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>What EIC does per shipment:</strong></p>
+<ol type="1">
+<li>Document verification (invoice, packing list, test reports)</li>
+<li>Physical inspection: random sampling from lot</li>
+<li>Lab analysis: microbiological, chemical, pesticide, heavy metals</li>
+<li>Issuance of <strong>Health Certificate</strong> (format accepted by destination country)</li>
+<li>Post-shipment surveillance: tracks rejection reports from destination</li>
+</ol>
+<p><strong>EIC performance (FY2024):</strong></p>
+<ul>
+<li>Certificates issued: <strong>1.8 lakh</strong></li>
+<li>Value covered: <strong>₹1.1 lakh crore</strong></li>
+<li>Rejection rate (border rejections at EU/USA): <strong>0.4%</strong> (one of the lowest among major exporters)</li>
+<li>Turnaround time: <strong>2–3 working days</strong> for most certificates</li>
+</ul>
+<div class="keybox">
+<p>An <strong>FSSAI-EIC joint protocol</strong> (2022) has harmonised testing requirements so exporters need not test separately for domestic FSSAI and export EIC compliance.</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="nafed-price-stabilisation-and-export-implications" class="level2">
+<h2 class="anchored" data-anchor-id="nafed-price-stabilisation-and-export-implications">NAFED: Price Stabilisation and Export Implications</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>NAFED</strong> — National Agricultural Cooperative Marketing Federation of India</p>
+<ul>
+<li>Established 1958; cooperative society under Multi-State Cooperative Societies Act</li>
+<li>Functions: <strong>Price Support Scheme (PSS) procurement</strong>, buffer stock management, retail distribution</li>
+</ul>
+<p><strong>PSS and its export connection:</strong></p>
+<p>When prices of oilseeds (mustard, groundnut, soybean) and pulses fall below MSP: - Government activates PSS; NAFED procures from farmers at MSP - NAFED accumulates buffer stocks of oilseeds/pulses - Stocks are sold through NAFED retail, e-commerce, and open market sales when prices rise - Procurement <strong>reduces export availability</strong> (absorbs domestic surplus before it can be exported); but <strong>stabilises farm incomes</strong></p>
+<div class="keybox">
+<p>In kharif 2023: NAFED procured <strong>38 lakh MT of tur dal</strong> at MSP (₹6,600/quintal) from Karnataka, Maharashtra, Madhya Pradesh. This stock was later released to control prices — but reduced the quantity available for the export market in FY2024.</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>The NAFED export dilemma:</strong></p>
+<p>NAFED is <strong>not primarily an export organization</strong> — it is a price stabilisation agency. But its procurement and buffer management decisions directly affect India’s agri export supply.</p>
+<p><strong>Tension:</strong> When NAFED holds large tur dal stocks, export prices are firm because domestic supply is constrained. When NAFED releases stocks, domestic prices fall → farmer incomes hurt, but consumers benefit.</p>
+<p><strong>FPO linkage:</strong></p>
+<p>NAFED’s eMandis portal now links FPOs to government procurement at MSP and to private buyers. 1,200 FPOs linked as of FY2024, aggregating procurement from 2.5 million farmers.</p>
+<p><strong>AAPL (NAFED’s retail arm):</strong> sells agri commodities B2C through 1,200+ stores, Amazon/Flipkart — brand building for Indian agri.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="farmer-producer-organizations-as-export-units" class="level2">
+<h2 class="anchored" data-anchor-id="farmer-producer-organizations-as-export-units">Farmer Producer Organizations as Export Units</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>The small-farm problem:</strong></p>
+<p>India’s average farm size: <strong>1.08 hectares</strong> (Agriculture Census 2015–16).<br>
+Average EU/USA buyer minimum order: <strong>20 MT per lot.</strong></p>
+<p>No individual smallholder can meet buyer requirements for: - Consistent volume - Uniform quality and grading - Traceable production records - Third-party certification costs (organic, GlobalGAP)</p>
+<p><strong>FPOs as aggregators:</strong></p>
+<p>An FPO with 500 members × 1 ha each = 500 ha aggregate. Can produce 300–500 MT of a single crop — meeting buyer minimums.</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>Successful FPO export examples:</strong></p>
+<p><strong>Mahagrapes (Maharashtra):</strong><br>
+Cooperative of 46 grape-growing cooperatives, ~25,000 farmers.<br>
+Exports EU-compliant grapes to Netherlands, Germany, UK.<br>
+FY2024 exports: ~8,000 MT (~$40M).<br>
+Uses APEDA-funded pack houses and cold chain in Nashik.</p>
+<p><strong>Sahyadri Farms (Nashik):</strong><br>
+12,000 farmer members; India’s largest single FPO.<br>
+GlobalGAP certified; supplies Tesco UK, Carrefour.<br>
+Own cold chain, pack house, CA storage.</p>
+<p><strong>NDDB dairy cooperatives:</strong><br>
+Amul (GCMMF): 3.6 million farmer members; dairy exports to 50+ countries ~$500M.</p>
+<div class="keybox">
+<p><strong>APEDA’s FPO Connect:</strong> 1,200+ FPOs registered, linked to APEDA’s buyer database and MDA grant system. FPOs can now access MDA grants directly — not just through large exporters.</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="government-schemes-supporting-agri-export-organizations" class="level2">
+<h2 class="anchored" data-anchor-id="government-schemes-supporting-agri-export-organizations">Government Schemes Supporting Agri Export Organizations</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>PM FME (Formalisation of Micro Food Enterprises) Scheme:</strong> - ₹10,000 crore over 5 years (2020–25) - Credit-linked subsidy (35%) for micro-enterprises upgrading to FSSAI standards - ODOP (One District One Product) focus products receive priority - 2 lakh+ enterprises formalized by FY2024 → many now eligible for export</p>
+<p><strong>NABARD’s Agri Infrastructure Fund (AIF):</strong> - ₹1 lakh crore; 3% interest subvention - Pack houses, cold stores, CA chambers, primary processing centres - Linked to FPO and cooperative projects — directly supports export infrastructure</p>
+<p><strong>SFAC (Small Farmers Agribusiness Consortium):</strong> - FPO promotion, equity grant support - Connects FPOs to APEDA/MPEDA registered exporters - Pilot: 100 agri export FPOs linked directly to 3 commodity board markets</p>
+</div><div class="column" style="width:50%;">
+<p><strong>APEDA-NHB Horticulture Export Collaboration:</strong></p>
+<p>NHB (National Horticulture Board) funds pack houses; APEDA funds market promotion. Joint program in: - Banana (Jalgaon, Maharashtra → Middle East) - Guava (Allahabad, UP → UK diaspora market) - Litchi (Muzaffarpur, Bihar → EU, West Asia)</p>
+<div class="highlightbox">
+<p><strong>Districts as Export Hubs (DEH) — FTP 2023–28:</strong></p>
+<p>Commerce Ministry has identified <strong>100+ districts</strong> with specific “champion products.”</p>
+<p>Examples: - Kalaburagi (Karnataka): Tur dal - Nashik (Maharashtra): Grapes, onions - Tirupur (Tamil Nadu): Knitwear + agri - Coorg (Karnataka): Coffee, pepper - Guntur (Andhra Pradesh): Chilli, turmeric</p>
+<p>District Collectors coordinate between farmers, FPOs, exporters, and commodity boards. Target: every DEH district to double export value in 5 years.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="indias-2030-agricultural-export-ambition" class="level2">
+<h2 class="anchored" data-anchor-id="indias-2030-agricultural-export-ambition">India’s 2030 Agricultural Export Ambition</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>APEDA’s target: $60 billion by 2030</strong><br>
+(from $43.7B in FY2024; required CAGR ~5.4%)</p>
+<p><strong>MPEDA’s target: $12 billion in seafood</strong><br>
+(from $7.6B; focus on value-added and ready-to-eat)</p>
+<p><strong>Commodity Board targets:</strong> - Spices Board: $5B (from $3.7B) - Coffee Board: $2B (from $1.2B) - Tea Board: $1.5B (from $750M)</p>
+<p><strong>Overall national agri-food export target (FTP 2023–28): $100 billion by 2030</strong></p>
+<p><strong>Strategy pillars:</strong> 1. Diversify beyond rice dominance 2. Open new markets: Africa, Southeast Asia, South Korea 3. Value addition: processed, organic, functional foods 4. Invest in cold chain: PM GatiShakti nodes 5. Leverage GI brand premiums 6. FTA market access: India-UAE CEPA live; India-UK FTA being negotiated</p>
+</div><div class="column" style="width:45%;">
+<div class="keybox">
+<p><strong>Key Takeaways:</strong></p>
+<ol type="1">
+<li><strong>APEDA</strong> is the backbone of India’s agri export promotion — covers 60% of the export basket</li>
+<li><strong>MPEDA</strong> manages India’s $7.6B seafood export with rigorous quality systems essential for EU/USA access</li>
+<li><strong>Commodity Boards</strong> are sector-specific engines — Spices Board’s $3.7B is remarkable for a relatively small value chain</li>
+<li><strong>EIC</strong> provides the third-party quality assurance without which EU/USA market access is impossible</li>
+<li><strong>FPOs</strong> are solving the small-farm aggregation problem — Mahagrapes, Sahyadri, Amul show it is achievable at scale</li>
+<li><strong>District-level implementation</strong> through DEH is the newest institutional innovation — connecting national targets to local value chains</li>
+</ol>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="next-lecture" class="level2">
+<h2 class="anchored" data-anchor-id="next-lecture">Next Lecture</h2>
+<div class="methodbox">
+<p><strong>Lecture 18 — India’s Agricultural Trade and Foreign Trade Policy</strong><br>
+<em>August 22, 2026 — FINAL LECTURE</em></p>
+<ul>
+<li>Course synthesis: from comparative advantage to India’s $43.7 billion agri export reality</li>
+<li>India’s trade performance: FY2024 big picture and 10-year trends</li>
+<li>Export composition, import profile, and the value-addition opportunity</li>
+<li>Foreign Trade Policy 2023–28: vision, themes, and agricultural provisions</li>
+<li>Millets, GIs, and organic exports as strategic niches</li>
+<li>Challenges India must overcome and opportunities ahead</li>
+<li>The farmer welfare vs export competitiveness dilemma</li>
+<li>Course synthesis: what 18 weeks has taught us</li>
+<li>India’s Agricultural Export Vision 2030</li>
+</ul>
+</div>
+<div class="highlightbox">
+<p><strong>Final lecture preparation:</strong> Review all lecture notes from Lectures 1–17. Bring questions — we will have a 15-minute open Q&amp;A on examination topics at the end of Lecture 18.</p>
+</div>
+</section>
+</section>
+<section id="appendix" class="level1" data-background-color="#1a3a5c">
+<h1 data-background-color="#1a3a5c">Appendix</h1>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section id="additional-resources" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Additional Resources</h2><div class="quarto-appendix-contents">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Further Reading</strong></p>
+<ul>
+<li>Lecture notes and APEDA/WTO official documents</li>
+<li>APEDA Annual Report 2023-24</li>
+<li>RBI/DGCI&amp;S/APEDA databases for latest data</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Key Data Sources</strong></p>
+<ul>
+<li>DGCI&amp;S: India’s merchandise trade</li>
+<li>RBI: Balance of payments data<br>
+</li>
+<li>APEDA: Agricultural export statistics</li>
+<li>WTO: Tariff and trade databases</li>
+</ul>
+</div>
+</div>
+
+
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Department of Development Economics · ECO 2203</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Nithin M · 2026</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

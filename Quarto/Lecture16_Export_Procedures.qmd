@@ -1,0 +1,815 @@
+﻿---
+title: "Lecture 16: Export Procedures and Documentation"
+subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+author: "Nithin M"
+institute: "Department of Development Economics"
+date: "August 8, 2026"
+format:
+  revealjs:
+    theme: [default, emory-clean.scss]
+    slide-number: true
+    chalkboard: true
+    transition: slide
+    incremental: false
+    smaller: false
+    scrollable: true
+    code-fold: true
+    code-summary: "Show R code"
+    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+  beamer:
+    aspectratio: 169
+    theme: metropolis
+    toc: false
+    section-titles: false
+    include-in-header: beamer-preamble.tex
+    keep-tex: false
+execute:
+  warning: false
+---
+
+# {.section}
+
+::: {style="text-align:center; margin-top: 2em;"}
+**Lecture 16**
+
+[Export Procedures and Documentation]{.hi style="font-size:1.8em;"}
+
+From Karnataka Farm to Leicester Kitchen
+:::
+
+---
+
+## Opening: The Journey of a Kilo of Tur Dal
+
+::: {.columns}
+::: {.column width="58%"}
+A kilo of **Kalaburagi tur dal** travels from a Karnataka farmer to a diaspora kitchen in **Leicester, UK**.
+
+What stands between the farmer and the foreign consumer?
+
+- Registrations with four government agencies
+- Twelve documents crossing seven desks
+- Two financial instruments spanning two continents
+- One customs portal used by 1.4 million exporters
+
+**Today's lecture answers: how does this actually work?**
+:::
+::: {.column width="42%"}
+::: {.highlightbox}
+**India's agri export snapshot (FY2024):**
+
+- Total agri exports: **₹3.61 lakh crore (~$43.7B)**
+- Agricultural exporters registered: **~85,000**
+- Ports handling agri cargo: **13 major + 200 minor**
+- Average documents per shipment: **8–12**
+
+Every export begins with a registration and ends with a bank certificate.
+:::
+:::
+:::
+
+---
+
+## Step 1 — Pre-Export Registrations: The Four Pillars
+
+::: {.columns}
+::: {.column width="55%"}
+Before any shipment, an agricultural exporter must hold:
+
+**1. Import Export Code (IEC)**
+- Issued by DGFT (Director General of Foreign Trade)
+- 10-digit PAN-based code — **mandatory** for all exports
+- One-time registration; lifelong validity
+- Apply online at dgft.gov.in — fee ₹500
+
+**2. RCMC (Registration-cum-Membership Certificate)**
+- Issued by the relevant commodity body:
+  - [APEDA]{.hi} — processed food, fresh produce, meat, dairy, cereals
+  - [MPEDA]{.hi} — marine products
+  - [Spices Board]{.hi} — all spices
+  - [Coffee/Tea/Rubber Board]{.hi} — respective commodities
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**3. GST Registration**
+
+GSTIN is mandatory for tax input credit on export supplies. Exports are **zero-rated** under GST — exporter can claim refund of input taxes.
+
+**4. AD Bank Account**
+
+Authorised Dealer (AD) Category-I bank account for receiving foreign exchange. FEMA requires all export proceeds to be realised through an AD bank within **9 months** of shipment.
+:::
+:::
+:::
+
+::: {.keybox}
+**Sequence matters:** IEC → GST → RCMC → AD Bank account. No RCMC without IEC. No export incentive claim without RCMC.
+:::
+
+---
+
+## Export Contracts and Incoterms 2020
+
+::: {.columns}
+::: {.column width="55%"}
+An **export contract** specifies: price, quantity, quality, delivery terms, payment mode, and dispute resolution.
+
+**Incoterms 2020** (ICC, Paris) — 11 standardised trade terms that define exactly **where risk and cost transfer** from seller to buyer.
+
+Key terms for Indian agri exports:
+
+| Term | Risk Transfers At | Used For |
+|---|---|---|
+| [EXW]{.hi} | Seller's premises | Rare in agri |
+| [FCA]{.hi} | Named place to carrier | Air/rail shipments |
+| [FOB]{.hi-gold} | On board vessel | **Most Indian agri** |
+| [CIF]{.hi} | Destination port | Buyer-preferred |
+| [DDP]{.hi} | Buyer's premises | E-commerce niche |
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**FOB vs CIF for India:**
+
+Under **FOB**, the Indian exporter's responsibility ends when goods cross the ship's rail. Freight and insurance arranged by the buyer.
+
+Under **CIF**, the exporter arranges (and prices) freight and insurance to the destination port.
+
+**~65% of India's agri exports are on FOB terms.** CIF is preferred by Gulf and African buyers who have captive freight arrangements.
+
+**Negotiation tip:** FOB is simpler for small exporters; CIF offers a higher invoice value and more price control.
+:::
+:::
+:::
+
+---
+
+## Export Documents: Proof of Transaction
+
+::: {.columns}
+::: {.column width="50%"}
+1. **Commercial Invoice** — price, quantity, HSN code, IEC, buyer/seller details; basis for customs valuation
+2. **Packing List** — box-by-box itemisation of weight, dimensions, marks
+3. **Bill of Lading (B/L)** — title document issued by shipping line; original B/L needed to claim cargo
+4. **Airway Bill (AWB)** — air freight equivalent of B/L; non-negotiable consignment note
+5. **Certificate of Origin (CoO)** — issued by FIEO/chamber; determines FTA preferential tariff eligibility
+:::
+::: {.column width="50%"}
+::: {.keybox}
+The **Bill of Lading** is the only document that is a negotiable instrument — it can be endorsed and transferred like a cheque.
+:::
+:::
+:::
+
+:::{.notes}
+Detailed descriptions:
+
+1. **Commercial Invoice** — price, quantity, HSN code, IEC, buyer/seller details; basis for customs valuation and bank payment verification under LC.
+2. **Packing List** — box-by-box itemisation of weight, dimensions, marks and numbers; used by customs and buyer for checking receipt.
+3. **Bill of Lading (B/L)** — shipping company's receipt and title document; original needed to claim cargo at destination port; negotiable instrument that can be endorsed and transferred.
+4. **Airway Bill (AWB)** — non-negotiable air freight equivalent of B/L; issued by airline; consignee named directly.
+5. **Certificate of Origin (CoO)** — issued by FIEO, chamber of commerce, or APEDA; proves country of origin; required for preferential duty rate under FTAs.
+:::
+
+## Export Documents: Compliance and Regulatory
+
+::: {.columns}
+::: {.column width="50%"}
+6. **Phytosanitary Certificate** — issued by PPQS (Plant Protection, Quarantine & Storage); mandatory for all plant products
+7. **Health / Inspection Certificate** — issued by EIC for meat, marine, organic, dairy exports
+8. **EDPMS declaration** — RBI's online system linking shipment to forex realization
+9. **Fumigation Certificate** — mandatory for pulses, oilseeds; issued by certified fumigators
+10. **Shipping Bill** — key customs clearance document filed on ICEGATE; must be approved before loading
+:::
+::: {.column width="50%"}
+::: {.methodbox}
+**Document flow for a typical agri export:**
+
+1. Export contract signed → Commercial Invoice prepared
+2. LC opened by buyer's bank
+3. Shipment arranged → B/L issued
+4. Phytosanitary + Fumigation certificates obtained
+5. Shipping Bill filed on ICEGATE → LEO (Let Export Order) obtained
+6. Documents presented to advising bank → payment
+7. EDPMS updated → forex realization confirmed
+:::
+:::
+:::
+
+:::{.notes}
+Detailed descriptions:
+
+6. **Phytosanitary Certificate** — issued by Directorate of Plant Protection, Quarantine & Storage (PPQS) under DAPFW; certifies products are pest-free; mandatory for all plant and plant-product exports.
+7. **Health / Inspection Certificate** — issued by Export Inspection Council (EIC) for meat, marine, organic, and dairy exports; confirms product meets importing country food safety standards.
+8. **EDPMS declaration** (Export Data Processing and Monitoring System) — RBI's online system; all export shipments must be registered; links shipment data to forex realization within 9 months.
+9. **Fumigation Certificate** — mandatory for pulses, oilseeds, and many cereals; issued by certified fumigators; many countries require methyl bromide or phosphine treatment; certificate must specify chemical, dosage, duration.
+10. **Shipping Bill** — the key customs clearance document filed on ICEGATE; must be approved by Customs before loading; distinct types (Free Shipping Bill, Dutiable SB, SB under claim for Drawback) for different incentive claims.
+:::
+
+---
+
+## Letter of Credit: Reducing Counterparty Risk
+
+::: {.columns}
+::: {.column width="55%"}
+**Why LC?** In international trade, buyer and seller do not know each other. The LC inserts two banks as guarantors.
+
+**Step-by-step LC mechanism:**
+
+1. Buyer and seller agree on price and LC terms
+2. **Buyer's bank (Issuing Bank)** issues LC in favour of exporter
+3. **Advising Bank** (exporter's bank in India) notifies exporter; may also confirm
+4. Exporter ships goods; presents documents to advising bank
+5. Documents checked against LC terms; bank pays exporter
+6. Documents forwarded to issuing bank; buyer pays and gets documents
+7. Buyer presents B/L to shipping line → collects cargo
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**Types of LC:**
+
+- **Sight LC:** Exporter paid immediately on document presentation
+- **Usance/DA LC:** Payment deferred (30, 60, 90 days) — extends credit to buyer
+- **Revolving LC:** Renews automatically for repeat shipments
+- **Back-to-Back LC:** Small exporters use master LC as collateral to open LC for their suppliers
+
+**India's EXIM Bank:** Pre-shipment and post-shipment credit; refinances AD banks for agri exporters.
+
+**ECGC:** Export Credit Guarantee Corporation — insures against buyer default and country risk. Premium: ~0.5–1% of invoice value.
+:::
+:::
+:::
+
+---
+
+## Export Credit: Pre vs Post Shipment Trend
+
+```{r}
+#| label: fig-export-credit
+#| fig-cap: "Pre-shipment credit dipped during COVID (FY2021) and recovered alongside export growth; post-shipment credit tracks pre-shipment with a structural lag.\nSource: RBI, Handbook of Statistics on Indian Economy."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+df_credit <- data.frame(
+  Year = factor(
+    c("FY2018","FY2019","FY2020","FY2021","FY2022","FY2023","FY2024"),
+    levels = c("FY2018","FY2019","FY2020","FY2021","FY2022","FY2023","FY2024")),
+  Pre_Shipment_B  = c(1.2, 1.3, 1.1, 0.9, 1.4, 1.7, 1.9),
+  Post_Shipment_B = c(0.8, 0.9, 0.7, 0.6, 0.9, 1.1, 1.2)
+)
+
+df_long <- df_credit |>
+  tidyr::pivot_longer(cols = c(Pre_Shipment_B, Post_Shipment_B),
+                      names_to = "Type", values_to = "Value_B") |>
+  dplyr::mutate(Type = ifelse(Type == "Pre_Shipment_B",
+               "Pre-Shipment Credit", "Post-Shipment Credit"))
+
+ggplot(df_long, aes(x = Year, y = Value_B, colour = Type, fill = Type, group = Type)) +
+  geom_area(alpha = 0.15, position = "identity") +
+  geom_line(linewidth = 1.3) +
+  geom_point(size = 3.5) +
+  annotate("rect", xmin = 3.5, xmax = 4.5, ymin = 0, ymax = 2.4, fill = "grey90", alpha = 0.4) +
+  annotate("text", x = 4, y = 2.2, label = "COVID\ndip", size = 2.9, colour = "grey45", hjust = 0.5) +
+  scale_colour_manual(values = c("Pre-Shipment Credit" = "#012169", "Post-Shipment Credit" = "#B9975B")) +
+  scale_fill_manual(values = c("Pre-Shipment Credit" = "#012169", "Post-Shipment Credit" = "#B9975B")) +
+  scale_y_continuous(limits = c(0, 2.4), labels = function(x) paste0("$", x, "B")) +
+  labs(title = "India's Export Credit: Pre vs Post Shipment (USD Billion)",
+       subtitle = "Scheduled commercial bank credit outstanding for agricultural export finance",
+       x = NULL, y = "USD Billion", colour = NULL, fill = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "top", plot.title = element_text(face = "bold"),
+        plot.subtitle = element_text(colour = "grey40"),
+        axis.text.x = element_text(angle = 30, hjust = 1))
+```
+
+---
+
+## Customs Clearance: ICEGATE and the Shipping Bill
+
+::: {.columns}
+::: {.column width="55%"}
+**ICEGATE** (Indian Customs EDI Gateway) — the single portal for all Indian customs transactions.
+
+**Shipping Bill types:**
+
+| Type | When Used |
+|---|---|
+| **Drawback SB** | Claiming duty drawback on inputs |
+| **DEEC/Advance Auth SB** | Against advance authorisation |
+| **EP Copy SB** | Ordinary exports |
+| **Free Shipping Bill** | Personal effects, gifts |
+
+**Process flow:**
+1. Exporter files Shipping Bill online with all document details
+2. Customs Risk Management System (RMS) assesses risk
+3. Low-risk: **Green Channel** → LEO (Let Export Order) in 2–4 hours
+4. Medium-risk: **Yellow Channel** → document examination
+5. High-risk: **Red Channel** → physical examination of cargo
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**LEO — Let Export Order:**
+
+The LEO is the customs officer's green light for loading. Cargo **cannot board** without LEO. Once LEO is given:
+
+- Exporter has 24 hours to load at port
+- Date of LEO = official date of export for FEMA and incentive purposes
+
+**AEO Status (Authorised Economic Operator):**
+
+Exporters with strong compliance history can apply for AEO status (Tier I, II, III). Benefits:
+- Fast-track customs clearance
+- Reduced physical examination
+- Priority in port queue
+- Deferred duty payment
+
+In FY2024, ~12,000 entities hold AEO status in India.
+:::
+:::
+:::
+
+---
+
+## India's Merchandise Exports by Mode of Transport
+
+```{r}
+#| label: fig-export-mode
+#| fig-cap: "Sea freight dominates at ~68% of India's merchandise exports; air (~15%) and land (~12%) are secondary modes. Share composition is stable across both years.\nSource: DGCI&S / Ministry of Commerce and Industry, GoI."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+library(dplyr)
+
+df_mode <- data.frame(
+  Mode    = rep(c("Sea", "Air", "Land", "Other"), 2),
+  Year    = rep(c("FY2022-23", "FY2023-24"), each = 4),
+  Value_B = c(297, 67, 52, 21, 310, 71, 56, 25)
+) |>
+  dplyr::group_by(Year) |>
+  dplyr::mutate(
+    Share = round(Value_B / sum(Value_B) * 100, 1),
+    Mode  = factor(Mode, levels = c("Other", "Land", "Air", "Sea"))
+  ) |>
+  dplyr::ungroup()
+
+ggplot(df_mode, aes(x = Share, y = Mode, fill = Year)) +
+  geom_col(position = position_dodge(width = 0.72), width = 0.64) +
+  geom_text(aes(label = paste0(Share, "% ($", Value_B, "B)")),
+    position = position_dodge(width = 0.72), hjust = -0.07, size = 3.1) +
+  scale_fill_manual(values = c("FY2022-23" = "#4a7fd4", "FY2023-24" = "#012169")) +
+  scale_x_continuous(limits = c(0, 86), labels = function(x) paste0(x, "%")) +
+  labs(title = "India's Merchandise Exports by Mode of Transport (FY2023)",
+       subtitle = "Total exports FY2022-23 = USD 437 Billion  |  FY2023-24 = USD 462 Billion",
+       x = "Share of Total Merchandise Exports (%)", y = NULL, fill = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "top", plot.title = element_text(face = "bold"),
+        plot.subtitle = element_text(colour = "grey40"))
+```
+
+---
+
+## Direct vs Indirect Export Channels
+
+::: {.columns}
+::: {.column width="50%"}
+**Direct Export:**
+- Exporter deals directly with foreign buyer
+- Higher margin, full control over branding/pricing
+- Higher risk (counterparty, forex, compliance)
+- Requires: IEC, RCMC, AD bank, full documentation
+- Suited to: large processors, established exporters
+
+**Examples:** Kohinoor Foods (basmati direct to UAE retail), Venkateshwara Hatcheries (poultry to Middle East)
+:::
+::: {.column width="50%"}
+**Indirect Export:**
+- Sell to a **Merchant Exporter (ME)** who manages the export
+- No direct forex exposure; simpler for small farmer/processor
+- Lower price realisation (merchant takes margin)
+- ME provides GST exemption on purchase from manufacturer at 0.1% CGST+SGST
+
+**Export Management Company (EMC):** manages exports on commission without taking title to goods.
+
+**FPO Route:**
+::: {.keybox}
+**Farmer Producer Organisations (FPOs)** aggregate smallholders (avg. 1.5 ha in Karnataka) to meet minimum export quantity. APEDA's FPO Connect links 1,200+ FPOs to export markets. Tur dal FPOs in Gulbarga district now export directly to UK Indian grocery wholesalers.
+:::
+:::
+:::
+
+---
+
+## Export Houses: India's Trade Titans
+
+::: {.columns}
+::: {.column width="55%"}
+The Government of India recognises export performance tiers with **Star Export House** status, conferring priority clearances, bank credit, and EPCG benefits:
+
+| Status | Min. Export (3-yr avg) | Benefits |
+|---|---|---|
+| Export House | ₹100 crore | Priority treatment |
+| Trading House | ₹500 crore | Self-certification of CoO |
+| Star Trading House | ₹2,000 crore | Fast-track customs, AEO |
+| Premier Trading House | ₹10,000 crore | All of above + policy voice |
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Major agri export houses (India):**
+
+- **ITC Agribusiness:** wheat, spices, processed food; exports to 60+ countries; $1B+ annual turnover
+- **Olam International:** cashew, spices, coffee; integrated from farm to retail
+- **Adani Agri Fresh:** apple, potato, processed; cold chain integration
+- **KRBL Ltd:** world's largest basmati rice brand (India Gate); exports to 90+ countries
+- **Apex Frozen Foods:** shrimp to USA/EU; vertically integrated aquaculture
+
+These firms account for **~35%** of India's total agricultural export value.
+:::
+:::
+:::
+
+---
+
+## Export Incentive Schemes
+
+::: {.columns}
+::: {.column width="50%"}
+**1. RoDTEP (Remission of Duties and Taxes on Exported Products)**
+- Replaced MEIS in January 2021 (WTO-compliant)
+- Refunds embedded taxes not otherwise refunded: SGST, mandi tax, electricity duty, stamp duty
+- Agri rates: **0.5% to 4.3% of FOB value**
+- Issued as transferable scrips on ICEGATE
+
+**2. Advance Authorisation (AA)**
+- Duty-free import of inputs used in export production
+- Standard Input Output Norms (SION) define input ratios
+- Example: basmati rice exporter imports paddy from Nepal duty-free under AA
+
+**3. EPCG (Export Promotion Capital Goods)**
+- Import capital goods (cold storage, processing equipment) at **0–3% duty**
+- In return, commit to export 6× the duty saved over 6 years
+:::
+::: {.column width="50%"}
+**4. Transport and Marketing Assistance (TMA)**
+- Freight subsidy for agri exports to notified markets (Africa, EU, USA)
+- Cover: 50% of sea freight for small exporters; 25% for large
+- Products: fresh fruits/vegetables, processed food, organic, floriculture
+
+**5. MAI Scheme (Market Access Initiative)**
+- APEDA funds participation in international trade fairs (Gulfood Dubai, SIAL Paris, Annapoorna Mumbai)
+- Buyer-seller meets, market studies, reverse buyer visits
+- Budget: ₹250 crore/year for all export promotion councils
+
+::: {.keybox}
+**WTO compliance note:** RoDTEP is WTO-consistent (remission of domestic taxes, not export subsidy). AA and EPCG are permissible under WTO SCM Agreement as tax exemptions on inputs. TMA freight subsidy is under scrutiny — USA has raised concerns at WTO DSB.
+:::
+:::
+:::
+
+---
+
+## FSSAI and Food Safety Compliance for Exports
+
+::: {.columns}
+::: {.column width="55%"}
+**FSSAI (Food Safety and Standards Authority of India)**
+
+- Central licensing authority for all food businesses including exporters
+- An **FSSAI Central Licence** is mandatory for manufacturers/processors exporting food products
+- Annual turnover > ₹20 crore or multi-state operation → Central Licence
+
+**FSSAI's role in exports:**
+
+1. **Standards alignment:** FSSAI standards increasingly aligned with Codex Alimentarius (facilitates market access)
+2. **Organic certification:** FSSAI-accredited certification bodies issue Indian Organic Certificate (recognises NPOP)
+3. **Bilateral equivalence:** FSSAI has equivalence arrangements with USDA NOP (organic) — US organic certifiers can certify Indian organic products
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**EIC accreditation for key markets:**
+
+The **Export Inspection Council (EIC)** issues health certificates that importing countries accept:
+
+| Market | Certificate | Requirement |
+|---|---|---|
+| European Union | EIC Health Cert. | Meat, fish, dairy |
+| USA (FDA) | EIC + prior notice | Marine, processed |
+| Japan | EIC + residue test | Marine, processed |
+| Middle East | Halal + EIC | Meat, poultry |
+
+EIC operates 5 regional offices (Mumbai, Chennai, Kochi, Kolkata, Delhi) and 40 sub-offices. In FY2024, EIC certified **₹1.1 lakh crore** worth of exports.
+:::
+:::
+:::
+
+---
+
+# Case Study {.section}
+
+::: {style="text-align:center; margin-top:1em;"}
+**Exporting Basmati Rice from Punjab to Saudi Arabia**
+
+*Tracing every document, agency, and payment from paddy field to Riyadh shelf*
+:::
+
+---
+
+## Case Study: Punjab Basmati to Saudi Arabia — Part I
+
+::: {.columns}
+::: {.column width="55%"}
+**The exporter:** Amritsar-based rice miller; 10,000 tonne annual capacity. Target: 500 MT to Saudi retail chain.
+
+**Step 1 — Registrations:**
+- IEC from DGFT portal (already held)
+- APEDA RCMC (renewed annually; fee ₹7,500)
+- FSSAI Central Licence
+- AD Bank: State Bank of India, Amritsar branch
+
+**Step 2 — Contract:**
+- Incoterm: **CIF Jeddah**
+- Price: $1,100/MT; Total: $550,000
+- Payment: **Sight LC** from Riyad Bank (Saudi), advised through SBI
+
+**Step 3 — Procurement:**
+- Procures paddy from Amritsar mandi at MSP + premium
+- Milling, grading, drying; APEDA quality check (aroma, grain length)
+:::
+::: {.column width="45%"}
+**Step 4 — Documents prepared:**
+
+| # | Document | Issuing Agency |
+|---|---|---|
+| 1 | Commercial Invoice | Exporter |
+| 2 | Packing List | Exporter |
+| 3 | Certificate of Origin | FIEO/Chamber |
+| 4 | Phytosanitary Certificate | PPQS Punjab |
+| 5 | Fumigation Certificate | Licensed fumigator |
+| 6 | Quality/Weight Certificate | EIC / SGS |
+| 7 | APEDA Certificate | APEDA |
+| 8 | B/L | Shipping line (NSICT) |
+| 9 | EDPMS export declaration | RBI system (auto) |
+| 10 | Shipping Bill | ICEGATE (Customs) |
+:::
+:::
+
+---
+
+## Case Study: Punjab Basmati to Saudi Arabia — Part II
+
+::: {.columns}
+::: {.column width="55%"}
+**Step 5 — Customs clearance (JNPT, Mumbai):**
+- Exporter files Shipping Bill on ICEGATE: **Drawback type** (to claim duty drawback on GST paid on packaging)
+- RMS assigns **Green Channel** — LEO granted within 3 hours
+- Container loaded; B/L issued by Maersk
+
+**Step 6 — Banking:**
+- Exporter presents all 10 documents to SBI within **21 days of B/L date** (LC requirement)
+- SBI verifies documents against LC terms: ✓
+- SBI claims payment from Riyad Bank
+- **Sight LC:** SBI receives USD 550,000 within 5 working days
+- SBI converts USD to INR; credits exporter account
+
+**Step 7 — Post-shipment:**
+- RBI's EDPMS marks export as "realised"
+- Exporter files **e-BRC** (electronic Bank Realisation Certificate) on DGFT portal
+- RoDTEP scrip of ~₹11 lakh (2% of FOB) issued
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Saudi Arabia end:**
+
+- Saudi SFDA (food authority) inspects on arrival
+- Certificate of Origin checked against GCC preferential tariff rules
+- Phytosanitary certificate accepted by Saudi Plant Protection
+- If fumigation certificate absent → shipment quarantined
+
+**Typical timeline (farm to Riyadh shelf):**
+
+| Stage | Days |
+|---|---|
+| Procurement + milling | 15 |
+| Documentation | 5 |
+| Port + customs | 3 |
+| Sea transit (JNPT–Jeddah) | 8 |
+| Saudi customs clearance | 5 |
+| Distribution to shelf | 7 |
+| **Total** | **~43 days** |
+:::
+:::
+:::
+
+---
+
+## Import Procedures: The Mirror Image
+
+::: {.columns}
+::: {.column width="55%"}
+Import procedures mirror export procedures on the buyer side.
+
+**Key documents for agricultural imports to India:**
+
+1. **Bill of Entry** — filed on ICEGATE by importer (equivalent of Shipping Bill)
+2. **Commercial Invoice and Packing List**
+3. **Bill of Lading / Airway Bill**
+4. **Certificate of Origin** — for FTA preferential duty
+5. **SPS/Phytosanitary Certificate** — from exporting country's authority
+
+**Customs assessment:**
+- RMS assigns risk category
+- Basic Customs Duty + IGST (at GST rate) assessed
+- IGST paid by importer; can claim ITC if registered
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**SPS inspection for agricultural imports:**
+
+Under the **Plant Quarantine Order 2003** and **Meat Food Products Order**, all agri imports are subject to:
+
+- Document verification (phytosanitary cert)
+- Physical sampling and lab testing
+- For pests: fumigation before release
+
+**Restricted/Prohibited imports:**
+
+- **STE channel:** wheat, rice, sugar, fertilisers — importable only through state trading enterprises (FCI, NAFED, MMTC) under quantitative restrictions
+- **License required:** some oilseeds, livestock products
+- **Prohibited:** live pigs (several ports), certain livestock breeds without quarantine
+
+**Bill of Entry types:** Home Consumption (B/E), Warehousing (W/E), Ex-Bond (E/B).
+:::
+:::
+:::
+
+---
+
+## Logistics and Infrastructure Challenges
+
+::: {.columns}
+::: {.column width="55%"}
+India's **Logistics Performance Index (LPI)** rank: **38 out of 139** (World Bank, 2023) — up from rank 44 in 2018.
+
+**Key bottlenecks for agricultural exports:**
+
+**1. Port congestion:**
+- JNPT handles 55% of India's container traffic; average dwell time: **3.2 days** (global best: 1.5 days)
+- Mundra, Chennai, Kochi also congested during harvest seasons
+
+**2. Cold chain deficit:**
+- India's cold storage capacity: **~35 million MT** (FY2024)
+- Requirement for horticulture + marine: **~90 million MT**
+- Gap = 55 million MT → 25–40% post-harvest losses in fruits and vegetables
+
+**3. Last-mile connectivity:**
+- Farm-to-port road quality: NH coverage improving, but mandi-to-cold store roads often unpaved in Karnataka/Maharashtra
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Cost of logistics as % of GDP:**
+
+| Country | Logistics Cost / GDP |
+|---|---|
+| Germany | 8% |
+| USA | 8% |
+| China | 14% |
+| **India** | **~14%** |
+
+High logistics costs reduce India's price competitiveness despite low labour costs.
+
+**PM GatiShakti:** National Master Plan integrating roads, railways, ports, warehouses. Target: reduce logistics cost to **8% of GDP by 2030**.
+
+**Dedicated Freight Corridors (DFC):** Eastern (Ludhiana–Kolkata) and Western (JNPT–Dadri) operational 2024 — will cut rail freight time by 40% for Punjab basmati, Maharashtra grapes.
+:::
+:::
+:::
+
+---
+
+## Digital Initiatives in Export Trade
+
+::: {.columns}
+::: {.column width="55%"}
+**DGFT Digital Modernisation (2021–ongoing):**
+
+- Fully online IEC issuance: **24 hours** (was 3 weeks paper-based)
+- Online RCMC by APEDA: auto-linked to IEC
+- e-BRC (electronic Bank Realisation Certificate): exporter's bank submits directly to DGFT portal; no paper filing
+- **DARPAN platform:** dashboard for tracking all incentive scheme status in real time
+
+**SWIFT (Single Window Interface for Facilitating Trade):**
+- One portal for customs, FSSAI, PPQS, Drug Controller, textile ministry clearances
+- Launched 2016; covers 26 regulatory agencies
+- 2024 expansion: includes MPEDA, APEDA certificates integrated
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**ICEGATE 2.0 (launched 2023):**
+
+- AI-based risk management system → 70% of shipments now on Green Channel (was 55%)
+- e-Sanchit: paperless document upload — all 10 export documents can be uploaded digitally; customs officer reviews on-screen
+- Integration with GSTN: automatic input tax credit verification for RoDTEP computation
+
+**APEDA-DGFT integration:**
+
+APEDA's NHB system auto-generates RCMC data to DGFT; exporters need not re-enter. Certificate of Origin auto-populated from ICEGATE data for FTA claims.
+
+::: {.keybox}
+India's trade facilitation score (WTO TFA): **90.59%** (2023) — above developing-country average of 74%.
+:::
+:::
+:::
+:::
+
+---
+
+## Summary: The Export Ecosystem
+
+::: {.columns}
+::: {.column width="55%"}
+**The full export chain for Indian agri:**
+
+```
+Farmer/Processor
+      ↓ FPO aggregation / merchant exporter
+IEC + RCMC + FSSAI + AD Bank
+      ↓ pre-shipment
+Export Contract (Incoterm negotiated)
+      ↓ finance
+Letter of Credit (bank guarantee)
+      ↓ documentation
+10 documents (Invoice, B/L, CoO, Phyto, EIC...)
+      ↓ customs
+ICEGATE Shipping Bill → LEO
+      ↓ logistics
+Port → Ship → Destination customs
+      ↓ payment
+Bank realises forex → e-BRC filed
+      ↓ incentives
+RoDTEP scrip + drawback + TMA
+```
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**Key Takeaways:**
+
+1. **IEC is the master key** — no export without it
+2. **The Shipping Bill + LEO** is the customs clearance milestone — nothing loads without it
+3. **The Bill of Lading** is the only negotiable title document — it unlocks payment under LC
+4. **RoDTEP** has replaced MEIS as the primary export incentive — WTO-compliant, duty refund basis
+5. **Cold chain and logistics** remain India's primary structural bottleneck — world-class documentation systems exist, but physical infrastructure lags
+6. **Digital India** is working: ICEGATE, SWIFT, e-BRC have dramatically reduced transaction costs
+:::
+:::
+:::
+
+---
+
+## Next Lecture
+
+::: {.methodbox}
+**Lecture 17 — Agricultural Export Promotion Organizations**  
+*August 15, 2026*
+
+- APEDA: mandate, functions, financial assistance, market access achievements
+- MPEDA and India's $7.6 billion seafood export ecosystem
+- The five Commodity Boards: Tea, Coffee, Rubber, Spices, Tobacco
+- Export Inspection Council and quality certification
+- NAFED: buffer stocks, MSP procurement, export implications
+- Farmer Producer Organizations as export units
+- India's 2030 export target: $60 billion in agri and food products
+
+:::
+
+::: {.highlightbox}
+**Preparation:** Review APEDA Annual Report 2023–24 (available at apeda.gov.in). Note the top 10 products by export value and the top 5 destination countries.
+:::
+
+# Appendix {background-color="#1a3a5c"}
+
+## Additional Resources {.appendix}
+
+::: {.columns}
+::: {.column width="50%"}
+**Further Reading**
+
+- Lecture notes and APEDA/WTO official documents
+- DGFT: Foreign Trade Policy 2023-28
+- RBI/DGCI&S/APEDA databases for latest data
+:::
+::: {.column width="50%"}
+**Key Data Sources**
+
+- DGCI&S: India's merchandise trade
+- RBI: Balance of payments data  
+- APEDA: Agricultural export statistics
+- WTO: Tariff and trade databases
+:::
+:::

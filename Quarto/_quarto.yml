@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: ../docs
+
+website:
+  title: "ECO 2203"
+  favicon: ""
+  navbar:
+    background: "#012169"
+    foreground: "white"
+    title: "ECO 2203 — International Trade & Policy in Agriculture"
+    left:
+      - href: index.qmd
+        text: "Home"
+  page-footer:
+    left: "Department of Development Economics · ECO 2203"
+    right: "Nithin M · 2026"
+    background: "#f8f9fa"
+    border: true
+
+format:
+  html:
+    theme: [cosmo, styles.css]
+    toc: false
+    smooth-scroll: true
+  beamer:
+    include-in-header: beamer-preamble.tex
+    aspectratio: 169
+    toc: false
+    section-titles: false
+    pdf-engine: latexmk
+    pdf-engine-opt: "-xelatex"

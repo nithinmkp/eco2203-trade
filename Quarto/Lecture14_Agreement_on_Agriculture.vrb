@@ -1,0 +1,56 @@
+\frametitle{Tariff Rate Quotas (TRQs)}
+\phantomsection\label{tariff-rate-quotas-trqs}
+\begin{columns}[T]
+\begin{column}{0.55\linewidth}
+\textbf{How TRQs Work}
+
+Where post-tariffication tariffs were extremely high, \textbf{TRQs} were
+created to ensure minimum market access:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{In-quota tariff:} lower rate (e.g., 15\%) applied to a
+  specified quantity
+\item
+  \textbf{Out-of-quota tariff:} higher rate (e.g., 60\%) applied to
+  quantities above the quota
+\end{itemize}
+
+\begin{verbatim}
+Imports
+  ↑
+  │ Out-of-quota tariff = 60%
+  │ ───────────────────────────
+  │ In-quota tariff = 15%     ← TRQ fills here
+  └─────────────────────────→ Volume
+        Quota quantity
+\end{verbatim}
+
+\textbf{Minimum access commitment:} 5\% of domestic consumption by end
+of implementation period
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\textbf{India's TRQ Commitments}
+
+India has TRQs for:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Product & In-quota rate & Out-of-quota \\
+\midrule\noalign{}
+\endhead
+Wheat & 50\% & 100\% \\
+Rice (non-PDS) & 70\% & 80\% \\
+Maize & 15\% & 60\% \\
+Sunflower oil & 100\% & 100\% \\
+Cotton & 5\% & 10\% \\
+\bottomrule\noalign{}
+\end{longtable}
+
+\textbf{Most Indian TRQ quotas are never filled} --- because even the
+in-quota tariff is high enough to limit imports below the quota. India's
+TRQs are symbolic: the real protection is the bound tariff, not the TRQ.
+\end{column}
+\end{columns}

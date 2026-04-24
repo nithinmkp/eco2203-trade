@@ -1,0 +1,1085 @@
+﻿---
+title: "Balance of Trade & Balance of Payments"
+subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+author: "Nithin M"
+institute: "Department of Development Economics"
+date: "June 20, 2026"
+format:
+  revealjs:
+    theme: [default, emory-clean.scss]
+    slide-number: true
+    chalkboard: true
+    transition: slide
+    incremental: false
+    smaller: false
+    scrollable: true
+    code-fold: true
+    code-summary: "Show R code"
+    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+  beamer:
+    aspectratio: 169
+    theme: metropolis
+    toc: false
+    section-titles: false
+    include-in-header: beamer-preamble.tex
+    keep-tex: false
+execute:
+  warning: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(scales)
+library(patchwork)
+options(scipen = 999)
+theme_set(theme_minimal(base_size = 11))
+knitr::opts_chunk$set(echo = knitr::is_html_output())
+```
+
+# {.section}
+
+::: {style="text-align:center; margin-top: 2em;"}
+**Lecture 9**
+
+[Balance of Trade & Balance of Payments]{.hi style="font-size:1.6em;"}
+
+Following the Money: India's External Sector
+:::
+
+---
+
+## Introduction: Why the BoP Matters
+
+::: {.columns}
+::: {.column width="55%"}
+**Trade policy affects the current account.**
+Exchange rate policy affects the financial account.
+Both show up in the **Balance of Payments (BoP)**.
+
+**Key questions for today:**
+
+- How does a country "pay" for its imports?
+- What happens when a country consistently imports more than it exports?
+- How do capital flows balance the external accounts?
+- When does a BoP *crisis* occur?
+
+**India's external sector at a glance (FY2024):**
+
+- Merchandise exports: **$437 billion** (goods)
+- Merchandise imports: **$677 billion** (goods)
+- Trade deficit: **-$240 billion** (goods only)
+- Services surplus: **+$163B**
+- Remittances: **+$120B** (world's largest recipient)
+- Current account: **-$23B (-0.7% of GDP)**
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**BoP accounting identity:**
+
+$$\underbrace{\text{CA}}_{\text{trade + income}} + \underbrace{\text{KA}}_{\text{transfers}} + \underbrace{\text{FA}}_{\text{capital flows}} + \underbrace{\Delta R}_{\text{reserve change}} = 0$$
+
+The BoP **always balances** — by accounting construction.
+
+A current account deficit *must* be financed by:
+1. Capital/financial inflows (borrowing, FDI, FPI), or
+2. Running down foreign exchange reserves
+
+If neither is available → **BoP crisis** (India 1991).
+:::
+:::
+:::
+
+---
+
+## Balance of Trade: The Basics
+
+::: {.columns}
+::: {.column width="55%"}
+**Balance of Trade (BoT)** = Merchandise exports − Merchandise imports
+
+$$\text{BoT} = X_{\text{goods}} - M_{\text{goods}}$$
+
+- Positive BoT = **trade surplus** (exports > imports)
+- Negative BoT = **trade deficit** (imports > exports)
+
+**India's BoT trend (USD billion):**
+
+| FY | Exports | Imports | Trade Balance |
+|---|---|---|---|
+| FY20 | 314 | 478 | **-157** |
+| FY21 | 291 | 389 | **-98** |
+| FY22 | 422 | 614 | **-190** |
+| FY23 | 451 | 714 | **-264** |
+| FY24 | 437 | 677 | **-238** |
+
+India **always** runs a merchandise trade deficit — driven by oil, gold, and electronics imports.
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**Why India's trade deficit is structural:**
+
+**Import composition (FY24):**
+
+| Category | $B | % |
+|---|---|---|
+| Petroleum crude | 233 | 34% |
+| Gold & silver | 49 | 7% |
+| Electronic goods | 82 | 12% |
+| Machinery | 55 | 8% |
+| Other | 258 | 38% |
+
+India has very limited domestic crude oil production (~0.8 mb/d vs consumption ~5 mb/d) → structurally dependent on oil imports.
+
+Gold imports: 700–800 tonnes/year → cultural and investment demand.
+:::
+:::
+:::
+
+---
+
+## National Income Identity Approach to the Current Account
+
+::: {.columns}
+::: {.column width="58%"}
+**National Income and Product Accounts (NIPA):**
+
+$$Y = C + I + G + (X - M)$$
+
+Rearranging:
+
+$$X - M = Y - (C + I + G) = Y - A$$
+
+where $A = C + I + G$ is **absorption** (total domestic spending).
+
+**Implication:**
+
+$$\boxed{\text{Current Account} \approx Y - A}$$
+
+- $\text{CA} > 0 \Leftrightarrow Y > A$: country produces more than it spends → *net lender* to world
+- $\text{CA} < 0 \Leftrightarrow Y < A$: country spends more than it produces → *net borrower* from world
+
+**Saving-investment identity:**
+
+$$Y - A = Y - C - I - G = (Y - C - G) - I = S_{\text{private}} + S_{\text{govt}} - I$$
+
+$$\boxed{\text{CA} = (S - I) + (T - G)}$$
+
+CA deficit = private dis-saving OR investment boom OR government deficit (or combination).
+:::
+::: {.column width="42%"}
+::: {.keybox}
+**India's CA decomposition (FY2024):**
+
+$$\text{CA} = (S - I) + (T - G)$$
+
+- Private saving rate: ~31% of GDP
+- Investment rate: ~32% of GDP → private $S - I \approx -1\%$ GDP
+- Fiscal deficit: ~5.1% of GDP → $T - G \approx -5.1\%$
+- CA = $-1\% + (-5.1\%) \approx -6\%$?
+
+But India's CA = only $-0.7\%$ GDP!
+
+**Why?** Remittances ($120B) and services surplus ($163B) add back ~9-10% of GDP in non-merchandise credits.
+
+**Lesson:** CA = S-I identity holds, but "saving" must include remittance income and service exports.
+:::
+:::
+:::
+
+---
+
+## Current and Capital Account Structure
+
+::: {.columns}
+::: {.column width="55%"}
+**Account 1: Current Account (CA)**
+
+- Merchandise trade (goods): exports (+), imports (-)
+- Services trade: software, tourism, BPO
+- Primary income: investment income (interest, dividends, profits) — net
+- Secondary income: remittances, grants, transfers
+
+**Account 2: Capital Account (KA)**
+
+- Capital transfers (debt forgiveness, migrant assets)
+- Acquisition/disposal of non-produced, non-financial assets
+- (Small for most countries including India)
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**Accounting rule:**
+
+Every international transaction has **two entries** of equal and opposite sign (double-entry bookkeeping):
+
+**Example: India imports $10M of machines:**
+
+- Current Account (imports): $-10M$
+- Financial Account (credit from foreign bank): $+10M$
+
+**Example: Indian software firm receives $5M:**
+
+- Current Account (services export): $+5M$
+- Financial Account (forex held abroad initially): $-5M$
+:::
+:::
+:::
+
+## Financial Account and BoP Identity
+
+::: {.columns}
+::: {.column width="55%"}
+**Account 3: Financial Account (FA)**
+
+- Foreign Direct Investment (FDI): equity + reinvested earnings
+- Portfolio Investment (FPI/FII): equities, bonds
+- Other investment: loans, trade credit, bank deposits
+- Official reserves (RBI intervention)
+
+**BoP identity:**
+
+$$\text{CA} + \text{KA} + \text{FA} + \Delta R = 0$$
+
+The BoP **always balances** — by accounting construction. A current account deficit *must* be financed by:
+
+1. Capital/financial inflows (borrowing, FDI, FPI), or
+2. Running down foreign exchange reserves
+
+If neither is available → **BoP crisis** (India 1991).
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**India's BoP summary (FY2024):**
+
+| Component | USD B |
+|---|---|
+| Current Account | −23 |
+| Financial Account | +20 |
+| Δ Reserves | +3 |
+| **Total** | **≈ 0** |
+
+India's current account deficit of ~$23B is financed primarily through FDI ($22B) and FPI ($41B) inflows — making financial account management critical to external stability.
+:::
+:::
+:::
+
+---
+
+## India's BoP Components: FY2020–FY2024
+
+```{r}
+#| label: fig-bop-india
+#| fig-cap: "India's Balance of Payments Components, FY2020–FY2024 (USD billion)\nSource: RBI, Balance of Payments Statistics."
+#| fig-width: 9
+#| fig-height: 5
+
+bop_data <- data.frame(
+  year           = rep(c("FY20","FY21","FY22","FY23","FY24"), each = 6),
+  component      = rep(c("Merchandise\nTrade Balance", "Services\nSurplus",
+                         "Remittances", "Investment\nIncome (net)",
+                         "FDI (net)", "FPI (net)"), times = 5),
+  value          = c(
+    # FY20
+    -157,  85,  83, -26,  43, -14,
+    # FY21
+     -98,  89,  83, -29,  44,  36,
+    # FY22
+    -190, 107,  89, -33,  39, -16,
+    # FY23
+    -264, 143, 112, -39,  28, -16,
+    # FY24
+    -238, 163, 120, -68,  22,  41
+  )
+)
+
+bop_data <- bop_data |>
+  mutate(
+    account = ifelse(component %in% c("Merchandise\nTrade Balance",
+                                       "Services\nSurplus",
+                                       "Remittances",
+                                       "Investment\nIncome (net)"),
+                     "Current Account", "Financial Account"),
+    component = factor(component,
+                       levels = c("Merchandise\nTrade Balance",
+                                  "Investment\nIncome (net)",
+                                  "FPI (net)",
+                                  "FDI (net)",
+                                  "Services\nSurplus",
+                                  "Remittances"))
+  )
+
+ggplot(bop_data, aes(x = year, y = value, fill = component)) +
+  geom_col(position = "dodge", width = 0.85) +
+  geom_hline(yintercept = 0, linewidth = 0.8, color = "grey30") +
+  scale_fill_manual(values = c(
+    "Merchandise\nTrade Balance" = "#8B0000",
+    "Investment\nIncome (net)"  = "#cc4444",
+    "FPI (net)"                  = "#B9975B",
+    "FDI (net)"                  = "#7B9F35",
+    "Services\nSurplus"          = "#012169",
+    "Remittances"                = "#5B8DB8"
+  )) +
+  labs(
+    title    = "India's Balance of Payments Components, FY2020–FY2024",
+    subtitle = "Merchandise deficit offset by services surplus, remittances, and (usually) financial inflows",
+    x = NULL, y = "USD Billion", fill = NULL
+  ) +
+  theme_minimal(base_size = 10) +
+  theme(
+    legend.position  = "bottom",
+    legend.text      = element_text(size = 8),
+    panel.grid.major.x = element_blank()
+  ) +
+  guides(fill = guide_legend(nrow = 2))
+```
+
+---
+
+## India's Current Account: FY2024 Decomposition
+
+```{r}
+#| label: fig-ca-waterfall
+#| fig-cap: "India's Current Account, FY2024: Component Contributions (USD Billion)\nSource: RBI, Balance of Payments Statistics."
+#| fig-width: 7.5
+#| fig-height: 4.5
+
+# CA = merch balance + services + remittances + investment income
+# = -238 + 163 + 120 - 68 = -23 (approx)
+ca_items <- data.frame(
+  item      = factor(
+    c("Merch.\nExports", "Merch.\nImports", "Services\nSurplus",
+      "Remittances", "Inv. Income\n(net)", "CA Balance"),
+    levels = c("Merch.\nExports", "Merch.\nImports", "Services\nSurplus",
+               "Remittances", "Inv. Income\n(net)", "CA Balance")
+  ),
+  value     = c( 437, -677,  163,  120, -68, -23),
+  fill_col  = c("#012169", "#8B0000", "#012169", "#5B8DB8", "#8B0000", "grey30"),
+  label_pos = c( 437, -677,  163,  120, -68, -23)
+)
+
+ggplot(ca_items, aes(x = item, y = value, fill = fill_col)) +
+  geom_col(width = 0.65) +
+  scale_fill_identity() +
+  geom_hline(yintercept = 0, linewidth = 0.8) +
+  geom_text(
+    aes(
+      label = paste0(ifelse(value >= 0, "+", ""), value, "B"),
+      vjust = ifelse(value >= 0, -0.4, 1.3)
+    ),
+    size = 3.5, fontface = "bold"
+  ) +
+  scale_y_continuous(
+    limits = c(-720, 520),
+    labels = label_dollar(prefix = "$", suffix = "B")
+  ) +
+  labs(
+    title    = "India's Current Account Components, FY2024 (USD Billion)",
+    subtitle = "Gross exports shown separately from imports for clarity\nCA deficit = -$23B (-0.7% of GDP) — manageable",
+    x = NULL, y = "USD Billion"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(panel.grid.major.x = element_blank())
+```
+
+---
+
+## Capital and Financial Account: India FY2024
+
+::: {.columns}
+::: {.column width="55%"}
+**Financial Account flows (FY2024, USD billion):**
+
+| Component | Amount | Notes |
+|---|---|---|
+| FDI (net inflows) | +22 | Manufacturing, services |
+| FPI (net) | +41 | Equity + bonds |
+| External commercial borrowings | +5 | Corporate loans |
+| NRI deposits | +8 | FCNR, NRE accounts |
+| Banking capital | +12 | |
+| **Total FA** | **+88** | |
+
+**Reserve change:**
+$$\Delta R = -(CA + KA + FA) = -(-23 + 0 + 88) = -65$$
+
+Reserves **increased** by $65B in FY2024 (net RBI purchases of forex).
+
+India's forex reserves: $646B (March 2024) — ~11 months of imports.
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**FDI vs FPI — key distinctions:**
+
+| Feature | FDI | FPI |
+|---|---|---|
+| Threshold | ≥10% equity | <10% equity |
+| Stability | Long-term | Short-term ("hot money") |
+| Volatility | Low | High |
+| Technology transfer | Yes | No |
+| RBI regulation | FEMA routes | SEBI (FPI licence) |
+
+**India's FDI by sector (FY2024):**
+Services (27%), Computer software (18%), Construction (7%), Auto (5%), Pharma (5%).
+
+**Agriculture FDI:** Only ~1.5% of total — food processing and cold chain attract more than primary agriculture.
+:::
+:::
+:::
+
+---
+
+## Official Reserves and RBI Intervention
+
+::: {.columns}
+::: {.column width="55%"}
+**Official Foreign Exchange Reserves** = foreign assets held by central bank (RBI):
+
+- Foreign currency assets (mainly USD, EUR, GBP, JPY)
+- Gold
+- SDRs (IMF Special Drawing Rights)
+- Reserve tranche position at IMF
+
+**India's reserves trajectory:**
+
+| Year | Reserves (USD B) | Import cover |
+|---|---|---|
+| FY1991 | 1.2 | 2 weeks |
+| FY2000 | 38 | 8 months |
+| FY2008 | 309 | 14 months |
+| FY2020 | 477 | 12 months |
+| FY2024 | 646 | 11 months |
+
+**Adequacy benchmark:** 3 months of imports (IMF rule of thumb). India holds >11 months.
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**RBI's intervention role:**
+
+RBI buys/sells USD to manage the exchange rate:
+
+- **Buy USD** (sell INR) → prevents excessive appreciation, builds reserves
+- **Sell USD** (buy INR) → prevents excessive depreciation, depletes reserves
+
+**Managed float:**
+India operates a "managed float" — neither fully fixed nor fully free.
+
+RBI intervenes to:
+1. Smooth volatility (not set a target level)
+2. Prevent disorderly market conditions
+3. Maintain competitive export pricing (keep INR from appreciating too fast)
+
+**FY2024:** RBI was a net buyer of USD — absorbing strong capital inflows.
+:::
+:::
+:::
+
+---
+
+## BoP Adjustment Mechanisms
+
+::: {.columns}
+::: {.column width="55%"}
+When a BoP deficit exists, three adjustment mechanisms operate:
+
+**1. Price mechanism (exchange rate adjustment):**
+
+Currency depreciates → exports cheaper, imports expensive → CA improves (if M-L condition holds).
+
+**2. Income/expenditure mechanism:**
+
+CA deficit → domestic income falls (through multiplier) → absorption $A$ falls → CA improves.
+
+$$\Delta M = m \cdot \Delta Y \quad \text{(marginal propensity to import)}$$
+
+**3. Monetary mechanism:**
+
+CA deficit → reserve outflow → money supply falls → domestic prices fall → exports competitive again (Hume's price-specie-flow mechanism).
+
+Modern version: reserve loss tightens monetary conditions → interest rates rise → capital inflows.
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**Policy instruments:**
+
+| Problem | Instrument | Channel |
+|---|---|---|
+| CA deficit | Devaluation | Price competitiveness |
+| CA deficit | Expenditure reduction | Income mechanism |
+| FA deficit | Interest rate rise | Capital inflows |
+| Reserve crisis | IMF credit | Financing |
+
+**Expenditure-switching vs Expenditure-reducing:**
+
+- *Switching*: devaluation shifts demand from foreign to domestic goods
+- *Reducing*: fiscal/monetary austerity reduces total absorption
+
+Both often needed simultaneously — as India learned in 1991.
+:::
+:::
+:::
+
+---
+
+## Marshall-Lerner Condition: When Does Depreciation Help?
+
+::: {.columns}
+::: {.column width="58%"}
+**Question:** Does a currency depreciation always improve the trade balance?
+
+**Answer:** Only if demand is elastic enough.
+
+**Derivation:**
+
+Let exchange rate $e$ = domestic currency per unit of foreign. Depreciation means $\Delta e > 0$.
+
+Trade balance in domestic currency:
+
+$$TB = P_X \cdot Q_X - e \cdot P_M^* \cdot Q_M$$
+
+where $P_M^*$ = foreign price of imports, $Q_X, Q_M$ = quantities.
+
+After depreciation, $e \uparrow$:
+- Export price (foreign) falls → $Q_X \uparrow$ by $|e_X| \cdot \frac{\Delta e}{e}$
+- Import price (domestic) rises → $Q_M \downarrow$ by $|e_M| \cdot \frac{\Delta e}{e}$
+
+**Marshall-Lerner (M-L) condition:**
+
+$$\boxed{|e_X| + |e_M| > 1}$$
+
+If satisfied, depreciation *improves* the trade balance. If $|e_X| + |e_M| < 1$, depreciation *worsens* TB (short-run typical).
+:::
+::: {.column width="42%"}
+::: {.methodbox}
+**Intuition:**
+
+A 10% depreciation:
+
+- Makes exports 10% cheaper abroad → quantity effect (positive)
+- Makes imports 10% expensive at home → quantity effect (positive for TB)
+- But also raises value of existing imports → value effect (negative for TB)
+
+**M-L says:** quantity effects must outweigh value effect.
+
+**Typical elasticity estimates (long-run):**
+
+| $|e_X|$ | $|e_M|$ | Sum | M-L satisfied? |
+|---|---|---|---|
+| India | 0.8–1.2 | 0.7–1.0 | ~1.5–2.2 | **Yes (long-run)** |
+| Short-run | 0.3–0.5 | 0.2–0.4 | ~0.5–0.9 | **No → J-curve** |
+
+Short-run inelasticity: contracts pre-set, adjustment takes time.
+:::
+:::
+:::
+
+---
+
+## The J-Curve Effect
+
+```{r}
+#| label: fig-jcurve
+#| fig-cap: "J-Curve: Trade Balance Initially Worsens After Currency Depreciation\nSource: Author's illustration."
+#| fig-width: 8
+#| fig-height: 4.5
+
+set.seed(42)
+t <- seq(-5, 14, by = 0.2)
+
+# J-curve shape: initial deterioration then improvement
+# TB(t<0) = 0 (baseline)
+# After depreciation at t=0:
+#   short run (0-3 months): TB falls (pre-set contracts, inelastic demand)
+#   medium (3-12 months):   TB recovers as quantities adjust
+#   long run (12+ months):  TB improves above baseline if M-L holds
+
+tb_j <- ifelse(
+  t < 0, 0,
+  ifelse(
+    t < 3,
+    -4 * (t/3),                                    # deterioration phase
+    ifelse(
+      t < 8,
+      -4 + 5 * ((t - 3)/5),                        # recovery phase
+      1 + 0.3 * (t - 8)                             # long-run improvement
+    )
+  )
+)
+
+# Add some noise for realism
+tb_j <- tb_j + c(rep(0, sum(t < 0)), rnorm(sum(t >= 0), 0, 0.15))
+
+df <- data.frame(time = t, tb = tb_j)
+
+ggplot(df, aes(x = time, y = tb)) +
+  geom_line(color = "#012169", linewidth = 2) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey50", linewidth = 0.8) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "red", linewidth = 1.2) +
+  # Shaded deterioration region
+  geom_ribbon(
+    data = df |> filter(time >= 0 & time <= 4),
+    aes(ymin = pmin(tb, 0), ymax = 0),
+    fill = "#cc0000", alpha = 0.2
+  ) +
+  # Shaded improvement region
+  geom_ribbon(
+    data = df |> filter(time > 4),
+    aes(ymin = 0, ymax = pmax(tb, 0)),
+    fill = "#012169", alpha = 0.15
+  ) +
+  # Annotations
+  annotate("text", x = 0.3, y = 3.8,
+           label = "Depreciation\noccurs (t=0)", color = "red", size = 3.5, hjust = 0) +
+  annotate("text", x = -3.5, y = 0.4,
+           label = "Pre-depreciation\nbaseline", size = 3, color = "grey40") +
+  annotate("text", x = 1.5, y = -2.8,
+           label = "Short-run\ndeterioration\n(contracts pre-set,\nM-L not satisfied)",
+           size = 3, color = "#cc0000", hjust = 0.5) +
+  annotate("text", x = 11, y = 2.2,
+           label = "Long-run\nimprovement\n(M-L holds,\nquantities adjust)",
+           size = 3, color = "#012169", hjust = 0.5) +
+  annotate("segment",
+           x = 1.5, y = -2.3, xend = 1.5, yend = -1,
+           arrow = arrow(length = unit(0.25, "cm")), color = "#cc0000") +
+  annotate("segment",
+           x = 11, y = 1.8, xend = 11, yend = 0.6,
+           arrow = arrow(length = unit(0.25, "cm")), color = "#012169") +
+  # Phase labels
+  annotate("text", x = 1.5, y = -4.3,
+           label = "Phase I:\n0-3 months", size = 2.8, color = "#cc0000") +
+  annotate("text", x = 5.5, y = -4.3,
+           label = "Phase II:\n3-12 months\n(recovery)", size = 2.8, color = "#B9975B") +
+  annotate("text", x = 11,  y = -4.3,
+           label = "Phase III:\n12+ months\n(improvement)", size = 2.8, color = "#012169") +
+  scale_x_continuous(breaks = seq(-4, 14, 2),
+                     labels = paste0(seq(-4, 14, 2), "m")) +
+  scale_y_continuous(limits = c(-5.5, 5)) +
+  labs(
+    title    = "The J-Curve Effect",
+    subtitle = "Trade balance worsens before improving after currency depreciation\nM-L condition (|eX|+|eM|>1) is satisfied only in the long run",
+    x = "Time (months after depreciation)", y = "Trade Balance (change from baseline)"
+  ) +
+  theme_minimal(base_size = 11)
+```
+
+---
+
+## J-Curve: Mechanisms
+
+::: {.columns}
+::: {.column width="55%"}
+**Why does TB worsen initially?**
+
+**Phase I (0–3 months): Contracts and inelasticity**
+
+- Import/export contracts already written in foreign currency
+- Prices change, but quantities cannot adjust instantly
+- Rising import prices → import *bill* rises (value effect > quantity effect)
+- M-L condition NOT satisfied in short run: $|e_X^{SR}| + |e_M^{SR}| < 1$
+
+**Phase II (3–12 months): Gradual adjustment**
+
+- Firms begin adjusting: export more, seek import substitutes
+- Trade volumes start responding to price signals
+
+**Phase III (12+ months): Full adjustment**
+
+- Contracts renegotiated
+- Production capacity adjusted
+- Consumers switch to domestic substitutes
+- M-L holds: $|e_X^{LR}| + |e_M^{LR}| > 1$
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**India's empirical evidence:**
+
+INR depreciation episodes:
+- **1991:** 25% devaluation → J-curve lasted ~2 years (severe structural rigidities)
+- **2013 taper tantrum:** INR fell 20% → TB improved within 12 months (better-integrated trade)
+- **2022 (post-Russia-Ukraine):** INR weakened 10% → limited TB improvement (oil price dominated)
+
+**Agricultural trade J-curve:**
+
+Agricultural exports show faster adjustment than industrial goods — lower contract lock-in for spot commodity trades.
+
+But Indian farmers often price in INR and don't automatically capture depreciation gains without better market linkages.
+:::
+:::
+:::
+
+---
+
+## Absorption Approach: Policy Implications
+
+::: {.columns}
+::: {.column width="55%"}
+**Absorption approach (Sidney Alexander, 1952):**
+
+$$CA = Y - A$$
+
+To improve the CA (reduce deficit), need:
+
+$$\Delta CA = \Delta Y - \Delta A > 0$$
+
+Either:
+1. **Raise output** $Y$: supply-side reforms, productivity growth
+2. **Reduce absorption** $A$: cut $C$, $I$, or $G$ (expenditure reduction)
+3. **Both** (typical IMF conditionality)
+
+**Devaluation alone is insufficient:**
+
+If $A$ rises as fast as $Y$ (say, because higher export revenues are spent on imports), CA does not improve.
+
+**Sterilisation problem:**
+If devaluation raises domestic price level (inflation), real $A$ may not fall → M-L gains are inflated away.
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**India 1991 adjustment:**
+
+$$\Delta CA = \Delta Y - \Delta A$$
+
+IMF conditionality required:
+1. Fiscal deficit cut: $\Delta G < 0$ → reduces $A$
+2. 25% devaluation → switches $A$ toward domestic goods
+3. Trade liberalisation → improves efficiency of $Y$
+
+**Result:**
+- CA went from -3.1% GDP (FY91) to -1.0% (FY93)
+- Growth fell temporarily (-0.1% in FY91-92)
+- Inflation spiked (13.7% in FY92)
+
+Classic adjustment tradeoff: **external balance restored at cost of internal balance** — at least temporarily.
+:::
+:::
+:::
+
+---
+
+## India's 1991 BoP Crisis
+
+::: {.columns}
+::: {.column width="55%"}
+**Chronology of the crisis:**
+
+| Date | Event |
+|---|---|
+| 1988–90 | Gulf remittances fall (Gulf War I); oil prices spike |
+| 1990 | Fiscal deficit ~8.5% GDP; political instability |
+| Oct 1990 | Moody's downgrades India |
+| Jan 1991 | Non-resident Indian deposits withdrawn en masse |
+| Mar 1991 | Forex reserves: $5.8B (barely 3 weeks imports) |
+| **June 1991** | **Reserves: $1.2B — 2 WEEKS of imports** |
+| July 1991 | India pledges **67 tonnes of gold** to Bank of England + Bank of Japan for $600M loan |
+| Aug 1991 | IMF Structural Adjustment Package: $2.2B |
+| 1991–92 | 25% devaluation; trade and investment liberalisation |
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Root causes:**
+
+1. **Fiscal profligacy:** 8.5% fiscal deficit financed by short-term external borrowing
+2. **Oil shock (1990):** Iraq invasion of Kuwait → oil price doubled
+3. **Remittance shock:** NRI deposits withdrawn on political uncertainty
+4. **Structural rigidities:** ISI (import substitution) model had exhausted itself
+
+**IMF conditionality:**
+
+- Fiscal deficit reduction
+- Trade liberalisation: import licensing abolished
+- Industrial delicensing (1991 Industrial Policy)
+- FDI liberalisation: automatic route up to 51%
+
+**Legacy:** The 1991 crisis was the *proximate cause* of India's liberalisation — turning a crisis into a structural reform.
+:::
+:::
+:::
+
+---
+
+## India FY2024 BoP Assessment
+
+::: {.columns}
+::: {.column width="55%"}
+**Current Account:**
+
+- CA deficit: $23.2B (-0.7% of GDP) — **comfortable**
+- Merchandise trade deficit: $238B (oil, gold, electronics)
+- Services surplus: $163B (IT/BPO dominance)
+- Remittances: $120B — world's largest recipient (World Bank data)
+
+**Financial Account:**
+
+- FDI net inflows: $22B (declined from $83B peak in FY22)
+- FPI: +$41B (strong equity market inflows)
+- ECB + banking capital: +$25B
+
+**Reserve adequacy:**
+
+- Forex reserves: $646B (March 2024)
+- Import cover: ~11 months (**well above IMF 3-month threshold**)
+- Short-term debt/reserves: 19% (**well below 100% danger threshold**)
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**Risks and concerns:**
+
+1. **Oil price vulnerability:** $10/barrel rise adds ~$15B to import bill
+2. **Gold imports:** Cultural demand makes gold import compression difficult
+3. **FPI volatility:** $41B inflow in FY24; could reverse quickly (as in 2013 taper tantrum)
+4. **FDI decline:** Net FDI fell from $55B (FY22) to $22B (FY24) — concerning for long-run financing
+5. **China factor:** RCEP non-membership means India lacks preferential access; competition from China in exports
+
+**Sustainable CA deficit?**
+
+$$\text{CA/GDP} < \text{long-run growth rate} \times \frac{\text{Net foreign debt}}{\text{GDP}}$$
+
+India's CA/GDP (-0.7%) << GDP growth (7%) — external position is **sustainable** and **comfortable**.
+:::
+:::
+:::
+
+---
+
+## BoP and Agricultural Policy Linkages
+
+::: {.columns}
+::: {.column width="55%"}
+**How agricultural policy affects BoP:**
+
+1. **Food import substitution:** MSP → higher domestic production → reduces food import bill
+   - India became self-sufficient in pulses (FY2023) — saved ~$3B/year
+   - Oilseed: still imports ~$22B of edible oils despite MSP
+
+2. **Export competitiveness:** High MSP + input subsidies → high domestic costs → reduces agricultural export competitiveness
+
+3. **Rice exports:** Restrictions in 2023 saved BoP in short run (reduced export earnings but improved food security), hurt long-run reputation
+
+4. **Remittance multiplier:** 5-6M agricultural workers in Gulf + Western countries send ~$40-50B/year from agri-related labour → largest single CA credit item after IT services
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**India's agricultural trade balance (FY2024):**
+
+| Category | Exports | Imports | Net |
+|---|---|---|---|
+| Rice | $9.9B | neg. | +$9.9B |
+| Spices | $3.7B | $0.4B | +$3.3B |
+| Sugar | $2.8B | neg. | +$2.8B |
+| Edible oils | $0.8B | $21.7B | **-$20.9B** |
+| Pulses | $0.6B | $2.8B | **-$2.2B** |
+| **Total Agri** | **~$50B** | **~$30B** | **+$20B** |
+
+Agriculture is a **net positive contributor** to India's BoP — one of the few sectors where India has a structural surplus.
+
+Edible oil imports (dominated by palm oil from Indonesia/Malaysia) are the single largest structural weakness.
+:::
+:::
+:::
+
+---
+
+## India's Services Exports: The IT-BPO Engine
+
+::: {.columns}
+::: {.column width="55%"}
+**Why India runs a services surplus despite a goods deficit:**
+
+India's IT/ITES sector is the single largest contributor to the services surplus:
+
+| Service category | FY24 exports (USD B) | % share |
+|---|---|---|
+| Software services | 100 | 61% |
+| Business services (BPO) | 28 | 17% |
+| Travel (tourism) | 22 | 14% |
+| Financial services | 9 | 5% |
+| Other | 4 | 3% |
+| **Total** | **163** | 100% |
+
+**Top software exporters:** TCS ($26B), Infosys ($18B), HCL ($13B), Wipro ($11B).
+
+India's services exports grew at **12.7% CAGR** over FY2015–FY2024 — one of the fastest-growing export sectors globally.
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Why services exports matter for BoP:**
+
+Services exports are **highly stable** (long-term contracts, stickier than goods trade) and **high value-added** (software $100/hour vs rice $0.30/kg).
+
+**Contrast with goods exports:**
+- Goods exports volatile (commodity price cycles, logistics disruptions)
+- Services exports smooth — even during COVID-19, India's IT exports grew 15%
+
+**Policy implication:**
+India's BoP resilience rests on the IT sector. Any disruption (H-1B visa restrictions, AI automation of BPO) would immediately show up in the current account.
+
+**WTO Mode 3 & 4 negotiations:**
+India pushes for freer movement of skilled professionals (Mode 4) — a key interest in services trade negotiations.
+:::
+:::
+:::
+
+---
+
+## Remittances: India's Largest Single CA Credit
+
+::: {.columns}
+::: {.column width="55%"}
+India received **$120 billion** in remittances in FY2024 — the world's largest recipient (World Bank, 2024).
+
+**Top source countries:**
+
+| Country | Share | INR remittance |
+|---|---|---|
+| USA | 23% | $27.6B |
+| UAE | 18% | $21.6B |
+| UK | 7% | $8.4B |
+| Saudi Arabia | 8% | $9.6B |
+| Other Gulf | 12% | $14.4B |
+| Others | 32% | $38.4B |
+
+**State distribution:**
+- Kerala: 21% (Gulf-dependent)
+- Maharashtra: 16%
+- Tamil Nadu: 10%
+- UP, Bihar: growing Gulf migration
+
+**Remittances are countercyclical:** rise when sending-country economy booms AND when INR depreciates (migrants send more home when rupee is weak).
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**Why remittances matter for agriculture:**
+
+Large fraction of Gulf remittances goes to **agricultural states** (Kerala, UP, Bihar, Rajasthan).
+
+**Channels:**
+
+1. **Consumption smoothing:** farm households use remittances during crop failure
+2. **Investment:** farm equipment, irrigation, land purchases
+3. **Risk-taking:** remittance income allows shift to higher-value crops
+4. **Labour market:** outmigration raises rural wages → pushes up agricultural labour costs
+
+**BoP significance:**
+
+Remittances = $120B vs FDI = $22B (FY24).
+
+India is less dependent on volatile FDI/FPI for BoP balance than most large EMs — remittances provide stable "private foreign aid."
+:::
+:::
+:::
+
+---
+
+## India's Forex Reserves: RBI Intervention Chart
+
+```{r}
+#| label: fig-forex-reserves
+#| fig-cap: "India's Forex Reserves and INR/USD Exchange Rate, FY2015–FY2024\nSource: RBI, Database on Indian Economy (DBIE)."
+#| fig-width: 8.5
+#| fig-height: 4.5
+
+reserves_data <- data.frame(
+  year      = 2015:2024,
+  reserves  = c(341, 360, 370, 424, 412, 477, 590, 633, 578, 646),
+  inr_usd   = c(62.1, 65.5, 67.1, 64.5, 69.9, 70.4, 74.2, 75.0, 82.7, 83.3)
+)
+
+# Dual-axis plot using secondary axis
+coeff <- 10   # scale factor for INR (reserves ~100x INR so scale accordingly
+
+p_res <- ggplot(reserves_data, aes(x = year)) +
+  # Reserves bars
+  geom_col(aes(y = reserves), fill = "#012169", alpha = 0.75, width = 0.6) +
+  # INR/USD line (scaled)
+  geom_line(aes(y = inr_usd * coeff), color = "#cc0000", linewidth = 1.5) +
+  geom_point(aes(y = inr_usd * coeff), color = "#cc0000", size = 2.5) +
+  # Mark 2022 taper tantrum equivalent
+  annotate("text", x = 2023, y = 920,
+           label = "Post-Ukraine\nrupee weakness\n(₹83/USD)", size = 3, color = "#cc0000") +
+  # Mark 2020 reserve build
+  annotate("text", x = 2021, y = 650,
+           label = "$590B\n(COVID\nreserve build)", size = 3, color = "#012169") +
+  scale_x_continuous(breaks = 2015:2024,
+                     labels = paste0("FY", substr(2015:2024, 3, 4))) +
+  scale_y_continuous(
+    name     = "Forex Reserves (USD billion)",
+    limits   = c(0, 1000),
+    sec.axis = sec_axis(~ . / coeff,
+                        name   = "INR per USD",
+                        breaks = seq(60, 90, 5))
+  ) +
+  labs(
+    title    = "India's Forex Reserves (bars) and INR/USD Rate (line), FY2015–FY2024",
+    subtitle = "RBI builds reserves during capital inflow surges; deploys during stress periods",
+    x = NULL
+  ) +
+  theme_minimal(base_size = 10) +
+  theme(
+    axis.title.y.right = element_text(color = "#cc0000"),
+    axis.text.y.right  = element_text(color = "#cc0000"),
+    axis.title.y.left  = element_text(color = "#012169")
+  )
+
+p_res
+```
+
+---
+
+## Key Takeaways: Lecture 9
+
+::: {.keybox}
+**1. National income identity:** $\text{CA} = Y - A = (S - I) + (T - G)$. A CA deficit means the country borrows from abroad — financed by FA inflows or reserve drawdown.
+
+**2. BoP accounting:** $\text{CA} + \text{KA} + \text{FA} + \Delta R = 0$. The BoP always balances — surpluses and deficits are in *individual accounts*, not the overall BoP.
+
+**3. India's external position (FY2024):** CA = -0.7% GDP (comfortable); remittances = $120B (world's largest); services surplus = $163B; forex reserves = $646B (11 months imports). External position is **strong**.
+
+**4. Marshall-Lerner condition:** $|e_X| + |e_M| > 1$ must hold for depreciation to improve TB. In the short run, M-L is typically NOT satisfied → J-curve: TB worsens before improving.
+
+**5. India 1991 crisis:** Reserves fell to $1.2B (2 weeks imports); India pledged 67 tonnes gold to the BoE. IMF bailout triggered liberalisation — delicensing, trade reform, FDI opening. Crisis → structural reform.
+
+**6. Agricultural BoP:** India runs a trade surplus in agriculture (~$20B), but edible oil imports (-$21B) are the single largest structural weakness. MSP policy affects both food security and export competitiveness.
+:::
+
+---
+
+## Next Lecture Preview
+
+::: {.methodbox}
+**Lecture 10 — Exchange Rates and Agricultural Trade**
+*June 27, 2026*
+
+- Fixed vs flexible exchange rate systems
+- Purchasing Power Parity (PPP): absolute and relative
+- Real exchange rate: $q = eP^*/P$ and agricultural competitiveness
+- How rupee depreciation affects Indian rice and wheat exports
+- Dutch disease: can commodity booms harm agricultural exporters?
+- India's managed float: RBI intervention and the REER
+:::
+
+::: {.highlightbox}
+**Preparation:** Review Salvatore Ch. 14–15 (Exchange Rates). Note that India operates a **managed float** — this means understanding both PPP theory AND RBI's intervention behaviour. We will use regression analysis of real exchange rate and export volume data.
+:::
+
+# Appendix {background-color="#1a3a5c"}
+
+## Additional Resources {.appendix}
+
+::: {.columns}
+::: {.column width="50%"}
+**Further Reading**
+
+- *International Economics* — Salvatore (Ch. 13-14)
+- *International Economics* — Appleyard & Field (Ch. 13-14)
+- RBI/DGCI&S/APEDA databases for latest data
+:::
+::: {.column width="50%"}
+**Key Data Sources**
+
+- DGCI&S: India's merchandise trade
+- RBI: Balance of payments data  
+- APEDA: Agricultural export statistics
+- WTO: Tariff and trade databases
+:::
+:::

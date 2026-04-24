@@ -1,0 +1,494 @@
+﻿---
+title: "Features of International Trade"
+subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+author: "Nithin M"
+institute: "Department of Development Economics"
+date: "May 2, 2026"
+format:
+  revealjs:
+    theme: [default, emory-clean.scss]
+    slide-number: true
+    chalkboard: true
+    transition: slide
+    incremental: false
+    smaller: false
+    scrollable: true
+    code-fold: true
+    code-summary: "Show R code"
+    logo: ""
+    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+  beamer:
+    aspectratio: 169
+    theme: metropolis
+    toc: false
+    section-titles: false
+    include-in-header: beamer-preamble.tex
+    keep-tex: false
+execute:
+  warning: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(ggplot2)
+library(dplyr)
+library(scales)
+options(scipen=999)
+theme_set(theme_minimal(base_size=11))
+knitr::opts_chunk$set(echo = knitr::is_html_output())
+```
+
+# Part I: Recap and Overview {background-color="#E8EDF5"}
+
+## Recap: Lecture 1
+
+::: {.methodbox}
+**Three things to remember from last week**
+
+1. **International trade** = cross-border exchange of goods, services, and capital; driven by differences in resource endowments, technology, and opportunity costs
+
+2. **India's position:** 18th-largest merchandise exporter; agricultural exports ~\$43.7B (FY2024); structural trade surplus in agriculture of ~\$15.5B
+
+3. **Agricultural trade is special** — food security concerns, perishability, seasonality, and powerful political economy shape how governments intervene
+:::
+
+**Today's agenda**
+
+- What distinguishes international trade from *domestic* trade?
+- How open is India to global trade — and how has this changed over time?
+- Advantages and risks of participating in global markets
+
+## India's Growing Trade Openness
+
+```{r}
+#| label: fig-trade-gdp
+#| fig-cap: "India: Trade Openness (Exports + Imports as % of GDP)\nSource: World Bank, World Development Indicators (WDI)."
+#| fig-width: 7
+#| fig-height: 4
+library(ggplot2)
+
+openness <- data.frame(
+  year = c(1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024),
+  trade_gdp = c(14, 22, 27, 35, 48, 42, 38, 44)
+)
+
+ggplot(openness, aes(x=year, y=trade_gdp)) +
+  geom_line(color="#012169", linewidth=1.5) +
+  geom_point(color="#012169", size=3) +
+  geom_area(fill="#012169", alpha=0.1) +
+  geom_vline(xintercept=1991, linetype="dashed", color="red", linewidth=0.8) +
+  annotate("text", x=1993, y=16, label="1991\nLiberalisation", color="red", size=3) +
+  labs(title="India's Trade Openness: (Exports + Imports) / GDP",
+       subtitle="India has become significantly more open since 1991 liberalisation",
+       x=NULL, y="Trade / GDP (%)") +
+  scale_x_continuous(breaks=c(1990,1995,2000,2005,2010,2015,2020,2024)) +
+  theme_minimal(base_size=11)
+```
+
+::: {.keybox}
+Trade/GDP rose from **14% (1990)** to **44% (2024)** — India is significantly more integrated into the global economy post-liberalisation.
+:::
+
+# Part II: Six Key Features {background-color="#E8EDF5"}
+
+## Features That Make International Trade Distinct
+
+International trade is not simply domestic trade "at a larger scale." Six features create unique challenges:
+
+::: {.columns}
+::: {.column width="50%"}
+**(a) Geographical separation**
+Long distances → higher transport costs, insurance, cold-chain requirements, longer lead times
+
+**(b) Different currencies**
+Each transaction requires currency conversion; exchange rate fluctuations create financial risk
+
+**(c) Factor immobility**
+Labour and capital cannot move freely across borders — immigration controls, capital account restrictions
+:::
+::: {.column width="50%"}
+**(d) Multiple political jurisdictions**
+Each country sets its own trade policy — tariffs, quotas, export bans; no single governing authority
+
+**(e) Different legal systems & culture**
+Food labelling laws, packaging standards, contract enforcement vary; Indian spice exporters must comply with EU pesticide MRL standards
+
+**(f) Greater risk and uncertainty**
+Combination of all above → higher commercial, political, and exchange-rate risk than domestic commerce
+:::
+:::
+
+## Feature 1: Factor Immobility
+
+::: {.columns}
+::: {.column width="55%"}
+**Why factors don't move freely**
+
+- **Labour:** Visa restrictions, language barriers, immigration quotas
+  - India sends ~8 million workers to Gulf countries — but under strict bilateral agreements, not free movement
+- **Capital:** FDI restrictions, capital account controls, regulatory hurdles
+  - India maintains partial capital account convertibility (RBI-regulated)
+- **Land:** Completely immobile by definition
+
+**Why this matters for trade theory**
+
+- Classical models (Ricardo, H-O) assume *factor immobility* across borders
+- This is what makes trade in goods a *substitute* for factor flows
+- If labour moved freely, there would be less need to trade goods
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**India case: Gulf remittances**
+
+Indian workers (largely from Kerala, UP, Bihar) work in UAE, Saudi Arabia, Kuwait — sending back **~\$120 billion in remittances (FY2024)**, making India the world's largest remittance recipient.
+
+This is *partial* factor mobility — workers move but face fixed-term contracts and limited rights.
+
+Remittances are India's largest single source of foreign exchange — larger than IT exports or any single merchandise export category.
+:::
+:::
+:::
+
+## Feature 2: Currency and Exchange Risk
+
+::: {.columns}
+::: {.column width="55%"}
+**The exchange rate problem**
+
+- Indian exporters price in **USD** (world standard for commodities)
+- Their costs are in **Indian Rupees (INR)**
+- If INR appreciates (e.g., ₹80 → ₹75 per USD), the same USD revenue converts to *fewer rupees* → profit squeezed
+- If INR depreciates (₹80 → ₹85), exporters gain; importers lose
+
+**Historical context**
+
+| Year | INR/USD |
+|------|---------|
+| 2000 | 45 |
+| 2010 | 46 |
+| 2015 | 65 |
+| 2020 | 75 |
+| 2024 | 83–84 |
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**Agricultural export example**
+
+A Punjab wheat exporter quotes **\$250/tonne** FOB Mumbai.
+
+- At ₹80/USD → realises ₹20,000/tonne
+- At ₹75/USD (appreciation) → realises only ₹18,750/tonne
+- At ₹85/USD (depreciation) → realises ₹21,250/tonne
+
+A **5% INR appreciation = 6.25% reduction** in rupee revenue — potentially wiping out margins on thin-traded commodities.
+
+**Hedging tools:** Forward contracts, futures on NSE/BSE, ECGC insurance
+:::
+:::
+:::
+
+# Part III: Internal vs International Trade {background-color="#E8EDF5"}
+
+## Internal vs International Trade: Key Differences
+
+::: {.smaller}
+| Dimension | Internal (Domestic) Trade | International Trade |
+|-----------|--------------------------|---------------------|
+| **Factor mobility** | Labour and capital move freely | Highly restricted — visas, FDI rules |
+| **Currency** | Single national currency | Multiple currencies; exchange rate risk |
+| **Political jurisdiction** | One government, one legal system | Multiple governments, international law |
+| **Trade barriers** | None within India (post-GST) | Tariffs, quotas, SPS, NTBs |
+| **Transport costs** | Relatively low | Higher — ocean freight, insurance, customs |
+| **Documentation** | Invoice, transport document | B/L, L/C, Certificate of Origin, SPS certificate |
+| **Market size** | Limited to one country | Global — 195 countries |
+| **Dispute resolution** | Domestic courts | WTO DSM, bilateral/regional bodies |
+:::
+
+::: {.keybox}
+**Key insight:** India's internal trade was itself *fragmented* before GST (2017) — state-level taxes created internal barriers. International trade faces all these barriers *and more*.
+:::
+
+## The Gravity Model of Trade
+
+::: {.columns}
+::: {.column width="55%"}
+**Inspired by Newton's law of gravitation:**
+
+$$T_{ij} = G \cdot \frac{Y_i \cdot Y_j}{D_{ij}^2}$$
+
+Where:
+- $T_{ij}$ = trade between country $i$ and country $j$
+- $Y_i, Y_j$ = GDP (economic size) of each country
+- $D_{ij}$ = distance between them
+
+**Interpretation:** Trade is **proportional to economic size** and **inversely proportional to distance**.
+:::
+::: {.column width="45%"}
+**India examples**
+
+| Partner | GDP | Distance | Trade rank |
+|---------|-----|----------|------------|
+| USA | Very large | Far | #1 export dest. |
+| China | Very large | Medium | #1 import source |
+| UAE | Medium | Close | #2 export dest. |
+| Bangladesh | Small | Very close | #5 export dest. |
+
+::: {.highlightbox}
+UAE ranks highly despite moderate GDP: it is a regional trade hub + large Indian diaspora creates demand for Indian food products.
+:::
+:::
+:::
+
+# Part IV: Advantages and Risks {background-color="#E8EDF5"}
+
+## Advantages of International Trade for India
+
+::: {.columns}
+::: {.column width="50%"}
+**For producers and the economy**
+
+1. **Wider market** — Indian basmati rice sold in 150+ countries; domestic market alone could not absorb export volumes
+2. **Access to unavailable inputs** — India imports potash fertiliser (not produced domestically in sufficient quantity)
+3. **Technology transfer** — FDI brings modern food processing technology
+4. **Employment generation** — Marine product sector employs ~1.5 million workers, mostly coastal women
+:::
+::: {.column width="50%"}
+**For growth and welfare**
+
+5. **Foreign exchange earnings** — Agricultural exports earn \$43.7B; crucial for financing oil imports
+
+::: {.highlightbox}
+**Rice example:** India is the [world's largest rice exporter]{.hi} (~22 million tonnes in 2022). Exports earn [~\$10B forex]{.hi-gold} and support 30 million paddy farmers.
+:::
+:::
+:::
+
+:::{.notes}
+Additional advantages of international trade for India:
+
+6. **Economic growth** — Export-led growth: every \$1B of agri exports generates ~\$1.5–2B in backward linkages
+7. **Better utilisation of resources** — India's abundant agricultural land and labour efficiently deployed through exports
+:::
+
+## Disadvantages and Risks of International Trade
+
+::: {.columns}
+::: {.column width="50%"}
+**Economic risks**
+
+1. **Import dependence** — India's edible oil dependence (60–65% imported) exposes inflation to global price shocks
+2. **Dumping risk** — China dumped cheap steel and tomato paste in India; domestic industries harmed
+3. **BoP strain** — India's merchandise deficit ~\$241B (FY2024); requires large capital inflows to finance
+4. **Domestic industry harm** — Cheap palm oil lowered demand for domestic groundnut oil
+:::
+::: {.column width="50%"}
+**Political and structural risks**
+
+5. **Economic dependency** — Over-specialisation creates vulnerability (e.g., countries heavily dependent on single commodity exports)
+6. **Trade disputes** — India has faced WTO challenges on sugar subsidies, poultry import bans
+7. **Structural unemployment** — Import competition can displace workers; adjustment is slow
+
+::: {.highlightbox}
+**Policy lesson:** The goal is not to maximise trade at all costs, but to *manage* trade so its gains exceed its disruption costs.
+:::
+:::
+:::
+
+# Part V: India Case Studies {background-color="#E8EDF5"}
+
+## Case Study: India's Edible Oil Import Dependence
+
+::: {.columns}
+::: {.column width="55%"}
+**The structural problem**
+
+- India consumes ~24–25 million tonnes of edible oil per year
+- Domestic production: ~9–10 million tonnes
+- Import requirement: **~14–15 million tonnes** (60–65% of need)
+- Cost: **~\$12–14 billion per year** (FY2024)
+
+**Import sources**
+
+| Oil type | Source | Share |
+|----------|--------|-------|
+| Palm oil | Indonesia, Malaysia | ~65% |
+| Soybean oil | Argentina, Brazil | ~15% |
+| Sunflower oil | Ukraine, Russia | ~15% |
+:::
+::: {.column width="45%"}
+**The 2021–22 price shock**
+
+- Russia-Ukraine war → sunflower oil disruption
+- Palm oil export ban by Indonesia (April–May 2022)
+- Global edible oil prices rose **50–80%** in 6 months
+- India's retail edible oil inflation peaked at ~20% mid-2022
+- Government response: cut import duties, banned futures trading
+
+::: {.methodbox}
+**Lesson:** Import dependence in a strategic food commodity creates price transmission vulnerability. PM KISAN Oilseeds Mission (2023) aims to double domestic production by 2030.
+:::
+:::
+:::
+
+## Case Study: India's Rice Export Ban (2023)
+
+::: {.columns}
+::: {.column width="60%"}
+**What happened:**
+
+- India banned non-basmati white rice exports in August 2023
+- Rationale: control domestic food inflation, protect consumers
+- India is the world's largest rice exporter — ~22 million tonnes/year
+
+**Who gained from the ban:**
+- Urban consumers (domestic rice prices stabilised)
+- State governments managing food inflation
+- RBI's CPI inflation target
+
+**Who lost:**
+- Paddy farmers — domestic price fell when export outlet closed
+- Rice millers and exporters — contracts cancelled; reputation damage
+- Bangladesh, West Africa — importers faced supply shortage; global rice prices rose +20%
+:::
+::: {.column width="40%"}
+::: {.highlightbox}
+**Policy outcome:**
+
+The ban caused a **global rice price spike of ~20%** — demonstrating India's market power as the world's dominant rice exporter.
+
+India partially reversed the ban for specific grades in early 2024 under WTO member pressure.
+
+**This is a classic domestic policy vs. trade commitment conflict** — a recurring theme in agricultural trade policy.
+:::
+:::
+:::
+
+## Government Policy in Agricultural Trade
+
+::: {.columns}
+::: {.column width="50%"}
+**Price support and export competitiveness**
+
+- **MSP:** Raises domestic price above world price → may make exports uncompetitive without subsidy
+- **Export subsidies:** Previously used for sugar (challenged at WTO); now replaced by transport/marketing assistance
+- **Export bans:** Rice ban (non-basmati) August 2023; wheat ban (May 2022) — protect domestic prices, hurt exporters
+:::
+::: {.column width="50%"}
+**Import policy**
+
+- **Import duties on pulses and oilseeds:** Reduced to zero during 2021–22 price shock; raised again when harvest recovered
+- **TRQs:** Limited quantities at low duty; higher duty beyond the quota
+- **PLI scheme for food processing:** Incentivise value-added food exports
+
+::: {.highlightbox}
+**Core tension:** India's domestic farm support policies often conflict with WTO commitments on export subsidies and import duties — the AoA bindings create real constraints (Lecture 12).
+:::
+:::
+:::
+
+## Trade Finance and Documentation
+
+::: {.columns}
+::: {.column width="55%"}
+**Key trade documents**
+
+- **Bill of Lading (B/L):** Shipping company's receipt; title document for goods
+- **Letter of Credit (L/C):** Bank's guarantee of payment; protects both parties
+- **Certificate of Origin:** Proves provenance; needed for preferential duty under FTAs
+- **Phytosanitary Certificate:** Certifies plants/plant products are pest-free
+- **SPS Compliance Certificate:** Confirms pesticide residues, aflatoxin levels meet standards
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**Why small agri-exporters struggle**
+
+Indian rice exporters to EU must meet **Maximum Residue Levels (MRLs)** for 300+ pesticides. Failure → entire consignment rejected at port.
+
+L/C requires strong banking relationships. MSME spice and horticulture exporters often cannot negotiate L/C terms with large US/EU importers.
+
+**ECGC** provides credit insurance — covers non-payment risk for Indian exporters.
+:::
+:::
+:::
+
+## Summary and Key Takeaways
+
+::: {.methodbox}
+**What we covered today**
+
+- International trade has **6 key features** distinguishing it from domestic trade: geographic separation, currency risk, factor immobility, multiple jurisdictions, cultural/legal differences, and greater uncertainty
+- **India's trade openness** rose from 14% of GDP (1990) to 44% (2024) — a dramatic shift driven by 1991 liberalisation
+- **Factor immobility** is the fundamental reason countries trade goods rather than simply moving workers
+- **Currency risk** directly affects agricultural export profitability — a 5% INR appreciation can wipe out export margins
+- **Edible oil dependence** is India's most significant agricultural import vulnerability: \$12–14B/year, 60–65% of consumption
+- **Gravity model** predicts India trades most with large (USA, China) and close (UAE, Bangladesh) economies
+:::
+
+## Discussion Question
+
+::: {.highlightbox}
+**"India has a comparative advantage in rice. Bangladesh also exports rice. How can both export the same commodity?"**
+:::
+
+**Think through:**
+
+- Is India's advantage in *all* varieties of rice?
+- Can a country export *and* import the same good? (Intra-industry trade)
+- How do quality differentiation, variety, and destination markets matter?
+- What does the rice export ban tell us about the limits of comparative advantage as a policy guide?
+
+::: {.methodbox}
+**Answer preview:** Intra-industry trade, quality segmentation (basmati vs parboiled), and market access geography all allow two countries to simultaneously export similar products. We formalise this in Lecture 6.
+:::
+
+## Next Lecture: Lecture 3
+
+::: {.columns}
+::: {.column width="60%"}
+**Theories of International Trade I — Mercantilism and Absolute Advantage**
+*(May 12, 2026)*
+
+We will cover:
+
+- **Mercantilism** (1500–1750): wealth = gold, maximise exports, minimise imports — and why it is fundamentally flawed
+- **Colonial trade:** India's experience under British mercantilism — the "drain of wealth" thesis (Dadabhai Naoroji)
+- **Adam Smith (1776):** Absolute advantage — trade based on genuine productivity differences
+- **Numerical example:** India vs Bangladesh in rice and jute
+- **Limitations** of absolute advantage — setting up for Ricardo
+:::
+::: {.column width="40%"}
+::: {.highlightbox}
+**Suggested reading**
+
+- Krugman, Obstfeld & Melitz, *International Economics*, Ch. 2
+- Adam Smith, *Wealth of Nations*, Book IV, Ch. 1 (excerpt)
+
+**To think about:**
+
+If every country has absolute advantage in *something*, does that mean every country should trade? What about a country that has absolute advantage in *nothing*?
+:::
+:::
+:::
+
+# Appendix {background-color="#1a3a5c"}
+
+## Additional Resources {.appendix}
+
+::: {.columns}
+::: {.column width="50%"}
+**Further Reading**
+
+- *International Economics* — Salvatore (Ch. 1)
+- *International Economics* — Appleyard & Field (Ch. 1)
+- RBI/DGCI&S/APEDA databases for latest data
+:::
+::: {.column width="50%"}
+**Key Data Sources**
+
+- DGCI&S: India's merchandise trade
+- RBI: Balance of payments data  
+- APEDA: Agricultural export statistics
+- WTO: Tariff and trade databases
+:::
+:::

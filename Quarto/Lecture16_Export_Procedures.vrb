@@ -1,0 +1,54 @@
+\begin{block}{Summary: The Export Ecosystem}
+\phantomsection\label{summary-the-export-ecosystem}
+\begin{columns}[T]
+\begin{column}{0.55\linewidth}
+\textbf{The full export chain for Indian agri:}
+
+\begin{verbatim}
+Farmer/Processor
+      ↓ FPO aggregation / merchant exporter
+IEC + RCMC + FSSAI + AD Bank
+      ↓ pre-shipment
+Export Contract (Incoterm negotiated)
+      ↓ finance
+Letter of Credit (bank guarantee)
+      ↓ documentation
+10 documents (Invoice, B/L, CoO, Phyto, EIC...)
+      ↓ customs
+ICEGATE Shipping Bill → LEO
+      ↓ logistics
+Port → Ship → Destination customs
+      ↓ payment
+Bank realises forex → e-BRC filed
+      ↓ incentives
+RoDTEP scrip + drawback + TMA
+\end{verbatim}
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\textbf{Key Takeaways:}
+
+\begin{enumerate}
+\tightlist
+\item
+  \textbf{IEC is the master key} --- no export without it
+\item
+  \textbf{The Shipping Bill + LEO} is the customs clearance milestone
+  --- nothing loads without it
+\item
+  \textbf{The Bill of Lading} is the only negotiable title document ---
+  it unlocks payment under LC
+\item
+  \textbf{RoDTEP} has replaced MEIS as the primary export incentive ---
+  WTO-compliant, duty refund basis
+\item
+  \textbf{Cold chain and logistics} remain India's primary structural
+  bottleneck --- world-class documentation systems exist, but physical
+  infrastructure lags
+\item
+  \textbf{Digital India} is working: ICEGATE, SWIFT, e-BRC have
+  dramatically reduced transaction costs
+\end{enumerate}
+\end{column}
+\end{columns}
+\end{block}

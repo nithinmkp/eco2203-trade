@@ -1,0 +1,189 @@
+/*-- scss:rules --*/
+
+/* =========================================================
+   ECO 2203 — Course Website Custom Styles
+   Colors: #012169 (institutional blue), #B9975B (gold)
+   ========================================================= */
+
+:root {
+  --brand-blue:  #012169;
+  --brand-gold:  #B9975B;
+  --brand-light: #e8edf5;
+}
+
+/* --- Navbar -------------------------------------------- */
+.navbar-brand { font-weight: 600; letter-spacing: 0.02em; }
+
+/* --- Hero banner --------------------------------------- */
+.hero {
+  background: linear-gradient(135deg, #012169 0%, #1b3d82 100%);
+  color: white;
+  padding: 2.8rem 2.5rem 2.4rem;
+  border-radius: 0.6rem;
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+.hero .course-code {
+  color: var(--brand-gold);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.hero .subtitle {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+.hero .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+.hero .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.80);
+  font-size: 0.92rem;
+}
+.hero .meta-item .label {
+  color: var(--brand-gold);
+  font-weight: 600;
+}
+
+/* --- Info cards ---------------------------------------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.info-card {
+  border: 1px solid #dee2e6;
+  border-top: 3px solid var(--brand-blue);
+  border-radius: 0.4rem;
+  padding: 1rem 1.2rem;
+  background: #fff;
+}
+.info-card .card-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6c757d;
+  margin-bottom: 0.3rem;
+}
+.info-card .card-value {
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: #212529;
+}
+
+/* --- Section headings ---------------------------------- */
+.section-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  border-bottom: 2px solid var(--brand-gold);
+  padding-bottom: 0.3rem;
+  margin: 2rem 0 1rem;
+}
+
+/* --- Module badges ------------------------------------- */
+.badge-module {
+  display: inline-block;
+  font-size: 0.70rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.18em 0.55em;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+}
+.badge-theory { background-color: #012169; color: #fff; }
+.badge-policy { background-color: #7b4112; color: #fff; }
+.badge-macro  { background-color: #1a5e3a; color: #fff; }
+.badge-inst   { background-color: #5c1f6b; color: #fff; }
+
+/* --- Schedule table ------------------------------------ */
+.schedule-wrap { overflow-x: auto; margin-bottom: 2rem; }
+
+table.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.90rem;
+}
+table.schedule thead th {
+  background-color: var(--brand-blue);
+  color: white;
+  padding: 0.65rem 0.8rem;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+table.schedule tbody td {
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+table.schedule tbody tr:hover { background-color: rgba(185,151,91,0.08); }
+table.schedule .lec-num {
+  color: #6c757d;
+  font-weight: 700;
+  font-size: 0.80rem;
+  text-align: center;
+}
+table.schedule .lec-date { color: #495057; white-space: nowrap; }
+table.schedule .lec-title { color: #212529; }
+table.schedule .lec-links { white-space: nowrap; text-align: center; }
+
+.btn-html, .btn-pdf {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.18em 0.6em;
+  border-radius: 0.25rem;
+  text-decoration: none !important;
+  margin: 0 2px;
+}
+.btn-html {
+  background-color: var(--brand-blue);
+  color: white !important;
+}
+.btn-html:hover { background-color: #1a3a7a; color: white !important; }
+.btn-pdf {
+  background-color: var(--brand-gold);
+  color: white !important;
+}
+.btn-pdf:hover { background-color: #9a7d3e; color: white !important; }
+
+/* --- Textbook cards ------------------------------------ */
+.textbook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.textbook-card {
+  border: 1px solid #dee2e6;
+  border-left: 4px solid var(--brand-gold);
+  border-radius: 0.4rem;
+  padding: 1rem 1.2rem;
+  background: #fff;
+}
+.textbook-card .tb-authors { color: #6c757d; font-size: 0.85rem; }
+.textbook-card .tb-title   { font-weight: 600; font-size: 0.95rem; margin: 0.2rem 0; }
+.textbook-card .tb-detail  { color: #6c757d; font-size: 0.82rem; }
+
+/* --- Footer -------------------------------------------- */
+.nav-footer { font-size: 0.84rem; color: #6c757d; }

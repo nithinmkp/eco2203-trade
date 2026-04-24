@@ -1,0 +1,788 @@
+﻿---
+title: "Lecture 17: Agricultural Export Promotion Organizations"
+subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+author: "Nithin M"
+institute: "Department of Development Economics"
+date: "August 15, 2026"
+format:
+  revealjs:
+    theme: [default, emory-clean.scss]
+    slide-number: true
+    chalkboard: true
+    transition: slide
+    incremental: false
+    smaller: false
+    scrollable: true
+    code-fold: true
+    code-summary: "Show R code"
+    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+  beamer:
+    aspectratio: 169
+    theme: metropolis
+    toc: false
+    section-titles: false
+    include-in-header: beamer-preamble.tex
+    keep-tex: false
+execute:
+  warning: false
+---
+
+# {.section}
+
+::: {style="text-align:center; margin-top: 2em;"}
+**Lecture 17**
+
+[Agricultural Export Promotion Organizations]{.hi style="font-size:1.8em;"}
+
+The Institutions Behind India's $43.7 Billion Agricultural Export Ecosystem
+:::
+
+---
+
+## The Institutional Architecture of India's Agri Exports
+
+::: {.columns}
+::: {.column width="58%"}
+India's agricultural export performance does not emerge spontaneously from market forces. It is shaped by a **dense ecosystem of statutory bodies, commodity boards, and promotional agencies** working in parallel.
+
+**Three tiers of the ecosystem:**
+
+**Tier 1 — Apex Mandate Bodies:**  
+APEDA and MPEDA cover the broadest range of products
+
+**Tier 2 — Commodity-Specific Boards:**  
+Tea, Coffee, Rubber, Spices, Tobacco Boards target specific value chains
+
+**Tier 3 — Quality and Finance Infrastructure:**  
+EIC (certification), EXIM Bank (trade finance), ECGC (risk cover)
+:::
+::: {.column width="42%"}
+::: {.highlightbox}
+**India's agri export organizations at a glance:**
+
+| Body | Est. | Ministry |
+|---|---|---|
+| APEDA | 1985 | Commerce |
+| MPEDA | 1972 | Commerce |
+| Tea Board | 1953 | Commerce |
+| Coffee Board | 1942 | Commerce |
+| Spices Board | 1987 | Commerce |
+| Rubber Board | 1947 | Commerce |
+| Tobacco Board | 1976 | Commerce |
+| EIC | 1964 | Commerce |
+| EXIM Bank | 1982 | Finance |
+| ECGC | 1957 | Finance |
+:::
+:::
+:::
+
+---
+
+## APEDA: Mandate and Structure
+
+::: {.columns}
+::: {.column width="55%"}
+**APEDA** — Agricultural and Processed Food Products Export Development Authority
+
+- Established under the **APEDA Act, 1985**
+- Under the **Ministry of Commerce and Industry**
+- Headquarters: **New Delhi**; 13 regional offices across India
+
+**Scheduled products:**
+
+APEDA covers **14 scheduled product groups** including fresh produce, processed foods, meat, dairy, cereals, and marine products (see APEDA Act Schedule).
+
+::: {.keybox}
+APEDA's scheduled products cover **~60% of India's agricultural export basket by value.** Rice (basmati) alone accounts for $5.8B of APEDA's promoted exports.
+:::
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**APEDA's governing structure:**
+
+- **Chairperson:** IAS officer (Secretary-level appointment)
+- **Governing Board:** 25 members — government, industry, research, farmers
+- **Annual budget:** ~₹650 crore (FY2025)
+
+**Funding mechanism:**
+
+APEDA collects a **cess** on APEDA-scheduled exports (₹2 per quintal for most commodities) which funds Market Development Assistance (MDA) grants for trade fair participation, pack houses, and quality testing.
+:::
+:::
+:::
+
+:::{.notes}
+Full list of APEDA's 14 scheduled product groups:
+
+Fresh fruits and vegetables · Processed fruits and vegetables · Meat and poultry products · Dairy products · Confectionery and bakery products · Cereals and cereal products · Groundnut, oilseeds, oil meals · Floriculture and seeds · Plantation crops · Organic products · Alcoholic beverages · Poultry and poultry products · Animal casings · Miscellaneous processed items
+:::
+
+---
+
+## APEDA Scheduled Product Exports: FY2024
+
+```{r}
+#| label: fig-apeda-products
+#| fig-cap: "Processed food is the single largest APEDA export category; marine products rank second. Rice (basmati + non-basmati) together constitute ~28% of the basket.\nSource: APEDA Annual Report 2023-24."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+library(dplyr)
+
+df_apeda <- data.frame(
+  Product = c("Non-Basmati Rice","Basmati Rice","Wheat","Other Cereals",
+              "Processed Food","Marine Products","Spices",
+              "Buffalo Meat","Fresh Fruits/Veg","Other"),
+  Value_FY2024 = c(6.4, 5.8, 0.7, 0.5, 11.2, 7.6, 3.7, 3.9, 3.1, 0.8)
+) |>
+  dplyr::arrange(Value_FY2024) |>
+  dplyr::mutate(Product = factor(Product, levels = Product),
+                Rank    = dplyr::row_number())
+
+ggplot(df_apeda, aes(x = Value_FY2024, y = Product, fill = Rank)) +
+  geom_col(width = 0.72, show.legend = FALSE) +
+  geom_text(aes(label = paste0("$", Value_FY2024, "B")), hjust = -0.12, size = 3.2, colour = "grey25") +
+  scale_fill_gradient(low = "#a8c4e5", high = "#012169") +
+  scale_x_continuous(limits = c(0, 14), labels = function(x) paste0("$", x, "B")) +
+  labs(title    = "APEDA Scheduled Product Exports: FY2024 (USD Billion)",
+       subtitle = "Total APEDA exports = ~USD 43.7 Billion",
+       x = "Export Value (USD Billion)", y = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(plot.title = element_text(face = "bold"),
+        plot.subtitle = element_text(colour = "grey40"))
+```
+
+---
+
+## APEDA's Key Functions in Practice
+
+::: {.columns}
+::: {.column width="50%"}
+**1. Financial Assistance (MDA Grants):**
+
+- **Infrastructure:** pack houses, pre-cooling facilities, CA stores, vapour heat treatment (VHT) plants — subsidy up to 50% of cost (cap ₹50 lakh–₹3 crore)
+- **Quality labs:** NABL accreditation support; pesticide residue testing equipment
+- **Market promotion:** 75% reimbursement of stall cost at international fairs
+
+**2. Quality Standards:**
+
+- Issues guidelines for pesticide residue management (grape, mango protocols)
+- Coordinates NABL-accredited testing laboratories for certifying shipments
+- Manages **Generic India brand** (Incredible India! branding at trade fairs)
+:::
+::: {.column width="50%"}
+**4. Bilateral Market Access Protocols:**
+
+Market access for perishables requires country-to-country pest risk assessment (PRA). APEDA negotiates these protocols:
+
+| Protocol | Country | Product |
+|---|---|---|
+| VHT Protocol | **Japan** | Mango (Alphonso) |
+| Cold Treatment | **South Korea** | Grapes |
+| Systems Approach | **USA** | Mangoes |
+| Residue Monitoring | **EU** | Grapes, pomegranate |
+
+::: {.highlightbox}
+**The Japan mango success story:**  
+APEDA negotiated a **vapour heat treatment (VHT) protocol** with Japan's Ministry of Agriculture (MAFF) in 2006. Indian mango exports to Japan grew from near-zero to **$50+ million** in FY2024.
+:::
+:::
+:::
+
+:::{.notes}
+**3. Market Intelligence:**
+
+- APEDA's AgriXchange portal: real-time export statistics, market prices, tariff information for 50+ destinations
+- Issues market intelligence reports on key commodities and destinations
+- Organises buyer-seller meets (BSMs) in India and abroad
+- Publishes commodity-specific export guidelines and market reports
+:::
+
+---
+
+## Top 10 Destinations for India's Agricultural Exports
+
+```{r}
+#| label: fig-agri-destinations
+#| fig-cap: "USA leads with 11.2% share driven by marine products and spices; Bangladesh and UAE are the next largest markets for rice and meat exports.\nSource: APEDA Annual Report 2023-24."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+library(dplyr)
+
+df_dest <- data.frame(
+  Country   = c("USA","Bangladesh","UAE","China","Saudi Arabia",
+                "Indonesia","Malaysia","Nepal","Vietnam","UK"),
+  Share_Pct = c(11.2, 9.8, 8.4, 6.7, 5.3, 4.8, 3.9, 3.7, 3.2, 2.8)
+) |>
+  dplyr::arrange(Share_Pct) |>
+  dplyr::mutate(Country = factor(Country, levels = Country))
+
+ggplot(df_dest, aes(x = Share_Pct, y = Country)) +
+  geom_segment(aes(x = 0, xend = Share_Pct, yend = Country),
+               colour = "#012169", linewidth = 1.15) +
+  geom_point(colour = "#B9975B", size = 5) +
+  geom_text(aes(label = paste0(Share_Pct, "%")), hjust = -0.45, size = 3.2, colour = "grey25") +
+  scale_x_continuous(limits = c(0, 14), labels = function(x) paste0(x, "%")) +
+  labs(title    = "Top 10 Destinations for India's Agricultural Exports (FY2024)",
+       subtitle = "Share of total agri exports (%)",
+       x = "Export Share (%)", y = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(plot.title = element_text(face = "bold"),
+        plot.subtitle = element_text(colour = "grey40"))
+```
+
+---
+
+## APEDA's Success Metrics: Selected Achievements
+
+::: {.columns}
+::: {.column width="55%"}
+**Basmati Rice:**
+
+- FY2010 export: $1.5 billion  
+- FY2024 export: **$5.8 billion** (50+ destinations)
+- APEDA's GI application for Basmati at WTO (ongoing): protects brand value
+- APEDA basmati traceability: QR code on bags linking to farm, miller, testing report
+
+**Organic Exports:**
+
+- FY2024: **$1.1 billion** (50+ countries)
+- India: 4th largest organic area globally (4.43 million ha, 4.5 million farmers)
+- APEDA manages NPOP (National Programme for Organic Production) — certification, accreditation
+- USA (37%) and EU (35%) are top organic destinations
+
+**Fresh Grapes (EU):**
+
+- EU had threatened ban due to pesticide residues (2014 crisis)
+- APEDA's Grape Net portal: farmer-level residue monitoring of 1.5 lakh acres
+- Residue violations reduced from 180 (2013) to 9 (FY2024)
+- Grape exports: **$260 million** FY2024; sustained EU market access
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**APEDA trade fair presence:**
+
+| Fair | Location | India Stall |
+|---|---|---|
+| Gulfood | Dubai, Feb | ~400 exhibitors |
+| SIAL | Paris, Oct | ~150 exhibitors |
+| Annapoorna | Mumbai | Domestic + buyers |
+| FMI Show | Chicago | Marine, organic |
+| WorldFood | Moscow | Basmati, spices |
+
+APEDA's "India Pavilion" concept — government-funded stall space offered to SME exporters at subsidised rates. In FY2024, APEDA facilitated participation of **3,200 exporters** across 47 international fairs.
+:::
+:::
+:::
+
+---
+
+## India Agricultural Exports: Long-run Trend
+
+```{r}
+#| label: fig-apeda-trend
+#| fig-cap: "India's APEDA-promoted exports grew 2.3x from FY2014 to the FY2023 peak of 53.2B USD, before declining to 43.7B in FY2024 after non-basmati rice and onion export bans.\nSource: APEDA Annual Report 2023-24."
+#| warning: false
+#| fig-align: center
+#| fig-width: 9
+#| fig-height: 5
+
+library(ggplot2)
+library(dplyr)
+
+df_trend <- data.frame(
+  Year_n    = 1:11,
+  Year_lbl  = c("FY2014","FY2015","FY2016","FY2017","FY2018",
+               "FY2019","FY2020","FY2021","FY2022","FY2023","FY2024"),
+  Exports_B = c(23.2, 23.7, 22.8, 24.1, 26.1, 32.8, 35.1, 41.3, 50.2, 53.2, 43.7)
+)
+
+ggplot(df_trend, aes(x = Year_n, y = Exports_B)) +
+  geom_area(fill = "#012169", alpha = 0.13) +
+  geom_line(colour = "#012169", linewidth = 1.3) +
+  geom_point(colour = "#012169", size = 3) +
+  geom_point(data = dplyr::filter(df_trend, Year_lbl == "FY2023"),
+             colour = "#C84B31", size = 6, shape = 1, stroke = 2) +
+  annotate("text", x = 10, y = 56,
+           label = "FY2023 peak: $53.2B",
+           colour = "#C84B31", size = 3.2, hjust = 0.5, fontface = "bold") +
+  annotate("segment", x = 11, xend = 11, y = 46, yend = 44.8,
+           colour = "#B9975B", linewidth = 0.8,
+           arrow = arrow(length = unit(0.2, "cm"), type = "closed")) +
+  annotate("text", x = 10.4, y = 48.5,
+           label = "FY2024: $43.7B\nRice & onion export bans",
+           colour = "#B9975B", size = 2.9, hjust = 0.5) +
+  scale_x_continuous(breaks = 1:11, labels = df_trend$Year_lbl) +
+  scale_y_continuous(limits = c(18, 60), labels = function(x) paste0("$", x, "B")) +
+  labs(title    = "India Agricultural Exports: Long-run Trend (USD Billion)",
+       subtitle = "APEDA-promoted product exports, FY2014–FY2024",
+       x = NULL, y = "USD Billion") +
+  theme_minimal(base_size = 11) +
+  theme(plot.title = element_text(face = "bold"),
+        axis.text.x = element_text(angle = 35, hjust = 1))
+```
+
+---
+
+## MPEDA: India's Seafood Export Authority
+
+::: {.columns}
+::: {.column width="55%"}
+**MPEDA** — Marine Products Export Development Authority
+
+- Established under **MPEDA Act, 1972**
+- Ministry of Commerce and Industry
+- Headquarters: **Kochi, Kerala**; offices in all coastal states
+
+**India's seafood exports (FY2024):**
+
+- Total: **$7.6 billion** (3.5 million MT)
+- India: **4th largest** seafood exporter globally (after China, Norway, Vietnam)
+- Shrimp: 66% of export value
+- Top markets: USA (24%), EU (22%), China (14%), Japan (8%), Southeast Asia (7%)
+
+**Product mix:**
+
+Frozen shrimp · Dried fish · Frozen fish (ribbonfish, pomfret) · Cephalopods (squid, cuttlefish, octopus) · Fresh/chilled fish · Seaweed · Surimi
+
+::: {.keybox}
+**Andhra Pradesh** contributes **70% of India's shrimp exports** — the largest concentration of aquaculture in the world outside China.
+:::
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**MPEDA's registration system:**
+
+All marine product exporters must register with MPEDA. As of FY2024:
+
+- Processing plants: **1,200+** (EU-approved: 350+)
+- Hatcheries: **2,800**
+- Aquaculture farmers linked: **~1.2 million**
+
+**Traceability and CoC (Chain of Custody):**
+
+MPEDA's CoC system tracks shrimp from farm pond to export container:
+
+1. Farm registration (GPS-tagged)
+2. Feed purchase records (antibiotic-free)
+3. Harvest sampling (NRCP residue test)
+4. Processing plant records
+5. Container ID linked to farm batch
+
+This traceability is required for EU and USA market access — buyers can scan a QR code and trace any pack of Indian shrimp to the source farm.
+:::
+:::
+:::
+
+---
+
+## MPEDA: Quality Systems and International Compliance
+
+::: {.columns}
+::: {.column width="55%"}
+**National Residue Control Plan (NRCP):**
+
+The EU requires all third-country seafood exporters to operate an NRCP — a systematic national programme testing for:
+
+- Antibiotics (nitrofurans, chloramphenicol, tetracyclines)
+- Heavy metals (mercury, lead, cadmium)
+- Pesticide residues
+
+MPEDA coordinates NRCP testing across states:
+- 18,000+ samples per year
+- Tested at CIFT, EIC, and NABL labs
+- Annual audit by EU's DG-SANTE (Health and Food Safety)
+
+**Result:** EU has kept Indian seafood on its approved list continuously since 2006 (minor suspension in 2002 was reversed after MPEDA reforms).
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**USA FDA import alerts — India's challenge:**
+
+The USA FDA has issued import alerts on Indian shrimp over antibiotic residues multiple times.
+
+**2022 import alert:** 46 Indian processing plants placed under increased surveillance; exports to USA dipped 8% in FY2023.
+
+**MPEDA's response:**
+- Mandatory antibiotic-free certification for all USA-bound shrimp
+- MPEDA training for 50,000 Andhra farmers on prohibited antibiotics
+- 3rd party testing at NABL labs (EIC, SGS) before shipment
+
+**Outcome:** USA-bound exports recovered to $1.8B in FY2024.
+
+::: {.keybox}
+SPS compliance is not a one-time event — it requires continuous investment in testing, farmer training, and government–industry coordination.
+:::
+:::
+:::
+:::
+
+---
+
+## The Five Commodity Boards: Overview
+
+| Board | Est. | HQ | Key Products | FY2024 Export | Top Markets |
+|---|---|---|---|---|---|
+| **Tea Board** | 1953 | Kolkata | CTC tea, orthodox, green | ~$750M | Russia, UAE, UK |
+| **Coffee Board** | 1942 | Bengaluru | Arabica, Robusta | ~$1.2B | Italy, Germany, USA |
+| **Rubber Board** | 1947 | Kottayam | NR, latex, crepe | ~$250M | Germany, USA, Italy |
+| **Spices Board** | 1987 | Kochi | Chilli, cumin, cardamom, pepper | ~$3.7B | China, USA, Vietnam |
+| **Tobacco Board** | 1976 | Guntur | FCV tobacco, cheroots | ~$800M | Belgium, Germany, Russia |
+
+::: {.methodbox}
+All five boards perform similar functions: **research, quality standards, market development, financial assistance, and export promotion.** Each has a statutory role in the respective value chain — from regulating auctions (Tea, Tobacco) to issuing GI certificates (Spices Board for Alleppey Green Cardamom).
+:::
+
+---
+
+## Tea Board of India
+
+::: {.columns}
+::: {.column width="55%"}
+**India's tea sector:**
+
+- **2nd largest producer globally** (after China): 1.35 billion kg/year (FY2024)
+- Domestic consumption: ~1.1 billion kg (India is its own largest consumer)
+- Exports: **200–250 million kg (~$750–800 million)**
+
+**Tea Board functions:**
+
+- Regulates tea auctions: **Kolkata, Guwahati, Coimbatore, Cochin** auction centres
+- Tea Research Association (Tocklai, Assam): oldest tropical crop research station in the world (est. 1911)
+- Issues **Tea Certificate** for all shipments
+- Darjeeling GI: **world's first GI-tagged tea** (EU recognition 1995, India 2004). 87 registered gardens. ~7 million kg/year.
+
+**Top export markets:** Russia (20%), UAE (18%), UK (12%), USA (7%), Germany (5%)
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**Challenges facing Indian tea:**
+
+1. **Competition:** Kenya (low-cost CTC), China (premium green/white), Sri Lanka (strong Ceylon brand)
+2. **Price stagnation:** Assam CTC auction prices have grown only 4% annually since 2015 despite input cost inflation
+3. **Climate risk:** North Bengal tea gardens face erratic monsoon; 2023 drought cut Darjeeling first-flush yield by 30%
+4. **Small-tea growers:** 35% of tea production from 200,000+ small growers (< 10 ha) — difficult to comply with Rainforest Alliance/UTZ standards required by European retail chains
+
+**Tea Board response:** Grameen Krishi Mitra (GKM) extension workers linking small growers to certification. Target: 50% certified by 2028.
+:::
+:::
+:::
+
+---
+
+## Coffee Board and Spices Board
+
+::: {.columns}
+::: {.column width="50%"}
+**Coffee Board of India (est. 1942, Bengaluru):**
+
+- India: **3rd largest Arabica producer in Asia**
+- Production: ~350,000 MT/year
+- Exports: **$1.2 billion (FY2024)** — record high; 15% growth over FY2023
+- [Arabica]{.hi}: Coorg, Chikmagalur (Bababudangiri GI); shade-grown, organic premium
+- [Robusta]{.hi}: Wayanad, Hassan; used in espresso blends globally
+- Top markets: Italy (30%), Germany (18%), Belgium (12%), USA (9%)
+- CCRI (Central Coffee Research Institute, Chikmagalur): disease-resistant variety development
+- Specialty coffee promotion: India now at World Barista Championship; "Indian single origin" brand growing
+
+::: {.keybox}
+Coffee Board's **Café Coffee Day** predecessor was a Board initiative. Domestic coffee consumption now growing 7% annually — youngest coffee drinking demographic globally.
+:::
+:::
+::: {.column width="50%"}
+**Spices Board of India (est. 1987, Kochi):**
+
+- India: **world's largest spice exporter by value**
+- 109 varieties; 8 million MT production; **4.5 million MT exports**
+- **$3.7 billion (FY2024)** — 5-year CAGR of 12%
+
+**Top export items (FY2024):**
+
+| Spice | Value |
+|---|---|
+| Chilli | $1.1B |
+| Spice Oils & Oleoresins | $800M |
+| Cumin | $720M |
+| Turmeric | $200M |
+| Cardamom | $150M |
+| Pepper | $140M |
+
+::: {.highlightbox}
+**GI products:** Alleppey Green Cardamom, Malabar Black Pepper, Guntur Sannam Chilli, Coorg Orange Cardamom. Premium over non-GI: **20–40%** in EU market.
+
+**SPS challenge:** EU raised MRL concerns on Indian chilli (Sudan Red dye, aflatoxin). Spices Board's GAP training programme covers 500,000 chilli farmers in Andhra Pradesh.
+:::
+:::
+:::
+
+---
+
+## Export Inspection Council (EIC)
+
+::: {.columns}
+::: {.column width="55%"}
+**EIC** — statutory body under the **Export (Quality Control and Inspection) Act, 1963**
+
+- Ministry of Commerce and Industry; HQ New Delhi
+- Purpose: independent certification that Indian exports meet quality standards acceptable to importing countries
+
+**Structure:**
+
+- **5 regional EIOs** (Export Inspection Offices): Mumbai, Chennai, Kochi, Kolkata, Delhi
+- **40+ sub-offices** in export-intensive centres (Vizag, Surat, Amritsar, Ludhiana)
+- Accredited by **EU's DG-SANTE, USFDA, Japan MHLW, Korean MFDS**
+
+**Mandatory certification products:**
+
+Fish and fishery products · Meat and meat products · Poultry products · Dairy products · Egg products · Honey · Organic products · Castor oil · Processed food (for EU, Japan, USA)
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**What EIC does per shipment:**
+
+1. Document verification (invoice, packing list, test reports)
+2. Physical inspection: random sampling from lot
+3. Lab analysis: microbiological, chemical, pesticide, heavy metals
+4. Issuance of **Health Certificate** (format accepted by destination country)
+5. Post-shipment surveillance: tracks rejection reports from destination
+
+**EIC performance (FY2024):**
+
+- Certificates issued: **1.8 lakh**
+- Value covered: **₹1.1 lakh crore**
+- Rejection rate (border rejections at EU/USA): **0.4%** (one of the lowest among major exporters)
+- Turnaround time: **2–3 working days** for most certificates
+
+::: {.keybox}
+An **FSSAI-EIC joint protocol** (2022) has harmonised testing requirements so exporters need not test separately for domestic FSSAI and export EIC compliance.
+:::
+:::
+:::
+:::
+
+---
+
+## NAFED: Price Stabilisation and Export Implications
+
+::: {.columns}
+::: {.column width="55%"}
+**NAFED** — National Agricultural Cooperative Marketing Federation of India
+
+- Established 1958; cooperative society under Multi-State Cooperative Societies Act
+- Functions: **Price Support Scheme (PSS) procurement**, buffer stock management, retail distribution
+
+**PSS and its export connection:**
+
+When prices of oilseeds (mustard, groundnut, soybean) and pulses fall below MSP:
+- Government activates PSS; NAFED procures from farmers at MSP
+- NAFED accumulates buffer stocks of oilseeds/pulses
+- Stocks are sold through NAFED retail, e-commerce, and open market sales when prices rise
+- Procurement **reduces export availability** (absorbs domestic surplus before it can be exported); but **stabilises farm incomes**
+
+::: {.keybox}
+In kharif 2023: NAFED procured **38 lakh MT of tur dal** at MSP (₹6,600/quintal) from Karnataka, Maharashtra, Madhya Pradesh. This stock was later released to control prices — but reduced the quantity available for the export market in FY2024.
+:::
+:::
+::: {.column width="45%"}
+::: {.highlightbox}
+**The NAFED export dilemma:**
+
+NAFED is **not primarily an export organization** — it is a price stabilisation agency. But its procurement and buffer management decisions directly affect India's agri export supply.
+
+**Tension:** When NAFED holds large tur dal stocks, export prices are firm because domestic supply is constrained. When NAFED releases stocks, domestic prices fall → farmer incomes hurt, but consumers benefit.
+
+**FPO linkage:**
+
+NAFED's eMandis portal now links FPOs to government procurement at MSP and to private buyers. 1,200 FPOs linked as of FY2024, aggregating procurement from 2.5 million farmers.
+
+**AAPL (NAFED's retail arm):** sells agri commodities B2C through 1,200+ stores, Amazon/Flipkart — brand building for Indian agri.
+:::
+:::
+:::
+
+---
+
+## Farmer Producer Organizations as Export Units
+
+::: {.columns}
+::: {.column width="55%"}
+**The small-farm problem:**
+
+India's average farm size: **1.08 hectares** (Agriculture Census 2015–16).  
+Average EU/USA buyer minimum order: **20 MT per lot.**
+
+No individual smallholder can meet buyer requirements for:
+- Consistent volume
+- Uniform quality and grading
+- Traceable production records
+- Third-party certification costs (organic, GlobalGAP)
+
+**FPOs as aggregators:**
+
+An FPO with 500 members × 1 ha each = 500 ha aggregate. Can produce 300–500 MT of a single crop — meeting buyer minimums.
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**Successful FPO export examples:**
+
+**Mahagrapes (Maharashtra):**  
+Cooperative of 46 grape-growing cooperatives, ~25,000 farmers.  
+Exports EU-compliant grapes to Netherlands, Germany, UK.  
+FY2024 exports: ~8,000 MT (~$40M).  
+Uses APEDA-funded pack houses and cold chain in Nashik.
+
+**Sahyadri Farms (Nashik):**  
+12,000 farmer members; India's largest single FPO.  
+GlobalGAP certified; supplies Tesco UK, Carrefour.  
+Own cold chain, pack house, CA storage.
+
+**NDDB dairy cooperatives:**  
+Amul (GCMMF): 3.6 million farmer members; dairy exports to 50+ countries ~$500M.
+
+::: {.keybox}
+**APEDA's FPO Connect:** 1,200+ FPOs registered, linked to APEDA's buyer database and MDA grant system. FPOs can now access MDA grants directly — not just through large exporters.
+:::
+:::
+:::
+:::
+
+---
+
+## Government Schemes Supporting Agri Export Organizations
+
+::: {.columns}
+::: {.column width="50%"}
+**PM FME (Formalisation of Micro Food Enterprises) Scheme:**
+- ₹10,000 crore over 5 years (2020–25)
+- Credit-linked subsidy (35%) for micro-enterprises upgrading to FSSAI standards
+- ODOP (One District One Product) focus products receive priority
+- 2 lakh+ enterprises formalized by FY2024 → many now eligible for export
+
+**NABARD's Agri Infrastructure Fund (AIF):**
+- ₹1 lakh crore; 3% interest subvention
+- Pack houses, cold stores, CA chambers, primary processing centres
+- Linked to FPO and cooperative projects — directly supports export infrastructure
+
+**SFAC (Small Farmers Agribusiness Consortium):**
+- FPO promotion, equity grant support
+- Connects FPOs to APEDA/MPEDA registered exporters
+- Pilot: 100 agri export FPOs linked directly to 3 commodity board markets
+:::
+::: {.column width="50%"}
+**APEDA-NHB Horticulture Export Collaboration:**
+
+NHB (National Horticulture Board) funds pack houses; APEDA funds market promotion. Joint program in:
+- Banana (Jalgaon, Maharashtra → Middle East)
+- Guava (Allahabad, UP → UK diaspora market)
+- Litchi (Muzaffarpur, Bihar → EU, West Asia)
+
+::: {.highlightbox}
+**Districts as Export Hubs (DEH) — FTP 2023–28:**
+
+Commerce Ministry has identified **100+ districts** with specific "champion products."
+
+Examples:
+- Kalaburagi (Karnataka): Tur dal
+- Nashik (Maharashtra): Grapes, onions
+- Tirupur (Tamil Nadu): Knitwear + agri
+- Coorg (Karnataka): Coffee, pepper
+- Guntur (Andhra Pradesh): Chilli, turmeric
+
+District Collectors coordinate between farmers, FPOs, exporters, and commodity boards. Target: every DEH district to double export value in 5 years.
+:::
+:::
+:::
+
+---
+
+## India's 2030 Agricultural Export Ambition
+
+::: {.columns}
+::: {.column width="55%"}
+**APEDA's target: $60 billion by 2030**  
+(from $43.7B in FY2024; required CAGR ~5.4%)
+
+**MPEDA's target: $12 billion in seafood**  
+(from $7.6B; focus on value-added and ready-to-eat)
+
+**Commodity Board targets:**
+- Spices Board: $5B (from $3.7B)
+- Coffee Board: $2B (from $1.2B)
+- Tea Board: $1.5B (from $750M)
+
+**Overall national agri-food export target (FTP 2023–28): $100 billion by 2030**
+
+**Strategy pillars:**
+1. Diversify beyond rice dominance
+2. Open new markets: Africa, Southeast Asia, South Korea
+3. Value addition: processed, organic, functional foods
+4. Invest in cold chain: PM GatiShakti nodes
+5. Leverage GI brand premiums
+6. FTA market access: India-UAE CEPA live; India-UK FTA being negotiated
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**Key Takeaways:**
+
+1. **APEDA** is the backbone of India's agri export promotion — covers 60% of the export basket
+2. **MPEDA** manages India's $7.6B seafood export with rigorous quality systems essential for EU/USA access
+3. **Commodity Boards** are sector-specific engines — Spices Board's $3.7B is remarkable for a relatively small value chain
+4. **EIC** provides the third-party quality assurance without which EU/USA market access is impossible
+5. **FPOs** are solving the small-farm aggregation problem — Mahagrapes, Sahyadri, Amul show it is achievable at scale
+6. **District-level implementation** through DEH is the newest institutional innovation — connecting national targets to local value chains
+:::
+:::
+:::
+
+---
+
+## Next Lecture
+
+::: {.methodbox}
+**Lecture 18 — India's Agricultural Trade and Foreign Trade Policy**  
+*August 22, 2026 — FINAL LECTURE*
+
+- Course synthesis: from comparative advantage to India's $43.7 billion agri export reality
+- India's trade performance: FY2024 big picture and 10-year trends
+- Export composition, import profile, and the value-addition opportunity
+- Foreign Trade Policy 2023–28: vision, themes, and agricultural provisions
+- Millets, GIs, and organic exports as strategic niches
+- Challenges India must overcome and opportunities ahead
+- The farmer welfare vs export competitiveness dilemma
+- Course synthesis: what 18 weeks has taught us
+- India's Agricultural Export Vision 2030
+
+:::
+
+::: {.highlightbox}
+**Final lecture preparation:** Review all lecture notes from Lectures 1–17. Bring questions — we will have a 15-minute open Q&A on examination topics at the end of Lecture 18.
+:::
+
+# Appendix {background-color="#1a3a5c"}
+
+## Additional Resources {.appendix}
+
+::: {.columns}
+::: {.column width="50%"}
+**Further Reading**
+
+- Lecture notes and APEDA/WTO official documents
+- APEDA Annual Report 2023-24
+- RBI/DGCI&S/APEDA databases for latest data
+:::
+::: {.column width="50%"}
+**Key Data Sources**
+
+- DGCI&S: India's merchandise trade
+- RBI: Balance of payments data  
+- APEDA: Agricultural export statistics
+- WTO: Tariff and trade databases
+:::
+:::

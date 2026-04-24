@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Part I: Recap and Overview}{2}{0}{1}
+\beamer@sectionintoc {2}{Part II: Six Key Features}{4}{0}{2}
+\beamer@sectionintoc {3}{Part III: Internal vs International Trade}{7}{0}{3}
+\beamer@sectionintoc {4}{Part IV: Advantages and Risks}{9}{0}{4}
+\beamer@sectionintoc {5}{Part V: India Case Studies}{11}{0}{5}
+\beamer@sectionintoc {6}{Appendix}{18}{0}{6}

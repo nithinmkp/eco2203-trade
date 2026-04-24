@@ -1,0 +1,806 @@
+﻿---
+title: "Lecture 12: Foreign Exchange Market — Instruments and Policy"
+subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+author: "Nithin M"
+institute: "Department of Development Economics"
+date: "July 11, 2026"
+format:
+  revealjs:
+    theme: [default, emory-clean.scss]
+    slide-number: true
+    chalkboard: true
+    transition: slide
+    incremental: false
+    smaller: false
+    scrollable: true
+    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    code-fold: true
+    code-summary: "Show R code"
+  beamer:
+    aspectratio: 169
+    theme: metropolis
+    toc: false
+    section-titles: false
+    include-in-header: beamer-preamble.tex
+    keep-tex: false
+execute:
+  warning: false
+---
+```{r}
+#| label: setup
+#| include: false
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(patchwork)
+options(scipen=999)
+theme_set(theme_minimal(base_size=11))
+knitr::opts_chunk$set(echo = knitr::is_html_output())
+```
+
+## Forex Market: Exchange Rate Systems and Open Economy Macro {background-gradient="linear-gradient(135deg, #1a3c5e 0%, #2d6a9f 100%)"}
+
+::: {style="color: white; font-size: 1.1em; margin-top: 1em;"}
+From exchange rate regimes to the Mundell-Fleming model — how monetary and fiscal policy interact with the exchange rate, and what this means for agricultural exporters and importers.
+:::
+
+## Recap: What We Learned in Lecture 11
+
+::: {.columns}
+::: {.column width="55%"}
+**Key equations from Lecture 11:**
+
+Exchange rate notation:
+$$e = \frac{\text{units of domestic currency}}{\text{unit of foreign currency}}$$
+
+Absolute PPP:
+$$e = \frac{P_d}{P_f}$$
+
+Relative PPP:
+$$\frac{\Delta e}{e} = \pi_d - \pi_f$$
+
+Uncovered Interest Parity (UIP):
+$$i = i^* + \frac{E(e_{t+1}) - e_t}{e_t}$$
+:::
+::: {.column width="45%"}
+::: {.keybox}
+**Key numerical takeaways:**
+
+- INR/USD spot rate ≈ **₹83.5/$**
+- India CPI inflation ≈ 5–6%; US ≈ 2–3%
+- Relative PPP predicts **3–4% annual INR depreciation**
+- UIP equilibrium: $i_{India} - i_{US} \approx$ expected depreciation
+- Repo rate India: **6.5%**; Fed funds: **5.25–5.5%**
+- Differential ≈ 1–1.25% — below PPP-implied depreciation, suggesting some expected appreciation or risk premium
+:::
+:::
+:::
+
+**Building on Lecture 11:** We now know *why* exchange rates move (PPP, UIP, interest differentials). Today we study *what regime* India operates under — managed float vs fixed vs free float — and *how macroeconomic policy* (fiscal and monetary) works differently under each regime using the **Mundell-Fleming model**. We also cover the practical tools — forward markets, hedging — that agricultural traders use to manage currency risk.
+
+## Exchange Rate Systems (I): Free Float and Managed Float
+
+| System | Description | India Relevance |
+|--------|-------------|-----------------|
+| **Free float** | Market determines exchange rate; central bank does not intervene | USA, UK, Eurozone — India's major trading partners operate under this system |
+| **Managed float** | CB intervenes to smooth volatility but does not target a specific level | **India's current system** (since 1993 post-LERMS); RBI smooths but allows gradual adjustment |
+
+::: {.highlightbox}
+**India's choice:** Managed float since 1993 (post-LERMS). RBI intervenes to smooth but does not target a specific level. This preserves monetary policy independence while preventing destabilising volatility.
+:::
+
+## Exchange Rate Systems (II): Fixed and Intermediate Regimes
+
+| System | Description | India Relevance |
+|--------|-------------|-----------------|
+| **Crawling peg** | Regular small, pre-announced adjustments to the peg | Chile historically; some SAARC neighbours use variants |
+| **Fixed/pegged** | CB maintains exchange rate at a predetermined target using reserves | Gulf states (USD peg); pre-1991 India maintained a *de facto* fixed rate |
+| **Currency board** | 100% foreign reserve backing for domestic currency at fixed rate | Argentina 1991–2001 (collapsed); Hong Kong (ongoing) |
+| **Currency union** | Single shared currency across multiple countries | Eurozone; CFA Franc zone in West/Central Africa |
+
+::: {.methodbox}
+**Historical lesson for India:** India maintained a *de facto* fixed rate through the 1980s. By 1991: BoP crisis forced a 44% devaluation. Post-crisis shift to managed float was the correct policy response.
+:::
+
+## Fixed vs Flexible: Trade-offs for Agricultural Economies
+
+::: {.columns}
+::: {.column width="50%"}
+**Fixed Regime Analysis:**
+
+- ✅ **Stability for trade contracts:** importers and exporters know the rate — a rice exporter signing a 12-month supply contract can price in INR without currency risk
+- ✅ **Low inflation discipline:** CB cannot print money freely (reserves constrain it)
+- ❌ **Currency crises:** if domestic inflation erodes competitiveness, the fixed rate becomes overvalued → speculative attacks → forced devaluation
+- ❌ **Monetary policy lost:** CB cannot adjust interest rates independently (Mundell-Fleming, fixed rate case)
+- ❌ **Reserve depletion:** defending the peg requires unlimited reserves
+:::
+::: {.column width="50%"}
+**Flexible Regime Analysis:**
+
+- ✅ **Automatic stabilisation:** trade deficit → INR weakens → exports become cheaper → deficit corrects
+- ✅ **Monetary policy works:** RBI can set repo rate independently of the Fed
+- ❌ **Volatility harms trade:** a rice exporter signing 6-month contracts faces price risk — even if the crop yield is known, INR/USD at delivery is unknown
+- ❌ **Imported inflation:** depreciation raises cost of edible oil, fertiliser, crude oil — all critical agri inputs
+:::
+:::
+
+## Case Study: India's 1991 Exchange Rate Crisis
+
+::: {.methodbox}
+**India's 1991 crisis — the case for managed float:**
+
+India maintained a *de facto* fixed rate through the 1980s. By 1991: BoP deficit widened, reserves fell to $1.2B (barely 2 weeks of import cover), credit rating downgraded. India was forced to **devalue 44% in two days** (July 1–3, 1991). Post-crisis, India adopted the Liberalised Exchange Rate Management System (LERMS) in 1992, transitioning to a managed float by 1993. The lesson: a fixed rate without adequate reserves and fiscal discipline is a crisis waiting to happen.
+:::
+
+## The Impossible Trinity: Statement and Intuition
+
+**Statement:** A country **CANNOT** simultaneously maintain all three of:
+
+1. 🔒 **Fixed exchange rate** ($e = \bar{e}$)
+2. 🌐 **Free capital mobility** ($CF$ unconstrained)
+3. 🏦 **Independent monetary policy** ($i \neq i^*$)
+
+**Mathematical intuition:** Under a fixed rate ($e = \bar{e}$) and free capital ($CF$ unconstrained), UIP forces $i = i^*$. Then monetary policy ($M$) cannot change $i$ independently — any attempt to lower $i$ below $i^*$ triggers capital outflow, forcing the CB to sell reserves to defend the peg, which contracts $M$ back.
+
+$$\{e_{\text{fixed}}\} \cup \{CF_{\text{free}}\} \cup \{MP_{\text{independent}}\}: \text{ choose any TWO}$$
+
+::: {.keybox}
+**India's trilemma choice:** Managed float (partial exchange rate flexibility) + selective capital controls (FPI restrictions, ECB limits) = partial monetary independence. A pragmatic middle path.
+:::
+
+## The Impossible Trinity: Country Examples
+
+| Country | Fixed rate? | Free capital? | Monetary independence? |
+|---------|-------------|--------------|----------------------|
+| USA (free float) | ✗ | ✓ | ✓ |
+| Eurozone | ✓ (intra-EU) | ✓ | ✗ |
+| China (capital controls) | ✓ | ✗ | ✓ |
+| India (managed float) | Partial | Partial | Partial |
+| Argentina 1991–2001 | ✓ | ✓ | ✗ → Crisis! |
+
+## India and the Impossible Trinity
+
+**India's capital account structure:**
+
+- **FDI:** largely free — automatic route for most sectors
+- **FPI (Foreign Portfolio Investment):** restricted — SEBI-regulated limits on equity and debt holdings by foreign investors
+- **ECB (External Commercial Borrowing):** regulated — sector-specific limits, end-use restrictions, all-in cost ceilings
+
+**RBI maintains independent monetary policy:**
+
+- Repo rate currently **6.5%** (June 2026) despite US Fed at **5.25–5.5%**
+- If India fully opened the capital account, carry trade would force UIP: either the rupee would appreciate sharply to equalise returns, OR RBI would have to cut rates to match the US Fed
+
+::: {.highlightbox}
+**2013 Taper Tantrum — proof of concept:**
+
+When Bernanke signalled Fed tapering (May 2013), capital fled emerging markets. India's *partial* capital openness was enough to expose it: rupee fell ₹56 → ₹68 in weeks (-18%). RBI was forced to raise rates sharply to 7.25% and tighten capital controls temporarily. Full capital openness would have made this worse. Selective capital controls preserved room for monetary manoeuvre.
+:::
+
+**Agricultural angle:** Capital account policy affects rupee stability, which directly affects agri export competitiveness and the cost of imported inputs (edible oil, fertiliser). A sudden capital-flight-driven depreciation hurts edible oil importers; a sudden appreciation hurts rice and cotton exporters.
+
+## The Mundell-Fleming Model: Open Economy IS-LM
+
+**Description:** IS-LM extended for the open economy with a Balance of Payments equilibrium condition.
+
+**Three equations:**
+
+$$IS: Y = C(Y-T) + I(i) + G + NX(e, Y, Y^*)$$
+
+$$LM: \frac{M}{P} = L(i, Y)$$
+
+$$BP: 0 = NX(e, Y, Y^*) + CF(i - i^*)$$
+
+**Where:**
+
+- $NX = $ net exports — falls when $Y$ rises (more imports); rises when $e$ rises (depreciation makes exports cheaper)
+- $CF = $ capital flows — rises when $i$ rises relative to world rate $i^*$
+- $BP = 0$ at external balance — the BoP equilibrium condition
+
+**BP curve in $(Y, i)$ space:** Upward sloping — higher $Y$ → more imports → BoP deficit → need higher $i$ to attract offsetting capital inflow.
+
+::: {.methodbox}
+**Capital mobility and BP slope:** With *high* capital mobility, small changes in $i$ generate large capital flows → BP curve is nearly **flat** (horizontal at $i = i^*$ under perfect mobility). With *low* capital mobility, large changes in $i$ are needed → BP curve is **steep**. India: intermediate case, moderate upward slope.
+:::
+
+## MF Model: Fixed Exchange Rate — Fiscal Policy Effective, Monetary Ineffective
+
+```{r}
+#| label: fig-mf-fixed
+#| fig-cap: "Mundell-Fleming Fixed Rate: Fiscal Expansion is Effective; Monetary Expansion is Not\nSource: Author's illustration after Mundell (1963) and Fleming (1962)."
+#| fig-width: 10
+#| fig-height: 5
+
+# Panel 1: Fiscal expansion under fixed rate (effective)
+p_fiscal <- ggplot() +
+  geom_segment(aes(x=20, y=12, xend=80, yend=2), color="#012169", linewidth=1.5) +
+  annotate("text", x=82, y=2.2, label="IS", size=4, color="#012169") +
+  geom_segment(aes(x=32, y=12, xend=92, yend=2), color="#012169", linewidth=1.2, linetype="dashed") +
+  annotate("text", x=94, y=2.2, label="IS'", size=4, color="#012169") +
+  geom_segment(aes(x=20, y=2, xend=80, yend=12), color="#B9975B", linewidth=1.5) +
+  annotate("text", x=82, y=12, label="LM", size=4, color="#B9975B") +
+  geom_hline(yintercept=7, linetype="dotdash", color="darkgreen", linewidth=1.2) +
+  annotate("text", x=85, y=7.5, label="BP (i=i*)", size=3.5, color="darkgreen") +
+  geom_point(aes(x=50, y=7), size=4, color="black") +
+  geom_point(aes(x=62, y=7), size=4, color="darkgreen") +
+  annotate("text", x=48, y=7.8, label="E1", size=3.5) +
+  annotate("text", x=64, y=7.8, label="E2\n(Y rises!)", size=3.2, color="darkgreen") +
+  annotate("segment", x=52, y=7, xend=60, yend=7,
+           arrow=arrow(length=unit(0.25,"cm")), color="darkgreen") +
+  annotate("text", x=56, y=5.8,
+           label="G↑ → IS shifts right\nFixed rate: LM adjusts via\nreserve inflow → Y↑",
+           size=2.8, color="darkgreen", hjust=0.5) +
+  labs(title="Fiscal Expansion (G↑): EFFECTIVE",
+       subtitle="Fixed rate + capital mobility: no crowding out",
+       x="Output (Y)", y="Interest Rate (i)") +
+  coord_cartesian(xlim=c(15,100), ylim=c(0,15)) +
+  theme_minimal(base_size=10)
+
+# Panel 2: Monetary expansion under fixed rate (ineffective)
+p_monetary <- ggplot() +
+  geom_segment(aes(x=20, y=12, xend=80, yend=2), color="#012169", linewidth=1.5) +
+  annotate("text", x=82, y=2.2, label="IS", size=4, color="#012169") +
+  geom_segment(aes(x=20, y=2, xend=80, yend=12), color="#B9975B", linewidth=1.5) +
+  annotate("text", x=82, y=12, label="LM", size=4, color="#B9975B") +
+  geom_segment(aes(x=32, y=2, xend=92, yend=12), color="#B9975B", linewidth=1.2, linetype="dashed") +
+  annotate("text", x=94, y=12, label="LM'", size=4, color="#B9975B") +
+  geom_hline(yintercept=7, linetype="dotdash", color="darkgreen", linewidth=1.2) +
+  annotate("text", x=85, y=7.5, label="BP (i=i*)", size=3.5, color="darkgreen") +
+  geom_point(aes(x=50, y=7), size=4, color="black") +
+  geom_point(aes(x=62, y=4), size=3, color="grey60") +
+  annotate("text", x=48, y=7.8, label="E1", size=3.5) +
+  annotate("text", x=64, y=3.5, label="E' (temp)", size=3, color="grey60") +
+  annotate("segment", x=67, y=6, xend=57, yend=6.5,
+           arrow=arrow(length=unit(0.25,"cm")), color="red") +
+  annotate("text", x=68, y=6.3,
+           label="M↑ → i falls → capital\noutflow → CB sells USD\n→ M contracts back\n→ LM returns to LM!",
+           size=2.7, color="red", hjust=0) +
+  labs(title="Monetary Expansion (M↑): INEFFECTIVE",
+       subtitle="Fixed rate: M expansion fully offset by reserve loss",
+       x="Output (Y)", y="Interest Rate (i)") +
+  coord_cartesian(xlim=c(15,100), ylim=c(0,15)) +
+  theme_minimal(base_size=10)
+
+p_fiscal + p_monetary +
+  plot_annotation(
+    title="Mundell-Fleming: Fixed Exchange Rate Regime",
+    subtitle="Key result: Fiscal policy highly effective; Monetary policy completely ineffective"
+  )
+```
+
+**Mathematical mechanism — why monetary policy fails under fixed rate:**
+
+Under fixed $e$: $M\uparrow \Rightarrow i\downarrow \Rightarrow$ capital outflow $\Rightarrow$ BoP deficit $\Rightarrow$ CB sells reserves $\Rightarrow M$ contracts back to original level.
+
+**Agricultural policy implication:** Under a fixed rate, only government spending (e.g., irrigation subsidies, MSP support operations, fertiliser subsidies) can stimulate the farm economy — not RBI rate cuts. The RBI is powerless to lower borrowing costs for farmers if the exchange rate is pegged.
+
+## MF Model: Flexible Exchange Rate — Monetary Effective, Fiscal Crowded Out
+
+```{r}
+#| label: fig-mf-flexible
+#| fig-cap: "Mundell-Fleming Flexible Rate: Monetary Policy Effective; Fiscal Policy Crowded Out via Exchange Rate\nSource: Author's illustration after Mundell (1963) and Fleming (1962)."
+#| fig-width: 10
+#| fig-height: 5
+
+# Panel 1: Monetary expansion under flexible (effective)
+p_mon_flex <- ggplot() +
+  geom_segment(aes(x=20, y=12, xend=80, yend=2), color="#012169", linewidth=1.5) +
+  annotate("text", x=82, y=2.2, label="IS", size=4, color="#012169") +
+  geom_segment(aes(x=32, y=12, xend=92, yend=2), color="#012169", linewidth=1.2, linetype="dashed") +
+  annotate("text", x=94, y=2.2, label="IS'", size=4, color="#012169") +
+  geom_segment(aes(x=20, y=2, xend=80, yend=12), color="#B9975B", linewidth=1.5) +
+  annotate("text", x=82, y=12, label="LM", size=4, color="#B9975B") +
+  geom_segment(aes(x=32, y=2, xend=92, yend=12), color="#B9975B", linewidth=1.2, linetype="dashed") +
+  annotate("text", x=94, y=12, label="LM'", size=4, color="#B9975B") +
+  geom_hline(yintercept=7, linetype="dotdash", color="darkgreen", linewidth=1.2) +
+  annotate("text", x=85, y=7.5, label="BP (i=i*)", size=3.5, color="darkgreen") +
+  geom_point(aes(x=50, y=7), size=4, color="black") +
+  geom_point(aes(x=68, y=7), size=4, color="darkgreen") +
+  annotate("text", x=48, y=7.8, label="E1", size=3.5) +
+  annotate("text", x=70, y=7.8, label="E2\n(Y rises!)", size=3.2, color="darkgreen") +
+  annotate("segment", x=52, y=7, xend=66, yend=7,
+           arrow=arrow(length=unit(0.25,"cm")), color="darkgreen") +
+  annotate("text", x=56, y=5.3,
+           label="M↑ → i↓ → capital outflow\n→ currency depreciates\n→ NX↑ → IS shifts right\n→ Y rises at same i*",
+           size=2.7, color="darkgreen", hjust=0.5) +
+  labs(title="Monetary Expansion (M↑): EFFECTIVE",
+       subtitle="Depreciation channel boosts NX and output",
+       x="Output (Y)", y="Interest Rate (i)") +
+  coord_cartesian(xlim=c(15,100), ylim=c(0,15)) +
+  theme_minimal(base_size=10)
+
+# Panel 2: Fiscal expansion under flexible (ineffective - crowded out)
+p_fisc_flex <- ggplot() +
+  geom_segment(aes(x=20, y=12, xend=80, yend=2), color="#012169", linewidth=1.5) +
+  annotate("text", x=82, y=2.2, label="IS", size=4, color="#012169") +
+  geom_segment(aes(x=32, y=12, xend=92, yend=2), color="#012169", linewidth=1.2, linetype="dashed") +
+  annotate("text", x=94, y=2.2, label="IS'", size=4, color="#012169") +
+  geom_segment(aes(x=20, y=12, xend=80, yend=2), color="#012169", linewidth=0.8, linetype="dotted") +
+  geom_segment(aes(x=20, y=2, xend=80, yend=12), color="#B9975B", linewidth=1.5) +
+  annotate("text", x=82, y=12, label="LM", size=4, color="#B9975B") +
+  geom_hline(yintercept=7, linetype="dotdash", color="darkgreen", linewidth=1.2) +
+  annotate("text", x=85, y=7.5, label="BP (i=i*)", size=3.5, color="darkgreen") +
+  geom_point(aes(x=50, y=7), size=4, color="black") +
+  geom_point(aes(x=62, y=10), size=3, color="grey60") +
+  annotate("text", x=48, y=7.8, label="E1 = E2", size=3.5) +
+  annotate("text", x=64, y=10.5, label="E' (temp)", size=3, color="grey60") +
+  annotate("segment", x=62, y=9.5, xend=55, yend=8,
+           arrow=arrow(length=unit(0.25,"cm")), color="red") +
+  annotate("text", x=63, y=8.5,
+           label="G↑ → IS shifts right\n→ i rises → capital inflow\n→ INR appreciates\n→ NX falls → IS shifts back!\nY unchanged.",
+           size=2.7, color="red", hjust=0) +
+  labs(title="Fiscal Expansion (G↑): CROWDED OUT",
+       subtitle="Appreciation destroys NX gain — Y returns to E1",
+       x="Output (Y)", y="Interest Rate (i)") +
+  coord_cartesian(xlim=c(15,100), ylim=c(0,15)) +
+  theme_minimal(base_size=10)
+
+p_mon_flex + p_fisc_flex +
+  plot_annotation(
+    title="Mundell-Fleming: Flexible Exchange Rate Regime",
+    subtitle="Key result: Monetary policy effective (exchange rate channel); Fiscal policy crowded out via exchange rate appreciation"
+  )
+```
+
+**Mathematical mechanism — fiscal crowding out under flexible rate:**
+
+Under flexible $e$: $G\uparrow \Rightarrow Y\uparrow \Rightarrow M_d\uparrow \Rightarrow i\uparrow \Rightarrow$ capital inflow $\Rightarrow$ INR appreciates $\Rightarrow NX\downarrow \Rightarrow Y$ falls back
+
+**Agricultural implication under flexible rate:** RBI rate cuts (monetary easing) boost agri exports via INR depreciation; fiscal spending on agriculture (e.g., PM-KISAN, PMFBY) may be partially crowded out by INR appreciation — reducing export competitiveness even as domestic support rises.
+
+## Mundell-Fleming: Policy Effectiveness Summary
+
+| Policy | Fixed Rate | Flexible Rate |
+|--------|-----------|---------------|
+| Fiscal expansion (G↑) | **Effective** — no crowding out, LM adjusts via reserves | **Ineffective** — crowded out by exchange rate appreciation |
+| Monetary expansion (M↑) | **Ineffective** — fully offset by reserve loss | **Effective** — works via exchange rate depreciation channel |
+| Mechanism | Reserve flows maintain fixed e | Exchange rate adjusts to maintain BoP |
+
+::: {.keybox}
+**Mundell's insight (Nobel Prize 2000):** The exchange rate regime determines which instruments of macroeconomic policy are effective. India's managed float means both instruments have *partial* effectiveness — neither fully effective nor fully neutralised.
+:::
+
+::: {.highlightbox}
+**Agricultural policy implication:** Under India's managed float, RBI rate reductions (monetary easing) can boost INR exports through depreciation — but the effect is partial and conditional on RBI allowing the exchange rate to move. When RBI intervenes to prevent depreciation (to fight inflation), the monetary transmission via exchange rate is blocked.
+:::
+
+## India's Forex Reserves: From Crisis to Abundance
+
+```{r}
+#| label: fig-forex-reserves
+#| fig-cap: "India's Forex Reserves (USD billion) and Import Cover (months), 2000–2024\nSource: RBI, Database on Indian Economy (DBIE)."
+#| fig-width: 9
+#| fig-height: 5
+
+reserves <- data.frame(
+  year = c(2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2021,2022,2023,2024),
+  reserves_b = c(38,67,141,199,310,297,296,322,366,405,580,642,532,620,645),
+  months_import = c(5.1,9.8,14.2,13.4,9.8,9.5,6.8,8.1,10.5,9.2,15.8,14.1,9.4,11.5,11.0)
+)
+
+p1 <- ggplot(reserves, aes(x=year, y=reserves_b)) +
+  geom_area(fill="#012169", alpha=0.25) +
+  geom_line(color="#012169", linewidth=1.8) +
+  geom_point(color="#012169", size=2.5) +
+  annotate("text", x=2001, y=100, label="1991: $1.2B\n(only 2 weeks\nimport cover!)",
+           size=2.8, color="red", hjust=0) +
+  annotate("segment", x=2001, y=80, xend=2001, yend=45,
+           arrow=arrow(length=unit(0.2,"cm")), color="red") +
+  scale_x_continuous(breaks=seq(2000,2024,4)) +
+  scale_y_continuous(labels=dollar_format(suffix="B", prefix="$")) +
+  labs(title="India's Forex Reserves (USD Billion)",
+       subtitle="From $38B (2000) to $645B (2024) — 17x increase",
+       x=NULL, y="USD Billion") +
+  theme_minimal(base_size=10)
+
+p2 <- ggplot(reserves, aes(x=year, y=months_import)) +
+  geom_line(color="#B9975B", linewidth=1.8) +
+  geom_point(color="#B9975B", size=2.5) +
+  geom_hline(yintercept=3, linetype="dashed", color="red", linewidth=1) +
+  annotate("text", x=2016, y=3.6, label="Safety threshold: 3 months", size=3, color="red") +
+  scale_x_continuous(breaks=seq(2000,2024,4)) +
+  labs(title="Import Cover (Months of Imports)",
+       subtitle="India currently has 11 months of import cover — well above the 3-month safety threshold",
+       x=NULL, y="Months of Imports") +
+  theme_minimal(base_size=10)
+
+p1 / p2 + plot_annotation(title="India's Forex Reserves: From Crisis (1991) to Abundance (2024)")
+```
+
+$$\text{RBI's forex reserves} \approx \$645\text{B (FY2024)} \approx 11\text{ months of import cover}$$
+
+**Safety threshold** = 3 months (Guidotti-Greenspan rule). India's current buffer gives the RBI substantial firepower to defend the rupee in times of global turbulence. The $645B reserve stockpile is the direct product of 30 years of managed-float reserve accumulation — a deliberate policy choice to never repeat 1991.
+
+## RBI and India's Managed Float
+
+**How RBI intervenes:**
+
+- **Depreciation prevention** (INR falls too fast): RBI **sells USD** from reserves, absorbing rupees → reduces money supply → supports INR
+- **Appreciation prevention** (INR rises too fast): RBI **buys USD**, injecting rupees → increases money supply → weakens INR
+
+**Sterilization mechanism:**
+
+$$\Delta \text{Reserves} + \Delta \text{Domestic Credit} = \Delta M$$
+
+When RBI buys USD → $\Delta M$ (base money rises) → RBI sells G-secs (government securities) to sterilize — absorbing ₹ and keeping money supply neutral.
+
+::: {.columns}
+::: {.column width="50%"}
+**Depreciation prevention (sell USD):**
+
+- Triggered when INR weakens sharply
+- E.g., 2022: RBI sold ~$100B as INR slid from ₹74 → ₹83
+- Reserves fell from $640B → $530B in 6 months
+- Sterilized via reverse repo (absorbing ₹)
+:::
+::: {.column width="50%"}
+**Appreciation prevention (buy USD):**
+
+- Triggered when large capital inflows strengthen INR
+- E.g., 2021: RBI bought ~$67B as FPI inflows surged
+- Reserves rose from $580B → $640B
+- Sterilized via G-sec sales (absorbing ₹)
+:::
+:::
+
+::: {.keybox}
+**RBI's two-way intervention evidence:**
+- FY2021: Net purchases ~$67B (preventing appreciation during COVID capital inflows)
+- FY2022–23: Net sales ~$100B (preventing excessive depreciation)
+- IMF and US Treasury classification: India is **NOT** a currency manipulator — two-way intervention distinguishes managed float from competitive devaluation.
+:::
+
+## The Forward Exchange Market
+
+**Forward rate $F$:** The exchange rate agreed today for currency delivery at a specified future date $T$.
+
+**Forward premium/discount formula:**
+
+$$\text{Forward premium on USD} = \frac{F - E}{E} \times \frac{12}{n} \times 100\%$$
+
+where $n$ = months to delivery, $E$ = current spot rate, $F$ = forward rate.
+
+**Numerical example:**
+
+$E = ₹83.5/\$$, $F$ (3-month) $= ₹84.2/\$$:
+
+$$\text{Forward premium} = \frac{84.2-83.5}{83.5} \times 4 \times 100 = 3.35\%\text{ p.a.}$$
+
+**Covered Interest Parity (CIP)** ensures: Forward premium $\approx i_{India} - i_{USA}$ (otherwise riskless arbitrage profits exist).
+
+**Participants in India's forward market:**
+
+- RBI-regulated Authorised Dealer (AD) banks
+- FEDAI (Foreign Exchange Dealers Association of India) — sets market conventions
+- Corporates with genuine underlying forex exposure (exporters, importers, MNCs)
+- Since 2019: limited speculative participation allowed in exchange-traded currency futures
+
+::: {.methodbox}
+**Who uses forward markets in agriculture?**
+
+- **Large agri exporters:** ITC (rice, wheat), KRBL (basmati rice), Adani Agri — use forward sales to lock in INR realisation on USD export proceeds
+- **Edible oil importers:** Adani Wilmar, Ruchi Soya — use forward purchases to lock in INR cost of palm oil imports
+- **Fertiliser importers:** IFFCO, Coromandel — use forwards for urea/DAP import cost certainty
+- **Small farmers and FPOs:** virtually no direct access — forward contracts require minimum $250,000 face value in OTC market
+:::
+
+## Hedging with Forward Contracts
+
+```{r}
+#| label: fig-hedging
+#| fig-cap: "Currency Hedging: A Rice Exporter's Forward Contract vs Unhedged Position\nSource: Author's illustration."
+#| fig-width: 8
+#| fig-height: 4.5
+
+e_future <- seq(78, 92, by=0.25)
+unhedged <- e_future * 10
+hedged_rate <- 84.2
+hedged <- rep(hedged_rate * 10, length(e_future))
+
+df_hedge <- data.frame(
+  e_future = e_future,
+  unhedged = unhedged,
+  hedged = hedged
+)
+
+df_hedge_below <- df_hedge[df_hedge$e_future <= hedged_rate, ]
+df_hedge_above <- df_hedge[df_hedge$e_future >= hedged_rate, ]
+
+ggplot(df_hedge, aes(x=e_future)) +
+  geom_ribbon(data=df_hedge_below,
+              aes(x=e_future, ymin=unhedged, ymax=hedged),
+              fill="darkgreen", alpha=0.2) +
+  geom_ribbon(data=df_hedge_above,
+              aes(x=e_future, ymin=hedged, ymax=unhedged),
+              fill="#cc0000", alpha=0.15) +
+  geom_line(aes(y=unhedged, color="Unhedged (spot rate risk)"), linewidth=1.5) +
+  geom_line(aes(y=hedged, color="Hedged (forward at ₹84.2/$)"), linewidth=1.5, linetype="dashed") +
+  geom_vline(xintercept=hedged_rate, linetype="dotted", color="grey40") +
+  annotate("text", x=80, y=826, label="Hedging protects\nexporter here\n(INR appreciates)",
+           size=3, color="darkgreen") +
+  annotate("text", x=87.5, y=854, label="Opportunity cost:\nforgo this gain\n(INR depreciates further)",
+           size=3, color="#cc0000") +
+  scale_color_manual(values=c("Unhedged (spot rate risk)"="#012169",
+                               "Hedged (forward at ₹84.2/$)"="#B9975B")) +
+  labs(title="Rice Exporter: Hedging $10M Receivable with 3-Month Forward Contract",
+       subtitle="Forward rate = ₹84.2/$. Hedging locks in ₹842M. Below ₹84.2: hedge wins; above: foregone upside.",
+       x="Future Spot Rate (₹ per $)", y="INR Received (crores)",
+       color=NULL) +
+  theme_minimal(base_size=11) +
+  theme(legend.position="bottom")
+```
+
+::: {.keybox}
+**Who hedges in India's agricultural sector?**
+
+Large corporates (ITC, Adani Agri, KRBL) hedge routinely. Minimum OTC forward contract: typically **$250,000** — above most small exporters' scale.
+
+**SEBI currency futures (NSE/BSE):** Smaller lot sizes (₹1 lakh in USD/INR futures contract = ~$1,200) — far more accessible for smaller players. However, requires margin account and daily mark-to-market — a new administrative burden.
+:::
+
+## Exchange Rate Pass-Through
+
+**Definition:** The **pass-through coefficient** $\psi$ measures how much of an exchange rate change is reflected in domestic import prices.
+
+$$\psi = \frac{\% \Delta P^{import}}{\% \Delta e}$$
+
+- If $\psi = 1$ (**complete pass-through**): 10% INR depreciation → 10% rise in import prices (exporters maintain foreign-currency price)
+- If $\psi < 1$ (**incomplete**): foreign exporters absorb some of the change in their margins (especially for branded/differentiated goods)
+
+**General formula:**
+
+$$\Delta P^{import} = \psi \cdot \Delta e + \text{world price change}$$
+
+**India estimates:**
+
+- **Edible oil:** $\psi \approx 0.7$–$0.85$ (high — palm oil is homogeneous, world price sets import price)
+- **Manufactured imports:** $\psi \approx 0.4$–$0.6$ (lower — brand and quality differentiation)
+- **Petroleum products:** $\psi \approx 0.9$ (nearly complete — global commodity)
+
+::: {.highlightbox}
+**India's edible oil channel:**
+
+₹10 depreciation per dollar (e.g., ₹75 → ₹85) → palm oil domestic price rises ~₹8–9 per litre (pass-through ≈ 80%). At India's **20 million tonne** annual edible oil consumption (~1.4 billion litres), a ₹9/litre rise = ₹12,600 crore additional annual cost for consumers. This is a direct **food security and inflation** consequence of INR depreciation — exchange rate policy and food price policy are inseparable.
+:::
+
+## INR Depreciation and Agricultural Exports
+
+```{r}
+#| label: fig-inr-agri-exports
+#| fig-cap: "INR/USD Rate vs India's Agricultural Export Value (FY2010–FY2024)\nSource: RBI (exchange rate); APEDA / DGCI&S (export value)."
+#| fig-width: 8
+#| fig-height: 4.5
+
+agri_inr <- data.frame(
+  year = 2010:2024,
+  inr_usd = c(45.7,46.7,53.4,60.1,61.0,65.5,67.1,65.1,69.9,70.4,
+              74.1,73.9,76.2,82.6,83.5),
+  agri_exports = c(18,26,36,39,42,43,34,33,38,40,41,50,53,54,53)
+)
+
+ggplot(agri_inr, aes(x=inr_usd, y=agri_exports)) +
+  geom_point(color="#012169", size=3.5) +
+  geom_smooth(method="lm", se=TRUE, color="#B9975B", fill="#B9975B", alpha=0.2) +
+  geom_text(aes(label=year), nudge_y=0.9, size=2.8, color="grey40") +
+  labs(title="INR/USD Rate vs India's Agricultural Exports (FY2010–FY2024)",
+       subtitle="Positive correlation: weaker INR generally associated with higher agri exports (USD terms)",
+       x="INR per USD (year average)", y="Agri Exports (USD Billion)") +
+  theme_minimal(base_size=11)
+```
+
+**Interpretation:** Correlation $r \approx +0.85$ — weaker INR generally associated with higher agri exports in USD terms (and much higher in INR terms).
+
+**Caveat:** Causation runs both ways, and global demand also matters (e.g., China's soybean demand, Middle East rice demand). The correlation reflects both the price competitiveness effect and the common driver of global commodity cycles.
+
+**2013–14 rice export boom:** INR fell from ₹53 → ₹61 (depreciation of 15%). India's rice exports rose 35% in USD terms — India became the world's largest rice exporter, displacing Thailand.
+
+::: {.keybox}
+**Competitiveness arithmetic:**
+
+At ₹83/$ vs ₹75/$: Indian rice is effectively **10.7% cheaper** for foreign buyers (since they pay in USD, and more INR are now received per dollar exported). This is a direct price competitiveness gain — equivalent to a 10.7% export subsidy, but achieved through exchange rate movement rather than fiscal expenditure.
+:::
+
+## India's Edible Oil Vulnerability
+
+**India's edible oil import dependence:**
+
+- Imports: **14–16 million tonnes** annually (~$14–18 billion)
+- Sources: Malaysia/Indonesia (palm oil ~8 Mt), Argentina/Brazil (soy oil ~3 Mt), Ukraine/Russia (sunflower ~3 Mt)
+- Import dependence: ~65% of domestic consumption
+
+**Exchange rate and import bill arithmetic:**
+
+| Exchange Rate | Palm Oil Cost (₹/tonne) | Annual Bill (for 10 Mt palm) |
+|--------------|------------------------|------------------------------|
+| ₹75/$ | ₹67,500 | ₹67,500 crore |
+| ₹80/$ | ₹72,000 | ₹72,000 crore |
+| ₹85/$ | ₹76,500 | ₹76,500 crore (+13.3%) |
+
+::: {.columns}
+::: {.column width="55%"}
+**Fiscal cost and duty adjustment:**
+
+India uses **import duty adjustments** as a shock absorber:
+- Normal: Basic Customs Duty (BCD) on crude palm oil = 15%
+- During price spikes: duty cut to 0% (done in 2022–23)
+- AIDC (Agriculture Infrastructure Development Cess) also adjusted
+- But: zero is the floor — further duty cuts impossible once at zero
+- Exchange rate depreciation **cannot** be offset by duty reductions once duties hit zero
+:::
+::: {.column width="45%"}
+::: {.methodbox}
+**Inflation arithmetic:**
+
+If INR depreciates 10% and import duty is already zero:
+- Palm oil price rises ~8–9% (pass-through ≈ 85%)
+- Cooking oil retail prices follow with 4–6 week lag
+- CPI food index weight of edible oils: ~3.5%
+- 8% rise in edible oils → +0.28 percentage points on headline CPI
+- RBI tolerance band: 2–6% — a 0.28pp shock is material
+
+**Lesson:** Exchange rate is an uncontrollable external variable that directly affects domestic food security through the edible oil channel.
+:::
+:::
+:::
+
+## Managing Currency Risk in Agricultural Trade
+
+::: {.columns}
+::: {.column width="50%"}
+**Agri Exporters** *(risk: INR appreciates, reducing INR revenue)*
+
+- **Natural hedge:** match USD receivables with USD payables — if exporter also imports inputs (packaging, machinery) in USD
+- **Forward sales:** lock in ₹/$ today for future USD receipt — eliminate downside but sacrifice upside
+- **Export credit in USD (ECB):** borrow in USD, repay with export proceeds — no currency conversion needed
+- **Put options on USD:** right to sell USD at floor price — limits downside while retaining upside if INR depreciates further
+- **Invoice in INR** (for niche/branded exports — Darjeeling tea, GI products — where buyer accepts INR pricing)
+:::
+::: {.column width="50%"}
+**Agri Importers** *(risk: INR depreciates, raising ₹ cost)*
+
+- **Forward purchases:** lock in ₹/$ for future USD payment — certainty on import cost
+- **Call options on USD:** right to buy USD at ceiling price — caps cost if INR weakens, retains benefit if INR strengthens
+- **Invoice in INR** (where possible — limited for commodity imports, as palm oil/soy are priced in USD globally)
+- **Stock more when rate is favorable:** build inventory at ₹75/$ to avoid exposure at ₹83/$
+- **Rupee-denominated import contracts:** India negotiating with some suppliers (UAE, Russia) for INR-denominated trade
+:::
+:::
+
+::: {.keybox}
+**Policy gap — the small farmer problem:**
+
+Most small farmers and village-level exporters have **NO access** to these instruments. The entire forex risk is absorbed upstream in the supply chain (by the aggregator/exporter), who discounts the farmgate price as compensation for bearing this risk. A farmer in Amritsar selling basmati to an exporter is effectively subsidising the exporter's hedging costs through a lower farmgate price. This is an equity and market structure issue at the intersection of forex markets and agricultural trade.
+:::
+
+## BoP and the Current Account Deficit: The Agricultural Connection
+
+**BoP structure:**
+
+$$\text{Current Account} + \text{Capital Account} + \text{Financial Account} = 0$$
+
+India's current account deficit (CAD) averages **1.5–2.5% of GDP** (relatively moderate by emerging market standards).
+
+**Main CAD drivers:**
+
+$$CAD = TB_{merch} + TB_{services} + \text{Remittances} + \text{Primary income}$$
+
+FY2024 approximate: $-\$300B + \$150B + \$100B + (-\$30B) \approx -\$80B \text{ CAD}$
+
+**Agricultural trade balance — a current account bright spot:**
+
+- India's agri trade balance: typically a **surplus of ~$20–25B** (FY2024: ~$25B net)
+- This surplus partially offsets the oil import bill (~$200B) and gold imports (~$40B)
+
+::: {.highlightbox}
+**Agriculture's role in India's BoP:**
+
+India's agricultural export surplus (~$25B in FY2024) is a meaningful contributor to current account balance. The major items: rice (~$10B), spices (~$4B), sugar (~$3B), marine products (~$7B), cotton (~$2B). Exchange rate depreciation that boosts agri exports **directly helps the BoP** by expanding this surplus — which in turn reduces pressure on the RBI to defend the rupee.
+
+**The policy feedback loop:** Weaker INR → higher agri exports → better BoP → less reserve depletion → less pressure on INR → partial self-correction. This is the open economy automatic stabiliser at work.
+:::
+
+## Key Takeaways: Lecture 12
+
+::: {.keybox}
+**Five core concepts from Lecture 12:**
+:::
+
+1. **Exchange rate regimes:** Free float (USA), managed float (India), fixed (Gulf). India's managed float (post-1993) preserves partial monetary independence at the cost of active reserve management ($645B stockpile).
+
+2. **Impossible Trinity:** Cannot have all three of fixed rate + free capital + monetary independence. India chooses partial versions of all three — a pragmatic compromise that gives flexibility without full commitment to any extreme.
+
+3. **Mundell-Fleming model:**
+   - *Fixed rate*: Fiscal policy effective ($G\uparrow \Rightarrow Y\uparrow$); Monetary policy ineffective ($M\uparrow$ offset by reserve loss)
+   - *Flexible rate*: Monetary policy effective ($M\uparrow \Rightarrow e\uparrow \Rightarrow NX\uparrow \Rightarrow Y\uparrow$); Fiscal crowded out by appreciation
+
+4. **Hedging:** Forward contracts lock in exchange rate for future transactions; essential for large agri exporters/importers. CIP ensures forward premium = interest differential. Small farmers cannot access these instruments — a key equity gap.
+
+5. **Agriculture–exchange rate nexus:** Depreciation helps rice/cotton/spice exporters (direct competitiveness); hurts edible oil/fertiliser importers (cost inflation); RBI's managed float attempts to balance these competing interests through two-way intervention.
+
+## Exchange Rates as Agricultural Trade Policy
+
+**Exchange rate policy IS trade policy in disguise:**
+
+A country that keeps its currency undervalued effectively **subsidises all its exports** and **taxes all its imports** — without any WTO-notifiable expenditure.
+
+**China's managed undervaluation (2000s):**
+
+- RMB/USD held artificially low through massive reserve accumulation ($3T+)
+- Made Chinese agri exports (garlic, processed food, aquaculture) highly competitive globally
+- Undercut Indian agri exporters in third markets — without any explicit subsidy
+
+**Brazil's floating BRL — competitive depreciation by market:**
+
+- BRL/USD fell ~50% in 2015–16 (from BRL 2.5 → BRL 4.0/$)
+- Made Brazilian soy, beef, chicken dramatically cheaper in USD terms
+- Directly hurt Indian soy farmers and agri exporters in overlapping markets
+- India had no "WTO case" — Brazil's depreciation was market-driven, not policy-directed
+
+**India's REER concern:**
+
+- If India's **Real Effective Exchange Rate (REER)** rises (INR appreciates in real terms relative to trading partners), agri exports face headwind regardless of domestic MSP levels
+- REER = nominal exchange rate × (domestic price level / foreign price level) — captures competitiveness
+- India's REER has trended upward since 2014 (relatively higher inflation than trading partners + nominal rupee stability)
+
+::: {.methodbox}
+**WTO and exchange rates — a critical gap:**
+
+WTO disciplines **agricultural subsidies** (AoA Agreement) but does **NOT** discipline exchange rate policy. Countries can gain large competitive advantages in agricultural trade through currency policy — without violating WTO commitments. This is a major structural asymmetry in international trade rules: a $1B MSP subsidy is notifiable and challengeable; a $50B reserve accumulation that undervalues the currency is not. The IMF (not WTO) has jurisdiction on exchange rate manipulation — but enforcement is weak.
+:::
+
+## Next Lecture: Balance of Payments Analysis
+
+::: {.columns}
+::: {.column width="60%"}
+**Lecture 13 (July 18, 2026):**
+
+*Balance of Payments: Structure, Adjustment, and Agricultural Trade*
+
+We will cover:
+
+- Current account, capital account, financial account structure
+- BoP adjustment mechanisms: automatic (price-specie flow, income adjustment) vs policy-driven
+- **Marshall-Lerner condition:** when does depreciation improve the trade balance?
+- **J-curve effect:** short-run vs long-run response to depreciation
+- India's current account deficit: causes and sustainability
+- Agricultural trade's role in India's BoP (FY2024: ~$25B surplus)
+:::
+::: {.column width="40%"}
+::: {.methodbox}
+**Bridge from today:**
+
+Today we studied:
+
+- What exchange rate regime India operates under
+- How policy (fiscal/monetary) works under different regimes (Mundell-Fleming)
+- How RBI manages the float and reserves
+- Hedging and agricultural trade implications
+
+Next: we zoom into the **current account** — the scorecard of a country's trade with the world — and study how it adjusts when it falls into deficit.
+
+*Reading: Salvatore Ch 12–13; Appleyard Ch 18–19*
+:::
+:::
+:::
+
+# Appendix {background-color="#1a3a5c"}
+
+## Additional Resources {.appendix}
+
+::: {.columns}
+::: {.column width="50%"}
+**Further Reading**
+
+- *International Economics* — Salvatore (Ch. 15-16)
+- *International Economics* — Appleyard & Field (Ch. 15-16)
+- RBI/DGCI&S/APEDA databases for latest data
+:::
+::: {.column width="50%"}
+**Key Data Sources**
+
+- DGCI&S: India's merchandise trade
+- RBI: Balance of payments data  
+- APEDA: Agricultural export statistics
+- WTO: Tariff and trade databases
+:::
+:::

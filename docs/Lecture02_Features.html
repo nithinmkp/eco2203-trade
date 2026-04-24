@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nithin M">
+<meta name="dcterms.date" content="2026-05-02">
+
+<title>lecture02_features – ECO 2203</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f3746951f800101ea2ade33225c42268.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ECO 2203 — International Trade &amp; Policy in Agriculture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lecture02_Features.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Features of International Trade</h1>
+<p class="subtitle lead">ECO 2203 | International Trade and Policy in Agriculture</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nithin M </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Development Economics
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 2, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="part-i-recap-and-overview" class="level1" data-background-color="#E8EDF5">
+<h1 data-background-color="#E8EDF5">Part I: Recap and Overview</h1>
+<section id="recap-lecture-1" class="level2">
+<h2 class="anchored" data-anchor-id="recap-lecture-1">Recap: Lecture 1</h2>
+<div class="methodbox">
+<p><strong>Three things to remember from last week</strong></p>
+<ol type="1">
+<li><p><strong>International trade</strong> = cross-border exchange of goods, services, and capital; driven by differences in resource endowments, technology, and opportunity costs</p></li>
+<li><p><strong>India’s position:</strong> 18th-largest merchandise exporter; agricultural exports ~$43.7B (FY2024); structural trade surplus in agriculture of ~$15.5B</p></li>
+<li><p><strong>Agricultural trade is special</strong> — food security concerns, perishability, seasonality, and powerful political economy shape how governments intervene</p></li>
+</ol>
+</div>
+<p><strong>Today’s agenda</strong></p>
+<ul>
+<li>What distinguishes international trade from <em>domestic</em> trade?</li>
+<li>How open is India to global trade — and how has this changed over time?</li>
+<li>Advantages and risks of participating in global markets</li>
+</ul>
+</section>
+<section id="indias-growing-trade-openness" class="level2">
+<h2 class="anchored" data-anchor-id="indias-growing-trade-openness">India’s Growing Trade Openness</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>openness <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">1995</span>, <span class="dv">2000</span>, <span class="dv">2005</span>, <span class="dv">2010</span>, <span class="dv">2015</span>, <span class="dv">2020</span>, <span class="dv">2024</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">trade_gdp =</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">22</span>, <span class="dv">27</span>, <span class="dv">35</span>, <span class="dv">48</span>, <span class="dv">42</span>, <span class="dv">38</span>, <span class="dv">44</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(openness, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>trade_gdp)) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">fill=</span><span class="st">"#012169"</span>, <span class="at">alpha=</span><span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">1991</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">1993</span>, <span class="at">y=</span><span class="dv">16</span>, <span class="at">label=</span><span class="st">"1991</span><span class="sc">\n</span><span class="st">Liberalisation"</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"India's Trade Openness: (Exports + Imports) / GDP"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"India has become significantly more open since 1991 liberalisation"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="st">"Trade / GDP (%)"</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">1990</span>,<span class="dv">1995</span>,<span class="dv">2000</span>,<span class="dv">2005</span>,<span class="dv">2010</span>,<span class="dv">2015</span>,<span class="dv">2020</span>,<span class="dv">2024</span>)) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-trade-gdp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-trade-gdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture02_Features_files/figure-html/fig-trade-gdp-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trade-gdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: India: Trade Openness (Exports + Imports as % of GDP) Source: World Bank, World Development Indicators (WDI).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="keybox">
+<p>Trade/GDP rose from <strong>14% (1990)</strong> to <strong>44% (2024)</strong> — India is significantly more integrated into the global economy post-liberalisation.</p>
+</div>
+</section>
+</section>
+<section id="part-ii-six-key-features" class="level1" data-background-color="#E8EDF5">
+<h1 data-background-color="#E8EDF5">Part II: Six Key Features</h1>
+<section id="features-that-make-international-trade-distinct" class="level2">
+<h2 class="anchored" data-anchor-id="features-that-make-international-trade-distinct">Features That Make International Trade Distinct</h2>
+<p>International trade is not simply domestic trade “at a larger scale.” Six features create unique challenges:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>(a) Geographical separation</strong> Long distances → higher transport costs, insurance, cold-chain requirements, longer lead times</p>
+<p><strong>(b) Different currencies</strong> Each transaction requires currency conversion; exchange rate fluctuations create financial risk</p>
+<p><strong>(c) Factor immobility</strong> Labour and capital cannot move freely across borders — immigration controls, capital account restrictions</p>
+</div><div class="column" style="width:50%;">
+<p><strong>(d) Multiple political jurisdictions</strong> Each country sets its own trade policy — tariffs, quotas, export bans; no single governing authority</p>
+<p><strong>(e) Different legal systems &amp; culture</strong> Food labelling laws, packaging standards, contract enforcement vary; Indian spice exporters must comply with EU pesticide MRL standards</p>
+<p><strong>(f) Greater risk and uncertainty</strong> Combination of all above → higher commercial, political, and exchange-rate risk than domestic commerce</p>
+</div>
+</div>
+</section>
+<section id="feature-1-factor-immobility" class="level2">
+<h2 class="anchored" data-anchor-id="feature-1-factor-immobility">Feature 1: Factor Immobility</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Why factors don’t move freely</strong></p>
+<ul>
+<li><strong>Labour:</strong> Visa restrictions, language barriers, immigration quotas
+<ul>
+<li>India sends ~8 million workers to Gulf countries — but under strict bilateral agreements, not free movement</li>
+</ul></li>
+<li><strong>Capital:</strong> FDI restrictions, capital account controls, regulatory hurdles
+<ul>
+<li>India maintains partial capital account convertibility (RBI-regulated)</li>
+</ul></li>
+<li><strong>Land:</strong> Completely immobile by definition</li>
+</ul>
+<p><strong>Why this matters for trade theory</strong></p>
+<ul>
+<li>Classical models (Ricardo, H-O) assume <em>factor immobility</em> across borders</li>
+<li>This is what makes trade in goods a <em>substitute</em> for factor flows</li>
+<li>If labour moved freely, there would be less need to trade goods</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>India case: Gulf remittances</strong></p>
+<p>Indian workers (largely from Kerala, UP, Bihar) work in UAE, Saudi Arabia, Kuwait — sending back <strong>~$120 billion in remittances (FY2024)</strong>, making India the world’s largest remittance recipient.</p>
+<p>This is <em>partial</em> factor mobility — workers move but face fixed-term contracts and limited rights.</p>
+<p>Remittances are India’s largest single source of foreign exchange — larger than IT exports or any single merchandise export category.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="feature-2-currency-and-exchange-risk" class="level2">
+<h2 class="anchored" data-anchor-id="feature-2-currency-and-exchange-risk">Feature 2: Currency and Exchange Risk</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>The exchange rate problem</strong></p>
+<ul>
+<li>Indian exporters price in <strong>USD</strong> (world standard for commodities)</li>
+<li>Their costs are in <strong>Indian Rupees (INR)</strong></li>
+<li>If INR appreciates (e.g., ₹80 → ₹75 per USD), the same USD revenue converts to <em>fewer rupees</em> → profit squeezed</li>
+<li>If INR depreciates (₹80 → ₹85), exporters gain; importers lose</li>
+</ul>
+<p><strong>Historical context</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>INR/USD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2000</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>2010</td>
+<td>46</td>
+</tr>
+<tr class="odd">
+<td>2015</td>
+<td>65</td>
+</tr>
+<tr class="even">
+<td>2020</td>
+<td>75</td>
+</tr>
+<tr class="odd">
+<td>2024</td>
+<td>83–84</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>Agricultural export example</strong></p>
+<p>A Punjab wheat exporter quotes <strong>$250/tonne</strong> FOB Mumbai.</p>
+<ul>
+<li>At ₹80/USD → realises ₹20,000/tonne</li>
+<li>At ₹75/USD (appreciation) → realises only ₹18,750/tonne</li>
+<li>At ₹85/USD (depreciation) → realises ₹21,250/tonne</li>
+</ul>
+<p>A <strong>5% INR appreciation = 6.25% reduction</strong> in rupee revenue — potentially wiping out margins on thin-traded commodities.</p>
+<p><strong>Hedging tools:</strong> Forward contracts, futures on NSE/BSE, ECGC insurance</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-iii-internal-vs-international-trade" class="level1" data-background-color="#E8EDF5">
+<h1 data-background-color="#E8EDF5">Part III: Internal vs International Trade</h1>
+<section id="internal-vs-international-trade-key-differences" class="level2">
+<h2 class="anchored" data-anchor-id="internal-vs-international-trade-key-differences">Internal vs International Trade: Key Differences</h2>
+<div class="smaller">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 44%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Internal (Domestic) Trade</th>
+<th>International Trade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Factor mobility</strong></td>
+<td>Labour and capital move freely</td>
+<td>Highly restricted — visas, FDI rules</td>
+</tr>
+<tr class="even">
+<td><strong>Currency</strong></td>
+<td>Single national currency</td>
+<td>Multiple currencies; exchange rate risk</td>
+</tr>
+<tr class="odd">
+<td><strong>Political jurisdiction</strong></td>
+<td>One government, one legal system</td>
+<td>Multiple governments, international law</td>
+</tr>
+<tr class="even">
+<td><strong>Trade barriers</strong></td>
+<td>None within India (post-GST)</td>
+<td>Tariffs, quotas, SPS, NTBs</td>
+</tr>
+<tr class="odd">
+<td><strong>Transport costs</strong></td>
+<td>Relatively low</td>
+<td>Higher — ocean freight, insurance, customs</td>
+</tr>
+<tr class="even">
+<td><strong>Documentation</strong></td>
+<td>Invoice, transport document</td>
+<td>B/L, L/C, Certificate of Origin, SPS certificate</td>
+</tr>
+<tr class="odd">
+<td><strong>Market size</strong></td>
+<td>Limited to one country</td>
+<td>Global — 195 countries</td>
+</tr>
+<tr class="even">
+<td><strong>Dispute resolution</strong></td>
+<td>Domestic courts</td>
+<td>WTO DSM, bilateral/regional bodies</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="keybox">
+<p><strong>Key insight:</strong> India’s internal trade was itself <em>fragmented</em> before GST (2017) — state-level taxes created internal barriers. International trade faces all these barriers <em>and more</em>.</p>
+</div>
+</section>
+<section id="the-gravity-model-of-trade" class="level2">
+<h2 class="anchored" data-anchor-id="the-gravity-model-of-trade">The Gravity Model of Trade</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Inspired by Newton’s law of gravitation:</strong></p>
+<p><span class="math display">\[T_{ij} = G \cdot \frac{Y_i \cdot Y_j}{D_{ij}^2}\]</span></p>
+<p>Where: - <span class="math inline">\(T_{ij}\)</span> = trade between country <span class="math inline">\(i\)</span> and country <span class="math inline">\(j\)</span> - <span class="math inline">\(Y_i, Y_j\)</span> = GDP (economic size) of each country - <span class="math inline">\(D_{ij}\)</span> = distance between them</p>
+<p><strong>Interpretation:</strong> Trade is <strong>proportional to economic size</strong> and <strong>inversely proportional to distance</strong>.</p>
+</div><div class="column" style="width:45%;">
+<p><strong>India examples</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Partner</th>
+<th>GDP</th>
+<th>Distance</th>
+<th>Trade rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USA</td>
+<td>Very large</td>
+<td>Far</td>
+<td>#1 export dest.</td>
+</tr>
+<tr class="even">
+<td>China</td>
+<td>Very large</td>
+<td>Medium</td>
+<td>#1 import source</td>
+</tr>
+<tr class="odd">
+<td>UAE</td>
+<td>Medium</td>
+<td>Close</td>
+<td>#2 export dest.</td>
+</tr>
+<tr class="even">
+<td>Bangladesh</td>
+<td>Small</td>
+<td>Very close</td>
+<td>#5 export dest.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlightbox">
+<p>UAE ranks highly despite moderate GDP: it is a regional trade hub + large Indian diaspora creates demand for Indian food products.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-iv-advantages-and-risks" class="level1" data-background-color="#E8EDF5">
+<h1 data-background-color="#E8EDF5">Part IV: Advantages and Risks</h1>
+<section id="advantages-of-international-trade-for-india" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-of-international-trade-for-india">Advantages of International Trade for India</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>For producers and the economy</strong></p>
+<ol type="1">
+<li><strong>Wider market</strong> — Indian basmati rice sold in 150+ countries; domestic market alone could not absorb export volumes</li>
+<li><strong>Access to unavailable inputs</strong> — India imports potash fertiliser (not produced domestically in sufficient quantity)</li>
+<li><strong>Technology transfer</strong> — FDI brings modern food processing technology</li>
+<li><strong>Employment generation</strong> — Marine product sector employs ~1.5 million workers, mostly coastal women</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><strong>For growth and welfare</strong></p>
+<ol start="5" type="1">
+<li><strong>Foreign exchange earnings</strong> — Agricultural exports earn $43.7B; crucial for financing oil imports</li>
+</ol>
+<div class="highlightbox">
+<p><strong>Rice example:</strong> India is the <span class="hi">world’s largest rice exporter</span> (~22 million tonnes in 2022). Exports earn <span class="hi-gold">~$10B forex</span> and support 30 million paddy farmers.</p>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>Additional advantages of international trade for India:</p>
+<ol start="6" type="1">
+<li><strong>Economic growth</strong> — Export-led growth: every $1B of agri exports generates ~$1.5–2B in backward linkages</li>
+<li><strong>Better utilisation of resources</strong> — India’s abundant agricultural land and labour efficiently deployed through exports</li>
+</ol>
+</div>
+</section>
+<section id="disadvantages-and-risks-of-international-trade" class="level2">
+<h2 class="anchored" data-anchor-id="disadvantages-and-risks-of-international-trade">Disadvantages and Risks of International Trade</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Economic risks</strong></p>
+<ol type="1">
+<li><strong>Import dependence</strong> — India’s edible oil dependence (60–65% imported) exposes inflation to global price shocks</li>
+<li><strong>Dumping risk</strong> — China dumped cheap steel and tomato paste in India; domestic industries harmed</li>
+<li><strong>BoP strain</strong> — India’s merchandise deficit ~$241B (FY2024); requires large capital inflows to finance</li>
+<li><strong>Domestic industry harm</strong> — Cheap palm oil lowered demand for domestic groundnut oil</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><strong>Political and structural risks</strong></p>
+<ol start="5" type="1">
+<li><strong>Economic dependency</strong> — Over-specialisation creates vulnerability (e.g., countries heavily dependent on single commodity exports)</li>
+<li><strong>Trade disputes</strong> — India has faced WTO challenges on sugar subsidies, poultry import bans</li>
+<li><strong>Structural unemployment</strong> — Import competition can displace workers; adjustment is slow</li>
+</ol>
+<div class="highlightbox">
+<p><strong>Policy lesson:</strong> The goal is not to maximise trade at all costs, but to <em>manage</em> trade so its gains exceed its disruption costs.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-v-india-case-studies" class="level1" data-background-color="#E8EDF5">
+<h1 data-background-color="#E8EDF5">Part V: India Case Studies</h1>
+<section id="case-study-indias-edible-oil-import-dependence" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-indias-edible-oil-import-dependence">Case Study: India’s Edible Oil Import Dependence</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>The structural problem</strong></p>
+<ul>
+<li>India consumes ~24–25 million tonnes of edible oil per year</li>
+<li>Domestic production: ~9–10 million tonnes</li>
+<li>Import requirement: <strong>~14–15 million tonnes</strong> (60–65% of need)</li>
+<li>Cost: <strong>~$12–14 billion per year</strong> (FY2024)</li>
+</ul>
+<p><strong>Import sources</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Oil type</th>
+<th>Source</th>
+<th>Share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Palm oil</td>
+<td>Indonesia, Malaysia</td>
+<td>~65%</td>
+</tr>
+<tr class="even">
+<td>Soybean oil</td>
+<td>Argentina, Brazil</td>
+<td>~15%</td>
+</tr>
+<tr class="odd">
+<td>Sunflower oil</td>
+<td>Ukraine, Russia</td>
+<td>~15%</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:45%;">
+<p><strong>The 2021–22 price shock</strong></p>
+<ul>
+<li>Russia-Ukraine war → sunflower oil disruption</li>
+<li>Palm oil export ban by Indonesia (April–May 2022)</li>
+<li>Global edible oil prices rose <strong>50–80%</strong> in 6 months</li>
+<li>India’s retail edible oil inflation peaked at ~20% mid-2022</li>
+<li>Government response: cut import duties, banned futures trading</li>
+</ul>
+<div class="methodbox">
+<p><strong>Lesson:</strong> Import dependence in a strategic food commodity creates price transmission vulnerability. PM KISAN Oilseeds Mission (2023) aims to double domestic production by 2030.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="case-study-indias-rice-export-ban-2023" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-indias-rice-export-ban-2023">Case Study: India’s Rice Export Ban (2023)</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>What happened:</strong></p>
+<ul>
+<li>India banned non-basmati white rice exports in August 2023</li>
+<li>Rationale: control domestic food inflation, protect consumers</li>
+<li>India is the world’s largest rice exporter — ~22 million tonnes/year</li>
+</ul>
+<p><strong>Who gained from the ban:</strong> - Urban consumers (domestic rice prices stabilised) - State governments managing food inflation - RBI’s CPI inflation target</p>
+<p><strong>Who lost:</strong> - Paddy farmers — domestic price fell when export outlet closed - Rice millers and exporters — contracts cancelled; reputation damage - Bangladesh, West Africa — importers faced supply shortage; global rice prices rose +20%</p>
+</div><div class="column" style="width:40%;">
+<div class="highlightbox">
+<p><strong>Policy outcome:</strong></p>
+<p>The ban caused a <strong>global rice price spike of ~20%</strong> — demonstrating India’s market power as the world’s dominant rice exporter.</p>
+<p>India partially reversed the ban for specific grades in early 2024 under WTO member pressure.</p>
+<p><strong>This is a classic domestic policy vs.&nbsp;trade commitment conflict</strong> — a recurring theme in agricultural trade policy.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="government-policy-in-agricultural-trade" class="level2">
+<h2 class="anchored" data-anchor-id="government-policy-in-agricultural-trade">Government Policy in Agricultural Trade</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Price support and export competitiveness</strong></p>
+<ul>
+<li><strong>MSP:</strong> Raises domestic price above world price → may make exports uncompetitive without subsidy</li>
+<li><strong>Export subsidies:</strong> Previously used for sugar (challenged at WTO); now replaced by transport/marketing assistance</li>
+<li><strong>Export bans:</strong> Rice ban (non-basmati) August 2023; wheat ban (May 2022) — protect domestic prices, hurt exporters</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Import policy</strong></p>
+<ul>
+<li><strong>Import duties on pulses and oilseeds:</strong> Reduced to zero during 2021–22 price shock; raised again when harvest recovered</li>
+<li><strong>TRQs:</strong> Limited quantities at low duty; higher duty beyond the quota</li>
+<li><strong>PLI scheme for food processing:</strong> Incentivise value-added food exports</li>
+</ul>
+<div class="highlightbox">
+<p><strong>Core tension:</strong> India’s domestic farm support policies often conflict with WTO commitments on export subsidies and import duties — the AoA bindings create real constraints (Lecture 12).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="trade-finance-and-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="trade-finance-and-documentation">Trade Finance and Documentation</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Key trade documents</strong></p>
+<ul>
+<li><strong>Bill of Lading (B/L):</strong> Shipping company’s receipt; title document for goods</li>
+<li><strong>Letter of Credit (L/C):</strong> Bank’s guarantee of payment; protects both parties</li>
+<li><strong>Certificate of Origin:</strong> Proves provenance; needed for preferential duty under FTAs</li>
+<li><strong>Phytosanitary Certificate:</strong> Certifies plants/plant products are pest-free</li>
+<li><strong>SPS Compliance Certificate:</strong> Confirms pesticide residues, aflatoxin levels meet standards</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>Why small agri-exporters struggle</strong></p>
+<p>Indian rice exporters to EU must meet <strong>Maximum Residue Levels (MRLs)</strong> for 300+ pesticides. Failure → entire consignment rejected at port.</p>
+<p>L/C requires strong banking relationships. MSME spice and horticulture exporters often cannot negotiate L/C terms with large US/EU importers.</p>
+<p><strong>ECGC</strong> provides credit insurance — covers non-payment risk for Indian exporters.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-and-key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="summary-and-key-takeaways">Summary and Key Takeaways</h2>
+<div class="methodbox">
+<p><strong>What we covered today</strong></p>
+<ul>
+<li>International trade has <strong>6 key features</strong> distinguishing it from domestic trade: geographic separation, currency risk, factor immobility, multiple jurisdictions, cultural/legal differences, and greater uncertainty</li>
+<li><strong>India’s trade openness</strong> rose from 14% of GDP (1990) to 44% (2024) — a dramatic shift driven by 1991 liberalisation</li>
+<li><strong>Factor immobility</strong> is the fundamental reason countries trade goods rather than simply moving workers</li>
+<li><strong>Currency risk</strong> directly affects agricultural export profitability — a 5% INR appreciation can wipe out export margins</li>
+<li><strong>Edible oil dependence</strong> is India’s most significant agricultural import vulnerability: $12–14B/year, 60–65% of consumption</li>
+<li><strong>Gravity model</strong> predicts India trades most with large (USA, China) and close (UAE, Bangladesh) economies</li>
+</ul>
+</div>
+</section>
+<section id="discussion-question" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-question">Discussion Question</h2>
+<div class="highlightbox">
+<p><strong>“India has a comparative advantage in rice. Bangladesh also exports rice. How can both export the same commodity?”</strong></p>
+</div>
+<p><strong>Think through:</strong></p>
+<ul>
+<li>Is India’s advantage in <em>all</em> varieties of rice?</li>
+<li>Can a country export <em>and</em> import the same good? (Intra-industry trade)</li>
+<li>How do quality differentiation, variety, and destination markets matter?</li>
+<li>What does the rice export ban tell us about the limits of comparative advantage as a policy guide?</li>
+</ul>
+<div class="methodbox">
+<p><strong>Answer preview:</strong> Intra-industry trade, quality segmentation (basmati vs parboiled), and market access geography all allow two countries to simultaneously export similar products. We formalise this in Lecture 6.</p>
+</div>
+</section>
+<section id="next-lecture-lecture-3" class="level2">
+<h2 class="anchored" data-anchor-id="next-lecture-lecture-3">Next Lecture: Lecture 3</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Theories of International Trade I — Mercantilism and Absolute Advantage</strong> <em>(May 12, 2026)</em></p>
+<p>We will cover:</p>
+<ul>
+<li><strong>Mercantilism</strong> (1500–1750): wealth = gold, maximise exports, minimise imports — and why it is fundamentally flawed</li>
+<li><strong>Colonial trade:</strong> India’s experience under British mercantilism — the “drain of wealth” thesis (Dadabhai Naoroji)</li>
+<li><strong>Adam Smith (1776):</strong> Absolute advantage — trade based on genuine productivity differences</li>
+<li><strong>Numerical example:</strong> India vs Bangladesh in rice and jute</li>
+<li><strong>Limitations</strong> of absolute advantage — setting up for Ricardo</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="highlightbox">
+<p><strong>Suggested reading</strong></p>
+<ul>
+<li>Krugman, Obstfeld &amp; Melitz, <em>International Economics</em>, Ch. 2</li>
+<li>Adam Smith, <em>Wealth of Nations</em>, Book IV, Ch. 1 (excerpt)</li>
+</ul>
+<p><strong>To think about:</strong></p>
+<p>If every country has absolute advantage in <em>something</em>, does that mean every country should trade? What about a country that has absolute advantage in <em>nothing</em>?</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="appendix" class="level1" data-background-color="#1a3a5c">
+<h1 data-background-color="#1a3a5c">Appendix</h1>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section id="additional-resources" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Additional Resources</h2><div class="quarto-appendix-contents">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Further Reading</strong></p>
+<ul>
+<li><em>International Economics</em> — Salvatore (Ch. 1)</li>
+<li><em>International Economics</em> — Appleyard &amp; Field (Ch. 1)</li>
+<li>RBI/DGCI&amp;S/APEDA databases for latest data</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Key Data Sources</strong></p>
+<ul>
+<li>DGCI&amp;S: India’s merchandise trade</li>
+<li>RBI: Balance of payments data<br>
+</li>
+<li>APEDA: Agricultural export statistics</li>
+<li>WTO: Tariff and trade databases</li>
+</ul>
+</div>
+</div>
+
+
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Department of Development Economics · ECO 2203</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Nithin M · 2026</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

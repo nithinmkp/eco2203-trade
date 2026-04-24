@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nithin M">
+<meta name="dcterms.date" content="2026-08-08">
+
+<title>lecture16_export_procedures – ECO 2203</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f3746951f800101ea2ade33225c42268.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ECO 2203 — International Trade &amp; Policy in Agriculture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lecture16_Export_Procedures.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 16: Export Procedures and Documentation</h1>
+<p class="subtitle lead">ECO 2203 | International Trade and Policy in Agriculture</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nithin M </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Development Economics
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 8, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="section" class="level1 section">
+<h1 class="section"></h1>
+<div style="text-align:center; margin-top: 2em;">
+<p><strong>Lecture 16</strong></p>
+<p><span class="hi" style="font-size:1.8em;">Export Procedures and Documentation</span></p>
+<p>From Karnataka Farm to Leicester Kitchen</p>
+</div>
+<hr>
+<section id="opening-the-journey-of-a-kilo-of-tur-dal" class="level2">
+<h2 class="anchored" data-anchor-id="opening-the-journey-of-a-kilo-of-tur-dal">Opening: The Journey of a Kilo of Tur Dal</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<p>A kilo of <strong>Kalaburagi tur dal</strong> travels from a Karnataka farmer to a diaspora kitchen in <strong>Leicester, UK</strong>.</p>
+<p>What stands between the farmer and the foreign consumer?</p>
+<ul>
+<li>Registrations with four government agencies</li>
+<li>Twelve documents crossing seven desks</li>
+<li>Two financial instruments spanning two continents</li>
+<li>One customs portal used by 1.4 million exporters</li>
+</ul>
+<p><strong>Today’s lecture answers: how does this actually work?</strong></p>
+</div><div class="column" style="width:42%;">
+<div class="highlightbox">
+<p><strong>India’s agri export snapshot (FY2024):</strong></p>
+<ul>
+<li>Total agri exports: <strong>₹3.61 lakh crore (~$43.7B)</strong></li>
+<li>Agricultural exporters registered: <strong>~85,000</strong></li>
+<li>Ports handling agri cargo: <strong>13 major + 200 minor</strong></li>
+<li>Average documents per shipment: <strong>8–12</strong></li>
+</ul>
+<p>Every export begins with a registration and ends with a bank certificate.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="step-1-pre-export-registrations-the-four-pillars" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-pre-export-registrations-the-four-pillars">Step 1 — Pre-Export Registrations: The Four Pillars</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Before any shipment, an agricultural exporter must hold:</p>
+<p><strong>1. Import Export Code (IEC)</strong> - Issued by DGFT (Director General of Foreign Trade) - 10-digit PAN-based code — <strong>mandatory</strong> for all exports - One-time registration; lifelong validity - Apply online at dgft.gov.in — fee ₹500</p>
+<p><strong>2. RCMC (Registration-cum-Membership Certificate)</strong> - Issued by the relevant commodity body: - <span class="hi">APEDA</span> — processed food, fresh produce, meat, dairy, cereals - <span class="hi">MPEDA</span> — marine products - <span class="hi">Spices Board</span> — all spices - <span class="hi">Coffee/Tea/Rubber Board</span> — respective commodities</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>3. GST Registration</strong></p>
+<p>GSTIN is mandatory for tax input credit on export supplies. Exports are <strong>zero-rated</strong> under GST — exporter can claim refund of input taxes.</p>
+<p><strong>4. AD Bank Account</strong></p>
+<p>Authorised Dealer (AD) Category-I bank account for receiving foreign exchange. FEMA requires all export proceeds to be realised through an AD bank within <strong>9 months</strong> of shipment.</p>
+</div>
+</div>
+</div>
+<div class="keybox">
+<p><strong>Sequence matters:</strong> IEC → GST → RCMC → AD Bank account. No RCMC without IEC. No export incentive claim without RCMC.</p>
+</div>
+<hr>
+</section>
+<section id="export-contracts-and-incoterms-2020" class="level2">
+<h2 class="anchored" data-anchor-id="export-contracts-and-incoterms-2020">Export Contracts and Incoterms 2020</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>An <strong>export contract</strong> specifies: price, quantity, quality, delivery terms, payment mode, and dispute resolution.</p>
+<p><strong>Incoterms 2020</strong> (ICC, Paris) — 11 standardised trade terms that define exactly <strong>where risk and cost transfer</strong> from seller to buyer.</p>
+<p>Key terms for Indian agri exports:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Risk Transfers At</th>
+<th>Used For</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="hi">EXW</span></td>
+<td>Seller’s premises</td>
+<td>Rare in agri</td>
+</tr>
+<tr class="even">
+<td><span class="hi">FCA</span></td>
+<td>Named place to carrier</td>
+<td>Air/rail shipments</td>
+</tr>
+<tr class="odd">
+<td><span class="hi-gold">FOB</span></td>
+<td>On board vessel</td>
+<td><strong>Most Indian agri</strong></td>
+</tr>
+<tr class="even">
+<td><span class="hi">CIF</span></td>
+<td>Destination port</td>
+<td>Buyer-preferred</td>
+</tr>
+<tr class="odd">
+<td><span class="hi">DDP</span></td>
+<td>Buyer’s premises</td>
+<td>E-commerce niche</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>FOB vs CIF for India:</strong></p>
+<p>Under <strong>FOB</strong>, the Indian exporter’s responsibility ends when goods cross the ship’s rail. Freight and insurance arranged by the buyer.</p>
+<p>Under <strong>CIF</strong>, the exporter arranges (and prices) freight and insurance to the destination port.</p>
+<p><strong>~65% of India’s agri exports are on FOB terms.</strong> CIF is preferred by Gulf and African buyers who have captive freight arrangements.</p>
+<p><strong>Negotiation tip:</strong> FOB is simpler for small exporters; CIF offers a higher invoice value and more price control.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="export-documents-proof-of-transaction" class="level2">
+<h2 class="anchored" data-anchor-id="export-documents-proof-of-transaction">Export Documents: Proof of Transaction</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><strong>Commercial Invoice</strong> — price, quantity, HSN code, IEC, buyer/seller details; basis for customs valuation</li>
+<li><strong>Packing List</strong> — box-by-box itemisation of weight, dimensions, marks</li>
+<li><strong>Bill of Lading (B/L)</strong> — title document issued by shipping line; original B/L needed to claim cargo</li>
+<li><strong>Airway Bill (AWB)</strong> — air freight equivalent of B/L; non-negotiable consignment note</li>
+<li><strong>Certificate of Origin (CoO)</strong> — issued by FIEO/chamber; determines FTA preferential tariff eligibility</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<div class="keybox">
+<p>The <strong>Bill of Lading</strong> is the only document that is a negotiable instrument — it can be endorsed and transferred like a cheque.</p>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>Detailed descriptions:</p>
+<ol type="1">
+<li><strong>Commercial Invoice</strong> — price, quantity, HSN code, IEC, buyer/seller details; basis for customs valuation and bank payment verification under LC.</li>
+<li><strong>Packing List</strong> — box-by-box itemisation of weight, dimensions, marks and numbers; used by customs and buyer for checking receipt.</li>
+<li><strong>Bill of Lading (B/L)</strong> — shipping company’s receipt and title document; original needed to claim cargo at destination port; negotiable instrument that can be endorsed and transferred.</li>
+<li><strong>Airway Bill (AWB)</strong> — non-negotiable air freight equivalent of B/L; issued by airline; consignee named directly.</li>
+<li><strong>Certificate of Origin (CoO)</strong> — issued by FIEO, chamber of commerce, or APEDA; proves country of origin; required for preferential duty rate under FTAs.</li>
+</ol>
+</div>
+</section>
+<section id="export-documents-compliance-and-regulatory" class="level2">
+<h2 class="anchored" data-anchor-id="export-documents-compliance-and-regulatory">Export Documents: Compliance and Regulatory</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol start="6" type="1">
+<li><strong>Phytosanitary Certificate</strong> — issued by PPQS (Plant Protection, Quarantine &amp; Storage); mandatory for all plant products</li>
+<li><strong>Health / Inspection Certificate</strong> — issued by EIC for meat, marine, organic, dairy exports</li>
+<li><strong>EDPMS declaration</strong> — RBI’s online system linking shipment to forex realization</li>
+<li><strong>Fumigation Certificate</strong> — mandatory for pulses, oilseeds; issued by certified fumigators</li>
+<li><strong>Shipping Bill</strong> — key customs clearance document filed on ICEGATE; must be approved before loading</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<div class="methodbox">
+<p><strong>Document flow for a typical agri export:</strong></p>
+<ol type="1">
+<li>Export contract signed → Commercial Invoice prepared</li>
+<li>LC opened by buyer’s bank</li>
+<li>Shipment arranged → B/L issued</li>
+<li>Phytosanitary + Fumigation certificates obtained</li>
+<li>Shipping Bill filed on ICEGATE → LEO (Let Export Order) obtained</li>
+<li>Documents presented to advising bank → payment</li>
+<li>EDPMS updated → forex realization confirmed</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>Detailed descriptions:</p>
+<ol start="6" type="1">
+<li><strong>Phytosanitary Certificate</strong> — issued by Directorate of Plant Protection, Quarantine &amp; Storage (PPQS) under DAPFW; certifies products are pest-free; mandatory for all plant and plant-product exports.</li>
+<li><strong>Health / Inspection Certificate</strong> — issued by Export Inspection Council (EIC) for meat, marine, organic, and dairy exports; confirms product meets importing country food safety standards.</li>
+<li><strong>EDPMS declaration</strong> (Export Data Processing and Monitoring System) — RBI’s online system; all export shipments must be registered; links shipment data to forex realization within 9 months.</li>
+<li><strong>Fumigation Certificate</strong> — mandatory for pulses, oilseeds, and many cereals; issued by certified fumigators; many countries require methyl bromide or phosphine treatment; certificate must specify chemical, dosage, duration.</li>
+<li><strong>Shipping Bill</strong> — the key customs clearance document filed on ICEGATE; must be approved by Customs before loading; distinct types (Free Shipping Bill, Dutiable SB, SB under claim for Drawback) for different incentive claims.</li>
+</ol>
+</div>
+<hr>
+</section>
+<section id="letter-of-credit-reducing-counterparty-risk" class="level2">
+<h2 class="anchored" data-anchor-id="letter-of-credit-reducing-counterparty-risk">Letter of Credit: Reducing Counterparty Risk</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Why LC?</strong> In international trade, buyer and seller do not know each other. The LC inserts two banks as guarantors.</p>
+<p><strong>Step-by-step LC mechanism:</strong></p>
+<ol type="1">
+<li>Buyer and seller agree on price and LC terms</li>
+<li><strong>Buyer’s bank (Issuing Bank)</strong> issues LC in favour of exporter</li>
+<li><strong>Advising Bank</strong> (exporter’s bank in India) notifies exporter; may also confirm</li>
+<li>Exporter ships goods; presents documents to advising bank</li>
+<li>Documents checked against LC terms; bank pays exporter</li>
+<li>Documents forwarded to issuing bank; buyer pays and gets documents</li>
+<li>Buyer presents B/L to shipping line → collects cargo</li>
+</ol>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>Types of LC:</strong></p>
+<ul>
+<li><strong>Sight LC:</strong> Exporter paid immediately on document presentation</li>
+<li><strong>Usance/DA LC:</strong> Payment deferred (30, 60, 90 days) — extends credit to buyer</li>
+<li><strong>Revolving LC:</strong> Renews automatically for repeat shipments</li>
+<li><strong>Back-to-Back LC:</strong> Small exporters use master LC as collateral to open LC for their suppliers</li>
+</ul>
+<p><strong>India’s EXIM Bank:</strong> Pre-shipment and post-shipment credit; refinances AD banks for agri exporters.</p>
+<p><strong>ECGC:</strong> Export Credit Guarantee Corporation — insures against buyer default and country risk. Premium: ~0.5–1% of invoice value.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="export-credit-pre-vs-post-shipment-trend" class="level2">
+<h2 class="anchored" data-anchor-id="export-credit-pre-vs-post-shipment-trend">Export Credit: Pre vs Post Shipment Trend</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df_credit <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Year =</span> <span class="fu">factor</span>(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"FY2018"</span>,<span class="st">"FY2019"</span>,<span class="st">"FY2020"</span>,<span class="st">"FY2021"</span>,<span class="st">"FY2022"</span>,<span class="st">"FY2023"</span>,<span class="st">"FY2024"</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"FY2018"</span>,<span class="st">"FY2019"</span>,<span class="st">"FY2020"</span>,<span class="st">"FY2021"</span>,<span class="st">"FY2022"</span>,<span class="st">"FY2023"</span>,<span class="st">"FY2024"</span>)),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pre_Shipment_B  =</span> <span class="fu">c</span>(<span class="fl">1.2</span>, <span class="fl">1.3</span>, <span class="fl">1.1</span>, <span class="fl">0.9</span>, <span class="fl">1.4</span>, <span class="fl">1.7</span>, <span class="fl">1.9</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Post_Shipment_B =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.9</span>, <span class="fl">0.7</span>, <span class="fl">0.6</span>, <span class="fl">0.9</span>, <span class="fl">1.1</span>, <span class="fl">1.2</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df_credit <span class="sc">|&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Pre_Shipment_B, Post_Shipment_B),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"Type"</span>, <span class="at">values_to =</span> <span class="st">"Value_B"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Type =</span> <span class="fu">ifelse</span>(Type <span class="sc">==</span> <span class="st">"Pre_Shipment_B"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Pre-Shipment Credit"</span>, <span class="st">"Post-Shipment Credit"</span>))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Value_B, <span class="at">colour =</span> Type, <span class="at">fill =</span> Type, <span class="at">group =</span> Type)) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">alpha =</span> <span class="fl">0.15</span>, <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="fl">3.5</span>, <span class="at">xmax =</span> <span class="fl">4.5</span>, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> <span class="fl">2.4</span>, <span class="at">fill =</span> <span class="st">"grey90"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">4</span>, <span class="at">y =</span> <span class="fl">2.2</span>, <span class="at">label =</span> <span class="st">"COVID</span><span class="sc">\n</span><span class="st">dip"</span>, <span class="at">size =</span> <span class="fl">2.9</span>, <span class="at">colour =</span> <span class="st">"grey45"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Pre-Shipment Credit"</span> <span class="ot">=</span> <span class="st">"#012169"</span>, <span class="st">"Post-Shipment Credit"</span> <span class="ot">=</span> <span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Pre-Shipment Credit"</span> <span class="ot">=</span> <span class="st">"#012169"</span>, <span class="st">"Post-Shipment Credit"</span> <span class="ot">=</span> <span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">2.4</span>), <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(<span class="st">"$"</span>, x, <span class="st">"B"</span>)) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"India's Export Credit: Pre vs Post Shipment (USD Billion)"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Scheduled commercial bank credit outstanding for agricultural export finance"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"USD Billion"</span>, <span class="at">colour =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>, <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"grey40"</span>),</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-export-credit" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-export-credit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture16_Export_Procedures_files/figure-html/fig-export-credit-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-export-credit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Pre-shipment credit dipped during COVID (FY2021) and recovered alongside export growth; post-shipment credit tracks pre-shipment with a structural lag. Source: RBI, Handbook of Statistics on Indian Economy.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="customs-clearance-icegate-and-the-shipping-bill" class="level2">
+<h2 class="anchored" data-anchor-id="customs-clearance-icegate-and-the-shipping-bill">Customs Clearance: ICEGATE and the Shipping Bill</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>ICEGATE</strong> (Indian Customs EDI Gateway) — the single portal for all Indian customs transactions.</p>
+<p><strong>Shipping Bill types:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>When Used</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Drawback SB</strong></td>
+<td>Claiming duty drawback on inputs</td>
+</tr>
+<tr class="even">
+<td><strong>DEEC/Advance Auth SB</strong></td>
+<td>Against advance authorisation</td>
+</tr>
+<tr class="odd">
+<td><strong>EP Copy SB</strong></td>
+<td>Ordinary exports</td>
+</tr>
+<tr class="even">
+<td><strong>Free Shipping Bill</strong></td>
+<td>Personal effects, gifts</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Process flow:</strong> 1. Exporter files Shipping Bill online with all document details 2. Customs Risk Management System (RMS) assesses risk 3. Low-risk: <strong>Green Channel</strong> → LEO (Let Export Order) in 2–4 hours 4. Medium-risk: <strong>Yellow Channel</strong> → document examination 5. High-risk: <strong>Red Channel</strong> → physical examination of cargo</p>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>LEO — Let Export Order:</strong></p>
+<p>The LEO is the customs officer’s green light for loading. Cargo <strong>cannot board</strong> without LEO. Once LEO is given:</p>
+<ul>
+<li>Exporter has 24 hours to load at port</li>
+<li>Date of LEO = official date of export for FEMA and incentive purposes</li>
+</ul>
+<p><strong>AEO Status (Authorised Economic Operator):</strong></p>
+<p>Exporters with strong compliance history can apply for AEO status (Tier I, II, III). Benefits: - Fast-track customs clearance - Reduced physical examination - Priority in port queue - Deferred duty payment</p>
+<p>In FY2024, ~12,000 entities hold AEO status in India.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="indias-merchandise-exports-by-mode-of-transport" class="level2">
+<h2 class="anchored" data-anchor-id="indias-merchandise-exports-by-mode-of-transport">India’s Merchandise Exports by Mode of Transport</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_mode <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mode    =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Sea"</span>, <span class="st">"Air"</span>, <span class="st">"Land"</span>, <span class="st">"Other"</span>), <span class="dv">2</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Year    =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"FY2022-23"</span>, <span class="st">"FY2023-24"</span>), <span class="at">each =</span> <span class="dv">4</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Value_B =</span> <span class="fu">c</span>(<span class="dv">297</span>, <span class="dv">67</span>, <span class="dv">52</span>, <span class="dv">21</span>, <span class="dv">310</span>, <span class="dv">71</span>, <span class="dv">56</span>, <span class="dv">25</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(Year) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Share =</span> <span class="fu">round</span>(Value_B <span class="sc">/</span> <span class="fu">sum</span>(Value_B) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mode  =</span> <span class="fu">factor</span>(Mode, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Other"</span>, <span class="st">"Land"</span>, <span class="st">"Air"</span>, <span class="st">"Sea"</span>))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">ungroup</span>()</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_mode, <span class="fu">aes</span>(<span class="at">x =</span> Share, <span class="at">y =</span> Mode, <span class="at">fill =</span> Year)) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.72</span>), <span class="at">width =</span> <span class="fl">0.64</span>) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(Share, <span class="st">"% ($"</span>, Value_B, <span class="st">"B)"</span>)),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.72</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.07</span>, <span class="at">size =</span> <span class="fl">3.1</span>) <span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"FY2022-23"</span> <span class="ot">=</span> <span class="st">"#4a7fd4"</span>, <span class="st">"FY2023-24"</span> <span class="ot">=</span> <span class="st">"#012169"</span>)) <span class="sc">+</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">86</span>), <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>)) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"India's Merchandise Exports by Mode of Transport (FY2023)"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Total exports FY2022-23 = USD 437 Billion  |  FY2023-24 = USD 462 Billion"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Share of Total Merchandise Exports (%)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>, <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"grey40"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-export-mode" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-export-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Lecture16_Export_Procedures_files/figure-html/fig-export-mode-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-export-mode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Sea freight dominates at ~68% of India’s merchandise exports; air (~15%) and land (~12%) are secondary modes. Share composition is stable across both years. Source: DGCI&amp;S / Ministry of Commerce and Industry, GoI.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="direct-vs-indirect-export-channels" class="level2">
+<h2 class="anchored" data-anchor-id="direct-vs-indirect-export-channels">Direct vs Indirect Export Channels</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Direct Export:</strong> - Exporter deals directly with foreign buyer - Higher margin, full control over branding/pricing - Higher risk (counterparty, forex, compliance) - Requires: IEC, RCMC, AD bank, full documentation - Suited to: large processors, established exporters</p>
+<p><strong>Examples:</strong> Kohinoor Foods (basmati direct to UAE retail), Venkateshwara Hatcheries (poultry to Middle East)</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Indirect Export:</strong> - Sell to a <strong>Merchant Exporter (ME)</strong> who manages the export - No direct forex exposure; simpler for small farmer/processor - Lower price realisation (merchant takes margin) - ME provides GST exemption on purchase from manufacturer at 0.1% CGST+SGST</p>
+<p><strong>Export Management Company (EMC):</strong> manages exports on commission without taking title to goods.</p>
+<p><strong>FPO Route:</strong> ::: {.keybox} <strong>Farmer Producer Organisations (FPOs)</strong> aggregate smallholders (avg. 1.5 ha in Karnataka) to meet minimum export quantity. APEDA’s FPO Connect links 1,200+ FPOs to export markets. Tur dal FPOs in Gulbarga district now export directly to UK Indian grocery wholesalers.</p>
+</div>
+</div>
+<p>:::</p>
+<hr>
+</section>
+<section id="export-houses-indias-trade-titans" class="level2">
+<h2 class="anchored" data-anchor-id="export-houses-indias-trade-titans">Export Houses: India’s Trade Titans</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>The Government of India recognises export performance tiers with <strong>Star Export House</strong> status, conferring priority clearances, bank credit, and EPCG benefits:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Status</th>
+<th>Min. Export (3-yr avg)</th>
+<th>Benefits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Export House</td>
+<td>₹100 crore</td>
+<td>Priority treatment</td>
+</tr>
+<tr class="even">
+<td>Trading House</td>
+<td>₹500 crore</td>
+<td>Self-certification of CoO</td>
+</tr>
+<tr class="odd">
+<td>Star Trading House</td>
+<td>₹2,000 crore</td>
+<td>Fast-track customs, AEO</td>
+</tr>
+<tr class="even">
+<td>Premier Trading House</td>
+<td>₹10,000 crore</td>
+<td>All of above + policy voice</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>Major agri export houses (India):</strong></p>
+<ul>
+<li><strong>ITC Agribusiness:</strong> wheat, spices, processed food; exports to 60+ countries; $1B+ annual turnover</li>
+<li><strong>Olam International:</strong> cashew, spices, coffee; integrated from farm to retail</li>
+<li><strong>Adani Agri Fresh:</strong> apple, potato, processed; cold chain integration</li>
+<li><strong>KRBL Ltd:</strong> world’s largest basmati rice brand (India Gate); exports to 90+ countries</li>
+<li><strong>Apex Frozen Foods:</strong> shrimp to USA/EU; vertically integrated aquaculture</li>
+</ul>
+<p>These firms account for <strong>~35%</strong> of India’s total agricultural export value.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="export-incentive-schemes" class="level2">
+<h2 class="anchored" data-anchor-id="export-incentive-schemes">Export Incentive Schemes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>1. RoDTEP (Remission of Duties and Taxes on Exported Products)</strong> - Replaced MEIS in January 2021 (WTO-compliant) - Refunds embedded taxes not otherwise refunded: SGST, mandi tax, electricity duty, stamp duty - Agri rates: <strong>0.5% to 4.3% of FOB value</strong> - Issued as transferable scrips on ICEGATE</p>
+<p><strong>2. Advance Authorisation (AA)</strong> - Duty-free import of inputs used in export production - Standard Input Output Norms (SION) define input ratios - Example: basmati rice exporter imports paddy from Nepal duty-free under AA</p>
+<p><strong>3. EPCG (Export Promotion Capital Goods)</strong> - Import capital goods (cold storage, processing equipment) at <strong>0–3% duty</strong> - In return, commit to export 6× the duty saved over 6 years</p>
+</div><div class="column" style="width:50%;">
+<p><strong>4. Transport and Marketing Assistance (TMA)</strong> - Freight subsidy for agri exports to notified markets (Africa, EU, USA) - Cover: 50% of sea freight for small exporters; 25% for large - Products: fresh fruits/vegetables, processed food, organic, floriculture</p>
+<p><strong>5. MAI Scheme (Market Access Initiative)</strong> - APEDA funds participation in international trade fairs (Gulfood Dubai, SIAL Paris, Annapoorna Mumbai) - Buyer-seller meets, market studies, reverse buyer visits - Budget: ₹250 crore/year for all export promotion councils</p>
+<div class="keybox">
+<p><strong>WTO compliance note:</strong> RoDTEP is WTO-consistent (remission of domestic taxes, not export subsidy). AA and EPCG are permissible under WTO SCM Agreement as tax exemptions on inputs. TMA freight subsidy is under scrutiny — USA has raised concerns at WTO DSB.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="fssai-and-food-safety-compliance-for-exports" class="level2">
+<h2 class="anchored" data-anchor-id="fssai-and-food-safety-compliance-for-exports">FSSAI and Food Safety Compliance for Exports</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>FSSAI (Food Safety and Standards Authority of India)</strong></p>
+<ul>
+<li>Central licensing authority for all food businesses including exporters</li>
+<li>An <strong>FSSAI Central Licence</strong> is mandatory for manufacturers/processors exporting food products</li>
+<li>Annual turnover &gt; ₹20 crore or multi-state operation → Central Licence</li>
+</ul>
+<p><strong>FSSAI’s role in exports:</strong></p>
+<ol type="1">
+<li><strong>Standards alignment:</strong> FSSAI standards increasingly aligned with Codex Alimentarius (facilitates market access)</li>
+<li><strong>Organic certification:</strong> FSSAI-accredited certification bodies issue Indian Organic Certificate (recognises NPOP)</li>
+<li><strong>Bilateral equivalence:</strong> FSSAI has equivalence arrangements with USDA NOP (organic) — US organic certifiers can certify Indian organic products</li>
+</ol>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>EIC accreditation for key markets:</strong></p>
+<p>The <strong>Export Inspection Council (EIC)</strong> issues health certificates that importing countries accept:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Market</th>
+<th>Certificate</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>European Union</td>
+<td>EIC Health Cert.</td>
+<td>Meat, fish, dairy</td>
+</tr>
+<tr class="even">
+<td>USA (FDA)</td>
+<td>EIC + prior notice</td>
+<td>Marine, processed</td>
+</tr>
+<tr class="odd">
+<td>Japan</td>
+<td>EIC + residue test</td>
+<td>Marine, processed</td>
+</tr>
+<tr class="even">
+<td>Middle East</td>
+<td>Halal + EIC</td>
+<td>Meat, poultry</td>
+</tr>
+</tbody>
+</table>
+<p>EIC operates 5 regional offices (Mumbai, Chennai, Kochi, Kolkata, Delhi) and 40 sub-offices. In FY2024, EIC certified <strong>₹1.1 lakh crore</strong> worth of exports.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="case-study" class="level1 section">
+<h1 class="section">Case Study</h1>
+<div style="text-align:center; margin-top:1em;">
+<p><strong>Exporting Basmati Rice from Punjab to Saudi Arabia</strong></p>
+<p><em>Tracing every document, agency, and payment from paddy field to Riyadh shelf</em></p>
+</div>
+<hr>
+<section id="case-study-punjab-basmati-to-saudi-arabia-part-i" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-punjab-basmati-to-saudi-arabia-part-i">Case Study: Punjab Basmati to Saudi Arabia — Part I</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>The exporter:</strong> Amritsar-based rice miller; 10,000 tonne annual capacity. Target: 500 MT to Saudi retail chain.</p>
+<p><strong>Step 1 — Registrations:</strong> - IEC from DGFT portal (already held) - APEDA RCMC (renewed annually; fee ₹7,500) - FSSAI Central Licence - AD Bank: State Bank of India, Amritsar branch</p>
+<p><strong>Step 2 — Contract:</strong> - Incoterm: <strong>CIF Jeddah</strong> - Price: $1,100/MT; Total: $550,000 - Payment: <strong>Sight LC</strong> from Riyad Bank (Saudi), advised through SBI</p>
+<p><strong>Step 3 — Procurement:</strong> - Procures paddy from Amritsar mandi at MSP + premium - Milling, grading, drying; APEDA quality check (aroma, grain length)</p>
+</div><div class="column" style="width:45%;">
+<p><strong>Step 4 — Documents prepared:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Document</th>
+<th>Issuing Agency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Commercial Invoice</td>
+<td>Exporter</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Packing List</td>
+<td>Exporter</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Certificate of Origin</td>
+<td>FIEO/Chamber</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Phytosanitary Certificate</td>
+<td>PPQS Punjab</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Fumigation Certificate</td>
+<td>Licensed fumigator</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Quality/Weight Certificate</td>
+<td>EIC / SGS</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>APEDA Certificate</td>
+<td>APEDA</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>B/L</td>
+<td>Shipping line (NSICT)</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>EDPMS export declaration</td>
+<td>RBI system (auto)</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Shipping Bill</td>
+<td>ICEGATE (Customs)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+</section>
+<section id="case-study-punjab-basmati-to-saudi-arabia-part-ii" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-punjab-basmati-to-saudi-arabia-part-ii">Case Study: Punjab Basmati to Saudi Arabia — Part II</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Step 5 — Customs clearance (JNPT, Mumbai):</strong> - Exporter files Shipping Bill on ICEGATE: <strong>Drawback type</strong> (to claim duty drawback on GST paid on packaging) - RMS assigns <strong>Green Channel</strong> — LEO granted within 3 hours - Container loaded; B/L issued by Maersk</p>
+<p><strong>Step 6 — Banking:</strong> - Exporter presents all 10 documents to SBI within <strong>21 days of B/L date</strong> (LC requirement) - SBI verifies documents against LC terms: ✓ - SBI claims payment from Riyad Bank - <strong>Sight LC:</strong> SBI receives USD 550,000 within 5 working days - SBI converts USD to INR; credits exporter account</p>
+<p><strong>Step 7 — Post-shipment:</strong> - RBI’s EDPMS marks export as “realised” - Exporter files <strong>e-BRC</strong> (electronic Bank Realisation Certificate) on DGFT portal - RoDTEP scrip of ~₹11 lakh (2% of FOB) issued</p>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>Saudi Arabia end:</strong></p>
+<ul>
+<li>Saudi SFDA (food authority) inspects on arrival</li>
+<li>Certificate of Origin checked against GCC preferential tariff rules</li>
+<li>Phytosanitary certificate accepted by Saudi Plant Protection</li>
+<li>If fumigation certificate absent → shipment quarantined</li>
+</ul>
+<p><strong>Typical timeline (farm to Riyadh shelf):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Days</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Procurement + milling</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>Documentation</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Port + customs</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Sea transit (JNPT–Jeddah)</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>Saudi customs clearance</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Distribution to shelf</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>~43 days</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="import-procedures-the-mirror-image" class="level2">
+<h2 class="anchored" data-anchor-id="import-procedures-the-mirror-image">Import Procedures: The Mirror Image</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Import procedures mirror export procedures on the buyer side.</p>
+<p><strong>Key documents for agricultural imports to India:</strong></p>
+<ol type="1">
+<li><strong>Bill of Entry</strong> — filed on ICEGATE by importer (equivalent of Shipping Bill)</li>
+<li><strong>Commercial Invoice and Packing List</strong></li>
+<li><strong>Bill of Lading / Airway Bill</strong></li>
+<li><strong>Certificate of Origin</strong> — for FTA preferential duty</li>
+<li><strong>SPS/Phytosanitary Certificate</strong> — from exporting country’s authority</li>
+</ol>
+<p><strong>Customs assessment:</strong> - RMS assigns risk category - Basic Customs Duty + IGST (at GST rate) assessed - IGST paid by importer; can claim ITC if registered</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>SPS inspection for agricultural imports:</strong></p>
+<p>Under the <strong>Plant Quarantine Order 2003</strong> and <strong>Meat Food Products Order</strong>, all agri imports are subject to:</p>
+<ul>
+<li>Document verification (phytosanitary cert)</li>
+<li>Physical sampling and lab testing</li>
+<li>For pests: fumigation before release</li>
+</ul>
+<p><strong>Restricted/Prohibited imports:</strong></p>
+<ul>
+<li><strong>STE channel:</strong> wheat, rice, sugar, fertilisers — importable only through state trading enterprises (FCI, NAFED, MMTC) under quantitative restrictions</li>
+<li><strong>License required:</strong> some oilseeds, livestock products</li>
+<li><strong>Prohibited:</strong> live pigs (several ports), certain livestock breeds without quarantine</li>
+</ul>
+<p><strong>Bill of Entry types:</strong> Home Consumption (B/E), Warehousing (W/E), Ex-Bond (E/B).</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="logistics-and-infrastructure-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="logistics-and-infrastructure-challenges">Logistics and Infrastructure Challenges</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>India’s <strong>Logistics Performance Index (LPI)</strong> rank: <strong>38 out of 139</strong> (World Bank, 2023) — up from rank 44 in 2018.</p>
+<p><strong>Key bottlenecks for agricultural exports:</strong></p>
+<p><strong>1. Port congestion:</strong> - JNPT handles 55% of India’s container traffic; average dwell time: <strong>3.2 days</strong> (global best: 1.5 days) - Mundra, Chennai, Kochi also congested during harvest seasons</p>
+<p><strong>2. Cold chain deficit:</strong> - India’s cold storage capacity: <strong>~35 million MT</strong> (FY2024) - Requirement for horticulture + marine: <strong>~90 million MT</strong> - Gap = 55 million MT → 25–40% post-harvest losses in fruits and vegetables</p>
+<p><strong>3. Last-mile connectivity:</strong> - Farm-to-port road quality: NH coverage improving, but mandi-to-cold store roads often unpaved in Karnataka/Maharashtra</p>
+</div><div class="column" style="width:45%;">
+<div class="highlightbox">
+<p><strong>Cost of logistics as % of GDP:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Logistics Cost / GDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Germany</td>
+<td>8%</td>
+</tr>
+<tr class="even">
+<td>USA</td>
+<td>8%</td>
+</tr>
+<tr class="odd">
+<td>China</td>
+<td>14%</td>
+</tr>
+<tr class="even">
+<td><strong>India</strong></td>
+<td><strong>~14%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>High logistics costs reduce India’s price competitiveness despite low labour costs.</p>
+<p><strong>PM GatiShakti:</strong> National Master Plan integrating roads, railways, ports, warehouses. Target: reduce logistics cost to <strong>8% of GDP by 2030</strong>.</p>
+<p><strong>Dedicated Freight Corridors (DFC):</strong> Eastern (Ludhiana–Kolkata) and Western (JNPT–Dadri) operational 2024 — will cut rail freight time by 40% for Punjab basmati, Maharashtra grapes.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="digital-initiatives-in-export-trade" class="level2">
+<h2 class="anchored" data-anchor-id="digital-initiatives-in-export-trade">Digital Initiatives in Export Trade</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>DGFT Digital Modernisation (2021–ongoing):</strong></p>
+<ul>
+<li>Fully online IEC issuance: <strong>24 hours</strong> (was 3 weeks paper-based)</li>
+<li>Online RCMC by APEDA: auto-linked to IEC</li>
+<li>e-BRC (electronic Bank Realisation Certificate): exporter’s bank submits directly to DGFT portal; no paper filing</li>
+<li><strong>DARPAN platform:</strong> dashboard for tracking all incentive scheme status in real time</li>
+</ul>
+<p><strong>SWIFT (Single Window Interface for Facilitating Trade):</strong> - One portal for customs, FSSAI, PPQS, Drug Controller, textile ministry clearances - Launched 2016; covers 26 regulatory agencies - 2024 expansion: includes MPEDA, APEDA certificates integrated</p>
+</div><div class="column" style="width:45%;">
+<div class="methodbox">
+<p><strong>ICEGATE 2.0 (launched 2023):</strong></p>
+<ul>
+<li>AI-based risk management system → 70% of shipments now on Green Channel (was 55%)</li>
+<li>e-Sanchit: paperless document upload — all 10 export documents can be uploaded digitally; customs officer reviews on-screen</li>
+<li>Integration with GSTN: automatic input tax credit verification for RoDTEP computation</li>
+</ul>
+<p><strong>APEDA-DGFT integration:</strong></p>
+<p>APEDA’s NHB system auto-generates RCMC data to DGFT; exporters need not re-enter. Certificate of Origin auto-populated from ICEGATE data for FTA claims.</p>
+<div class="keybox">
+<p>India’s trade facilitation score (WTO TFA): <strong>90.59%</strong> (2023) — above developing-country average of 74%.</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="summary-the-export-ecosystem" class="level2">
+<h2 class="anchored" data-anchor-id="summary-the-export-ecosystem">Summary: The Export Ecosystem</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>The full export chain for Indian agri:</strong></p>
+<pre><code>Farmer/Processor
+      ↓ FPO aggregation / merchant exporter
+IEC + RCMC + FSSAI + AD Bank
+      ↓ pre-shipment
+Export Contract (Incoterm negotiated)
+      ↓ finance
+Letter of Credit (bank guarantee)
+      ↓ documentation
+10 documents (Invoice, B/L, CoO, Phyto, EIC...)
+      ↓ customs
+ICEGATE Shipping Bill → LEO
+      ↓ logistics
+Port → Ship → Destination customs
+      ↓ payment
+Bank realises forex → e-BRC filed
+      ↓ incentives
+RoDTEP scrip + drawback + TMA</code></pre>
+</div><div class="column" style="width:45%;">
+<div class="keybox">
+<p><strong>Key Takeaways:</strong></p>
+<ol type="1">
+<li><strong>IEC is the master key</strong> — no export without it</li>
+<li><strong>The Shipping Bill + LEO</strong> is the customs clearance milestone — nothing loads without it</li>
+<li><strong>The Bill of Lading</strong> is the only negotiable title document — it unlocks payment under LC</li>
+<li><strong>RoDTEP</strong> has replaced MEIS as the primary export incentive — WTO-compliant, duty refund basis</li>
+<li><strong>Cold chain and logistics</strong> remain India’s primary structural bottleneck — world-class documentation systems exist, but physical infrastructure lags</li>
+<li><strong>Digital India</strong> is working: ICEGATE, SWIFT, e-BRC have dramatically reduced transaction costs</li>
+</ol>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="next-lecture" class="level2">
+<h2 class="anchored" data-anchor-id="next-lecture">Next Lecture</h2>
+<div class="methodbox">
+<p><strong>Lecture 17 — Agricultural Export Promotion Organizations</strong><br>
+<em>August 15, 2026</em></p>
+<ul>
+<li>APEDA: mandate, functions, financial assistance, market access achievements</li>
+<li>MPEDA and India’s $7.6 billion seafood export ecosystem</li>
+<li>The five Commodity Boards: Tea, Coffee, Rubber, Spices, Tobacco</li>
+<li>Export Inspection Council and quality certification</li>
+<li>NAFED: buffer stocks, MSP procurement, export implications</li>
+<li>Farmer Producer Organizations as export units</li>
+<li>India’s 2030 export target: $60 billion in agri and food products</li>
+</ul>
+</div>
+<div class="highlightbox">
+<p><strong>Preparation:</strong> Review APEDA Annual Report 2023–24 (available at apeda.gov.in). Note the top 10 products by export value and the top 5 destination countries.</p>
+</div>
+</section>
+</section>
+<section id="appendix" class="level1" data-background-color="#1a3a5c">
+<h1 data-background-color="#1a3a5c">Appendix</h1>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section id="additional-resources" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Additional Resources</h2><div class="quarto-appendix-contents">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Further Reading</strong></p>
+<ul>
+<li>Lecture notes and APEDA/WTO official documents</li>
+<li>DGFT: Foreign Trade Policy 2023-28</li>
+<li>RBI/DGCI&amp;S/APEDA databases for latest data</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Key Data Sources</strong></p>
+<ul>
+<li>DGCI&amp;S: India’s merchandise trade</li>
+<li>RBI: Balance of payments data<br>
+</li>
+<li>APEDA: Agricultural export statistics</li>
+<li>WTO: Tariff and trade databases</li>
+</ul>
+</div>
+</div>
+
+
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Department of Development Economics · ECO 2203</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Nithin M · 2026</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
