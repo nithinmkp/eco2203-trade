@@ -3,17 +3,17 @@ project:
   output-dir: ../docs
 
 website:
-  title: "ECO 2203"
+  title: "Econ 2203"
   favicon: ""
   navbar:
     background: "#012169"
     foreground: "white"
-    title: "ECO 2203 — International Trade & Policy in Agriculture"
+    title: "Econ 2203 — International Trade & Policy in Agriculture"
     left:
       - href: index.qmd
         text: "Home"
   page-footer:
-    left: "Department of Development Economics · ECO 2203"
+    left: "Department of Development Economics · Econ 2203"
     right: "Nithin M · 2026"
     background: "#f8f9fa"
     border: true

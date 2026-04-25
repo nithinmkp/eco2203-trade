@@ -47,6 +47,7 @@
 \fi
 \usepackage{lmodern}
 
+\usetheme[]{metropolis}
 \ifPDFTeX\else
   % xetex/luatex font selection
 \fi
@@ -106,7 +107,7 @@
 
 
 % ============================================================
-%  ECO 2203 — Beamer Metropolis Theme Preamble
+%  Econ 2203 — Beamer Metropolis Theme Preamble
 %  Course: International Trade and Policy in Agriculture
 %  Instructor: Nithin M, Department of Development Economics
 % ============================================================
@@ -181,7 +182,7 @@
   \begin{beamercolorbox}[wd=\paperwidth,ht=2.0ex,dp=1ex]{footline}%
     \hspace{0.8em}%
     {\footnotesize\color{brandblue!60}%
-      ECO 2203 \textbar{} International Trade and Policy in Agriculture
+      Econ 2203 \textbar{} International Trade and Policy in Agriculture
       \hfill Nithin M \hfill
       \insertframenumber{}/\inserttotalframenumber\hspace{0.8em}}%
   \end{beamercolorbox}%
@@ -276,7 +277,7 @@
 
 
 \title{Theories of Trade II: Comparative Advantage}
-\subtitle{ECO 2203 \textbar{} International Trade and Policy in
+\subtitle{Econ 2203 \textbar{} International Trade and Policy in
 Agriculture}
 \author{Nithin M}
 \date{2026-05-16}
@@ -294,8 +295,6 @@ Advantage}\label{part-i-the-problem-with-absolute-advantage}
 \textbf{Last lecture:} Adam Smith argued that countries should export
 goods they produce \emph{absolutely} more efficiently.
 
-\begin{columns}[T]
-\begin{column}{0.6\linewidth}
 \textbf{But this raises an obvious question:}
 
 \begin{quote}
@@ -313,25 +312,15 @@ What if one country is \emph{better at producing everything}?
 \end{itemize}
 
 Smith's absolute advantage gives \textbf{no answer}.
-\end{column}
 
-\begin{column}{0.4\linewidth}
-\textbf{Stylised fact:}
-
-The United States is more productive than Bangladesh in \emph{both}
-textiles \emph{and} aircraft.
-
-Yet the US imports textiles from Bangladesh.
-
-\textbf{Why?} → Enter David Ricardo (1817).
-\end{column}
-\end{columns}
+\textbf{Stylised fact:} The United States is more productive than
+Bangladesh in \emph{both} textiles \emph{and} aircraft. Yet the US
+imports textiles from Bangladesh. \textbf{Why?} → Enter David Ricardo
+(1817).
 \end{frame}
 
 \begin{frame}{Ricardo's Insight: What Matters is \emph{Relative} Cost}
 \phantomsection\label{ricardos-insight-what-matters-is-relative-cost}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
 Ricardo's key insight was deceptively simple:
 
 \begin{quote}
@@ -345,18 +334,10 @@ unit of a good.
 Even a country that is absolutely less efficient in \emph{everything}
 can still gain from trade by exporting the good in which it is
 \textbf{relatively} less inefficient.
-\end{column}
 
-\begin{column}{0.45\linewidth}
-\textbf{Analogy:}
-
-A lawyer who types faster than her secretary still benefits from hiring
-the secretary --- because the lawyer's time is more valuably spent on
-legal work.
-
-The same logic applies to nations.
-\end{column}
-\end{columns}
+\textbf{Analogy:} A lawyer who types faster than her secretary still
+benefits from hiring the secretary --- because the lawyer's time is more
+valuably spent on legal work. The same logic applies to nations.
 \end{frame}
 
 \section{Part II: The Ricardian Model --- Formal
@@ -396,11 +377,8 @@ Rice in India}.
 
 \begin{frame}{Numerical Example}
 \phantomsection\label{numerical-example}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\textbf{Assume:} each country has \(L = 100\) workers.
-
-One worker per day produces:
+\textbf{Assume:} each country has \(L = 100\) workers. One worker per
+day produces:
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
@@ -412,31 +390,16 @@ World & \textbf{3 units} & \textbf{3 units} \\
 \bottomrule\noalign{}
 \end{longtable}
 
-So the labour coefficients are:
+Labour coefficients: \(a_{LR}^{I} = \tfrac{1}{2}\), \(a_{LWh}^{I} = 1\);
+\(a_{LR}^{W} = \tfrac{1}{3}\), \(a_{LWh}^{W} = \tfrac{1}{3}\). The
+\textbf{World} has absolute advantage in \textbf{both} goods.
 
-\[a_{LR}^{I} = \tfrac{1}{2}, \quad a_{LWh}^{I} = 1\]
-\[a_{LR}^{W} = \tfrac{1}{3}, \quad a_{LWh}^{W} = \tfrac{1}{3}\]
-
-The \textbf{World} has absolute advantage in \textbf{both} goods (lower
-\(a\)).
-\end{column}
-
-\begin{column}{0.5\linewidth}
 \textbf{Opportunity costs:}
 
-To produce one more unit of \textbf{Rice}, India must give up:
-
-\[OC_R^{I} = \frac{a_{LR}^{I}}{a_{LWh}^{I}} = \frac{1/2}{1} = \frac{1}{2} \text{ Wheat}\]
-
-To produce one more unit of Rice, the World must give up:
-
-\[OC_R^{W} = \frac{a_{LR}^{W}}{a_{LWh}^{W}} = \frac{1/3}{1/3} = 1 \text{ Wheat}\]
+\[OC_R^{I} = \frac{a_{LR}^{I}}{a_{LWh}^{I}} = \frac{1/2}{1} = \frac{1}{2} \text{ Wheat} \qquad OC_R^{W} = \frac{a_{LR}^{W}}{a_{LWh}^{W}} = \frac{1/3}{1/3} = 1 \text{ Wheat}\]
 
 \textbf{Comparison:} \(OC_R^{I} = \tfrac{1}{2} < OC_R^{W} = 1\)
-
 \(\Rightarrow\) \textbf{India has comparative advantage in Rice.}
-\end{column}
-\end{columns}
 \end{frame}
 
 \begin{frame}{The Comparative Advantage Condition}
@@ -453,7 +416,7 @@ Equivalently, rearranging:
 
 India is \emph{relatively} more efficient in Rice than in Wheat.
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm, breakable, opacitybacktitle=0.6, left=2mm, opacityback=0, colframe=quarto-callout-note-color-frame, coltitle=black, rightrule=.15mm, colback=white, bottomrule=.15mm, toptitle=1mm, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Key takeaway}, leftrule=.75mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacityback=0, bottomtitle=1mm, breakable, rightrule=.15mm, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, left=2mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Key takeaway}, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, arc=.35mm, leftrule=.75mm, colback=white, opacitybacktitle=0.6]
 
 Absolute productivity levels (\(a_{LR}^{I}\) vs \(a_{LR}^{W}\)) do
 \textbf{not} determine trade patterns. \textbf{Relative} productivity
@@ -570,45 +533,27 @@ the PPF Source: Author's illustration.}
 
 \begin{frame}{Quantifying the Gains}
 \phantomsection\label{quantifying-the-gains}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{Before trade} (autarky):
+\textbf{Before trade} (autarky): India produces and consumes on the PPF
+at \((Wh, R) = (50, 100)\)
 
-India produces and consumes on the PPF, say at: \[(Wh, R) = (50, 100)\]
-
-\textbf{After trade} (at \(P_{Wh}/P_R = 1.5\)):
-
-India fully specialises → 200 Rice, trades \(107\) Rice for
-\(\approx 80\) Wheat:
-
+\textbf{After trade} (at \(P_{Wh}/P_R = 1.5\)): India fully specialises
+→ 200 Rice, trades \(107\) Rice for \(\approx 80\) Wheat:
 \[(Wh, R) = (80, 93)\]
 
 \textbf{Welfare gain:} more Wheat \emph{and} a larger combined bundle.
+The \textbf{real wage} of Indian workers rises.
 
-The \textbf{real wage} of Indian workers rises: each hour of labour now
-commands more consumption goods.
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{The algebra:}
-
-India's income at world prices (fully specialised):
+\textbf{The algebra:} India's income at world prices (fully
+specialised):
 
 \[Y^I = P_R \times 200\]
 
-Budget constraint under trade:
+Budget constraint under trade: \(R + 1.5 \cdot Wh = 200\)
 
-\[P_R \cdot R + P_{Wh} \cdot Wh = P_R \times 200\]
+Compare with autarky constraint: \(R + 2 \cdot Wh = 200\)
 
-\[R + 1.5 \cdot Wh = 200\]
-
-Compare with autarky constraint:
-
-\[R + 2 \cdot Wh = 200\]
-
-The trade budget line is \textbf{flatter} → larger feasible set.
-\end{column}
-\end{columns}
+The trade budget line is \textbf{flatter} → larger feasible consumption
+set.
 \end{frame}
 
 \section{Part IV: Indifference Curves and
@@ -729,8 +674,6 @@ Perfect competition & No strategic behaviour \\
 
 \begin{frame}{The Ricardian Model: What It Gets Right}
 \phantomsection\label{the-ricardian-model-what-it-gets-right}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
 \textbf{Remarkably robust predictions:}
 
 \begin{itemize}
@@ -743,41 +686,23 @@ Perfect competition & No strategic behaviour \\
   Even the ``least competitive'' country has something to export
 \end{itemize}
 
-\textbf{Empirical support:}
+\textbf{Empirical support:} Golub \& Hsieh (2000) and Costinot et
+al.~(2012) find strong evidence that labour productivity differences
+predict export patterns across countries.
 
-Golub \& Hsieh (2000) and Costinot et al.~(2012) find strong evidence
-that labour productivity differences predict export patterns across
-countries.
-
-\textbf{Limitations:}
+\textbf{Limitations and Extensions:}
 
 \begin{itemize}
 \tightlist
 \item
-  Predicts complete specialisation (rarely observed)
+  Predicts complete specialisation (rarely observed); says nothing about
+  \emph{who} within a country gains or loses
 \item
-  Says nothing about \emph{who within a country} gains or loses
+  Cannot explain intra-industry trade (→ new trade theory, Lecture 6)
 \item
-  Cannot explain intra-industry trade
+  \textbf{Extensions:} Many goods (Dornbusch-Fischer-Samuelson chain);
+  technology changes shift comparative advantage over time
 \end{itemize}
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{Extensions:}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Many goods:} a continuum of goods ranked by comparative
-  advantage --- a ``Dornbusch-Fischer-Samuelson'' chain
-\item
-  \textbf{Many countries:} bilateral comparisons still apply
-\item
-  \textbf{Technology changes:} productivity growth shifts the chain,
-  altering trade patterns over time
-\end{itemize}
-\end{column}
-\end{columns}
 \end{frame}
 
 \section{Part VI: India --- Revealed Comparative
@@ -835,8 +760,6 @@ DGCI\&S / UN Comtrade data.}
 
 \begin{frame}{India: Rice as the Flagship Export}
 \phantomsection\label{india-rice-as-the-flagship-export}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
 \textbf{India's Rice sector --- Ricardo in practice:}
 
 \begin{itemize}
@@ -845,82 +768,45 @@ DGCI\&S / UN Comtrade data.}
   India is the \textbf{world's largest rice exporter} (\textgreater22\%
   of global exports, FY2024)
 \item
-  Export value: ₹60,000+ crore in FY2023
-\item
-  Destinations: Bangladesh, Indonesia, Benin, Senegal, UAE
-\end{itemize}
-
-\textbf{Why does Ricardo's model fit?}
-
-\begin{itemize}
-\tightlist
-\item
   Rice cultivation is labour-intensive --- India's abundant factor
-\item
-  Labour productivity in Indian rice farming (output per worker) is
-  competitive even though absolute productivity lags behind
-  Vietnam/Thailand
 \item
   \textbf{Relative} labour productivity in rice \textgreater{} relative
   labour productivity in capital-intensive goods
 \end{itemize}
 
-\textbf{Policy tension:}
-
-September 2023: India imposed a \textbf{25\% export duty} on non-Basmati
-white rice to contain domestic inflation → global rice prices spiked
-15\%.
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{Ricardian lens on the export ban:}
-
-When India restricted rice exports:
+\textbf{Policy tension:} September 2023: India imposed a \textbf{25\%
+export duty} on non-Basmati white rice → global rice prices spiked 15\%.
 
 \[P_R^{\text{world}} \uparrow \Rightarrow \text{India's ToT deteriorate for future exporters}\]
 
 The ban is welfare-reducing under comparative advantage theory: India
 surrenders gains from trade to achieve food security goals.
-
-\textbf{This is the central policy tension in agricultural trade:}
-
-\begin{itemize}
-\tightlist
-\item
-  Static efficiency ↔ food security
-\item
-  Comparative advantage ↔ strategic reserves
-\item
-  Export competitiveness ↔ domestic price stability
-\end{itemize}
-\end{column}
-\end{columns}
+\textbf{Central tension:} Static efficiency ↔ food security; comparative
+advantage ↔ strategic reserves; export competitiveness ↔ domestic price
+stability.
 \end{frame}
 
 \begin{frame}{Comparative Advantage: Summary}
 \phantomsection\label{comparative-advantage-summary}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
 \textbf{Core results of the Ricardian Model:}
 
 \begin{enumerate}
+\tightlist
 \item
   Trade is driven by \textbf{relative}, not absolute, productivity
   differences
 \item
   Comparative advantage condition:
-  \[\frac{a_{LR}^{I}}{a_{LWh}^{I}} < \frac{a_{LR}^{W}}{a_{LWh}^{W}}\]
+  \(\frac{a_{LR}^{I}}{a_{LWh}^{I}} < \frac{a_{LR}^{W}}{a_{LWh}^{W}}\)
 \item
   Gains from trade: consumption bundle moves \textbf{beyond the PPF}
 \item
   Terms of trade must lie between autarky opportunity costs:
-  \[OC_R^W < \frac{P_R}{P_{Wh}} < OC_R^I\]
+  \(OC_R^W < \frac{P_R}{P_{Wh}} < OC_R^I\)
 \item
   Both countries gain --- even the absolutely less productive one
 \end{enumerate}
-\end{column}
 
-\begin{column}{0.5\linewidth}
 \textbf{Empirical verdict:}
 
 \begin{longtable}[]{@{}ll@{}}
@@ -935,30 +821,15 @@ India exports rice & Confirmed (RCA = 4.8) \\
 \bottomrule\noalign{}
 \end{longtable}
 
-\textbf{What Ricardo cannot explain:}
-
-\begin{itemize}
-\tightlist
-\item
-  \emph{Why} labour productivity differs (→ H-O model)
-\item
-  Income distribution effects (→ Stolper-Samuelson)
-\item
-  Intra-industry trade (→ new trade theory, Lecture 6)
-\end{itemize}
-
-\textbf{Next lecture:} Where do comparative advantages come from? Factor
-endowments and the Heckscher-Ohlin model.
-\end{column}
-\end{columns}
+\textbf{What Ricardo cannot explain:} \emph{Why} labour productivity
+differs (→ H-O model); income distribution effects (→
+Stolper-Samuelson); intra-industry trade (→ Lecture 6)
 \end{frame}
 
 \section{Appendix}\label{appendix}
 
 \begin{frame}{Additional Resources}
 \phantomsection\label{additional-resources}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
 \textbf{Further Reading}
 
 \begin{itemize}
@@ -970,9 +841,7 @@ endowments and the Heckscher-Ohlin model.
 \item
   RBI/DGCI\&S/APEDA databases for latest data
 \end{itemize}
-\end{column}
 
-\begin{column}{0.5\linewidth}
 \textbf{Key Data Sources}
 
 \begin{itemize}
@@ -986,8 +855,6 @@ endowments and the Heckscher-Ohlin model.
 \item
   WTO: Tariff and trade databases
 \end{itemize}
-\end{column}
-\end{columns}
 \end{frame}
 
 

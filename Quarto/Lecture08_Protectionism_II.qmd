@@ -1,6 +1,6 @@
 ---
 title: "Protectionism II — Subsidies, Dumping & Cartels"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "June 13, 2026"
@@ -15,7 +15,7 @@ format:
     scrollable: true
     code-fold: true
     code-summary: "Show R code"
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
   beamer:
     aspectratio: 169
     theme: metropolis
@@ -53,36 +53,16 @@ Export Subsidies, Dumping & Cartels
 
 ## Recap: Tariffs and Quotas {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **Last lecture (L7):** border instruments that restrict imports
 
 - **Tariffs** → raise domestic price $P_d = P_w(1+t)$, generate revenue $t \cdot M$, DWL $= b + d$
 - **Quotas** → fix import volume $\bar{M}$; quota rents go to licence holders
 - India: high bound tariffs, TRQs, tariff "water" provides policy flexibility
 
-**Today:** instruments that *push* exports or distort domestic production
+**Today:** instruments that *push* exports or distort domestic production: export subsidies, dumping, VERs, and cartels.
 
-- **Export subsidies** — domestic price rises above world price, consumers harmed
-- **Dumping** — predatory/discriminatory pricing by exporters
-- **VERs** — voluntary export restraints (quotas with rent transferred abroad)
-- **Cartels / ICAs** — collusion among exporters; India's market power in rice
-:::
-::: {.column width="45%"}
 ::: {.highlightbox}
-**Political economy insight:**
-
-Tariffs/quotas protect import-competing producers.
-
-Export subsidies protect exporting producers.
-
-Both are driven by producer lobbying — even though consumers and taxpayers bear the cost.
-
-$$\text{Producer surplus gain} > \text{Consumer + taxpayer loss?}$$
-
-Usually **no** in aggregate — but politically organised producers win.
-:::
-:::
+**Political economy insight:** Tariffs/quotas protect import-competing producers. Export subsidies protect exporting producers. Both are driven by producer lobbying — even though consumers and taxpayers bear the cost: $\text{Producer surplus gain} > \text{Consumer + taxpayer loss?}$ — usually **no** in aggregate, but politically organised producers win.
 :::
 
 ---
@@ -91,19 +71,11 @@ Usually **no** in aggregate — but politically organised producers win.
 
 ---
 
-## What Is an Export Subsidy?
+## What Is an Export Subsidy? {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 An **export subsidy** is a direct government payment $s$ per unit exported.
 
-**Mechanism in an exporting country:**
-
-- Domestic producers can sell abroad at $P_w$ and receive subsidy $s$, so net return = $P_w + s$
-- They will only sell domestically if they get the same net return
-- $\Rightarrow$ **domestic price rises to** $P_d = P_w + s$
-
-**Effects:**
+**Mechanism:** Domestic producers can sell abroad at $P_w$ and receive subsidy $s$, so net return = $P_w + s$ → **domestic price rises to** $P_d = P_w + s$.
 
 | Group | Direction | Why |
 |---|---|---|
@@ -111,25 +83,10 @@ An **export subsidy** is a direct government payment $s$ per unit exported.
 | Consumers | **Lose** | Pay $P_d > P_w$ |
 | Government | **Pays** | $s \times \text{export volume}$ |
 
-:::
-::: {.column width="45%"}
 ::: {.methodbox}
-**Price wedge identity:**
+**Price wedge identity:** $\boxed{P_d = P_w + s}$; $Q_s \uparrow$, $Q_d \downarrow$, Exports $= Q_s - Q_d \uparrow$
 
-$$\boxed{P_d = P_w + s}$$
-
-**Export supply response:**
-
-$$Q_s \uparrow \text{ (incentivised by higher price)}$$
-$$Q_d \downarrow \text{ (consumers face higher price)}$$
-$$\text{Exports} = Q_s - Q_d \uparrow$$
-
-**Large-country effect:**
-World price $P_w$ falls as export supply increases → terms of trade deteriorate → exporter loses even more.
-
-$$\Delta W_{\text{large country}} < \Delta W_{\text{small country}} < 0$$
-:::
-:::
+**Large-country effect:** World price $P_w$ falls as export supply increases → terms of trade deteriorate → exporter loses even more: $\Delta W_{\text{large country}} < \Delta W_{\text{small country}} < 0$
 :::
 
 ---
@@ -235,32 +192,20 @@ ggplot() +
 
 ---
 
-## Welfare Accounting: Export Subsidy
+## Welfare Accounting: Export Subsidy {.smaller}
 
-::: {.columns}
-::: {.column width="58%"}
 **Full decomposition (exporting country, small-country case):**
 
-$$\Delta CS = -a$$
-
-$$\Delta PS = +(a + b + c)$$
-
-$$\text{Government cost} = -(b + c + d)$$
+$$\Delta CS = -a \qquad \Delta PS = +(a + b + c) \qquad \text{Government cost} = -(b + c + d)$$
 
 $$\boxed{\Delta W = -(b + d) < 0}$$
 
-- $b$ = **consumption distortion triangle** (consumers priced out)
-- $d$ = **production distortion triangle** (too many resources in this sector)
+- $b$ = **consumption distortion triangle**; $d$ = **production distortion triangle**
 
 **Govt cost** = $s \times (Q_{s1} - Q_{d1})$ = $5 \times 50 = 250$ units
 
-$\Delta PS - \text{Govt cost} = (a+b+c) - (b+c+d) = a - d$
-
-Net = $a - d - a = -d$, and CS loss adds $-b$ → total $= -(b+d)$.
-:::
-::: {.column width="42%"}
 ::: {.methodbox}
-**Numerical check** (our example):
+**Numerical check:**
 
 | Area | Formula | Value |
 |---|---|---|
@@ -269,106 +214,43 @@ Net = $a - d - a = -d$, and CS loss adds $-b$ → total $= -(b+d)$.
 | $c$ | $5 \times (60-30)$ | 150 |
 | $d$ | $\frac{1}{2} \times 5 \times 10$ | 25 |
 
-$\Delta W = -(b+d) = -(25+25) = -50$
-
-Govt pays: $(b+c+d) = 25+150+25 = 200$
-
-PS gains: $(a+b+c) = 50+25+150 = 225$
-
-CS loses: $a = 50$
-
-Net: $225 - 50 - 200 = -25$... adjusted for exact areas.
-:::
-:::
+$\Delta W = -(b+d) = -(25+25) = -50$; Govt pays: $(b+c+d) = 200$; PS gains: $(a+b+c) = 225$; CS loses: $a = 50$
 :::
 
 ---
 
 ## India's Export Subsidies: Sugar Case (WTO DS579)
 
-::: {.columns}
-::: {.column width="55%"}
-**Background:**
+**Background:** India's sugar support involves: SMP (Statutory Minimum Price); FRP (Fair and Remunerative Price); production assistance subsidy (₹13.88/quintal); MIEQ (mandated minimum export quota); transport subsidy (₹1,000/tonne).
 
-India's sugar sector involves:
+**WTO DS579 (2019):** Brazil, Australia, Guatemala challenged India. **2021 Panel ruling:** India's domestic support and export subsidies exceeded WTO AoA commitments. India appealed → pending (Appellate Body non-functional since 2019).
 
-1. **Statutory Minimum Price (SMP):** govt-mandated minimum price mills must pay farmers
-2. **Fair and Remunerative Price (FRP):** national floor price
-3. **Production assistance subsidy:** ₹13.88/quintal (FY2019-20)
-4. **MIEQ** (Minimum Indicative Export Quota): mills mandated to export a minimum quantity
-5. **Transport subsidy:** ₹1,000/tonne for international market development
-
-**WTO DS579 (2019):** Brazil, Australia, Guatemala challenged India
-
-**2021 Panel ruling:** India's domestic support and export subsidies exceeded WTO AoA commitments
-
-India appealed → pending (Appellate Body non-functional since 2019)
-:::
-::: {.column width="45%"}
 ::: {.highlightbox}
-**India's defence:**
+**India's defence:** "Developing countries have the right to support food security and rural livelihoods."
 
-"Developing countries have the right to support food security and rural livelihoods."
+- AoA **de minimis** provision: Amber Box support ≤ 10% of production value
+- Peace Clause for public stockholding; Special and Differential Treatment (SDT)
 
-**AoA structure India invokes:**
-
-- **de minimis** provision: Amber Box support ≤ 10% of production value
-- Peace Clause for public stockholding
-- Special and Differential Treatment (SDT) for developing countries
-
-**Market impact:**
-
-India's subsidised sugar exports depress world prices by an estimated 3–7% — harming Brazil, Thailand, and African sugar exporters.
-:::
-:::
+**Market impact:** India's subsidised sugar exports depress world prices by an estimated 3–7% — harming Brazil, Thailand, and African sugar exporters.
 :::
 
 ---
 
-## MSP, FCI, and the Peace Clause
+## MSP, FCI, and the Peace Clause {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
-**MSP mechanism (price floor + procurement):**
+**MSP mechanism:** CACP recommends MSP for 23 crops pre-season; FCI/NAFED/CCI procure at MSP when market falls below; surplus procured stock → sometimes exported.
 
-1. CACP recommends MSP for 23 crops pre-season
-2. FCI/NAFED/CCI procure at MSP when market falls below
-3. Surplus procured stock → sometimes exported
-
-**WTO problem:**
-
-If $\text{MSP} > P_w$ and surplus exported at $P_w$, the difference = *implicit export subsidy*
-
-$$\text{Implicit subsidy} = (\text{MSP} - P_w) \times Q_{\text{exported}}$$
-
-**Rice MSP vs world price ($/tonne, FY2023):**
+**WTO problem:** If $\text{MSP} > P_w$ and surplus exported at $P_w$: $\text{Implicit subsidy} = (\text{MSP} - P_w) \times Q_{\text{exported}}$
 
 | | MSP | World price | Implicit subsidy |
 |---|---|---|---|
 | Rice | $290 | $450 | — |
 | Wheat | $245 | $260 | ~$15/t |
 
-:::{.notes}
-*Rice world price rose sharply in 2022-23 — India had export advantage at those prices.
-:::
-:::
-::: {.column width="45%"}
 ::: {.methodbox}
-**Bali Peace Clause (2013):**
+**Bali Peace Clause (2013):** WTO members agreed not to legally challenge food security stockholding programmes of developing countries — even if support exceeds 10% AMS limit. Condition: transparency + no trade distortion.
 
-WTO members agreed not to legally challenge food security stockholding programmes of developing countries — even if support exceeds 10% AMS limit.
-
-Condition: transparency + no trade distortion.
-
-**Nairobi (2015) → MC13 Abu Dhabi (2024):**
-
-Permanent solution still pending. India insists on a permanent peace clause without the non-distortion condition.
-
-USA/EU resist — argue India's 800M tonne/year FCI operations are massively trade-distorting.
-
-**High-stakes stalemate.**
-:::
-:::
+**Nairobi (2015) → MC13 Abu Dhabi (2024):** Permanent solution still pending. India insists on a permanent peace clause without the non-distortion condition. USA/EU resist — argue India's 800M tonne/year FCI operations are massively trade-distorting. **High-stakes stalemate.**
 :::
 
 ---
@@ -377,79 +259,34 @@ USA/EU resist — argue India's 800M tonne/year FCI operations are massively tra
 
 ---
 
-## What Is Dumping? Formal Definition
+## What Is Dumping? Formal Definition {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
-**WTO Anti-Dumping Agreement (Article 2):**
-
-Dumping occurs when the **export price** is below **normal value**:
+**WTO Anti-Dumping Agreement (Article 2):** Dumping occurs when the **export price** is below **normal value**:
 
 $$\text{Normal value} = \begin{cases} P_d & \text{(home market price)} \\ P_{3C} & \text{(price to third country)} \\ COP + \text{profit} & \text{(constructed value)} \end{cases}$$
 
 $$\text{Margin of dumping} = \text{Normal value} - P_x > 0$$
 
-**Three conditions to impose anti-dumping duty:**
+**Three conditions to impose anti-dumping duty:** (1) Dumping margin > 0 (threshold: >2%); (2) material injury (or threat) to domestic industry; (3) causal link between dumping and injury.
 
-1. Dumping margin $> 0$ (usually threshold: $> 2\%$)
-2. **Material injury** (or threat) to domestic industry
-3. **Causal link** between dumping and injury
-:::
-::: {.column width="45%"}
 ::: {.keybox}
-**Why would a firm dump?**
+**Why would a firm dump?** Price discrimination (monopoly at home, competitive abroad); predatory intent (eliminate competition); surplus disposal; learning curve; input subsidy pass-through.
 
-- **Price discrimination:** monopoly power at home, competitive abroad
-- **Predatory intent:** eliminate foreign competition, then raise price
-- **Surplus disposal:** clear excess inventory quickly
-- **Learning curve:** price below cost to gain market share (dynamic efficiency)
-- **Input subsidy pass-through:** below-cost production enabled by domestic subsidies
-
-**Dumping ≠ comparative advantage:**
-Genuinely lower costs look like dumping when compared to high-cost domestic producers.
-:::
-:::
+**Dumping ≠ comparative advantage:** Genuinely lower costs look like dumping when compared to high-cost domestic producers.
 :::
 
 ---
 
 ## Types of Dumping
 
-::: {.columns}
-::: {.column width="50%"}
-**1. Sporadic Dumping**
+**1. Sporadic Dumping:** Occasional disposal of excess inventory at below-normal price. *India example:* Bumper harvest years → surplus wheat exported below MSP procurement price. Welfare effect on importer: Minor, temporary.
 
-Occasional disposal of excess inventory at below-normal price.
+**2. Predatory Dumping:** Strategic pricing to eliminate foreign competition, then raise prices once rivals exit. *Classic allegation:* Chinese steel exports to India (2014–16). HRC steel exported at \$350/tonne vs cost of \$450. Welfare effect: Temporary gain, long-run monopolisation.
 
-*India example:* Bumper harvest years → surplus wheat exported below MSP procurement price.
-
-*Welfare effect on importer:* Minor, temporary. Consumers gain briefly.
-
-**2. Predatory Dumping**
-
-Strategic pricing: firm prices below cost to eliminate foreign competition, then raises prices once rivals exit.
-
-*Classic allegation:* Chinese steel exports to India (2014–16). HRC steel exported at $350/tonne vs cost of $450.
-
-*Welfare effect:* Temporary gain, long-run monopolisation.
-:::
-::: {.column width="50%"}
-**3. Persistent Dumping**
-
-Chronic price discrimination: domestic market protected → monopoly pricing at home; competitive pricing abroad.
-
-$$P_d > P_x \text{ persistently}$$
-
-Enabled by: (a) import barriers protecting home market, (b) no arbitrage (buyers can't re-import).
+**3. Persistent Dumping:** Chronic price discrimination — domestic market protected → monopoly pricing at home; competitive pricing abroad: $P_d > P_x$ persistently.
 
 ::: {.highlightbox}
-**Arbitrage prevention:**
-
-For persistent dumping to work, the exporter must prevent re-importation of cheaply sold exports back into the home market.
-
-Methods: different packaging, branding, warranty restrictions, official import controls.
-:::
-:::
+**Arbitrage prevention:** For persistent dumping to work, the exporter must prevent re-importation of cheaply sold exports back into the home market. Methods: different packaging, branding, warranty restrictions, official import controls.
 :::
 
 ---
@@ -523,27 +360,18 @@ p1 + p2 +
 
 ---
 
-## Dumping: Formal Condition and Anti-Dumping Duty
+## Dumping: Formal Condition and Anti-Dumping Duty {.smaller}
 
-::: {.columns}
-::: {.column width="58%"}
 **Dumping condition (price discrimination version):**
 
 $$P_x < P_d \quad \Leftrightarrow \quad \frac{P_x}{P_d} < 1$$
 
-In profit-maximising terms, the firm sets $MR_d = MR_x = MC$:
-
-$$P_d \left(1 - \frac{1}{|e_d|}\right) = P_x \left(1 - \frac{1}{|e_x|}\right)$$
+In profit-maximising terms: $P_d \left(1 - \frac{1}{|e_d|}\right) = P_x \left(1 - \frac{1}{|e_x|}\right)$
 
 If $|e_x| > |e_d|$ (export market more elastic), then $P_x < P_d$. ✓
 
-**Anti-dumping duty (ADD):**
+**Anti-dumping duty (ADD):** $\text{ADD} = P_d - P_x = \text{margin of dumping}$ — raises $P_x$ back toward $P_d$.
 
-$$\text{ADD} = P_d - P_x = \text{margin of dumping}$$
-
-This raises $P_x$ back toward $P_d$, eliminating the price discrimination advantage.
-:::
-::: {.column width="42%"}
 ::: {.methodbox}
 **Welfare effects of ADD for importing country:**
 
@@ -554,15 +382,7 @@ This raises $P_x$ back toward $P_d$, eliminating the price discrimination advant
 | Govt revenue (ADD) | Rises |
 | Net welfare | Ambiguous — DWL likely |
 
-**ADD welfare formula (tariff analogy):**
-
-$$\Delta W = -b - d + \text{PS gain}$$
-
-If domestic production is efficient, $\Delta W$ may be positive (dumping was causing genuine injury).
-
-If ADD is protectionist, $\Delta W < 0$.
-:::
-:::
+$\Delta W = -b - d + \text{PS gain}$ — if domestic production is efficient, $\Delta W$ may be positive; if ADD is protectionist, $\Delta W < 0$.
 :::
 
 ---
@@ -604,40 +424,14 @@ ggplot(ad_data, aes(x = sector, y = investigations)) +
 
 ## Indian Agriculture Facing Dumping Allegations Abroad
 
-::: {.columns}
-::: {.column width="55%"}
-**Indian shrimp exports (USA):**
+**Indian shrimp exports (USA):** USA imposed CVD + AD duties on Indian shrimp (2003, 2013, 2023); margin of dumping: 4.98–6.3% (2023 review). India's argument: low costs reflect **genuine comparative advantage** (labour, aquaculture efficiency), not subsidies.
 
-- USA imposed CVD + AD duties on Indian shrimp (2003, 2013, 2023)
-- Margin of dumping: 4.98–6.3% (2023 review)
-- India's argument: low costs reflect **genuine comparative advantage** (labour, aquaculture efficiency), not subsidies
-- Subsidies alleged: state govt power subsidies to aquaculture pumps
+**Indian basmati rice:** EU phytosanitary restrictions (pesticide MRLs) periodically block Indian exports — not formal AD, but equivalent effect.
 
-**Indian basmati rice:**
+**Indian buffalo meat:** EU AD allegations (cold cuts); AD margin investigations initiated 2021. India's position: lowest-cost producer due to cattle by-product economics.
 
-- EU phytosanitary restrictions (pesticide MRLs) periodically block Indian exports
-- Not formal AD — but equivalent effect
-
-**Indian buffalo meat:**
-
-- EU AD allegations (cold cuts); AD margin investigations initiated 2021
-- India's position: lowest-cost producer due to cattle by-product economics
-:::
-::: {.column width="45%"}
 ::: {.highlightbox}
-**Comparative advantage vs. dumping:**
-
-A developing country with genuinely low costs will *appear* to dump when compared to high-cost producers in developed countries.
-
-$$P_{\text{India}} < P_{\text{USA}} \not\Rightarrow \text{dumping}$$
-
-Dumping requires $P_{\text{export}} < \text{normal value (home price or cost)}$.
-
-WTO rules require evidence of below-normal-value pricing AND material injury.
-
-In practice, AD is often used as disguised protectionism — a non-tariff barrier dressed in legal language.
-:::
-:::
+**Comparative advantage vs. dumping:** A developing country with genuinely low costs will *appear* to dump when compared to high-cost producers in developed countries. $P_{\text{India}} < P_{\text{USA}} \not\Rightarrow \text{dumping}$. Dumping requires $P_{\text{export}} < \text{normal value}$. In practice, AD is often used as disguised protectionism.
 :::
 
 ---
@@ -648,23 +442,12 @@ In practice, AD is often used as disguised protectionism — a non-tariff barrie
 
 ## VERs — Quotas Imposed "Voluntarily" by Exporters
 
-::: {.columns}
-::: {.column width="55%"}
-A **Voluntary Export Restraint (VER)** is an agreement where the *exporting* country "voluntarily" limits its exports to the importing country.
+A **Voluntary Export Restraint (VER)** is an agreement where the *exporting* country "voluntarily" limits its exports — usually under diplomatic pressure.
 
-**Why "voluntary"?**
-- Importing country threatens worse action (e.g., formal quota, tariffs)
-- Exporter prefers VER — quota rent goes to *foreign exporter*, not importing govt
-- Both governments prefer quiet bilateral deal to WTO dispute
+**Why "voluntary"?** Importing country threatens worse action; exporter prefers VER — quota rent goes to *foreign exporter*; both governments prefer quiet bilateral deal to WTO dispute.
 
-**Classic example:**
-Japan–USA auto VER (1981): Japan agreed to limit car exports to USA at 1.68M units/year. Toyota, Honda captured quota rent → funded quality upgrading → ultimately made Japanese cars stronger.
+**Classic example:** Japan–USA auto VER (1981): Japan agreed to limit car exports at 1.68M units/year. Toyota, Honda captured quota rent → funded quality upgrading → ultimately made Japanese cars stronger.
 
-**Agriculture examples:**
-- EU sugar VER with ACP countries (pre-Everything But Arms)
-- USA–India textile VERs (Multi-Fibre Arrangement era)
-:::
-::: {.column width="45%"}
 ::: {.methodbox}
 **VER vs. Tariff vs. Quota:**
 
@@ -674,56 +457,29 @@ Japan–USA auto VER (1981): Japan agreed to limit car exports to USA at 1.68M u
 | Quota | Licence holders | Yes (with rules) |
 | VER | **Foreign exporter** | **No (UR banned)** |
 
-Uruguay Round (1994): VERs explicitly prohibited under WTO safeguards agreement.
-
-**But in practice:** "Orderly Marketing Arrangements" (OMAs) and "grey area" bilateral deals persist under different names.
-:::
-:::
+Uruguay Round (1994): VERs explicitly prohibited under WTO safeguards agreement. But "Orderly Marketing Arrangements" and "grey area" bilateral deals persist under different names.
 :::
 
 ---
 
-## VER Welfare Analysis
+## VER Welfare Analysis {.smaller}
 
-::: {.columns}
-::: {.column width="58%"}
 A VER is economically equivalent to an import quota — but worse for the importing country:
 
-**Standard quota welfare:**
+**Standard quota welfare:** $\Delta W_{\text{import country}} = -(b + d) + c$ where $c$ = quota rent captured by licence holders.
 
-$$\Delta W_{\text{import country}} = -(b + d) + c$$
-
-where $c$ = quota rent (captured by licence holders in importing country).
-
-**VER welfare:**
-
-$$\Delta W_{\text{import country}} = -(b + c + d)$$
-
-because $c$ = quota rent goes to **foreign exporters**, not domestic licence holders.
+**VER welfare:** $\Delta W_{\text{import country}} = -(b + c + d)$ because $c$ = quota rent goes to **foreign exporters**, not domestic licence holders.
 
 $$\boxed{\text{VER strictly worse than equivalent quota for importing country}}$$
 
-The exporting country gains $+c$ (the rent).
-:::
-::: {.column width="42%"}
 ::: {.keybox}
-**Numerical example:**
-
-Suppose VER restricts imports to $\bar{M}$.
+**Numerical example:** Suppose VER restricts imports to $\bar{M}$.
 
 - $b$ = production distortion: $\frac{1}{2}(P_d - P_w) \cdot \Delta Q_s$
 - $c$ = quota rent: $(P_d - P_w) \cdot \bar{M}$
 - $d$ = consumption distortion: $\frac{1}{2}(P_d - P_w) \cdot \Delta Q_d$
 
-Under a tariff generating the same price wedge:
-$$\Delta W_{\text{tariff}} = -(b+d) + t \cdot M$$
-
-Under VER:
-$$\Delta W_{\text{VER}} = -(b+c+d) < \Delta W_{\text{tariff}}$$
-
-The importing country is unambiguously worse off under VER than under an equivalent tariff.
-:::
-:::
+Under tariff: $\Delta W_{\text{tariff}} = -(b+d) + t \cdot M$; Under VER: $\Delta W_{\text{VER}} = -(b+c+d) < \Delta W_{\text{tariff}}$
 :::
 
 ---
@@ -734,55 +490,22 @@ The importing country is unambiguously worse off under VER than under an equival
 
 ## What Is a Cartel? Conditions for Success
 
-::: {.columns}
-::: {.column width="55%"}
-A **cartel** is a formal/informal agreement among producers to restrict output, fix prices, or divide markets.
+A **cartel** is a formal/informal agreement among producers to restrict output, fix prices, or divide markets. **Profit-maximising cartel acts as a monopolist:** $MR = MC \Rightarrow Q^* < Q_{\text{competitive}}, P^* > P_{\text{competitive}}$; world welfare loss = $-(b + d)$.
 
-**Profit-maximising cartel acts as a monopolist:**
+**Conditions for cartel success:** (1) Concentrated supply; (2) inelastic demand; (3) discipline (no cheating); (4) barriers to entry; (5) product homogeneity.
 
-$$MR = MC \quad \Rightarrow \quad Q^* < Q_{\text{competitive}}, \quad P^* > P_{\text{competitive}}$$
-
-**Welfare effect:**
-
-$$\Delta W_{\text{world}} = -(b + d) \quad \text{(standard DWL)}$$
-
-Producers in cartel gain; consumers globally lose.
-
-**Conditions for cartel success:**
-
-1. **Concentrated supply** — few large producers
-2. **Inelastic demand** — buyers cannot substitute
-3. **Discipline** — no cheating on quotas
-4. **Barriers to entry** — new producers cannot undercut
-5. **Product homogeneity** — buyers cannot switch variety
-:::
-::: {.column width="45%"}
 ::: {.highlightbox}
-**OPEC as reference case:**
+**OPEC as reference:** OPEC controls ~38% of world oil supply. Production cuts (2022–23) raised Brent crude from \$75 to \$120/barrel.
 
-OPEC controls ~38% of world oil supply. Oil: inelastic demand, few substitutes, storable, high entry barriers.
-
-OPEC's production cuts (2022–23) raised Brent crude from $75 to $120/barrel.
-
-**Agricultural cartels rarely succeed:**
-
-- Many producers (Brazil/USA/EU/India all produce wheat)
-- Many substitutes (rice ↔ wheat ↔ maize ↔ cassava)
-- Perishable goods — cannot store to create scarcity
-- Low entry barriers — new producers emerge when prices rise
-- Political pressure: domestic food security forces members to sell
+**Agricultural cartels rarely succeed:** Many producers; many substitutes (rice ↔ wheat ↔ maize); perishable goods; low entry barriers; political pressure to sell for domestic food security.
 
 $$\Rightarrow \text{Agricultural cartels are theoretically possible, practically unstable}$$
-:::
-:::
 :::
 
 ---
 
-## International Commodity Agreements: Instruments
+## International Commodity Agreements: Instruments {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **ICAs** — multilateral agreements between producing and consuming countries to stabilise prices.
 
 **Instruments used:**
@@ -793,27 +516,12 @@ $$\Rightarrow \text{Agricultural cartels are theoretically possible, practically
 | **Export quota** | Allocate export shares to members |
 | **Multilateral contract** | Guaranteed volumes at agreed prices |
 
-**Conditions for ICA success:**
+**Conditions for ICA success:** Large share of world trade covered; homogeneous commodity; adequate buffer stock financing; commitment from both producers and consumers; no close substitutes.
 
-- Large share of world trade covered by members
-- Homogeneous commodity (easy to monitor)
-- Adequate buffer stock financing
-- Commitment from both producing and consuming countries
-- No close substitutes
-:::
-::: {.column width="45%"}
 ::: {.methodbox}
-**Why ICAs fail:**
-
-1. **Free-rider:** non-members export outside quota at high prices
-2. **Cheating:** members secretly exceed quotas
-3. **Buffer stock cost:** storing perishable agri-commodities = enormous cost
-4. **Technological change:** substitutes undermine demand (e.g., synthetic rubber killed NR cartel)
-5. **North-South conflict:** producers want high prices; consumers want low prices → negotiated price range always contested
+**Why ICAs fail:** (1) Free-rider: non-members export outside quota at high prices; (2) cheating: members secretly exceed quotas; (3) buffer stock cost for perishable agri-commodities; (4) technological change (substitutes undermine demand); (5) North-South conflict: producers want high prices; consumers want low prices.
 
 **UNCTAD's Integrated Programme for Commodities (1976):** ambitious proposal for 18 ICAs — most collapsed within 15 years.
-:::
-:::
 :::
 
 ## History of International Commodity Agreements

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  24 APR 2026 14:55
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  25 APR 2026 09:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2086,61 +2086,46 @@ LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 9.22536pt on input line 319.
-
-Overfull \hbox (64.83379pt too wide) in alignment at lines 319--319
- [] [] 
- []
-
-
-Overfull \hbox (64.83379pt too wide) in alignment at lines 319--319
- [] [] 
- []
-
+(Font)              scaled to size 9.22536pt on input line 303.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
-(Font)              scaled to size 9.29602pt on input line 319.
+(Font)              scaled to size 9.29602pt on input line 303.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 10.18744pt on input line 319.
+(Font)              scaled to size 10.18744pt on input line 303.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 10.10999pt on input line 319.
-
-Overfull \vbox (40.42659pt too high) detected at line 319
- []
-
-[2
+(Font)              scaled to size 10.10999pt on input line 303.
+ [2
 
 ]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.89621pt on input line 359.
+(Font)              scaled to size 7.89621pt on input line 344.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.64017pt on input line 359.
+(Font)              scaled to size 5.64017pt on input line 344.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-59.
+44.
  (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 11.28131pt on input line 359.
+(Font)              scaled to size 11.28131pt on input line 344.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.89691pt on input line 359.
+(Font)              scaled to size 7.89691pt on input line 344.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.64066pt on input line 359.
+(Font)              scaled to size 5.64066pt on input line 344.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.27914pt on input line 359.
+(Font)              scaled to size 11.27914pt on input line 344.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.8954pt on input line 359.
+(Font)              scaled to size 7.8954pt on input line 344.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.63957pt on input line 359.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 359
+(Font)              scaled to size 5.63957pt on input line 344.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 344
 .
-
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 359
+LaTeX Font Info:    Trying to load font information for U+msb on input line 344
 .
  (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2148,26 +2133,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Overfull \vbox (105.8437pt too high) detected at line 359
+Overfull \vbox (39.26541pt too high) detected at line 344
  []
 
 [3
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 6.50722pt on input line 404.
+(Font)              scaled to size 6.50722pt on input line 389.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 4.64801pt on input line 404.
+(Font)              scaled to size 4.64801pt on input line 389.
 File: Lecture06_Terms_of_Trade_files/figure-beamer/fig-offer-curves-1.pdf Graph
 ic file (type pdf)
 <use Lecture06_Terms_of_Trade_files/figure-beamer/fig-offer-curves-1.pdf>
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 7.58249pt on input line 404.
+(Font)              scaled to size 7.58249pt on input line 389.
 
 ! Undefined control sequence.
 <argument> \label 
                   {fig-offer-curves}Offer Curves: Equilibrium Terms of Trade...
-l.404 \end{frame}
+l.389 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2176,19 +2161,15 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (176.56377pt too high) detected at line 404
+Overfull \vbox (176.56377pt too high) detected at line 389
  []
 
 [4
 
-]
-Overfull \vbox (42.07695pt too high) detected at line 472
- []
-
-[5
+] [5
 
 ]
-Overfull \vbox (233.67929pt too high) detected at line 530
+Overfull \vbox (134.67436pt too high) detected at line 450
  []
 
 [6
@@ -2201,7 +2182,7 @@ file (type pdf)
 ! Undefined control sequence.
 <argument> \label 
                   {fig-india-tot}India's Commodity Terms of Trade (Agricultu...
-l.552 \end{frame}
+l.472 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2210,105 +2191,58 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (21.10774pt too high) detected at line 552
+Overfull \vbox (21.10774pt too high) detected at line 472
  []
 
 [7
 
 ]
-Overfull \hbox (26.5044pt too wide) detected at line 611
-[] [] [] [] []
- []
-
-
-Overfull \hbox (47.51004pt too wide) detected at line 611
-[][] [] [] [] [] [][]
- []
-
-
-Overfull \hbox (39.52605pt too wide) detected at line 611
-[] [][] [] [][] [] [][]
- []
-
-
-Overfull \vbox (325.72963pt too high) detected at line 611
+Overfull \vbox (66.92354pt too high) detected at line 510
  []
 
 [8
 
 ]
-Overfull \hbox (38.81265pt too wide) in alignment at lines 676--676
- [] [] [] 
- []
-
-
-Overfull \hbox (38.81265pt too wide) in alignment at lines 676--676
- [] [] [] 
- []
-
-
-Overfull \vbox (186.75955pt too high) detected at line 676
+Overfull \vbox (1.51959pt too high) detected at line 535
  []
 
 [9
 
-]
-Overfull \vbox (54.79323pt too high) detected at line 729
- []
-
-[10
+] [10
 
 ]
-Overfull \vbox (84.26964pt too high) detected at line 786
+Overfull \vbox (14.89482pt too high) detected at line 604
  []
 
 [11
 
 ]
-Overfull \vbox (45.94092pt too high) detected at line 837
+Overfull \vbox (91.88205pt too high) detected at line 646
  []
 
 [12
 
 ]
-Overfull \vbox (64.56378pt too high) detected at line 880
+Overfull \vbox (47.28629pt too high) detected at line 678
  []
 
 [13
 
 ]
-Overfull \vbox (40.31427pt too high) detected at line 919
+Overfull \vbox (40.31427pt too high) detected at line 717
  []
 
 [14
 
 ]
-Overfull \hbox (42.4992pt too wide) in alignment at lines 965--965
- [] [] [] [] 
- []
-
-
-Overfull \hbox (42.4992pt too wide) in alignment at lines 965--965
- [] [] [] [] 
- []
-
-
-Overfull \vbox (6.07002pt too high) detected at line 965
+Overfull \vbox (26.36172pt too high) detected at line 745
  []
 
 [15
 
-]
-Overfull \vbox (85.79631pt too high) detected at line 1028
- []
+] [16
 
-[16
-
-]
-Overfull \vbox (24.11302pt too high) detected at line 1072
- []
-
-[17
+] [17
 
 ]
 File: Lecture06_Terms_of_Trade_files/figure-beamer/fig-india-fta-1.pdf Graphic 
@@ -2318,8 +2252,8 @@ file (type pdf)
 ! Undefined control sequence.
 <argument> \label 
                   {fig-india-fta}India's Trade Balance with Key FTA Partners...
-l.1094 \end{frame}
-                  
+l.813 \end{frame}
+                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2327,19 +2261,19 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (21.10774pt too high) detected at line 1094
+Overfull \vbox (21.10774pt too high) detected at line 813
  []
 
 [18
 
 ]
-Overfull \vbox (115.54948pt too high) detected at line 1152
+Overfull \vbox (3.8436pt too high) detected at line 843
  []
 
 [19
 
 ]
-Overfull \vbox (6.78712pt too high) detected at line 1189
+Overfull \vbox (3.8436pt too high) detected at line 869
  []
 
 [20
@@ -2352,8 +2286,8 @@ phic file (type pdf)
 ! Undefined control sequence.
 <argument> \label 
                   {fig-trade-creation}FTA: Trade Creation (gain, left) vs Tr...
-l.1217 \end{frame}
-                  
+l.897 \end{frame}
+                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2361,34 +2295,24 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (122.61598pt too high) detected at line 1217
+Overfull \vbox (122.61598pt too high) detected at line 897
  []
 
 [21
 
-]
-Overfull \vbox (71.03279pt too high) detected at line 1280
- []
+] [22
 
-[22
+] [23
 
-]
-Overfull \vbox (16.23587pt too high) detected at line 1319
- []
-
-[23
-
-]
-Overfull \vbox (39.77145pt too high) detected at line 1351
- []
-
-[24
+] [24
 
 ] [25
 
 ] [26
 
 ] [27
+
+] [28
 
 ]
 \tf@nav=\write5
@@ -2407,12 +2331,12 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 35021 strings out of 402982
- 717361 string characters out of 5447852
- 1268557 words of memory out of 5000000
- 63121 multiletter control sequences out of 15000+600000
+ 35019 strings out of 402982
+ 717233 string characters out of 5447852
+ 1264689 words of memory out of 5000000
+ 63119 multiletter control sequences out of 15000+600000
  631480 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,13n,165p,1895b,737s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Lecture06_Terms_of_Trade.xdv (27 pages, 373724 bytes).
+Output written on Lecture06_Terms_of_Trade.xdv (28 pages, 308820 bytes).

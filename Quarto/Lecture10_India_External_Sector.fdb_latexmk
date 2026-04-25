@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1777022818.36458 "Lecture10_India_External_Sector.xdv" "Lecture10_India_External_Sector.pdf" "Lecture10_India_External_Sector" 1777022819.35592 0
-  "Lecture10_India_External_Sector.xdv" 1777022816 219156 20559614094c6a9b39de76f302539c7c "xelatex"
+["xdvipdfmx"] 1777088699.54009 "Lecture10_India_External_Sector.xdv" "Lecture10_India_External_Sector.pdf" "Lecture10_India_External_Sector" 1777088700.42585 0
+  "Lecture10_India_External_Sector.xdv" 1777088698 219200 c2999d816d0ea4847c59181d6dee13b8 "xelatex"
   (generated)
   "Lecture10_India_External_Sector.pdf"
   (rewritten before read)
-["xelatex"] 1777022810.21027 "Lecture10_India_External_Sector.tex" "Lecture10_India_External_Sector.xdv" "Lecture10_India_External_Sector" 1777022819.32348 2
+["xelatex"] 1777088692.40646 "Lecture10_India_External_Sector.tex" "Lecture10_India_External_Sector.xdv" "Lecture10_India_External_Sector" 1777088700.39404 2
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -212,14 +212,14 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture10_India_External_Sector.aux" 1777022816 1995 32349c88e6767ad2253b00030cdfe726 "xelatex"
-  "Lecture10_India_External_Sector.nav" 1777022816 483 2eb1cf7e247973bd2380314bee32ad57 "xelatex"
-  "Lecture10_India_External_Sector.tex" 1777022002 33431 d79b1fe346e0873bb0a6ff8ad7102d7d ""
-  "Lecture10_India_External_Sector_files/figure-beamer/fig-export-composition-1.pdf" 1777021994 4901 f3f9ea7a8136fdb6c9094970da1cb4dd ""
-  "Lecture10_India_External_Sector_files/figure-beamer/fig-import-composition-1.pdf" 1777021995 4932 196c645801ac184e396878261bc6bfaf ""
-  "Lecture10_India_External_Sector_files/figure-beamer/fig-remittances-1.pdf" 1777021997 5673 31e5dc9a25dd20cba37782f1aa406b34 ""
-  "Lecture10_India_External_Sector_files/figure-beamer/fig-services-trade-1.pdf" 1777021997 4764 738d4336043e249579009ecbb32b0398 ""
-  "Lecture10_India_External_Sector_files/figure-beamer/fig-trade-partners-1.pdf" 1777021996 5095 3b06dbf9da6bf2df1966499863337de5 ""
+  "Lecture10_India_External_Sector.aux" 1777088698 1995 32349c88e6767ad2253b00030cdfe726 "xelatex"
+  "Lecture10_India_External_Sector.nav" 1777088698 483 2eb1cf7e247973bd2380314bee32ad57 "xelatex"
+  "Lecture10_India_External_Sector.tex" 1777088218 33458 389c996fe4627cd92412c1bf823f16fe ""
+  "Lecture10_India_External_Sector_files/figure-beamer/fig-export-composition-1.pdf" 1777088211 4901 c426e1a259e50ca7f35c4e9c0b2c7160 ""
+  "Lecture10_India_External_Sector_files/figure-beamer/fig-import-composition-1.pdf" 1777088212 4932 da7518ab9de8c8d2b69136d2c9339a2a ""
+  "Lecture10_India_External_Sector_files/figure-beamer/fig-remittances-1.pdf" 1777088214 5673 0fedb8d21c3e1c71d7e0b2a7e7070e13 ""
+  "Lecture10_India_External_Sector_files/figure-beamer/fig-services-trade-1.pdf" 1777088214 4764 e6ef168a47dc8db4027773bf4e1c9d51 ""
+  "Lecture10_India_External_Sector_files/figure-beamer/fig-trade-partners-1.pdf" 1777088213 5095 adc4b11b0d1697ea8eb554983f49fbd3 ""
   (generated)
   "Lecture10_India_External_Sector.aux"
   "Lecture10_India_External_Sector.log"

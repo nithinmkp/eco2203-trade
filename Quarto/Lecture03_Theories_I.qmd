@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Theories of International Trade I"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "May 9, 2026"
@@ -16,7 +16,7 @@ format:
     code-fold: true
     code-summary: "Show R code"
     logo: ""
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
   beamer:
     aspectratio: 169
     theme: metropolis
@@ -43,8 +43,6 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 
 ## The Central Question
 
-::: {.columns}
-::: {.column width="60%"}
 **Why do countries trade?**
 
 This question has occupied economists for over 500 years. Three broad answers have emerged:
@@ -60,18 +58,9 @@ This question has occupied economists for over 500 years. Three broad answers ha
 ::: {.fragment}
 3. **Comparative Advantage — David Ricardo (1817):** Even if one country is better at *everything*, both countries gain from trade based on *relative* costs
 :::
-:::
-::: {.column width="40%"}
+
 ::: {.methodbox}
-**Why theory matters for policy**
-
-India bans rice exports → mercantilist instinct (protect domestic supply, accumulate foreign exchange from *other* goods)
-
-India signs FTAs → comparative advantage logic (specialise and exchange)
-
-These theories are not just history — they are the intellectual foundation of every trade policy debate happening right now.
-:::
-:::
+**Why theory matters for policy:** India bans rice exports → mercantilist instinct. India signs FTAs → comparative advantage logic. These theories are the intellectual foundation of every trade policy debate happening right now.
 :::
 
 ## Overview of Trade Theories: A Timeline
@@ -97,8 +86,6 @@ Each theory addresses a limitation of the previous one. By Lecture 6, we will ha
 
 ## What is Mercantilism?
 
-::: {.columns}
-::: {.column width="55%"}
 **Historical context**
 
 - Dominant European trade doctrine: approximately 1500–1750 CE
@@ -111,92 +98,53 @@ Each theory addresses a limitation of the previous one. By Lecture 6, we will ha
 - To accumulate gold → **export more than you import** → trade surplus → gold flows in
 - Trade is **zero-sum:** one country's gain is another's loss
 - **State's role:** Actively promote exports, restrict imports, grant monopolies to favoured companies
-:::
-::: {.column width="45%"}
+
 ::: {.highlightbox}
-**Key mercantilist idea:**
-
-*"A nation is rich when it has more gold than other nations."*
-
-This view seems obvious to policymakers even today — which is why understanding and *refuting* it is so important.
-
 **Modern echo:** When Indian politicians say "we must increase our trade surplus," they are (often unknowingly) invoking mercantilist logic.
-:::
-:::
 :::
 
 ## Mercantilist Policies in Practice
 
-::: {.columns}
-::: {.column width="50%"}
 **Export promotion**
 
 - **Export subsidies** — government pays domestic producers to lower their export price
-- **State-supported trading companies** — British East India Company (1600), Dutch VOC (1602): chartered monopolies given exclusive rights to trade with Asia
-- **Navigation Acts (England, 1651):** Required all trade to be carried in English ships → protect English shipping industry and exclude Dutch competition
-
-**Import restriction**
-
-- **High import tariffs** — make foreign goods expensive
-- **Import bans/prohibitions** — on manufactured goods that competed with domestic industries
-- **Colonialism** — acquire raw material sources and captive markets for manufactured goods
-:::
-::: {.column width="50%"}
-**Evaluation of mercantilist instruments**
+- **State-supported trading companies** — British East India Company (1600), Dutch VOC (1602): chartered monopolies
+- **Navigation Acts (England, 1651):** Required all trade to be carried in English ships
 
 | Policy | Mercantilist rationale | Modern equivalent |
 |--------|----------------------|-------------------|
 | Export subsidies | Increase gold inflow | India's RoDTEP, MEIS |
 | Import duties | Keep gold in country | India's import tariff schedule |
 | State monopolies | Control strategic trade | MMTC, STC trading houses |
-| Colonial extraction | Secure raw materials | Resource-seeking FDI |
-| Currency undervaluation | Make exports cheap | China 2000s, "currency manipulation" debate |
+| Currency undervaluation | Make exports cheap | China 2000s |
 
 ::: {.methodbox}
-Mercantilism was not entirely irrational — for a small open economy trying to industrialise, some "mercantilist" policies (infant industry protection, export subsidies) may be justified. The *error* is the zero-sum worldview.
-:::
-:::
+Mercantilism was not entirely irrational — for a small open economy trying to industrialise, some "mercantilist" policies may be justified. The *error* is the zero-sum worldview.
 :::
 
 ## Colonial Trade: The Institutional Structure
 
-::: {.columns}
-::: {.column width="55%"}
 **British mercantilism in India**
 
 - India was Britain's most valuable colonial possession — primary purpose: source raw materials, provide captive market for British manufactures
 - **Raw material extraction:** Raw cotton from India → Manchester mills → cotton textiles back to India
-- **De-industrialisation:** India's famous cotton textile industry (Dhaka muslin, Surat cotton) was systematically destroyed through:
-  - Zero/low import duties on British textiles entering India
-  - High export duties on Indian textiles entering Britain
-  - Physical destruction of Indian weavers' looms (disputed but documented in some accounts)
-:::
-::: {.column width="45%"}
+- **De-industrialisation:** India's cotton textile industry (Dhaka muslin, Surat cotton) was systematically destroyed through zero/low import duties on British textiles + high export duties on Indian textiles
+
 ::: {.highlightbox}
-**The numbers (Utsa Patnaik, 2018 estimate)**
-
-India transferred **\$45 trillion** to Britain between 1765 and 1938 (present-value estimate — debated but widely cited).
-
-Even conservative estimates show that India's per capita income *fell* under British rule — from ~comparable with Britain in 1700 to less than 20% of British levels by 1947.
+**The numbers (Utsa Patnaik, 2018 estimate):** India transferred **\$45 trillion** to Britain between 1765 and 1938 (present-value estimate — debated but widely cited). Even conservative estimates show India's per capita income *fell* under British rule.
 
 **Agricultural dimension:** India was forced to grow indigo, opium, and jute for British export markets rather than food crops → contributed to famines (Bengal 1943: 2–3 million deaths)
-:::
-:::
 :::
 
 ## The Drain of Wealth: Naoroji's Evidence
 
-::: {.columns}
-::: {.column width="55%"}
 **Dadabhai Naoroji's Drain Theory**
 
 - Naoroji (1901): *Poverty and Un-British Rule in India*
 - Calculated that Britain extracted **£200–300 million per year** from India as "drain"
 - Home charges: India paid for British administration costs, interest on British-held debt, railway profits
 - The mechanism: India exported goods but received paper IOUs rather than gold — a systematic wealth transfer disguised as trade
-- Silver drained from India → monetary contraction → deflation → economic stagnation
-:::
-::: {.column width="45%"}
+
 ::: {.quotebox}
 "England has impoverished India by her own prosperity." — Dadabhai Naoroji, 1901
 :::
@@ -204,13 +152,9 @@ Even conservative estimates show that India's per capita income *fell* under Bri
 ::: {.methodbox}
 **Modern reassessment:** Economists Utsa Patnaik (2018) and Sashi Tharoor (*Inglorious Empire*, 2017) updated Naoroji's estimates. The drain theory remains contested on methodology but its directional conclusion — that colonial trade systematically transferred wealth from India to Britain — is broadly accepted.
 :::
-:::
-:::
 
 ## Critique of Mercantilism
 
-::: {.columns}
-::: {.column width="55%"}
 **David Hume's price-specie-flow mechanism (1752)**
 
 Mercantilism has a self-defeating logic:
@@ -219,31 +163,15 @@ Mercantilism has a self-defeating logic:
 2. More money → prices rise (quantity theory of money: MV = PQ)
 3. Higher prices → Country A's exports become more expensive
 4. Exports fall, imports rise → trade surplus disappears automatically
-5. Gold flows back out
 
-**Conclusion:** A trade surplus is *self-correcting*; mercantilist attempts to maintain it permanently are futile and cause inflation.
+**Adam Smith's critique (1776):** "Wealth of a nation is not measured by the gold in its vaults but by the goods and services it can produce and consume"; import restrictions reduce consumption possibilities
 
-**Adam Smith's critique (1776)**
-
-- "Wealth of a nation is not measured by the gold in its vaults but by the goods and services it can produce and consume"
-- Trade is **not zero-sum** — both countries gain from specialisation
-- Import restrictions reduce the nation's consumption possibilities
-:::
-::: {.column width="45%"}
 ::: {.methodbox}
-**The fundamental error of mercantilism**
-
-Mercantilists confused the **means** (gold) with the **end** (well-being of citizens).
-
-A country with more gold but fewer goods and services is *poorer*, not richer.
-
-Smith's insight: A nation is wealthy when it has a *high standard of living* — access to abundant, diverse, and cheap goods and services. This requires *imports*, not just exports.
+**The fundamental error:** Mercantilists confused the **means** (gold) with the **end** (well-being). A country with more gold but fewer goods is *poorer*, not richer.
 :::
 
-::: {.highlightbox}
+:::{.notes}
 **Modern parallel:** Japan in the 1980s ran huge trade surpluses with the USA. Was Japan richer for it? Its citizens had high savings but *lower consumption* than Americans with similar incomes — a classic mercantilist outcome.
-:::
-:::
 :::
 
 ## Mercantilist Arithmetic: Why the Logic Fails {.smaller}
@@ -256,31 +184,16 @@ $$\text{Objective: } \max\; G = X - M$$
 
 $$\Rightarrow \text{policy prescriptions: } X \uparrow \text{ (export subsidies)}, \quad M \downarrow \text{ (tariffs, prohibitions, bans)}$$
 
-::: {.columns}
-::: {.column width="50%"}
-**The zero-sum fallacy**
-
-If *all* $N$ nations simultaneously pursue a surplus:
+**The zero-sum fallacy:** If *all* $N$ nations simultaneously pursue a surplus:
 
 $$\sum_{i=1}^{N}(X_i - M_i) = 0 \quad \forall \text{ nations simultaneously}$$
 
-Every export is someone else's import — the global sum of trade balances is always exactly zero. Mercantilist policies merely *redistribute* gold among nations; they cannot increase the world's total gold stock.
-:::
-::: {.column width="50%"}
-**Hume's price-specie-flow refutation (1752)**
-
-Even a single nation's surplus is self-correcting:
+**Hume's price-specie-flow refutation (1752):** Even a single nation's surplus is self-correcting:
 
 $$\text{Gold inflow} \;\Rightarrow\; M_s \uparrow \;\Rightarrow\; P \uparrow \;\Rightarrow\; X \downarrow,\; M \uparrow \;\Rightarrow\; \text{surplus eliminated}$$
 
-Via the quantity theory of money ($MV = PQ$, with $V, Q$ fixed in the short run):
-
-$$\Delta G > 0 \;\Rightarrow\; \Delta M_s > 0 \;\Rightarrow\; P \uparrow \;\Rightarrow\; \text{exports become uncompetitive}$$
-
 ::: {.methodbox}
 A mercantilist surplus is self-defeating: the very gold inflow it generates raises domestic prices, eroding the export competitiveness that created the surplus.
-:::
-:::
 :::
 
 ## Smith's Critique: Real Wealth vs Gold
@@ -291,34 +204,20 @@ Mercantilists measured national wealth by the gold stock. Smith showed the corre
 
 $$W_{\text{real}} = \frac{\text{goods and services consumed}}{P} \;\neq\; \text{gold stock}$$
 
-::: {.columns}
-::: {.column width="55%"}
 **The trade restriction paradox — applied to India**
 
 If India bans rice exports to keep supply at home:
-
 $$W_{\text{domestic,rice}} \uparrow \quad \text{(rice cheaper domestically)}$$
 $$W_{\text{global}} = 0 \quad \text{(no new rice created — redistributed, not added)}$$
 
 If instead India exports rice and specialises:
-
 $$W_{\text{global}} \uparrow \quad \text{(specialisation gains; world output expands)}$$
 $$W_{\text{India}} \uparrow \quad \text{(farmers earn more; import cheaper goods)}$$
 
-**The mercantilist error:** treating the *means* (gold, foreign exchange) as the *end* (citizen well-being). A nation with a large foreign exchange reserve but poor citizens has confused instrument with objective.
-:::
-::: {.column width="45%"}
 ::: {.highlightbox}
-**Smith on imports**
-
-> *"It is the maxim of every prudent master of a family, never to attempt to make at home what it will cost him more to make than to buy."*
-> — Wealth of Nations, Book IV, Ch. 2
-
-Import restrictions are equivalent to a household refusing to buy *anything* from neighbours — the household makes everything itself, poorly and expensively, in the name of "self-sufficiency."
+> *"It is the maxim of every prudent master of a family, never to attempt to make at home what it will cost him more to make than to buy."* — Wealth of Nations, Book IV, Ch. 2
 
 National self-sufficiency achieved through restriction destroys, not creates, real wealth.
-:::
-:::
 :::
 
 ## Mercantilism vs Smith: Policy Implications
@@ -340,36 +239,16 @@ National self-sufficiency achieved through restriction destroys, not creates, re
 
 ## Neo-Mercantilism: Export-Led Development Strategies
 
-::: {.columns}
-::: {.column width="55%"}
 **Modern mercantilist practices**
 
 - **Export-led growth strategy** (China, South Korea, Germany): Use undervalued currency and export subsidies to drive export surplus; accumulate foreign exchange reserves
-- **Currency undervaluation:** China's renminbi was widely believed to be 20–40% undervalued vs USD in 2000s → made Chinese exports artificially cheap
-- **"Beggar-thy-neighbour" policies:** Competitive devaluations — my currency devaluation boosts my exports at *your* expense (zero-sum again)
+- **Currency undervaluation:** China's renminbi was widely believed to be 20–40% undervalued vs USD in 2000s
+- **"Beggar-thy-neighbour" policies:** Competitive devaluations — my currency devaluation boosts my exports at *your* expense
 - **Industrial policy for export champions:** China's \$5 trillion in state subsidies to EVs, solar panels (WTO disputes pending)
+- **India's FTP 2023–28 target** of \$2 trillion exports has a mercantilist *flavour* — emphasises export growth
 
-**India's position**
-
-- India's FTP 2023–28 target of \$2 trillion exports has a mercantilist *flavour* — emphasises export growth
-- But India has also been on the *receiving end* of neo-mercantilism: cheap Chinese goods flooded Indian markets in 2000s
-:::
-::: {.column width="45%"}
 ::: {.keybox}
-**The "China is mercantilist" debate**
-
-China's strategy 2000–2020:
-- Kept RMB undervalued by ~20–40%
-- Provided massive subsidies to export industries
-- Result: \$3T+ in foreign exchange reserves; world's largest exporter
-
-Critics (US, EU): This is mercantilism — it harms trading partners through unfair competition
-
-China's response: It is development strategy — infant industry protection, just like US and UK did in 19th century
-
-**Who is right?** Both, somewhat. Lecture 14 (India's FTP) will revisit this.
-:::
-:::
+**The "China is mercantilist" debate:** China kept RMB undervalued by ~20–40%, providing massive subsidies to export industries → \$3T+ in foreign exchange reserves. Critics: unfair competition. China's response: infant industry protection, just like US and UK in 19th century. **Who is right?** Both, somewhat.
 :::
 
 ## Neo-Mercantilism: Critique and Assessment
@@ -391,64 +270,32 @@ While export-led growth produced remarkable results in East Asia (South Korea, T
 
 ## Adam Smith's Insight
 
-::: {.columns}
-::: {.column width="60%"}
 **The context: Wealth of Nations (1776)**
 
 - Published the same year as the American Declaration of Independence
 - A direct intellectual attack on mercantilism and the colonial trade system
 - Argued for **free markets** and **free trade** as the sources of national wealth
 
-**Smith's core insight on trade**
-
 > *"If a foreign country can supply us with a commodity cheaper than we ourselves can make it, better buy it of them with some part of the produce of our own industry, employed in a way in which we have some advantage."*
 > — Adam Smith, *Wealth of Nations*, Book IV, Ch. 2
 
-- Trade is **not zero-sum** — both countries gain
-- Each country should produce what it is **best at** — *absolute advantage*
-- The standard of living rises when countries specialise and exchange
-:::
-::: {.column width="40%"}
+**Smith's core insight:** Trade is **not zero-sum** — both countries gain. Each country should produce what it is **best at** — *absolute advantage*. The standard of living rises when countries specialise and exchange.
+
 ::: {.methodbox}
-**What is "absolute advantage"?**
-
-Country A has an absolute advantage in producing good X if it can produce **more units of X per unit of labour** (or input) than Country B.
-
-Equivalently: Country A requires **fewer labour hours** to produce one unit of X than Country B.
-
-This is about *absolute* productivity differences — who is objectively more efficient.
-:::
-:::
+**Absolute advantage:** Country A has an absolute advantage in producing good X if it can produce **more units of X per unit of labour** than Country B.
 :::
 
-## Absolute Advantage: Formal Definition
+## Absolute Advantage: Formal Definition {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **Setting up the model**
 
-Assumptions (classical simplifications):
-- Two countries: Country A and Country B
-- Two goods: Good X and Good Y
-- One factor of production: Labour
-- Labour is mobile *within* each country but *immobile* between countries
-- Constant returns to scale (productivity doesn't change with output)
-- Full employment in both countries
-
-**Definition**
+Assumptions: two countries (A, B), two goods (X, Y), one factor (labour), labour mobile within but immobile between countries, constant returns to scale, full employment.
 
 Country A has an **absolute advantage** in Good X if:
 
 $$a_{LX}^A < a_{LX}^B$$
 
 where $a_{LX}$ = labour required to produce one unit of Good X.
-
-Or equivalently, if labour productivity $\frac{1}{a_{LX}^A} > \frac{1}{a_{LX}^B}$
-:::
-::: {.column width="45%"}
-**Productivity table format**
-
-We often present absolute advantage as:
 
 *Units of output per worker-day:*
 
@@ -462,13 +309,9 @@ Country A has absolute advantage in X if the value in row A, column X **exceeds*
 ::: {.highlightbox}
 **Smith's prescription:** A has absolute advantage in X → A should *export X*. B has absolute advantage in Y → B should *export Y*. Both specialise → both gain.
 :::
-:::
-:::
 
-## Absolute Advantage: India vs USA (Salvatore Notation)
+## Absolute Advantage: India vs USA (Salvatore Notation) {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **Production possibilities (units per worker-day)**
 
 Following Salvatore (2013, Ch. 2) — two nations, two commodities:
@@ -485,24 +328,10 @@ Following Salvatore (2013, Ch. 2) — two nations, two commodities:
 
 $$\text{India: OC of 1 Wheat} = 4 \text{ Rice} \quad (\text{steep PPF — Rice-abundant})$$
 $$\text{USA: OC of 1 Wheat} = \tfrac{1}{3} \text{ Rice} \quad (\text{flat PPF — Wheat-efficient})$$
-:::
-::: {.column width="45%"}
+
 ::: {.methodbox}
-**Labour endowment assumption**
-
-Each country has **40 worker-days** of labour. PPF intercepts:
-
-- India: Rice max $= 40 \times 4 = 160$; Wheat max $= 40 \times 1 = 40$
-- USA: Rice max $= 40 \times 1 = 40$; Wheat max $= 40 \times 3 = 120$
-
-PPF equations (linear = constant opportunity cost):
-
-$$\text{India: } R = 160 - 4W$$
-$$\text{USA: } R = 40 - \tfrac{1}{3}W$$
-
-The **slope** of each PPF equals the (negative) opportunity cost of Wheat in terms of Rice — the key signal for specialisation under absolute advantage.
-:::
-:::
+Each country has **40 worker-days** of labour. PPF equations (linear = constant opportunity cost):
+$$\text{India: } R = 160 - 4W \qquad \text{USA: } R = 40 - \tfrac{1}{3}W$$
 :::
 
 ```{r}
@@ -571,18 +400,14 @@ p1 + p2 + plot_annotation(
 )
 ```
 
-## Gains from Trade: India and USA Under Absolute Advantage
+## Gains from Trade: India and USA Under Absolute Advantage {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
 **Without trade — autarky (labour split 50/50)**
 
 | | India | USA | World |
 |---|---|---|---|
 | Rice (units) | 80 | 20 | **100** |
 | Wheat (units) | 20 | 60 | **80** |
-
-*India: 20 workers × 4 = 80 Rice; 20 workers × 1 = 20 Wheat. USA: 20 × 1 = 20 Rice; 20 × 3 = 60 Wheat.*
 
 **With trade — full specialisation**
 
@@ -591,58 +416,24 @@ p1 + p2 + plot_annotation(
 | Rice (units) | **160** | 0 | **160** |
 | Wheat (units) | 0 | **120** | **120** |
 
-**World gains from specialisation:**
+World gains: $\Delta \text{Rice} = +60 \text{ units}$ (+60%); $\Delta \text{Wheat} = +40 \text{ units}$ (+50%)
 
-$$\Delta \text{Rice} = +60 \text{ units} \quad (+60\%)$$
-$$\Delta \text{Wheat} = +40 \text{ units} \quad (+50\%)$$
-:::
-::: {.column width="50%"}
 ::: {.keybox}
-**Both countries can consume more after trade**
-
-At terms of trade **2 Rice = 1 Wheat** (India exports Rice, imports Wheat):
-
-| | Autarky | Post-trade | Gain |
-|---|---|---|---|
-| India — Rice | 80 | 120 | **+40** |
-| India — Wheat | 20 | 20 | 0 |
-| USA — Rice | 20 | 40 | **+20** |
-| USA — Wheat | 60 | 80 | **+20** |
-
-Both countries consume **outside** their individual PPFs — trade expands the consumption frontier beyond what each country could achieve alone.
-
-**Key insight:** Absolute advantage gives each nation a clear signal about where to specialise — the country that is objectively more productive in a good should produce and export it.
-:::
-:::
+At terms of trade **2 Rice = 1 Wheat** (India exports Rice, imports Wheat): both countries consume **outside** their individual PPFs — trade expands the consumption frontier. Absolute advantage gives each nation a clear signal about where to specialise.
 :::
 
-## Numerical Example: India and Bangladesh
+## Numerical Example: India and Bangladesh {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **The production possibilities**
 
-Assume: with **1 worker-day**, each country can produce:
-
-| Country | Rice (quintals) | Jute (metres) |
+| Country | Rice (quintals/worker-day) | Jute (metres/worker-day) |
 |---------|----------------|---------------|
 | **India** | **4** | **2** |
 | **Bangladesh** | **1** | **4** |
 
-**Who has absolute advantage where?**
+- **Rice:** India has absolute advantage. **Jute:** Bangladesh has absolute advantage.
 
-- **Rice:** India produces 4 Q vs Bangladesh 1 Q → [India has absolute advantage in rice]{.hi}
-- **Jute:** India produces 2 M vs Bangladesh 4 M → [Bangladesh has absolute advantage in jute]{.hi-gold}
-
-**Smith's recommendation:** India should export rice, Bangladesh should export jute
-:::
-::: {.column width="45%"}
-**Before trade (autarky)**
-
-Assume each country has **100 worker-days** to allocate:
-
-- India divides 50/50: produces 200 Q rice + 100 M jute
-- Bangladesh divides 50/50: produces 50 Q rice + 200 M jute
+**Before trade (autarky — 50/50 split, 100 workers each):**
 
 | Country | Rice | Jute |
 |---------|------|------|
@@ -650,64 +441,20 @@ Assume each country has **100 worker-days** to allocate:
 | Bangladesh | 50 | 200 |
 | **World total** | **250** | **300** |
 
-::: {.methodbox}
-Now: what happens if each country *fully specialises* according to absolute advantage?
-:::
-:::
-:::
-
-## The Gains from Trade: Before and After
-
-::: {.columns}
-::: {.column width="55%"}
-**After full specialisation**
-
-- India (100 workers all in rice): produces **400 Q rice**, 0 jute
-- Bangladesh (100 workers all in jute): produces 0 rice, **400 M jute**
+**After full specialisation:**
 
 | Country | Rice | Jute |
 |---------|------|------|
 | India | 400 | 0 |
 | Bangladesh | 0 | 400 |
-| **World total** | **400** | **400** |
-
-**World production gain:**
-
-- Rice: 250 → 400 (+150 Q, **+60% increase**)
-- Jute: 300 → 400 (+100 M, **+33% increase**)
-
-**The world is richer** with specialisation — this extra output is the "gains from trade"
-:::
-::: {.column width="45%"}
-**Consumption after trade**
-
-Suppose they trade at ratio **2Q rice = 2M jute** (terms of trade = 1:1):
-
-- India exports 100 Q rice, imports 100 M jute
-- Bangladesh exports 100 M jute, imports 100 Q rice
-
-| Country | Rice (consume) | Jute (consume) |
-|---------|---------------|---------------|
-| India | 300 | 100 |
-| Bangladesh | 100 | 300 |
-
-**Compare to autarky (50/50 split):**
-
-| Country | Rice gain | Jute gain |
-|---------|-----------|-----------|
-| India | +100 (+50%) | 0 |
-| Bangladesh | +50 (+100%) | +100 (+50%) |
+| **World total** | **400 (+60%)** | **400 (+33%)** |
 
 ::: {.keybox}
-**Both countries consume more** of at least one good — trade is genuinely win-win.
-:::
-:::
+**Both countries consume more** at terms of trade 1:1 — trade is genuinely win-win.
 :::
 
-## India's Absolute Advantage in Agriculture
+## India's Absolute Advantage in Agriculture {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **Where India has clear absolute advantage**
 
 | Commodity | India's global rank | Key advantage |
@@ -715,33 +462,12 @@ Suppose they trade at ratio **2Q rice = 2M jute** (terms of trade = 1:1):
 | Milk production | #1 | 230M+ cattle; Operation Flood legacy |
 | Pulse production | #1 | Dryland farming expertise; diverse varieties |
 | Spice production | #1 | Tropical climate; accumulated expertise |
-| Jute production | #1 (with Bangladesh) | Ganga-Brahmaputra delta soils |
 | Rice production | #2 (after China) | Diverse agro-climates; Green Revolution |
-| Wheat production | #2 (after China) | Punjab-Haryana breadbasket |
-| Sugarcane | #2 (after Brazil) | Maharashtra, UP climate; Cooperative mills |
 
-**Why India has these advantages:**
+**Why India has these advantages:** Diverse agro-climatic zones (12 of 15 major global types); abundant agricultural labour (50% of workforce); long cultivation history → accumulated knowledge
 
-- Diverse agro-climatic zones (12 out of 15 major global types)
-- Abundant agricultural labour (50% of workforce)
-- Long history of cultivation → accumulated knowledge
-:::
-::: {.column width="45%"}
 ::: {.highlightbox}
-**Spices: India's oldest absolute advantage**
-
-Spices were the original reason Europeans sought trade routes to India. The Portuguese, Dutch, and English colonised trade routes specifically to control the spice trade.
-
-Today:
-- India produces ~75% of world's spices
-- Exports ~\$3.7B in spices (FY2024)
-- Top markets: USA, China, Vietnam, Thailand
-- Key commodities: cardamom, pepper, turmeric, chilli, cumin
-- 52 varieties of spices cultivated
-
-India's spice export advantage is a textbook case of absolute advantage based on *natural resource endowments* + *accumulated human capital*.
-:::
-:::
+**Spices: India's oldest absolute advantage.** India produces ~75% of world's spices; exports ~\$3.7B in spices (FY2024). The same advantage that drove European colonial expansion to India's coasts persists today — climate, soils, and accumulated expertise that competitors cannot easily replicate.
 :::
 
 ## India's Agricultural Productivity: Absolute Advantage Indicators
@@ -794,29 +520,25 @@ ggplot(labour_prod, aes(x = commodity, y = ratio, fill = india_adv)) +
 
 ## Limitations of Absolute Advantage Theory {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
 **Theoretical limitations**
 
 1. **Ignores the case where one country is better at everything** — If India has absolute advantage in *both* rice and jute, Smith's theory says Bangladesh should not trade → clearly wrong
 2. **Labour-only model** — Ignores capital, land, technology; these matter enormously in agriculture
-3. **Constant returns to scale** — Real agriculture has diminishing returns (limited fertile land); opportunity costs *increase* as production expands
-4. **Full employment assumption** — In reality, India has seasonal unemployment; trade may employ idle labour rather than divert it
-:::
-::: {.column width="50%"}
+3. **Constant returns to scale** — Real agriculture has diminishing returns (limited fertile land)
+4. **Transport costs ignored** — A commodity with a slight absolute advantage may not be worth trading if freight is high
+
 **Practical limitations**
 
-5. **Transport costs are ignored** — A commodity with a slight absolute advantage may not be worth trading if freight cost is high (bulk grains)
-6. **No room for trade policy** — The model says free trade is always optimal; ignores infant industry, food security, strategic goods arguments
-7. **No product quality differences** — India exports basmati rice (premium quality) and non-basmati (commodity); absolute advantage theory treats all rice as identical
-8. **Static model** — Absolute advantage can change over time (South Korea had no absolute advantage in electronics in 1960; now it does)
-:::
+5. **No room for trade policy** — The model says free trade is always optimal; ignores infant industry, food security arguments
+6. **No product quality differences** — India exports basmati rice (premium quality) and non-basmati (commodity); model treats all rice as identical
+7. **Static model** — Absolute advantage can change over time (South Korea: no electronics advantage in 1960; now it does)
+
+:::{.notes}
+Full employment assumption: In reality, India has seasonal unemployment; trade may employ idle labour rather than divert it.
 :::
 
 ## The Problem with Absolute Advantage
 
-::: {.columns}
-::: {.column width="60%"}
 **The critical case: What if one country is better at everything?**
 
 Suppose USA vs India:
@@ -826,39 +548,12 @@ Suppose USA vs India:
 | **USA** | **4** | **8** |
 | **India** | **2** | **2** |
 
-USA has absolute advantage in **both** wheat and software.
+USA has absolute advantage in **both** wheat and software. Smith's theory predicts: No basis for trade — India has no absolute advantage in anything.
 
-**Smith's theory predicts:** No basis for trade — India has no absolute advantage in anything.
+**But we *know* India and USA trade extensively!** (India exports software services \$80–100B/year + agricultural products)
 
-**But we *know* India and USA trade extensively!**
-
-- India exports software services to USA (\$80–100B/year)
-- India exports agricultural products to USA
-
-**Smith's theory cannot explain this. Something deeper is at work.**
-:::
-::: {.column width="40%"}
 ::: {.highlightbox}
-**What Smith missed**
-
-The key is not absolute productivity but **relative** (or comparative) productivity.
-
-Even though USA is better at *both* goods, the *degree* of advantage differs:
-
-- USA is 2× better at wheat (4 vs 2)
-- USA is **4× better** at software (8 vs 2)
-
-USA has a *stronger* advantage in software → USA should specialise in software
-
-India has a *lesser* disadvantage in wheat → India should specialise in wheat
-
-This is **comparative advantage** — David Ricardo's great insight.
-:::
-
-::: {.methodbox}
-We will prove this formally in **Lecture 4** — but the intuition is: even the worst player on a sports team should play the position they're *least bad* at.
-:::
-:::
+**What Smith missed — comparative advantage:** Even though USA is better at *both* goods, the *degree* of advantage differs. USA is 2× better at wheat (4 vs 2) but **4× better** at software (8 vs 2). USA has a *stronger* advantage in software → USA should specialise in software. India has a *lesser* disadvantage in wheat → India should specialise in wheat. This is **comparative advantage** — David Ricardo's great insight. We prove this formally in Lecture 4.
 :::
 
 ## Smith vs Mercantilism: A Summary Comparison
@@ -880,8 +575,6 @@ We will prove this formally in **Lecture 4** — but the intuition is: even the 
 
 ## India Policy Application: Mercantilism vs Smith in Real Decisions
 
-::: {.columns}
-::: {.column width="55%"}
 **The rice export ban (2023): a case study**
 
 *The mercantilist argument for the ban:*
@@ -890,40 +583,20 @@ We will prove this formally in **Lecture 4** — but the intuition is: even the 
 
 *The Smithian argument against the ban:*
 - India has absolute (and comparative) advantage in rice → should be *exporting*, not restricting
-- Ban reduces income of 30 million paddy farmers
-- Ban damages long-term export relationships with Bangladesh, Africa
-- Ban causes global price spike → India blamed for food security crisis in import-dependent countries
+- Ban reduces income of 30 million paddy farmers; damages long-term export relationships
 
-**Who won?** The ban was implemented in August 2023 — mercantilist/food security logic prevailed over free trade logic.
-:::
-::: {.column width="45%"}
+**Who won?** The ban was implemented in August 2023 — mercantilist/food security logic prevailed.
+
 ::: {.keybox}
-**The deeper tension**
-
-India's trade policy in agriculture oscillates between two poles:
-
-**Export restrictionism** (mercantilist): Rice ban, wheat ban, sugar export quotas, onion export bans
-
-**Export promotion** (Smithian): FTP 2023–28, APEDA support, RoDTEP, agri-export zones
-
-Both impulses co-exist because the political economy is complex: consumers want cheap food; farmers want high prices; the government wants foreign exchange; WTO wants compliance.
-
-There is no simple answer — which is why studying trade theory is so important.
-:::
-:::
+India's trade policy oscillates between **export restrictionism** (rice ban, wheat ban, onion export bans) and **export promotion** (FTP 2023–28, APEDA support, RoDTEP). Both impulses co-exist because the political economy is complex: consumers want cheap food; farmers want high prices; government wants foreign exchange.
 :::
 
-## The Case of Indian Spices: Absolute Advantage in Action
+## The Case of Indian Spices: Absolute Advantage in Action {.smaller}
 
-::: {.columns}
-::: {.column width="60%"}
 **India's dominance in global spice markets**
 
 - **Production:** India produces 75% of world's spices by volume; 50%+ by value
 - **Export performance (FY2024):** \$3.7 billion; 14% growth over FY2023
-- **Volume:** ~2.1 million tonnes exported
-
-**Top commodities and destinations**
 
 | Spice | Export value | Top markets |
 |-------|-------------|-------------|
@@ -933,19 +606,10 @@ There is no simple answer — which is why studying trade theory is so important
 | Turmeric | \$300M | Bangladesh, USA |
 | Pepper | \$190M | USA, Vietnam |
 
-**Source of absolute advantage:** Specific agro-climatic conditions (Kerala for pepper/cardamom, AP/Rajasthan for chilli/cumin, Tamil Nadu for turmeric) that cannot be replicated at comparable cost elsewhere
-:::
-::: {.column width="40%"}
+**Source of absolute advantage:** Specific agro-climatic conditions (Kerala for pepper/cardamom, AP/Rajasthan for chilli/cumin) that cannot be replicated at comparable cost elsewhere
+
 ::: {.highlightbox}
-**The spice trade: history and economics**
-
-Ancient trade routes from India → Arabian Peninsula → Mediterranean existed for 3,000+ years. Roman records mention importing pepper from India at high prices.
-
-The search for direct sea routes to India's spice markets was the primary driver of the "Age of Exploration" — Columbus was looking for a route to India's spices when he accidentally reached the Americas.
-
-Today, India's spice exports are still driven by the same absolute advantage: climate, soils, and accumulated expertise that competitors cannot easily replicate.
-:::
-:::
+The search for direct sea routes to India's spice markets was the primary driver of the "Age of Exploration" — Columbus was looking for a route to India's spices when he accidentally reached the Americas. India's spice export advantage today is the same: climate, soils, and accumulated expertise that competitors cannot easily replicate.
 :::
 
 ## Summary: Mercantilism and Absolute Advantage
@@ -957,13 +621,13 @@ Today, India's spice exports are still driven by the same absolute advantage: cl
 - Wealth = gold; goal = trade surplus; trade is zero-sum
 - Led to colonial exploitation, including India's "drain of wealth"
 - Critiqued by Hume (price-specie-flow) and Smith (wealth is production, not gold)
-- Modern echoes: export bans, currency manipulation, FTP export targets
+:::
 
+::: {.keybox}
 **Absolute Advantage (Adam Smith, 1776):**
 - Each country should specialise in what it produces most efficiently
 - Trade is win-win — world production rises with specialisation
-- India and Bangladesh example: rice vs jute, both gain from specialisation
-- India's agricultural absolute advantages: rice, spices, pulses, milk — rooted in climate, labour, and accumulated knowledge
+- India and Bangladesh example: rice vs jute, both gain
 
 **The fatal limitation:** What if one country is better at *everything*? Smith cannot explain trade between USA and India. This is the gap Ricardo fills with **comparative advantage**.
 :::
@@ -974,17 +638,18 @@ Today, India's spice exports are still driven by the same absolute advantage: cl
 **What we covered today**
 
 - **Mercantilism:** Trade as power accumulation; maximise surplus; zero-sum worldview → systematically flawed, but echoes persist in modern policy
-- **Colonial trade in India:** British mercantilism extracted surplus, destroyed Indian textile industry, contributed to Indian poverty → "drain of wealth" (Naoroji)
+- **Colonial trade in India:** British mercantilism extracted surplus, destroyed Indian textile industry → "drain of wealth" (Naoroji)
 - **Hume and Smith's critiques:** Trade surpluses are self-correcting (price-specie-flow); real wealth is productive capacity, not gold
-- **Absolute advantage:** Specialise in what you produce with highest *absolute* efficiency; trade is win-win → both India and Bangladesh can gain from specialisation in rice and jute
-- **India's absolute advantages:** Rice, spices, pulses, milk, jute — rooted in agro-climatic endowments and accumulated human capital
+- **Absolute advantage:** Specialise in what you produce with highest *absolute* efficiency; trade is win-win
 - **Fundamental limitation:** Absolute advantage cannot explain trade when one country is more efficient in *everything* → sets up Ricardo's comparative advantage
+:::
+
+:::{.notes}
+- **India's absolute advantages:** Rice, spices, pulses, milk, jute — rooted in agro-climatic endowments and accumulated human capital
 :::
 
 ## Next Lecture: Lecture 4
 
-::: {.columns}
-::: {.column width="60%"}
 **Theories of International Trade II — Comparative Advantage**
 *(May 19, 2026)*
 
@@ -993,13 +658,10 @@ We will cover:
 - **David Ricardo (1817):** The most profound insight in economics — comparative advantage
 - **The opportunity cost logic:** Why the *relative* cost, not absolute cost, determines trade patterns
 - **Formal model:** Two countries, two goods, with full numerical derivation
-- **India vs USA example:** Why India exports software services despite USA being more productive in absolute terms
 - **Production Possibility Frontier (PPF):** Formal diagrammatic treatment
-- **The gains from trade:** Measured precisely with PPF and consumption possibilities
 - **Empirical evidence:** Does the Ricardian model predict actual trade patterns?
-:::
-::: {.column width="40%"}
-::: {.highlightbox}
+
+:::{.notes}
 **Suggested reading**
 
 - Krugman, Obstfeld & Melitz, *International Economics*, Ch. 3
@@ -1010,27 +672,20 @@ We will cover:
 
 If India is only half as productive as the USA in *all* agricultural commodities, should India and USA trade at all? If yes, *what* should each produce?
 :::
-:::
-:::
 
 # Appendix {background-color="#1a3a5c"}
 
 ## Additional Resources {.appendix}
 
-::: {.columns}
-::: {.column width="50%"}
 **Further Reading**
 
 - *International Economics* — Salvatore (Ch. 2-3)
 - *International Economics* — Appleyard & Field (Ch. 2-3)
 - RBI/DGCI&S/APEDA databases for latest data
-:::
-::: {.column width="50%"}
+
 **Key Data Sources**
 
 - DGCI&S: India's merchandise trade
 - RBI: Balance of payments data  
 - APEDA: Agricultural export statistics
 - WTO: Tariff and trade databases
-:::
-:::

@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Modern Theories: Heckscher-Ohlin & Lewis Dual-Sector Model"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "May 23, 2026"
@@ -15,7 +15,7 @@ format:
     scrollable: true
     code-fold: true
     code-summary: "Show R code"
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
   beamer:
     aspectratio: 169
     theme: metropolis
@@ -45,76 +45,35 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 
 **Last lecture:** Comparative advantage — trade is driven by *relative* opportunity costs.
 
-::: {.columns}
-::: {.column width="60%"}
-**What Ricardo established:**
-
-- India has lower opportunity cost in Rice → exports Rice
-- World has lower opportunity cost in Wheat → exports Wheat
-- Both gain from specialisation and trade
+**What Ricardo established:** India has lower opportunity cost in Rice → exports Rice; World has lower opportunity cost in Wheat → exports Wheat; both gain from specialisation and trade.
 
 **What Ricardo left unanswered:**
 
 > *Why* do opportunity costs differ across countries in the first place?
 
-Ricardo assumed labour productivity differences but gave no explanation for *why* they exist.
-:::
-::: {.column width="40%"}
-**The Heckscher-Ohlin answer:**
-
-Opportunity costs differ because countries differ in their **endowments** of factors of production:
-
-- Labour ($L$)
-- Capital ($K$)
-- Land ($T$)
-
-And goods differ in **factor intensity** — how much of each factor they require.
-:::
+::: {.methodbox}
+**The Heckscher-Ohlin answer:** Opportunity costs differ because countries differ in their **endowments** of factors of production (labour $L$, capital $K$, land $T$). And goods differ in **factor intensity** — how much of each factor they require.
 :::
 
-## The Heckscher-Ohlin Framework
+## The Heckscher-Ohlin Framework {.smaller}
 
 The H-O model is the workhorse of international trade theory. It explains *why* comparative advantages arise from factor abundance.
 
-::: {.columns}
-::: {.column width="55%"}
-**Setup:**
+**Setup:** Two countries (India $I$, USA $U$), two goods (Rice $R$, Machines $M$), two factors (Labour $L$, Capital $K$); identical technologies across countries.
 
-- **Two countries:** India ($I$) and USA ($U$)
-- **Two goods:** Rice ($R$) and Machines ($M$)
-- **Two factors:** Labour ($L$) and Capital ($K$)
-- Identical technologies across countries
-- Identical homothetic preferences
-
-**Factor intensity definition:**
-
-Rice is **labour-intensive** relative to Machines if:
-
+**Factor intensity:** Rice is **labour-intensive** relative to Machines if:
 $$\left(\frac{K}{L}\right)_R < \left(\frac{K}{L}\right)_M$$
 
-at any common factor price ratio.
-:::
-::: {.column width="45%"}
-**Factor abundance definition:**
-
-India is **labour-abundant** relative to the USA if:
-
+**Factor abundance (physical definition):** India is **labour-abundant** if:
 $$\left(\frac{K}{L}\right)^I < \left(\frac{K}{L}\right)^U$$
 
-Equivalently, using factor prices (dual definition):
-
-$$\left(\frac{w}{r}\right)^I < \left(\frac{w}{r}\right)^U$$
-
-i.e., labour is *relatively cheaper* in India.
-:::
-:::
+**Factor abundance (price definition):**
+$$\left(\frac{w}{r}\right)^I < \left(\frac{w}{r}\right)^U \qquad \text{(labour is relatively cheaper in India)}$$
 
 # Part II: The Heckscher-Ohlin Theorem {background-color="#1a3a5c"}
 
-## H-O Theorem: Formal Statement
+## H-O Theorem: Formal Statement {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **Theorem (Heckscher 1919; Ohlin 1933):**
 
 > A country exports the good that uses its *abundant* factor intensively.
@@ -125,26 +84,15 @@ $$\left(\frac{K}{L}\right)^I < \left(\frac{K}{L}\right)^U \quad \text{(India is 
 
 $$\left(\frac{K}{L}\right)_R < \left(\frac{K}{L}\right)_M \quad \text{(Rice is labour-intensive)}$$
 
-**Therefore:**
-
-$$\text{India exports Rice; USA exports Machines}$$
+$$\therefore \quad \text{India exports Rice; USA exports Machines}$$
 
 **Intuition:** Labour-abundant India faces a low relative wage $\Rightarrow$ labour-intensive Rice is *relatively cheaper* to produce there.
-:::
-::: {.column width="45%"}
-**Autarky prices:**
 
 In autarky, India's abundant labour $\Rightarrow$ low $w/r$ $\Rightarrow$ low relative price of Rice:
 
 $$\left(\frac{P_R}{P_M}\right)^I_{\text{autarky}} < \left(\frac{P_R}{P_M}\right)^U_{\text{autarky}}$$
 
-Opening to trade raises $P_R/P_M$ in India toward the world price:
-
-- India's Rice sector expands (draws in more labour)
-- India's Machines sector contracts
-- Consistent with Rybczynski theorem (below)
-:::
-:::
+Opening to trade raises $P_R/P_M$ in India — India's Rice sector expands, Machines sector contracts.
 
 ## The Edgeworth Box: Factor Allocation
 
@@ -323,29 +271,14 @@ $$\hat{w} > \hat{P}_R > \hat{P}_M > \hat{r}$$
 
 This is the **magnification effect**: factor price changes are magnified relative to goods price changes.
 
-::: {.columns}
-::: {.column width="50%"}
 **Applied to India opening to trade:**
 
-$$P_R \uparrow \Rightarrow w \uparrow\uparrow, \quad r \downarrow$$
+$$P_R \uparrow \Rightarrow w \uparrow\uparrow, \quad r \downarrow \quad \text{(Indian workers gain; Indian capital owners lose)}$$
 
-- Indian workers (abundant factor) gain
-- Indian capital owners (scarce factor) lose
-:::
-::: {.column width="50%"}
-**Applied to US opening to trade:**
-
-$$P_M \uparrow \Rightarrow r \uparrow\uparrow, \quad w \downarrow$$
-
-- US capital owners gain
-- US workers lose → **political economy of protectionism!**
-:::
-:::
+$$P_M \uparrow \Rightarrow r \uparrow\uparrow, \quad w \downarrow \quad \text{(US capital owners gain; US workers lose → political economy of protectionism!)}$$
 
 ## Stolper-Samuelson: Policy Relevance
 
-::: {.columns}
-::: {.column width="55%"}
 **Why does Stolper-Samuelson matter for policy?**
 
 It explains *who lobbies for and against trade liberalisation*:
@@ -353,29 +286,11 @@ It explains *who lobbies for and against trade liberalisation*:
 - Labour in labour-abundant countries → **pro-trade**
 - Capital in labour-abundant countries → **anti-trade** (or sector-specific)
 - Labour in capital-abundant countries → **anti-trade** (e.g., US manufacturing unions)
-- Capital in capital-abundant countries → **pro-trade**
 
-**India's agricultural trade policy:**
+**India's agricultural trade policy:** When India raises rice export prices via MSP increases: $P_R \uparrow \Rightarrow w_{\text{agri}} \uparrow \Rightarrow$ rural wages rise — Stolper-Samuelson in action.
 
-When India raises rice export prices via MSP increases:
-
-$$P_R \uparrow \Rightarrow w_{\text{agri}} \uparrow \Rightarrow \text{rural wages rise}$$
-
-This is Stolper-Samuelson in action — higher output prices benefit agricultural labour.
-:::
-::: {.column width="45%"}
-**The compensation principle:**
-
-Even when aggregate welfare rises, there are **distributional losers**.
-
-A country could in principle use the gains to compensate losers, but in practice:
-
-1. Compensation schemes are costly to administer
-2. Political constraints prevent redistribution
-3. Short-run adjustment costs fall unevenly
-
-This is why **trade adjustment assistance** (TAA) programs exist in many countries.
-:::
+::: {.methodbox}
+**The compensation principle:** Even when aggregate welfare rises, there are **distributional losers**. A country could use the gains to compensate losers, but in practice: compensation schemes are costly, political constraints prevent redistribution, short-run adjustment costs fall unevenly. This is why **trade adjustment assistance** (TAA) programs exist.
 :::
 
 ## Theorem 3: Rybczynski Theorem
@@ -393,22 +308,11 @@ $$\hat{Q}_R > \hat{L} > 0 > \hat{Q}_M$$
 - Output of the labour-intensive good rises **more than proportionally** to the labour increase
 - Output of the capital-intensive good **falls absolutely**
 
-::: {.columns}
-::: {.column width="50%"}
-**Intuition:**
+**Intuition:** Expanding Rice output (to absorb new labour) requires withdrawing capital from Machines, even though capital endowment is unchanged. At constant prices, the only way to re-equate factor ratios is to pull capital into Rice and contract Machines.
 
-Expanding Rice output (to absorb new labour) requires withdrawing capital from Machines, even though capital endowment is unchanged. At constant prices, the only way to re-equate factor ratios is to pull capital into Rice and contract Machines.
-:::
-::: {.column width="50%"}
-**India application:**
-
-India's rural-to-urban migration (labour inflow to manufacturing) can be seen as a Rybczynski effect in reverse:
-
+**India application:** India's rural-to-urban migration (labour inflow to manufacturing):
 $$L_{\text{mfg}} \uparrow \Rightarrow Q_{\text{mfg}} \uparrow\uparrow, \quad Q_{\text{agri}} \downarrow$$
-
 Structural transformation is partly a Rybczynski phenomenon.
-:::
-:::
 
 ## Rybczynski Effect: PPF Diagram
 
@@ -533,35 +437,14 @@ ggplot(df_leo, aes(x=category, y=KL_ratio, fill=type)) +
 
 Several resolutions have been proposed:
 
-::: {.columns}
-::: {.column width="55%"}
-**1. Human capital:**
+1. **Human capital:** US labour is highly skilled — skill-adjusted, US workers embody large amounts of human capital ($\text{Effective } K/L = (K + K_H)/L$)
+2. **Factor intensity reversals:** Same good can be labour-intensive in one country and capital-intensive in another (different factor prices → different techniques)
+3. **Natural resource abundance:** US imports include oil and raw materials — these are capital-intensive; excluding natural resource industries resolves much of the paradox
+4. **Demand bias:** US consumers have stronger preference for capital-intensive goods; demand effects can offset supply-side comparative advantage
+5. **Trade barriers:** US tariff structure historically protected labour-intensive industries (agriculture, textiles), distorting trade flows
 
-US labour is highly skilled — skill-adjusted, US workers embody large amounts of human capital. US exports are "labour-intensive" in unskilled labour but capital-intensive in human capital.
-
-$$\text{Effective } K/L = \frac{K + K_H}{L}$$
-
-**2. Factor intensity reversals:**
-
-Same good can be labour-intensive in one country and capital-intensive in another (different factor prices → different techniques).
-
-**3. Natural resource abundance:**
-
-US imports include oil and raw materials — these are capital-intensive. Excluding natural resource industries resolves much of the paradox.
-:::
-::: {.column width="45%"}
-**4. Demand bias:**
-
-US consumers have stronger preference for capital-intensive goods (high income elasticity of demand for manufactures). Demand effects can offset supply-side comparative advantage.
-
-**5. Trade barriers:**
-
-US tariff structure historically protected labour-intensive industries (agriculture, textiles), distorting trade flows away from comparative advantage.
-
-**Modern verdict (Trefler 1995):**
-
-Allowing for **technology differences** and **factor productivity** differences across countries reconciles most of the H-O predictions with data — the "mystery of the missing trade" is partly resolved.
-:::
+::: {.methodbox}
+**Modern verdict (Trefler 1995):** Allowing for **technology differences** and **factor productivity** differences across countries reconciles most H-O predictions with data.
 :::
 
 # Part V: The Lewis Dual-Sector Model and Agricultural Trade {background-color="#1a3a5c"}
@@ -570,39 +453,18 @@ Allowing for **technology differences** and **factor productivity** differences 
 
 While H-O focuses on *between-country* differences, the **Lewis model** explains how factor endowments evolve *within* a developing country:
 
-::: {.columns}
-::: {.column width="55%"}
-**Two sectors:**
+**Two sectors:** Traditional sector (agriculture) with large labour surplus ($MPL_A \approx 0$); Modern sector (industry/services) with higher wages.
 
-- **Traditional sector (agriculture):** large labour surplus, low marginal product of labour ($MPL_A \approx 0$)
-- **Modern sector (industry/services):** rising capital intensity, higher wages
+**Lewis's key assumption:** $MPL_A < \bar{w}_{\text{subsistence}}$ — a pool of "surplus labour" in agriculture can be absorbed by industry **without raising agricultural wages**.
 
-**Lewis's key assumption:**
+**Implications for agricultural trade during Lewis transition:**
 
-$$MPL_A < \bar{w}_{\text{subsistence}}$$
+- Low rural wages → comparative advantage in labour-intensive agricultural exports
+- As industrialisation proceeds → rural wages rise → agricultural comparative advantage erodes
+- Eventually: Rybczynski-type shift away from agricultural exports
 
-There is a pool of "surplus labour" in agriculture that can be absorbed by industry **without raising agricultural wages**.
-
-**Migration condition:**
-
-Workers migrate from agriculture to industry as long as:
-
-$$w_{\text{industry}} > w_{\text{agriculture}}$$
-:::
-::: {.column width="45%"}
-**Implications for agricultural trade:**
-
-During the Lewis transition:
-
-1. Agricultural labour supply is highly elastic → low rural wages
-2. Low wages → comparative advantage in labour-intensive agricultural exports
-3. As industrialisation proceeds → rural wages rise → agricultural comparative advantage erodes
-4. Eventually: Rybczynski-type shift away from agricultural exports
-
-**East Asia's trajectory:**
-
-Japan (1950s–70s) → South Korea (1970s–90s) → China (2000s–) each followed this path: strong agricultural/labour-intensive exports early, shifting to capital-intensive manufactures.
-:::
+::: {.highlightbox}
+**East Asia's trajectory:** Japan (1950s–70s) → South Korea (1970s–90s) → China (2000s–) each followed this path: strong agricultural/labour-intensive exports early, shifting to capital-intensive manufactures.
 :::
 
 ## Lewis Model: Diagrammatic Analysis
@@ -667,10 +529,8 @@ p_ind <- ggplot() +
 p_agri + p_ind
 ```
 
-## H-O, Lewis, and India's Agricultural Exports
+## H-O, Lewis, and India's Agricultural Exports {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **Connecting the models:**
 
 | Mechanism | H-O | Lewis |
@@ -680,54 +540,25 @@ p_agri + p_ind
 | Trade prediction | Export labour-intensive goods | Export goods with surplus-labour content |
 | Dynamics | Static | Dynamic (transition) |
 
-**Combined implication for India:**
+**Combined implication for India:** India currently sits at an early Lewis stage — large agricultural labour surplus (~40% of workforce); low rural wages → comparative advantage in labour-intensive agri exports.
 
-India currently sits at an early Lewis stage:
+**India's agricultural export performance (FY2024):** Total \$43.7B; Rice \$10.4B; Marine \$7.6B; Spices \$3.7B — H-O predicts labour-intensive crops dominate (confirmed); Lewis explains low rural wages underpin price competitiveness.
 
-- Large agricultural labour surplus ($\approx 40$% of workforce in agriculture)
-- Low rural wages → strong comparative advantage in labour-intensive agri exports
-- As structural transformation proceeds, advantage will erode (as it did in South Korea)
-:::
-::: {.column width="45%"}
-**India's agricultural export performance (FY2024):**
-
-- Total agri-food exports: **$43.7 billion**
-- Rice: $\approx$ \$10.4 billion (before export ban)
-- Marine products: \$7.6 billion
-- Spices: \$3.7 billion
-- Cotton: \$2.1 billion
-
-**H-O explains:** labour-intensive crops dominate
-
-**Lewis explains:** low rural wages underpin price competitiveness
-
-**Policy implication:** India should invest in agricultural productivity to maintain competitiveness even as wages rise — moving up the value chain rather than defending low-wage advantage.
-:::
+::: {.keybox}
+India should invest in agricultural productivity to maintain competitiveness even as wages rise — moving up the value chain rather than defending low-wage advantage.
 :::
 
 # Part VI: Summary and Looking Ahead {background-color="#1a3a5c"}
 
-## The Modern Theory of Trade: Summary
+## The Modern Theory of Trade: Summary {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
 **Three pillars of the H-O framework:**
 
 1. **H-O Theorem:** countries export goods intensive in their abundant factor
+2. **Factor Price Equalisation:** $w^I = w^U$, $r^I = r^U$ (free trade substitutes for factor mobility)
+3. **Stolper-Samuelson:** $\hat{P}_R > 0 \Rightarrow \hat{w} > \hat{P}_R > 0 > \hat{r}$ (trade has stark distributional effects)
+4. **Rybczynski:** $\hat{L} > 0 \Rightarrow \hat{Q}_R > \hat{L} > 0 > \hat{Q}_M$ (factor accumulation biases production)
 
-2. **Factor Price Equalisation:**
-$$w^I = w^U, \quad r^I = r^U$$
-(free trade substitutes for factor mobility)
-
-3. **Stolper-Samuelson:**
-$$\hat{P}_R > 0 \Rightarrow \hat{w} > \hat{P}_R > 0 > \hat{r}$$
-(trade has stark distributional effects)
-
-4. **Rybczynski:**
-$$\hat{L} > 0 \Rightarrow \hat{Q}_R > \hat{L} > 0 > \hat{Q}_M$$
-(factor accumulation biases production)
-:::
-::: {.column width="50%"}
 **Empirical scorecard:**
 
 | Prediction | Evidence |
@@ -738,14 +569,7 @@ $$\hat{L} > 0 \Rightarrow \hat{Q}_R > \hat{L} > 0 > \hat{Q}_M$$
 | Stolper-Samuelson effects | Strong in long run |
 | Rybczynski (structural change) | Strong (East Asia) |
 
-**What H-O cannot explain:**
-
-- Intra-industry trade (Germany ↔ France in cars)
-- Trade between similar countries
-- Scale economies and first-mover advantages
-→ **New Trade Theory** (Lecture 6): Krugman (1979), Helpman-Krugman (1985)
-:::
-:::
+**What H-O cannot explain:** Intra-industry trade; trade between similar countries; scale economies → **New Trade Theory** (Lecture 6)
 
 ## Looking Ahead: New Trade Theory
 
@@ -764,26 +588,20 @@ $$\text{Specialisation} \Rightarrow \text{Scale economies} \Rightarrow \text{Low
 Each country specialises in a *different* variety of the same good — gains arise from **love of variety**, not factor endowments.
 
 **Next lecture:** Economies of scale, monopolistic competition, and the new economic geography — why do trade and production cluster? And what does this mean for India's agricultural processing sector?
-:::
 
 # Appendix {background-color="#1a3a5c"}
 
 ## Additional Resources {.appendix}
 
-::: {.columns}
-::: {.column width="50%"}
 **Further Reading**
 
 - *International Economics* — Salvatore (Ch. 4-5)
 - *International Economics* — Appleyard & Field (Ch. 4-5)
 - RBI/DGCI&S/APEDA databases for latest data
-:::
-::: {.column width="50%"}
+
 **Key Data Sources**
 
 - DGCI&S: India's merchandise trade
 - RBI: Balance of payments data  
 - APEDA: Agricultural export statistics
 - WTO: Tariff and trade databases
-:::
-:::

@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Lecture 18: India's Agricultural Trade and Foreign Trade Policy"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "August 22, 2026"
@@ -15,7 +15,7 @@ format:
     scrollable: true
     code-fold: true
     code-summary: "Show R code"
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
   beamer:
     aspectratio: 169
     theme: metropolis
@@ -51,7 +51,7 @@ Today, we can answer that question **fully** — with theory, data, institutions
 
 We have traced the journey from Ricardo's simple insight about comparative advantage, through the architecture of WTO rules, the mechanics of import tariffs, the politics of MSP and food security, the diplomacy of phytosanitary protocols, and the paperwork of a Shipping Bill on ICEGATE.
 
-**This is what ECO 2203 has been about.**
+**This is what Econ 2203 has been about.**
 :::
 ::: {.column width="42%"}
 ::: {.highlightbox}
@@ -721,7 +721,7 @@ India's food subsidy bill: **₹2.05 lakh crore (FY2024).** FCI procurement, PDS
 | Food security | Import restriction | Higher domestic prices; consumer loss |
 
 ::: {.keybox}
-**The key insight from ECO 2203:**
+**The key insight from Econ 2203:**
 
 Trade policy in agriculture is inherently about distributing gains and losses among **farmers, consumers, traders, and government.** There is no free lunch. Understanding these trade-offs — not choosing one side blindly — is what makes an economist valuable to society.
 :::
@@ -836,7 +836,7 @@ Every percentage point improvement in agricultural export earnings — whether f
 
 [This is why international trade policy in agriculture matters.]{.hi-gold}
 
-And this is what ECO 2203 has been about.
+And this is what Econ 2203 has been about.
 :::
 ::: {.column width="40%"}
 ::: {.highlightbox}
@@ -854,7 +854,7 @@ We can now trace every step:
 - The comparative advantage that made it competitive
 - The WTO rule that kept the market open
 
-**That journey is ECO 2203.**
+**That journey is Econ 2203.**
 :::
 :::
 :::
@@ -883,7 +883,7 @@ We can now trace every step:
 
 ::: {.columns}
 ::: {.column width="55%"}
-**Final Examination — ECO 2203:**
+**Final Examination — Econ 2203:**
 
 **Format:**
 

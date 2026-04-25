@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  24 APR 2026 15:00
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  25 APR 2026 09:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1197,137 +1197,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
-Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-))
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.
-sty
-Package: microtype 2025/07/09 v3.2b Micro-typographical refinements (RS)
-\MT@toks=\toks46
-\MT@tempbox=\box80
-\MT@count=\count383
-LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
-LaTeX Info: Redefining \leftprotrusion on input line 1088.
-\MT@prot@toks=\toks47
-LaTeX Info: Redefining \rightprotrusion on input line 1107.
-LaTeX Info: Redefining \textls on input line 1449.
-\MT@outer@kern=\dimen309
-LaTeX Info: Redefining \microtypecontext on input line 2053.
-LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
-\MT@listname@count=\count384
-
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-
-xetex.def
-File: microtype-xetex.def 2025/07/09 v3.2b Definitions specific to xetex (RS)
-LaTeX Info: Redefining \lsstyle on input line 443.
-LaTeX Info: Redefining \lslig on input line 451.
-\MT@outer@space=\skip69
-)
-Package microtype Info: Loading configuration file microtype.cfg.
-
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.
-cfg
-File: microtype.cfg 2025/07/09 v3.2b microtype main configuration file (RS)
-)
-LaTeX Info: Redefining \microtypesetup on input line 3065.
-)
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
-Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
-) (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.st
-y
-Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
-\LTleft=\skip70
-\LTright=\skip71
-\LTpre=\skip72
-\LTpost=\skip73
-\LTchunksize=\count385
-\LTcapwidth=\dimen310
-\LT@head=\box81
-\LT@firsthead=\box82
-\LT@foot=\box83
-\LT@lastfoot=\box84
-\LT@gbox=\box85
-\LT@cols=\count386
-\LT@rows=\count387
-\c@LT@tables=\count388
-\c@LT@chunks=\count389
-\LT@p@ftn=\toks48
-)
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.st
-y
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen311
-\lightrulewidth=\dimen312
-\cmidrulewidth=\dimen313
-\belowrulesep=\dimen314
-\belowbottomsep=\dimen315
-\aboverulesep=\dimen316
-\abovetopsep=\dimen317
-\cmidrulesep=\dimen318
-\cmidrulekern=\dimen319
-\defaultaddspace=\dimen320
-\@cmidla=\count390
-\@cmidlb=\count391
-\@aboverulesep=\dimen321
-\@belowrulesep=\dimen322
-\@thisruleclass=\count392
-\@lastruleclass=\count393
-\@thisrulewidth=\dimen323
-) (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen324
-\ar@mcellbox=\box86
-\extrarowheight=\dimen325
-\NC@list=\toks49
-\extratabsurround=\skip74
-\backup@length=\skip75
-\ar@cellbox=\box87
-)
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
-Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
-Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen326
-\captionmargin=\dimen327
-\caption@leftmargin=\dimen328
-\caption@rightmargin=\dimen329
-\caption@width=\dimen330
-\caption@indent=\dimen331
-\caption@parindent=\dimen332
-\caption@hangindent=\dimen333
-Package caption Info: beamer document class detected.
-
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-beam
-er.sto
-File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to th
-e beamer document classes (AR)
-))
-\c@caption@flags=\count394
-\c@continuedfloat=\count395
-Package caption Info: hyperref package is loaded.
-Package caption Info: Hyperref support is turned off
-(caption)             because hyperref has stopped early.
-Package caption Info: longtable package is loaded.
-
-(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.st
-y
-Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
-))
-\pandoc@box=\box88
-
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropol
 is\beamerthememetropolis.sty
 Package: beamerthememetropolis 2017/01/23 v1.2 Metropolis Beamer theme
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-\pgfopts@list@add@a@toks=\toks50
-\pgfopts@list@add@b@toks=\toks51
+\pgfopts@list@add@a@toks=\toks46
+\pgfopts@list@add@b@toks=\toks47
 )
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropol
 is\beamerinnerthememetropolis.sty
@@ -1342,7 +1219,7 @@ Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
 uleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfnodeparttextbox=\box89
+\pgfnodeparttextbox=\box80
 )
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
 uleplot.code.tex
@@ -1351,8 +1228,8 @@ File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
 fcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen334
-\pgf@nodesepend=\dimen335
+\pgf@nodesepstart=\dimen309
+\pgf@nodesepend=\dimen310
 )
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
 fcomp-version-1-18.sty
@@ -1363,10 +1240,10 @@ Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgff
 or.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen336
-\pgffor@skip=\dimen337
-\pgffor@stack=\toks52
-\pgffor@toks=\toks53
+\pgffor@iter=\dimen311
+\pgffor@skip=\dimen312
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
 ))
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
 tikz\tikz.code.tex
@@ -1375,52 +1252,52 @@ Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
 ibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count396
-\pgfplotmarksize=\dimen338
+\pgf@plot@mark@count=\count383
+\pgfplotmarksize=\dimen313
 )
-\tikz@lastx=\dimen339
-\tikz@lasty=\dimen340
-\tikz@lastxsaved=\dimen341
-\tikz@lastysaved=\dimen342
-\tikz@lastmovetox=\dimen343
-\tikz@lastmovetoy=\dimen344
-\tikzleveldistance=\dimen345
-\tikzsiblingdistance=\dimen346
-\tikz@figbox=\box90
-\tikz@figbox@bg=\box91
-\tikz@tempbox=\box92
-\tikz@tempbox@bg=\box93
-\tikztreelevel=\count397
-\tikznumberofchildren=\count398
-\tikznumberofcurrentchild=\count399
-\tikz@fig@count=\count400
+\tikz@lastx=\dimen314
+\tikz@lasty=\dimen315
+\tikz@lastxsaved=\dimen316
+\tikz@lastysaved=\dimen317
+\tikz@lastmovetox=\dimen318
+\tikz@lastmovetoy=\dimen319
+\tikzleveldistance=\dimen320
+\tikzsiblingdistance=\dimen321
+\tikz@figbox=\box81
+\tikz@figbox@bg=\box82
+\tikz@tempbox=\box83
+\tikz@tempbox@bg=\box84
+\tikztreelevel=\count384
+\tikznumberofchildren=\count385
+\tikznumberofcurrentchild=\count386
+\tikz@fig@count=\count387
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
 ulematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count401
-\pgfmatrixcurrentcolumn=\count402
-\pgf@matrix@numberofcolumns=\count403
+\pgfmatrixcurrentrow=\count388
+\pgfmatrixcurrentcolumn=\count389
+\pgf@matrix@numberofcolumns=\count390
 )
-\tikz@expandcount=\count404
+\tikz@expandcount=\count391
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
 tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
-\metropolis@titleseparator@linewidth=\skip76
-\metropolis@progressonsectionpage=\skip77
-\metropolis@progressonsectionpage@linewidth=\skip78
-\metropolis@blocksep=\skip79
-\metropolis@blockadjust=\skip80
-\metropolis@parskip=\skip81
+\metropolis@titleseparator@linewidth=\skip69
+\metropolis@progressonsectionpage=\skip70
+\metropolis@progressonsectionpage@linewidth=\skip71
+\metropolis@blocksep=\skip72
+\metropolis@blockadjust=\skip73
+\metropolis@parskip=\skip74
 )
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropol
 is\beamerouterthememetropolis.sty
 Package: beamerouterthememetropolis 2017/01/23 Metropolis outer theme
-\metropolis@frametitle@padding=\skip82
-\metropolis@progressinheadfoot=\skip83
-\metropolis@progressinheadfoot@linewidth=\skip84
+\metropolis@frametitle@padding=\skip75
+\metropolis@progressinheadfoot=\skip76
+\metropolis@progressinheadfoot@linewidth=\skip77
 )
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropol
 is\beamercolorthememetropolis.sty
@@ -1436,7 +1313,7 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
-\c@fontsnotfound=\count405
+\c@fontsnotfound=\count392
 
 Package fontspec Info: 
 (fontspec)             Fira Sans Light scale = 0.8489459548753585.
@@ -1680,7 +1557,129 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/lmtt/m/n --> TU/FiraMono(1)/bx/n on input line 95.
 ))
-LaTeX Info: Redefining \label on input line 202.
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+))
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.
+sty
+Package: microtype 2025/07/09 v3.2b Micro-typographical refinements (RS)
+\MT@toks=\toks50
+\MT@tempbox=\box85
+\MT@count=\count393
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
+LaTeX Info: Redefining \leftprotrusion on input line 1088.
+\MT@prot@toks=\toks51
+LaTeX Info: Redefining \rightprotrusion on input line 1107.
+LaTeX Info: Redefining \textls on input line 1449.
+\MT@outer@kern=\dimen322
+LaTeX Info: Redefining \microtypecontext on input line 2053.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
+\MT@listname@count=\count394
+
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-
+xetex.def
+File: microtype-xetex.def 2025/07/09 v3.2b Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 443.
+LaTeX Info: Redefining \lslig on input line 451.
+\MT@outer@space=\skip78
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.
+cfg
+File: microtype.cfg 2025/07/09 v3.2b microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3065.
+)
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+) (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.st
+y
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip79
+\LTright=\skip80
+\LTpre=\skip81
+\LTpost=\skip82
+\LTchunksize=\count395
+\LTcapwidth=\dimen323
+\LT@head=\box86
+\LT@firsthead=\box87
+\LT@foot=\box88
+\LT@lastfoot=\box89
+\LT@gbox=\box90
+\LT@cols=\count396
+\LT@rows=\count397
+\c@LT@tables=\count398
+\c@LT@chunks=\count399
+\LT@p@ftn=\toks52
+)
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.st
+y
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen324
+\lightrulewidth=\dimen325
+\cmidrulewidth=\dimen326
+\belowrulesep=\dimen327
+\belowbottomsep=\dimen328
+\aboverulesep=\dimen329
+\abovetopsep=\dimen330
+\cmidrulesep=\dimen331
+\cmidrulekern=\dimen332
+\defaultaddspace=\dimen333
+\@cmidla=\count400
+\@cmidlb=\count401
+\@aboverulesep=\dimen334
+\@belowrulesep=\dimen335
+\@thisruleclass=\count402
+\@lastruleclass=\count403
+\@thisrulewidth=\dimen336
+) (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen337
+\ar@mcellbox=\box91
+\extrarowheight=\dimen338
+\NC@list=\toks53
+\extratabsurround=\skip83
+\backup@length=\skip84
+\ar@cellbox=\box92
+)
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen339
+\captionmargin=\dimen340
+\caption@leftmargin=\dimen341
+\caption@rightmargin=\dimen342
+\caption@width=\dimen343
+\caption@indent=\dimen344
+\caption@parindent=\dimen345
+\caption@hangindent=\dimen346
+Package caption Info: beamer document class detected.
+
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-beam
+er.sto
+File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to th
+e beamer document classes (AR)
+))
+\c@caption@flags=\count404
+\c@continuedfloat=\count405
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+Package caption Info: longtable package is loaded.
+
+(C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.st
+y
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+))
+\pandoc@box=\box93
+LaTeX Info: Redefining \label on input line 203.
  (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count406
@@ -1713,26 +1712,26 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (Lecture18_India_Agri_Trade_Policy.aux)
 \openout1 = `Lecture18_India_Agri_Trade_Policy.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 269.
-LaTeX Font Info:    ... okay on input line 269.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1768,7 +1767,7 @@ LaTeX Font Info:    ... okay on input line 269.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 269.
+Package hyperref Info: Link coloring OFF on input line 270.
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
 r-basic-dictionary-English.dict
@@ -1795,11 +1794,11 @@ r-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 269.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 270.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 269.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 270.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 269.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 270.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1830,7 +1829,7 @@ t=math;language=dflt;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 269.
+(Font)              scaled to size 11.28032pt on input line 270.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1873,18 +1872,18 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 269.
+(Font)              scaled to size 11.28032pt on input line 270.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 269.
+(Font)              `operators' in the math version `normal' on input line 270.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 269.
+ line 270.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 269.
+(Font)              `operators' in the math version `bold' on input line 270.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 269.
+t line 270.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1958,15 +1957,15 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 269.
+(Font)              `symbols' in the math version `normal' on input line 270.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 269.
+t line 270.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 269.
+(Font)              `symbols' in the math version `bold' on input line 270.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 269.
+t line 270.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -2035,23 +2034,23 @@ t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 2
-69.
+70.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 269.
+t line 270.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 269
+(Font)              `largesymbols' in the math version `bold' on input line 270
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 269.
-LaTeX Info: Redefining \microtypecontext on input line 269.
-Package microtype Info: Applying patch `item' on input line 269.
-Package microtype Info: Applying patch `toc' on input line 269.
-Package microtype Info: Applying patch `eqnum' on input line 269.
-Package microtype Info: Applying patch `footnote' on input line 269.
-Package microtype Info: Applying patch `verbatim' on input line 269.
-LaTeX Info: Redefining \microtypesetup on input line 269.
+t line 270.
+LaTeX Info: Redefining \microtypecontext on input line 270.
+Package microtype Info: Applying patch `item' on input line 270.
+Package microtype Info: Applying patch `toc' on input line 270.
+Package microtype Info: Applying patch `eqnum' on input line 270.
+Package microtype Info: Applying patch `footnote' on input line 270.
+Package microtype Info: Applying patch `verbatim' on input line 270.
+LaTeX Info: Redefining \microtypesetup on input line 270.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -2066,37 +2065,37 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (Lecture18_India_Agri_Trade_Policy.nav)
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 5.09372pt on input line 269.
+(Font)              scaled to size 5.09372pt on input line 270.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 7.64058pt on input line 269.
+(Font)              scaled to size 7.64058pt on input line 270.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 12.22491pt on input line 270.
+(Font)              scaled to size 12.22491pt on input line 271.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 12.13197pt on input line 270.
+(Font)              scaled to size 12.13197pt on input line 271.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 8.48953pt on input line 270.
+(Font)              scaled to size 8.48953pt on input line 271.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 6.79163pt on input line 270.
+(Font)              scaled to size 6.79163pt on input line 271.
 
-Overfull \vbox (28.63197pt too high) detected at line 270
+Overfull \vbox (28.63197pt too high) detected at line 271
  []
 
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 3.39581pt on input line 270.
+(Font)              scaled to size 3.39581pt on input line 271.
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 9.22536pt on input line 280.
+(Font)              scaled to size 9.22536pt on input line 281.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
-(Font)              scaled to size 9.29602pt on input line 280.
+(Font)              scaled to size 9.29602pt on input line 281.
  [2
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...on} \phantomsection \label 
                                                   {opening-reflection} \begi...
-l.334 \end{frame}
+l.335 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2105,7 +2104,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (103.73277pt too high) detected at line 334
+Overfull \vbox (103.73277pt too high) detected at line 335
  []
 
 [3
@@ -2114,7 +2113,7 @@ Overfull \vbox (103.73277pt too high) detected at line 334
 ! Undefined control sequence.
 \beamer@doifinframe ...am} \phantomsection \label 
                                                   {the-full-chain-course-syn...
-l.372 \end{frame}
+l.373 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2123,7 +2122,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (58.04845pt too high) detected at line 372
+Overfull \vbox (58.04845pt too high) detected at line 373
  []
 
 [4
@@ -2132,7 +2131,7 @@ Overfull \vbox (58.04845pt too high) detected at line 372
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {indias-foreign-trade-poli...
-l.392 \end{frame}
+l.393 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2145,11 +2144,11 @@ pdf Graphic file (type pdf)
 <use Lecture18_India_Agri_Trade_Policy_files/figure-beamer/fig-ftp-timeline-1.p
 df>
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 7.58249pt on input line 392.
+(Font)              scaled to size 7.58249pt on input line 393.
 ! Undefined control sequence.
 <argument> \label 
                   {fig-ftp-timeline}India's trade policy evolved from the 19...
-l.392 \end{frame}
+l.393 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2163,7 +2162,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...4)} \phantomsection \label 
                                                   {indias-agricultural-trade...
-l.470 \end{frame}
+l.471 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2172,7 +2171,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (121.17613pt too high) detected at line 470
+Overfull \vbox (121.17613pt too high) detected at line 471
  []
 
 [6
@@ -2181,7 +2180,7 @@ Overfull \vbox (121.17613pt too high) detected at line 470
 ! Undefined control sequence.
 \beamer@doifinframe ...ld} \phantomsection \label 
                                                   {export-composition-what-i...
-l.531 \end{frame}
+l.532 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2190,7 +2189,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (136.81606pt too high) detected at line 531
+Overfull \vbox (136.81606pt too high) detected at line 532
  []
 
 [7
@@ -2199,7 +2198,7 @@ Overfull \vbox (136.81606pt too high) detected at line 531
 ! Undefined control sequence.
 \beamer@doifinframe ...ts} \phantomsection \label 
                                                   {geographic-distribution-w...
-l.614 \end{frame}
+l.615 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2208,17 +2207,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (15.95091pt too wide) in alignment at lines 614--614
+Overfull \hbox (15.95091pt too wide) in alignment at lines 615--615
  [] [] [] 
  []
 
 
-Overfull \hbox (15.95091pt too wide) in alignment at lines 614--614
+Overfull \hbox (15.95091pt too wide) in alignment at lines 615--615
  [] [] [] 
  []
 
 
-Overfull \vbox (137.4157pt too high) detected at line 614
+Overfull \vbox (137.4157pt too high) detected at line 615
  []
 
 [8
@@ -2227,7 +2226,7 @@ Overfull \vbox (137.4157pt too high) detected at line 614
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {import-profile-indias-agr...
-l.687 \end{frame}
+l.688 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2236,17 +2235,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (15.2258pt too wide) in alignment at lines 687--687
+Overfull \hbox (15.2258pt too wide) in alignment at lines 688--688
  [] [] [] 
  []
 
 
-Overfull \hbox (15.2258pt too wide) in alignment at lines 687--687
+Overfull \hbox (15.2258pt too wide) in alignment at lines 688--688
  [] [] [] 
  []
 
 
-Overfull \vbox (230.6556pt too high) detected at line 687
+Overfull \vbox (230.6556pt too high) detected at line 688
  []
 
 [9
@@ -2255,7 +2254,7 @@ Overfull \vbox (230.6556pt too high) detected at line 687
 ! Undefined control sequence.
 \beamer@doifinframe ...ty} \phantomsection \label 
                                                   {the-value-addition-opport...
-l.756 \end{frame}
+l.757 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2264,7 +2263,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (215.01567pt too high) detected at line 756
+Overfull \vbox (215.01567pt too high) detected at line 757
  []
 
 [10
@@ -2273,7 +2272,7 @@ Overfull \vbox (215.01567pt too high) detected at line 756
 ! Undefined control sequence.
 \beamer@doifinframe ...28} \phantomsection \label 
                                                   {foreign-trade-policy-2023...
-l.827 \end{frame}
+l.828 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2282,7 +2281,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (261.93544pt too high) detected at line 827
+Overfull \vbox (261.93544pt too high) detected at line 828
  []
 
 [11
@@ -2291,7 +2290,7 @@ Overfull \vbox (261.93544pt too high) detected at line 827
 ! Undefined control sequence.
 \beamer@doifinframe ...ls} \phantomsection \label 
                                                   {ftp-2023-28-sector-export...
-l.847 \end{frame}
+l.848 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2306,7 +2305,7 @@ f>
 ! Undefined control sequence.
 <argument> \label 
                   {fig-ftp-targets}India's FTP 2023-28 targets USD 2 trillio...
-l.847 \end{frame}
+l.848 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2320,7 +2319,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {meis-vs-rodtep-indias-exp...
-l.867 \end{frame}
+l.868 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2335,7 +2334,7 @@ f>
 ! Undefined control sequence.
 <argument> \label 
                   {fig-meis-rodtep}RoDTEP covers more products and exporters...
-l.867 \end{frame}
+l.868 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2349,7 +2348,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ty} \phantomsection \label 
                                                   {millets-indias-global-fir...
-l.954 \end{frame}
+l.955 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2358,17 +2357,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (31.9122pt too wide) in alignment at lines 954--954
+Overfull \hbox (31.9122pt too wide) in alignment at lines 955--955
  [] [] [] 
  []
 
 
-Overfull \hbox (31.9122pt too wide) in alignment at lines 954--954
+Overfull \hbox (31.9122pt too wide) in alignment at lines 955--955
  [] [] [] 
  []
 
 
-Overfull \vbox (246.29552pt too high) detected at line 954
+Overfull \vbox (246.29552pt too high) detected at line 955
  []
 
 [14
@@ -2377,7 +2376,7 @@ Overfull \vbox (246.29552pt too high) detected at line 954
 ! Undefined control sequence.
 \beamer@doifinframe ...gy} \phantomsection \label 
                                                   {geographical-indications-...
-l.1029 \end{frame}
+l.1030 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2386,17 +2385,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (72.47072pt too wide) in alignment at lines 1029--1029
+Overfull \hbox (72.47072pt too wide) in alignment at lines 1030--1030
  [] [] [] 
  []
 
 
-Overfull \hbox (72.47072pt too wide) in alignment at lines 1029--1029
+Overfull \hbox (72.47072pt too wide) in alignment at lines 1030--1030
  [] [] [] 
  []
 
 
-Overfull \vbox (199.37575pt too high) detected at line 1029
+Overfull \vbox (199.37575pt too high) detected at line 1030
  []
 
 [15
@@ -2405,7 +2404,7 @@ Overfull \vbox (199.37575pt too high) detected at line 1029
 ! Undefined control sequence.
 \beamer@doifinframe ...me} \phantomsection \label 
                                                   {challenges-india-must-ove...
-l.1097 \end{frame}
+l.1098 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2414,7 +2413,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (244.49208pt too high) detected at line 1097
+Overfull \vbox (244.49208pt too high) detected at line 1098
  []
 
 [16
@@ -2423,7 +2422,7 @@ Overfull \vbox (244.49208pt too high) detected at line 1097
 ! Undefined control sequence.
 \beamer@doifinframe ...ts} \phantomsection \label 
                                                   {opportunities-for-indias-...
-l.1161 \end{frame}
+l.1162 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2432,7 +2431,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (183.53995pt too high) detected at line 1161
+Overfull \vbox (183.53995pt too high) detected at line 1162
  []
 
 [17
@@ -2441,7 +2440,7 @@ Overfull \vbox (183.53995pt too high) detected at line 1161
 ! Undefined control sequence.
 \beamer@doifinframe ...ss} \phantomsection \label 
                                                   {the-core-policy-dilemma-f...
-l.1241 \end{frame}
+l.1242 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2450,23 +2449,23 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (298.26918pt too high) detected at line 1241
+Overfull \vbox (297.92186pt too high) detected at line 1242
  []
 
 [18
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 10.18744pt on input line 1249.
+(Font)              scaled to size 10.18744pt on input line 1250.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 10.10999pt on input line 1249.
+(Font)              scaled to size 10.10999pt on input line 1250.
  [19
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...le} \phantomsection \label 
                                                   {course-synthesis-module-b...
-l.1313 \end{frame}
+l.1314 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2475,7 +2474,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (262.53508pt too high) detected at line 1313
+Overfull \vbox (262.53508pt too high) detected at line 1314
  []
 
 [20
@@ -2484,7 +2483,7 @@ Overfull \vbox (262.53508pt too high) detected at line 1313
 ! Undefined control sequence.
 \beamer@doifinframe ...30} \phantomsection \label 
                                                   {indias-agricultural-expor...
-l.1381 \end{frame}
+l.1382 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2493,7 +2492,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (197.98996pt too high) detected at line 1381
+Overfull \vbox (197.98996pt too high) detected at line 1382
  []
 
 [21
@@ -2502,7 +2501,7 @@ Overfull \vbox (197.98996pt too high) detected at line 1381
 ! Undefined control sequence.
 \beamer@doifinframe ...nt} \phantomsection \label 
                                                   {final-thought-agriculture...
-l.1449 \end{frame}
+l.1450 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2511,7 +2510,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (181.73651pt too high) detected at line 1449
+Overfull \vbox (181.73651pt too high) detected at line 1450
  []
 
 [22
@@ -2520,7 +2519,7 @@ Overfull \vbox (181.73651pt too high) detected at line 1449
 ! Undefined control sequence.
 \beamer@doifinframe ...fe} \phantomsection \label 
                                                   {key-takeaways-for-the-exa...
-l.1486 \end{frame}
+l.1487 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2529,7 +2528,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (97.68979pt too high) detected at line 1486
+Overfull \vbox (97.68979pt too high) detected at line 1487
  []
 
 [23
@@ -2538,7 +2537,7 @@ Overfull \vbox (97.68979pt too high) detected at line 1486
 ! Undefined control sequence.
 \beamer@doifinframe ...on} \phantomsection \label 
                                                   {examination-information} ...
-l.1554 \end{frame}
+l.1555 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2547,7 +2546,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (168.0959pt too high) detected at line 1554
+Overfull \vbox (168.0959pt too high) detected at line 1555
  []
 
 [24
@@ -2556,7 +2555,7 @@ Overfull \vbox (168.0959pt too high) detected at line 1554
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {additional-resources} \be...
-l.1592 \end{frame}
+l.1593 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2584,12 +2583,12 @@ L3 programming layer <2026-01-19>
  ) 
 Here is how much of TeX's memory you used:
  34857 strings out of 402982
- 712901 string characters out of 5447852
- 1270403 words of memory out of 5000000
+ 712921 string characters out of 5447852
+ 1270420 words of memory out of 5000000
  62994 multiletter control sequences out of 15000+600000
  628629 words of font info for 81 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,13n,165p,1902b,902s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,13n,165p,1904b,900s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Lecture18_India_Agri_Trade_Policy.xdv (25 pages, 424280 bytes
+Output written on Lecture18_India_Agri_Trade_Policy.xdv (25 pages, 424596 bytes
 ).

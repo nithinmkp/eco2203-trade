@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Introduction to International Trade"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "April 25, 2026"
@@ -16,7 +16,7 @@ format:
     code-fold: true
     code-summary: "Show R code"
     logo: ""
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
   beamer:
     aspectratio: 169
     theme: metropolis
@@ -41,7 +41,7 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 
 # Part I: Setting the Stage {background-color="#E8EDF5"}
 
-## Course Overview: ECO 2203
+## Course Overview: Econ 2203
 
 **What this course is about**
 
@@ -62,8 +62,6 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 
 ## Course Roadmap: Lectures 1–9 {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
 | Lec | Topic | Date |
 |-----|-------|------|
 | 1 | Introduction to International Trade | Apr 28 |
@@ -71,21 +69,13 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 | 3 | Theories I — Mercantilism & Absolute Advantage | May 12 |
 | 4 | Theories II — Comparative Advantage | May 19 |
 | 5 | Theories III — Factor Endowments (H-O Model) | May 26 |
-:::
-::: {.column width="50%"}
-| Lec | Topic | Date |
-|-----|-------|------|
 | 6 | New Trade Theory & Intra-Industry Trade | Jun 2 |
 | 7 | Terms of Trade & Trade Gains | Jun 9 |
 | 8 | Trade Policy: Tariffs | Jun 16 |
 | 9 | Trade Policy: Non-Tariff Barriers | Jun 23 |
-:::
-:::
 
 ## Course Roadmap: Lectures 10–18 {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
 | Lec | Topic | Date |
 |-----|-------|------|
 | 10 | Balance of Payments & Exchange Rates | Jun 30 |
@@ -93,16 +83,10 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 | 12 | Agreement on Agriculture (AoA) | Jul 14 |
 | 13 | SPS & TBT Measures in Agriculture | Jul 21 |
 | 14 | India's Foreign Trade Policy | Jul 28 |
-:::
-::: {.column width="50%"}
-| Lec | Topic | Date |
-|-----|-------|------|
 | 15 | Regional Trade Agreements — ASEAN, SAFTA | Aug 4 |
 | 16 | Agricultural Price Policy & Trade | Aug 11 |
 | 17 | Food Security and Trade Nexus | Aug 18 |
 | 18 | Contemporary Issues & Revision | Aug 25 |
-:::
-:::
 
 ## What is International Trade?
 
@@ -128,65 +112,40 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 
 ## Why Do Nations Trade?
 
-::: {.columns}
-::: {.column width="50%"}
 **Supply-side reasons**
 
 - **Resource endowments** — India has fertile Indo-Gangetic plains; Brazil has Amazon basin → different agricultural outputs
 - **Technology differences** — Netherlands uses precision horticulture; India relies on labour-intensive methods
 - **Specialization gains** — Focusing on fewer products reduces unit cost
 - **Economies of scale** — Large production runs lower average cost (e.g., Thai rice mills)
-:::
-::: {.column width="50%"}
+
 **Demand-side reasons**
 
 - **Product variety** — Consumers want Darjeeling tea *and* Colombian coffee
 - **Seasonal complementarity** — Southern hemisphere harvests when Northern hemisphere is off-season
-- **Income growth** — Rising incomes raise demand for diverse food products
 
-**Fundamental driver**
+:::{.notes}
+Additional demand-side reason: **Income growth** — Rising incomes raise demand for diverse food products
 
-- Countries differ in **opportunity costs** of production
-- Differences in opportunity costs → gains from specialisation and trade
-:::
+**Fundamental driver:** Countries differ in **opportunity costs** of production. Differences in opportunity costs → gains from specialisation and trade.
 :::
 
 # Part II: The Scale of Global Trade {background-color="#E8EDF5"}
 
 ## Scale of Global Trade
 
-::: {.columns}
-::: {.column width="55%"}
 **Global merchandise trade (2023)**
 
 - Total value: **~\$25 trillion** (WTO, 2024)
 - Services trade: **~\$7 trillion**
 - Combined: ~\$32 trillion — roughly 30% of world GDP
 
-**Top three traders (merchandise, 2023)**
-
-| Rank | Country/Bloc | Share |
-|------|-------------|-------|
-| 1 | China | 14.2% |
-| 2 | United States | 11.3% |
-| 3 | European Union | 14.8% |
-:::
-::: {.column width="45%"}
-**Long-run growth: merchandise exports**
-
-| Year | Value (USD trillion) |
-|------|---------------------|
-| 1950 | 0.06 |
-| 1970 | 0.31 |
-| 1990 | 3.5 |
-| 2000 | 6.5 |
-| 2010 | 15.3 |
-| 2020 | 17.6 |
-| 2023 | 25.0 |
-
-*Trade has grown ~400× since 1950, far outpacing GDP growth*
-:::
-:::
+| Rank | Country/Bloc | Share | Year | Value (USD trillion) |
+|------|-------------|-------|------|---------------------|
+| 1 | China | 14.2% | 1950 | 0.06 |
+| 2 | United States | 11.3% | 1990 | 3.5 |
+| 3 | European Union | 14.8% | 2010 | 15.3 |
+| — | — | — | 2023 | 25.0 |
 
 ::: {.highlightbox}
 **Factoid:** Global merchandise trade contracted only twice since 1950 — during the 2008–09 financial crisis and the 2020 COVID shock.
@@ -194,8 +153,6 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 
 ## India in Global Trade
 
-::: {.columns}
-::: {.column width="55%"}
 **India's trade position (FY2024)**
 
 | Indicator | Value |
@@ -204,25 +161,17 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 | Merchandise imports | \$678 billion |
 | Merchandise trade deficit | –\$241 billion |
 | Services exports | ~\$340 billion |
-| Services imports | ~\$180 billion |
-| Services trade surplus | +\$160 billion |
+| Services surplus | +\$160 billion |
 | **Total merchandise trade** | **\$1.18 trillion** |
 
 **Global rank:** [18th]{.hi} in merchandise exports (WTO 2023)
-:::
-::: {.column width="45%"}
-**Key observations**
 
 - India runs a **large merchandise deficit** but a significant **services surplus**
-- IT/BPO services dominate services exports (~\$200B)
 - Merchandise deficit driven mainly by **crude oil** and **gold** imports
 - Agriculture consistently contributes a **trade surplus**
-- Remittances (~\$120B in FY2024) are the largest single source of foreign exchange
 
 ::: {.keybox}
-India's overall current account deficit is modest (~1% of GDP) because the services surplus and remittances partially offset the merchandise deficit.
-:::
-:::
+India's overall current account deficit is modest (~1% of GDP) because services surplus and remittances (~\$120B in FY2024) partially offset the merchandise deficit.
 :::
 
 ## India's Trade: The Big Picture
@@ -263,41 +212,22 @@ ggplot(trade_long, aes(x=year, y=value, color=type, group=type)) +
 **Key insight:** India's trade deficit widened sharply post-2020. Exports plateaued at ~\$440–450B while imports surged to ~\$870B — largely driven by oil, gold, and electronics.
 :::
 
-## India's Agricultural Trade: FY2024
+## India's Agricultural Trade: FY2024 {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
-**Top agricultural exports**
+**Top agricultural exports and imports**
 
-| Commodity | Value (USD bn) |
-|-----------|---------------|
-| Rice (Basmati + Non-Basmati) | 10.4 |
-| Marine products | 7.6 |
-| Spices | 3.7 |
-| Buffalo meat | 3.5 |
-| Sugar | 2.8 |
-| Cotton | 2.2 |
-| Coffee | 1.2 |
-| Castor oil | 1.1 |
-| **Total agri exports** | **~43.7** |
-:::
-::: {.column width="45%"}
-**Top agricultural imports**
-
-| Commodity | Value (USD bn) |
-|-----------|---------------|
-| Edible oils (palm, soy) | 12–14 |
-| Pulses | 3.0 |
-| Cashew (raw) | 1.8 |
-| Fresh fruits | 1.5 |
-| Spices (select) | 0.8 |
-| **Total agri imports** | **~28.2** |
+| Commodity (Exports) | Value (USD bn) | Commodity (Imports) | Value (USD bn) |
+|---------------------|---------------|---------------------|---------------|
+| Rice (Basmati + Non-Basmati) | 10.4 | Edible oils (palm, soy) | 12–14 |
+| Marine products | 7.6 | Pulses | 3.0 |
+| Spices | 3.7 | Cashew (raw) | 1.8 |
+| Buffalo meat | 3.5 | Fresh fruits | 1.5 |
+| Sugar | 2.8 | Spices (select) | 0.8 |
+| **Total agri exports** | **~43.7** | **Total agri imports** | **~28.2** |
 
 **Agricultural trade surplus:** [~\$15.5 billion]{.hi}
 
 *Source: APEDA / DGCI&S, 2024*
-:::
-:::
 
 ## India's Agricultural Trade Profile
 
@@ -330,34 +260,20 @@ ggplot(agri_data, aes(x=commodity, y=value)) +
 
 ## Agriculture's Share in India's Trade
 
-::: {.columns}
-::: {.column width="50%"}
 **Export side**
 
 - Agriculture: [~11%]{.hi-gold} of total merchandise exports (\$43.7B of \$437B)
-- Petroleum products: ~17%
-- Engineering goods: ~26%
-- Gems & jewellery: ~10%
-- Chemicals: ~8%
+- Engineering goods: ~26% | Petroleum products: ~17% | Gems & jewellery: ~10%
+- Agriculture is **India's second-largest net foreign exchange earner** after services
+- **India's strengths:** rice, spices, marine products, cotton — all labour-intensive, climate-favoured commodities
 
-Agriculture is **India's second-largest net foreign exchange earner** after services
-
-**India's strengths:** rice, spices, marine products, cotton — all labour-intensive, climate-favoured commodities
-:::
-::: {.column width="50%"}
 **Import side**
 
-- Edible oils: India imports **60–65%** of its edible oil requirement
-  - Palm oil: Indonesia, Malaysia
-  - Soybean oil: Argentina, Brazil
-- Pulses: Canada, Australia, Myanmar
-  - ~25% of domestic requirement imported
-- Raw cashew: West Africa, Vietnam
+- Edible oils: India imports **60–65%** of its edible oil requirement (palm, soybean, sunflower)
+- Pulses: Canada, Australia, Myanmar — ~25% of domestic requirement imported
 
 ::: {.highlightbox}
 **Vulnerability:** India's dependence on imported edible oils (~\$13B/yr) exposes food inflation to global price shocks, as seen in 2021–22 when palm oil prices spiked 50%.
-:::
-:::
 :::
 
 ## India's Position in Global Agricultural Trade
@@ -394,27 +310,21 @@ India holds **2.8%** of world agricultural exports — 7th globally — but punc
 
 # Part III: Key Concepts and Context {background-color="#E8EDF5"}
 
-## Key Concepts We Will Need
+## Key Concepts We Will Need {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
 **Theory concepts**
 
 - **Comparative advantage** — trade based on *relative*, not absolute, efficiency (Ricardo)
 - **Terms of trade** — ratio of export prices to import prices; determines how much a country gains from trade
 - **Factor endowments** — land, labour, capital abundance shapes what countries export (Heckscher-Ohlin)
 - **Intra-industry trade** — two-way trade in similar products (India exports basmati rice, imports parboiled rice)
-:::
-::: {.column width="50%"}
+
 **Policy concepts**
 
 - **Tariff** — tax on imports; raises domestic price above world price
 - **Non-Tariff Barrier (NTB)** — quotas, SPS standards, licensing
 - **Balance of Payments (BoP)** — accounting of all international transactions
-- **Exchange rate** — price of one currency in terms of another; a stronger rupee makes exports more expensive
-- **Trade balance** — exports minus imports; positive = surplus, negative = deficit
-:::
-:::
+- **Exchange rate** — price of one currency in terms of another; stronger rupee makes exports more expensive
 
 ::: {.methodbox}
 **How these connect:** Comparative advantage explains *what* countries trade; terms of trade determine *how much* they gain; tariffs and NTBs determine *how much* trade actually occurs.
@@ -425,64 +335,52 @@ India holds **2.8%** of world agricultural exports — 7th globally — but punc
 **Policy relevance for India**
 
 - **Foreign Trade Policy 2023–28** targets \$2 trillion in merchandise + services exports by 2030
-  - From \$777B (FY2023) to \$2T in 7 years — requires ~14.5% annual growth
-- **WTO commitments** constrain India's ability to protect domestic agriculture
-  - Aggregate Measurement of Support (AMS) limits; tariff bindings
+- **WTO commitments** constrain India's ability to protect domestic agriculture (AMS limits; tariff bindings)
 - **Farmer income** — ~50% of India's workforce in agriculture; export markets expand income opportunities
 - **Food security** — Import policy on pulses and oilseeds directly affects 1.4 billion people
-
-**Academic relevance**
-
-- Fastest-growing sub-field in development economics
-- Links to climate change (Scope 3 emissions in supply chains), gender (women in agri-export supply chains), and technology (digital trade in services)
+- **Academic relevance** — Fastest-growing sub-field in development economics; links to climate change, gender, and technology
 
 ::: {.keybox}
 **Bottom line:** International trade policy is *agricultural policy* in India. They cannot be studied in isolation.
 :::
 
+:::{.notes}
+Links to climate change (Scope 3 emissions in supply chains), gender (women in agri-export supply chains), and technology (digital trade in services).
+:::
+
 ## What Makes Agricultural Trade Special?
 
-::: {.columns}
-::: {.column width="50%"}
 **Biological & physical features**
 
 - **Perishability** — fresh produce, milk, meat have short shelf-lives → need cold chains, quick clearance
 - **Seasonality** — harvests are discrete events; supply is lumpy
 - **Bulkiness** — grain, sugar, cotton: high weight-to-value ratio → high freight costs
 - **Sanitary risks** — food-borne pathogens cross borders with commodities → SPS measures justified
-:::
-::: {.column width="50%"}
+
 **Economic & political features**
 
 - **Food security concern** — governments intervene to ensure domestic supply; export bans, import duty waivers are common
+- **WTO special treatment** — Agreement on Agriculture has Special and Differential Treatment for developing countries
+
+:::{.notes}
+Additional economic/political features:
 - **Price volatility** — weather, pests, and speculation create large price swings; farmers and consumers are both affected
 - **Political economy** — large farm lobbies in US, EU, India influence trade policy disproportionately
-- **WTO special treatment** — Agreement on Agriculture has special provisions for developing countries (Special and Differential Treatment)
-:::
 :::
 
-## India's Major Trading Partners (FY2024)
+## India's Major Trading Partners (FY2024) {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
-**Top 5 merchandise export destinations**
+**Top merchandise export destinations**
 
-| Rank | Country | Share of exports |
-|------|---------|-----------------|
-| 1 | United States | ~18% |
-| 2 | UAE | ~6.5% |
-| 3 | Netherlands | ~4.2% |
-| 4 | China | ~3.8% |
-| 5 | Bangladesh | ~3.5% |
+| Rank | Country | Share of exports | Key agri exports |
+|------|---------|-----------------|-----------------|
+| 1 | United States | ~18% | Marine, spices |
+| 2 | UAE | ~6.5% | Rice, meat, fruits |
+| 3 | Netherlands | ~4.2% | Spices, cotton |
+| 4 | China | ~3.8% | Cotton, castor oil |
+| 5 | Bangladesh | ~3.5% | Rice, onion, sugar |
 
-**Agricultural export destinations (key)**
-
-- Rice: Bangladesh, Benin, Ivory Coast, Nepal
-- Spices: USA, China, Vietnam
-- Marine: USA, EU, Japan, China
-:::
-::: {.column width="45%"}
-**Top 5 merchandise import sources**
+**Top merchandise import sources**
 
 | Rank | Country | Share of imports |
 |------|---------|-----------------|
@@ -495,13 +393,9 @@ India holds **2.8%** of world agricultural exports — 7th globally — but punc
 ::: {.methodbox}
 **Gravity model logic:** India trades most with large (USA, China) or geographically close (UAE, Bangladesh) economies — a pattern we will formalise in Lecture 2.
 :::
-:::
-:::
 
-## Composition of India's Merchandise Exports
+## Composition of India's Merchandise Exports {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **Major export categories (FY2024, approx.)**
 
 | Category | Value (USD bn) | Share |
@@ -513,21 +407,13 @@ India holds **2.8%** of world agricultural exports — 7th globally — but punc
 | **Agriculture & allied** | **44** | **10.1%** |
 | Textiles & apparel | 35 | 8.0% |
 | Electronic goods | 29 | 6.6% |
-| Other | 59 | 13.5% |
-:::
-::: {.column width="45%"}
-**Key observations**
 
-- Engineering goods = India's largest export category; grew from 12% in 2000 to 26% in 2024
+- Engineering goods = India's largest export category; grew from 12% (2000) to 26% (2024)
 - Agriculture has held a **stable ~10–12%** share for two decades
-- Petroleum products is a **re-export** story — India refines imported crude and re-exports
 - Electronic goods rising fast (mobile phones, semiconductors policy)
-- **Structural transformation:** India's export basket is gradually diversifying away from pure commodities
 
 ::: {.highlightbox}
 India's export ambition: move up the value chain from raw agri commodities to processed food products
-:::
-:::
 :::
 
 # Part IV: Policy and Frameworks {background-color="#E8EDF5"}
@@ -558,51 +444,36 @@ FTP 2023–28 is notably continuity-oriented — it builds on previous policy ar
 
 **Production Possibility Frontier (PPF) — conceptual preview**
 
-::: {.columns}
-::: {.column width="55%"}
 **Without trade (autarky)**
 
 - A country produces *and* consumes on its PPF
-- The slope of the PPF at the consumption point = the domestic relative price
-- Example: India producing only rice and wheat — the trade-off between them is fixed by domestic technology
+- The slope of the PPF = the domestic relative price
+- Example: India producing only rice and wheat — the trade-off is fixed by domestic technology
 
 **With trade (open economy)**
 
 - World price ratio differs from domestic price ratio
 - Country specialises in the good where it has comparative advantage
-- Consumption point can now lie **outside** the PPF
-- *Both* countries gain — consumption of both goods increases
-:::
-::: {.column width="45%"}
+- Consumption point can now lie **outside** the PPF — *both* countries gain
+
 ::: {.methodbox}
-**The core result:**
+**The core result:** Trade allows a country to **consume beyond its production possibilities** — achieved through specialisation and exchange.
 
-Trade allows a country to **consume beyond its production possibilities** — the equivalent of getting something for nothing, achieved through specialisation and exchange.
+Upcoming lectures formalise: why world price differs (Lec 3–5), how much each country gains (Lec 7), what tariffs do (Lec 8).
 :::
 
-**Upcoming lectures will formalise:**
+## Key Definitions (I)
 
-- Why the world price differs from the autarky price (Lec 3–5)
-- How much each country gains — terms of trade (Lec 7)
-- What tariffs do to this picture (Lec 8)
-:::
-:::
-
-## Key Definitions
-
-::: {.columns}
-::: {.column width="50%"}
 **Trade flows**
 
 - **Exports** — goods/services sold to foreign residents; flow of goods out, money in
 - **Imports** — goods/services bought from foreign residents; flow of goods in, money out
-- **Trade balance** = Exports − Imports
-  - Positive → trade surplus
-  - Negative → trade deficit
+- **Trade balance** = Exports − Imports (positive → surplus; negative → deficit)
 - **Visible trade** — physical merchandise (rice, cars, oil)
 - **Invisible trade** — services, remittances, investment income
-:::
-::: {.column width="50%"}
+
+## Key Definitions (II)
+
 **Balance of Payments**
 
 - **Current account** — trade in goods + services + remittances + investment income
@@ -613,9 +484,6 @@ Trade allows a country to **consume beyond its production possibilities** — th
 
 - **Nominal exchange rate** — ₹/USD; e.g., ₹83 = \$1
 - **Real exchange rate** — adjusts for price level differences; determines *actual* competitiveness
-- **Appreciation** → exports become more expensive → reduces export competitiveness
-:::
-:::
 
 ## Summary: Why International Trade Matters
 
@@ -645,6 +513,9 @@ Trade allows a country to **consume beyond its production possibilities** — th
 - India ranks **18th** in merchandise exports; total trade ~\$1.18 trillion (FY2024)
 - Agricultural exports: **\$43.7 billion** (FY2024) — rice, marine, spices, cotton dominate
 - India has a **structural agricultural trade surplus** (~\$15.5B) that helps offset the merchandise deficit
+:::
+
+:::{.notes}
 - Agricultural trade is special: perishability, food security, seasonality, and political economy all matter
 - FTP 2023–28 targets \$2 trillion in exports — an ambitious but achievable goal
 :::
@@ -656,8 +527,6 @@ Trade allows a country to **consume beyond its production possibilities** — th
 
 ## Next Lecture: Lecture 2
 
-::: {.columns}
-::: {.column width="60%"}
 **Features of International Trade**
 *(May 5, 2026)*
 
@@ -667,12 +536,13 @@ We will cover:
 - **Immobility of factors** — why labour and capital don't flow freely across borders
 - **Currency and exchange risk** — how rupee movements affect export competitiveness
 - **Internal vs international trade** — a systematic comparison
+- **The gravity model** — intuition and India examples
+
+:::{.notes}
+Also covered:
 - **Advantages and disadvantages** of trade — with India-specific examples
 - **India's edible oil import dependence** — a case study in vulnerability
-- **The gravity model** — intuition and India examples
-:::
-::: {.column width="40%"}
-::: {.highlightbox}
+
 **Suggested reading**
 
 - Krugman, Obstfeld & Melitz, *International Economics*, Ch. 1
@@ -684,27 +554,20 @@ We will cover:
 - DGCI&S trade statistics (commerce.gov.in)
 - WTO Statistics Portal
 :::
-:::
-:::
 
 # Appendix {background-color="#1a3a5c"}
 
 ## Additional Resources {.appendix}
 
-::: {.columns}
-::: {.column width="50%"}
 **Further Reading**
 
 - *International Economics* — Salvatore (Ch. 1)
 - *International Economics* — Appleyard & Field (Ch. 1)
 - RBI/DGCI&S/APEDA databases for latest data
-:::
-::: {.column width="50%"}
+
 **Key Data Sources**
 
 - DGCI&S: India's merchandise trade
 - RBI: Balance of payments data  
 - APEDA: Agricultural export statistics
 - WTO: Tariff and trade databases
-:::
-:::

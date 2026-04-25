@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Balance of Trade & Balance of Payments"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "June 20, 2026"
@@ -15,7 +15,7 @@ format:
     scrollable: true
     code-fold: true
     code-summary: "Show R code"
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
   beamer:
     aspectratio: 169
     theme: metropolis

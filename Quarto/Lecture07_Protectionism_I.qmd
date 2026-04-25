@@ -1,6 +1,6 @@
 ---
 title: "Protectionism I — Tariffs & Quotas"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "June 6, 2026"
@@ -15,7 +15,7 @@ format:
     scrollable: true
     code-fold: true
     code-summary: "Show R code"
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
   beamer:
     aspectratio: 169
     theme: metropolis
@@ -54,21 +54,14 @@ Tariffs & Quotas
 
 ## Recap: Free Trade and Its Limits
 
-::: {.columns}
-::: {.column width="55%"}
-**Comparative advantage** says free trade maximises global welfare.
+**Comparative advantage** says free trade maximises global welfare:
 
 - Resources flow to most efficient uses
 - Both countries gain from specialisation
 - Prices converge across borders
-:::
-::: {.column width="45%"}
-::: {.highlightbox}
-**But reality differs:**
 
-Most countries protect agriculture. India levies average tariffs of **~36%** on farm goods. Why?
-:::
-:::
+::: {.highlightbox}
+**But reality differs:** Most countries protect agriculture. India levies average tariffs of **~36%** on farm goods. Why?
 :::
 
 **Today's question:** When — if ever — is protection economically justified?
@@ -117,33 +110,20 @@ Employment, revenue, and food security are *political economy* arguments — val
 
 ## What is a Tariff?
 
-::: {.columns}
-::: {.column width="55%"}
 A **tariff** is a tax levied on imported goods at the border.
 
 **Types:**
 
-- [Specific tariff]{.hi}: fixed amount per unit
-  *e.g.* ₹500 per tonne of wheat
-- [Ad valorem tariff]{.hi-gold}: percentage of import value
-  *e.g.* 50% on wheat (India)
+- [Specific tariff]{.hi}: fixed amount per unit (*e.g.* ₹500 per tonne of wheat)
+- [Ad valorem tariff]{.hi-gold}: percentage of import value (*e.g.* 50% on wheat)
 - [Compound tariff]{.hi}: specific + ad valorem combined
 
 **India uses primarily ad valorem tariffs** across agricultural commodities.
-:::
-::: {.column width="45%"}
+
 ::: {.methodbox}
-**Effect of a tariff:**
+**Effect of a tariff:** $P_{domestic} = P_{world} + t$
 
-$$P_{domestic} = P_{world} + t$$
-
-- Domestic price rises
-- Domestic production rises
-- Imports fall
-- Consumer surplus falls
-- Government earns revenue
-:::
-:::
+Domestic price rises → domestic production rises → imports fall → consumer surplus falls → government earns revenue
 :::
 
 ---
@@ -191,23 +171,12 @@ At $P_w=15$: domestic supply $Q_s=10$, domestic demand $Q_d=70$, **imports = 60 
 
 ---
 
-## Partial Equilibrium Analysis of a Tariff
+## Partial Equilibrium Analysis of a Tariff {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
-**Free trade equilibrium at $P_w$:**
+**Free trade equilibrium at $P_w$:** Domestic supply $Q_s^0$; domestic demand $Q_d^0$; imports $M_0 = Q_d^0 - Q_s^0$
 
-- Domestic supply: $Q_s^0$
-- Domestic demand: $Q_d^0$
-- Imports: $M_0 = Q_d^0 - Q_s^0$
+**After tariff $t$: domestic price → $P_w + t$:** Domestic supply rises: $Q_s^1 > Q_s^0$; demand falls: $Q_d^1 < Q_d^0$; imports fall: $M_1 = Q_d^1 - Q_s^1 < M_0$
 
-**After tariff $t$: domestic price → $P_w + t$:**
-
-- Domestic supply rises: $Q_s^1 > Q_s^0$
-- Domestic demand falls: $Q_d^1 < Q_d^0$
-- Imports: $M_1 = Q_d^1 - Q_s^1 < M_0$
-:::
-::: {.column width="50%"}
 **Welfare triangles:**
 
 | Effect | Direction |
@@ -218,13 +187,11 @@ At $P_w=15$: domestic supply $Q_s=10$, domestic demand $Q_d=70$, **imports = 60 
 | [Deadweight loss]{.hi-red} | ↑ (triangles *B + D*) |
 
 ::: {.highlightbox}
-**Triangle *B*** = production distortion loss
+**Triangle *B*** = production distortion loss (resources diverted to inefficient domestic production)
 
-**Triangle *D*** = consumption distortion loss
+**Triangle *D*** = consumption distortion loss (consumers priced out of market)
 
 Both are pure efficiency loss.
-:::
-:::
 :::
 
 ---
@@ -336,10 +303,8 @@ Where:
 
 ---
 
-## India's Agricultural Tariff Structure
+## India's Agricultural Tariff Structure {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **WTO commitments (FY2024):**
 
 | | Bound | Applied |
@@ -347,10 +312,8 @@ Where:
 | All goods | 48.5% | 13.8% |
 | Agriculture | **113.5%** | **36.4%** |
 
-"**Water in the tariff**" = gap between bound and applied rates.
-India retains large room to raise tariffs without breaching WTO commitments.
-:::
-::: {.column width="45%"}
+"**Water in the tariff**" = gap between bound and applied rates. India retains large room to raise tariffs without breaching WTO commitments.
+
 **Selected high-tariff items:**
 
 | Commodity | Applied duty |
@@ -363,8 +326,6 @@ India retains large room to raise tariffs without breaching WTO commitments.
 
 ::: {.highlightbox}
 India's bound rate of ~114% is one of the **highest among G20 nations** for agriculture.
-:::
-:::
 :::
 
 ---
@@ -404,19 +365,13 @@ ggplot(tariff_data, aes(x=commodity, y=tariff_rate, fill=type)) +
 
 ## The Tariff Rate Quota (TRQ)
 
-::: {.columns}
-::: {.column width="55%"}
 A **TRQ** combines two tariff levels:
 
 1. **Within-quota tariff (low):** applies to a fixed import volume
 2. **Over-quota tariff (high):** applies to imports beyond the quota
 
-**Effect:**
+**Effect:** Allows *some* imports cheaply (food security) while discouraging *large* imports (protects producers).
 
-- Allows *some* imports cheaply → food security
-- Discourages *large* imports → protects producers
-:::
-::: {.column width="45%"}
 ::: {.methodbox}
 **India's TRQs under WTO AoA:**
 
@@ -428,15 +383,11 @@ A **TRQ** combines two tariff levels:
 
 TRQs were bound at Uruguay Round (1994). India rarely fills its TRQ allocations.
 :::
-:::
-:::
 
 ---
 
 ## Case Study: India's Palm Oil Import Duty
 
-::: {.columns}
-::: {.column width="55%"}
 **Timeline:**
 
 - **2017:** Basic duty 0% (edible oil prices rising)
@@ -444,19 +395,9 @@ TRQs were bound at Uruguay Round (1994). India rarely fills its TRQ allocations.
 - **2021:** Basic + AIDC + SWS ≈ **100%** effective duty
 
 **Rationale:** Protect domestic oilseed farmers (soybean, groundnut, mustard).
-:::
-::: {.column width="45%"}
+
 ::: {.highlightbox}
-**The dilemma:**
-
-India imports **~14 million tonnes/year** of edible oils — 60% of consumption.
-Cannot substitute quickly.
-
-- Farmers in MP, Rajasthan gain
-- Urban consumers lose
-- Food inflation rises
-:::
-:::
+**The dilemma:** India imports **~14 million tonnes/year** of edible oils — 60% of consumption. Cannot substitute quickly. Farmers in MP, Rajasthan gain; urban consumers lose; food inflation rises.
 :::
 
 ::: {.keybox}
@@ -465,31 +406,22 @@ Cannot substitute quickly.
 
 ---
 
-## Effective Rate of Protection (ERP)
+## Effective Rate of Protection (ERP) {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
-**Nominal tariff** = tariff on the final good.
-
-**ERP** = protection on *value added* in production, accounting for tariffs on *inputs*.
+**Nominal tariff** = tariff on the final good. **ERP** = protection on *value added* in production, accounting for tariffs on *inputs*.
 
 $$\text{ERP} = \frac{t_f - \sum a_i t_i}{1 - \sum a_i}$$
 
 where $t_f$ = nominal tariff on final good, $t_i$ = tariff on input $i$, $a_i$ = input share in value.
-:::
-::: {.column width="45%"}
+
 ::: {.methodbox}
 **Example: Sugar processing**
 
-- Tariff on sugar (final): 100%
-- Tariff on sugarcane (input): 0%
-- Input share: ~70%
+- Tariff on sugar (final): 100%; tariff on sugarcane (input): 0%; input share: ~70%
 
 $$\text{ERP} = \frac{0.10 - 0}{1 - 0.70} \approx 333\%$$
 
 **ERP >> nominal tariff** = "tariff escalation" — processing stages protected far more than raw material.
-:::
-:::
 :::
 
 ::: {.highlightbox}
@@ -506,26 +438,15 @@ India's tariff structure commonly exhibits cascading — protecting processing i
 
 A **quota** is a quantitative restriction — it sets the *maximum volume* of a good that may be imported in a given period.
 
-::: {.columns}
-::: {.column width="55%"}
 **How it works:**
 
 1. Government announces quota (e.g., 1 million tonnes of wheat)
 2. Import licences issued (to traders, state agencies, or by auction)
 3. Once quota filled, further imports blocked
 4. Domestic price rises until supply + quota = demand
-:::
-::: {.column width="45%"}
+
 ::: {.keybox}
-**Quota rent:**
-
-The gap between domestic and world price × quota volume = **quota rent**.
-
-Who captures the rent?
-- If licences **auctioned** → government
-- If licences **given away** → importers (or exporters under VER)
-:::
-:::
+**Quota rent:** The gap between domestic and world price × quota volume = **quota rent**. Who captures the rent? If licences **auctioned** → government; if licences **given away** → importers (or exporters under VER).
 :::
 
 ---
@@ -579,28 +500,12 @@ $$\text{Tariff: Revenue} = t \times M \quad \text{(goes to government)}$$
 
 $$\text{Quota: Rent} = (P_t - P_w) \times \bar{M} \quad \text{(may go to foreign exporters)}$$
 
-::: {.columns}
-::: {.column width="55%"}
-**When quota rent goes to foreigners:**
+**When quota rent goes to foreigners:** If import licences are given free to foreign exporters (as in a VER), the domestic economy loses the tariff-equivalent rectangle *C*. Net welfare loss = $B + C + D$ > tariff welfare loss of $B + D$.
 
-- If import licences are given free to foreign exporters (as in a VER)
-- The domestic economy loses the tariff-equivalent rectangle *C*
-- Net welfare loss = $B + C + D$ > tariff welfare loss of $B + D$
+**When quota rent stays domestic:** If licences are *auctioned* to domestic importers, the domestic economy captures rent = equivalent to tariff.
 
-**When quota rent stays domestic:**
-
-- If licences are *auctioned* to domestic importers
-- Domestic economy captures rent = equivalent to tariff
-:::
-::: {.column width="45%"}
 ::: {.highlightbox}
-**Implication for policy:**
-
-If quota rents accrue to foreign exporters, quotas are **worse than equivalent tariffs** — the domestic economy loses both the DWL and the revenue.
-
-This is why economists generally prefer tariffs over quotas, and why WTO's GATT Article XI prohibits quotas.
-:::
-:::
+**Implication for policy:** If quota rents accrue to foreign exporters, quotas are **worse than equivalent tariffs** — the domestic economy loses both the DWL and the revenue. This is why economists generally prefer tariffs over quotas, and why WTO's GATT Article XI prohibits quotas.
 :::
 
 ---
@@ -625,59 +530,30 @@ This is why economists generally prefer tariffs over quotas, and why WTO's GATT 
 
 ## India's Quantitative Restrictions: History
 
-::: {.columns}
-::: {.column width="55%"}
-**Pre-2001:** India maintained extensive QRs on agricultural imports citing **balance of payments** reasons (GATT Article XVIII:B).
+**Pre-2001:** India maintained extensive QRs on agricultural imports citing **balance of payments** reasons (GATT Article XVIII:B) — QRs on hundreds of agricultural product lines; effective near-ban on many imports.
 
-- QRs on hundreds of agricultural product lines
-- Effective near-ban on many imports
+**2001:** USA challenged India's QRs at WTO. **Panel ruling:** India's BoP situation no longer justified QRs. India removed most agricultural QRs.
 
-**2001:** USA challenged India's QRs at WTO.
-**Panel ruling:** India's BoP situation no longer justified QRs.
-India removed most agricultural QRs.
-:::
-::: {.column width="45%"}
 ::: {.methodbox}
-**Post-2001 shift:**
-
-India replaced QRs with **high tariffs** — achieving similar protection through a WTO-consistent instrument.
-
-"Tariffication" converted quantity restrictions to price restrictions.
-
-Tariff flexibility ("water") provides buffer for future protection.
-:::
-:::
+**Post-2001 shift:** India replaced QRs with **high tariffs** — achieving similar protection through a WTO-consistent instrument. "Tariffication" converted quantity restrictions to price restrictions. Tariff flexibility ("water") provides buffer for future protection.
 :::
 
 ---
 
-## The Optimal Tariff Argument
+## The Optimal Tariff Argument {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 For a **large country**, an import tariff reduces demand for imports → world price falls → terms of trade improve.
 
 **Optimal tariff** = tariff that maximises net welfare gain:
 
 $$t^* = \frac{1}{\varepsilon_x^*}$$
 
-where $\varepsilon_x^*$ = foreign export supply elasticity.
+where $\varepsilon_x^*$ = foreign export supply elasticity. More inelastic foreign supply → higher optimal tariff.
 
-More inelastic foreign supply → higher optimal tariff.
-:::
-::: {.column width="45%"}
 ::: {.methodbox}
-**India's case (palm oil):**
-
-India = 15% of world palm oil demand.
-Malaysian/Indonesian export supply somewhat inelastic.
-
-→ India can depress world palm oil prices with a tariff
-→ Terms of trade gain partially offsets DWL
+**India's case (palm oil):** India = 15% of world palm oil demand. Malaysian/Indonesian export supply somewhat inelastic → India can depress world palm oil prices with a tariff → Terms of trade gain partially offsets DWL.
 
 **Caveat:** Retaliation risk. If Malaysia retaliates on Indian exports (spices, pharmaceuticals), net welfare impact uncertain.
-:::
-:::
 :::
 
 ::: {.highlightbox}
@@ -688,27 +564,16 @@ Malaysian/Indonesian export supply somewhat inelastic.
 
 ## Infant Industry Protection: India's Experience
 
-::: {.columns}
-::: {.column width="55%"}
-**Argument:** A nascent domestic industry cannot compete initially due to:
-
-- High startup costs (scale economies not yet reached)
-- Learning-by-doing not yet accumulated
-- Missing domestic supply chains
-
-**Temporary** protection allows the industry to mature → eventually competitive.
+**Argument:** A nascent domestic industry cannot compete initially due to high startup costs, lack of accumulated learning-by-doing, and missing domestic supply chains. **Temporary** protection allows the industry to mature → eventually competitive.
 
 **Post-Independence India:** Bombay Plan (1944) — protect everything. Led to License Raj.
-:::
-::: {.column width="45%"}
+
 ::: {.highlightbox}
 **Agriculture examples:**
 
 - **Green Revolution:** seed, fertiliser, irrigation subsidised → Indian wheat/rice went from deficit to surplus
 - **Oilseeds:** Technology Mission on Oilseeds (1986) used tariff + R&D → raised productivity
 - **Sugar:** Protected since 1932 — never "grown up." Chronic intervention = perennial inefficiency.
-:::
-:::
 :::
 
 ::: {.keybox}
@@ -719,52 +584,28 @@ Malaysian/Indonesian export supply somewhat inelastic.
 
 ## Voluntary Export Restraints (VERs)
 
-::: {.columns}
-::: {.column width="55%"}
 A **VER** occurs when an exporting country "voluntarily" restricts its exports to a trading partner — usually under diplomatic pressure.
 
-**Classic example:** Japan limited auto exports to USA in the 1980s.
+**Classic example:** Japan limited auto exports to USA in the 1980s. **Effect:** Like a quota but the *quota rent accrues to the exporter* (not the importer government). **WTO:** VERs are now illegal under Article 11 of WTO Safeguards Agreement (post-Uruguay Round).
 
-**Effect:** Like a quota but the *quota rent accrues to the exporter* (not the importer government).
-
-**WTO:** VERs are now illegal under Article 11 of WTO Safeguards Agreement (post-Uruguay Round).
-:::
-::: {.column width="45%"}
 ::: {.highlightbox}
-**India-adjacent example:**
-
-India's 2023 rice export restrictions raised world prices — effectively a VER from the perspective of importing nations like Bangladesh, Benin, and Senegal.
-
-India's rice export controls demonstrated India's market power as the world's dominant rice exporter.
-:::
-:::
+**India-adjacent example:** India's 2023 rice export restrictions raised world prices — effectively a VER from the perspective of importing nations like Bangladesh, Benin, and Senegal. India's rice export controls demonstrated India's market power as the world's dominant rice exporter.
 :::
 
 ---
 
 ## Non-Tariff Barriers (NTBs): Preview
 
-::: {.columns}
-::: {.column width="55%"}
 **NTBs** are behind-the-border measures that restrict trade without an explicit tariff or quota:
 
 - **SPS (Sanitary & Phytosanitary):** food safety, animal/plant health standards
 - **TBT (Technical Barriers to Trade):** labelling, packaging, quality standards
-- **Licensing requirements**
-- **Customs procedures and delays**
-- **State trading monopolies**
-:::
-::: {.column width="45%"}
+- **Licensing requirements; customs procedures and delays; state trading monopolies**
+
 ::: {.keybox}
-**The "new protectionism":**
-
-As tariffs have fallen under WTO, NTBs have risen to replace them.
-
-India's rejection of GM soybean imports (SPS), EU's pesticide MRLs on Indian spices, and USA's countervailing duties on Indian shrimp are all NTB-related disputes.
+**The "new protectionism":** As tariffs have fallen under WTO, NTBs have risen to replace them. India's rejection of GM soybean imports (SPS), EU's pesticide MRLs on Indian spices, and USA's countervailing duties on Indian shrimp are all NTB-related disputes.
 
 **Detailed treatment: Lecture 15.**
-:::
-:::
 :::
 
 ---
@@ -783,7 +624,9 @@ India's rejection of GM soybean imports (SPS), EU's pesticide MRLs on Indian spi
 4. The **ERP** often exceeds the nominal tariff due to tariff escalation in India's structure.
 
 5. **Optimal tariff** is the only theoretically valid welfare-raising argument — and only for large countries like India in palm oil.
+:::
 
+:::{.notes}
 6. Welfare identity: $\Delta W = -(B+D)$ for small country; may be positive for large country at optimal tariff.
 :::
 
@@ -816,20 +659,15 @@ India's rejection of GM soybean imports (SPS), EU's pesticide MRLs on Indian spi
 
 ## Additional Resources {.appendix}
 
-::: {.columns}
-::: {.column width="50%"}
 **Further Reading**
 
 - *International Economics* — Salvatore (Ch. 9-11)
 - *International Economics* — Appleyard & Field (Ch. 9-11)
 - RBI/DGCI&S/APEDA databases for latest data
-:::
-::: {.column width="50%"}
+
 **Key Data Sources**
 
 - DGCI&S: India's merchandise trade
 - RBI: Balance of payments data  
 - APEDA: Agricultural export statistics
 - WTO: Tariff and trade databases
-:::
-:::

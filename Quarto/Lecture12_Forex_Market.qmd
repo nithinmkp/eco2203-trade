@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Lecture 12: Foreign Exchange Market — Instruments and Policy"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "July 11, 2026"
@@ -13,7 +13,7 @@ format:
     incremental: false
     smaller: false
     scrollable: true
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
     code-fold: true
     code-summary: "Show R code"
   beamer:

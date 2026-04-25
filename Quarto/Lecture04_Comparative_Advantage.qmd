@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Theories of Trade II: Comparative Advantage"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "May 16, 2026"
@@ -15,7 +15,7 @@ format:
     scrollable: true
     code-fold: true
     code-summary: "Show R code"
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
   beamer:
     aspectratio: 169
     theme: metropolis
@@ -45,8 +45,6 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 
 **Last lecture:** Adam Smith argued that countries should export goods they produce *absolutely* more efficiently.
 
-::: {.columns}
-::: {.column width="60%"}
 **But this raises an obvious question:**
 
 > What if one country is *better at producing everything*?
@@ -56,22 +54,13 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 - Would the inefficient country have *any* exports?
 
 Smith's absolute advantage gives **no answer**.
-:::
-::: {.column width="40%"}
-**Stylised fact:**
 
-The United States is more productive than Bangladesh in *both* textiles *and* aircraft.
-
-Yet the US imports textiles from Bangladesh.
-
-**Why?** → Enter David Ricardo (1817).
-:::
+::: {.methodbox}
+**Stylised fact:** The United States is more productive than Bangladesh in *both* textiles *and* aircraft. Yet the US imports textiles from Bangladesh. **Why?** → Enter David Ricardo (1817).
 :::
 
 ## Ricardo's Insight: What Matters is *Relative* Cost
 
-::: {.columns}
-::: {.column width="55%"}
 Ricardo's key insight was deceptively simple:
 
 > A country should specialise in the good for which it has the **lower opportunity cost** — regardless of absolute productivity.
@@ -79,14 +68,9 @@ Ricardo's key insight was deceptively simple:
 **Opportunity cost** = what you must give up to produce one more unit of a good.
 
 Even a country that is absolutely less efficient in *everything* can still gain from trade by exporting the good in which it is **relatively** less inefficient.
-:::
-::: {.column width="45%"}
-**Analogy:**
 
-A lawyer who types faster than her secretary still benefits from hiring the secretary — because the lawyer's time is more valuably spent on legal work.
-
-The same logic applies to nations.
-:::
+::: {.methodbox}
+**Analogy:** A lawyer who types faster than her secretary still benefits from hiring the secretary — because the lawyer's time is more valuably spent on legal work. The same logic applies to nations.
 :::
 
 # Part II: The Ricardian Model — Formal Setup {background-color="#1a3a5c"}
@@ -109,42 +93,23 @@ We work with the simplest possible model:
 
 $a_{LR}^{I}$ = labour hours required to produce **one unit of Rice in India**.
 
-## Numerical Example
+## Numerical Example {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
-**Assume:** each country has $L = 100$ workers.
-
-One worker per day produces:
+**Assume:** each country has $L = 100$ workers. One worker per day produces:
 
 | Country | Rice | Wheat |
 |---|---|---|
 | India | **2 units** | **1 unit** |
 | World | **3 units** | **3 units** |
 
-So the labour coefficients are:
+Labour coefficients: $a_{LR}^{I} = \tfrac{1}{2}$, $a_{LWh}^{I} = 1$; $a_{LR}^{W} = \tfrac{1}{3}$, $a_{LWh}^{W} = \tfrac{1}{3}$.
+The **World** has absolute advantage in **both** goods.
 
-$$a_{LR}^{I} = \tfrac{1}{2}, \quad a_{LWh}^{I} = 1$$
-$$a_{LR}^{W} = \tfrac{1}{3}, \quad a_{LWh}^{W} = \tfrac{1}{3}$$
-
-The **World** has absolute advantage in **both** goods (lower $a$).
-:::
-::: {.column width="50%"}
 **Opportunity costs:**
 
-To produce one more unit of **Rice**, India must give up:
+$$OC_R^{I} = \frac{a_{LR}^{I}}{a_{LWh}^{I}} = \frac{1/2}{1} = \frac{1}{2} \text{ Wheat} \qquad OC_R^{W} = \frac{a_{LR}^{W}}{a_{LWh}^{W}} = \frac{1/3}{1/3} = 1 \text{ Wheat}$$
 
-$$OC_R^{I} = \frac{a_{LR}^{I}}{a_{LWh}^{I}} = \frac{1/2}{1} = \frac{1}{2} \text{ Wheat}$$
-
-To produce one more unit of Rice, the World must give up:
-
-$$OC_R^{W} = \frac{a_{LR}^{W}}{a_{LWh}^{W}} = \frac{1/3}{1/3} = 1 \text{ Wheat}$$
-
-**Comparison:** $OC_R^{I} = \tfrac{1}{2} < OC_R^{W} = 1$
-
-$\Rightarrow$ **India has comparative advantage in Rice.**
-:::
-:::
+**Comparison:** $OC_R^{I} = \tfrac{1}{2} < OC_R^{W} = 1$ $\Rightarrow$ **India has comparative advantage in Rice.**
 
 ## The Comparative Advantage Condition
 
@@ -300,45 +265,24 @@ ggplot(df_ppf, aes(x=wheat)) +
 :::
 :::
 
-## Quantifying the Gains
+## Quantifying the Gains {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
-**Before trade** (autarky):
+**Before trade** (autarky): India produces and consumes on the PPF at $(Wh, R) = (50, 100)$
 
-India produces and consumes on the PPF, say at:
-$$(Wh, R) = (50, 100)$$
-
-**After trade** (at $P_{Wh}/P_R = 1.5$):
-
-India fully specialises → 200 Rice, trades $107$ Rice for $\approx 80$ Wheat:
-
+**After trade** (at $P_{Wh}/P_R = 1.5$): India fully specialises → 200 Rice, trades $107$ Rice for $\approx 80$ Wheat:
 $$(Wh, R) = (80, 93)$$
 
-**Welfare gain:** more Wheat *and* a larger combined bundle.
+**Welfare gain:** more Wheat *and* a larger combined bundle. The **real wage** of Indian workers rises.
 
-The **real wage** of Indian workers rises: each hour of labour now commands more consumption goods.
-:::
-::: {.column width="45%"}
-**The algebra:**
-
-India's income at world prices (fully specialised):
+**The algebra:** India's income at world prices (fully specialised):
 
 $$Y^I = P_R \times 200$$
 
-Budget constraint under trade:
+Budget constraint under trade: $R + 1.5 \cdot Wh = 200$
 
-$$P_R \cdot R + P_{Wh} \cdot Wh = P_R \times 200$$
+Compare with autarky constraint: $R + 2 \cdot Wh = 200$
 
-$$R + 1.5 \cdot Wh = 200$$
-
-Compare with autarky constraint:
-
-$$R + 2 \cdot Wh = 200$$
-
-The trade budget line is **flatter** → larger feasible set.
-:::
-:::
+The trade budget line is **flatter** → larger feasible consumption set.
 
 # Part IV: Indifference Curves and Equilibrium {background-color="#1a3a5c"}
 
@@ -457,32 +401,19 @@ These two points generally differ — the gap is filled by **trade flows**.
 
 ## The Ricardian Model: What It Gets Right
 
-::: {.columns}
-::: {.column width="55%"}
 **Remarkably robust predictions:**
 
 - Countries do specialise along lines of comparative advantage
 - Trade raises real incomes on average
 - Even the "least competitive" country has something to export
 
-**Empirical support:**
+**Empirical support:** Golub & Hsieh (2000) and Costinot et al. (2012) find strong evidence that labour productivity differences predict export patterns across countries.
 
-Golub & Hsieh (2000) and Costinot et al. (2012) find strong evidence that labour productivity differences predict export patterns across countries.
+**Limitations and Extensions:**
 
-**Limitations:**
-
-- Predicts complete specialisation (rarely observed)
-- Says nothing about *who within a country* gains or loses
-- Cannot explain intra-industry trade
-:::
-::: {.column width="45%"}
-**Extensions:**
-
-- **Many goods:** a continuum of goods ranked by comparative advantage — a "Dornbusch-Fischer-Samuelson" chain
-- **Many countries:** bilateral comparisons still apply
-- **Technology changes:** productivity growth shifts the chain, altering trade patterns over time
-:::
-:::
+- Predicts complete specialisation (rarely observed); says nothing about *who* within a country gains or loses
+- Cannot explain intra-industry trade (→ new trade theory, Lecture 6)
+- **Extensions:** Many goods (Dornbusch-Fischer-Samuelson chain); technology changes shift comparative advantage over time
 
 # Part VI: India — Revealed Comparative Advantage {background-color="#1a3a5c"}
 
@@ -539,60 +470,30 @@ ggplot(rca_data, aes(x=commodity, y=rca, fill=type)) +
 
 ## India: Rice as the Flagship Export
 
-::: {.columns}
-::: {.column width="55%"}
 **India's Rice sector — Ricardo in practice:**
 
 - India is the **world's largest rice exporter** (>22% of global exports, FY2024)
-- Export value: ₹60,000+ crore in FY2023
-- Destinations: Bangladesh, Indonesia, Benin, Senegal, UAE
-
-**Why does Ricardo's model fit?**
-
 - Rice cultivation is labour-intensive — India's abundant factor
-- Labour productivity in Indian rice farming (output per worker) is competitive even though absolute productivity lags behind Vietnam/Thailand
 - **Relative** labour productivity in rice > relative labour productivity in capital-intensive goods
 
-**Policy tension:**
-
-September 2023: India imposed a **25% export duty** on non-Basmati white rice to contain domestic inflation → global rice prices spiked 15%.
-:::
-::: {.column width="45%"}
-**Ricardian lens on the export ban:**
-
-When India restricted rice exports:
+**Policy tension:** September 2023: India imposed a **25% export duty** on non-Basmati white rice → global rice prices spiked 15%.
 
 $$P_R^{\text{world}} \uparrow \Rightarrow \text{India's ToT deteriorate for future exporters}$$
 
-The ban is welfare-reducing under comparative advantage theory: India surrenders gains from trade to achieve food security goals.
-
-**This is the central policy tension in agricultural trade:**
-
-- Static efficiency ↔ food security
-- Comparative advantage ↔ strategic reserves
-- Export competitiveness ↔ domestic price stability
-:::
+::: {.methodbox}
+The ban is welfare-reducing under comparative advantage theory: India surrenders gains from trade to achieve food security goals. **Central tension:** Static efficiency ↔ food security; comparative advantage ↔ strategic reserves; export competitiveness ↔ domestic price stability.
 :::
 
-## Comparative Advantage: Summary
+## Comparative Advantage: Summary {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
 **Core results of the Ricardian Model:**
 
 1. Trade is driven by **relative**, not absolute, productivity differences
-
-2. Comparative advantage condition:
-$$\frac{a_{LR}^{I}}{a_{LWh}^{I}} < \frac{a_{LR}^{W}}{a_{LWh}^{W}}$$
-
+2. Comparative advantage condition: $\frac{a_{LR}^{I}}{a_{LWh}^{I}} < \frac{a_{LR}^{W}}{a_{LWh}^{W}}$
 3. Gains from trade: consumption bundle moves **beyond the PPF**
-
-4. Terms of trade must lie between autarky opportunity costs:
-$$OC_R^W < \frac{P_R}{P_{Wh}} < OC_R^I$$
-
+4. Terms of trade must lie between autarky opportunity costs: $OC_R^W < \frac{P_R}{P_{Wh}} < OC_R^I$
 5. Both countries gain — even the absolutely less productive one
-:::
-::: {.column width="50%"}
+
 **Empirical verdict:**
 
 | Prediction | Evidence |
@@ -602,34 +503,21 @@ $$OC_R^W < \frac{P_R}{P_{Wh}} < OC_R^I$$
 | All workers gain | Mixed (short-run losers exist) |
 | India exports rice | Confirmed (RCA = 4.8) |
 
-**What Ricardo cannot explain:**
-
-- *Why* labour productivity differs (→ H-O model)
-- Income distribution effects (→ Stolper-Samuelson)
-- Intra-industry trade (→ new trade theory, Lecture 6)
-
-**Next lecture:** Where do comparative advantages come from? Factor endowments and the Heckscher-Ohlin model.
-:::
-:::
+**What Ricardo cannot explain:** *Why* labour productivity differs (→ H-O model); income distribution effects (→ Stolper-Samuelson); intra-industry trade (→ Lecture 6)
 
 # Appendix {background-color="#1a3a5c"}
 
 ## Additional Resources {.appendix}
 
-::: {.columns}
-::: {.column width="50%"}
 **Further Reading**
 
 - *International Economics* — Salvatore (Ch. 3)
 - *International Economics* — Appleyard & Field (Ch. 3)
 - RBI/DGCI&S/APEDA databases for latest data
-:::
-::: {.column width="50%"}
+
 **Key Data Sources**
 
 - DGCI&S: India's merchandise trade
 - RBI: Balance of payments data  
 - APEDA: Agricultural export statistics
 - WTO: Tariff and trade databases
-:::
-:::

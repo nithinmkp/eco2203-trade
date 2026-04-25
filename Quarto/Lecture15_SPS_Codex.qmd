@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Lecture 15: SPS Measures and Codex Alimentarius"
-subtitle: "ECO 2203 | International Trade and Policy in Agriculture"
+subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
 date: "August 1, 2026"
@@ -13,7 +13,7 @@ format:
     incremental: false
     smaller: false
     scrollable: true
-    footer: "ECO 2203 | International Trade and Policy in Agriculture"
+    footer: "Econ 2203 | International Trade and Policy in Agriculture"
     code-fold: true
     code-summary: "Show R code"
   beamer:
