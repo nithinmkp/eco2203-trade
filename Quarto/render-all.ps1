@@ -15,7 +15,77 @@ foreach ($qmd in $lectures) {
     Write-Host "  tex: $($qmd.Name)" -NoNewline
     quarto render $qmd.Name --to beamer -M keep-tex:true 2>&1 | Out-Null
     $tex = $qmd.BaseName + ".tex"
-    if (Test-Path $tex) { Write-Host " ✓" } else { Write-Host " ✗ (tex not generated)" -ForegroundColor Red }
+
+    if (Test-Path $tex) {
+        function Fix-CaptionLabels([string]$s) {
+            $needle = "\caption{"  # literal \caption{
+            $i = 0
+            $sb = New-Object System.Text.StringBuilder
+
+            while ($true) {
+                $pos = $s.IndexOf($needle, $i)
+                if ($pos -lt 0) {
+                    [void]$sb.Append($s.Substring($i))
+                    break
+                }
+
+                [void]$sb.Append($s.Substring($i, $pos - $i))
+
+                $j = $pos + $needle.Length
+                while ($j -lt $s.Length -and [char]::IsWhiteSpace($s[$j])) { $j++ }
+
+                if ($j + 7 -le $s.Length -and $s.Substring($j, 7) -eq "\label{") {
+                    $k = $j + 7
+                    $endLabel = $s.IndexOf('}', $k)
+                    if ($endLabel -lt 0) {
+                        [void]$sb.Append($needle)
+                        $i = $pos + $needle.Length
+                        continue
+                    }
+
+                    $label = $s.Substring($k, $endLabel - $k)
+                    $captionStart = $endLabel + 1
+
+                    $t = $captionStart
+                    $depth = 1
+                    while ($t -lt $s.Length) {
+                        $ch = $s[$t]
+                        if ($ch -eq '{') { $depth++ }
+                        elseif ($ch -eq '}') {
+                            $depth--
+                            if ($depth -eq 0) { break }
+                        }
+                        $t++
+                    }
+
+                    if ($depth -ne 0) {
+                        [void]$sb.Append($needle)
+                        $i = $pos + $needle.Length
+                        continue
+                    }
+
+                    $captionText = $s.Substring($captionStart, $t - $captionStart)
+                    [void]$sb.Append("\caption{" + $captionText + "}`r`n\label{" + $label + "}")
+                    $i = $t + 1
+                } else {
+                    [void]$sb.Append($needle)
+                    $i = $pos + $needle.Length
+                }
+            }
+
+            return $sb.ToString()
+        }
+
+        $raw = Get-Content $tex -Raw
+        $patched = Fix-CaptionLabels $raw
+        if ($patched -ne $raw) {
+            Set-Content -Path $tex -Value $patched -NoNewline
+        }
+
+        Write-Host " ✓"
+    } else {
+        Write-Host " ✗ (tex not generated)" -ForegroundColor Red
+    }
 }
 
 Write-Host "`n=== Step 3: Compile .tex → PDF via latexmk ===" -ForegroundColor Cyan

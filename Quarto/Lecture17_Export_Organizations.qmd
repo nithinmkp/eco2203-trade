@@ -702,22 +702,11 @@ District Collectors coordinate between farmers, FPOs, exporters, and commodity b
 
 ---
 
-## India's 2030 Agricultural Export Ambition
+## India's 2030 Agricultural Export Ambition {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
-**APEDA's target: $60 billion by 2030**  
-(from $43.7B in FY2024; required CAGR ~5.4%)
+**APEDA's target: $60 billion by 2030** (from $43.7B in FY2024; CAGR ~5.4%)
 
-**MPEDA's target: $12 billion in seafood**  
-(from $7.6B; focus on value-added and ready-to-eat)
-
-**Commodity Board targets:**
-- Spices Board: $5B (from $3.7B)
-- Coffee Board: $2B (from $1.2B)
-- Tea Board: $1.5B (from $750M)
-
-**Overall national agri-food export target (FTP 2023–28): $100 billion by 2030**
+**National agri-food export target (FTP 2023–28): $100 billion by 2030**
 
 **Strategy pillars:**
 1. Diversify beyond rice dominance
@@ -725,9 +714,7 @@ District Collectors coordinate between farmers, FPOs, exporters, and commodity b
 3. Value addition: processed, organic, functional foods
 4. Invest in cold chain: PM GatiShakti nodes
 5. Leverage GI brand premiums
-6. FTA market access: India-UAE CEPA live; India-UK FTA being negotiated
-:::
-::: {.column width="45%"}
+
 ::: {.keybox}
 **Key Takeaways:**
 
@@ -736,9 +723,14 @@ District Collectors coordinate between farmers, FPOs, exporters, and commodity b
 3. **Commodity Boards** are sector-specific engines — Spices Board's $3.7B is remarkable for a relatively small value chain
 4. **EIC** provides the third-party quality assurance without which EU/USA market access is impossible
 5. **FPOs** are solving the small-farm aggregation problem — Mahagrapes, Sahyadri, Amul show it is achievable at scale
-6. **District-level implementation** through DEH is the newest institutional innovation — connecting national targets to local value chains
 :::
-:::
+
+:::{.notes}
+**Commodity Board targets:** Spices Board: $5B (from $3.7B); Coffee Board: $2B (from $1.2B); Tea Board: $1.5B (from $750M). MPEDA's target: $12B in seafood.
+
+6. **District-level implementation** through DEH is the newest institutional innovation — connecting national targets to local value chains.
+
+FTA market access: India-UAE CEPA live; India-UK FTA being negotiated.
 :::
 
 ---
@@ -751,17 +743,17 @@ District Collectors coordinate between farmers, FPOs, exporters, and commodity b
 
 - Course synthesis: from comparative advantage to India's $43.7 billion agri export reality
 - India's trade performance: FY2024 big picture and 10-year trends
-- Export composition, import profile, and the value-addition opportunity
 - Foreign Trade Policy 2023–28: vision, themes, and agricultural provisions
 - Millets, GIs, and organic exports as strategic niches
-- Challenges India must overcome and opportunities ahead
 - The farmer welfare vs export competitiveness dilemma
+:::
+
+:::{.notes}
+- Export composition, import profile, and the value-addition opportunity
+- Challenges India must overcome and opportunities ahead
 - Course synthesis: what 18 weeks has taught us
 - India's Agricultural Export Vision 2030
 
-:::
-
-::: {.highlightbox}
 **Final lecture preparation:** Review all lecture notes from Lectures 1–17. Bring questions — we will have a 15-minute open Q&A on examination topics at the end of Lecture 18.
 :::
 

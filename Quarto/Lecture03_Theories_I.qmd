@@ -63,78 +63,93 @@ This question has occupied economists for over 500 years. Three broad answers ha
 **Why theory matters for policy:** India bans rice exports → mercantilist instinct. India signs FTAs → comparative advantage logic. These theories are the intellectual foundation of every trade policy debate happening right now.
 :::
 
-## Overview of Trade Theories: A Timeline
+## Trade theory timeline (I): early foundations
 
-::: {.smaller}
-| Period | Theory | Key Idea | Main Proponent |
-|--------|---------|----------|----------------|
-| 1500–1750 | **Mercantilism** | Wealth = gold; maximise trade surplus | Colbert, Mun |
-| 1776 | **Absolute Advantage** | Specialise where you are *most* productive | Adam Smith |
-| 1817 | **Comparative Advantage** | Specialise where you have *lowest opportunity cost* | David Ricardo |
-| 1933 | **Factor Endowments (H-O)** | Trade reflects relative factor abundance | Heckscher, Ohlin |
-| 1953 | **Leontief Paradox** | Empirical challenge to H-O | Leontief |
-| 1970s–80s | **New Trade Theory** | Economies of scale + imperfect competition | Krugman |
-| 1990s | **Porter's Diamond** | Competitive advantage of nations | Porter |
-| 2000s | **New New Trade Theory** | Firm-level heterogeneity in trade | Melitz |
-:::
+- **Mercantilism (1500–1750):** wealth = gold; maximise trade surplus
+- **Smith (1776):** absolute advantage (higher productivity)
+- **Ricardo (1817):** comparative advantage (lower opportunity cost)
+- **H–O (1933):** trade reflects factor endowments
+- **Big shift:** from “win–lose trade” → **gains from specialization**
 
-::: {.keybox}
-Each theory addresses a limitation of the previous one. By Lecture 6, we will have covered the full arc. Today: mercantilism and Smith.
-:::
+---
+
+## Trade theory timeline (II): modern extensions
+
+- **Leontief (1953):** data challenge to simple H–O predictions
+- **Krugman (1970s–80s):** scale economies + imperfect competition
+- **Porter (1990s):** national competitiveness and institutions
+- **Melitz (2000s):** firm heterogeneity; only productive firms export
+- **Course roadmap:** by Lecture 6 we cover the arc; today starts with mercantilism + Smith
 
 # Part II: Mercantilism {background-color="#E8EDF5"}
 
-## What is Mercantilism?
+## Mercantilism: the setting
 
-**Historical context**
+- Dominant European doctrine: **1500–1750**
+- Bullion money: gold/silver treated as “wealth”
+- Nation-states + colonial expansion + chartered companies
 
-- Dominant European trade doctrine: approximately 1500–1750 CE
-- Era of nation-state formation, colonial expansion, and bullion-based monetary systems
-- Gold and silver = the only "real" wealth; paper money not yet trusted
+---
 
-**Core beliefs of mercantilism**
+## Mercantilism: core beliefs
 
-- **Wealth of a nation = stock of gold and silver** it accumulates
-- To accumulate gold → **export more than you import** → trade surplus → gold flows in
-- Trade is **zero-sum:** one country's gain is another's loss
-- **State's role:** Actively promote exports, restrict imports, grant monopolies to favoured companies
+- Wealth ≈ **gold/silver stock**
+- Goal: **export > import** (surplus)
+- Trade seen as **zero-sum**
+- State actively manages trade (tariffs, subsidies, monopolies)
 
-::: {.highlightbox}
-**Modern echo:** When Indian politicians say "we must increase our trade surplus," they are (often unknowingly) invoking mercantilist logic.
+:::{.notes}
+Modern echo: “increase the trade surplus” rhetoric often reflects mercantilist instincts.
 :::
 
-## Mercantilist Policies in Practice
+## Mercantilist policies (export side)
 
-**Export promotion**
+- Export subsidies / rebates to push exports
+- Chartered trading companies (EIC, VOC) with monopoly rights
+- Shipping restrictions (Navigation Acts) to control trade routes
 
-- **Export subsidies** — government pays domestic producers to lower their export price
-- **State-supported trading companies** — British East India Company (1600), Dutch VOC (1602): chartered monopolies
-- **Navigation Acts (England, 1651):** Required all trade to be carried in English ships
+---
 
-| Policy | Mercantilist rationale | Modern equivalent |
-|--------|----------------------|-------------------|
-| Export subsidies | Increase gold inflow | India's RoDTEP, MEIS |
-| Import duties | Keep gold in country | India's import tariff schedule |
-| State monopolies | Control strategic trade | MMTC, STC trading houses |
-| Currency undervaluation | Make exports cheap | China 2000s |
+## Mercantilist policies (import side + currency)
+
+- Import duties / quotas to restrict imports
+- State monopolies to control strategic goods
+- Currency undervaluation to make exports cheaper
+
+---
+
+## Modern equivalents (examples)
+
+- Export rebates: **RoDTEP** (India)
+- Import duties: India’s tariff schedule
+- Trading houses: **MMTC/STC** (public trading)
+- Undervaluation episode: China (2000s)
 
 ::: {.methodbox}
-Mercantilism was not entirely irrational — for a small open economy trying to industrialise, some "mercantilist" policies may be justified. The *error* is the zero-sum worldview.
+Mercantilism isn’t always “irrational”; the error is the **zero-sum worldview**.
 :::
 
-## Colonial Trade: The Institutional Structure
+## Colonial trade: British mercantilism in India
 
-**British mercantilism in India**
+- India as **raw material source** + **captive market**
+- Cotton chain: India → Manchester mills → textiles back to India
+- Trade rules tilted toward Britain (favouring British textiles)
 
-- India was Britain's most valuable colonial possession — primary purpose: source raw materials, provide captive market for British manufactures
-- **Raw material extraction:** Raw cotton from India → Manchester mills → cotton textiles back to India
-- **De-industrialisation:** India's cotton textile industry (Dhaka muslin, Surat cotton) was systematically destroyed through zero/low import duties on British textiles + high export duties on Indian textiles
+---
 
-::: {.highlightbox}
-**The numbers (Utsa Patnaik, 2018 estimate):** India transferred **\$45 trillion** to Britain between 1765 and 1938 (present-value estimate — debated but widely cited). Even conservative estimates show India's per capita income *fell* under British rule.
+## The “drain” idea (why this matters)
 
-**Agricultural dimension:** India was forced to grow indigo, opium, and jute for British export markets rather than food crops → contributed to famines (Bengal 1943: 2–3 million deaths)
-:::
+- Naoroji: colonial trade + administration created a systematic transfer outward
+- Channels: home charges, interest payments, profits remitted
+- Big estimates exist (e.g., Patnaik 2018 ≈ $45T PV) — **methodology debated**
+
+---
+
+## Agricultural dimension
+
+- Cash-crop push (indigo/opium/jute) could displace food crops
+- Higher food vulnerability + famine risk (Bengal 1943)
+- Key point: **institutions + trade policy shape what gets produced**
 
 ## The Drain of Wealth: Naoroji's Evidence
 
@@ -247,7 +262,7 @@ National self-sufficiency achieved through restriction destroys, not creates, re
 - **Industrial policy for export champions:** China's \$5 trillion in state subsidies to EVs, solar panels (WTO disputes pending)
 - **India's FTP 2023–28 target** of \$2 trillion exports has a mercantilist *flavour* — emphasises export growth
 
-::: {.keybox}
+:::{.notes}
 **The "China is mercantilist" debate:** China kept RMB undervalued by ~20–40%, providing massive subsidies to export industries → \$3T+ in foreign exchange reserves. Critics: unfair competition. China's response: infant industry protection, just like US and UK in 19th century. **Who is right?** Both, somewhat.
 :::
 
@@ -324,12 +339,12 @@ Following Salvatore (2013, Ch. 2) — two nations, two commodities:
 - **Rice:** India produces 4 vs USA's 1 → [India has absolute advantage in Rice]{.hi}
 - **Wheat:** USA produces 3 vs India's 1 → [USA has absolute advantage in Wheat]{.hi-gold}
 
+:::{.notes}
 **Opportunity costs (= PPF slopes):**
 
 $$\text{India: OC of 1 Wheat} = 4 \text{ Rice} \quad (\text{steep PPF — Rice-abundant})$$
 $$\text{USA: OC of 1 Wheat} = \tfrac{1}{3} \text{ Rice} \quad (\text{flat PPF — Wheat-efficient})$$
 
-::: {.methodbox}
 Each country has **40 worker-days** of labour. PPF equations (linear = constant opportunity cost):
 $$\text{India: } R = 160 - 4W \qquad \text{USA: } R = 40 - \tfrac{1}{3}W$$
 :::
@@ -338,7 +353,7 @@ $$\text{India: } R = 160 - 4W \qquad \text{USA: } R = 40 - \tfrac{1}{3}W$$
 #| label: fig-linear-ppf
 #| fig-cap: "Linear PPFs: India and USA — Absolute Advantage (constant opportunity costs)\nSource: Author's illustration."
 #| fig-width: 9
-#| fig-height: 5
+#| fig-height: 4.3
 
 # India: L = 40 worker-days. Rice max = 40×4 = 160; Wheat max = 40×1 = 40
 # PPF: R = 160 - 4W  (OC of 1 Wheat = 4 Rice → steep slope)
@@ -621,15 +636,16 @@ The search for direct sea routes to India's spice markets was the primary driver
 - Wealth = gold; goal = trade surplus; trade is zero-sum
 - Led to colonial exploitation, including India's "drain of wealth"
 - Critiqued by Hume (price-specie-flow) and Smith (wealth is production, not gold)
-:::
 
-::: {.keybox}
 **Absolute Advantage (Adam Smith, 1776):**
 - Each country should specialise in what it produces most efficiently
 - Trade is win-win — world production rises with specialisation
-- India and Bangladesh example: rice vs jute, both gain
 
 **The fatal limitation:** What if one country is better at *everything*? Smith cannot explain trade between USA and India. This is the gap Ricardo fills with **comparative advantage**.
+:::
+
+:::{.notes}
+- India and Bangladesh example: rice vs jute — both gain from specialisation under absolute advantage.
 :::
 
 ## Key Takeaways: Lecture 3

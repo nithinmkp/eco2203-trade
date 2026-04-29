@@ -40,7 +40,7 @@ theme_set(theme_minimal(base_size = 11))
 knitr::opts_chunk$set(echo = knitr::is_html_output())
 ```
 
-# India's External Sector {background-gradient="linear-gradient(135deg, #1a3c5e 0%, #2d6a9f 100%)"}
+## India's External Sector {background-gradient="linear-gradient(135deg, #1a3c5e 0%, #2d6a9f 100%)"}
 
 ::: {style="color: white; font-size: 1.1em; margin-top: 1em;"}
 A deep dive into India's trade structure, agricultural trade, and balance of payments
@@ -761,10 +761,8 @@ India punches above its weight in agricultural exports relative to its overall m
 :::
 :::
 
-## Structural Challenges in India's External Sector
+## Structural Challenges in India's External Sector {.smaller}
 
-::: {.columns}
-::: {.column width="55%"}
 **Key vulnerabilities:**
 
 1. **Energy import dependence** — crude oil $232B; geopolitical risk
@@ -776,22 +774,15 @@ India punches above its weight in agricultural exports relative to its overall m
 4. **Gold demand** — $47B; compresses CAD but reflects domestic saving patterns
 
 5. **China trade deficit** — ~$85B; supply chain dependency
-:::
-::: {.column width="45%"}
-::: {.keybox}
+
+:::{.notes}
 **Structural strengths:**
 
 1. IT services surplus — $220B
-
 2. Remittances — $120B
-
 3. Pharmaceutical exports — $27B
-
 4. Agricultural surplus — +$15.5B
-
 5. Large, diversified economy — natural hedge
-:::
-:::
 :::
 
 ## Agricultural Sector's Role in India's External Sector
@@ -812,33 +803,25 @@ The net surplus of $15.5B means agriculture is a **net contributor** to India's 
 :::
 :::
 
-## Looking Ahead: India's External Sector Goals
+## Looking Ahead: India's External Sector Goals {.smaller}
 
 **India's trade policy objectives (2025–2030):**
 
-::: {.columns}
-::: {.column width="55%"}
-**Merchandise targets:**
 - Merchandise exports target: **$1 trillion by FY2030**
 - Agricultural export target: **$100 billion by 2030**
-- Electronics exports: $300B (replace imports)
-
-**Agricultural priorities:**
 - Increase oilseed domestic production (reduce $14B import bill)
 - Value-added processed food exports
 - Agri-GI tags to premium global markets
-:::
-::: {.column width="45%"}
-::: {.methodbox}
+
+:::{.notes}
 **Structural shifts underway:**
 
+- Electronics exports: $300B (replace imports)
 - RCEP exit (2019) — protected domestic agri
 - FTA with UAE (2022) — agri market access
 - FTA with Australia (2022) — pulses imports
 - FTA with UK (pending) — key agri market
 - EU FTA (ongoing) — GI products, SPS issues
-:::
-:::
 :::
 
 ## Key Takeaways — Lecture 10
@@ -859,30 +842,20 @@ The net surplus of $15.5B means agriculture is a **net contributor** to India's 
 
 ## Next Lecture: Foreign Exchange Rates and Determination
 
-::: {.columns}
-::: {.column width="60%"}
-**Lecture 11 (July 7, 2026):**
-
-*Foreign Exchange — Rates and Determination*
+**Lecture 11 (July 7, 2026):** *Foreign Exchange — Rates and Determination*
 
 We will cover:
 
 - What is the exchange rate and why does it matter?
 - Nominal vs. real exchange rate
-- History of India's rupee (1947 → today)
 - PPP theory and why the rupee "should" depreciate
 - Covered and uncovered interest parity
 - How exchange rates affect agricultural exporters and importers
-:::
-::: {.column width="40%"}
-::: {.keybox}
-**Connecting to today:**
 
-Today's external sector data (the flows — exports, imports, remittances) determine **tomorrow's exchange rate.**
+:::{.notes}
+- History of India's rupee (1947 → today)
 
-Understanding the rate is the next step to understanding how agri trade prices are actually set.
-:::
-:::
+Today's external sector data (the flows — exports, imports, remittances) determine **tomorrow's exchange rate.** Understanding the rate is the next step to understanding how agri trade prices are actually set.
 :::
 
 # Appendix {background-color="#1a3a5c"}

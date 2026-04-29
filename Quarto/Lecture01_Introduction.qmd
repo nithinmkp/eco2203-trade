@@ -166,21 +166,20 @@ Additional demand-side reason: **Income growth** — Rising incomes raise demand
 
 **Global rank:** [18th]{.hi} in merchandise exports (WTO 2023)
 
+:::{.notes}
 - India runs a **large merchandise deficit** but a significant **services surplus**
 - Merchandise deficit driven by **crude oil** and **gold** imports
 - Agriculture consistently contributes a **trade surplus**
-
-:::{.notes}
-India's overall current account deficit is modest (~1% of GDP) because services surplus and remittances (~\$120B in FY2024) partially offset the merchandise deficit.
+- Current account deficit is modest (~1% of GDP) because services surplus and remittances (~\$120B in FY2024) partially offset the merchandise deficit
 :::
 
 ## India's Trade: The Big Picture
 
 ```{r}
 #| label: fig-india-trade-trend
-#| fig-cap: "India's Merchandise Trade (FY2015–FY2024, USD billion)\nSource: DGCI&S / Ministry of Commerce and Industry, GoI."
+#| fig-cap: "India's Merchandise Trade (FY2015–FY2024, USD billion)\nSource: DGCI&S / Ministry of Commerce and Industry (GoI)."
 #| fig-width: 8
-#| fig-height: 4.5
+#| fig-height: 4
 library(ggplot2)
 library(dplyr)
 
@@ -208,7 +207,7 @@ ggplot(trade_long, aes(x=year, y=value, color=type, group=type)) +
   theme(legend.position="bottom", axis.text.x=element_text(angle=45, hjust=1))
 ```
 
-::: {.keybox}
+:::{.notes}
 **Key insight:** India's trade deficit widened sharply post-2020. Exports plateaued at ~\$440–450B while imports surged to ~\$870B — largely driven by oil, gold, and electronics.
 :::
 
@@ -304,7 +303,7 @@ ggplot(global_share, aes(x=country, y=share, fill=highlight)) +
   geom_text(aes(label=paste0(share, "%")), hjust=-0.1, size=3.2)
 ```
 
-::: {.keybox}
+:::{.notes}
 India holds **2.8%** of world agricultural exports — 7th globally — but punches below its weight given its agricultural size. Significant scope to expand market share in rice, spices, and processed foods.
 :::
 
@@ -319,7 +318,7 @@ India holds **2.8%** of world agricultural exports — 7th globally — but punc
 - **Terms of trade** — ratio of export prices to import prices; determines gains from trade
 - **Intra-industry trade** — two-way trade in similar products (India exports basmati, imports parboiled rice)
 
-::: {.methodbox}
+:::{.notes}
 Comparative advantage explains *what* countries trade; terms of trade determine *how much* they gain.
 :::
 
@@ -332,7 +331,7 @@ Comparative advantage explains *what* countries trade; terms of trade determine 
 - **Balance of Payments (BoP)** — accounting of all international transactions
 - **Exchange rate** — price of one currency in terms of another; stronger rupee makes exports costlier
 
-::: {.methodbox}
+:::{.notes}
 Tariffs and NTBs determine *how much* trade actually occurs — constraining the gains that comparative advantage would otherwise deliver.
 :::
 
@@ -382,7 +381,7 @@ Additional economic/political features:
 | 4 | China | ~3.8% | Cotton, castor oil |
 | 5 | Bangladesh | ~3.5% | Rice, onion, sugar |
 
-::: {.methodbox}
+:::{.notes}
 **Gravity model logic:** India trades most with large (USA, China) or geographically close (UAE, Bangladesh) economies — a pattern we will formalise in Lecture 2.
 :::
 
@@ -444,9 +443,9 @@ Additional economic/political features:
 FTP 2023–28 is notably continuity-oriented — it builds on previous policy architecture rather than a radical overhaul, reflecting India's cautious approach to trade liberalisation.
 :::
 
-## A Preview: The Basic Trade Model
+## A Preview: The Basic Trade Model (I)
 
-**Production Possibility Frontier (PPF) — conceptual preview**
+**PPF — conceptual preview**
 
 **Without trade (autarky)**
 
@@ -454,14 +453,16 @@ FTP 2023–28 is notably continuity-oriented — it builds on previous policy ar
 - The slope of the PPF = the domestic relative price
 - Example: India producing only rice and wheat — the trade-off is fixed by domestic technology
 
+## A Preview: The Basic Trade Model (II)
+
 **With trade (open economy)**
 
 - World price ratio differs from domestic price ratio
 - Country specialises in the good where it has comparative advantage
 - Consumption point can now lie **outside** the PPF — *both* countries gain
 
-::: {.methodbox}
-**The core result:** Trade allows a country to **consume beyond its production possibilities** — achieved through specialisation and exchange.
+:::{.notes}
+**Core result:** Trade allows a country to **consume beyond its production possibilities** — through specialisation and exchange.
 
 Upcoming lectures formalise: why world price differs (Lec 3–5), how much each country gains (Lec 7), what tariffs do (Lec 8).
 :::

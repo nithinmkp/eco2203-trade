@@ -145,20 +145,11 @@ Under **CIF**, the exporter arranges (and prices) freight and insurance to the d
 
 ## Export Documents: Proof of Transaction
 
-::: {.columns}
-::: {.column width="50%"}
-1. **Commercial Invoice** — price, quantity, HSN code, IEC, buyer/seller details; basis for customs valuation
-2. **Packing List** — box-by-box itemisation of weight, dimensions, marks
-3. **Bill of Lading (B/L)** — title document issued by shipping line; original B/L needed to claim cargo
-4. **Airway Bill (AWB)** — air freight equivalent of B/L; non-negotiable consignment note
-5. **Certificate of Origin (CoO)** — issued by FIEO/chamber; determines FTA preferential tariff eligibility
-:::
-::: {.column width="50%"}
-::: {.keybox}
-The **Bill of Lading** is the only document that is a negotiable instrument — it can be endorsed and transferred like a cheque.
-:::
-:::
-:::
+- **Commercial Invoice** — product, quantity, price, HSN/IEC; basis for customs valuation
+- **Packing List** — box-by-box weight and dimensions
+- **Transport document** — **B/L** (sea) or **AWB** (air)
+- **Certificate of Origin (CoO)** — used for FTA preferential tariffs
+- **Key idea:** **B/L is negotiable** (can be endorsed/transferred)
 
 :::{.notes}
 Detailed descriptions:
@@ -170,30 +161,15 @@ Detailed descriptions:
 5. **Certificate of Origin (CoO)** — issued by FIEO, chamber of commerce, or APEDA; proves country of origin; required for preferential duty rate under FTAs.
 :::
 
+---
+
 ## Export Documents: Compliance and Regulatory
 
-::: {.columns}
-::: {.column width="50%"}
-6. **Phytosanitary Certificate** — issued by PPQS (Plant Protection, Quarantine & Storage); mandatory for all plant products
-7. **Health / Inspection Certificate** — issued by EIC for meat, marine, organic, dairy exports
-8. **EDPMS declaration** — RBI's online system linking shipment to forex realization
-9. **Fumigation Certificate** — mandatory for pulses, oilseeds; issued by certified fumigators
-10. **Shipping Bill** — key customs clearance document filed on ICEGATE; must be approved before loading
-:::
-::: {.column width="50%"}
-::: {.methodbox}
-**Document flow for a typical agri export:**
-
-1. Export contract signed → Commercial Invoice prepared
-2. LC opened by buyer's bank
-3. Shipment arranged → B/L issued
-4. Phytosanitary + Fumigation certificates obtained
-5. Shipping Bill filed on ICEGATE → LEO (Let Export Order) obtained
-6. Documents presented to advising bank → payment
-7. EDPMS updated → forex realization confirmed
-:::
-:::
-:::
+- **Phytosanitary certificate (PPQS)** — plant products are pest-free
+- **Health/inspection certificate (EIC)** — meat/marine/organic/dairy
+- **Fumigation certificate** — pulses/oilseeds; treatment details
+- **Shipping Bill (ICEGATE)** — customs clearance + **LEO**
+- **EDPMS (RBI)** — links shipment to forex realization
 
 :::{.notes}
 Detailed descriptions:
@@ -204,6 +180,16 @@ Detailed descriptions:
 9. **Fumigation Certificate** — mandatory for pulses, oilseeds, and many cereals; issued by certified fumigators; many countries require methyl bromide or phosphine treatment; certificate must specify chemical, dosage, duration.
 10. **Shipping Bill** — the key customs clearance document filed on ICEGATE; must be approved by Customs before loading; distinct types (Free Shipping Bill, Dutiable SB, SB under claim for Drawback) for different incentive claims.
 :::
+
+---
+
+## Document flow: a typical agri export
+
+1. Contract signed + invoice prepared
+2. Buyer arranges payment (often via **LC**)
+3. Shipment booked → **B/L or AWB** issued
+4. Certificates obtained + Shipping Bill filed → **LEO**
+5. Documents presented to bank → payment + **EDPMS** closure
 
 ---
 
@@ -765,6 +751,9 @@ RoDTEP scrip + drawback + TMA
 3. **The Bill of Lading** is the only negotiable title document — it unlocks payment under LC
 4. **RoDTEP** has replaced MEIS as the primary export incentive — WTO-compliant, duty refund basis
 5. **Cold chain and logistics** remain India's primary structural bottleneck — world-class documentation systems exist, but physical infrastructure lags
+:::
+
+:::{.notes}
 6. **Digital India** is working: ICEGATE, SWIFT, e-BRC have dramatically reduced transaction costs
 :::
 :::
@@ -783,12 +772,12 @@ RoDTEP scrip + drawback + TMA
 - The five Commodity Boards: Tea, Coffee, Rubber, Spices, Tobacco
 - Export Inspection Council and quality certification
 - NAFED: buffer stocks, MSP procurement, export implications
+:::
+
+:::{.notes}
 - Farmer Producer Organizations as export units
 - India's 2030 export target: $60 billion in agri and food products
 
-:::
-
-::: {.highlightbox}
 **Preparation:** Review APEDA Annual Report 2023–24 (available at apeda.gov.in). Note the top 10 products by export value and the top 5 destination countries.
 :::
 

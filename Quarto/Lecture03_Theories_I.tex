@@ -195,14 +195,6 @@
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
-\makeatletter
-\let\quarto@originallabel\label
-\DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
-\makeatother
-
 % Prevent figures from overflowing Beamer frames.
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
@@ -311,158 +303,162 @@ These theories are the intellectual foundation of every trade policy
 debate happening right now.
 \end{frame}
 
-\begin{frame}{Overview of Trade Theories: A Timeline}
-\phantomsection\label{overview-of-trade-theories-a-timeline}
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1860}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2093}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2326}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3721}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Period
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Theory
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Key Idea
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Main Proponent
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-1500--1750 & \textbf{Mercantilism} & Wealth = gold; maximise trade
-surplus & Colbert, Mun \\
-1776 & \textbf{Absolute Advantage} & Specialise where you are
-\emph{most} productive & Adam Smith \\
-1817 & \textbf{Comparative Advantage} & Specialise where you have
-\emph{lowest opportunity cost} & David Ricardo \\
-1933 & \textbf{Factor Endowments (H-O)} & Trade reflects relative factor
-abundance & Heckscher, Ohlin \\
-1953 & \textbf{Leontief Paradox} & Empirical challenge to H-O &
-Leontief \\
-1970s--80s & \textbf{New Trade Theory} & Economies of scale + imperfect
-competition & Krugman \\
-1990s & \textbf{Porter's Diamond} & Competitive advantage of nations &
-Porter \\
-2000s & \textbf{New New Trade Theory} & Firm-level heterogeneity in
-trade & Melitz \\
-\bottomrule\noalign{}
-\end{longtable}
+\begin{frame}{Trade theory timeline (I): early foundations}
+\phantomsection\label{trade-theory-timeline-i-early-foundations}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Mercantilism (1500--1750):} wealth = gold; maximise trade
+  surplus
+\item
+  \textbf{Smith (1776):} absolute advantage (higher productivity)
+\item
+  \textbf{Ricardo (1817):} comparative advantage (lower opportunity
+  cost)
+\item
+  \textbf{H--O (1933):} trade reflects factor endowments
+\item
+  \textbf{Big shift:} from ``win--lose trade'' → \textbf{gains from
+  specialization}
+\end{itemize}
+\end{frame}
 
-Each theory addresses a limitation of the previous one. By Lecture 6, we
-will have covered the full arc. Today: mercantilism and Smith.
+\begin{frame}{Trade theory timeline (II): modern extensions}
+\phantomsection\label{trade-theory-timeline-ii-modern-extensions}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Leontief (1953):} data challenge to simple H--O predictions
+\item
+  \textbf{Krugman (1970s--80s):} scale economies + imperfect competition
+\item
+  \textbf{Porter (1990s):} national competitiveness and institutions
+\item
+  \textbf{Melitz (2000s):} firm heterogeneity; only productive firms
+  export
+\item
+  \textbf{Course roadmap:} by Lecture 6 we cover the arc; today starts
+  with mercantilism + Smith
+\end{itemize}
 \end{frame}
 
 \section{Part II: Mercantilism}\label{part-ii-mercantilism}
 
-\begin{frame}{What is Mercantilism?}
-\phantomsection\label{what-is-mercantilism}
-\textbf{Historical context}
-
+\begin{frame}{Mercantilism: the setting}
+\phantomsection\label{mercantilism-the-setting}
 \begin{itemize}
 \tightlist
 \item
-  Dominant European trade doctrine: approximately 1500--1750 CE
+  Dominant European doctrine: \textbf{1500--1750}
 \item
-  Era of nation-state formation, colonial expansion, and bullion-based
-  monetary systems
+  Bullion money: gold/silver treated as ``wealth''
 \item
-  Gold and silver = the only ``real'' wealth; paper money not yet
-  trusted
+  Nation-states + colonial expansion + chartered companies
 \end{itemize}
-
-\textbf{Core beliefs of mercantilism}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Wealth of a nation = stock of gold and silver} it accumulates
-\item
-  To accumulate gold → \textbf{export more than you import} → trade
-  surplus → gold flows in
-\item
-  Trade is \textbf{zero-sum:} one country's gain is another's loss
-\item
-  \textbf{State's role:} Actively promote exports, restrict imports,
-  grant monopolies to favoured companies
-\end{itemize}
-
-\textbf{Modern echo:} When Indian politicians say ``we must increase our
-trade surplus,'' they are (often unknowingly) invoking mercantilist
-logic.
 \end{frame}
 
-\begin{frame}{Mercantilist Policies in Practice}
-\phantomsection\label{mercantilist-policies-in-practice}
-\textbf{Export promotion}
-
+\begin{frame}{Mercantilism: core beliefs}
+\phantomsection\label{mercantilism-core-beliefs}
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Export subsidies} --- government pays domestic producers to
-  lower their export price
+  Wealth ≈ \textbf{gold/silver stock}
 \item
-  \textbf{State-supported trading companies} --- British East India
-  Company (1600), Dutch VOC (1602): chartered monopolies
+  Goal: \textbf{export \textgreater{} import} (surplus)
 \item
-  \textbf{Navigation Acts (England, 1651):} Required all trade to be
-  carried in English ships
+  Trade seen as \textbf{zero-sum}
+\item
+  State actively manages trade (tariffs, subsidies, monopolies)
 \end{itemize}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1633}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4490}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3878}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Policy
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Mercantilist rationale
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Modern equivalent
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-Export subsidies & Increase gold inflow & India's RoDTEP, MEIS \\
-Import duties & Keep gold in country & India's import tariff schedule \\
-State monopolies & Control strategic trade & MMTC, STC trading houses \\
-Currency undervaluation & Make exports cheap & China 2000s \\
-\bottomrule\noalign{}
-\end{longtable}
-
-Mercantilism was not entirely irrational --- for a small open economy
-trying to industrialise, some ``mercantilist'' policies may be
-justified. The \emph{error} is the zero-sum worldview.
+\note{Modern echo: ``increase the trade surplus'' rhetoric often
+reflects mercantilist instincts.}
 \end{frame}
 
-\begin{frame}{Colonial Trade: The Institutional Structure}
-\phantomsection\label{colonial-trade-the-institutional-structure}
-\textbf{British mercantilism in India}
-
+\begin{frame}{Mercantilist policies (export side)}
+\phantomsection\label{mercantilist-policies-export-side}
 \begin{itemize}
 \tightlist
 \item
-  India was Britain's most valuable colonial possession --- primary
-  purpose: source raw materials, provide captive market for British
-  manufactures
+  Export subsidies / rebates to push exports
 \item
-  \textbf{Raw material extraction:} Raw cotton from India → Manchester
-  mills → cotton textiles back to India
+  Chartered trading companies (EIC, VOC) with monopoly rights
 \item
-  \textbf{De-industrialisation:} India's cotton textile industry (Dhaka
-  muslin, Surat cotton) was systematically destroyed through zero/low
-  import duties on British textiles + high export duties on Indian
-  textiles
+  Shipping restrictions (Navigation Acts) to control trade routes
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mercantilist policies (import side + currency)}
+\phantomsection\label{mercantilist-policies-import-side-currency}
+\begin{itemize}
+\tightlist
+\item
+  Import duties / quotas to restrict imports
+\item
+  State monopolies to control strategic goods
+\item
+  Currency undervaluation to make exports cheaper
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Modern equivalents (examples)}
+\phantomsection\label{modern-equivalents-examples}
+\begin{itemize}
+\tightlist
+\item
+  Export rebates: \textbf{RoDTEP} (India)
+\item
+  Import duties: India's tariff schedule
+\item
+  Trading houses: \textbf{MMTC/STC} (public trading)
+\item
+  Undervaluation episode: China (2000s)
 \end{itemize}
 
-\textbf{The numbers (Utsa Patnaik, 2018 estimate):} India transferred
-\textbf{\$45 trillion} to Britain between 1765 and 1938 (present-value
-estimate --- debated but widely cited). Even conservative estimates show
-India's per capita income \emph{fell} under British rule.
+Mercantilism isn't always ``irrational''; the error is the
+\textbf{zero-sum worldview}.
+\end{frame}
 
-\textbf{Agricultural dimension:} India was forced to grow indigo, opium,
-and jute for British export markets rather than food crops → contributed
-to famines (Bengal 1943: 2--3 million deaths)
+\begin{frame}{Colonial trade: British mercantilism in India}
+\phantomsection\label{colonial-trade-british-mercantilism-in-india}
+\begin{itemize}
+\tightlist
+\item
+  India as \textbf{raw material source} + \textbf{captive market}
+\item
+  Cotton chain: India → Manchester mills → textiles back to India
+\item
+  Trade rules tilted toward Britain (favouring British textiles)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The ``drain'' idea (why this matters)}
+\phantomsection\label{the-drain-idea-why-this-matters}
+\begin{itemize}
+\tightlist
+\item
+  Naoroji: colonial trade + administration created a systematic transfer
+  outward
+\item
+  Channels: home charges, interest payments, profits remitted
+\item
+  Big estimates exist (e.g., Patnaik 2018 ≈ \$45T PV) ---
+  \textbf{methodology debated}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Agricultural dimension}
+\phantomsection\label{agricultural-dimension}
+\begin{itemize}
+\tightlist
+\item
+  Cash-crop push (indigo/opium/jute) could displace food crops
+\item
+  Higher food vulnerability + famine risk (Bengal 1943)
+\item
+  Key point: \textbf{institutions + trade policy shape what gets
+  produced}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{The Drain of Wealth: Naoroji's Evidence}
@@ -644,11 +640,11 @@ which logic applies when.
   mercantilist \emph{flavour} --- emphasises export growth
 \end{itemize}
 
-\textbf{The ``China is mercantilist'' debate:} China kept RMB
+\note{\textbf{The ``China is mercantilist'' debate:} China kept RMB
 undervalued by \textasciitilde20--40\%, providing massive subsidies to
 export industries → \$3T+ in foreign exchange reserves. Critics: unfair
 competition. China's response: infant industry protection, just like US
-and UK in 19th century. \textbf{Who is right?} Both, somewhat.
+and UK in 19th century. \textbf{Who is right?} Both, somewhat.}
 \end{frame}
 
 \begin{frame}{Neo-Mercantilism: Critique and Assessment}
@@ -779,14 +775,14 @@ Wheat (units/worker-day) & 1 & \textbf{3} \\
   advantage in Wheat}
 \end{itemize}
 
-\textbf{Opportunity costs (= PPF slopes):}
+\note{\textbf{Opportunity costs (= PPF slopes):}
 
 \[\text{India: OC of 1 Wheat} = 4 \text{ Rice} \quad (\text{steep PPF — Rice-abundant})\]
 \[\text{USA: OC of 1 Wheat} = \tfrac{1}{3} \text{ Rice} \quad (\text{flat PPF — Wheat-efficient})\]
 
 Each country has \textbf{40 worker-days} of labour. PPF equations
 (linear = constant opportunity cost):
-\[\text{India: } R = 160 - 4W \qquad \text{USA: } R = 40 - \tfrac{1}{3}W\]
+\[\text{India: } R = 160 - 4W \qquad \text{USA: } R = 40 - \tfrac{1}{3}W\]}
 
 \begin{figure}
 
@@ -796,8 +792,9 @@ Each country has \textbf{40 worker-days} of labour. PPF equations
 
 }
 
-\caption{\label{fig-linear-ppf}Linear PPFs: India and USA --- Absolute
+\caption{Linear PPFs: India and USA --- Absolute
 Advantage (constant opportunity costs) Source: Author's illustration.}
+\label{fig-linear-ppf}
 
 \end{figure}%
 \end{frame}
@@ -936,9 +933,10 @@ Indicators}
 
 }
 
-\caption{\label{fig-specialisation-gains}India's Yield Productivity
+\caption{India's Yield Productivity
 Relative to World Average --- Absolute Advantage Indicators Source: FAO,
 FAOSTAT (2023).}
+\label{fig-specialisation-gains}
 
 \end{figure}%
 
@@ -1140,12 +1138,18 @@ Smith (wealth is production, not gold)
 
 \textbf{Absolute Advantage (Adam Smith, 1776):} - Each country should
 specialise in what it produces most efficiently - Trade is win-win ---
-world production rises with specialisation - India and Bangladesh
-example: rice vs jute, both gain
+world production rises with specialisation
 
 \textbf{The fatal limitation:} What if one country is better at
 \emph{everything}? Smith cannot explain trade between USA and India.
 This is the gap Ricardo fills with \textbf{comparative advantage}.
+
+\note{\begin{itemize}
+\tightlist
+\item
+  India and Bangladesh example: rice vs jute --- both gain from
+  specialisation under absolute advantage.
+\end{itemize}}
 \end{frame}
 
 \begin{frame}{Key Takeaways: Lecture 3}

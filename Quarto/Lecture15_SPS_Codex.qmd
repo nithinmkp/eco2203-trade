@@ -371,45 +371,33 @@ Some FSSAI standards are **still below Codex** or **more permissive than importi
 
 ---
 
-## India's Major SPS Export Challenges {.smaller}
+## India’s SPS export challenges (examples I)
 
-::: {.columns}
-::: {.column width="50%"}
-**Product-wise SPS Problems**
+- **Spices:** ETO / pesticide residues / aflatoxin (EU, Singapore, USA)
+- **Marine products:** antibiotic residues, Salmonella (USA, EU, Japan)
+- **Rice:** pesticide MRLs (EU)
+- **Fresh grapes:** pesticide MRLs (EU)
+- **Mangoes:** pest risks (USA, Japan, Korea)
 
-| Product | SPS Issue | Key Market |
-|---------|-----------|-----------|
-| Spices (chilli, cumin, pepper) | ETO, chlorpyrifos, aflatoxin | EU, Singapore, USA |
-| Marine products (shrimp, fish) | Chloramphenicol, nitrofurans, Salmonella | USA, EU, Japan |
-| Basmati/non-basmati rice | Tricyclazole, acephate, isoprothiolane | EU |
-| Fresh grapes | Pesticide MRLs (profenofos) | EU |
-| Mangoes | Mango seed weevil, Drosophila | USA, Japan, Korea |
-| Peanuts | Aflatoxin (Aspergillus mould) | EU |
-| Buffalo meat | Veterinary residues, FMD | Gulf, Southeast Asia |
-| Honey | Antibiotic residues, pesticide contamination | EU, USA |
-:::
-::: {.column width="50%"}
-**Scale of the Problem**
+---
 
-::: {.methodbox}
-India's agricultural exports (2023-24): ~**USD 50 billion**
+## India’s SPS export challenges (examples II)
 
-Top export earners at risk:
-- Marine products: USD 7.4 billion (USA, EU, Japan)
-- Rice: USD 10.5 billion (multiple markets)
-- Spices: USD 4.5 billion (EU, USA, Middle East)
-- Buffalo meat: USD 3.5 billion (Gulf, Southeast Asia)
+- **Peanuts:** aflatoxin (EU)
+- **Buffalo meat:** veterinary residues; animal health (Gulf, SEA)
+- **Honey:** antibiotics and pesticide contamination (EU, USA)
+- Common pattern: **lab testing + traceability + farm practices** must align
+- SPS barriers often bite hardest in **premium markets**
 
-EU RASFF alerts on Indian origin products: **200+ per year** (among top 5 source countries for alerts)
+---
 
-FDA import refusals -- India: consistently **3rd-5th** most refused country
-:::
+## Scale: why SPS matters for India
 
-::: {.highlightbox}
-SPS compliance is the single **largest non-tariff barrier** to India's agricultural exports -- more important than tariffs in many premium markets
-:::
-:::
-:::
+- Agri exports (2023–24): about **$50B**
+- High-exposure earners: **rice, marine, spices, buffalo meat**
+- EU RASFF alerts on India-origin products: **200+ per year**
+- US FDA import refusals: India often ranks **3rd–5th**
+- Takeaway: SPS is a major **non-tariff barrier** for export growth
 
 ---
 
@@ -850,46 +838,18 @@ Small exporters and farmers bear proportionally higher compliance costs -- this 
 
 ## India's Comprehensive SPS Strategy {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
-**A Six-Pillar Strategy**
+**A Six-Pillar Strategy:**
 
-::: {.keybox}
-**(a) Prevention (Farm Level)**
-- GAP (Good Agricultural Practice) training: Spices Board, APEDA, HORTICULTURE
-- IPM (Integrated Pest Management): reduce pesticide dependence
-- Farmer training on pre-harvest intervals (PHI) for pesticides
-- FSSAI Eat Right India: food safety culture
+- **(a) Prevention:** GAP training (Spices Board, APEDA), IPM, farmer training on pre-harvest intervals, food safety culture (FSSAI Eat Right India)
+- **(b) Detection:** NABL lab accreditation, real-time RASFF monitoring, FSSAI surveillance, pre-shipment testing mandates (EIC, Spices Board, MPEDA)
+- **(c) Certification:** FSSAI-accredited labs, EIC health certificates, third-party international certifications
+- **(d) Bilateral Negotiation:** Phytosanitary protocols (product-by-product), equivalence agreements, bilateral veterinary certificates
+- **(e) WTO Advocacy:** Register Specific Trade Concerns (STCs) at WTO SPS Committee; challenge scientifically unjustified standards
 
-**(b) Detection (Testing Infrastructure)**
-- NABL lab accreditation expansion
-- Real-time RASFF monitoring
-- FSSAI's food safety surveillance system
-- Pre-shipment testing mandates (EIC, Spices Board, MPEDA)
-:::
-:::
-::: {.column width="50%"}
-::: {.methodbox}
-**(c) Certification**
-- FSSAI accreditation of testing laboratories
-- EIC health certificates for marine and processed products
-- Third-party international certifications
-
-**(d) Bilateral Negotiation**
-- Phytosanitary protocols (product-by-product)
-- Equivalence agreements
-- Bilateral veterinary certificates
-
-**(e) WTO Advocacy**
-- Register Specific Trade Concerns (STCs) at WTO SPS Committee
-- Challenge scientifically unjustified standards
-- Support Codex positions beneficial to India (JMPR, JECFA)
-
-**(f) Domestic Policy**
+:::{.notes}
+**(f) Domestic Policy:**
 - FSSAI alignment with Codex
 - Pesticide deregistration (remove banned pesticides from Indian market)
-:::
-:::
 :::
 
 ---

@@ -881,40 +881,25 @@ Reflects India's **defensive posture** on digital trade — India wants to prese
 
 ## Next Lecture: Agreement on Agriculture {.smaller}
 
-::: {.columns}
-::: {.column width="60%"}
-**Lecture 14 (July 28, 2026):**
-
-**Agreement on Agriculture (AoA)**
+**Lecture 14 (July 28, 2026):** **Agreement on Agriculture (AoA)**
 
 The WTO agreement that **directly governs India's agricultural trade policy**
 
 We will cover:
 
 - **Three Pillars** in depth: Market Access, Domestic Support, Export Competition
-- Tariffication and Tariff Rate Quotas
-- The Three Boxes: Green, Blue, Amber
-- India's AMS challenge — the numbers
-- The Peace Clause revisited in technical detail
-- India's export subsidy constraints
+- Tariffication and Tariff Rate Quotas; the Three Boxes: Green, Blue, Amber
+- India's AMS challenge — the numbers; the Peace Clause revisited
 - Special and Differential Treatment
-:::
-::: {.column width="40%"}
-::: {.highlightbox}
-**Prepare for Lecture 14:**
 
-Think about this question:
-
-*"India provides fertiliser subsidies worth ₹2.25 lakh crore per year. Is this WTO-legal? Which 'box' does it fall in?"*
-
-We will work through the answer systematically using the AoA framework.
-:::
+:::{.notes}
+- India's export subsidy constraints
+- India provides fertiliser subsidies worth ₹2.25 lakh crore per year. Is this WTO-legal? Which 'box' does it fall in? We will work through the answer systematically using the AoA framework.
 
 **Reading:**
 - WTO Agreement on Agriculture (full text — 35 pages)
 - CUTS International: *India and WTO Agriculture Negotiations* (2023)
 - Economic Survey 2023-24, Chapter on Agriculture
-:::
 :::
 
 # Appendix {background-color="#1a3a5c"}

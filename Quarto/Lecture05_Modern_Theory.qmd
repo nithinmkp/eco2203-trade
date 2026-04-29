@@ -245,15 +245,15 @@ Free trade is a **perfect substitute** for factor mobility. This explains why la
 | Incomplete specialisation | Often violated |
 | No transport costs | Violated |
 
-**Empirical reality:**
-
-Wages in India $\approx$ \$2/hour; USA $\approx$ \$30/hour. FPE clearly does *not* hold in practice.
+:::{.notes}
+**Empirical reality:** Wages in India $\approx$ \$2/hour; USA $\approx$ \$30/hour. FPE clearly does *not* hold in practice.
 
 **Why study FPE then?**
 
 - It reveals the *forces* pushing toward convergence
 - Wage convergence between East Asia and OECD is partly consistent with FPE pressure
 - The direction of change (not the level) is well-predicted
+:::
 
 ## Theorem 2: Stolper-Samuelson Theorem
 
@@ -443,7 +443,7 @@ Several resolutions have been proposed:
 4. **Demand bias:** US consumers have stronger preference for capital-intensive goods; demand effects can offset supply-side comparative advantage
 5. **Trade barriers:** US tariff structure historically protected labour-intensive industries (agriculture, textiles), distorting trade flows
 
-::: {.methodbox}
+:::{.notes}
 **Modern verdict (Trefler 1995):** Allowing for **technology differences** and **factor productivity** differences across countries reconciles most H-O predictions with data.
 :::
 

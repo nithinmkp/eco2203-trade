@@ -87,14 +87,6 @@
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
-\makeatletter
-\let\quarto@originallabel\label
-\DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
-\makeatother
-
 % Prevent figures from overflowing Beamer frames.
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.

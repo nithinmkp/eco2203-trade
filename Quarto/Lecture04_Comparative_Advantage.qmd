@@ -393,11 +393,13 @@ These two points generally differ — the gap is filled by **trade flows**.
 | No transport costs | TOT fully determines trade |
 | Perfect competition | No strategic behaviour |
 
+:::{.notes}
 **Which matter most?**
 
 - Relaxing *constant returns* → curved PPF, partial specialisation
 - Relaxing *one factor* → Heckscher-Ohlin model (Lecture 5)
 - Adding *transport costs* → non-traded goods, border effects
+:::
 
 ## The Ricardian Model: What It Gets Right
 
@@ -406,14 +408,12 @@ These two points generally differ — the gap is filled by **trade flows**.
 - Countries do specialise along lines of comparative advantage
 - Trade raises real incomes on average
 - Even the "least competitive" country has something to export
-
-**Empirical support:** Golub & Hsieh (2000) and Costinot et al. (2012) find strong evidence that labour productivity differences predict export patterns across countries.
-
-**Limitations and Extensions:**
-
-- Predicts complete specialisation (rarely observed); says nothing about *who* within a country gains or loses
 - Cannot explain intra-industry trade (→ new trade theory, Lecture 6)
 - **Extensions:** Many goods (Dornbusch-Fischer-Samuelson chain); technology changes shift comparative advantage over time
+
+:::{.notes}
+**Empirical support:** Golub & Hsieh (2000) and Costinot et al. (2012) find strong evidence that labour productivity differences predict export patterns across countries. Predicts complete specialisation (rarely observed); says nothing about *who* within a country gains or loses.
+:::
 
 # Part VI: India — Revealed Comparative Advantage {background-color="#1a3a5c"}
 

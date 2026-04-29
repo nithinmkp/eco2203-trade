@@ -195,14 +195,6 @@
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
-\makeatletter
-\let\quarto@originallabel\label
-\DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
-\makeatother
-
 % Prevent figures from overflowing Beamer frames.
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
@@ -279,52 +271,49 @@ and fiscal policy interact with the exchange rate, and what this means
 for agricultural exporters and importers.
 \end{frame}
 
-\begin{frame}{Recap: What We Learned in Lecture 11}
-\phantomsection\label{recap-what-we-learned-in-lecture-11}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{Key equations from Lecture 11:}
-
-Exchange rate notation:
-\[e = \frac{\text{units of domestic currency}}{\text{unit of foreign currency}}\]
-
-Absolute PPP: \[e = \frac{P_d}{P_f}\]
-
-Relative PPP: \[\frac{\Delta e}{e} = \pi_d - \pi_f\]
-
-Uncovered Interest Parity (UIP):
-\[i = i^* + \frac{E(e_{t+1}) - e_t}{e_t}\]
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{Key numerical takeaways:}
+\begin{frame}{Recap (Lecture 11): key equations}
+\phantomsection\label{recap-lecture-11-key-equations}
+\[e = \frac{\text{domestic currency}}{\text{foreign currency}}\]
 
 \begin{itemize}
 \tightlist
 \item
-  INR/USD spot rate ≈ \textbf{₹83.5/\$}
+  Absolute PPP: \(e = \frac{P_d}{P_f}\)
+\item
+  Relative PPP: \(\frac{\Delta e}{e} = \pi_d - \pi_f\)
+\item
+  UIP: \(i = i^* + \frac{E(e_{t+1}) - e_t}{e_t}\)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Recap: India numerical context (illustrative)}
+\phantomsection\label{recap-india-numerical-context-illustrative}
+\begin{itemize}
+\tightlist
+\item
+  INR/USD spot ≈ \textbf{₹83.5/\$}
 \item
   India CPI inflation ≈ 5--6\%; US ≈ 2--3\%
 \item
-  Relative PPP predicts \textbf{3--4\% annual INR depreciation}
+  Relative PPP → \textbf{\textasciitilde3--4\%} annual INR depreciation
 \item
-  UIP equilibrium: \(i_{India} - i_{US} \approx\) expected depreciation
-\item
-  Repo rate India: \textbf{6.5\%}; Fed funds: \textbf{5.25--5.5\%}
-\item
-  Differential ≈ 1--1.25\% --- below PPP-implied depreciation,
-  suggesting some expected appreciation or risk premium
+  Repo rate ≈ \textbf{6.5\%}; Fed funds ≈ \textbf{5.25--5.5\%}
 \end{itemize}
-\end{column}
-\end{columns}
+\end{frame}
 
-\textbf{Building on Lecture 11:} We now know \emph{why} exchange rates
-move (PPP, UIP, interest differentials). Today we study \emph{what
-regime} India operates under --- managed float vs fixed vs free float
---- and \emph{how macroeconomic policy} (fiscal and monetary) works
-differently under each regime using the \textbf{Mundell-Fleming model}.
-We also cover the practical tools --- forward markets, hedging --- that
-agricultural traders use to manage currency risk.
+\begin{frame}{Today (Lecture 12): what we add}
+\phantomsection\label{today-lecture-12-what-we-add}
+\begin{itemize}
+\tightlist
+\item
+  Exchange rate regimes (fixed vs float vs managed)
+\item
+  Mundell--Fleming: policy under different regimes
+\item
+  RBI intervention and reserves logic
+\item
+  Forward markets + hedging for agri trade
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Exchange Rate Systems (I): Free Float and Managed Float}
@@ -394,55 +383,37 @@ devaluation. Post-crisis shift to managed float was the correct policy
 response.
 \end{frame}
 
-\begin{frame}{Fixed vs Flexible: Trade-offs for Agricultural Economies}
-\phantomsection\label{fixed-vs-flexible-trade-offs-for-agricultural-economies}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\textbf{Fixed Regime Analysis:}
-
+\begin{frame}{Fixed exchange rate: pros and cons (agriculture)}
+\phantomsection\label{fixed-exchange-rate-pros-and-cons-agriculture}
 \begin{itemize}
 \tightlist
 \item
-  ✅ \textbf{Stability for trade contracts:} importers and exporters
-  know the rate --- a rice exporter signing a 12-month supply contract
-  can price in INR without currency risk
+  Predictable rate helps long contracts (exports/imports)
 \item
-  ✅ \textbf{Low inflation discipline:} CB cannot print money freely
-  (reserves constrain it)
+  Can discipline inflation (money creation constrained)
 \item
-  ❌ \textbf{Currency crises:} if domestic inflation erodes
-  competitiveness, the fixed rate becomes overvalued → speculative
-  attacks → forced devaluation
+  Risk of \textbf{overvaluation} → sudden crisis + forced devaluation
 \item
-  ❌ \textbf{Monetary policy lost:} CB cannot adjust interest rates
-  independently (Mundell-Fleming, fixed rate case)
+  Monetary policy autonomy is limited
 \item
-  ❌ \textbf{Reserve depletion:} defending the peg requires unlimited
-  reserves
+  Requires reserves to defend the peg
 \end{itemize}
-\end{column}
+\end{frame}
 
-\begin{column}{0.5\linewidth}
-\textbf{Flexible Regime Analysis:}
-
+\begin{frame}{Flexible exchange rate: pros and cons (agriculture)}
+\phantomsection\label{flexible-exchange-rate-pros-and-cons-agriculture}
 \begin{itemize}
 \tightlist
 \item
-  ✅ \textbf{Automatic stabilisation:} trade deficit → INR weakens →
-  exports become cheaper → deficit corrects
+  Automatic adjustment via depreciation/appreciation
 \item
-  ✅ \textbf{Monetary policy works:} RBI can set repo rate independently
-  of the Fed
+  Monetary policy has more room
 \item
-  ❌ \textbf{Volatility harms trade:} a rice exporter signing 6-month
-  contracts faces price risk --- even if the crop yield is known,
-  INR/USD at delivery is unknown
+  Volatility creates pricing risk for traders
 \item
-  ❌ \textbf{Imported inflation:} depreciation raises cost of edible
-  oil, fertiliser, crude oil --- all critical agri inputs
+  Depreciation raises costs of key imports (oil, fertiliser, edible
+  oils)
 \end{itemize}
-\end{column}
-\end{columns}
 \end{frame}
 
 \begin{frame}{Case Study: India's 1991 Exchange Rate Crisis}
@@ -739,39 +710,17 @@ When RBI buys USD → \(\Delta M\) (base money rises) → RBI sells G-secs
 (government securities) to sterilize --- absorbing ₹ and keeping money
 supply neutral.
 
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\textbf{Depreciation prevention (sell USD):}
+\textbf{Two-way intervention (managed float):}
 
 \begin{itemize}
 \tightlist
 \item
-  Triggered when INR weakens sharply
+  \textbf{Sell USD} when INR weakens sharply (e.g., 2022)
 \item
-  E.g., 2022: RBI sold \textasciitilde\$100B as INR slid from ₹74 → ₹83
+  \textbf{Buy USD} when INR strengthens too fast (e.g., 2021)
 \item
-  Reserves fell from \$640B → \$530B in 6 months
-\item
-  Sterilized via reverse repo (absorbing ₹)
+  Sterilisation uses liquidity operations (OMOs, reverse repo, etc.)
 \end{itemize}
-\end{column}
-
-\begin{column}{0.5\linewidth}
-\textbf{Appreciation prevention (buy USD):}
-
-\begin{itemize}
-\tightlist
-\item
-  Triggered when large capital inflows strengthen INR
-\item
-  E.g., 2021: RBI bought \textasciitilde\$67B as FPI inflows surged
-\item
-  Reserves rose from \$580B → \$640B
-\item
-  Sterilized via G-sec sales (absorbing ₹)
-\end{itemize}
-\end{column}
-\end{columns}
 
 \textbf{RBI's two-way intervention evidence:} - FY2021: Net purchases
 \textasciitilde\$67B (preventing appreciation during COVID capital
@@ -781,67 +730,36 @@ excessive depreciation) - IMF and US Treasury classification: India is
 distinguishes managed float from competitive devaluation.
 \end{frame}
 
-\begin{frame}{The Forward Exchange Market}
-\phantomsection\label{the-forward-exchange-market}
-\textbf{Forward rate \(F\):} The exchange rate agreed today for currency
-delivery at a specified future date \(T\).
-
-\textbf{Forward premium/discount formula:}
-
-\[\text{Forward premium on USD} = \frac{F - E}{E} \times \frac{12}{n} \times 100\%\]
-
-where \(n\) = months to delivery, \(E\) = current spot rate, \(F\) =
-forward rate.
-
-\textbf{Numerical example:}
-
-\(E = ₹83.5/\$\), \(F\) (3-month) \(= ₹84.2/\$\):
-
-\[\text{Forward premium} = \frac{84.2-83.5}{83.5} \times 4 \times 100 = 3.35\%\text{ p.a.}\]
-
-\textbf{Covered Interest Parity (CIP)} ensures: Forward premium
-\(\approx i_{India} - i_{USA}\) (otherwise riskless arbitrage profits
-exist).
-
-\textbf{Participants in India's forward market:}
-
+\begin{frame}{The Forward Exchange Market (idea)}
+\phantomsection\label{the-forward-exchange-market-idea}
 \begin{itemize}
 \tightlist
 \item
-  RBI-regulated Authorised Dealer (AD) banks
-\item
-  FEDAI (Foreign Exchange Dealers Association of India) --- sets market
-  conventions
-\item
-  Corporates with genuine underlying forex exposure (exporters,
-  importers, MNCs)
-\item
-  Since 2019: limited speculative participation allowed in
-  exchange-traded currency futures
+  A \textbf{forward} locks in an exchange rate today for a future date
 \end{itemize}
 
-\textbf{Who uses forward markets in agriculture?}
+\[\text{Forward premium} = \frac{F - E}{E} \times \frac{12}{n} \times 100\%\]
 
+Example (3-month): \(E=₹83.5/\$\), \(F=₹84.2/\$\) → premium ≈
+\textbf{3.35\% p.a.}
+\end{frame}
+
+\begin{frame}{Who uses forwards (agri context)}
+\phantomsection\label{who-uses-forwards-agri-context}
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Large agri exporters:} ITC (rice, wheat), KRBL (basmati rice),
-  Adani Agri --- use forward sales to lock in INR realisation on USD
-  export proceeds
+  Large exporters: lock in INR realisation on USD receipts
 \item
-  \textbf{Edible oil importers:} Adani Wilmar, Ruchi Soya --- use
-  forward purchases to lock in INR cost of palm oil imports
+  Large importers (edible oils, fertiliser): lock in INR cost of USD
+  payments
 \item
-  \textbf{Fertiliser importers:} IFFCO, Coromandel --- use forwards for
-  urea/DAP import cost certainty
-\item
-  \textbf{Small farmers and FPOs:} virtually no direct access ---
-  forward contracts require minimum \$250,000 face value in OTC market
+  Small farmers/FPOs have limited direct access (scale + documentation)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Hedging with Forward Contracts}
-\phantomsection\label{hedging-with-forward-contracts}
+\begin{frame}{Hedging with a forward (diagram)}
+\phantomsection\label{hedging-with-a-forward-diagram}
 \begin{figure}
 
 \centering{
@@ -850,21 +768,25 @@ exist).
 
 }
 
-\caption{\label{fig-hedging}Currency Hedging: A Rice Exporter's Forward
-Contract vs Unhedged Position Source: Author's illustration.}
+\caption{\label{fig-hedging}Hedging with a forward: exporter locks in
+INR receipts at a forward rate. Source: Author's illustration.}
 
 \end{figure}%
+\end{frame}
 
-\textbf{Who hedges in India's agricultural sector?}
+\begin{frame}{Access gap: OTC vs futures}
+\phantomsection\label{access-gap-otc-vs-futures}
+\begin{itemize}
+\tightlist
+\item
+  OTC forwards typically require large minimum sizes
+\item
+  Exchange-traded currency futures have smaller lot sizes but require
+  margin + daily mark-to-market
+\end{itemize}
 
-Large corporates (ITC, Adani Agri, KRBL) hedge routinely. Minimum OTC
-forward contract: typically \textbf{\$250,000} --- above most small
-exporters' scale.
-
-\textbf{SEBI currency futures (NSE/BSE):} Smaller lot sizes (₹1 lakh in
-USD/INR futures contract = \textasciitilde\$1,200) --- far more
-accessible for smaller players. However, requires margin account and
-daily mark-to-market --- a new administrative burden.
+In practice, hedging is much easier for large firms than for small
+farmers and FPOs.
 \end{frame}
 
 \begin{frame}{Exchange Rate Pass-Through}
@@ -955,87 +877,56 @@ equivalent to a 10.7\% export subsidy, but achieved through exchange
 rate movement rather than fiscal expenditure.
 \end{frame}
 
-\begin{frame}{India's Edible Oil Vulnerability}
-\phantomsection\label{indias-edible-oil-vulnerability}
-\textbf{India's edible oil import dependence:}
-
+\begin{frame}{India's edible oil vulnerability (headline)}
+\phantomsection\label{indias-edible-oil-vulnerability-headline}
 \begin{itemize}
 \tightlist
 \item
-  Imports: \textbf{14--16 million tonnes} annually
-  (\textasciitilde\$14--18 billion)
+  Imports ≈ \textbf{14--16 Mt} per year (large import dependence)
 \item
-  Sources: Malaysia/Indonesia (palm oil \textasciitilde8 Mt),
-  Argentina/Brazil (soy oil \textasciitilde3 Mt), Ukraine/Russia
-  (sunflower \textasciitilde3 Mt)
+  Major sources: Indonesia/Malaysia (palm), Argentina/Brazil (soy),
+  Black Sea (sunflower)
 \item
-  Import dependence: \textasciitilde65\% of domestic consumption
+  Exchange rate movements feed into domestic cooking-oil inflation
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exchange rate arithmetic (simple)}
+\phantomsection\label{exchange-rate-arithmetic-simple}
+\begin{itemize}
+\tightlist
+\item
+  If world palm oil price is fixed in USD, a weaker INR raises the
+  ₹/tonne cost
+\item
+  Example: moving from \textbf{₹75/\$ → ₹85/\$} raises rupee cost by
+  \textasciitilde{}\textbf{13\%} (holding USD price constant)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Policy levers and the ``duty floor'' problem}
+\phantomsection\label{policy-levers-and-the-duty-floor-problem}
+\begin{itemize}
+\tightlist
+\item
+  Duty cuts can cushion price spikes, but \textbf{0\% is the floor}
+\item
+  Once duties are cut, INR depreciation still passes through to prices
+\item
+  Edible oils therefore link exchange rates to \textbf{food inflation}
 \end{itemize}
 
-\textbf{Exchange rate and import bill arithmetic:}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2059}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3529}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4412}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Exchange Rate
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Palm Oil Cost (₹/tonne)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Annual Bill (for 10 Mt palm)
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-₹75/\$ & ₹67,500 & ₹67,500 crore \\
-₹80/\$ & ₹72,000 & ₹72,000 crore \\
-₹85/\$ & ₹76,500 & ₹76,500 crore (+13.3\%) \\
-\bottomrule\noalign{}
-\end{longtable}
-
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{Fiscal cost and duty adjustment:}
-
-India uses \textbf{import duty adjustments} as a shock absorber: -
-Normal: Basic Customs Duty (BCD) on crude palm oil = 15\% - During price
-spikes: duty cut to 0\% (done in 2022--23) - AIDC (Agriculture
-Infrastructure Development Cess) also adjusted - But: zero is the floor
---- further duty cuts impossible once at zero - Exchange rate
-depreciation \textbf{cannot} be offset by duty reductions once duties
-hit zero
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{Inflation arithmetic:}
-
-If INR depreciates 10\% and import duty is already zero: - Palm oil
-price rises \textasciitilde8--9\% (pass-through ≈ 85\%) - Cooking oil
-retail prices follow with 4--6 week lag - CPI food index weight of
-edible oils: \textasciitilde3.5\% - 8\% rise in edible oils → +0.28
-percentage points on headline CPI - RBI tolerance band: 2--6\% --- a
-0.28pp shock is material
-
-\textbf{Lesson:} Exchange rate is an uncontrollable external variable
-that directly affects domestic food security through the edible oil
-channel.
-\end{column}
-\end{columns}
+Edible oils are the cleanest channel where exchange rate policy becomes
+food policy.
 \end{frame}
 
 \begin{frame}{Managing Currency Risk in Agricultural Trade}
 \phantomsection\label{managing-currency-risk-in-agricultural-trade}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
 \textbf{Agri Exporters} \emph{(risk: INR appreciates, reducing INR
 revenue)}
 
 \begin{itemize}
 \tightlist
-\item
-  \textbf{Natural hedge:} match USD receivables with USD payables --- if
-  exporter also imports inputs (packaging, machinery) in USD
 \item
   \textbf{Forward sales:} lock in ₹/\$ today for future USD receipt ---
   eliminate downside but sacrifice upside
@@ -1044,14 +935,9 @@ revenue)}
   proceeds --- no currency conversion needed
 \item
   \textbf{Put options on USD:} right to sell USD at floor price ---
-  limits downside while retaining upside if INR depreciates further
-\item
-  \textbf{Invoice in INR} (for niche/branded exports --- Darjeeling tea,
-  GI products --- where buyer accepts INR pricing)
+  limits downside while retaining upside
 \end{itemize}
-\end{column}
 
-\begin{column}{0.5\linewidth}
 \textbf{Agri Importers} \emph{(risk: INR depreciates, raising ₹ cost)}
 
 \begin{itemize}
@@ -1061,30 +947,23 @@ revenue)}
   certainty on import cost
 \item
   \textbf{Call options on USD:} right to buy USD at ceiling price ---
-  caps cost if INR weakens, retains benefit if INR strengthens
-\item
-  \textbf{Invoice in INR} (where possible --- limited for commodity
-  imports, as palm oil/soy are priced in USD globally)
-\item
-  \textbf{Stock more when rate is favorable:} build inventory at ₹75/\$
-  to avoid exposure at ₹83/\$
-\item
-  \textbf{Rupee-denominated import contracts:} India negotiating with
-  some suppliers (UAE, Russia) for INR-denominated trade
+  caps cost if INR weakens
 \end{itemize}
-\end{column}
-\end{columns}
 
-\textbf{Policy gap --- the small farmer problem:}
+\note{\textbf{Other exporter tools:} - \textbf{Natural hedge:} match USD
+receivables with USD payables --- if exporter also imports inputs in USD
+- \textbf{Invoice in INR} (for niche/branded exports --- Darjeeling tea,
+GI products --- where buyer accepts INR pricing)
 
-Most small farmers and village-level exporters have \textbf{NO access}
-to these instruments. The entire forex risk is absorbed upstream in the
-supply chain (by the aggregator/exporter), who discounts the farmgate
-price as compensation for bearing this risk. A farmer in Amritsar
-selling basmati to an exporter is effectively subsidising the exporter's
-hedging costs through a lower farmgate price. This is an equity and
-market structure issue at the intersection of forex markets and
-agricultural trade.
+\textbf{Other importer tools:} - \textbf{Stock more when rate is
+favorable:} build inventory at ₹75/\$ to avoid exposure at ₹83/\$ -
+\textbf{Rupee-denominated import contracts:} India negotiating with some
+suppliers (UAE, Russia) for INR-denominated trade
+
+\textbf{Policy gap --- the small farmer problem:} Most small farmers and
+village-level exporters have NO access to these instruments. The entire
+forex risk is absorbed upstream by the aggregator/exporter, who
+discounts the farmgate price as compensation.}
 \end{frame}
 
 \begin{frame}{BoP and the Current Account Deficit: The Agricultural
@@ -1244,12 +1123,8 @@ manipulation --- but enforcement is weak.
 
 \begin{frame}{Next Lecture: Balance of Payments Analysis}
 \phantomsection\label{next-lecture-balance-of-payments-analysis}
-\begin{columns}[T]
-\begin{column}{0.6\linewidth}
-\textbf{Lecture 13 (July 18, 2026):}
-
-\emph{Balance of Payments: Structure, Adjustment, and Agricultural
-Trade}
+\textbf{Lecture 13 (July 18, 2026):} \emph{Balance of Payments:
+Structure, Adjustment, and Agricultural Trade}
 
 We will cover:
 
@@ -1258,8 +1133,7 @@ We will cover:
 \item
   Current account, capital account, financial account structure
 \item
-  BoP adjustment mechanisms: automatic (price-specie flow, income
-  adjustment) vs policy-driven
+  BoP adjustment mechanisms: automatic vs policy-driven
 \item
   \textbf{Marshall-Lerner condition:} when does depreciation improve the
   trade balance?
@@ -1268,74 +1142,49 @@ We will cover:
   depreciation
 \item
   India's current account deficit: causes and sustainability
+\end{itemize}
+
+\note{\begin{itemize}
+\tightlist
 \item
   Agricultural trade's role in India's BoP (FY2024: \textasciitilde\$25B
   surplus)
 \end{itemize}
-\end{column}
 
-\begin{column}{0.4\linewidth}
-\textbf{Bridge from today:}
+\textbf{Bridge from today:} Today we studied what exchange rate regime
+India operates under, how policy works under different regimes
+(Mundell-Fleming), how RBI manages the float, and hedging implications.
 
-Today we studied:
-
-\begin{itemize}
-\tightlist
-\item
-  What exchange rate regime India operates under
-\item
-  How policy (fiscal/monetary) works under different regimes
-  (Mundell-Fleming)
-\item
-  How RBI manages the float and reserves
-\item
-  Hedging and agricultural trade implications
-\end{itemize}
-
-Next: we zoom into the \textbf{current account} --- the scorecard of a
-country's trade with the world --- and study how it adjusts when it
-falls into deficit.
-
-\emph{Reading: Salvatore Ch 12--13; Appleyard Ch 18--19}
-\end{column}
-\end{columns}
+\emph{Reading: Salvatore Ch 12--13; Appleyard Ch 18--19}}
 \end{frame}
 
 \section{Appendix}\label{appendix}
 
 \begin{frame}{Additional Resources}
 \phantomsection\label{additional-resources}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\textbf{Further Reading}
+\textbf{Further reading}
 
 \begin{itemize}
 \tightlist
 \item
-  \emph{International Economics} --- Salvatore (Ch. 15-16)
+  Salvatore, \emph{International Economics} (relevant chapters)
 \item
-  \emph{International Economics} --- Appleyard \& Field (Ch. 15-16)
-\item
-  RBI/DGCI\&S/APEDA databases for latest data
+  Appleyard \& Field, \emph{International Economics} (relevant chapters)
 \end{itemize}
-\end{column}
 
-\begin{column}{0.5\linewidth}
-\textbf{Key Data Sources}
+\textbf{Key data sources}
 
 \begin{itemize}
 \tightlist
 \item
-  DGCI\&S: India's merchandise trade
+  DGCI\&S: merchandise trade
 \item
-  RBI: Balance of payments data\\
+  RBI: exchange rates + BoP
 \item
-  APEDA: Agricultural export statistics
+  APEDA: agricultural export statistics
 \item
-  WTO: Tariff and trade databases
+  WTO: tariff + trade databases
 \end{itemize}
-\end{column}
-\end{columns}
 \end{frame}
 
 

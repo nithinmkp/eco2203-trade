@@ -120,15 +120,17 @@ International trade is not simply domestic trade "at a larger scale." Six featur
   - India maintains partial capital account convertibility (RBI-regulated)
 - **Land:** Completely immobile by definition
 
+::: {.highlightbox}
+**India case: Gulf remittances** — Indian workers (largely from Kerala, UP, Bihar) work in UAE, Saudi Arabia, Kuwait — sending back **~\$120 billion in remittances (FY2024)**, making India the world's largest remittance recipient.
+:::
+
+## Feature 1: Factor Immobility (cont.)
+
 **Why this matters for trade theory**
 
 - Classical models (Ricardo, H-O) assume *factor immobility* across borders
 - This is what makes trade in goods a *substitute* for factor flows
 - If labour moved freely, there would be less need to trade goods
-
-::: {.highlightbox}
-**India case: Gulf remittances** — Indian workers (largely from Kerala, UP, Bihar) work in UAE, Saudi Arabia, Kuwait — sending back **~\$120 billion in remittances (FY2024)**, making India the world's largest remittance recipient.
-:::
 
 ## Feature 2: Currency and Exchange Risk
 
@@ -310,7 +312,7 @@ The ban caused a **global rice price spike of ~20%** — demonstrating India's m
 - **Phytosanitary Certificate:** Certifies plants/plant products are pest-free
 - **SPS Compliance Certificate:** Confirms pesticide residues, aflatoxin levels meet standards
 
-::: {.methodbox}
+:::{.notes}
 **Why small agri-exporters struggle:** Indian rice exporters to EU must meet **Maximum Residue Levels (MRLs)** for 300+ pesticides. Failure → entire consignment rejected at port. L/C requires strong banking relationships. **ECGC** provides credit insurance — covers non-payment risk for Indian exporters.
 :::
 

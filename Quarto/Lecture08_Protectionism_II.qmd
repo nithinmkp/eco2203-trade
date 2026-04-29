@@ -504,51 +504,49 @@ $$\Rightarrow \text{Agricultural cartels are theoretically possible, practically
 
 ---
 
-## International Commodity Agreements: Instruments {.smaller}
+## International Commodity Agreements (ICAs): instruments
 
-**ICAs** — multilateral agreements between producing and consuming countries to stabilise prices.
+ICAs are multilateral attempts to **stabilise commodity prices**.
 
-**Instruments used:**
+- **Buffer stocks:** buy when price is “too low”, sell when “too high”
+- **Export quotas:** allocate export shares across members
+- **Long-term contracts:** guarantee volumes at agreed prices
+- **Works best when:** large market share, homogeneous commodity, credible financing
+- **Key caution:** agriculture has close substitutes → stability is hard
 
-| Type | Mechanism |
-|---|---|
-| **Buffer stock** | Buy when $P < P_{floor}$; sell when $P > P_{ceiling}$ |
-| **Export quota** | Allocate export shares to members |
-| **Multilateral contract** | Guaranteed volumes at agreed prices |
+---
 
-**Conditions for ICA success:** Large share of world trade covered; homogeneous commodity; adequate buffer stock financing; commitment from both producers and consumers; no close substitutes.
+## Why ICAs fail in practice
 
-::: {.methodbox}
-**Why ICAs fail:** (1) Free-rider: non-members export outside quota at high prices; (2) cheating: members secretly exceed quotas; (3) buffer stock cost for perishable agri-commodities; (4) technological change (substitutes undermine demand); (5) North-South conflict: producers want high prices; consumers want low prices.
+- **Free-rider problem:** non-members expand exports when prices rise
+- **Cheating:** members secretly exceed quotas
+- **Financing constraint:** buffer stocks become fiscally unsustainable
+- **Substitutes + tech change:** demand shifts undermine price bands
+- **North–South conflict:** producers want high prices; consumers want low prices
 
-**UNCTAD's Integrated Programme for Commodities (1976):** ambitious proposal for 18 ICAs — most collapsed within 15 years.
+:::{.notes}
+UNCTAD’s Integrated Programme for Commodities (1976) proposed 18 ICAs; most collapsed within ~15 years.
 :::
 
 ## History of International Commodity Agreements
 
-::: {.columns}
-::: {.column width="55%"}
-**Historical ICAs and their fate:**
+**Examples and outcomes:**
 
-| Agreement | Commodity | Outcome |
-|---|---|---|
-| ICO | Coffee | Collapsed 1989 (free-rider) |
-| ITA | Tin | Collapsed 1985 (buffer stock bankrupt) |
-| ISA | Sugar | Weakened — price provisions abandoned |
-| IJO | Jute | Wound down 2014 |
-| ICA | Cocoa | Multiple failures; ICCO restructured |
-| INRA | Natural Rubber | Collapsed 1999 |
-:::
-::: {.column width="45%"}
-::: {.highlightbox}
-**The tin crisis (1985) — cautionary tale:**
+- Coffee (ICO): collapsed (free-riding)
+- Tin (ITA): collapsed (buffer-stock bankruptcy)
+- Sugar (ISA): weakened (price provisions abandoned)
+- Jute (IJO): wound down (2014)
+- Cocoa (ICCO): repeated failures; restructured
 
-The International Tin Agreement maintained a buffer stock. By 1985, prices fell sharply. The buffer stock manager ran out of money — could no longer buy tin. The ITA collapsed overnight, taking with it the London Metal Exchange tin market. Prices plunged 40% in days.
+---
 
-**Lesson:** Buffer stocks require unlimited financing or credible price bands. Neither is politically sustainable.
-:::
-:::
-:::
+## Tin crisis (1985): why buffer stocks fail
+
+- Prices fell sharply; buffer-stock manager ran out of funds
+- Agreement collapsed and disrupted the tin market
+- Prices plunged by about **40%** in days
+- Price bands require **credible financing** (hard politically)
+- Takeaway: ICAs are fragile when compliance and funding are weak
 
 ---
 
@@ -655,10 +653,12 @@ $$\text{Subsidy justified} \iff \text{market failure exists}$$
 | Export restrictions (quotas/bans) | Permitted for food security (Art. XI:2) |
 | Export cartels | No explicit WTO rule — governed by domestic competition law |
 
+:::{.notes}
 **Key gaps in WTO rules:**
 - Export restrictions (increasingly used by India, China, Indonesia)
 - State trading enterprises (FCI, COFCO)
 - Input subsidies to developing countries
+:::
 :::
 ::: {.column width="45%"}
 ::: {.highlightbox}
@@ -693,7 +693,9 @@ India has used CVDs less frequently than AD duties — but use is growing as Ind
 **4. VERs** are strictly worse than equivalent tariffs for the importing country — quota rent is transferred abroad: $\Delta W_{\text{VER}} = -(b+c+d) < -(b+d) = \Delta W_{\text{tariff}}$.
 
 **5. Agricultural cartels** fail because: many producers, many substitutes, perishable goods, easy entry. But India's unilateral market power in rice (40% of world exports) achieves cartel-like effects without formal coordination.
+:::
 
+:::{.notes}
 **6. WTO disciplines** have significant gaps — particularly on export restrictions, state trading, and developing-country input subsidies. This creates ongoing North-South tensions.
 :::
 
@@ -710,12 +712,13 @@ India has used CVDs less frequently than AD duties — but use is growing as Ind
 - India's current account: merchandise deficit, services surplus, remittances
 - Capital and financial account: FDI vs FPI, RBI reserve management
 - Marshall-Lerner condition: $|e_X| + |e_M| > 1$
+:::
+
+:::{.notes}
 - J-curve effect: why depreciation worsens trade balance before improving it
 - India's 1991 BoP crisis: $1.2B reserves, gold pledging, IMF conditionality
 - India FY2024 external sector assessment
-:::
 
-::: {.highlightbox}
 **Preparation:** Read Salvatore Ch. 12–13; RBI Annual Report 2023-24, External Sector chapter. Review IS-LM model — we will use it to analyse policy responses to BoP disequilibrium.
 :::
 

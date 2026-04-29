@@ -995,7 +995,9 @@ ggplot() +
 4. **India's MSP procurement for rice likely exceeds 10% de minimis** — protected only by the Peace Clause (Bali 2013)
 
 5. **FERP is the core injustice:** Using 1986–88 world prices (depressed by US/EU subsidies) overstates India's trade distortion. Updating FERP to current prices would solve India's problem
+:::
 
+:::{.notes}
 6. **Nairobi 2015 eliminated export subsidies** — a genuine WTO success; India's RoDTEP is a legitimate tax refund scheme (if correctly calibrated)
 
 7. **Doha Round dead** — but AoA framework remains; India must push for permanent public stockholding solution at every MC

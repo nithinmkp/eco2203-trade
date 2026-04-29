@@ -628,9 +628,7 @@ A **VER** occurs when an exporting country "voluntarily" restricts its exports t
 
 :::{.notes}
 6. Welfare identity: $\Delta W = -(B+D)$ for small country; may be positive for large country at optimal tariff.
-:::
 
-::: {.highlightbox}
 **India's agricultural protection architecture:** High applied tariffs + TRQs + licensing + SPS/NTBs = multi-layered protection. WTO constraints bind only at the margins.
 :::
 
@@ -644,14 +642,15 @@ A **VER** occurs when an exporting country "voluntarily" restricts its exports t
 
 - Export subsidies and their effects on world markets
 - India's MSP and WTO's Amber Box rules
-- Fertiliser subsidies and trade distortion
 - Dumping: definition, types, anti-dumping duties
 - India as the world's top anti-dumping user
 - Agricultural cartels and commodity agreements
-- India's rice export ban (2023) as market power exercise
 :::
 
-::: {.highlightbox}
+:::{.notes}
+- Fertiliser subsidies and trade distortion
+- India's rice export ban (2023) as market power exercise
+
 **Preparation:** Read Krugman, Obstfeld & Melitz, Ch. 9 (Export Subsidies and Import Quotas). Review India's WTO notification on domestic support (2022).
 :::
 

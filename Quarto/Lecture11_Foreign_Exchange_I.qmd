@@ -516,35 +516,26 @@ RBI's twin mandate — currency stability + price stability — creates a consta
 
 ## Implications for Agricultural Trade {.smaller}
 
-::: {.columns}
-::: {.column width="50%"}
-**Depreciation (e ↑: ₹75→₹85)**
-
-*Winners — Exporters:*
+**Depreciation (e ↑: ₹75→₹85) — Winners (Exporters):**
 
 - 🌾 Rice (~$10B/yr): world's No.1 exporter; ~10.7% cheaper for importers
 - 🌶️ Spices (~$4B/yr): highly price-elastic globally
 - 🐟 Marine products (~$8B/yr): shrimp, fish more competitive
-- 🌿 Cotton (~$2B/yr): textile exporters gain
 
-*Losers — Input costs rise:*
-
-- 🧪 Fertiliser imports (urea, DAP) cost more
-- 🛢️ Diesel for tractors/pumps more expensive
-:::
-::: {.column width="50%"}
-**Appreciation (e ↓: ₹85→₹75)**
-
-*Winners — Importers/Consumers:*
+**Appreciation (e ↓: ₹85→₹75) — Winners (Importers):**
 
 - 🫙 Edible oils ($14B+/yr): cheaper cooking oil for consumers
 - 🌱 Pulses ($3B+/yr): cheaper lentils, chickpeas
+
+:::{.notes}
+**Depreciation losers (input costs rise):**
+- 🧪 Fertiliser imports (urea, DAP) cost more
+- 🛢️ Diesel for tractors/pumps more expensive
+- 🌿 Cotton (~$2B/yr) exporters gain under depreciation
+
+**Appreciation losers (exporters squeezed):**
 - 🧪 Fertilisers: urea, DAP, MOP cheaper in ₹ terms
-
-*Losers — Exporters squeezed:*
-
 - Rice, spice, marine, cotton exporters lose margin
-:::
 :::
 
 ## Exchange Rate: The Policy Tension
