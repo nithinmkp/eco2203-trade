@@ -417,23 +417,33 @@ a higher invoice value and more price control.
 \begin{frame}
 \begin{block}{Export Documents: Proof of Transaction}
 \phantomsection\label{export-documents-proof-of-transaction}
-\begin{itemize}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\begin{enumerate}
 \tightlist
 \item
-  \textbf{Commercial Invoice} --- product, quantity, price, HSN/IEC;
-  basis for customs valuation
+  \textbf{Commercial Invoice} --- price, quantity, HSN code, IEC,
+  buyer/seller details; basis for customs valuation
 \item
-  \textbf{Packing List} --- box-by-box weight and dimensions
+  \textbf{Packing List} --- box-by-box itemisation of weight,
+  dimensions, marks
 \item
-  \textbf{Transport document} --- \textbf{B/L} (sea) or \textbf{AWB}
-  (air)
+  \textbf{Bill of Lading (B/L)} --- title document issued by shipping
+  line; original B/L needed to claim cargo
 \item
-  \textbf{Certificate of Origin (CoO)} --- used for FTA preferential
-  tariffs
+  \textbf{Airway Bill (AWB)} --- air freight equivalent of B/L;
+  non-negotiable consignment note
 \item
-  \textbf{Key idea:} \textbf{B/L is negotiable} (can be
-  endorsed/transferred)
-\end{itemize}
+  \textbf{Certificate of Origin (CoO)} --- issued by FIEO/chamber;
+  determines FTA preferential tariff eligibility
+\end{enumerate}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+The \textbf{Bill of Lading} is the only document that is a negotiable
+instrument --- it can be endorsed and transferred like a cheque.
+\end{column}
+\end{columns}
 
 \note{Detailed descriptions:
 
@@ -460,26 +470,54 @@ a higher invoice value and more price control.
   preferential duty rate under FTAs.
 \end{enumerate}}
 \end{block}
-\end{frame}
 
-\begin{frame}
 \begin{block}{Export Documents: Compliance and Regulatory}
 \phantomsection\label{export-documents-compliance-and-regulatory}
-\begin{itemize}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\begin{enumerate}
+\setcounter{enumi}{5}
 \tightlist
 \item
-  \textbf{Phytosanitary certificate (PPQS)} --- plant products are
-  pest-free
+  \textbf{Phytosanitary Certificate} --- issued by PPQS (Plant
+  Protection, Quarantine \& Storage); mandatory for all plant products
 \item
-  \textbf{Health/inspection certificate (EIC)} ---
-  meat/marine/organic/dairy
+  \textbf{Health / Inspection Certificate} --- issued by EIC for meat,
+  marine, organic, dairy exports
 \item
-  \textbf{Fumigation certificate} --- pulses/oilseeds; treatment details
+  \textbf{EDPMS declaration} --- RBI's online system linking shipment to
+  forex realization
 \item
-  \textbf{Shipping Bill (ICEGATE)} --- customs clearance + \textbf{LEO}
+  \textbf{Fumigation Certificate} --- mandatory for pulses, oilseeds;
+  issued by certified fumigators
 \item
-  \textbf{EDPMS (RBI)} --- links shipment to forex realization
-\end{itemize}
+  \textbf{Shipping Bill} --- key customs clearance document filed on
+  ICEGATE; must be approved before loading
+\end{enumerate}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\textbf{Document flow for a typical agri export:}
+
+\begin{enumerate}
+\tightlist
+\item
+  Export contract signed → Commercial Invoice prepared
+\item
+  LC opened by buyer's bank
+\item
+  Shipment arranged → B/L issued
+\item
+  Phytosanitary + Fumigation certificates obtained
+\item
+  Shipping Bill filed on ICEGATE → LEO (Let Export Order) obtained
+\item
+  Documents presented to advising bank → payment
+\item
+  EDPMS updated → forex realization confirmed
+\end{enumerate}
+\end{column}
+\end{columns}
 
 \note{Detailed descriptions:
 
@@ -510,25 +548,6 @@ a higher invoice value and more price control.
   (Free Shipping Bill, Dutiable SB, SB under claim for Drawback) for
   different incentive claims.
 \end{enumerate}}
-\end{block}
-\end{frame}
-
-\begin{frame}
-\begin{block}{Document flow: a typical agri export}
-\phantomsection\label{document-flow-a-typical-agri-export}
-\begin{enumerate}
-\tightlist
-\item
-  Contract signed + invoice prepared
-\item
-  Buyer arranges payment (often via \textbf{LC})
-\item
-  Shipment booked → \textbf{B/L or AWB} issued
-\item
-  Certificates obtained + Shipping Bill filed → \textbf{LEO}
-\item
-  Documents presented to bank → payment + \textbf{EDPMS} closure
-\end{enumerate}
 \end{block}
 \end{frame}
 
@@ -1214,15 +1233,10 @@ RoDTEP scrip + drawback + TMA
   \textbf{Cold chain and logistics} remain India's primary structural
   bottleneck --- world-class documentation systems exist, but physical
   infrastructure lags
-\end{enumerate}
-
-\note{\begin{enumerate}
-\setcounter{enumi}{5}
-\tightlist
 \item
   \textbf{Digital India} is working: ICEGATE, SWIFT, e-BRC have
   dramatically reduced transaction costs
-\end{enumerate}}
+\end{enumerate}
 \end{column}
 \end{columns}
 \end{block}
@@ -1247,10 +1261,6 @@ RoDTEP scrip + drawback + TMA
   Export Inspection Council and quality certification
 \item
   NAFED: buffer stocks, MSP procurement, export implications
-\end{itemize}
-
-\note{\begin{itemize}
-\tightlist
 \item
   Farmer Producer Organizations as export units
 \item
@@ -1259,7 +1269,7 @@ RoDTEP scrip + drawback + TMA
 
 \textbf{Preparation:} Review APEDA Annual Report 2023--24 (available at
 apeda.gov.in). Note the top 10 products by export value and the top 5
-destination countries.}
+destination countries.
 \end{block}
 \end{frame}
 
