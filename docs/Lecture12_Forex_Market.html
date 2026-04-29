@@ -221,30 +221,34 @@ window.Quarto = {
 <p>From exchange rate regimes to the Mundell-Fleming model — how monetary and fiscal policy interact with the exchange rate, and what this means for agricultural exporters and importers.</p>
 </div>
 </section>
-<section id="recap-what-we-learned-in-lecture-11" class="level2">
-<h2 class="anchored" data-anchor-id="recap-what-we-learned-in-lecture-11">Recap: What We Learned in Lecture 11</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Key equations from Lecture 11:</strong></p>
-<p>Exchange rate notation: <span class="math display">\[e = \frac{\text{units of domestic currency}}{\text{unit of foreign currency}}\]</span></p>
-<p>Absolute PPP: <span class="math display">\[e = \frac{P_d}{P_f}\]</span></p>
-<p>Relative PPP: <span class="math display">\[\frac{\Delta e}{e} = \pi_d - \pi_f\]</span></p>
-<p>Uncovered Interest Parity (UIP): <span class="math display">\[i = i^* + \frac{E(e_{t+1}) - e_t}{e_t}\]</span></p>
-</div><div class="column" style="width:45%;">
-<div class="keybox">
-<p><strong>Key numerical takeaways:</strong></p>
+<section id="recap-lecture-11-key-equations" class="level2">
+<h2 class="anchored" data-anchor-id="recap-lecture-11-key-equations">Recap (Lecture 11): key equations</h2>
+<p><span class="math display">\[e = \frac{\text{domestic currency}}{\text{foreign currency}}\]</span></p>
 <ul>
-<li>INR/USD spot rate ≈ <strong>₹83.5/$</strong></li>
-<li>India CPI inflation ≈ 5–6%; US ≈ 2–3%</li>
-<li>Relative PPP predicts <strong>3–4% annual INR depreciation</strong></li>
-<li>UIP equilibrium: <span class="math inline">\(i_{India} - i_{US} \approx\)</span> expected depreciation</li>
-<li>Repo rate India: <strong>6.5%</strong>; Fed funds: <strong>5.25–5.5%</strong></li>
-<li>Differential ≈ 1–1.25% — below PPP-implied depreciation, suggesting some expected appreciation or risk premium</li>
+<li>Absolute PPP: <span class="math inline">\(e = \frac{P_d}{P_f}\)</span></li>
+<li>Relative PPP: <span class="math inline">\(\frac{\Delta e}{e} = \pi_d - \pi_f\)</span></li>
+<li>UIP: <span class="math inline">\(i = i^* + \frac{E(e_{t+1}) - e_t}{e_t}\)</span></li>
 </ul>
-</div>
-</div>
-</div>
-<p><strong>Building on Lecture 11:</strong> We now know <em>why</em> exchange rates move (PPP, UIP, interest differentials). Today we study <em>what regime</em> India operates under — managed float vs fixed vs free float — and <em>how macroeconomic policy</em> (fiscal and monetary) works differently under each regime using the <strong>Mundell-Fleming model</strong>. We also cover the practical tools — forward markets, hedging — that agricultural traders use to manage currency risk.</p>
+<hr>
+</section>
+<section id="recap-india-numerical-context-illustrative" class="level2">
+<h2 class="anchored" data-anchor-id="recap-india-numerical-context-illustrative">Recap: India numerical context (illustrative)</h2>
+<ul>
+<li>INR/USD spot ≈ <strong>₹83.5/$</strong></li>
+<li>India CPI inflation ≈ 5–6%; US ≈ 2–3%</li>
+<li>Relative PPP → <strong>~3–4%</strong> annual INR depreciation</li>
+<li>Repo rate ≈ <strong>6.5%</strong>; Fed funds ≈ <strong>5.25–5.5%</strong></li>
+</ul>
+<hr>
+</section>
+<section id="today-lecture-12-what-we-add" class="level2">
+<h2 class="anchored" data-anchor-id="today-lecture-12-what-we-add">Today (Lecture 12): what we add</h2>
+<ul>
+<li>Exchange rate regimes (fixed vs float vs managed)</li>
+<li>Mundell–Fleming: policy under different regimes</li>
+<li>RBI intervention and reserves logic</li>
+<li>Forward markets + hedging for agri trade</li>
+</ul>
 </section>
 <section id="exchange-rate-systems-i-free-float-and-managed-float" class="level2">
 <h2 class="anchored" data-anchor-id="exchange-rate-systems-i-free-float-and-managed-float">Exchange Rate Systems (I): Free Float and Managed Float</h2>
@@ -320,28 +324,25 @@ window.Quarto = {
 <p><strong>Historical lesson for India:</strong> India maintained a <em>de facto</em> fixed rate through the 1980s. By 1991: BoP crisis forced a 44% devaluation. Post-crisis shift to managed float was the correct policy response.</p>
 </div>
 </section>
-<section id="fixed-vs-flexible-trade-offs-for-agricultural-economies" class="level2">
-<h2 class="anchored" data-anchor-id="fixed-vs-flexible-trade-offs-for-agricultural-economies">Fixed vs Flexible: Trade-offs for Agricultural Economies</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Fixed Regime Analysis:</strong></p>
+<section id="fixed-exchange-rate-pros-and-cons-agriculture" class="level2">
+<h2 class="anchored" data-anchor-id="fixed-exchange-rate-pros-and-cons-agriculture">Fixed exchange rate: pros and cons (agriculture)</h2>
 <ul>
-<li>✅ <strong>Stability for trade contracts:</strong> importers and exporters know the rate — a rice exporter signing a 12-month supply contract can price in INR without currency risk</li>
-<li>✅ <strong>Low inflation discipline:</strong> CB cannot print money freely (reserves constrain it)</li>
-<li>❌ <strong>Currency crises:</strong> if domestic inflation erodes competitiveness, the fixed rate becomes overvalued → speculative attacks → forced devaluation</li>
-<li>❌ <strong>Monetary policy lost:</strong> CB cannot adjust interest rates independently (Mundell-Fleming, fixed rate case)</li>
-<li>❌ <strong>Reserve depletion:</strong> defending the peg requires unlimited reserves</li>
+<li>Predictable rate helps long contracts (exports/imports)</li>
+<li>Can discipline inflation (money creation constrained)</li>
+<li>Risk of <strong>overvaluation</strong> → sudden crisis + forced devaluation</li>
+<li>Monetary policy autonomy is limited</li>
+<li>Requires reserves to defend the peg</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Flexible Regime Analysis:</strong></p>
+<hr>
+</section>
+<section id="flexible-exchange-rate-pros-and-cons-agriculture" class="level2">
+<h2 class="anchored" data-anchor-id="flexible-exchange-rate-pros-and-cons-agriculture">Flexible exchange rate: pros and cons (agriculture)</h2>
 <ul>
-<li>✅ <strong>Automatic stabilisation:</strong> trade deficit → INR weakens → exports become cheaper → deficit corrects</li>
-<li>✅ <strong>Monetary policy works:</strong> RBI can set repo rate independently of the Fed</li>
-<li>❌ <strong>Volatility harms trade:</strong> a rice exporter signing 6-month contracts faces price risk — even if the crop yield is known, INR/USD at delivery is unknown</li>
-<li>❌ <strong>Imported inflation:</strong> depreciation raises cost of edible oil, fertiliser, crude oil — all critical agri inputs</li>
+<li>Automatic adjustment via depreciation/appreciation</li>
+<li>Monetary policy has more room</li>
+<li>Volatility creates pricing risk for traders</li>
+<li>Depreciation raises costs of key imports (oil, fertiliser, edible oils)</li>
 </ul>
-</div>
-</div>
 </section>
 <section id="case-study-indias-1991-exchange-rate-crisis" class="level2">
 <h2 class="anchored" data-anchor-id="case-study-indias-1991-exchange-rate-crisis">Case Study: India’s 1991 Exchange Rate Crisis</h2>
@@ -505,13 +506,13 @@ window.Quarto = {
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle=</span><span class="st">"Key result: Fiscal policy highly effective; Monetary policy completely ineffective"</span></span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-mf-fixed" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mf-fixed" class="quarto-float quarto-figure quarto-figure-center anchored" width="864">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mf-fixed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Lecture12_Forex_Market_files/figure-html/fig-mf-fixed-1.png" class="img-fluid figure-img" width="960">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-mf-fixed-1.png" id="fig-mf-fixed" class="img-fluid figure-img" width="864">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mf-fixed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Mundell-Fleming Fixed Rate: Fiscal Expansion is Effective; Monetary Expansion is Not Source: Author’s illustration after Mundell (1963) and Fleming (1962).
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-mf-fixed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
 </figcaption>
 </figure>
 </div>
@@ -583,13 +584,13 @@ Figure&nbsp;1: Mundell-Fleming Fixed Rate: Fiscal Expansion is Effective; Moneta
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle=</span><span class="st">"Key result: Monetary policy effective (exchange rate channel); Fiscal policy crowded out via exchange rate appreciation"</span></span>
 <span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-mf-flexible" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-mf-flexible" class="quarto-float quarto-figure quarto-figure-center anchored" width="864">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mf-flexible-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Lecture12_Forex_Market_files/figure-html/fig-mf-flexible-1.png" class="img-fluid figure-img" width="960">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-mf-flexible-1.png" id="fig-mf-flexible" class="img-fluid figure-img" width="864">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mf-flexible-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Mundell-Fleming Flexible Rate: Monetary Policy Effective; Fiscal Policy Crowded Out via Exchange Rate Source: Author’s illustration after Mundell (1963) and Fleming (1962).
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-mf-flexible-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
 </figcaption>
 </figure>
 </div>
@@ -676,13 +677,13 @@ Figure&nbsp;2: Mundell-Fleming Flexible Rate: Monetary Policy Effective; Fiscal 
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">/</span> p2 <span class="sc">+</span> <span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"India's Forex Reserves: From Crisis (1991) to Abundance (2024)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-forex-reserves" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-forex-reserves" class="quarto-float quarto-figure quarto-figure-center anchored" width="816">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-forex-reserves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Lecture12_Forex_Market_files/figure-html/fig-forex-reserves-1.png" class="img-fluid figure-img" width="864">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-forex-reserves-1.png" id="fig-forex-reserves" class="img-fluid figure-img" width="816">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forex-reserves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: India’s Forex Reserves (USD billion) and Import Cover (months), 2000–2024 Source: RBI, Database on Indian Economy (DBIE).
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-forex-reserves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3
 </figcaption>
 </figure>
 </div>
@@ -701,58 +702,36 @@ Figure&nbsp;3: India’s Forex Reserves (USD billion) and Import Cover (months),
 <p><strong>Sterilization mechanism:</strong></p>
 <p><span class="math display">\[\Delta \text{Reserves} + \Delta \text{Domestic Credit} = \Delta M\]</span></p>
 <p>When RBI buys USD → <span class="math inline">\(\Delta M\)</span> (base money rises) → RBI sells G-secs (government securities) to sterilize — absorbing ₹ and keeping money supply neutral.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Depreciation prevention (sell USD):</strong></p>
+<p><strong>Two-way intervention (managed float):</strong></p>
 <ul>
-<li>Triggered when INR weakens sharply</li>
-<li>E.g., 2022: RBI sold ~$100B as INR slid from ₹74 → ₹83</li>
-<li>Reserves fell from $640B → $530B in 6 months</li>
-<li>Sterilized via reverse repo (absorbing ₹)</li>
+<li><strong>Sell USD</strong> when INR weakens sharply (e.g., 2022)</li>
+<li><strong>Buy USD</strong> when INR strengthens too fast (e.g., 2021)</li>
+<li>Sterilisation uses liquidity operations (OMOs, reverse repo, etc.)</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Appreciation prevention (buy USD):</strong></p>
-<ul>
-<li>Triggered when large capital inflows strengthen INR</li>
-<li>E.g., 2021: RBI bought ~$67B as FPI inflows surged</li>
-<li>Reserves rose from $580B → $640B</li>
-<li>Sterilized via G-sec sales (absorbing ₹)</li>
-</ul>
-</div>
-</div>
 <div class="keybox">
 <p><strong>RBI’s two-way intervention evidence:</strong> - FY2021: Net purchases ~$67B (preventing appreciation during COVID capital inflows) - FY2022–23: Net sales ~$100B (preventing excessive depreciation) - IMF and US Treasury classification: India is <strong>NOT</strong> a currency manipulator — two-way intervention distinguishes managed float from competitive devaluation.</p>
 </div>
 </section>
-<section id="the-forward-exchange-market" class="level2">
-<h2 class="anchored" data-anchor-id="the-forward-exchange-market">The Forward Exchange Market</h2>
-<p><strong>Forward rate <span class="math inline">\(F\)</span>:</strong> The exchange rate agreed today for currency delivery at a specified future date <span class="math inline">\(T\)</span>.</p>
-<p><strong>Forward premium/discount formula:</strong></p>
-<p><span class="math display">\[\text{Forward premium on USD} = \frac{F - E}{E} \times \frac{12}{n} \times 100\%\]</span></p>
-<p>where <span class="math inline">\(n\)</span> = months to delivery, <span class="math inline">\(E\)</span> = current spot rate, <span class="math inline">\(F\)</span> = forward rate.</p>
-<p><strong>Numerical example:</strong></p>
-<p><span class="math inline">\(E = ₹83.5/\$\)</span>, <span class="math inline">\(F\)</span> (3-month) <span class="math inline">\(= ₹84.2/\$\)</span>:</p>
-<p><span class="math display">\[\text{Forward premium} = \frac{84.2-83.5}{83.5} \times 4 \times 100 = 3.35\%\text{ p.a.}\]</span></p>
-<p><strong>Covered Interest Parity (CIP)</strong> ensures: Forward premium <span class="math inline">\(\approx i_{India} - i_{USA}\)</span> (otherwise riskless arbitrage profits exist).</p>
-<p><strong>Participants in India’s forward market:</strong></p>
+<section id="the-forward-exchange-market-idea" class="level2">
+<h2 class="anchored" data-anchor-id="the-forward-exchange-market-idea">The Forward Exchange Market (idea)</h2>
 <ul>
-<li>RBI-regulated Authorised Dealer (AD) banks</li>
-<li>FEDAI (Foreign Exchange Dealers Association of India) — sets market conventions</li>
-<li>Corporates with genuine underlying forex exposure (exporters, importers, MNCs)</li>
-<li>Since 2019: limited speculative participation allowed in exchange-traded currency futures</li>
+<li>A <strong>forward</strong> locks in an exchange rate today for a future date</li>
 </ul>
-<div class="methodbox">
-<p><strong>Who uses forward markets in agriculture?</strong></p>
-<ul>
-<li><strong>Large agri exporters:</strong> ITC (rice, wheat), KRBL (basmati rice), Adani Agri — use forward sales to lock in INR realisation on USD export proceeds</li>
-<li><strong>Edible oil importers:</strong> Adani Wilmar, Ruchi Soya — use forward purchases to lock in INR cost of palm oil imports</li>
-<li><strong>Fertiliser importers:</strong> IFFCO, Coromandel — use forwards for urea/DAP import cost certainty</li>
-<li><strong>Small farmers and FPOs:</strong> virtually no direct access — forward contracts require minimum $250,000 face value in OTC market</li>
-</ul>
-</div>
+<p><span class="math display">\[\text{Forward premium} = \frac{F - E}{E} \times \frac{12}{n} \times 100\%\]</span></p>
+<p>Example (3-month): <span class="math inline">\(E=₹83.5/\$\)</span>, <span class="math inline">\(F=₹84.2/\$\)</span> → premium ≈ <strong>3.35% p.a.</strong></p>
+<hr>
 </section>
-<section id="hedging-with-forward-contracts" class="level2">
-<h2 class="anchored" data-anchor-id="hedging-with-forward-contracts">Hedging with Forward Contracts</h2>
+<section id="who-uses-forwards-agri-context" class="level2">
+<h2 class="anchored" data-anchor-id="who-uses-forwards-agri-context">Who uses forwards (agri context)</h2>
+<ul>
+<li>Large exporters: lock in INR realisation on USD receipts</li>
+<li>Large importers (edible oils, fertiliser): lock in INR cost of USD payments</li>
+<li>Small farmers/FPOs have limited direct access (scale + documentation)</li>
+</ul>
+<hr>
+</section>
+<section id="hedging-with-a-forward-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="hedging-with-a-forward-diagram">Hedging with a forward (diagram)</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>e_future <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">78</span>, <span class="dv">92</span>, <span class="at">by=</span><span class="fl">0.25</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>unhedged <span class="ot">&lt;-</span> e_future <span class="sc">*</span> <span class="dv">10</span></span>
@@ -775,38 +754,38 @@ Figure&nbsp;3: India’s Forex Reserves (USD billion) and Import Cover (months),
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data=</span>df_hedge_above,</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x=</span>e_future, <span class="at">ymin=</span>hedged, <span class="at">ymax=</span>unhedged),</span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill=</span><span class="st">"#cc0000"</span>, <span class="at">alpha=</span><span class="fl">0.15</span>) <span class="sc">+</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>unhedged, <span class="at">color=</span><span class="st">"Unhedged (spot rate risk)"</span>), <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>hedged, <span class="at">color=</span><span class="st">"Hedged (forward at ₹84.2/$)"</span>), <span class="at">linewidth=</span><span class="fl">1.5</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>unhedged, <span class="at">color=</span><span class="st">"Unhedged"</span>), <span class="at">linewidth=</span><span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>hedged, <span class="at">color=</span><span class="st">"Hedged (forward)"</span>), <span class="at">linewidth=</span><span class="fl">1.4</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span>hedged_rate, <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">color=</span><span class="st">"grey40"</span>) <span class="sc">+</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">80</span>, <span class="at">y=</span><span class="dv">826</span>, <span class="at">label=</span><span class="st">"Hedging protects</span><span class="sc">\n</span><span class="st">exporter here</span><span class="sc">\n</span><span class="st">(INR appreciates)"</span>,</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="fl">87.5</span>, <span class="at">y=</span><span class="dv">854</span>, <span class="at">label=</span><span class="st">"Opportunity cost:</span><span class="sc">\n</span><span class="st">forgo this gain</span><span class="sc">\n</span><span class="st">(INR depreciates further)"</span>,</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#cc0000"</span>) <span class="sc">+</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"Unhedged (spot rate risk)"</span><span class="ot">=</span><span class="st">"#012169"</span>,</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Hedged (forward at ₹84.2/$)"</span><span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Rice Exporter: Hedging $10M Receivable with 3-Month Forward Contract"</span>,</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Forward rate = ₹84.2/$. Hedging locks in ₹842M. Below ₹84.2: hedge wins; above: foregone upside."</span>,</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Future Spot Rate (₹ per $)"</span>, <span class="at">y=</span><span class="st">"INR Received (crores)"</span>,</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">color=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"Unhedged"</span><span class="ot">=</span><span class="st">"#012169"</span>,<span class="st">"Hedged (forward)"</span><span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Rice exporter: hedging a $10M receivable"</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Forward at ₹84.2/$ fixes INR receipts; hedge trades off upside for certainty"</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Future spot rate (₹ per $)"</span>, <span class="at">y=</span><span class="st">"INR received (crores)"</span>, <span class="at">color=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-hedging" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-hedging" class="quarto-float quarto-figure quarto-figure-center anchored" width="672">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hedging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Lecture12_Forex_Market_files/figure-html/fig-hedging-1.png" class="img-fluid figure-img" width="768">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-hedging-1.png" id="fig-hedging" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hedging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Currency Hedging: A Rice Exporter’s Forward Contract vs Unhedged Position Source: Author’s illustration.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-hedging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<hr>
+</section>
+<section id="access-gap-otc-vs-futures" class="level2">
+<h2 class="anchored" data-anchor-id="access-gap-otc-vs-futures">Access gap: OTC vs futures</h2>
+<ul>
+<li>OTC forwards typically require large minimum sizes</li>
+<li>Exchange-traded currency futures have smaller lot sizes but require margin + daily mark-to-market</li>
+</ul>
 <div class="keybox">
-<p><strong>Who hedges in India’s agricultural sector?</strong></p>
-<p>Large corporates (ITC, Adani Agri, KRBL) hedge routinely. Minimum OTC forward contract: typically <strong>$250,000</strong> — above most small exporters’ scale.</p>
-<p><strong>SEBI currency futures (NSE/BSE):</strong> Smaller lot sizes (₹1 lakh in USD/INR futures contract = ~$1,200) — far more accessible for smaller players. However, requires margin account and daily mark-to-market — a new administrative burden.</p>
+<p>In practice, hedging is much easier for large firms than for small farmers and FPOs.</p>
 </div>
 </section>
 <section id="exchange-rate-pass-through" class="level2">
@@ -826,8 +805,13 @@ Figure&nbsp;4: Currency Hedging: A Rice Exporter’s Forward Contract vs Unhedge
 <li><strong>Petroleum products:</strong> <span class="math inline">\(\psi \approx 0.9\)</span> (nearly complete — global commodity)</li>
 </ul>
 <div class="highlightbox">
-<p><strong>India’s edible oil channel:</strong></p>
-<p>₹10 depreciation per dollar (e.g., ₹75 → ₹85) → palm oil domestic price rises ~₹8–9 per litre (pass-through ≈ 80%). At India’s <strong>20 million tonne</strong> annual edible oil consumption (~1.4 billion litres), a ₹9/litre rise = ₹12,600 crore additional annual cost for consumers. This is a direct <strong>food security and inflation</strong> consequence of INR depreciation — exchange rate policy and food price policy are inseparable.</p>
+<p><strong>India’s edible-oil channel (rule of thumb):</strong></p>
+<ul>
+<li>INR depreciation raises the ₹ price of imported edible oils</li>
+<li>₹10/$ depreciation (e.g., ₹75 → ₹85) → roughly <strong>₹8–9/litre</strong> higher retail price (high pass-through)</li>
+<li>With ~<strong>20 Mt</strong> consumption (~1.4 bn litres), ₹9/litre ≈ <strong>₹12,600 crore/year</strong> added consumer cost</li>
+</ul>
+<p>Exchange rate policy and food inflation policy are tightly linked.</p>
 </div>
 </section>
 <section id="inr-depreciation-and-agricultural-exports" class="level2">
@@ -841,133 +825,128 @@ Figure&nbsp;4: Currency Hedging: A Rice Exporter’s Forward Contract vs Unhedge
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(agri_inr, <span class="fu">aes</span>(<span class="at">x=</span>inr_usd, <span class="at">y=</span>agri_exports)) <span class="sc">+</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="fl">3.2</span>) <span class="sc">+</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>, <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">fill=</span><span class="st">"#B9975B"</span>, <span class="at">alpha=</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>year), <span class="at">nudge_y=</span><span class="fl">0.9</span>, <span class="at">size=</span><span class="fl">2.8</span>, <span class="at">color=</span><span class="st">"grey40"</span>) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"INR/USD Rate vs India's Agricultural Exports (FY2010–FY2024)"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Positive correlation: weaker INR generally associated with higher agri exports (USD terms)"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"INR per USD (year average)"</span>, <span class="at">y=</span><span class="st">"Agri Exports (USD Billion)"</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>year), <span class="at">nudge_y=</span><span class="fl">0.8</span>, <span class="at">size=</span><span class="fl">2.6</span>, <span class="at">color=</span><span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"INR/USD vs agri exports (FY2010–FY2024)"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Weaker INR often coincides with higher agri exports (USD)"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"INR per USD (year average)"</span>, <span class="at">y=</span><span class="st">"Agri exports (USD bn)"</span>) <span class="sc">+</span></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-inr-agri-exports" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-inr-agri-exports" class="quarto-float quarto-figure quarto-figure-center anchored" width="691.2">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inr-agri-exports-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Lecture12_Forex_Market_files/figure-html/fig-inr-agri-exports-1.png" class="img-fluid figure-img" width="768">
+<img src="Lecture12_Forex_Market_files/figure-html/fig-inr-agri-exports-1.png" id="fig-inr-agri-exports" class="img-fluid figure-img" width="691">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inr-agri-exports-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: INR/USD Rate vs India’s Agricultural Export Value (FY2010–FY2024) Source: RBI (exchange rate); APEDA / DGCI&amp;S (export value).
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-inr-agri-exports-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>Interpretation:</strong> Correlation <span class="math inline">\(r \approx +0.85\)</span> — weaker INR generally associated with higher agri exports in USD terms (and much higher in INR terms).</p>
-<p><strong>Caveat:</strong> Causation runs both ways, and global demand also matters (e.g., China’s soybean demand, Middle East rice demand). The correlation reflects both the price competitiveness effect and the common driver of global commodity cycles.</p>
-<p><strong>2013–14 rice export boom:</strong> INR fell from ₹53 → ₹61 (depreciation of 15%). India’s rice exports rose 35% in USD terms — India became the world’s largest rice exporter, displacing Thailand.</p>
-<div class="keybox">
-<p><strong>Competitiveness arithmetic:</strong></p>
-<p>At ₹83/$ vs ₹75/$: Indian rice is effectively <strong>10.7% cheaper</strong> for foreign buyers (since they pay in USD, and more INR are now received per dollar exported). This is a direct price competitiveness gain — equivalent to a 10.7% export subsidy, but achieved through exchange rate movement rather than fiscal expenditure.</p>
+<div class="notes">
+<p>Source: RBI (INR/USD); APEDA / DGCI&amp;S (agri exports). This slide is descriptive (correlation), not causal.</p>
 </div>
+<hr>
 </section>
-<section id="indias-edible-oil-vulnerability" class="level2">
-<h2 class="anchored" data-anchor-id="indias-edible-oil-vulnerability">India’s Edible Oil Vulnerability</h2>
-<p><strong>India’s edible oil import dependence:</strong></p>
+<section id="what-to-take-from-the-plot" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-take-from-the-plot">What to take from the plot</h2>
 <ul>
-<li>Imports: <strong>14–16 million tonnes</strong> annually (~$14–18 billion)</li>
-<li>Sources: Malaysia/Indonesia (palm oil ~8 Mt), Argentina/Brazil (soy oil ~3 Mt), Ukraine/Russia (sunflower ~3 Mt)</li>
-<li>Import dependence: ~65% of domestic consumption</li>
+<li>Often: weaker INR ↔︎ higher exports (USD), especially for price-sensitive commodities</li>
+<li>But global prices + demand also move exports (commodity cycle)</li>
+<li>Causality can run both ways (trade balance shocks can also move INR)</li>
+<li>Example: 2013–14 INR fell ~15% and rice exports surged</li>
 </ul>
-<p><strong>Exchange rate and import bill arithmetic:</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 35%">
-<col style="width: 44%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Exchange Rate</th>
-<th>Palm Oil Cost (₹/tonne)</th>
-<th>Annual Bill (for 10 Mt palm)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>₹75/$</td>
-<td>₹67,500</td>
-<td>₹67,500 crore</td>
-</tr>
-<tr class="even">
-<td>₹80/$</td>
-<td>₹72,000</td>
-<td>₹72,000 crore</td>
-</tr>
-<tr class="odd">
-<td>₹85/$</td>
-<td>₹76,500</td>
-<td>₹76,500 crore (+13.3%)</td>
-</tr>
-</tbody>
-</table>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Fiscal cost and duty adjustment:</strong></p>
-<p>India uses <strong>import duty adjustments</strong> as a shock absorber: - Normal: Basic Customs Duty (BCD) on crude palm oil = 15% - During price spikes: duty cut to 0% (done in 2022–23) - AIDC (Agriculture Infrastructure Development Cess) also adjusted - But: zero is the floor — further duty cuts impossible once at zero - Exchange rate depreciation <strong>cannot</strong> be offset by duty reductions once duties hit zero</p>
-</div><div class="column" style="width:45%;">
-<div class="methodbox">
-<p><strong>Inflation arithmetic:</strong></p>
-<p>If INR depreciates 10% and import duty is already zero: - Palm oil price rises ~8–9% (pass-through ≈ 85%) - Cooking oil retail prices follow with 4–6 week lag - CPI food index weight of edible oils: ~3.5% - 8% rise in edible oils → +0.28 percentage points on headline CPI - RBI tolerance band: 2–6% — a 0.28pp shock is material</p>
-<p><strong>Lesson:</strong> Exchange rate is an uncontrollable external variable that directly affects domestic food security through the edible oil channel.</p>
-</div>
-</div>
+<hr>
+</section>
+<section id="competitiveness-arithmetic-rule-of-thumb" class="level2">
+<h2 class="anchored" data-anchor-id="competitiveness-arithmetic-rule-of-thumb">Competitiveness arithmetic (rule of thumb)</h2>
+<ul>
+<li>₹75/$ → ₹83/$ increases INR per $ by about <strong>10.7%</strong></li>
+<li>If USD export price is unchanged, exporter gets <strong>~10.7% more INR per $</strong></li>
+<li>Symmetrically, importers face a cost shock in rupees</li>
+</ul>
+<div class="keybox">
+<p>Exchange rate movements act like an implicit export subsidy / import tax (without a budget line).</p>
 </div>
 </section>
-<section id="managing-currency-risk-in-agricultural-trade" class="level2">
-<h2 class="anchored" data-anchor-id="managing-currency-risk-in-agricultural-trade">Managing Currency Risk in Agricultural Trade</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="indias-edible-oil-vulnerability-headline" class="level2">
+<h2 class="anchored" data-anchor-id="indias-edible-oil-vulnerability-headline">India’s edible oil vulnerability (headline)</h2>
+<ul>
+<li>Imports ≈ <strong>14–16 Mt</strong> per year (large import dependence)</li>
+<li>Major sources: Indonesia/Malaysia (palm), Argentina/Brazil (soy), Black Sea (sunflower)</li>
+<li>Exchange rate movements feed into domestic cooking-oil inflation</li>
+</ul>
+<hr>
+</section>
+<section id="exchange-rate-arithmetic-simple" class="level2">
+<h2 class="anchored" data-anchor-id="exchange-rate-arithmetic-simple">Exchange rate arithmetic (simple)</h2>
+<ul>
+<li>If world palm oil price is fixed in USD, a weaker INR raises the ₹/tonne cost</li>
+<li>Example: moving from <strong>₹75/$ → ₹85/$</strong> raises rupee cost by ~<strong>13%</strong> (holding USD price constant)</li>
+</ul>
+<hr>
+</section>
+<section id="policy-levers-and-the-duty-floor-problem" class="level2">
+<h2 class="anchored" data-anchor-id="policy-levers-and-the-duty-floor-problem">Policy levers and the “duty floor” problem</h2>
+<ul>
+<li>Duty cuts can cushion price spikes, but <strong>0% is the floor</strong></li>
+<li>Once duties are cut, INR depreciation still passes through to prices</li>
+<li>Edible oils therefore link exchange rates to <strong>food inflation</strong></li>
+</ul>
+<div class="keybox">
+<p>Edible oils are the cleanest channel where exchange rate policy becomes food policy.</p>
+</div>
+</section>
+<section id="managing-currency-risk-in-agricultural-trade" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="managing-currency-risk-in-agricultural-trade">Managing Currency Risk in Agricultural Trade</h2>
 <p><strong>Agri Exporters</strong> <em>(risk: INR appreciates, reducing INR revenue)</em></p>
 <ul>
-<li><strong>Natural hedge:</strong> match USD receivables with USD payables — if exporter also imports inputs (packaging, machinery) in USD</li>
 <li><strong>Forward sales:</strong> lock in ₹/$ today for future USD receipt — eliminate downside but sacrifice upside</li>
 <li><strong>Export credit in USD (ECB):</strong> borrow in USD, repay with export proceeds — no currency conversion needed</li>
-<li><strong>Put options on USD:</strong> right to sell USD at floor price — limits downside while retaining upside if INR depreciates further</li>
-<li><strong>Invoice in INR</strong> (for niche/branded exports — Darjeeling tea, GI products — where buyer accepts INR pricing)</li>
+<li><strong>Put options on USD:</strong> right to sell USD at floor price — limits downside while retaining upside</li>
 </ul>
-</div><div class="column" style="width:50%;">
 <p><strong>Agri Importers</strong> <em>(risk: INR depreciates, raising ₹ cost)</em></p>
 <ul>
 <li><strong>Forward purchases:</strong> lock in ₹/$ for future USD payment — certainty on import cost</li>
-<li><strong>Call options on USD:</strong> right to buy USD at ceiling price — caps cost if INR weakens, retains benefit if INR strengthens</li>
-<li><strong>Invoice in INR</strong> (where possible — limited for commodity imports, as palm oil/soy are priced in USD globally)</li>
-<li><strong>Stock more when rate is favorable:</strong> build inventory at ₹75/$ to avoid exposure at ₹83/$</li>
-<li><strong>Rupee-denominated import contracts:</strong> India negotiating with some suppliers (UAE, Russia) for INR-denominated trade</li>
+<li><strong>Call options on USD:</strong> right to buy USD at ceiling price — caps cost if INR weakens</li>
 </ul>
-</div>
-</div>
-<div class="keybox">
-<p><strong>Policy gap — the small farmer problem:</strong></p>
-<p>Most small farmers and village-level exporters have <strong>NO access</strong> to these instruments. The entire forex risk is absorbed upstream in the supply chain (by the aggregator/exporter), who discounts the farmgate price as compensation for bearing this risk. A farmer in Amritsar selling basmati to an exporter is effectively subsidising the exporter’s hedging costs through a lower farmgate price. This is an equity and market structure issue at the intersection of forex markets and agricultural trade.</p>
+<div class="notes">
+<p><strong>Other exporter tools:</strong> - <strong>Natural hedge:</strong> match USD receivables with USD payables — if exporter also imports inputs in USD - <strong>Invoice in INR</strong> (for niche/branded exports — Darjeeling tea, GI products — where buyer accepts INR pricing)</p>
+<p><strong>Other importer tools:</strong> - <strong>Stock more when rate is favorable:</strong> build inventory at ₹75/$ to avoid exposure at ₹83/$ - <strong>Rupee-denominated import contracts:</strong> India negotiating with some suppliers (UAE, Russia) for INR-denominated trade</p>
+<p><strong>Policy gap — the small farmer problem:</strong> Most small farmers and village-level exporters have NO access to these instruments. The entire forex risk is absorbed upstream by the aggregator/exporter, who discounts the farmgate price as compensation.</p>
 </div>
 </section>
-<section id="bop-and-the-current-account-deficit-the-agricultural-connection" class="level2">
-<h2 class="anchored" data-anchor-id="bop-and-the-current-account-deficit-the-agricultural-connection">BoP and the Current Account Deficit: The Agricultural Connection</h2>
-<p><strong>BoP structure:</strong></p>
-<p><span class="math display">\[\text{Current Account} + \text{Capital Account} + \text{Financial Account} = 0\]</span></p>
-<p>India’s current account deficit (CAD) averages <strong>1.5–2.5% of GDP</strong> (relatively moderate by emerging market standards).</p>
-<p><strong>Main CAD drivers:</strong></p>
-<p><span class="math display">\[CAD = TB_{merch} + TB_{services} + \text{Remittances} + \text{Primary income}\]</span></p>
-<p>FY2024 approximate: <span class="math inline">\(-\$300B + \$150B + \$100B + (-\$30B) \approx -\$80B \text{ CAD}\)</span></p>
-<p><strong>Agricultural trade balance — a current account bright spot:</strong></p>
+<section id="bop-and-the-current-account-cad-the-agri-connection" class="level2">
+<h2 class="anchored" data-anchor-id="bop-and-the-current-account-cad-the-agri-connection">BoP and the Current Account (CAD): the agri connection</h2>
 <ul>
-<li>India’s agri trade balance: typically a <strong>surplus of ~$20–25B</strong> (FY2024: ~$25B net)</li>
-<li>This surplus partially offsets the oil import bill (~$200B) and gold imports (~$40B)</li>
+<li>Identity: <strong>CA + KA + FA = 0</strong></li>
+<li>India’s CAD is usually <strong>~1.5–2.5% of GDP</strong></li>
+<li>Big CAD pressure often comes from <strong>oil/fertiliser</strong> (USD-priced) imports</li>
 </ul>
-<div class="highlightbox">
-<p><strong>Agriculture’s role in India’s BoP:</strong></p>
-<p>India’s agricultural export surplus (~$25B in FY2024) is a meaningful contributor to current account balance. The major items: rice (~$10B), spices (~$4B), sugar (~$3B), marine products (~$7B), cotton (~$2B). Exchange rate depreciation that boosts agri exports <strong>directly helps the BoP</strong> by expanding this surplus — which in turn reduces pressure on the RBI to defend the rupee.</p>
-<p><strong>The policy feedback loop:</strong> Weaker INR → higher agri exports → better BoP → less reserve depletion → less pressure on INR → partial self-correction. This is the open economy automatic stabiliser at work.</p>
+<hr>
+</section>
+<section id="cad-drivers-fy2024-rough-magnitudes" class="level2">
+<h2 class="anchored" data-anchor-id="cad-drivers-fy2024-rough-magnitudes">CAD drivers (FY2024, rough magnitudes)</h2>
+<ul>
+<li>Merchandise trade balance: about <strong>−$300B</strong></li>
+<li>Services balance: about <strong>+$150B</strong></li>
+<li>Remittances: about <strong>+$100B</strong></li>
+<li>Primary income: about <strong>−$30B</strong></li>
+</ul>
+<div class="keybox">
+<p>Order-of-magnitude: CAD ≈ <strong>−$80B</strong> in FY2024.</p>
 </div>
+<hr>
+</section>
+<section id="agriculture-as-an-offset-and-feedback" class="level2">
+<h2 class="anchored" data-anchor-id="agriculture-as-an-offset-and-feedback">Agriculture as an offset (and feedback)</h2>
+<ul>
+<li>Agri trade is often a <strong>+$20–25B surplus</strong> (FY2024 ≈ <strong>+$25B</strong>)</li>
+<li>Major items: rice, marine products, spices, sugar, cotton</li>
+<li>Feedback logic: weaker INR can lift agri exports → improves CA → reduces pressure on RBI reserves</li>
+</ul>
 </section>
 <section id="key-takeaways-lecture-12" class="level2">
 <h2 class="anchored" data-anchor-id="key-takeaways-lecture-12">Key Takeaways: Lecture 12</h2>
@@ -1016,33 +995,21 @@ Figure&nbsp;5: INR/USD Rate vs India’s Agricultural Export Value (FY2010–FY2
 </section>
 <section id="next-lecture-balance-of-payments-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="next-lecture-balance-of-payments-analysis">Next Lecture: Balance of Payments Analysis</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Lecture 13 (July 18, 2026):</strong></p>
-<p><em>Balance of Payments: Structure, Adjustment, and Agricultural Trade</em></p>
+<p><strong>Lecture 13 (July 18, 2026):</strong> <em>Balance of Payments: Structure, Adjustment, and Agricultural Trade</em></p>
 <p>We will cover:</p>
 <ul>
 <li>Current account, capital account, financial account structure</li>
-<li>BoP adjustment mechanisms: automatic (price-specie flow, income adjustment) vs policy-driven</li>
+<li>BoP adjustment mechanisms: automatic vs policy-driven</li>
 <li><strong>Marshall-Lerner condition:</strong> when does depreciation improve the trade balance?</li>
 <li><strong>J-curve effect:</strong> short-run vs long-run response to depreciation</li>
 <li>India’s current account deficit: causes and sustainability</li>
+</ul>
+<div class="notes">
+<ul>
 <li>Agricultural trade’s role in India’s BoP (FY2024: ~$25B surplus)</li>
 </ul>
-</div><div class="column" style="width:40%;">
-<div class="methodbox">
-<p><strong>Bridge from today:</strong></p>
-<p>Today we studied:</p>
-<ul>
-<li>What exchange rate regime India operates under</li>
-<li>How policy (fiscal/monetary) works under different regimes (Mundell-Fleming)</li>
-<li>How RBI manages the float and reserves</li>
-<li>Hedging and agricultural trade implications</li>
-</ul>
-<p>Next: we zoom into the <strong>current account</strong> — the scorecard of a country’s trade with the world — and study how it adjusts when it falls into deficit.</p>
+<p><strong>Bridge from today:</strong> Today we studied what exchange rate regime India operates under, how policy works under different regimes (Mundell-Fleming), how RBI manages the float, and hedging implications.</p>
 <p><em>Reading: Salvatore Ch 12–13; Appleyard Ch 18–19</em></p>
-</div>
-</div>
 </div>
 </section>
 <section id="appendix" class="level1" data-background-color="#1a3a5c">
@@ -1052,25 +1019,18 @@ Figure&nbsp;5: INR/USD Rate vs India’s Agricultural Export Value (FY2010–FY2
 
 <div id="quarto-appendix" class="default"><section id="additional-resources" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Additional Resources</h2><div class="quarto-appendix-contents">
 
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Further Reading</strong></p>
+<p><strong>Further reading</strong></p>
 <ul>
-<li><em>International Economics</em> — Salvatore (Ch. 15-16)</li>
-<li><em>International Economics</em> — Appleyard &amp; Field (Ch. 15-16)</li>
-<li>RBI/DGCI&amp;S/APEDA databases for latest data</li>
+<li>Salvatore, <em>International Economics</em> (relevant chapters)</li>
+<li>Appleyard &amp; Field, <em>International Economics</em> (relevant chapters)</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Key Data Sources</strong></p>
+<p><strong>Key data sources</strong></p>
 <ul>
-<li>DGCI&amp;S: India’s merchandise trade</li>
-<li>RBI: Balance of payments data<br>
-</li>
-<li>APEDA: Agricultural export statistics</li>
-<li>WTO: Tariff and trade databases</li>
+<li>DGCI&amp;S: merchandise trade</li>
+<li>RBI: exchange rates + BoP</li>
+<li>APEDA: agricultural export statistics</li>
+<li>WTO: tariff + trade databases</li>
 </ul>
-</div>
-</div>
 
 
 </div></section></div></main> <!-- /main -->
