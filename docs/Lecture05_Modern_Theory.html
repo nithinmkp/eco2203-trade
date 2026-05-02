@@ -1,249 +1,252 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-<meta name="author" content="Nithin M">
-<meta name="dcterms.date" content="2026-05-23">
-
-<title>Modern Theories: Heckscher-Ohlin &amp; Lewis Dual-Sector Model – Econ 2203</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
-
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<html lang="en"><head>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f3746951f800101ea2ade33225c42268.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
+  <meta name="author" content="Nithin M">
+  <meta name="dcterms.date" content="2026-05-23">
+  <title>Econ 2203 – Modern Theories: Heckscher-Ohlin &amp; Lewis Dual-Sector Model</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
     }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-1a68acd8fb4efddae8642613ff1e701e.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<body class="nav-fixed quarto-light">
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Modern Theories: Heckscher-Ohlin &amp; Lewis Dual-Sector Model</h1>
+  <p class="subtitle">Econ 2203 | International Trade and Policy in Agriculture</p>
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Econ 2203 — International Trade &amp; Policy in Agriculture</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Nithin M 
 </div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Lecture05_Modern_Theory.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="Lecture05_Modern_Theory.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Modern Theories: Heckscher-Ohlin &amp; Lewis Dual-Sector Model</h1>
-<p class="subtitle lead">Econ 2203 | International Trade and Policy in Agriculture</p>
-</div>
-
-
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Nithin M </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
+        <p class="quarto-title-affiliation">
             Department of Development Economics
           </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 23, 2026</p>
     </div>
-  </div>
-  
-    
-  </div>
-  
+</div>
 
+  <p class="date">2026-05-23</p>
+</section>
+<section>
+<section id="part-i-why-do-opportunity-costs-differ" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Part I: Why Do Opportunity Costs Differ?</h1>
 
-</header>
-
-
-<section id="part-i-why-do-opportunity-costs-differ" class="level1" data-background-color="#1a3a5c">
-<h1 data-background-color="#1a3a5c">Part I: Why Do Opportunity Costs Differ?</h1>
-<section id="recap-the-missing-piece-in-ricardo" class="level2">
-<h2 class="anchored" data-anchor-id="recap-the-missing-piece-in-ricardo">Recap: The Missing Piece in Ricardo</h2>
+</section>
+<section id="recap-the-missing-piece-in-ricardo" class="slide level2">
+<h2>Recap: The Missing Piece in Ricardo</h2>
 <p><strong>Last lecture:</strong> Comparative advantage — trade is driven by <em>relative</em> opportunity costs.</p>
 <p><strong>What Ricardo established:</strong> India has lower opportunity cost in Rice → exports Rice; World has lower opportunity cost in Wheat → exports Wheat; both gain from specialisation and trade.</p>
 <p><strong>What Ricardo left unanswered:</strong></p>
-<blockquote class="blockquote">
+<blockquote>
 <p><em>Why</em> do opportunity costs differ across countries in the first place?</p>
 </blockquote>
 <div class="methodbox">
 <p><strong>The Heckscher-Ohlin answer:</strong> Opportunity costs differ because countries differ in their <strong>endowments</strong> of factors of production (labour <span class="math inline">\(L\)</span>, capital <span class="math inline">\(K\)</span>, land <span class="math inline">\(T\)</span>). And goods differ in <strong>factor intensity</strong> — how much of each factor they require.</p>
 </div>
 </section>
-<section id="the-heckscher-ohlin-framework" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="the-heckscher-ohlin-framework">The Heckscher-Ohlin Framework</h2>
+<section id="the-heckscher-ohlin-framework" class="slide level2 smaller">
+<h2>The Heckscher-Ohlin Framework</h2>
 <p>The H-O model is the workhorse of international trade theory. It explains <em>why</em> comparative advantages arise from factor abundance.</p>
 <p><strong>Setup:</strong> Two countries (India <span class="math inline">\(I\)</span>, USA <span class="math inline">\(U\)</span>), two goods (Rice <span class="math inline">\(R\)</span>, Machines <span class="math inline">\(M\)</span>), two factors (Labour <span class="math inline">\(L\)</span>, Capital <span class="math inline">\(K\)</span>); identical technologies across countries.</p>
 <p><strong>Factor intensity:</strong> Rice is <strong>labour-intensive</strong> relative to Machines if: <span class="math display">\[\left(\frac{K}{L}\right)_R &lt; \left(\frac{K}{L}\right)_M\]</span></p>
 <p><strong>Factor abundance (physical definition):</strong> India is <strong>labour-abundant</strong> if: <span class="math display">\[\left(\frac{K}{L}\right)^I &lt; \left(\frac{K}{L}\right)^U\]</span></p>
 <p><strong>Factor abundance (price definition):</strong> <span class="math display">\[\left(\frac{w}{r}\right)^I &lt; \left(\frac{w}{r}\right)^U \qquad \text{(labour is relatively cheaper in India)}\]</span></p>
+</section></section>
+<section>
+<section id="part-ii-the-heckscher-ohlin-theorem" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Part II: The Heckscher-Ohlin Theorem</h1>
+
 </section>
-</section>
-<section id="part-ii-the-heckscher-ohlin-theorem" class="level1" data-background-color="#1a3a5c">
-<h1 data-background-color="#1a3a5c">Part II: The Heckscher-Ohlin Theorem</h1>
-<section id="h-o-theorem-formal-statement" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="h-o-theorem-formal-statement">H-O Theorem: Formal Statement</h2>
+<section id="h-o-theorem-formal-statement" class="slide level2 smaller">
+<h2>H-O Theorem: Formal Statement</h2>
 <p><strong>Theorem (Heckscher 1919; Ohlin 1933):</strong></p>
-<blockquote class="blockquote">
+<blockquote>
 <p>A country exports the good that uses its <em>abundant</em> factor intensively.</p>
 </blockquote>
 <p><strong>Applied to India and USA:</strong></p>
@@ -255,8 +258,8 @@ window.Quarto = {
 <p><span class="math display">\[\left(\frac{P_R}{P_M}\right)^I_{\text{autarky}} &lt; \left(\frac{P_R}{P_M}\right)^U_{\text{autarky}}\]</span></p>
 <p>Opening to trade raises <span class="math inline">\(P_R/P_M\)</span> in India — India’s Rice sector expands, Machines sector contracts.</p>
 </section>
-<section id="the-edgeworth-box-factor-allocation" class="level2">
-<h2 class="anchored" data-anchor-id="the-edgeworth-box-factor-allocation">The Edgeworth Box: Factor Allocation</h2>
+<section id="the-edgeworth-box-factor-allocation" class="slide level2">
+<h2>The Edgeworth Box: Factor Allocation</h2>
 <div class="columns">
 <div class="column" style="width:38%;">
 <p>The <strong>Edgeworth box</strong> shows all efficient ways to allocate <span class="math inline">\(\bar{L}\)</span> and <span class="math inline">\(\bar{K}\)</span> between two sectors.</p>
@@ -269,50 +272,53 @@ window.Quarto = {
 </ul>
 </div><div class="column" style="width:62%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>t   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cc_L <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> t<span class="sc">^</span><span class="fl">0.65</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>cc_K <span class="ot">&lt;-</span>  <span class="dv">60</span> <span class="sc">*</span> t<span class="sc">^</span><span class="fl">1.40</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Rice isoquant through E (approx Cobb-Douglas: L^0.7 * K^0.3 = const)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># E at (L=30, K=12): U_R = 30^0.7 * 12^0.3 = 19.8</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>iso_L_R <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">5</span>, <span class="dv">55</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>iso_K_R <span class="ot">&lt;-</span> (<span class="fl">19.8</span> <span class="sc">/</span> iso_L_R<span class="sc">^</span><span class="fl">0.7</span>)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="fl">0.3</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Machine isoquant through E in rotated coords (L_M=70, K_M=48)</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># E at L_M=70, K_M=48: L_M^0.3 * K_M^0.7 = 70^0.3*48^0.7 = 58.0</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>iso_L_M_rot <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">95</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>iso_K_M_rot <span class="ot">&lt;-</span> (<span class="fl">58.0</span> <span class="sc">/</span> iso_L_M_rot<span class="sc">^</span><span class="fl">0.3</span>)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="fl">0.7</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>iso_L_M <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">-</span> iso_L_M_rot</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>iso_K_M <span class="ot">&lt;-</span>  <span class="dv">60</span> <span class="sc">-</span> iso_K_M_rot</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin=</span><span class="dv">0</span>, <span class="at">xmax=</span><span class="dv">100</span>, <span class="at">ymin=</span><span class="dv">0</span>, <span class="at">ymax=</span><span class="dv">60</span>,</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill=</span><span class="cn">NA</span>, <span class="at">color=</span><span class="st">"black"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>cc_L, <span class="at">K=</span>cc_K),</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>K), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>iso_L_R, <span class="at">K=</span>iso_K_R),</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>K), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>iso_L_M, <span class="at">K=</span>iso_K_M),</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>K), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="dv">12</span>), <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="dv">13</span>, <span class="at">label=</span><span class="st">"E (efficient alloc.)"</span>,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">3</span>,  <span class="at">y=</span><span class="dv">3</span>,  <span class="at">label=</span><span class="st">"O[R]"</span>, <span class="at">parse=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">95</span>, <span class="at">y=</span><span class="dv">56</span>, <span class="at">label=</span><span class="st">"O[M]"</span>, <span class="at">parse=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">50</span>, <span class="at">y=</span><span class="sc">-</span><span class="dv">6</span>, <span class="at">label=</span><span class="st">"Labour allocated to Rice"</span>,</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Contract curve: all Pareto-efficient factor allocations"</span>,</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"At E: "</span>, MPL[R]<span class="sc">/</span>MPK[R], <span class="st">" = "</span>, MPL[M]<span class="sc">/</span>MPK[M])),</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Labour (L)"</span>, <span class="at">y=</span><span class="st">"Capital (K)"</span>) <span class="sc">+</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">105</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">8</span>,<span class="dv">65</span>)) <span class="sc">+</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Show R code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>t   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb1-4"><a></a>cc_L <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> t<span class="sc">^</span><span class="fl">0.65</span></span>
+<span id="cb1-5"><a></a>cc_K <span class="ot">&lt;-</span>  <span class="dv">60</span> <span class="sc">*</span> t<span class="sc">^</span><span class="fl">1.40</span></span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="co"># Rice isoquant through E (approx Cobb-Douglas: L^0.7 * K^0.3 = const)</span></span>
+<span id="cb1-8"><a></a><span class="co"># E at (L=30, K=12): U_R = 30^0.7 * 12^0.3 = 19.8</span></span>
+<span id="cb1-9"><a></a>iso_L_R <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">5</span>, <span class="dv">55</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb1-10"><a></a>iso_K_R <span class="ot">&lt;-</span> (<span class="fl">19.8</span> <span class="sc">/</span> iso_L_R<span class="sc">^</span><span class="fl">0.7</span>)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="fl">0.3</span>)</span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a><span class="co"># Machine isoquant through E in rotated coords (L_M=70, K_M=48)</span></span>
+<span id="cb1-13"><a></a><span class="co"># E at L_M=70, K_M=48: L_M^0.3 * K_M^0.7 = 70^0.3*48^0.7 = 58.0</span></span>
+<span id="cb1-14"><a></a>iso_L_M_rot <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">95</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb1-15"><a></a>iso_K_M_rot <span class="ot">&lt;-</span> (<span class="fl">58.0</span> <span class="sc">/</span> iso_L_M_rot<span class="sc">^</span><span class="fl">0.3</span>)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="fl">0.7</span>)</span>
+<span id="cb1-16"><a></a>iso_L_M <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">-</span> iso_L_M_rot</span>
+<span id="cb1-17"><a></a>iso_K_M <span class="ot">&lt;-</span>  <span class="dv">60</span> <span class="sc">-</span> iso_K_M_rot</span>
+<span id="cb1-18"><a></a></span>
+<span id="cb1-19"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-20"><a></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin=</span><span class="dv">0</span>, <span class="at">xmax=</span><span class="dv">100</span>, <span class="at">ymin=</span><span class="dv">0</span>, <span class="at">ymax=</span><span class="dv">60</span>,</span>
+<span id="cb1-21"><a></a>           <span class="at">fill=</span><span class="cn">NA</span>, <span class="at">color=</span><span class="st">"black"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-22"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>cc_L, <span class="at">K=</span>cc_K),</span>
+<span id="cb1-23"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>K), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-24"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>iso_L_R, <span class="at">K=</span>iso_K_R),</span>
+<span id="cb1-25"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>K), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-26"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>iso_L_M, <span class="at">K=</span>iso_K_M),</span>
+<span id="cb1-27"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>K), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-28"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="dv">12</span>), <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-29"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="dv">13</span>, <span class="at">label=</span><span class="st">"E (efficient alloc.)"</span>,</span>
+<span id="cb1-30"><a></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">3</span>,  <span class="at">y=</span><span class="dv">3</span>,  <span class="at">label=</span><span class="st">"O[R]"</span>, <span class="at">parse=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-32"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">95</span>, <span class="at">y=</span><span class="dv">56</span>, <span class="at">label=</span><span class="st">"O[M]"</span>, <span class="at">parse=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-33"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">50</span>, <span class="at">y=</span><span class="sc">-</span><span class="dv">6</span>, <span class="at">label=</span><span class="st">"Labour allocated to Rice"</span>,</span>
+<span id="cb1-34"><a></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-35"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Contract curve: all Pareto-efficient factor allocations"</span>,</span>
+<span id="cb1-36"><a></a>       <span class="at">subtitle=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"At E: "</span>, MPL[R]<span class="sc">/</span>MPK[R], <span class="st">" = "</span>, MPL[M]<span class="sc">/</span>MPK[M])),</span>
+<span id="cb1-37"><a></a>       <span class="at">x=</span><span class="st">"Labour (L)"</span>, <span class="at">y=</span><span class="st">"Capital (K)"</span>) <span class="sc">+</span></span>
+<span id="cb1-38"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">105</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">8</span>,<span class="dv">65</span>)) <span class="sc">+</span></span>
+<span id="cb1-39"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
-<div id="fig-edgeworth" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-edgeworth" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-edgeworth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Lecture05_Modern_Theory_files/figure-html/fig-edgeworth-1.png" class="img-fluid figure-img" width="672">
+<img data-src="Lecture05_Modern_Theory_files/figure-revealjs/fig-edgeworth-1.png" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-edgeworth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: Author’s illustration.
@@ -321,11 +327,10 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
-<section id="from-edgeworth-box-to-ppf" class="level2">
-<h2 class="anchored" data-anchor-id="from-edgeworth-box-to-ppf">From Edgeworth Box to PPF</h2>
+<section id="from-edgeworth-box-to-ppf" class="slide level2">
+<h2>From Edgeworth Box to PPF</h2>
 <p>The <strong>Production Possibility Frontier</strong> is derived from the contract curve:</p>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -342,43 +347,47 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 </div><div class="column" style="width:45%;">
 <p><strong>Illustrative PPFs:</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>M_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>R_HO  <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>)  <span class="co"># concave (H-O)</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>R_Ric <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span>M_seq                    <span class="co"># linear (Ricardo)</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>R_Ric <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, R_Ric)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>df_ppf2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">M =</span> <span class="fu">c</span>(M_seq, M_seq),</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">R =</span> <span class="fu">c</span>(R_HO, R_Ric),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"H-O (concave)"</span>, <span class="st">"Ricardo (linear)"</span>), <span class="at">each=</span><span class="dv">101</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_ppf2, <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>R, <span class="at">color=</span>model, <span class="at">linetype=</span>model)) <span class="sc">+</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="fl">1.3</span>) <span class="sc">+</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"H-O (concave)"</span><span class="ot">=</span><span class="st">"#012169"</span>,</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Ricardo (linear)"</span><span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"PPF Shape: H-O vs Ricardo"</span>,</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Machines"</span>, <span class="at">y=</span><span class="st">"Rice"</span>, <span class="at">color=</span><span class="cn">NULL</span>, <span class="at">linetype=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Show R code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a>M_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb2-4"><a></a>R_HO  <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>)  <span class="co"># concave (H-O)</span></span>
+<span id="cb2-5"><a></a>R_Ric <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span>M_seq                    <span class="co"># linear (Ricardo)</span></span>
+<span id="cb2-6"><a></a>R_Ric <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, R_Ric)</span>
+<span id="cb2-7"><a></a></span>
+<span id="cb2-8"><a></a>df_ppf2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-9"><a></a>  <span class="at">M =</span> <span class="fu">c</span>(M_seq, M_seq),</span>
+<span id="cb2-10"><a></a>  <span class="at">R =</span> <span class="fu">c</span>(R_HO, R_Ric),</span>
+<span id="cb2-11"><a></a>  <span class="at">model =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"H-O (concave)"</span>, <span class="st">"Ricardo (linear)"</span>), <span class="at">each=</span><span class="dv">101</span>)</span>
+<span id="cb2-12"><a></a>)</span>
+<span id="cb2-13"><a></a></span>
+<span id="cb2-14"><a></a><span class="fu">ggplot</span>(df_ppf2, <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>R, <span class="at">color=</span>model, <span class="at">linetype=</span>model)) <span class="sc">+</span></span>
+<span id="cb2-15"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb2-16"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"H-O (concave)"</span><span class="ot">=</span><span class="st">"#012169"</span>,</span>
+<span id="cb2-17"><a></a>                               <span class="st">"Ricardo (linear)"</span><span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb2-18"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"PPF Shape: H-O vs Ricardo"</span>,</span>
+<span id="cb2-19"><a></a>       <span class="at">x=</span><span class="st">"Machines"</span>, <span class="at">y=</span><span class="st">"Rice"</span>, <span class="at">color=</span><span class="cn">NULL</span>, <span class="at">linetype=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb2-20"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb2-21"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="Lecture05_Modern_Theory_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="480"></p>
+<figure>
+<p><img data-src="Lecture05_Modern_Theory_files/figure-revealjs/unnamed-chunk-1-1.png" width="480"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
+</section></section>
+<section>
+<section id="part-iii-three-key-theorems" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Part III: Three Key Theorems</h1>
+
 </section>
-</section>
-<section id="part-iii-three-key-theorems" class="level1" data-background-color="#1a3a5c">
-<h1 data-background-color="#1a3a5c">Part III: Three Key Theorems</h1>
-<section id="theorem-1-factor-price-equalisation-fpe" class="level2">
-<h2 class="anchored" data-anchor-id="theorem-1-factor-price-equalisation-fpe">Theorem 1: Factor Price Equalisation (FPE)</h2>
+<section id="theorem-1-factor-price-equalisation-fpe" class="slide level2">
+<h2>Theorem 1: Factor Price Equalisation (FPE)</h2>
 <p><strong>Theorem (Samuelson 1948):</strong></p>
 <p>Under H-O assumptions, free trade in goods <strong>completely equalises factor prices</strong> across countries — even without factor mobility:</p>
 <p><span class="math display">\[w^I = w^U \qquad \text{(wages equalise)}\]</span> <span class="math display">\[r^I = r^U \qquad \text{(returns to capital equalise)}\]</span></p>
@@ -390,24 +399,24 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 <li>As USA imports Rice, labour demand in USA Rice sector falls → US wages fall</li>
 <li>In equilibrium: <span class="math inline">\(w^I = w^U\)</span></li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>The FPE insight
+<p><strong>The FPE insight</strong></p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-content">
 <p>Free trade is a <strong>perfect substitute</strong> for factor mobility. This explains why labour migration and goods trade are strategic complements in policy debates.</p>
 </div>
 </div>
+</div>
 </section>
-<section id="fpe-assumptions-and-critique" class="level2">
-<h2 class="anchored" data-anchor-id="fpe-assumptions-and-critique">FPE: Assumptions and Critique</h2>
+<section id="fpe-assumptions-and-critique" class="slide level2">
+<h2>FPE: Assumptions and Critique</h2>
 <p><strong>FPE requires very strong assumptions:</strong></p>
-<table class="caption-top table">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Assumption</th>
@@ -437,7 +446,7 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 </tr>
 </tbody>
 </table>
-<div class="notes">
+<aside class="notes">
 <p><strong>Empirical reality:</strong> Wages in India <span class="math inline">\(\approx\)</span> $2/hour; USA <span class="math inline">\(\approx\)</span> $30/hour. FPE clearly does <em>not</em> hold in practice.</p>
 <p><strong>Why study FPE then?</strong></p>
 <ul>
@@ -445,10 +454,20 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 <li>Wage convergence between East Asia and OECD is partly consistent with FPE pressure</li>
 <li>The direction of change (not the level) is well-predicted</li>
 </ul>
-</div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="theorem-2-stolper-samuelson-theorem" class="level2">
-<h2 class="anchored" data-anchor-id="theorem-2-stolper-samuelson-theorem">Theorem 2: Stolper-Samuelson Theorem</h2>
+<section id="theorem-2-stolper-samuelson-theorem" class="slide level2">
+<h2>Theorem 2: Stolper-Samuelson Theorem</h2>
 <p><strong>Theorem (Stolper and Samuelson 1941):</strong></p>
 <p>A rise in the relative price of a good raises the real return to the factor used intensively in that good’s production, and lowers the real return to the other factor — <strong>more than proportionally</strong>:</p>
 <p><span class="math display">\[\hat{P}_R &gt; 0 \Rightarrow \hat{w} &gt; \hat{P}_R &gt; 0 &gt; \hat{r}\]</span></p>
@@ -460,8 +479,8 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 <p><span class="math display">\[P_R \uparrow \Rightarrow w \uparrow\uparrow, \quad r \downarrow \quad \text{(Indian workers gain; Indian capital owners lose)}\]</span></p>
 <p><span class="math display">\[P_M \uparrow \Rightarrow r \uparrow\uparrow, \quad w \downarrow \quad \text{(US capital owners gain; US workers lose → political economy of protectionism!)}\]</span></p>
 </section>
-<section id="stolper-samuelson-policy-relevance" class="level2">
-<h2 class="anchored" data-anchor-id="stolper-samuelson-policy-relevance">Stolper-Samuelson: Policy Relevance</h2>
+<section id="stolper-samuelson-policy-relevance" class="slide level2">
+<h2>Stolper-Samuelson: Policy Relevance</h2>
 <p><strong>Why does Stolper-Samuelson matter for policy?</strong></p>
 <p>It explains <em>who lobbies for and against trade liberalisation</em>:</p>
 <ul>
@@ -474,8 +493,8 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 <p><strong>The compensation principle:</strong> Even when aggregate welfare rises, there are <strong>distributional losers</strong>. A country could use the gains to compensate losers, but in practice: compensation schemes are costly, political constraints prevent redistribution, short-run adjustment costs fall unevenly. This is why <strong>trade adjustment assistance</strong> (TAA) programs exist.</p>
 </div>
 </section>
-<section id="theorem-3-rybczynski-theorem" class="level2">
-<h2 class="anchored" data-anchor-id="theorem-3-rybczynski-theorem">Theorem 3: Rybczynski Theorem</h2>
+<section id="theorem-3-rybczynski-theorem" class="slide level2">
+<h2>Theorem 3: Rybczynski Theorem</h2>
 <p><strong>Theorem (Rybczynski 1955):</strong></p>
 <p>At constant goods prices, an increase in the endowment of a factor causes:</p>
 <p><span class="math display">\[L \uparrow \Rightarrow Q_R \uparrow\uparrow \text{ and } Q_M \downarrow\]</span></p>
@@ -488,8 +507,8 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 <p><strong>Intuition:</strong> Expanding Rice output (to absorb new labour) requires withdrawing capital from Machines, even though capital endowment is unchanged. At constant prices, the only way to re-equate factor ratios is to pull capital into Rice and contract Machines.</p>
 <p><strong>India application:</strong> India’s rural-to-urban migration (labour inflow to manufacturing): <span class="math display">\[L_{\text{mfg}} \uparrow \Rightarrow Q_{\text{mfg}} \uparrow\uparrow, \quad Q_{\text{agri}} \downarrow\]</span> Structural transformation is partly a Rybczynski phenomenon.</p>
 </section>
-<section id="rybczynski-effect-ppf-diagram" class="level2">
-<h2 class="anchored" data-anchor-id="rybczynski-effect-ppf-diagram">Rybczynski Effect: PPF Diagram</h2>
+<section id="rybczynski-effect-ppf-diagram" class="slide level2">
+<h2>Rybczynski Effect: PPF Diagram</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p>An inflow of labour <strong>rotates</strong> the PPF outward, but asymmetrically:</p>
@@ -505,56 +524,59 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 <p>This is the <strong>Rybczynski line</strong> — locus of output combinations at constant prices as labour endowment varies.</p>
 </div><div class="column" style="width:60%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>M_seq       <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">110</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>rice_before <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">200</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>rice_after  <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">260</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">88</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df_ryb <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">M    =</span> <span class="fu">c</span>(M_seq, M_seq),</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Rice =</span> <span class="fu">c</span>(rice_before, rice_after),</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">period =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Before labour inflow (L=100)"</span>,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"After labour inflow (L=130)"</span>), <span class="at">each=</span><span class="fu">length</span>(M_seq))</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_ryb, <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>Rice, <span class="at">color=</span>period, <span class="at">linetype=</span>period)) <span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Price line (slope = constant P_R/P_M)</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="sc">-</span><span class="fl">1.8</span>, <span class="at">intercept=</span><span class="dv">162</span>, <span class="at">color=</span><span class="st">"grey60"</span>,</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Point A (before)</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">45</span>, <span class="at">y=</span><span class="dv">100</span>), <span class="at">inherit.aes=</span><span class="cn">FALSE</span>,</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">48</span>, <span class="at">y=</span><span class="dv">100</span>, <span class="at">label=</span><span class="st">"A (before)"</span>,</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Point B (after) — same price line, more Rice, less M</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="dv">136</span>), <span class="at">inherit.aes=</span><span class="cn">FALSE</span>,</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="dv">136</span>, <span class="at">label=</span><span class="st">"B (after)</span><span class="sc">\n</span><span class="st">Rice↑, Mach↓"</span>,</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">45</span>, <span class="at">y=</span><span class="dv">100</span>, <span class="at">xend=</span><span class="dv">30</span>, <span class="at">yend=</span><span class="dv">136</span>,</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>)),</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">22</span>, <span class="at">y=</span><span class="dv">115</span>,</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"Rybczynski</span><span class="sc">\n</span><span class="st">effect"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>,</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">fontface=</span><span class="st">"bold"</span>) <span class="sc">+</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Before labour inflow (L=100)"</span><span class="ot">=</span><span class="st">"#012169"</span>,</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"After labour inflow (L=130)"</span> <span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Before labour inflow (L=100)"</span><span class="ot">=</span><span class="st">"solid"</span>,</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">"After labour inflow (L=130)"</span> <span class="ot">=</span><span class="st">"dashed"</span>)) <span class="sc">+</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Labour inflow expands Rice output and contracts Machines"</span>,</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"At constant goods prices — pure Rybczynski movement"</span>,</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Machines"</span>, <span class="at">y=</span><span class="st">"Rice"</span>, <span class="at">color=</span><span class="cn">NULL</span>, <span class="at">linetype=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Show R code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a>M_seq       <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">110</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb3-4"><a></a>rice_before <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">200</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb3-5"><a></a>rice_after  <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">260</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">88</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb3-6"><a></a></span>
+<span id="cb3-7"><a></a>df_ryb <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-8"><a></a>  <span class="at">M    =</span> <span class="fu">c</span>(M_seq, M_seq),</span>
+<span id="cb3-9"><a></a>  <span class="at">Rice =</span> <span class="fu">c</span>(rice_before, rice_after),</span>
+<span id="cb3-10"><a></a>  <span class="at">period =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Before labour inflow (L=100)"</span>,</span>
+<span id="cb3-11"><a></a>                 <span class="st">"After labour inflow (L=130)"</span>), <span class="at">each=</span><span class="fu">length</span>(M_seq))</span>
+<span id="cb3-12"><a></a>)</span>
+<span id="cb3-13"><a></a></span>
+<span id="cb3-14"><a></a><span class="fu">ggplot</span>(df_ryb, <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>Rice, <span class="at">color=</span>period, <span class="at">linetype=</span>period)) <span class="sc">+</span></span>
+<span id="cb3-15"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb3-16"><a></a>  <span class="co"># Price line (slope = constant P_R/P_M)</span></span>
+<span id="cb3-17"><a></a>  <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="sc">-</span><span class="fl">1.8</span>, <span class="at">intercept=</span><span class="dv">162</span>, <span class="at">color=</span><span class="st">"grey60"</span>,</span>
+<span id="cb3-18"><a></a>              <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb3-19"><a></a>  <span class="co"># Point A (before)</span></span>
+<span id="cb3-20"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">45</span>, <span class="at">y=</span><span class="dv">100</span>), <span class="at">inherit.aes=</span><span class="cn">FALSE</span>,</span>
+<span id="cb3-21"><a></a>             <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb3-22"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">48</span>, <span class="at">y=</span><span class="dv">100</span>, <span class="at">label=</span><span class="st">"A (before)"</span>,</span>
+<span id="cb3-23"><a></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb3-24"><a></a>  <span class="co"># Point B (after) — same price line, more Rice, less M</span></span>
+<span id="cb3-25"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="dv">136</span>), <span class="at">inherit.aes=</span><span class="cn">FALSE</span>,</span>
+<span id="cb3-26"><a></a>             <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb3-27"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="dv">136</span>, <span class="at">label=</span><span class="st">"B (after)</span><span class="sc">\n</span><span class="st">Rice↑, Mach↓"</span>,</span>
+<span id="cb3-28"><a></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb3-29"><a></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">45</span>, <span class="at">y=</span><span class="dv">100</span>, <span class="at">xend=</span><span class="dv">30</span>, <span class="at">yend=</span><span class="dv">136</span>,</span>
+<span id="cb3-30"><a></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>)),</span>
+<span id="cb3-31"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-32"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">22</span>, <span class="at">y=</span><span class="dv">115</span>,</span>
+<span id="cb3-33"><a></a>           <span class="at">label=</span><span class="st">"Rybczynski</span><span class="sc">\n</span><span class="st">effect"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>,</span>
+<span id="cb3-34"><a></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">fontface=</span><span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb3-35"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(</span>
+<span id="cb3-36"><a></a>    <span class="st">"Before labour inflow (L=100)"</span><span class="ot">=</span><span class="st">"#012169"</span>,</span>
+<span id="cb3-37"><a></a>    <span class="st">"After labour inflow (L=130)"</span> <span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb3-38"><a></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(</span>
+<span id="cb3-39"><a></a>    <span class="st">"Before labour inflow (L=100)"</span><span class="ot">=</span><span class="st">"solid"</span>,</span>
+<span id="cb3-40"><a></a>    <span class="st">"After labour inflow (L=130)"</span> <span class="ot">=</span><span class="st">"dashed"</span>)) <span class="sc">+</span></span>
+<span id="cb3-41"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Labour inflow expands Rice output and contracts Machines"</span>,</span>
+<span id="cb3-42"><a></a>       <span class="at">subtitle=</span><span class="st">"At constant goods prices — pure Rybczynski movement"</span>,</span>
+<span id="cb3-43"><a></a>       <span class="at">x=</span><span class="st">"Machines"</span>, <span class="at">y=</span><span class="st">"Rice"</span>, <span class="at">color=</span><span class="cn">NULL</span>, <span class="at">linetype=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb3-44"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb3-45"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
-<div id="fig-rybczynski" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-rybczynski" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-rybczynski-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Lecture05_Modern_Theory_files/figure-html/fig-rybczynski-1.png" class="img-fluid figure-img" width="672">
+<img data-src="Lecture05_Modern_Theory_files/figure-revealjs/fig-rybczynski-1.png" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rybczynski-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Rybczynski Effect: Labour Inflow Shifts PPF Source: Author’s illustration.
@@ -563,14 +585,15 @@ Figure&nbsp;2: Rybczynski Effect: Labour Inflow Shifts PPF Source: Author’s il
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
+</section></section>
+<section>
+<section id="part-iv-the-leontief-paradox-and-extensions" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Part IV: The Leontief Paradox and Extensions</h1>
+
 </section>
-</section>
-<section id="part-iv-the-leontief-paradox-and-extensions" class="level1" data-background-color="#1a3a5c">
-<h1 data-background-color="#1a3a5c">Part IV: The Leontief Paradox and Extensions</h1>
-<section id="the-leontief-paradox-1953" class="level2">
-<h2 class="anchored" data-anchor-id="the-leontief-paradox-1953">The Leontief Paradox (1953)</h2>
+<section id="the-leontief-paradox-1953" class="slide level2">
+<h2>The Leontief Paradox (1953)</h2>
 <p><strong>The test:</strong> Wassily Leontief (1953) used US input-output tables to measure the capital and labour content of US exports and imports.</p>
 <p><strong>The prediction (H-O):</strong> The USA, being capital-abundant, should export capital-intensive goods and import labour-intensive goods.</p>
 <p><strong>The finding:</strong> US exports were <em>more labour-intensive</em> than US imports — <strong>the opposite of H-O!</strong></p>
@@ -578,47 +601,41 @@ Figure&nbsp;2: Rybczynski Effect: Labour Inflow Shifts PPF Source: Author’s il
 <p><span class="math display">\[\left(\frac{K}{L}\right)_{\text{US exports}} &lt; \left(\frac{K}{L}\right)_{\text{US imports}}\]</span></p>
 <p>This contradicts the basic H-O prediction for a capital-abundant country.</p>
 </section>
-<section id="factor-intensity-of-indias-trade" class="level2">
-<h2 class="anchored" data-anchor-id="factor-intensity-of-indias-trade">Factor Intensity of India’s Trade</h2>
+<section id="factor-intensity-of-indias-trade" class="slide level2">
+<h2>Factor Intensity of India’s Trade</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df_leo <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">category =</span> <span class="fu">c</span>(<span class="st">"Agricultural</span><span class="sc">\n</span><span class="st">Exports"</span>, <span class="st">"Textile</span><span class="sc">\n</span><span class="st">Exports"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Pharma</span><span class="sc">\n</span><span class="st">Exports"</span>, <span class="st">"Capital Goods</span><span class="sc">\n</span><span class="st">Imports"</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Electronics</span><span class="sc">\n</span><span class="st">Imports"</span>, <span class="st">"Crude Oil</span><span class="sc">\n</span><span class="st">Imports"</span>),</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">KL_ratio =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">1.2</span>, <span class="fl">2.1</span>, <span class="fl">7.1</span>, <span class="fl">6.3</span>, <span class="fl">8.5</span>),</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Exports"</span>,<span class="st">"Exports"</span>,<span class="st">"Exports"</span>,<span class="st">"Imports"</span>,<span class="st">"Imports"</span>,<span class="st">"Imports"</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>df_leo<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">factor</span>(df_leo<span class="sc">$</span>category,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels=</span>df_leo<span class="sc">$</span>category[<span class="fu">order</span>(df_leo<span class="sc">$</span>KL_ratio)])</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_leo, <span class="fu">aes</span>(<span class="at">x=</span>category, <span class="at">y=</span>KL_ratio, <span class="at">fill=</span>type)) <span class="sc">+</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width=</span><span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"Exports"</span><span class="ot">=</span><span class="st">"#012169"</span>, <span class="st">"Imports"</span><span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"India: Capital-Labour Ratios in Export vs Import Industries"</span>,</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"India exports labour-intensive goods — consistent with H-O"</span>,</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="st">"Capital-Labour Ratio (relative units)"</span>, <span class="at">fill=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-leontief" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-leontief-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Lecture05_Modern_Theory_files/figure-html/fig-leontief-1.png" class="img-fluid figure-img" width="768">
+<details class="code-fold">
+<summary>Show R code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a>df_leo <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-4"><a></a>  <span class="at">category =</span> <span class="fu">c</span>(<span class="st">"Agricultural</span><span class="sc">\n</span><span class="st">Exports"</span>, <span class="st">"Textile</span><span class="sc">\n</span><span class="st">Exports"</span>,</span>
+<span id="cb4-5"><a></a>                <span class="st">"Pharma</span><span class="sc">\n</span><span class="st">Exports"</span>, <span class="st">"Capital Goods</span><span class="sc">\n</span><span class="st">Imports"</span>,</span>
+<span id="cb4-6"><a></a>                <span class="st">"Electronics</span><span class="sc">\n</span><span class="st">Imports"</span>, <span class="st">"Crude Oil</span><span class="sc">\n</span><span class="st">Imports"</span>),</span>
+<span id="cb4-7"><a></a>  <span class="at">KL_ratio =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">1.2</span>, <span class="fl">2.1</span>, <span class="fl">7.1</span>, <span class="fl">6.3</span>, <span class="fl">8.5</span>),</span>
+<span id="cb4-8"><a></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Exports"</span>,<span class="st">"Exports"</span>,<span class="st">"Exports"</span>,<span class="st">"Imports"</span>,<span class="st">"Imports"</span>,<span class="st">"Imports"</span>)</span>
+<span id="cb4-9"><a></a>)</span>
+<span id="cb4-10"><a></a>df_leo<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">factor</span>(df_leo<span class="sc">$</span>category,</span>
+<span id="cb4-11"><a></a>                           <span class="at">levels=</span>df_leo<span class="sc">$</span>category[<span class="fu">order</span>(df_leo<span class="sc">$</span>KL_ratio)])</span>
+<span id="cb4-12"><a></a></span>
+<span id="cb4-13"><a></a><span class="fu">ggplot</span>(df_leo, <span class="fu">aes</span>(<span class="at">x=</span>category, <span class="at">y=</span>KL_ratio, <span class="at">fill=</span>type)) <span class="sc">+</span></span>
+<span id="cb4-14"><a></a>  <span class="fu">geom_col</span>(<span class="at">width=</span><span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"Exports"</span><span class="ot">=</span><span class="st">"#012169"</span>, <span class="st">"Imports"</span><span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb4-16"><a></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb4-17"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"India: Capital-Labour Ratios in Export vs Import Industries"</span>,</span>
+<span id="cb4-18"><a></a>       <span class="at">subtitle=</span><span class="st">"India exports labour-intensive goods — consistent with H-O"</span>,</span>
+<span id="cb4-19"><a></a>       <span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="st">"Capital-Labour Ratio (relative units)"</span>, <span class="at">fill=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-20"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb4-21"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-leontief-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Lecture05_Modern_Theory_files/figure-revealjs/fig-leontief-1.png" width="768" class="r-stretch quarto-figure-center" id="fig-leontief"><p class="caption">
 Figure&nbsp;3: Factor Intensity of India’s Exports vs Imports (illustrative) Source: Author’s illustration based on DGCI&amp;S / World Bank data.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>India does NOT exhibit a Leontief paradox</strong> — it exports labour-intensive goods, consistent with H-O.</p>
+</p><p><strong>India does NOT exhibit a Leontief paradox</strong> — it exports labour-intensive goods, consistent with H-O.</p>
 </section>
-<section id="explanations-for-the-leontief-paradox" class="level2">
-<h2 class="anchored" data-anchor-id="explanations-for-the-leontief-paradox">Explanations for the Leontief Paradox</h2>
+<section id="explanations-for-the-leontief-paradox" class="slide level2 scrollable">
+<h2>Explanations for the Leontief Paradox</h2>
 <p>Several resolutions have been proposed:</p>
 <ol type="1">
 <li><strong>Human capital:</strong> US labour is highly skilled — skill-adjusted, US workers embody large amounts of human capital (<span class="math inline">\(\text{Effective } K/L = (K + K_H)/L\)</span>)</li>
@@ -627,15 +644,27 @@ Figure&nbsp;3: Factor Intensity of India’s Exports vs Imports (illustrative) S
 <li><strong>Demand bias:</strong> US consumers have stronger preference for capital-intensive goods; demand effects can offset supply-side comparative advantage</li>
 <li><strong>Trade barriers:</strong> US tariff structure historically protected labour-intensive industries (agriculture, textiles), distorting trade flows</li>
 </ol>
-<div class="notes">
+<aside class="notes">
 <p><strong>Modern verdict (Trefler 1995):</strong> Allowing for <strong>technology differences</strong> and <strong>factor productivity</strong> differences across countries reconciles most H-O predictions with data.</p>
-</div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="part-v-the-lewis-dual-sector-model-and-agricultural-trade" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Part V: The Lewis Dual-Sector Model and Agricultural Trade</h1>
+
 </section>
-</section>
-<section id="part-v-the-lewis-dual-sector-model-and-agricultural-trade" class="level1" data-background-color="#1a3a5c">
-<h1 data-background-color="#1a3a5c">Part V: The Lewis Dual-Sector Model and Agricultural Trade</h1>
-<section id="lewis-1954-structural-transformation" class="level2">
-<h2 class="anchored" data-anchor-id="lewis-1954-structural-transformation">Lewis (1954): Structural Transformation</h2>
+<section id="lewis-1954-structural-transformation" class="slide level2">
+<h2>Lewis (1954): Structural Transformation</h2>
 <p>While H-O focuses on <em>between-country</em> differences, the <strong>Lewis model</strong> explains how factor endowments evolve <em>within</em> a developing country:</p>
 <p><strong>Two sectors:</strong> Traditional sector (agriculture) with large labour surplus (<span class="math inline">\(MPL_A \approx 0\)</span>); Modern sector (industry/services) with higher wages.</p>
 <p><strong>Lewis’s key assumption:</strong> <span class="math inline">\(MPL_A &lt; \bar{w}_{\text{subsistence}}\)</span> — a pool of “surplus labour” in agriculture can be absorbed by industry <strong>without raising agricultural wages</strong>.</p>
@@ -649,80 +678,74 @@ Figure&nbsp;3: Factor Intensity of India’s Exports vs Imports (illustrative) S
 <p><strong>East Asia’s trajectory:</strong> Japan (1950s–70s) → South Korea (1970s–90s) → China (2000s–) each followed this path: strong agricultural/labour-intensive exports early, shifting to capital-intensive manufactures.</p>
 </div>
 </section>
-<section id="lewis-model-diagrammatic-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="lewis-model-diagrammatic-analysis">Lewis Model: Diagrammatic Analysis</h2>
+<section id="lewis-model-diagrammatic-analysis" class="slide level2">
+<h2>Lewis Model: Diagrammatic Analysis</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Agriculture: flat MPL (surplus labour) then rising</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>L_agri <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>MPL_agri <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(L_agri <span class="sc">&lt;=</span> <span class="dv">60</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">0.08</span><span class="sc">*</span>(L_agri <span class="sc">-</span> <span class="dv">60</span>))</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>subsistence <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fl">1.5</span>, <span class="dv">101</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>p_agri <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">L=</span>L_agri, <span class="at">MPL=</span>MPL_agri, <span class="at">sub=</span>subsistence)) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>sub), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">60</span>, <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">color=</span><span class="st">"grey50"</span>) <span class="sc">+</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">62</span>, <span class="at">y=</span><span class="fl">1.0</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"Turning</span><span class="sc">\n</span><span class="st">point"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"grey40"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">10</span>, <span class="at">y=</span><span class="fl">1.65</span>,</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"Subsistence wage"</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin=</span><span class="dv">0</span>, <span class="at">xmax=</span><span class="dv">60</span>, <span class="at">ymin=</span><span class="dv">0</span>, <span class="at">ymax=</span><span class="fl">0.5</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha=</span><span class="fl">0.15</span>, <span class="at">fill=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="fl">0.25</span>,</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"Surplus</span><span class="sc">\n</span><span class="st">labour"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">hjust=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Agriculture"</span>,</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Labour in Agriculture"</span>, <span class="at">y=</span><span class="st">"Marginal Product of Labour"</span>) <span class="sc">+</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">2.5</span>)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Industry: upward-sloping demand for labour</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>L_ind <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">80</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>MPL_ind0 <span class="ot">&lt;-</span> <span class="fl">4.0</span> <span class="sc">-</span> <span class="fl">0.03</span><span class="sc">*</span>L_ind   <span class="co"># initial</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>MPL_ind1 <span class="ot">&lt;-</span> <span class="fl">5.5</span> <span class="sc">-</span> <span class="fl">0.03</span><span class="sc">*</span>L_ind   <span class="co"># after capital accumulation</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>p_ind <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>L_ind, <span class="at">MPL=</span>MPL_ind0),</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>L_ind, <span class="at">MPL=</span>MPL_ind1),</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">1.5</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">83</span>, <span class="at">y=</span><span class="fl">2.0</span>, <span class="at">xend=</span><span class="dv">83</span>, <span class="at">yend=</span><span class="fl">3.5</span>,</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.2</span>,<span class="st">"cm"</span>)),</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">84</span>, <span class="at">y=</span><span class="fl">2.75</span>, <span class="at">label=</span><span class="st">"Capital</span><span class="sc">\n</span><span class="st">accum."</span>, <span class="at">size=</span><span class="dv">3</span>,</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>(<span class="fl">4.0-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span>, <span class="at">y=</span><span class="fl">1.5</span>), <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>(<span class="fl">5.5-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span>, <span class="at">y=</span><span class="fl">1.5</span>), <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(<span class="fl">4.0-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="at">y=</span><span class="fl">1.3</span>,</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"L1"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(<span class="fl">5.5-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="at">y=</span><span class="fl">1.3</span>,</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>           <span class="at">label=</span><span class="st">"L2"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Industry"</span>,</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Labour in Industry"</span>, <span class="at">y=</span><span class="st">"Marginal Product of Labour"</span>) <span class="sc">+</span></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">5.5</span>)</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>p_agri <span class="sc">+</span> p_ind</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-lewis" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-lewis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Lecture05_Modern_Theory_files/figure-html/fig-lewis-1.png" class="img-fluid figure-img" width="864">
+<details class="code-fold">
+<summary>Show R code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a><span class="co"># Agriculture: flat MPL (surplus labour) then rising</span></span>
+<span id="cb5-5"><a></a>L_agri <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb5-6"><a></a>MPL_agri <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(L_agri <span class="sc">&lt;=</span> <span class="dv">60</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">0.08</span><span class="sc">*</span>(L_agri <span class="sc">-</span> <span class="dv">60</span>))</span>
+<span id="cb5-7"><a></a>subsistence <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fl">1.5</span>, <span class="dv">101</span>)</span>
+<span id="cb5-8"><a></a></span>
+<span id="cb5-9"><a></a>p_agri <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">L=</span>L_agri, <span class="at">MPL=</span>MPL_agri, <span class="at">sub=</span>subsistence)) <span class="sc">+</span></span>
+<span id="cb5-10"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>sub), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">60</span>, <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">color=</span><span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb5-13"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">62</span>, <span class="at">y=</span><span class="fl">1.0</span>,</span>
+<span id="cb5-14"><a></a>           <span class="at">label=</span><span class="st">"Turning</span><span class="sc">\n</span><span class="st">point"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"grey40"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb5-15"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">10</span>, <span class="at">y=</span><span class="fl">1.65</span>,</span>
+<span id="cb5-16"><a></a>           <span class="at">label=</span><span class="st">"Subsistence wage"</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-17"><a></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin=</span><span class="dv">0</span>, <span class="at">xmax=</span><span class="dv">60</span>, <span class="at">ymin=</span><span class="dv">0</span>, <span class="at">ymax=</span><span class="fl">0.5</span>,</span>
+<span id="cb5-18"><a></a>           <span class="at">alpha=</span><span class="fl">0.15</span>, <span class="at">fill=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb5-19"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="fl">0.25</span>,</span>
+<span id="cb5-20"><a></a>           <span class="at">label=</span><span class="st">"Surplus</span><span class="sc">\n</span><span class="st">labour"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">hjust=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-21"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Agriculture"</span>,</span>
+<span id="cb5-22"><a></a>       <span class="at">x=</span><span class="st">"Labour in Agriculture"</span>, <span class="at">y=</span><span class="st">"Marginal Product of Labour"</span>) <span class="sc">+</span></span>
+<span id="cb5-23"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb5-24"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">2.5</span>)</span>
+<span id="cb5-25"><a></a></span>
+<span id="cb5-26"><a></a><span class="co"># Industry: upward-sloping demand for labour</span></span>
+<span id="cb5-27"><a></a>L_ind <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">80</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb5-28"><a></a>MPL_ind0 <span class="ot">&lt;-</span> <span class="fl">4.0</span> <span class="sc">-</span> <span class="fl">0.03</span><span class="sc">*</span>L_ind   <span class="co"># initial</span></span>
+<span id="cb5-29"><a></a>MPL_ind1 <span class="ot">&lt;-</span> <span class="fl">5.5</span> <span class="sc">-</span> <span class="fl">0.03</span><span class="sc">*</span>L_ind   <span class="co"># after capital accumulation</span></span>
+<span id="cb5-30"><a></a></span>
+<span id="cb5-31"><a></a>p_ind <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb5-32"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>L_ind, <span class="at">MPL=</span>MPL_ind0),</span>
+<span id="cb5-33"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb5-34"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>L_ind, <span class="at">MPL=</span>MPL_ind1),</span>
+<span id="cb5-35"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb5-36"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">1.5</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-37"><a></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">83</span>, <span class="at">y=</span><span class="fl">2.0</span>, <span class="at">xend=</span><span class="dv">83</span>, <span class="at">yend=</span><span class="fl">3.5</span>,</span>
+<span id="cb5-38"><a></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.2</span>,<span class="st">"cm"</span>)),</span>
+<span id="cb5-39"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb5-40"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">84</span>, <span class="at">y=</span><span class="fl">2.75</span>, <span class="at">label=</span><span class="st">"Capital</span><span class="sc">\n</span><span class="st">accum."</span>, <span class="at">size=</span><span class="dv">3</span>,</span>
+<span id="cb5-41"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb5-42"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>(<span class="fl">4.0-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span>, <span class="at">y=</span><span class="fl">1.5</span>), <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb5-43"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>(<span class="fl">5.5-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span>, <span class="at">y=</span><span class="fl">1.5</span>), <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb5-44"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(<span class="fl">4.0-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="at">y=</span><span class="fl">1.3</span>,</span>
+<span id="cb5-45"><a></a>           <span class="at">label=</span><span class="st">"L1"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-46"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(<span class="fl">5.5-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="at">y=</span><span class="fl">1.3</span>,</span>
+<span id="cb5-47"><a></a>           <span class="at">label=</span><span class="st">"L2"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-48"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Industry"</span>,</span>
+<span id="cb5-49"><a></a>       <span class="at">x=</span><span class="st">"Labour in Industry"</span>, <span class="at">y=</span><span class="st">"Marginal Product of Labour"</span>) <span class="sc">+</span></span>
+<span id="cb5-50"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb5-51"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">5.5</span>)</span>
+<span id="cb5-52"><a></a></span>
+<span id="cb5-53"><a></a>p_agri <span class="sc">+</span> p_ind</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lewis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Lecture05_Modern_Theory_files/figure-revealjs/fig-lewis-1.png" width="864" class="r-stretch quarto-figure-center" id="fig-lewis"><p class="caption">
 Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformation Source: Author’s illustration after Lewis (1954).
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="h-o-lewis-and-indias-agricultural-exports" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="h-o-lewis-and-indias-agricultural-exports">H-O, Lewis, and India’s Agricultural Exports</h2>
+</p></section>
+<section id="h-o-lewis-and-indias-agricultural-exports" class="slide level2 smaller">
+<h2>H-O, Lewis, and India’s Agricultural Exports</h2>
 <p><strong>Connecting the models:</strong></p>
-<table class="caption-top table">
+<table class="caption-top">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -763,12 +786,14 @@ Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformatio
 <div class="keybox">
 <p>India should invest in agricultural productivity to maintain competitiveness even as wages rise — moving up the value chain rather than defending low-wage advantage.</p>
 </div>
+</section></section>
+<section>
+<section id="part-vi-summary-and-looking-ahead" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Part VI: Summary and Looking Ahead</h1>
+
 </section>
-</section>
-<section id="part-vi-summary-and-looking-ahead" class="level1" data-background-color="#1a3a5c">
-<h1 data-background-color="#1a3a5c">Part VI: Summary and Looking Ahead</h1>
-<section id="the-modern-theory-of-trade-summary" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="the-modern-theory-of-trade-summary">The Modern Theory of Trade: Summary</h2>
+<section id="the-modern-theory-of-trade-summary" class="slide level2 smaller scrollable">
+<h2>The Modern Theory of Trade: Summary</h2>
 <p><strong>Three pillars of the H-O framework:</strong></p>
 <ol type="1">
 <li><strong>H-O Theorem:</strong> countries export goods intensive in their abundant factor</li>
@@ -777,7 +802,7 @@ Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformatio
 <li><strong>Rybczynski:</strong> <span class="math inline">\(\hat{L} &gt; 0 \Rightarrow \hat{Q}_R &gt; \hat{L} &gt; 0 &gt; \hat{Q}_M\)</span> (factor accumulation biases production)</li>
 </ol>
 <p><strong>Empirical scorecard:</strong></p>
-<table class="caption-top table">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Prediction</th>
@@ -809,8 +834,8 @@ Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformatio
 </table>
 <p><strong>What H-O cannot explain:</strong> Intra-industry trade; trade between similar countries; scale economies → <strong>New Trade Theory</strong> (Lecture 6)</p>
 </section>
-<section id="looking-ahead-new-trade-theory" class="level2">
-<h2 class="anchored" data-anchor-id="looking-ahead-new-trade-theory">Looking Ahead: New Trade Theory</h2>
+<section id="looking-ahead-new-trade-theory" class="slide level2">
+<h2>Looking Ahead: New Trade Theory</h2>
 <p><strong>Why do we need a theory beyond H-O?</strong></p>
 <ul>
 <li><span class="math inline">\(\approx 60\%\)</span> of world trade is <strong>intra-industry</strong> (exchanging similar goods)</li>
@@ -822,15 +847,14 @@ Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformatio
 <p><span class="math display">\[\text{Specialisation} \Rightarrow \text{Scale economies} \Rightarrow \text{Lower costs} \Rightarrow \text{More variety}\]</span></p>
 <p>Each country specialises in a <em>different</em> variety of the same good — gains arise from <strong>love of variety</strong>, not factor endowments.</p>
 <p><strong>Next lecture:</strong> Economies of scale, monopolistic competition, and the new economic geography — why do trade and production cluster? And what does this mean for India’s agricultural processing sector?</p>
-</section>
-</section>
-<section id="appendix" class="level1" data-background-color="#1a3a5c">
-<h1 data-background-color="#1a3a5c">Appendix</h1>
+</section></section>
+<section>
+<section id="appendix" class="title-slide slide level1 center" data-background-color="#1a3a5c">
+<h1>Appendix</h1>
 
 </section>
-
-<div id="quarto-appendix" class="default"><section id="additional-resources" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Additional Resources</h2><div class="quarto-appendix-contents">
-
+<section id="additional-resources" class="slide level2 appendix">
+<h2>Additional Resources</h2>
 <p><strong>Further Reading</strong></p>
 <ul>
 <li><em>International Economics</em> — Salvatore (Ch. 4-5)</li>
@@ -847,424 +871,468 @@ Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformatio
 </ul>
 
 
-</div></section></div></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Econ 2203 | International Trade and Policy in Agriculture</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
         },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
       });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
         }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
             }
           }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
           }
-          return note.innerHTML;
+          return codeEl.innerText;
         }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
         }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
             }
           } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
             });
           }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
         }
-      }, function(instance) {
       });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Department of Development Economics · Econ 2203</p>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-<p>Nithin M · 2026</p>
-</div>
-  </div>
-</footer>
+      </script>
+    
 
-
-
-
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

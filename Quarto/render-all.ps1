@@ -1,16 +1,26 @@
 # render-all.ps1
-# Builds ECO 2203 course: HTML/RevealJS via Quarto, Beamer PDFs via latexmk directly.
+# Builds ECO 2203 course: RevealJS HTML via Quarto, Beamer PDFs via latexmk directly.
 # Run from: D:\Teaching\international trade\Quarto\
+#
+# Step 1 renders each lecture individually with --to revealjs so the project's
+# default html format does NOT override the file-level format: revealjs setting.
+# Step 4 rebuilds the website index (html) separately.
 
 $quartoDir = "D:\Teaching\international trade\Quarto"
 $docsDir   = "D:\Teaching\international trade\docs"
 Set-Location $quartoDir
 
-Write-Host "=== Step 1: Render HTML/RevealJS for all lectures ===" -ForegroundColor Cyan
-quarto render --to html 2>&1 | Where-Object { $_ -match "Rendering|Output|ERROR|WARN" }
+# Gather lecture files once — reused by Steps 1, 2, and 3
+$lectures = Get-ChildItem "Lecture*.qmd" | Sort-Object Name
+
+Write-Host "=== Step 1: Render RevealJS HTML for all lectures ===" -ForegroundColor Cyan
+foreach ($qmd in $lectures) {
+    Write-Host "  revealjs: $($qmd.Name)" -NoNewline
+    quarto render $qmd.Name --to revealjs 2>&1 | Where-Object { $_ -match "ERROR|WARN" }
+    Write-Host " ✓"
+}
 
 Write-Host "`n=== Step 2: Generate Beamer .tex files ===" -ForegroundColor Cyan
-$lectures = Get-ChildItem "Lecture*.qmd" | Sort-Object Name
 foreach ($qmd in $lectures) {
     Write-Host "  tex: $($qmd.Name)" -NoNewline
     quarto render $qmd.Name --to beamer -M keep-tex:true 2>&1 | Out-Null
