@@ -113,9 +113,9 @@
   \setkeys{beamerframe}{shrink=10}}
 \makeatother
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
