@@ -38,20 +38,6 @@ theme_set(theme_minimal(base_size=11))
 knitr::opts_chunk$set(echo = knitr::is_html_output())
 ```
 
----
-
-# {.section}
-
-::: {style="text-align:center; margin-top: 2em;"}
-**Lecture 7**
-
-[Protectionism I]{.hi style="font-size:1.8em;"}
-
-Tariffs & Quotas
-:::
-
----
-
 ## Recap: Free Trade and Its Limits
 
 **Comparative advantage** says free trade maximises global welfare:
@@ -104,7 +90,7 @@ Employment, revenue, and food security are *political economy* arguments — val
 
 ---
 
-# Part I: Tariffs {.section}
+# Part I: Tariffs {background-color="#012169"}
 
 ---
 
@@ -430,7 +416,7 @@ India's tariff structure commonly exhibits cascading — protecting processing i
 
 ---
 
-# Part II: Quotas {.section}
+# Part II: Quotas {background-color="#012169"}
 
 ---
 

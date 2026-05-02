@@ -27,18 +27,6 @@ execute:
   warning: false
 ---
 
-# {.section}
-
-::: {style="text-align:center; margin-top: 2em;"}
-**Lecture 18 — Final Lecture**
-
-[India's Agricultural Trade and Foreign Trade Policy]{.hi style="font-size:1.6em;"}
-
-*Bringing It All Together*
-:::
-
----
-
 ## Opening Reflection
 
 **Eighteen weeks ago, we asked:**
@@ -582,7 +570,7 @@ Economics helps by making these trade-offs explicit before we choose.
 
 ---
 
-# Course Synthesis {.section}
+# Course Synthesis {background-color="#012169"}
 
 ::: {style="text-align:center; margin-top:1em;"}
 **What Eighteen Weeks Has Taught Us**

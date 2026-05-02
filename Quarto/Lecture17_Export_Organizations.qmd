@@ -27,18 +27,6 @@ execute:
   warning: false
 ---
 
-# {.section}
-
-::: {style="text-align:center; margin-top: 2em;"}
-**Lecture 17**
-
-[Agricultural Export Promotion Organizations]{.hi style="font-size:1.8em;"}
-
-The Institutions Behind India's $43.7 Billion Agricultural Export Ecosystem
-:::
-
----
-
 ## The Institutional Architecture of India's Agri Exports
 
 ::: {.columns}

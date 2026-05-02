@@ -39,18 +39,6 @@ theme_set(theme_minimal(base_size = 11))
 knitr::opts_chunk$set(echo = knitr::is_html_output())
 ```
 
-# {.section}
-
-::: {style="text-align:center; margin-top: 2em;"}
-**Lecture 8**
-
-[Protectionism II]{.hi style="font-size:1.8em;"}
-
-Export Subsidies, Dumping & Cartels
-:::
-
----
-
 ## Recap: Tariffs and Quotas {.smaller}
 
 **Last lecture (L7):** border instruments that restrict imports
@@ -67,7 +55,7 @@ Export Subsidies, Dumping & Cartels
 
 ---
 
-# Part I: Export Subsidies {.section}
+# Part I: Export Subsidies {background-color="#012169"}
 
 ---
 
@@ -255,7 +243,7 @@ $\Delta W = -(b+d) = -(25+25) = -50$; Govt pays: $(b+c+d) = 200$; PS gains: $(a+
 
 ---
 
-# Part II: Dumping {.section}
+# Part II: Dumping {background-color="#012169"}
 
 ---
 
@@ -436,7 +424,7 @@ ggplot(ad_data, aes(x = sector, y = investigations)) +
 
 ---
 
-# Part III: Voluntary Export Restraints {.section}
+# Part III: Voluntary Export Restraints {background-color="#012169"}
 
 ---
 
@@ -484,7 +472,7 @@ Under tariff: $\Delta W_{\text{tariff}} = -(b+d) + t \cdot M$; Under VER: $\Delt
 
 ---
 
-# Part IV: Cartels & International Commodity Agreements {.section}
+# Part IV: Cartels & International Commodity Agreements {background-color="#012169"}
 
 ---
 

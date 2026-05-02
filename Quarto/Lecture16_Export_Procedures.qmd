@@ -27,18 +27,6 @@ execute:
   warning: false
 ---
 
-# {.section}
-
-::: {style="text-align:center; margin-top: 2em;"}
-**Lecture 16**
-
-[Export Procedures and Documentation]{.hi style="font-size:1.8em;"}
-
-From Karnataka Farm to Leicester Kitchen
-:::
-
----
-
 ## Opening: The Journey of a Kilo of Tur Dal
 
 ::: {.columns}
@@ -497,7 +485,7 @@ EIC operates 5 regional offices (Mumbai, Chennai, Kochi, Kolkata, Delhi) and 40 
 
 ---
 
-# Case Study {.section}
+# Case Study {background-color="#012169"}
 
 ::: {style="text-align:center; margin-top:1em;"}
 **Exporting Basmati Rice from Punjab to Saudi Arabia**
