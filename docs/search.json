@@ -1227,175 +1227,175 @@
   {
     "objectID": "Lecture08_Protectionism_II.html#recap-tariffs-and-quotas",
     "href": "Lecture08_Protectionism_II.html#recap-tariffs-and-quotas",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Recap: Tariffs and Quotas",
     "text": "Recap: Tariffs and Quotas\nLast lecture (L7): border instruments that restrict imports\n\nTariffs → raise domestic price \\(P_d = P_w(1+t)\\), generate revenue \\(t \\cdot M\\), DWL \\(= b + d\\)\nQuotas → fix import volume \\(\\bar{M}\\); quota rents go to licence holders\nIndia: high bound tariffs, TRQs, tariff “water” provides policy flexibility\n\nToday: instruments that push exports or distort domestic production: export subsidies, dumping, VERs, and cartels.\n\nPolitical economy insight: Tariffs/quotas protect import-competing producers. Export subsidies protect exporting producers. Both are driven by producer lobbying — even though consumers and taxpayers bear the cost: \\(\\text{Producer surplus gain} &gt; \\text{Consumer + taxpayer loss?}\\) — usually no in aggregate, but politically organised producers win."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#what-is-an-export-subsidy",
     "href": "Lecture08_Protectionism_II.html#what-is-an-export-subsidy",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "What Is an Export Subsidy?",
     "text": "What Is an Export Subsidy?\nAn export subsidy is a direct government payment \\(s\\) per unit exported.\nMechanism: Domestic producers can sell abroad at \\(P_w\\) and receive subsidy \\(s\\), so net return = \\(P_w + s\\) → domestic price rises to \\(P_d = P_w + s\\).\n\n\n\nGroup\nDirection\nWhy\n\n\n\n\nProducers\nGain\nHigher domestic price\n\n\nConsumers\nLose\nPay \\(P_d &gt; P_w\\)\n\n\nGovernment\nPays\n\\(s \\times \\text{export volume}\\)\n\n\n\n\nPrice wedge identity: \\(\\boxed{P_d = P_w + s}\\); \\(Q_s \\uparrow\\), \\(Q_d \\downarrow\\), Exports \\(= Q_s - Q_d \\uparrow\\)\nLarge-country effect: World price \\(P_w\\) falls as export supply increases → terms of trade deteriorate → exporter loses even more: \\(\\Delta W_{\\text{large country}} &lt; \\Delta W_{\\text{small country}} &lt; 0\\)"
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#export-subsidy-welfare-diagram",
     "href": "Lecture08_Protectionism_II.html#export-subsidy-welfare-diagram",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Export Subsidy: Welfare Diagram",
     "text": "Export Subsidy: Welfare Diagram\n\n\nShow R code\n# D: P = 50 - 0.5Q  =&gt;  Qd = 100 - 2P\n# S: P = 5  + 0.5Q  =&gt;  Qs = 2P - 10\n# Autarky equilibrium: P=27.5, Q=45\n# World price Pw=35 (country has comparative advantage, exports)\n# At Pw=35: Qd=30, Qs=60, Exports=30\n# Subsidy s=5 raises domestic price to Ps=40\n# At Ps=40: Qd=20, Qs=70, Exports=50\n\nPw &lt;- 35; s &lt;- 5; Ps &lt;- Pw + s\nQd0 &lt;- 100 - 2*Pw   # 30  (domestic consumption before subsidy)\nQs0 &lt;- 2*Pw - 10    # 60  (domestic supply before subsidy)\nQd1 &lt;- 100 - 2*Ps   # 20  (domestic consumption after subsidy)\nQs1 &lt;- 2*Ps - 10    # 70  (domestic supply after subsidy)\n\n# Welfare areas\n# a  = CS loss (rectangle): (Ps-Pw)*(Qd0-Qd1) = 5*10 = 50\n# b  = DWL consumption triangle: 0.5*(Ps-Pw)*(Qd0-Qd1) = 25  [already in a's triangle portion]\n# Actually: a = full rectangle between Qd1 and Qd0; b = triangle at Qd0 end\n# Standard labeling (Salvatore style):\n# a = rectangle: Pw to Ps, Qd1 to Qd0 = 5*10=50\n# b = triangle (consumption DWL): 0.5*5*10 = 25 -- but let's use numeric polygon\n\nggplot() +\n  # ── curves ───────────────────────────────────────────────────────────────────\n  geom_segment(aes(x = 0,  y = 50, xend = 100, yend = 0),\n               color = \"#012169\", linewidth = 1.5) +           # Demand\n  geom_segment(aes(x = 0,  y = 5,  xend = 90,  yend = 50),\n               color = \"#B9975B\", linewidth = 1.5) +           # Supply\n  # ── price lines ──────────────────────────────────────────────────────────────\n  geom_hline(yintercept = Pw, linetype = \"dashed\",\n             color = \"darkgreen\", linewidth = 1.2) +\n  geom_hline(yintercept = Ps, linetype = \"dashed\",\n             color = \"red\",       linewidth = 1.2) +\n  # ── area a: CS loss rectangle (Qd1→Qd0, Pw→Ps) ──────────────────────────────\n  annotate(\"polygon\",\n           x = c(Qd1, Qd0, Qd0, Qd1),\n           y = c(Pw,  Pw,  Ps,  Ps),\n           fill = \"#012169\", alpha = 0.30) +\n  annotate(\"text\", x = (Qd1+Qd0)/2, y = (Pw+Ps)/2,\n           label = \"a\", size = 5, fontface = \"bold\", color = \"#012169\") +\n  # ── area b: DWL consumption triangle ─────────────────────────────────────────\n  annotate(\"polygon\",\n           x = c(Qd1, Qd0, Qd1),\n           y = c(Ps,  Pw,  Ps),\n           fill = \"red\", alpha = 0.45) +\n  annotate(\"text\", x = Qd0 + 2, y = Pw + 2,\n           label = \"b\", size = 4.5, color = \"red\", fontface = \"bold\") +\n  # ── area a+b+c: PS gain (0→Qs0, Pw→Ps rectangle) ────────────────────────────\n  annotate(\"polygon\",\n           x = c(0,   Qs0, Qs0, 0),\n           y = c(Pw,  Pw,  Ps,  Ps),\n           fill = \"#B9975B\", alpha = 0.25) +\n  annotate(\"text\", x = Qs0/2, y = (Pw+Ps)/2,\n           label = \"a+b+c\", size = 3.5, fontface = \"bold\", color = \"#B9975B\") +\n  # ── area d: DWL production triangle (Qs0→Qs1, Pw→Ps) ────────────────────────\n  annotate(\"polygon\",\n           x = c(Qs0, Qs1, Qs1),\n           y = c(Pw,  Pw,  Ps),\n           fill = \"red\", alpha = 0.45) +\n  annotate(\"text\", x = Qs0 + 4, y = Pw + 2,\n           label = \"d\", size = 4.5, color = \"red\", fontface = \"bold\") +\n  # ── govt cost label ──────────────────────────────────────────────────────────\n  annotate(\"text\", x = (Qd1+Qs1)/2 + 5, y = (Pw+Ps)/2 - 0.8,\n           label = \"b+c+d\\n(Govt. cost)\", size = 3, color = \"purple\") +\n  # ── vertical reference lines ─────────────────────────────────────────────────\n  geom_vline(xintercept = c(Qd1, Qd0, Qs0, Qs1),\n             linetype = \"dotted\", alpha = 0.4) +\n  annotate(\"text\", x = Qd1, y = 1.5,\n           label = paste0(\"Qd'=\", Qd1), size = 2.8, angle = 45, hjust = 0) +\n  annotate(\"text\", x = Qd0, y = 1.5,\n           label = paste0(\"Qd=\",  Qd0), size = 2.8, angle = 45, hjust = 0) +\n  annotate(\"text\", x = Qs0, y = 1.5,\n           label = paste0(\"Qs=\",  Qs0), size = 2.8, angle = 45, hjust = 0) +\n  annotate(\"text\", x = Qs1, y = 1.5,\n           label = paste0(\"Qs'=\", Qs1), size = 2.8, angle = 45, hjust = 0) +\n  annotate(\"text\", x = 107, y = Pw,\n           label = paste0(\"Pw=\", Pw), size = 3.2, color = \"darkgreen\") +\n  annotate(\"text\", x = 107, y = Ps,\n           label = paste0(\"Ps=\", Ps), size = 3.2, color = \"red\") +\n  annotate(\"text\", x = 2,  y = 52, label = \"D\", size = 5, color = \"#012169\") +\n  annotate(\"text\", x = 93, y = 52, label = \"S\", size = 5, color = \"#B9975B\") +\n  scale_x_continuous(limits = c(0, 118)) +\n  scale_y_continuous(limits = c(0, 56)) +\n  labs(\n    title    = \"Export Subsidy: Domestic Price Rises from Pw to Ps = Pw + s\",\n    subtitle = \"PS gain = a+b+c  |  CS loss = a  |  Govt cost = b+c+d  |  Net welfare = −(b+d) &lt; 0\",\n    x = \"Quantity\", y = \"Price ($)\"\n  ) +\n  theme_minimal(base_size = 11)\n\n\n\n\nFigure 1: Export Subsidy: Welfare Analysis for the Exporting Country Source: Author’s illustration."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#welfare-accounting-export-subsidy",
     "href": "Lecture08_Protectionism_II.html#welfare-accounting-export-subsidy",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Welfare Accounting: Export Subsidy",
     "text": "Welfare Accounting: Export Subsidy\nFull decomposition (exporting country, small-country case):\n\\[\\Delta CS = -a \\qquad \\Delta PS = +(a + b + c) \\qquad \\text{Government cost} = -(b + c + d)\\]\n\\[\\boxed{\\Delta W = -(b + d) &lt; 0}\\]\n\n\\(b\\) = consumption distortion triangle; \\(d\\) = production distortion triangle\n\nGovt cost = \\(s \\times (Q_{s1} - Q_{d1})\\) = \\(5 \\times 50 = 250\\) units\n\nNumerical check:\n\n\n\nArea\nFormula\nValue\n\n\n\n\n\\(a\\)\n\\(5 \\times 10\\)\n50\n\n\n\\(b\\)\n\\(\\frac{1}{2} \\times 5 \\times 10\\)\n25\n\n\n\\(c\\)\n\\(5 \\times (60-30)\\)\n150\n\n\n\\(d\\)\n\\(\\frac{1}{2} \\times 5 \\times 10\\)\n25\n\n\n\n\\(\\Delta W = -(b+d) = -(25+25) = -50\\); Govt pays: \\((b+c+d) = 200\\); PS gains: \\((a+b+c) = 225\\); CS loses: \\(a = 50\\)"
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#indias-export-subsidies-sugar-case-wto-ds579",
     "href": "Lecture08_Protectionism_II.html#indias-export-subsidies-sugar-case-wto-ds579",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "India’s Export Subsidies: Sugar Case (WTO DS579)",
     "text": "India’s Export Subsidies: Sugar Case (WTO DS579)\nBackground: India’s sugar support involves: SMP (Statutory Minimum Price); FRP (Fair and Remunerative Price); production assistance subsidy (₹13.88/quintal); MIEQ (mandated minimum export quota); transport subsidy (₹1,000/tonne).\nWTO DS579 (2019): Brazil, Australia, Guatemala challenged India. 2021 Panel ruling: India’s domestic support and export subsidies exceeded WTO AoA commitments. India appealed → pending (Appellate Body non-functional since 2019).\n\nIndia’s defence: “Developing countries have the right to support food security and rural livelihoods.”\n\nAoA de minimis provision: Amber Box support ≤ 10% of production value\nPeace Clause for public stockholding; Special and Differential Treatment (SDT)\n\nMarket impact: India’s subsidised sugar exports depress world prices by an estimated 3–7% — harming Brazil, Thailand, and African sugar exporters."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#msp-fci-and-the-peace-clause",
     "href": "Lecture08_Protectionism_II.html#msp-fci-and-the-peace-clause",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "MSP, FCI, and the Peace Clause",
     "text": "MSP, FCI, and the Peace Clause\nMSP mechanism: CACP recommends MSP for 23 crops pre-season; FCI/NAFED/CCI procure at MSP when market falls below; surplus procured stock → sometimes exported.\nWTO problem: If \\(\\text{MSP} &gt; P_w\\) and surplus exported at \\(P_w\\): \\(\\text{Implicit subsidy} = (\\text{MSP} - P_w) \\times Q_{\\text{exported}}\\)\n\n\n\n\nMSP\nWorld price\nImplicit subsidy\n\n\n\n\nRice\n$290\n$450\n—\n\n\nWheat\n$245\n$260\n~$15/t\n\n\n\n\nBali Peace Clause (2013): WTO members agreed not to legally challenge food security stockholding programmes of developing countries — even if support exceeds 10% AMS limit. Condition: transparency + no trade distortion.\nNairobi (2015) → MC13 Abu Dhabi (2024): Permanent solution still pending. India insists on a permanent peace clause without the non-distortion condition. USA/EU resist — argue India’s 800M tonne/year FCI operations are massively trade-distorting. High-stakes stalemate."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#what-is-dumping-formal-definition",
     "href": "Lecture08_Protectionism_II.html#what-is-dumping-formal-definition",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "What Is Dumping? Formal Definition",
     "text": "What Is Dumping? Formal Definition\nWTO Anti-Dumping Agreement (Article 2): Dumping occurs when the export price is below normal value:\n\\[\\text{Normal value} = \\begin{cases} P_d & \\text{(home market price)} \\\\ P_{3C} & \\text{(price to third country)} \\\\ COP + \\text{profit} & \\text{(constructed value)} \\end{cases}\\]\n\\[\\text{Margin of dumping} = \\text{Normal value} - P_x &gt; 0\\]\nThree conditions to impose anti-dumping duty: (1) Dumping margin &gt; 0 (threshold: &gt;2%); (2) material injury (or threat) to domestic industry; (3) causal link between dumping and injury.\n\nWhy would a firm dump? Price discrimination (monopoly at home, competitive abroad); predatory intent (eliminate competition); surplus disposal; learning curve; input subsidy pass-through.\nDumping ≠ comparative advantage: Genuinely lower costs look like dumping when compared to high-cost domestic producers."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#types-of-dumping",
     "href": "Lecture08_Protectionism_II.html#types-of-dumping",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Types of Dumping",
     "text": "Types of Dumping\n1. Sporadic Dumping: Occasional disposal of excess inventory at below-normal price. India example: Bumper harvest years → surplus wheat exported below MSP procurement price. Welfare effect on importer: Minor, temporary.\n2. Predatory Dumping: Strategic pricing to eliminate foreign competition, then raise prices once rivals exit. Classic allegation: Chinese steel exports to India (2014–16). HRC steel exported at $350/tonne vs cost of $450. Welfare effect: Temporary gain, long-run monopolisation.\n3. Persistent Dumping: Chronic price discrimination — domestic market protected → monopoly pricing at home; competitive pricing abroad: \\(P_d &gt; P_x\\) persistently.\n\nArbitrage prevention: For persistent dumping to work, the exporter must prevent re-importation of cheaply sold exports back into the home market. Methods: different packaging, branding, warranty restrictions, official import controls."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#dumping-price-discrimination-diagram",
     "href": "Lecture08_Protectionism_II.html#dumping-price-discrimination-diagram",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Dumping: Price Discrimination Diagram",
     "text": "Dumping: Price Discrimination Diagram\n\n\nShow R code\n# Domestic market: inelastic demand, protected → high monopoly price\np1 &lt;- ggplot() +\n  # Demand (steep = inelastic)\n  geom_segment(aes(x = 0, y = 60, xend = 60, yend = 0),\n               color = \"#012169\", linewidth = 1.5) +\n  # MC = Supply\n  geom_segment(aes(x = 0, y = 10, xend = 80, yend = 50),\n               color = \"#B9975B\", linewidth = 1.5) +\n  # MR (derived from P = 60 - Q  =&gt;  MR = 60 - 2Q)\n  geom_segment(aes(x = 0, y = 60, xend = 30, yend = 0),\n               color = \"#012169\", linewidth = 1, linetype = \"dashed\") +\n  # Monopoly price Pd=40, Qd=20: MC=10+Q/2=10+10=20... let's use P=40\n  geom_hline(yintercept = 40, linetype = \"dashed\", color = \"red\", linewidth = 1) +\n  geom_vline(xintercept = 20, linetype = \"dotted\", color = \"grey50\") +\n  annotate(\"point\", x = 20, y = 40, size = 3, color = \"red\") +\n  annotate(\"text\", x = 26, y = 41,\n           label = \"Monopoly\\nequilibrium\\nPd = 40\", size = 2.8, color = \"red\") +\n  annotate(\"text\", x =  2, y = 62, label = \"D\",  size = 4, color = \"#012169\") +\n  annotate(\"text\", x =  2, y = 57, label = \"MR\", size = 3.5, color = \"#012169\",\n           fontface = \"italic\") +\n  annotate(\"text\", x = 82, y = 52, label = \"MC\", size = 4, color = \"#B9975B\") +\n  scale_x_continuous(limits = c(0, 88), breaks = seq(0, 80, 20)) +\n  scale_y_continuous(limits = c(0, 65)) +\n  labs(title = \"Domestic Market\",\n       subtitle = \"Protected market → high price (Pd = 40)\",\n       x = \"Quantity\", y = \"Price ($)\") +\n  theme_minimal(base_size = 10)\n\n# Export market: elastic demand (world price = horizontal demand)\np2 &lt;- ggplot() +\n  # Horizontal world demand (perfectly elastic)\n  geom_hline(yintercept = 25, color = \"#012169\", linewidth = 1.5) +\n  # MC\n  geom_segment(aes(x = 0, y = 10, xend = 80, yend = 50),\n               color = \"#B9975B\", linewidth = 1.5) +\n  # Export price (below domestic price)\n  geom_hline(yintercept = 25, linetype = \"dashed\", color = \"darkgreen\", linewidth = 1) +\n  # MC = Px at Q=30: 10 + 0.5*30 = 25\n  geom_vline(xintercept = 30, linetype = \"dotted\", color = \"grey50\") +\n  annotate(\"point\", x = 30, y = 25, size = 3, color = \"darkgreen\") +\n  annotate(\"text\", x = 35, y = 26,\n           label = \"Export eq.\\nPx = 25 &lt; Pd = 40\\nDUMPING!\", size = 2.8, color = \"darkgreen\") +\n  annotate(\"text\", x =  2, y = 27, label = \"D* (world price)\", size = 3.5, color = \"#012169\") +\n  annotate(\"text\", x = 82, y = 52, label = \"MC\", size = 4, color = \"#B9975B\") +\n  scale_x_continuous(limits = c(0, 88), breaks = seq(0, 80, 20)) +\n  scale_y_continuous(limits = c(0, 65)) +\n  labs(title = \"Export Market\",\n       subtitle = \"Competitive market → Px = Pw = 25 &lt; Pd\",\n       x = \"Quantity\", y = \"Price ($)\") +\n  theme_minimal(base_size = 10)\n\np1 + p2 +\n  plot_annotation(\n    title    = \"Dumping: Price Discrimination Between Domestic and Export Markets\",\n    subtitle = \"Condition: (a) home market more inelastic than export market; (b) import barriers prevent arbitrage\\nDumping margin = Pd − Px = 40 − 25 = $15 per unit\",\n    theme = theme_minimal(base_size = 11)\n  )\n\n\n\n\nFigure 2: Dumping as Price Discrimination: Domestic Monopoly Price &gt; Export Price Source: Author’s illustration."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#dumping-formal-condition-and-anti-dumping-duty",
     "href": "Lecture08_Protectionism_II.html#dumping-formal-condition-and-anti-dumping-duty",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Dumping: Formal Condition and Anti-Dumping Duty",
     "text": "Dumping: Formal Condition and Anti-Dumping Duty\nDumping condition (price discrimination version):\n\\[P_x &lt; P_d \\quad \\Leftrightarrow \\quad \\frac{P_x}{P_d} &lt; 1\\]\nIn profit-maximising terms: \\(P_d \\left(1 - \\frac{1}{|e_d|}\\right) = P_x \\left(1 - \\frac{1}{|e_x|}\\right)\\)\nIf \\(|e_x| &gt; |e_d|\\) (export market more elastic), then \\(P_x &lt; P_d\\). ✓\nAnti-dumping duty (ADD): \\(\\text{ADD} = P_d - P_x = \\text{margin of dumping}\\) — raises \\(P_x\\) back toward \\(P_d\\).\n\nWelfare effects of ADD for importing country:\n\n\n\nEffect\nDirection\n\n\n\n\nConsumer surplus\nFalls (price rises)\n\n\nProducer surplus\nRises (domestic producers protected)\n\n\nGovt revenue (ADD)\nRises\n\n\nNet welfare\nAmbiguous — DWL likely\n\n\n\n\\(\\Delta W = -b - d + \\text{PS gain}\\) — if domestic production is efficient, \\(\\Delta W\\) may be positive; if ADD is protectionist, \\(\\Delta W &lt; 0\\)."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#indias-anti-dumping-experience",
     "href": "Lecture08_Protectionism_II.html#indias-anti-dumping-experience",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "India’s Anti-Dumping Experience",
     "text": "India’s Anti-Dumping Experience\n\n\nShow R code\nad_data &lt;- data.frame(\n  sector = c(\"Chemicals &\\nPetrochemicals\", \"Steel &\\nMetals\", \"Textiles &\\nFibres\",\n             \"Rubber &\\nPlastics\", \"Machinery &\\nEquipment\", \"Agriculture\\n& Food\"),\n  investigations = c(42, 38, 22, 18, 12, 8),\n  top_source      = c(\"China\", \"China/EU\", \"China\", \"China/Korea\", \"China/EU\", \"China/Myanmar\")\n)\nad_data &lt;- ad_data |&gt;\n  arrange(investigations) |&gt;\n  mutate(sector = factor(sector, levels = sector))\n\nggplot(ad_data, aes(x = sector, y = investigations)) +\n  geom_col(fill = \"#012169\", width = 0.65) +\n  geom_text(aes(label = investigations), hjust = -0.25, size = 3.8,\n            fontface = \"bold\", color = \"#012169\") +\n  coord_flip() +\n  scale_y_continuous(limits = c(0, 52), expand = c(0, 0)) +\n  labs(\n    title    = \"India's Anti-Dumping Investigations by Sector, 2015–2024\",\n    subtitle = \"India is the world's largest user of anti-dumping measures (WTO data)\\nPrimary target: China in nearly all sectors\",\n    x = NULL, y = \"Number of AD Investigations\"\n  ) +\n  theme_minimal(base_size = 11) +\n  theme(panel.grid.major.y = element_blank())\n\n\n\n\nFigure 3: India: Anti-Dumping Investigations Initiated by Sector (2015–2024) Source: DGTR, Ministry of Commerce, GoI."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#indian-agriculture-facing-dumping-allegations-abroad",
     "href": "Lecture08_Protectionism_II.html#indian-agriculture-facing-dumping-allegations-abroad",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Indian Agriculture Facing Dumping Allegations Abroad",
     "text": "Indian Agriculture Facing Dumping Allegations Abroad\nIndian shrimp exports (USA): USA imposed CVD + AD duties on Indian shrimp (2003, 2013, 2023); margin of dumping: 4.98–6.3% (2023 review). India’s argument: low costs reflect genuine comparative advantage (labour, aquaculture efficiency), not subsidies.\nIndian basmati rice: EU phytosanitary restrictions (pesticide MRLs) periodically block Indian exports — not formal AD, but equivalent effect.\nIndian buffalo meat: EU AD allegations (cold cuts); AD margin investigations initiated 2021. India’s position: lowest-cost producer due to cattle by-product economics.\n\nComparative advantage vs. dumping: A developing country with genuinely low costs will appear to dump when compared to high-cost producers in developed countries. \\(P_{\\text{India}} &lt; P_{\\text{USA}} \\not\\Rightarrow \\text{dumping}\\). Dumping requires \\(P_{\\text{export}} &lt; \\text{normal value}\\). In practice, AD is often used as disguised protectionism."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#vers-quotas-imposed-voluntarily-by-exporters",
     "href": "Lecture08_Protectionism_II.html#vers-quotas-imposed-voluntarily-by-exporters",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "VERs — Quotas Imposed “Voluntarily” by Exporters",
     "text": "VERs — Quotas Imposed “Voluntarily” by Exporters\nA Voluntary Export Restraint (VER) is an agreement where the exporting country “voluntarily” limits its exports — usually under diplomatic pressure.\nWhy “voluntary”? Importing country threatens worse action; exporter prefers VER — quota rent goes to foreign exporter; both governments prefer quiet bilateral deal to WTO dispute.\nClassic example: Japan–USA auto VER (1981): Japan agreed to limit car exports at 1.68M units/year. Toyota, Honda captured quota rent → funded quality upgrading → ultimately made Japanese cars stronger.\n\nVER vs. Tariff vs. Quota:\n\n\n\nInstrument\nWho gets rent?\nWTO-legal?\n\n\n\n\nTariff\nImporting govt\nYes\n\n\nQuota\nLicence holders\nYes (with rules)\n\n\nVER\nForeign exporter\nNo (UR banned)\n\n\n\nUruguay Round (1994): VERs explicitly prohibited under WTO safeguards agreement. But “Orderly Marketing Arrangements” and “grey area” bilateral deals persist under different names."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#ver-welfare-analysis",
     "href": "Lecture08_Protectionism_II.html#ver-welfare-analysis",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "VER Welfare Analysis",
     "text": "VER Welfare Analysis\nA VER is economically equivalent to an import quota — but worse for the importing country:\nStandard quota welfare: \\(\\Delta W_{\\text{import country}} = -(b + d) + c\\) where \\(c\\) = quota rent captured by licence holders.\nVER welfare: \\(\\Delta W_{\\text{import country}} = -(b + c + d)\\) because \\(c\\) = quota rent goes to foreign exporters, not domestic licence holders.\n\\[\\boxed{\\text{VER strictly worse than equivalent quota for importing country}}\\]\n\nNumerical example: Suppose VER restricts imports to \\(\\bar{M}\\).\n\n\\(b\\) = production distortion: \\(\\frac{1}{2}(P_d - P_w) \\cdot \\Delta Q_s\\)\n\\(c\\) = quota rent: \\((P_d - P_w) \\cdot \\bar{M}\\)\n\\(d\\) = consumption distortion: \\(\\frac{1}{2}(P_d - P_w) \\cdot \\Delta Q_d\\)\n\nUnder tariff: \\(\\Delta W_{\\text{tariff}} = -(b+d) + t \\cdot M\\); Under VER: \\(\\Delta W_{\\text{VER}} = -(b+c+d) &lt; \\Delta W_{\\text{tariff}}\\)"
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#what-is-a-cartel-conditions-for-success",
     "href": "Lecture08_Protectionism_II.html#what-is-a-cartel-conditions-for-success",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "What Is a Cartel? Conditions for Success",
     "text": "What Is a Cartel? Conditions for Success\nA cartel is a formal/informal agreement among producers to restrict output, fix prices, or divide markets. Profit-maximising cartel acts as a monopolist: \\(MR = MC \\Rightarrow Q^* &lt; Q_{\\text{competitive}}, P^* &gt; P_{\\text{competitive}}\\); world welfare loss = \\(-(b + d)\\).\nConditions for cartel success: (1) Concentrated supply; (2) inelastic demand; (3) discipline (no cheating); (4) barriers to entry; (5) product homogeneity.\n\nOPEC as reference: OPEC controls ~38% of world oil supply. Production cuts (2022–23) raised Brent crude from $75 to $120/barrel.\nAgricultural cartels rarely succeed: Many producers; many substitutes (rice ↔︎ wheat ↔︎ maize); perishable goods; low entry barriers; political pressure to sell for domestic food security.\n\\[\\Rightarrow \\text{Agricultural cartels are theoretically possible, practically unstable}\\]"
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#international-commodity-agreements-icas-instruments",
     "href": "Lecture08_Protectionism_II.html#international-commodity-agreements-icas-instruments",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "International Commodity Agreements (ICAs): instruments",
     "text": "International Commodity Agreements (ICAs): instruments\nICAs are multilateral attempts to stabilise commodity prices.\n\nBuffer stocks: buy when price is “too low”, sell when “too high”\nExport quotas: allocate export shares across members\nLong-term contracts: guarantee volumes at agreed prices\nWorks best when: large market share, homogeneous commodity, credible financing\nKey caution: agriculture has close substitutes → stability is hard"
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#why-icas-fail-in-practice",
     "href": "Lecture08_Protectionism_II.html#why-icas-fail-in-practice",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Why ICAs fail in practice",
     "text": "Why ICAs fail in practice\n\nFree-rider problem: non-members expand exports when prices rise\nCheating: members secretly exceed quotas\nFinancing constraint: buffer stocks become fiscally unsustainable\nSubstitutes + tech change: demand shifts undermine price bands\nNorth–South conflict: producers want high prices; consumers want low prices\n\n\nUNCTAD’s Integrated Programme for Commodities (1976) proposed 18 ICAs; most collapsed within ~15 years."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#history-of-international-commodity-agreements",
     "href": "Lecture08_Protectionism_II.html#history-of-international-commodity-agreements",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "History of International Commodity Agreements",
     "text": "History of International Commodity Agreements\nExamples and outcomes:\n\nCoffee (ICO): collapsed (free-riding)\nTin (ITA): collapsed (buffer-stock bankruptcy)\nSugar (ISA): weakened (price provisions abandoned)\nJute (IJO): wound down (2014)\nCocoa (ICCO): repeated failures; restructured"
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#tin-crisis-1985-why-buffer-stocks-fail",
     "href": "Lecture08_Protectionism_II.html#tin-crisis-1985-why-buffer-stocks-fail",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Tin crisis (1985): why buffer stocks fail",
     "text": "Tin crisis (1985): why buffer stocks fail\n\nPrices fell sharply; buffer-stock manager ran out of funds\nAgreement collapsed and disrupted the tin market\nPrices plunged by about 40% in days\nPrice bands require credible financing (hard politically)\nTakeaway: ICAs are fragile when compliance and funding are weak"
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#indias-rice-export-ban-2023-unilateral-market-power",
     "href": "Lecture08_Protectionism_II.html#indias-rice-export-ban-2023-unilateral-market-power",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "India’s Rice Export Ban (2023): Unilateral Market Power",
     "text": "India’s Rice Export Ban (2023): Unilateral Market Power\n\n\nIndia’s rice export market position:\n\nWorld’s largest rice exporter: ~40% of global rice trade (FY2022-23: 22 MMT)\nDominant in non-basmati white rice: ~60% of world market\n\nAugust 2023 policy actions:\n\nBan on non-basmati white rice exports\n20% export duty on parboiled rice\n$1,200/tonne MEP on basmati rice\n\nImmediate market impact:\n\nWorld rice prices surged 20–30% in 2 months\nPhilippines, Indonesia, West Africa most affected\nBangladesh, Senegal faced acute food security risks\n\n\n\nEconomic analysis:\nWith 40% world market share, India has significant monopsonist/monopolist power in rice — analogous to a cartel without formal coordination.\nIndia’s justification: WTO Article XI permits export restrictions for food security.\nCounter-argument: When a single country controls 40% of world supply, its “domestic food security” restriction is a global food security threat.\n\\[P_{\\text{world}} \\uparrow 25\\% \\Rightarrow \\text{500M+ people in importing countries pay more for food}\\]\nLesson: Market concentration creates policy power — with global externalities."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#strategic-trade-policy-and-infant-industry-argument",
     "href": "Lecture08_Protectionism_II.html#strategic-trade-policy-and-infant-industry-argument",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Strategic Trade Policy and Infant Industry Argument",
     "text": "Strategic Trade Policy and Infant Industry Argument\n\n\nInfant industry argument (Hamilton 1791; List 1841):\nTemporary protection allows a new industry to: 1. Achieve economies of scale 2. Move down the learning curve 3. Become internationally competitive\nLearning-by-doing model:\n\\[C_t = C_0 \\cdot e^{-\\lambda Q_t^{\\text{cumulative}}}\\]\nwhere \\(\\lambda\\) = learning rate. Production cost falls with cumulative experience.\nProtection justified if:\n\\[\\sum_{t=0}^{T} \\frac{\\text{PS gain}_t - \\text{CS loss}_t}{(1+r)^t} &gt; 0\\]\ni.e., present value of future gains exceeds current protection costs.\n\n\nIndia examples:\nEdible oil (1970s-90s): Heavy protection of domestic oilseed processing. - Result: Yellow revolution (oilseed production rose) - But productivity gains lagged; protection lasted too long\nSugar industry: - 100+ years of protection - Still high-cost producer by global standards - Protection → no incentive to compete\nCounter-argument to infant industry: If the learning curve is genuinely valuable, private capital should finance it. Government intervention needed only if: (a) capital market failure, or (b) positive spillovers (externalities) that private firm cannot capture.\n\\[\\text{Subsidy justified} \\iff \\text{market failure exists}\\]"
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#wto-disciplines-key-rules-summary",
     "href": "Lecture08_Protectionism_II.html#wto-disciplines-key-rules-summary",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "WTO Disciplines: Key Rules Summary",
     "text": "WTO Disciplines: Key Rules Summary\n\n\n\n\n\n\n\n\n\nInstrument\nWTO status\n\n\n\n\nExport subsidies (developed)\nProhibited (MC10 Nairobi 2015)\n\n\nExport subsidies (developing)\nPhased out\n\n\nDomestic subsidies (Amber Box)\nLimited by AMS cap\n\n\nAnti-dumping duties\nPermitted (ADA)\n\n\nCountervailing duties\nPermitted (SCMA)\n\n\nVERs\nProhibited (Art. 11, SA)\n\n\nExport restrictions (quotas/bans)\nPermitted for food security (Art. XI:2)\n\n\nExport cartels\nNo explicit WTO rule — governed by domestic competition law\n\n\n\n\nKey gaps in WTO rules: - Export restrictions (increasingly used by India, China, Indonesia) - State trading enterprises (FCI, COFCO) - Input subsidies to developing countries\n\n\n\nCountervailing Duties (CVD):\nCVDs target foreign subsidies (not dumping):\n\\[\\text{CVD} = \\text{amount of foreign subsidy}\\]\nCondition: subsidy is “specific” (to a firm/industry) AND causes material injury.\nSCMA Agreement governs CVDs.\nIndia has faced CVDs primarily from USA on shrimp, steel, and pharmaceutical exports.\nIndia has used CVDs less frequently than AD duties — but use is growing as India targets subsidised Chinese and EU agricultural exports."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#key-takeaways-lecture-8",
     "href": "Lecture08_Protectionism_II.html#key-takeaways-lecture-8",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Key Takeaways: Lecture 8",
     "text": "Key Takeaways: Lecture 8\n\n1. Export subsidies distort production and trade; harm importing-country farmers; impose fiscal costs on the subsidising government. Net welfare effect for exporting country: \\(\\Delta W = -(b+d) &lt; 0\\).\n2. India’s MSP + FCI procurement creates implicit export subsidies when procurement prices exceed world prices. Sugar WTO dispute (DS579) shows WTO’s limits in disciplining developing country support.\n3. Dumping = selling below normal value. Formal condition: \\(P_x &lt; P_d\\) or \\(P_x &lt; AVC\\). India is the world’s largest AD user; but Indian exporters also face spurious AD allegations that confuse genuine comparative advantage with dumping.\n4. VERs are strictly worse than equivalent tariffs for the importing country — quota rent is transferred abroad: \\(\\Delta W_{\\text{VER}} = -(b+c+d) &lt; -(b+d) = \\Delta W_{\\text{tariff}}\\).\n5. Agricultural cartels fail because: many producers, many substitutes, perishable goods, easy entry. But India’s unilateral market power in rice (40% of world exports) achieves cartel-like effects without formal coordination.\n\n\n6. WTO disciplines have significant gaps — particularly on export restrictions, state trading, and developing-country input subsidies. This creates ongoing North-South tensions."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#next-lecture-preview",
     "href": "Lecture08_Protectionism_II.html#next-lecture-preview",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Next Lecture Preview",
     "text": "Next Lecture Preview\n\nLecture 9 — Balance of Trade & Balance of Payments June 20, 2026\n\nWhat is the BoP? Three-account structure and accounting identity\nNational income identity approach: \\(\\text{CA} = Y - A = S - I + (T - G)\\)\nIndia’s current account: merchandise deficit, services surplus, remittances\nCapital and financial account: FDI vs FPI, RBI reserve management\nMarshall-Lerner condition: \\(|e_X| + |e_M| &gt; 1\\)\n\n\n\n\nJ-curve effect: why depreciation worsens trade balance before improving it\nIndia’s 1991 BoP crisis: $1.2B reserves, gold pledging, IMF conditionality\nIndia FY2024 external sector assessment\n\nPreparation: Read Salvatore Ch. 12–13; RBI Annual Report 2023-24, External Sector chapter. Review IS-LM model — we will use it to analyse policy responses to BoP disequilibrium."
   },
   {
     "objectID": "Lecture08_Protectionism_II.html#additional-resources",
     "href": "Lecture08_Protectionism_II.html#additional-resources",
-    "title": "Protectionism II — Subsidies, Dumping & Cartels",
+    "title": "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels",
     "section": "Additional Resources",
     "text": "Additional Resources\n\n\nFurther Reading\n\nInternational Economics — Salvatore (Ch. 9-11)\nInternational Economics — Appleyard & Field (Ch. 9-11)\nRBI/DGCI&S/APEDA databases for latest data\n\n\nKey Data Sources\n\nDGCI&S: India’s merchandise trade\nRBI: Balance of payments data\n\nAPEDA: Agricultural export statistics\nWTO: Tariff and trade databases"
   },
@@ -2494,182 +2494,182 @@
   {
     "objectID": "Lecture07_Protectionism_I.html#recap-free-trade-and-its-limits",
     "href": "Lecture07_Protectionism_I.html#recap-free-trade-and-its-limits",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Recap: Free Trade and Its Limits",
     "text": "Recap: Free Trade and Its Limits\nComparative advantage says free trade maximises global welfare:\n\nResources flow to most efficient uses\nBoth countries gain from specialisation\nPrices converge across borders\n\n\nBut reality differs: Most countries protect agriculture. India levies average tariffs of ~36% on farm goods. Why?\n\nToday’s question: When — if ever — is protection economically justified?"
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#overview-of-protectionist-instruments",
     "href": "Lecture07_Protectionism_I.html#overview-of-protectionist-instruments",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Overview of Protectionist Instruments",
     "text": "Overview of Protectionist Instruments\n\n\n\n\n\n\n\n\nInstrument\nMechanism\nExample\n\n\n\n\nTariff\nTax on imports\nIndia palm oil duty 100%\n\n\nQuota\nQuantity limit\nTRQ on wheat\n\n\nExport subsidy\nPayment to exporters\nUS Farm Bill\n\n\nAnti-dumping duty\nPenalty for below-cost pricing\nIndia vs Chinese garlic\n\n\nNTB / SPS / TBT\nStandards, labelling, sanitary rules\nPesticide MRLs\n\n\nVER\nExporter self-limits\nJapan autos to USA\n\n\n\n\nLectures 7–8 cover each instrument in turn. NTBs revisited in Lecture 15."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#the-case-for-protection",
     "href": "Lecture07_Protectionism_I.html#the-case-for-protection",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "The Case for Protection",
     "text": "The Case for Protection\nSix main arguments:\n\nInfant industry — temporary protection allows domestic industry to reach scale\nFood security / national security — strategic self-sufficiency\nEmployment protection — preserve rural livelihoods\nOptimal tariff — large-country terms-of-trade argument\nRevenue — government finances via import duties\nAnti-dumping — level the playing field against predatory foreign pricing\n\n\nEconomic validity: Infant industry and optimal tariff have theoretical foundations. Employment, revenue, and food security are political economy arguments — valid as policy goals but do not imply trade restriction is the best tool."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#what-is-a-tariff",
     "href": "Lecture07_Protectionism_I.html#what-is-a-tariff",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "What is a Tariff?",
     "text": "What is a Tariff?\nA tariff is a tax levied on imported goods at the border.\nTypes:\n\nSpecific tariff: fixed amount per unit (e.g. ₹500 per tonne of wheat)\nAd valorem tariff: percentage of import value (e.g. 50% on wheat)\nCompound tariff: specific + ad valorem combined\n\nIndia uses primarily ad valorem tariffs across agricultural commodities.\n\nEffect of a tariff: \\(P_{domestic} = P_{world} + t\\)\nDomestic price rises → domestic production rises → imports fall → consumer surplus falls → government earns revenue"
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#baseline-free-trade-welfare",
     "href": "Lecture07_Protectionism_I.html#baseline-free-trade-welfare",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Baseline: Free Trade Welfare",
     "text": "Baseline: Free Trade Welfare\n\n\nShow R code\nPw &lt;- 15\nPautarky &lt;- 30\n\nggplot() +\n  geom_segment(aes(x=0, y=50, xend=100, yend=0), color=\"#012169\", linewidth=1.5) +\n  geom_segment(aes(x=0, y=10, xend=80, yend=50), color=\"#B9975B\", linewidth=1.5) +\n  geom_hline(yintercept=Pw, linetype=\"dashed\", color=\"darkgreen\", linewidth=1.2) +\n  annotate(\"polygon\", x=c(0,0,70), y=c(50,15,15), fill=\"#012169\", alpha=0.15) +\n  annotate(\"polygon\", x=c(0,10,0), y=c(10,15,15), fill=\"#B9975B\", alpha=0.3) +\n  geom_vline(xintercept=10, linetype=\"dotted\", color=\"#B9975B\") +\n  geom_vline(xintercept=70, linetype=\"dotted\", color=\"#012169\") +\n  annotate(\"text\", x=10, y=3, label=\"Qs=10\", size=3.5, color=\"#B9975B\") +\n  annotate(\"text\", x=70, y=3, label=\"Qd=70\", size=3.5, color=\"#012169\") +\n  annotate(\"text\", x=102, y=0, label=\"D\", size=4, color=\"#012169\") +\n  annotate(\"text\", x=82, y=50, label=\"S\", size=4, color=\"#B9975B\") +\n  annotate(\"text\", x=105, y=Pw, label=paste0(\"Pw = \", Pw), size=3.5, color=\"darkgreen\") +\n  annotate(\"text\", x=35, y=35, label=\"CS\", size=5, color=\"#012169\", fontface=\"bold\") +\n  annotate(\"text\", x=5, y=13, label=\"PS\", size=3.5, color=\"#B9975B\", fontface=\"bold\") +\n  annotate(\"text\", x=40, y=12, label=\"Imports = 60\", size=3.5, color=\"darkgreen\") +\n  scale_x_continuous(limits=c(0,110), breaks=seq(0,100,20)) +\n  scale_y_continuous(limits=c(0,55), breaks=seq(0,50,10)) +\n  labs(title=\"Free Trade Equilibrium\",\n       subtitle=\"At world price Pw=15: Qs=10, Qd=70, Imports=60\",\n       x=\"Quantity\", y=\"Price (₹/unit)\") +\n  theme_minimal(base_size=11)\n\n\n\n\nFigure 1: Free Trade: Domestic Supply, Demand, and World Price Source: Author’s illustration.\n\nFree trade baseline: \\(D: P = 50 - Q/2\\) · \\(S: P = 10 + Q/2\\) · \\(P_w = 15\\)\nAt \\(P_w=15\\): domestic supply \\(Q_s=10\\), domestic demand \\(Q_d=70\\), imports = 60 units."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#partial-equilibrium-analysis-of-a-tariff",
     "href": "Lecture07_Protectionism_I.html#partial-equilibrium-analysis-of-a-tariff",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Partial Equilibrium Analysis of a Tariff",
     "text": "Partial Equilibrium Analysis of a Tariff\nFree trade equilibrium at \\(P_w\\): Domestic supply \\(Q_s^0\\); domestic demand \\(Q_d^0\\); imports \\(M_0 = Q_d^0 - Q_s^0\\)\nAfter tariff \\(t\\): domestic price → \\(P_w + t\\): Domestic supply rises: \\(Q_s^1 &gt; Q_s^0\\); demand falls: \\(Q_d^1 &lt; Q_d^0\\); imports fall: \\(M_1 = Q_d^1 - Q_s^1 &lt; M_0\\)\nWelfare triangles:\n\n\n\nEffect\nDirection\n\n\n\n\nConsumer surplus\n↓ (trapezoid A+B+C+D)\n\n\nProducer surplus\n↑ (rectangle A)\n\n\nGovt revenue\n↑ (rectangle C)\n\n\nDeadweight loss\n↑ (triangles B + D)\n\n\n\n\nTriangle B = production distortion loss (resources diverted to inefficient domestic production)\nTriangle D = consumption distortion loss (consumers priced out of market)\nBoth are pure efficiency loss."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#effect-of-a-tariff-welfare-analysis",
     "href": "Lecture07_Protectionism_I.html#effect-of-a-tariff-welfare-analysis",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Effect of a Tariff — Welfare Analysis",
     "text": "Effect of a Tariff — Welfare Analysis\n\n\nShow R code\nPw &lt;- 15; t &lt;- 10; Pt &lt;- Pw + t\n\nQd_free   &lt;- 100 - 2*Pw   # 70\nQs_free   &lt;- -20 + 2*Pw   # 10\nQd_tariff &lt;- 100 - 2*Pt   # 50\nQs_tariff &lt;- -20 + 2*Pt   # 30\n\nggplot() +\n  geom_segment(aes(x=0, y=50, xend=100, yend=0), color=\"#012169\", linewidth=1.5) +\n  geom_segment(aes(x=0, y=10, xend=80, yend=50), color=\"#B9975B\", linewidth=1.5) +\n  geom_hline(yintercept=Pw, linetype=\"dashed\", color=\"darkgreen\", linewidth=1) +\n  geom_hline(yintercept=Pt, linetype=\"dashed\", color=\"red\", linewidth=1.2) +\n  # Area A: PS gain rectangle\n  annotate(\"polygon\", \n           x=c(Qs_free, Qs_tariff, Qs_tariff, Qs_free), \n           y=c(Pw, Pw, Pt, Pt), \n           fill=\"#B9975B\", alpha=0.5) +\n  annotate(\"text\", x=(Qs_free+Qs_tariff)/2, y=(Pw+Pt)/2, label=\"A\\n(PS gain)\", \n           size=3, fontface=\"bold\") +\n  # Area B: DWL production triangle\n  annotate(\"polygon\",\n           x=c(Qs_free, Qs_tariff, Qs_free),\n           y=c(Pw, Pw, Pt),\n           fill=\"red\", alpha=0.4) +\n  annotate(\"text\", x=Qs_free+2, y=Pw+3, label=\"B\", size=3.5, fontface=\"bold\", color=\"red\") +\n  # Area C: tariff revenue rectangle\n  annotate(\"polygon\",\n           x=c(Qs_tariff, Qd_tariff, Qd_tariff, Qs_tariff),\n           y=c(Pw, Pw, Pt, Pt),\n           fill=\"purple\", alpha=0.3) +\n  annotate(\"text\", x=(Qs_tariff+Qd_tariff)/2, y=(Pw+Pt)/2, label=\"C\\n(Tariff\\nRevenue)\", \n           size=3, fontface=\"bold\", color=\"purple\") +\n  # Area D: DWL consumption triangle\n  annotate(\"polygon\",\n           x=c(Qd_tariff, Qd_free, Qd_tariff),\n           y=c(Pt, Pw, Pw),\n           fill=\"red\", alpha=0.4) +\n  annotate(\"text\", x=Qd_free-3, y=Pw+3, label=\"D\", size=3.5, fontface=\"bold\", color=\"red\") +\n  annotate(\"text\", x=107, y=Pw, label=paste0(\"Pw=\",Pw), size=3.2, color=\"darkgreen\") +\n  annotate(\"text\", x=107, y=Pt, label=paste0(\"Pt=\",Pt), size=3.2, color=\"red\") +\n  geom_vline(xintercept=c(Qs_free,Qs_tariff,Qd_tariff,Qd_free), linetype=\"dotted\", alpha=0.5) +\n  annotate(\"text\", x=Qs_free,   y=2, label=paste0(\"Qs=\",Qs_free),      size=2.8) +\n  annotate(\"text\", x=Qs_tariff, y=2, label=paste0(\"Qs'=\",Qs_tariff),   size=2.8) +\n  annotate(\"text\", x=Qd_tariff, y=2, label=paste0(\"Qd'=\",Qd_tariff),   size=2.8) +\n  annotate(\"text\", x=Qd_free,   y=2, label=paste0(\"Qd=\",Qd_free),      size=2.8) +\n  annotate(\"text\", x=102, y=0, label=\"D\", size=4, color=\"#012169\") +\n  annotate(\"text\", x=82, y=52, label=\"S\", size=4, color=\"#B9975B\") +\n  scale_x_continuous(limits=c(0,115), breaks=seq(0,100,10)) +\n  scale_y_continuous(limits=c(0,55), breaks=seq(0,50,5)) +\n  labs(title=\"Effect of a Specific Tariff (t = 10)\",\n       subtitle=\"CS falls by A+B+C+D; PS rises by A; Revenue = C; DWL = B+D\",\n       x=\"Quantity\", y=\"Price\") +\n  theme_minimal(base_size=11)\n\n\n\n\nFigure 2: Specific Tariff t=10: CS Lost, PS Gained, DWL Triangles Source: Author’s illustration."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#welfare-accounting-the-tariff-identity",
     "href": "Lecture07_Protectionism_I.html#welfare-accounting-the-tariff-identity",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Welfare Accounting: The Tariff Identity",
     "text": "Welfare Accounting: The Tariff Identity\n\\[\\Delta CS = -(A + B + C + D)\\]\n\\[\\Delta PS = +A\\]\n\\[\\text{Tariff Revenue} = +C\\]\n\\[\\boxed{\\Delta \\text{National Welfare} = -(B + D)}\\]\nWhere:\n\nB = production distortion loss — resources wastefully drawn into domestic production\nD = consumption distortion loss — consumers wastefully priced out of the market\n\n\nFor a small country: the tariff always reduces national welfare by the deadweight loss triangles \\(B + D\\).\nNumerical example: With \\(t=10\\), \\(P_w=15\\): - \\(\\Delta CS = -(A+B+C+D)\\); \\(B = \\tfrac{1}{2}(30{-}10)(25{-}15) = 100\\); \\(D = \\tfrac{1}{2}(70{-}50)(25{-}15) = 100\\) - \\(B = \\frac{1}{2}(30-10)(25-15) = 100\\); \\(D = \\frac{1}{2}(70-50)(25-15) = 100\\); DWL = 200"
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#winners-and-losers-from-a-tariff",
     "href": "Lecture07_Protectionism_I.html#winners-and-losers-from-a-tariff",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Winners and Losers from a Tariff",
     "text": "Winners and Losers from a Tariff\n\n\n\n\n\n\n\n\nGroup\nEffect\nReason\n\n\n\n\nDomestic producers\nGain\nHigher domestic price, expand output\n\n\nConsumers\nLose\nPay higher price, consume less\n\n\nGovernment\nGain revenue\nTariff × import volume\n\n\nNet welfare (small country)\nLoss\nDWL = B + D\n\n\n\n\nSmall country assumption: Country is a price taker — the tariff does not affect the world price.\nLarge country exception: If India’s import demand is large enough to move world prices, a tariff can improve India’s terms of trade → optimal tariff (see later)."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#indias-agricultural-tariff-structure",
     "href": "Lecture07_Protectionism_I.html#indias-agricultural-tariff-structure",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "India’s Agricultural Tariff Structure",
     "text": "India’s Agricultural Tariff Structure\nWTO commitments (FY2024):\n\n\n\n\nBound\nApplied\n\n\n\n\nAll goods\n48.5%\n13.8%\n\n\nAgriculture\n113.5%\n36.4%\n\n\n\n“Water in the tariff” = gap between bound and applied rates. India retains large room to raise tariffs without breaching WTO commitments.\nSelected high-tariff items:\n\n\n\nCommodity\nApplied duty\n\n\n\n\nPalm oil\n100% (basic + AIDC)\n\n\nSugar\n100%\n\n\nWheat\n50%\n\n\nMaize\n60%\n\n\nMilk (SMP)\n60%\n\n\n\n\nIndia’s bound rate of ~114% is one of the highest among G20 nations for agriculture."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#indias-agricultural-tariff-profile",
     "href": "Lecture07_Protectionism_I.html#indias-agricultural-tariff-profile",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "India’s Agricultural Tariff Profile",
     "text": "India’s Agricultural Tariff Profile\n\n\nShow R code\ntariff_data &lt;- data.frame(\n  commodity = c(\"Palm Oil\", \"Sunflower Oil\", \"Wheat\", \"Pulses\", \"Sugar\",\n                \"Skimmed Milk\\nPowder\", \"Maize\", \"Soybean\\nMeal\"),\n  tariff_rate = c(100, 38, 40, 50, 60, 60, 60, 30),\n  type = c(\"Edible Oil\", \"Edible Oil\", \"Cereals\", \"Pulses\", \"Sugar\",\n           \"Dairy\", \"Cereals\", \"Oilseeds\")\n)\ntariff_data &lt;- tariff_data |&gt; arrange(tariff_rate) |&gt;\n  mutate(commodity=factor(commodity, levels=commodity))\n\nggplot(tariff_data, aes(x=commodity, y=tariff_rate, fill=type)) +\n  geom_col(width=0.7) +\n  geom_text(aes(label=paste0(tariff_rate, \"%\")), hjust=-0.1, size=3.2) +\n  coord_flip() +\n  scale_fill_brewer(palette=\"Set1\") +\n  labs(title=\"India's MFN Applied Tariff Rates: Key Agricultural Commodities (2024)\",\n       subtitle=\"India uses high tariffs to protect domestic agriculture — WTO bound rates are higher still\",\n       x=NULL, y=\"MFN Applied Tariff Rate (%)\", fill=\"Category\") +\n  scale_y_continuous(limits=c(0,115)) +\n  theme_minimal(base_size=11) +\n  theme(legend.position=\"bottom\")\n\n\n\n\nFigure 3: India: Applied MFN Tariff Rates on Key Agricultural Imports (2024) Source: WTO, Tariff Profiles (2024); DGFT."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#the-tariff-rate-quota-trq",
     "href": "Lecture07_Protectionism_I.html#the-tariff-rate-quota-trq",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "The Tariff Rate Quota (TRQ)",
     "text": "The Tariff Rate Quota (TRQ)\nA TRQ combines two tariff levels:\n\nWithin-quota tariff (low): applies to a fixed import volume\nOver-quota tariff (high): applies to imports beyond the quota\n\nEffect: Allows some imports cheaply (food security) while discouraging large imports (protects producers).\n\nIndia’s TRQs under WTO AoA:\n\n\n\nCommodity\nIn-quota duty\nOver-quota\n\n\n\n\nMaize\n15%\n60%\n\n\nSkimmed milk\n15%\n60%\n\n\nCrude soybean oil\n45%\n100%\n\n\n\nTRQs were bound at Uruguay Round (1994). India rarely fills its TRQ allocations."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#case-study-indias-palm-oil-import-duty",
     "href": "Lecture07_Protectionism_I.html#case-study-indias-palm-oil-import-duty",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Case Study: India’s Palm Oil Import Duty",
     "text": "Case Study: India’s Palm Oil Import Duty\nTimeline:\n\n2017: Basic duty 0% (edible oil prices rising)\n2020: Raised to 37.5% (protecting oilseed farmers)\n2021: Basic + AIDC + SWS ≈ 100% effective duty\n\nRationale: Protect domestic oilseed farmers (soybean, groundnut, mustard).\n\nThe dilemma: India imports ~14 million tonnes/year of edible oils — 60% of consumption. Cannot substitute quickly. Farmers in MP, Rajasthan gain; urban consumers lose; food inflation rises.\n\n\nTerms of trade argument partially valid: India is the world’s largest palm oil importer — its import demand moves global prices. A tariff improves India’s ToT at the cost of Malaysian/Indonesian exporters."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#effective-rate-of-protection-erp",
     "href": "Lecture07_Protectionism_I.html#effective-rate-of-protection-erp",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Effective Rate of Protection (ERP)",
     "text": "Effective Rate of Protection (ERP)\nNominal tariff = tariff on the final good. ERP = protection on value added in production, accounting for tariffs on inputs.\n\\[\\text{ERP} = \\frac{t_f - \\sum a_i t_i}{1 - \\sum a_i}\\]\nwhere \\(t_f\\) = nominal tariff on final good, \\(t_i\\) = tariff on input \\(i\\), \\(a_i\\) = input share in value.\n\nExample: Sugar processing\n\nTariff on sugar (final): 100%; tariff on sugarcane (input): 0%; input share: ~70%\n\n\\[\\text{ERP} = \\frac{0.10 - 0}{1 - 0.70} \\approx 333\\%\\]\nERP &gt;&gt; nominal tariff = “tariff escalation” — processing stages protected far more than raw material.\n\n\nIndia’s tariff structure commonly exhibits cascading — protecting processing industries at the expense of downstream consumers and raw material exporters."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#what-is-an-import-quota",
     "href": "Lecture07_Protectionism_I.html#what-is-an-import-quota",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "What is an Import Quota?",
     "text": "What is an Import Quota?\nA quota is a quantitative restriction — it sets the maximum volume of a good that may be imported in a given period.\nHow it works:\n\nGovernment announces quota (e.g., 1 million tonnes of wheat)\nImport licences issued (to traders, state agencies, or by auction)\nOnce quota filled, further imports blocked\nDomestic price rises until supply + quota = demand\n\n\nQuota rent: The gap between domestic and world price × quota volume = quota rent. Who captures the rent? If licences auctioned → government; if licences given away → importers (or exporters under VER)."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#import-quota-same-effect-different-mechanism",
     "href": "Lecture07_Protectionism_I.html#import-quota-same-effect-different-mechanism",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Import Quota — Same Effect, Different Mechanism",
     "text": "Import Quota — Same Effect, Different Mechanism\n\n\nShow R code\nPw &lt;- 15; Pt &lt;- 25\nQs_free &lt;- 10; Qd_free &lt;- 70\nQs_q &lt;- 30; Qd_q &lt;- 50\nquota &lt;- 20\n\nggplot() +\n  geom_segment(aes(x=0, y=50, xend=100, yend=0), color=\"#012169\", linewidth=1.5) +\n  geom_segment(aes(x=0, y=10, xend=80, yend=50), color=\"#B9975B\", linewidth=1.5) +\n  geom_segment(aes(x=quota, y=10, xend=80+quota, yend=50), color=\"#B9975B\", linewidth=1, linetype=\"dashed\") +\n  annotate(\"text\", x=95, y=48, label=\"S + Quota\", size=3, color=\"#B9975B\") +\n  geom_hline(yintercept=Pw, linetype=\"dashed\", color=\"darkgreen\", linewidth=1) +\n  geom_hline(yintercept=Pt, linetype=\"solid\", color=\"red\", linewidth=1.2) +\n  annotate(\"text\", x=107, y=Pw, label=\"Pw=15\", size=3.2, color=\"darkgreen\") +\n  annotate(\"text\", x=107, y=Pt, label=\"New P=25\", size=3.2, color=\"red\") +\n  annotate(\"polygon\", x=c(Qs_q, Qd_q, Qd_q, Qs_q), y=c(Pw, Pw, Pt, Pt),\n           fill=\"#9966CC\", alpha=0.4) +\n  annotate(\"text\", x=(Qs_q+Qd_q)/2, y=(Pw+Pt)/2, label=\"Quota Rent\\n(who gets it?)\", \n           size=3, fontface=\"bold\", color=\"#9966CC\") +\n  annotate(\"polygon\", x=c(Qs_free, Qs_q, Qs_free), y=c(Pw, Pw, Pt), fill=\"red\", alpha=0.4) +\n  annotate(\"polygon\", x=c(Qd_q, Qd_free, Qd_q), y=c(Pt, Pw, Pw), fill=\"red\", alpha=0.4) +\n  annotate(\"text\", x=Qs_free+3, y=Pw+3, label=\"B\", size=3.5, color=\"red\", fontface=\"bold\") +\n  annotate(\"text\", x=Qd_free-3, y=Pw+3, label=\"D\", size=3.5, color=\"red\", fontface=\"bold\") +\n  annotate(\"text\", x=102, y=0, label=\"D\", size=4, color=\"#012169\") +\n  scale_x_continuous(limits=c(0,115), breaks=seq(0,100,10)) +\n  scale_y_continuous(limits=c(0,55)) +\n  labs(title=\"Import Quota: Same DWL as Tariff, but Quota Rent May Go to Foreigners\",\n       subtitle=\"Quota limits imports to 20 units → domestic price rises to 25 (same as tariff equivalent)\",\n       x=\"Quantity\", y=\"Price\") +\n  theme_minimal(base_size=11)\n\n\n\n\nFigure 4: Import Quota: Quantity Restriction Creates Quota Rent Instead of Revenue Source: Author’s illustration."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#tariff-vs-quota-revenue-vs-rent",
     "href": "Lecture07_Protectionism_I.html#tariff-vs-quota-revenue-vs-rent",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Tariff vs Quota: Revenue vs Rent",
     "text": "Tariff vs Quota: Revenue vs Rent\nKey difference in revenue allocation:\n\\[\\text{Tariff: Revenue} = t \\times M \\quad \\text{(goes to government)}\\]\n\\[\\text{Quota: Rent} = (P_t - P_w) \\times \\bar{M} \\quad \\text{(may go to foreign exporters)}\\]\nWhen quota rent goes to foreigners: If import licences are given free to foreign exporters (as in a VER), the domestic economy loses the tariff-equivalent rectangle C. Net welfare loss = \\(B + C + D\\) &gt; tariff welfare loss of \\(B + D\\).\nWhen quota rent stays domestic: If licences are auctioned to domestic importers, the domestic economy captures rent = equivalent to tariff.\n\nImplication for policy: If quota rents accrue to foreign exporters, quotas are worse than equivalent tariffs — the domestic economy loses both the DWL and the revenue. This is why economists generally prefer tariffs over quotas, and why WTO’s GATT Article XI prohibits quotas."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#tariff-vs-quota-similarities-and-differences",
     "href": "Lecture07_Protectionism_I.html#tariff-vs-quota-similarities-and-differences",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Tariff vs Quota: Similarities and Differences",
     "text": "Tariff vs Quota: Similarities and Differences\n\n\n\n\n\n\n\n\nFeature\nTariff\nQuota\n\n\n\n\nDomestic price\nRises\nRises\n\n\nDomestic production\nRises\nRises\n\n\nImports\nFall\nFall (fixed)\n\n\nGovernment revenue\nYes — tariff revenue\nOnly if licences auctioned\n\n\nFlexibility under demand shock\nAdjusts automatically\nQuantity fixed — price volatile\n\n\nTransparency\nMore transparent\nLess — hidden in licensing\n\n\nWTO legality\nBound and transparent\nMostly prohibited (GATT Art XI)\n\n\n\n\nKey asymmetry: Under a tariff, if demand rises, imports rise (at fixed tariff price). Under a quota, imports are fixed — domestic price must rise to clear the market. Quotas are more price-volatile and less transparent."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#indias-quantitative-restrictions-history",
     "href": "Lecture07_Protectionism_I.html#indias-quantitative-restrictions-history",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "India’s Quantitative Restrictions: History",
     "text": "India’s Quantitative Restrictions: History\nPre-2001: India maintained extensive QRs on agricultural imports citing balance of payments reasons (GATT Article XVIII:B) — QRs on hundreds of agricultural product lines; effective near-ban on many imports.\n2001: USA challenged India’s QRs at WTO. Panel ruling: India’s BoP situation no longer justified QRs. India removed most agricultural QRs.\n\nPost-2001 shift: India replaced QRs with high tariffs — achieving similar protection through a WTO-consistent instrument. “Tariffication” converted quantity restrictions to price restrictions. Tariff flexibility (“water”) provides buffer for future protection."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#the-optimal-tariff-argument",
     "href": "Lecture07_Protectionism_I.html#the-optimal-tariff-argument",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "The Optimal Tariff Argument",
     "text": "The Optimal Tariff Argument\nFor a large country, an import tariff reduces demand for imports → world price falls → terms of trade improve.\nOptimal tariff = tariff that maximises net welfare gain:\n\\[t^* = \\frac{1}{\\varepsilon_x^*}\\]\nwhere \\(\\varepsilon_x^*\\) = foreign export supply elasticity. More inelastic foreign supply → higher optimal tariff.\n\nIndia’s case (palm oil): India = 15% of world palm oil demand. Malaysian/Indonesian export supply somewhat inelastic → India can depress world palm oil prices with a tariff → Terms of trade gain partially offsets DWL.\nCaveat: Retaliation risk. If Malaysia retaliates on Indian exports (spices, pharmaceuticals), net welfare impact uncertain.\n\n\nOptimal tariff is the only trade-restriction argument that raises national welfare in economic theory — and only for large countries."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#infant-industry-protection-indias-experience",
     "href": "Lecture07_Protectionism_I.html#infant-industry-protection-indias-experience",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Infant Industry Protection: India’s Experience",
     "text": "Infant Industry Protection: India’s Experience\nArgument: A nascent domestic industry cannot compete initially due to high startup costs, lack of accumulated learning-by-doing, and missing domestic supply chains. Temporary protection allows the industry to mature → eventually competitive.\nPost-Independence India: Bombay Plan (1944) — protect everything. Led to License Raj.\n\nAgriculture examples:\n\nGreen Revolution: seed, fertiliser, irrigation subsidised → Indian wheat/rice went from deficit to surplus\nOilseeds: Technology Mission on Oilseeds (1986) used tariff + R&D → raised productivity\nSugar: Protected since 1932 — never “grown up.” Chronic intervention = perennial inefficiency.\n\n\n\nKey insight: Protection that never ends becomes a permanent rent transfer from consumers to producers, not an investment in future competitiveness."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#voluntary-export-restraints-vers",
     "href": "Lecture07_Protectionism_I.html#voluntary-export-restraints-vers",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Voluntary Export Restraints (VERs)",
     "text": "Voluntary Export Restraints (VERs)\nA VER occurs when an exporting country “voluntarily” restricts its exports to a trading partner — usually under diplomatic pressure.\nClassic example: Japan limited auto exports to USA in the 1980s. Effect: Like a quota but the quota rent accrues to the exporter (not the importer government). WTO: VERs are now illegal under Article 11 of WTO Safeguards Agreement (post-Uruguay Round).\n\nIndia-adjacent example: India’s 2023 rice export restrictions raised world prices — effectively a VER from the perspective of importing nations like Bangladesh, Benin, and Senegal. India’s rice export controls demonstrated India’s market power as the world’s dominant rice exporter."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#non-tariff-barriers-ntbs-preview",
     "href": "Lecture07_Protectionism_I.html#non-tariff-barriers-ntbs-preview",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Non-Tariff Barriers (NTBs): Preview",
     "text": "Non-Tariff Barriers (NTBs): Preview\nNTBs are behind-the-border measures that restrict trade without an explicit tariff or quota:\n\nSPS (Sanitary & Phytosanitary): food safety, animal/plant health standards\nTBT (Technical Barriers to Trade): labelling, packaging, quality standards\nLicensing requirements; customs procedures and delays; state trading monopolies\n\n\nThe “new protectionism”: As tariffs have fallen under WTO, NTBs have risen to replace them. India’s rejection of GM soybean imports (SPS), EU’s pesticide MRLs on Indian spices, and USA’s countervailing duties on Indian shrimp are all NTB-related disputes.\nDetailed treatment: Lecture 15."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#summary-tariffs-and-quotas",
     "href": "Lecture07_Protectionism_I.html#summary-tariffs-and-quotas",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Summary: Tariffs and Quotas",
     "text": "Summary: Tariffs and Quotas\n\nCore findings:\n\nTariffs raise domestic prices, protect producers, generate government revenue, but impose deadweight losses \\(B + D\\) on the economy.\nQuotas have similar price effects but create quota rents (often captured by private importers or foreign exporters) and are more price-volatile.\nIndia uses high bound tariffs as a buffer — “water in the tariff” provides policy space without WTO violation.\nThe ERP often exceeds the nominal tariff due to tariff escalation in India’s structure.\nOptimal tariff is the only theoretically valid welfare-raising argument — and only for large countries like India in palm oil.\n\n\n\n\nWelfare identity: \\(\\Delta W = -(B+D)\\) for small country; may be positive for large country at optimal tariff.\n\nIndia’s agricultural protection architecture: High applied tariffs + TRQs + licensing + SPS/NTBs = multi-layered protection. WTO constraints bind only at the margins."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#next-lecture",
     "href": "Lecture07_Protectionism_I.html#next-lecture",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Next Lecture",
     "text": "Next Lecture\n\nLecture 8 — Protectionism II: Subsidies, Dumping & Cartels June 16, 2026\n\nExport subsidies and their effects on world markets\nIndia’s MSP and WTO’s Amber Box rules\nDumping: definition, types, anti-dumping duties\nIndia as the world’s top anti-dumping user\nAgricultural cartels and commodity agreements\n\n\n\n\nFertiliser subsidies and trade distortion\nIndia’s rice export ban (2023) as market power exercise\n\nPreparation: Read Krugman, Obstfeld & Melitz, Ch. 9 (Export Subsidies and Import Quotas). Review India’s WTO notification on domestic support (2022)."
   },
   {
     "objectID": "Lecture07_Protectionism_I.html#additional-resources",
     "href": "Lecture07_Protectionism_I.html#additional-resources",
-    "title": "Protectionism I — Tariffs & Quotas",
+    "title": "Lecture 7: Protectionism I — Tariffs & Quotas",
     "section": "Additional Resources",
     "text": "Additional Resources\nFurther Reading\n\nInternational Economics — Salvatore (Ch. 9-11)\nInternational Economics — Appleyard & Field (Ch. 9-11)\nRBI/DGCI&S/APEDA databases for latest data\n\nKey Data Sources\n\nDGCI&S: India’s merchandise trade\nRBI: Balance of payments data\n\nAPEDA: Agricultural export statistics\nWTO: Tariff and trade databases"
   },
@@ -2683,266 +2683,266 @@
   {
     "objectID": "Lecture09_BoT_BoP.html#introduction-why-the-bop-matters",
     "href": "Lecture09_BoT_BoP.html#introduction-why-the-bop-matters",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Introduction: Why the BoP Matters",
     "text": "Introduction: Why the BoP Matters\nKey questions for today:\n\nHow does a country “pay” for its imports?\nWhat happens when a country consistently imports more than it exports?\nHow do capital flows balance the external accounts?\nWhen does a BoP crisis occur?\n\n\nBoP accounting identity:\n\\[\\underbrace{\\text{CA}}_{\\text{trade + income}} + \\underbrace{\\text{KA}}_{\\text{transfers}} + \\underbrace{\\text{FA}}_{\\text{capital flows}} + \\underbrace{\\Delta R}_{\\text{reserve change}} = 0\\]\nA current account deficit must be financed by capital/financial inflows or by running down foreign exchange reserves. If neither is available → BoP crisis (India 1991).\n\n\nIndia’s external sector at a glance (FY2024):\n\nMerchandise exports: $437 billion (goods)\nMerchandise imports: $677 billion (goods)\nTrade deficit: -$240 billion (goods only)\nServices surplus: +$163B\nRemittances: +$120B (world’s largest recipient)\nCurrent account: -$23B (-0.7% of GDP)"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#balance-of-trade-bot-the-idea",
     "href": "Lecture09_BoT_BoP.html#balance-of-trade-bot-the-idea",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Balance of Trade (BoT): the idea",
     "text": "Balance of Trade (BoT): the idea\n\\[\\text{BoT} = X_{goods} - M_{goods}\\]\n\nBoT &gt; 0: trade surplus\nBoT &lt; 0: trade deficit\nIndia typically has a goods deficit (oil + gold + electronics)"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#india-fy2024-why-the-goods-deficit-persists",
     "href": "Lecture09_BoT_BoP.html#india-fy2024-why-the-goods-deficit-persists",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India FY2024: why the goods deficit persists",
     "text": "India FY2024: why the goods deficit persists\n\nGoods exports ≈ $437B\nGoods imports ≈ $677B\nGoods trade balance ≈ -$240B\n\n\nStructural drivers: crude oil dependence + gold demand + electronics import intensity."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#current-account-identity-absorption-approach",
     "href": "Lecture09_BoT_BoP.html#current-account-identity-absorption-approach",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Current Account identity (absorption approach)",
     "text": "Current Account identity (absorption approach)\n\\[Y = C + I + G + (X - M)\\]\nRearrange:\n\\[\\boxed{\\text{CA} \\approx (X-M) = Y - A}\\quad\\text{where }A=C+I+G\\]\n\nIf \\(Y&gt;A\\): produce more than spend → net lender\nIf \\(Y&lt;A\\): spend more than produce → net borrower"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#current-account-identity-savinginvestment-form",
     "href": "Lecture09_BoT_BoP.html#current-account-identity-savinginvestment-form",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Current Account identity (saving–investment form)",
     "text": "Current Account identity (saving–investment form)\n\\[\\boxed{\\text{CA} = (S - I) + (T - G)}\\]\n\nCA deficit can reflect high investment (good) or fiscal deficit (risk)\nDevaluation alone won’t fix CA if absorption stays high"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#india-fy2024-why-the-ca-deficit-was-small",
     "href": "Lecture09_BoT_BoP.html#india-fy2024-why-the-ca-deficit-was-small",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India FY2024: why the CA deficit was small",
     "text": "India FY2024: why the CA deficit was small\n\nGoods trade deficit was large (≈ -$240B)\nServices trade surplus was large (≈ +$163B)\nRemittances were huge (≈ +$120B)\nNet result: CA ≈ -$23B (-0.7% of GDP)\n\n\nIn India, services + remittances are the “cushion” behind the external sector."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#bop-accounts-current-vs-capital",
     "href": "Lecture09_BoT_BoP.html#bop-accounts-current-vs-capital",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "BoP accounts: Current vs Capital",
     "text": "BoP accounts: Current vs Capital\n\nCurrent Account (CA): goods, services, income, transfers\nCapital Account (KA): capital transfers (usually small)\nFinancial Account (FA): FDI, FPI, loans, deposits, reserves"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#double-entry-bookkeeping-2-examples",
     "href": "Lecture09_BoT_BoP.html#double-entry-bookkeeping-2-examples",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Double-entry bookkeeping (2 examples)",
     "text": "Double-entry bookkeeping (2 examples)\n\nImport machines worth $10M: CA -10 and FA +10\nExport software worth $5M: CA +5 and FA -5 (forex asset)\n\n\nEvery transaction has equal-and-opposite entries → accounts always add up."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#the-balance-of-payments-bop-accounts-identity",
     "href": "Lecture09_BoT_BoP.html#the-balance-of-payments-bop-accounts-identity",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "The Balance of Payments (BoP): Accounts + Identity",
     "text": "The Balance of Payments (BoP): Accounts + Identity\n\nCurrent Account (CA): goods, services, income, transfers\nCapital Account (KA): capital transfers (typically small)\nFinancial Account (FA): FDI, FPI, loans, and reserve changes\nAccounting identity: \\(\\text{CA} + \\text{KA} + \\text{FA} + \\Delta R = 0\\)\nIf a CA deficit cannot be financed → BoP crisis (India 1991)"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#india-bop-snapshot-fy2024",
     "href": "Lecture09_BoT_BoP.html#india-bop-snapshot-fy2024",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India: BoP snapshot (FY2024)",
     "text": "India: BoP snapshot (FY2024)\n\n\n\nComponent\nUSD B\n\n\n\n\nCurrent Account\n-23\n\n\nFinancial Account\n+20\n\n\nΔ Reserves\n+3\n\n\nTotal\n≈ 0\n\n\n\n\nThe CA deficit is financed primarily through FDI and portfolio inflows, making FA stability critical."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#indias-bop-components-fy2020fy2024",
     "href": "Lecture09_BoT_BoP.html#indias-bop-components-fy2020fy2024",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India’s BoP Components: FY2020–FY2024",
     "text": "India’s BoP Components: FY2020–FY2024\n\n\nShow R code\nbop_data &lt;- data.frame(\n  year           = rep(c(\"FY20\",\"FY21\",\"FY22\",\"FY23\",\"FY24\"), each = 6),\n  component      = rep(c(\"Merchandise\\nTrade Balance\", \"Services\\nSurplus\",\n                         \"Remittances\", \"Investment\\nIncome (net)\",\n                         \"FDI (net)\", \"FPI (net)\"), times = 5),\n  value          = c(\n    # FY20\n    -157,  85,  83, -26,  43, -14,\n    # FY21\n     -98,  89,  83, -29,  44,  36,\n    # FY22\n    -190, 107,  89, -33,  39, -16,\n    # FY23\n    -264, 143, 112, -39,  28, -16,\n    # FY24\n    -238, 163, 120, -68,  22,  41\n  )\n)\n\nbop_data &lt;- bop_data |&gt;\n  mutate(\n    account = ifelse(component %in% c(\"Merchandise\\nTrade Balance\",\n                                       \"Services\\nSurplus\",\n                                       \"Remittances\",\n                                       \"Investment\\nIncome (net)\"),\n                     \"Current Account\", \"Financial Account\"),\n    component = factor(component,\n                       levels = c(\"Merchandise\\nTrade Balance\",\n                                  \"Investment\\nIncome (net)\",\n                                  \"FPI (net)\",\n                                  \"FDI (net)\",\n                                  \"Services\\nSurplus\",\n                                  \"Remittances\"))\n  )\n\nggplot(bop_data, aes(x = year, y = value, fill = component)) +\n  geom_col(position = \"dodge\", width = 0.85) +\n  geom_hline(yintercept = 0, linewidth = 0.8, color = \"grey30\") +\n  scale_fill_manual(values = c(\n    \"Merchandise\\nTrade Balance\" = \"#8B0000\",\n    \"Investment\\nIncome (net)\"  = \"#cc4444\",\n    \"FPI (net)\"                  = \"#B9975B\",\n    \"FDI (net)\"                  = \"#7B9F35\",\n    \"Services\\nSurplus\"          = \"#012169\",\n    \"Remittances\"                = \"#5B8DB8\"\n  )) +\n  labs(\n    title    = \"India's Balance of Payments Components, FY2020–FY2024\",\n    subtitle = \"Merchandise deficit offset by services surplus, remittances, and (usually) financial inflows\",\n    x = NULL, y = \"USD Billion\", fill = NULL\n  ) +\n  theme_minimal(base_size = 10) +\n  theme(\n    legend.position  = \"bottom\",\n    legend.text      = element_text(size = 8),\n    panel.grid.major.x = element_blank()\n  ) +\n  guides(fill = guide_legend(nrow = 2))\n\n\n\n\nFigure 1: India’s Balance of Payments Components, FY2020–FY2024 (USD billion) Source: RBI, Balance of Payments Statistics."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#indias-current-account-fy2024-decomposition",
     "href": "Lecture09_BoT_BoP.html#indias-current-account-fy2024-decomposition",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India’s Current Account: FY2024 Decomposition",
     "text": "India’s Current Account: FY2024 Decomposition\n\n\nShow R code\n# CA = merch balance + services + remittances + investment income\n# = -238 + 163 + 120 - 68 = -23 (approx)\nca_items &lt;- data.frame(\n  item      = factor(\n    c(\"Merch.\\nExports\", \"Merch.\\nImports\", \"Services\\nSurplus\",\n      \"Remittances\", \"Inv. Income\\n(net)\", \"CA Balance\"),\n    levels = c(\"Merch.\\nExports\", \"Merch.\\nImports\", \"Services\\nSurplus\",\n               \"Remittances\", \"Inv. Income\\n(net)\", \"CA Balance\")\n  ),\n  value     = c( 437, -677,  163,  120, -68, -23),\n  fill_col  = c(\"#012169\", \"#8B0000\", \"#012169\", \"#5B8DB8\", \"#8B0000\", \"grey30\"),\n  label_pos = c( 437, -677,  163,  120, -68, -23)\n)\n\nggplot(ca_items, aes(x = item, y = value, fill = fill_col)) +\n  geom_col(width = 0.65) +\n  scale_fill_identity() +\n  geom_hline(yintercept = 0, linewidth = 0.8) +\n  geom_text(\n    aes(\n      label = paste0(ifelse(value &gt;= 0, \"+\", \"\"), value, \"B\"),\n      vjust = ifelse(value &gt;= 0, -0.4, 1.3)\n    ),\n    size = 3.5, fontface = \"bold\"\n  ) +\n  scale_y_continuous(\n    limits = c(-720, 520),\n    labels = label_dollar(prefix = \"$\", suffix = \"B\")\n  ) +\n  labs(\n    title    = \"India's Current Account Components, FY2024 (USD Billion)\",\n    subtitle = \"Gross exports shown separately from imports for clarity\\nCA deficit = -$23B (-0.7% of GDP) — manageable\",\n    x = NULL, y = \"USD Billion\"\n  ) +\n  theme_minimal(base_size = 11) +\n  theme(panel.grid.major.x = element_blank())\n\n\n\n\nFigure 2: India’s Current Account, FY2024: Component Contributions (USD Billion) Source: RBI, Balance of Payments Statistics."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#financial-account-fa-india-fy2024-headline",
     "href": "Lecture09_BoT_BoP.html#financial-account-fa-india-fy2024-headline",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Financial Account (FA): India FY2024 (headline)",
     "text": "Financial Account (FA): India FY2024 (headline)\n\nFA inflows were positive (FDI + portfolio + loans + deposits)\nThis helped finance the CA deficit and support reserves\n\n\\[\\text{BoP identity: } CA + KA + FA + \\Delta R = 0\\]"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#fdi-vs-fpi-why-it-matters",
     "href": "Lecture09_BoT_BoP.html#fdi-vs-fpi-why-it-matters",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "FDI vs FPI (why it matters)",
     "text": "FDI vs FPI (why it matters)\n\nFDI: long-term ownership, more stable\nFPI: liquid “hot money”, more volatile\nBoP vulnerability often comes from sudden stops in FPI/short-term flows"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#forex-reserves-what-they-are",
     "href": "Lecture09_BoT_BoP.html#forex-reserves-what-they-are",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Forex reserves: what they are",
     "text": "Forex reserves: what they are\n\nForeign currency assets (USD/EUR/GBP/JPY, etc.)\nGold\nSDRs + IMF reserve tranche\nUsed for liquidity in crises and to smooth extreme volatility\n\n\nA common adequacy benchmark is “months of import cover”."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#rbi-intervention-under-a-managed-float",
     "href": "Lecture09_BoT_BoP.html#rbi-intervention-under-a-managed-float",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "RBI intervention under a managed float",
     "text": "RBI intervention under a managed float\n\nBuy USD / sell INR to resist sharp appreciation\nSell USD / buy INR to resist sharp depreciation\nGoal is usually to smooth volatility, not to fix a peg\nIntervention affects reserves and domestic liquidity"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#bop-adjustment-mechanisms-3-channels",
     "href": "Lecture09_BoT_BoP.html#bop-adjustment-mechanisms-3-channels",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "BoP adjustment mechanisms (3 channels)",
     "text": "BoP adjustment mechanisms (3 channels)\n\nPrice (exchange rate): depreciation switches demand toward domestic goods\nIncome/absorption: lower spending reduces imports\nMonetary/financial: reserve loss tightens liquidity; rates rise; capital flows respond"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#typical-policy-instruments",
     "href": "Lecture09_BoT_BoP.html#typical-policy-instruments",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Typical policy instruments",
     "text": "Typical policy instruments\n\nDevaluation / depreciation (expenditure-switching)\nFiscal/monetary tightening (expenditure-reducing)\nInterest rate policy to stabilise capital flows\nIMF financing in reserve crises\n\n\nIndia 1991 used a mix: devaluation + tightening + reforms."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#marshalllerner-condition",
     "href": "Lecture09_BoT_BoP.html#marshalllerner-condition",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Marshall–Lerner condition",
     "text": "Marshall–Lerner condition\n\\[\\boxed{|e_X| + |e_M| &gt; 1}\\]\n\nDepreciation makes exports cheaper and imports costlier\nTrade balance improves only if quantities respond enough\nShort run: contracts + habits → weak quantity response"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#elasticities-short-run-vs-long-run",
     "href": "Lecture09_BoT_BoP.html#elasticities-short-run-vs-long-run",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Elasticities: short run vs long run",
     "text": "Elasticities: short run vs long run\n\nLong run: \\(|e_X|\\) and \\(|e_M|\\) tend to be higher → M–L more likely to hold\nShort run: elasticities are low → trade balance can worsen first\n\n\nThis is the logic behind the J-curve."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#the-j-curve-effect",
     "href": "Lecture09_BoT_BoP.html#the-j-curve-effect",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "The J-Curve Effect",
     "text": "The J-Curve Effect\n\n\nShow R code\nset.seed(42)\nt &lt;- seq(-5, 14, by = 0.2)\n\n# J-curve shape: initial deterioration then improvement\n# TB(t&lt;0) = 0 (baseline)\n# After depreciation at t=0:\n#   short run (0-3 months): TB falls (pre-set contracts, inelastic demand)\n#   medium (3-12 months):   TB recovers as quantities adjust\n#   long run (12+ months):  TB improves above baseline if M-L holds\n\ntb_j &lt;- ifelse(\n  t &lt; 0, 0,\n  ifelse(\n    t &lt; 3,\n    -4 * (t/3),                                    # deterioration phase\n    ifelse(\n      t &lt; 8,\n      -4 + 5 * ((t - 3)/5),                        # recovery phase\n      1 + 0.3 * (t - 8)                             # long-run improvement\n    )\n  )\n)\n\n# Add some noise for realism\ntb_j &lt;- tb_j + c(rep(0, sum(t &lt; 0)), rnorm(sum(t &gt;= 0), 0, 0.15))\n\ndf &lt;- data.frame(time = t, tb = tb_j)\n\nggplot(df, aes(x = time, y = tb)) +\n  geom_line(color = \"#012169\", linewidth = 2) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"grey50\", linewidth = 0.8) +\n  geom_vline(xintercept = 0, linetype = \"dashed\", color = \"red\", linewidth = 1.2) +\n  # Shaded deterioration region\n  geom_ribbon(\n    data = df |&gt; filter(time &gt;= 0 & time &lt;= 4),\n    aes(ymin = pmin(tb, 0), ymax = 0),\n    fill = \"#cc0000\", alpha = 0.2\n  ) +\n  # Shaded improvement region\n  geom_ribbon(\n    data = df |&gt; filter(time &gt; 4),\n    aes(ymin = 0, ymax = pmax(tb, 0)),\n    fill = \"#012169\", alpha = 0.15\n  ) +\n  # Annotations\n  annotate(\"text\", x = 0.3, y = 3.8,\n           label = \"Depreciation\\noccurs (t=0)\", color = \"red\", size = 3.5, hjust = 0) +\n  annotate(\"text\", x = -3.5, y = 0.4,\n           label = \"Pre-depreciation\\nbaseline\", size = 3, color = \"grey40\") +\n  annotate(\"text\", x = 1.5, y = -2.8,\n           label = \"Short-run\\ndeterioration\\n(contracts pre-set,\\nM-L not satisfied)\",\n           size = 3, color = \"#cc0000\", hjust = 0.5) +\n  annotate(\"text\", x = 11, y = 2.2,\n           label = \"Long-run\\nimprovement\\n(M-L holds,\\nquantities adjust)\",\n           size = 3, color = \"#012169\", hjust = 0.5) +\n  annotate(\"segment\",\n           x = 1.5, y = -2.3, xend = 1.5, yend = -1,\n           arrow = arrow(length = unit(0.25, \"cm\")), color = \"#cc0000\") +\n  annotate(\"segment\",\n           x = 11, y = 1.8, xend = 11, yend = 0.6,\n           arrow = arrow(length = unit(0.25, \"cm\")), color = \"#012169\") +\n  # Phase labels\n  annotate(\"text\", x = 1.5, y = -4.3,\n           label = \"Phase I:\\n0-3 months\", size = 2.8, color = \"#cc0000\") +\n  annotate(\"text\", x = 5.5, y = -4.3,\n           label = \"Phase II:\\n3-12 months\\n(recovery)\", size = 2.8, color = \"#B9975B\") +\n  annotate(\"text\", x = 11,  y = -4.3,\n           label = \"Phase III:\\n12+ months\\n(improvement)\", size = 2.8, color = \"#012169\") +\n  scale_x_continuous(breaks = seq(-4, 14, 2),\n                     labels = paste0(seq(-4, 14, 2), \"m\")) +\n  scale_y_continuous(limits = c(-5.5, 5)) +\n  labs(\n    title    = \"The J-Curve Effect\",\n    subtitle = \"Trade balance worsens before improving after currency depreciation\\nM-L condition (|eX|+|eM|&gt;1) is satisfied only in the long run\",\n    x = \"Time (months after depreciation)\", y = \"Trade Balance (change from baseline)\"\n  ) +\n  theme_minimal(base_size = 11)\n\n\n\n\nFigure 3: J-Curve: Trade Balance Initially Worsens After Currency Depreciation Source: Author’s illustration."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#j-curve-mechanisms-3-phases",
     "href": "Lecture09_BoT_BoP.html#j-curve-mechanisms-3-phases",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "J-curve: mechanisms (3 phases)",
     "text": "J-curve: mechanisms (3 phases)\n\nPhase I (0–3 months): contracts fixed → values move before quantities\nImport bill can rise even if volumes don’t\nPhase II (3–12 months): firms adjust sourcing and sales\nPhase III (12+ months): quantities respond fully\nLong run: M–L more likely to hold → TB improves"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#india-what-we-see-in-practice",
     "href": "Lecture09_BoT_BoP.html#india-what-we-see-in-practice",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India: what we see in practice",
     "text": "India: what we see in practice\n\n1991: large devaluation; adjustment took time (rigidities)\n2013: TB improved faster as trade was more integrated\n2022: oil prices dominated → weaker TB response\nAgriculture adjusts faster than many manufactured goods (more spot pricing)"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#absorption-approach-policy-implication",
     "href": "Lecture09_BoT_BoP.html#absorption-approach-policy-implication",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Absorption approach: policy implication",
     "text": "Absorption approach: policy implication\n\\[\\boxed{CA = Y - A}\\quad (A=C+I+G)\\]\n\nImprove CA by raising output (\\(Y\\)) and/or reducing absorption (\\(A\\))\nDevaluation helps only if it changes quantities and spending patterns\nInflation can offset gains if real absorption doesn’t fall"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#india-1991-adjustment-mix",
     "href": "Lecture09_BoT_BoP.html#india-1991-adjustment-mix",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India 1991: adjustment mix",
     "text": "India 1991: adjustment mix\n\nFiscal tightening reduced absorption (\\(\\Delta G&lt;0\\))\nLarge devaluation switched demand toward domestic goods\nReforms improved long-run output capacity\nCA improved over time, but growth fell temporarily\nInflation spiked during adjustment"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#indias-1991-bop-crisis-what-happened",
     "href": "Lecture09_BoT_BoP.html#indias-1991-bop-crisis-what-happened",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India’s 1991 BoP crisis: what happened",
     "text": "India’s 1991 BoP crisis: what happened\n\nOil prices spiked and external financing dried up (1990–91)\nForex reserves fell to $5.8B (~3 weeks imports), then $1.2B (~2 weeks)\nIndia pledged 67 tonnes of gold to raise emergency foreign exchange\nIMF support followed (Aug 1991)\nAdjustment package triggered liberalisation and macro stabilisation"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#crisis-root-causes-and-policy-response",
     "href": "Lecture09_BoT_BoP.html#crisis-root-causes-and-policy-response",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "1991 crisis: root causes and policy response",
     "text": "1991 crisis: root causes and policy response\n\nFiscal deficit + short-term external borrowing (fragile financing)\nOil shock (Kuwait crisis) worsened import bill\nRemittance/NRI deposit outflows amplified the squeeze\nTrade liberalisation + industrial delicensing reduced distortions\nFDI opening (automatic route) improved long-run financing\n\n\nLegacy: the crisis was the proximate cause of India’s 1991 reforms."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#india-fy2024-bop-assessment",
     "href": "Lecture09_BoT_BoP.html#india-fy2024-bop-assessment",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India FY2024 BoP Assessment",
     "text": "India FY2024 BoP Assessment\nCurrent Account:\n\nCA deficit: $23.2B (-0.7% of GDP) — comfortable\nMerchandise trade deficit: $238B (oil, gold, electronics)\nServices surplus: $163B (IT/BPO dominance)\nRemittances: $120B — world’s largest recipient (World Bank data)\n\n\nRisks and concerns: (1) Oil price vulnerability: $10/barrel rise adds ~$15B to import bill; (2) FPI volatility: $41B inflow in FY24 could reverse quickly; (3) FDI decline from $55B (FY22) to $22B (FY24) — concerning for long-run financing. India’s CA/GDP (-0.7%) &lt;&lt; GDP growth (7%) — external position is sustainable.\n\n\nFinancial Account:\n\nFDI net inflows: $22B (declined from $83B peak in FY22)\nFPI: +$41B (strong equity market inflows)\nECB + banking capital: +$25B\n\nReserve adequacy:\n\nForex reserves: $646B (March 2024)\nImport cover: ~11 months (well above IMF 3-month threshold)\nShort-term debt/reserves: 19% (well below 100% danger threshold)\n\n\\[\\text{CA/GDP} &lt; \\text{long-run growth rate} \\times \\frac{\\text{Net foreign debt}}{\\text{GDP}}\\]"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#bop-and-agriculture-key-linkages",
     "href": "Lecture09_BoT_BoP.html#bop-and-agriculture-key-linkages",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "BoP and agriculture: key linkages",
     "text": "BoP and agriculture: key linkages\n\nMSP and productivity can reduce food imports (import substitution)\nExport restrictions (rice/onion/sugar) affect credibility and export earnings\nInput policies affect cost competitiveness\nEdible oil dependence is a major import bill risk\nMigration/remittances matter for rural income and the CA"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#indias-agri-trade-balance-surplus-with-one-big-weakness",
     "href": "Lecture09_BoT_BoP.html#indias-agri-trade-balance-surplus-with-one-big-weakness",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India’s agri trade balance: surplus, with one big weakness",
     "text": "India’s agri trade balance: surplus, with one big weakness\n\nNet agri balance is typically positive (order of ~$20B)\nRice and spices are major surplus contributors\nEdible oils are the dominant structural deficit item (≈ -$20B)\nPulses can be a smaller deficit item in some years\n\n\nPolicy takeaway: edible oils are the macro vulnerability; SPS/processing are the export upside."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#indias-services-exports-the-external-sector-cushion",
     "href": "Lecture09_BoT_BoP.html#indias-services-exports-the-external-sector-cushion",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India’s services exports: the external-sector cushion",
     "text": "India’s services exports: the external-sector cushion\n\nServices exports create a large surplus (IT/ITES is central)\nThey are often more stable than goods exports\nThis surplus helps offset the goods trade deficit"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#why-it-matters-for-policy",
     "href": "Lecture09_BoT_BoP.html#why-it-matters-for-policy",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Why it matters for policy",
     "text": "Why it matters for policy\n\nBoP resilience depends heavily on the IT/services engine\nDisruptions to services exports would widen the CA deficit quickly\nServices trade negotiations (Mode 4) are a key Indian interest"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#remittances-indias-largest-ca-credit-fy2024",
     "href": "Lecture09_BoT_BoP.html#remittances-indias-largest-ca-credit-fy2024",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Remittances: India’s largest CA credit (FY2024)",
     "text": "Remittances: India’s largest CA credit (FY2024)\n\nRemittances ≈ $120B (World Bank)\nMajor sources: USA, UAE, Saudi Arabia, UK (+ other Gulf)\nOften rise when INR is weaker (more rupees per dollar sent)"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#why-remittances-matter-for-agriculture",
     "href": "Lecture09_BoT_BoP.html#why-remittances-matter-for-agriculture",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Why remittances matter for agriculture",
     "text": "Why remittances matter for agriculture\n\nSmooth consumption during crop shocks\nFinance farm investment (irrigation, equipment, land)\nEnable shift toward higher-value crops (risk capacity)\nOutmigration raises rural wages (labour market effects)\nBoP stabiliser: remittances are large and relatively stable"
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#indias-forex-reserves-rbi-intervention-chart",
     "href": "Lecture09_BoT_BoP.html#indias-forex-reserves-rbi-intervention-chart",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "India’s Forex Reserves: RBI Intervention Chart",
     "text": "India’s Forex Reserves: RBI Intervention Chart\n\n\nShow R code\nreserves_data &lt;- data.frame(\n  year      = 2015:2024,\n  reserves  = c(341, 360, 370, 424, 412, 477, 590, 633, 578, 646),\n  inr_usd   = c(62.1, 65.5, 67.1, 64.5, 69.9, 70.4, 74.2, 75.0, 82.7, 83.3)\n)\n\n# Dual-axis plot using secondary axis\ncoeff &lt;- 10   # scale factor for INR (reserves ~100x INR so scale accordingly\n\np_res &lt;- ggplot(reserves_data, aes(x = year)) +\n  # Reserves bars\n  geom_col(aes(y = reserves), fill = \"#012169\", alpha = 0.75, width = 0.6) +\n  # INR/USD line (scaled)\n  geom_line(aes(y = inr_usd * coeff), color = \"#cc0000\", linewidth = 1.5) +\n  geom_point(aes(y = inr_usd * coeff), color = \"#cc0000\", size = 2.5) +\n  # Mark 2022 taper tantrum equivalent\n  annotate(\"text\", x = 2023, y = 920,\n           label = \"Post-Ukraine\\nrupee weakness\\n(₹83/USD)\", size = 3, color = \"#cc0000\") +\n  # Mark 2020 reserve build\n  annotate(\"text\", x = 2021, y = 650,\n           label = \"$590B\\n(COVID\\nreserve build)\", size = 3, color = \"#012169\") +\n  scale_x_continuous(breaks = 2015:2024,\n                     labels = paste0(\"FY\", substr(2015:2024, 3, 4))) +\n  scale_y_continuous(\n    name     = \"Forex Reserves (USD billion)\",\n    limits   = c(0, 1000),\n    sec.axis = sec_axis(~ . / coeff,\n                        name   = \"INR per USD\",\n                        breaks = seq(60, 90, 5))\n  ) +\n  labs(\n    title    = \"India's Forex Reserves (bars) and INR/USD Rate (line), FY2015–FY2024\",\n    subtitle = \"RBI builds reserves during capital inflow surges; deploys during stress periods\",\n    x = NULL\n  ) +\n  theme_minimal(base_size = 10) +\n  theme(\n    axis.title.y.right = element_text(color = \"#cc0000\"),\n    axis.text.y.right  = element_text(color = \"#cc0000\"),\n    axis.title.y.left  = element_text(color = \"#012169\")\n  )\n\np_res\n\n\n\n\nFigure 4: India’s Forex Reserves and INR/USD Exchange Rate, FY2015–FY2024 Source: RBI, Database on Indian Economy (DBIE)."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#key-takeaways-lecture-9",
     "href": "Lecture09_BoT_BoP.html#key-takeaways-lecture-9",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Key Takeaways: Lecture 9",
     "text": "Key Takeaways: Lecture 9\n\n1. National income identity: \\(\\text{CA} = Y - A = (S - I) + (T - G)\\). A CA deficit means the country borrows from abroad — financed by FA inflows or reserve drawdown.\n2. BoP accounting: \\(\\text{CA} + \\text{KA} + \\text{FA} + \\Delta R = 0\\). The BoP always balances — surpluses and deficits are in individual accounts, not the overall BoP.\n3. India’s external position (FY2024): CA = -0.7% GDP (comfortable); remittances = $120B (world’s largest); services surplus = $163B; forex reserves = $646B (11 months imports). External position is strong.\n4. Marshall-Lerner condition: \\(|e_X| + |e_M| &gt; 1\\) must hold for depreciation to improve TB. In the short run, M-L is typically NOT satisfied → J-curve: TB worsens before improving.\n5. India 1991 crisis: Reserves fell to $1.2B (2 weeks imports); India pledged 67 tonnes gold to the BoE. IMF bailout triggered liberalisation — delicensing, trade reform, FDI opening. Crisis → structural reform.\n\n\n6. Agricultural BoP: India runs a trade surplus in agriculture (~$20B), but edible oil imports (-$21B) are the single largest structural weakness. MSP policy affects both food security and export competitiveness."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#next-lecture-preview",
     "href": "Lecture09_BoT_BoP.html#next-lecture-preview",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Next Lecture Preview",
     "text": "Next Lecture Preview\n\nLecture 10 — Exchange Rates and Agricultural Trade June 27, 2026\n\nFixed vs flexible exchange rate systems\nPurchasing Power Parity (PPP): absolute and relative\nReal exchange rate: \\(q = eP^*/P\\) and agricultural competitiveness\nHow rupee depreciation affects Indian rice and wheat exports\nDutch disease: can commodity booms harm agricultural exporters?\n\n\n\n\nIndia’s managed float: RBI intervention and the REER\n\nPreparation: Review Salvatore Ch. 14–15 (Exchange Rates). Note that India operates a managed float — this means understanding both PPP theory AND RBI’s intervention behaviour. We will use regression analysis of real exchange rate and export volume data."
   },
   {
     "objectID": "Lecture09_BoT_BoP.html#additional-resources",
     "href": "Lecture09_BoT_BoP.html#additional-resources",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Additional Resources",
     "text": "Additional Resources\nFurther reading\n\nSalvatore, International Economics (relevant chapters)\nAppleyard & Field, International Economics (relevant chapters)\n\nKey data sources\n\nDGCI&S: merchandise trade\nRBI: balance of payments\nAPEDA: agricultural export statistics\nWTO: tariff + trade databases"
   },
@@ -3656,7 +3656,7 @@
   {
     "objectID": "Lecture09_BoT_BoP.html#financial-account-and-bop-identity",
     "href": "Lecture09_BoT_BoP.html#financial-account-and-bop-identity",
-    "title": "Balance of Trade & Balance of Payments",
+    "title": "Lecture 9: Balance of Trade & Balance of Payments",
     "section": "Financial Account and BoP Identity",
     "text": "Financial Account and BoP Identity"
   }

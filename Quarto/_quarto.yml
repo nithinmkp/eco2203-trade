@@ -23,6 +23,8 @@ format:
     theme: [cosmo, styles.css]
     toc: false
     smooth-scroll: true
+  revealjs:
+    navigationMode: linear
   beamer:
     include-in-header: beamer-preamble.tex
     aspectratio: 169

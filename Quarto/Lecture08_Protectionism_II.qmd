@@ -1,5 +1,5 @@
 ---
-title: "Protectionism II — Subsidies, Dumping & Cartels"
+title: "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
@@ -53,11 +53,7 @@ knitr::opts_chunk$set(echo = knitr::is_html_output())
 **Political economy insight:** Tariffs/quotas protect import-competing producers. Export subsidies protect exporting producers. Both are driven by producer lobbying — even though consumers and taxpayers bear the cost: $\text{Producer surplus gain} > \text{Consumer + taxpayer loss?}$ — usually **no** in aggregate, but politically organised producers win.
 :::
 
----
-
 # Part I: Export Subsidies {background-color="#012169"}
-
----
 
 ## What Is an Export Subsidy? {.smaller}
 
@@ -241,11 +237,7 @@ $\Delta W = -(b+d) = -(25+25) = -50$; Govt pays: $(b+c+d) = 200$; PS gains: $(a+
 **Nairobi (2015) → MC13 Abu Dhabi (2024):** Permanent solution still pending. India insists on a permanent peace clause without the non-distortion condition. USA/EU resist — argue India's 800M tonne/year FCI operations are massively trade-distorting. **High-stakes stalemate.**
 :::
 
----
-
 # Part II: Dumping {background-color="#012169"}
-
----
 
 ## What Is Dumping? Formal Definition {.smaller}
 
@@ -422,11 +414,7 @@ ggplot(ad_data, aes(x = sector, y = investigations)) +
 **Comparative advantage vs. dumping:** A developing country with genuinely low costs will *appear* to dump when compared to high-cost producers in developed countries. $P_{\text{India}} < P_{\text{USA}} \not\Rightarrow \text{dumping}$. Dumping requires $P_{\text{export}} < \text{normal value}$. In practice, AD is often used as disguised protectionism.
 :::
 
----
-
 # Part III: Voluntary Export Restraints {background-color="#012169"}
-
----
 
 ## VERs — Quotas Imposed "Voluntarily" by Exporters
 
@@ -470,11 +458,7 @@ $$\boxed{\text{VER strictly worse than equivalent quota for importing country}}$
 Under tariff: $\Delta W_{\text{tariff}} = -(b+d) + t \cdot M$; Under VER: $\Delta W_{\text{VER}} = -(b+c+d) < \Delta W_{\text{tariff}}$
 :::
 
----
-
 # Part IV: Cartels & International Commodity Agreements {background-color="#012169"}
-
----
 
 ## What Is a Cartel? Conditions for Success
 
