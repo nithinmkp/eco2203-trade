@@ -213,11 +213,6 @@ Nithin M
 
   <p class="date">2026-05-23</p>
 </section>
-<section>
-<section id="part-i-why-do-opportunity-costs-differ" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Part I: Why Do Opportunity Costs Differ?</h1>
-
-</section>
 <section id="recap-the-missing-piece-in-ricardo" class="slide level2">
 <h2>Recap: The Missing Piece in Ricardo</h2>
 <p><strong>Last lecture:</strong> Comparative advantage — trade is driven by <em>relative</em> opportunity costs.</p>
@@ -237,11 +232,6 @@ Nithin M
 <p><strong>Factor intensity:</strong> Rice is <strong>labour-intensive</strong> relative to Machines if: <span class="math display">\[\left(\frac{K}{L}\right)_R &lt; \left(\frac{K}{L}\right)_M\]</span></p>
 <p><strong>Factor abundance (physical definition):</strong> India is <strong>labour-abundant</strong> if: <span class="math display">\[\left(\frac{K}{L}\right)^I &lt; \left(\frac{K}{L}\right)^U\]</span></p>
 <p><strong>Factor abundance (price definition):</strong> <span class="math display">\[\left(\frac{w}{r}\right)^I &lt; \left(\frac{w}{r}\right)^U \qquad \text{(labour is relatively cheaper in India)}\]</span></p>
-</section></section>
-<section>
-<section id="part-ii-the-heckscher-ohlin-theorem" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Part II: The Heckscher-Ohlin Theorem</h1>
-
 </section>
 <section id="h-o-theorem-formal-statement" class="slide level2 smaller">
 <h2>H-O Theorem: Formal Statement</h2>
@@ -276,43 +266,71 @@ Nithin M
 <summary>Show R code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>t   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">by=</span><span class="fl">0.01</span>)</span>
-<span id="cb1-4"><a></a>cc_L <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> t<span class="sc">^</span><span class="fl">0.65</span></span>
-<span id="cb1-5"><a></a>cc_K <span class="ot">&lt;-</span>  <span class="dv">60</span> <span class="sc">*</span> t<span class="sc">^</span><span class="fl">1.40</span></span>
-<span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a><span class="co"># Rice isoquant through E (approx Cobb-Douglas: L^0.7 * K^0.3 = const)</span></span>
-<span id="cb1-8"><a></a><span class="co"># E at (L=30, K=12): U_R = 30^0.7 * 12^0.3 = 19.8</span></span>
-<span id="cb1-9"><a></a>iso_L_R <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">5</span>, <span class="dv">55</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb1-10"><a></a>iso_K_R <span class="ot">&lt;-</span> (<span class="fl">19.8</span> <span class="sc">/</span> iso_L_R<span class="sc">^</span><span class="fl">0.7</span>)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="fl">0.3</span>)</span>
-<span id="cb1-11"><a></a></span>
-<span id="cb1-12"><a></a><span class="co"># Machine isoquant through E in rotated coords (L_M=70, K_M=48)</span></span>
-<span id="cb1-13"><a></a><span class="co"># E at L_M=70, K_M=48: L_M^0.3 * K_M^0.7 = 70^0.3*48^0.7 = 58.0</span></span>
-<span id="cb1-14"><a></a>iso_L_M_rot <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">95</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb1-15"><a></a>iso_K_M_rot <span class="ot">&lt;-</span> (<span class="fl">58.0</span> <span class="sc">/</span> iso_L_M_rot<span class="sc">^</span><span class="fl">0.3</span>)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="fl">0.7</span>)</span>
-<span id="cb1-16"><a></a>iso_L_M <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">-</span> iso_L_M_rot</span>
-<span id="cb1-17"><a></a>iso_K_M <span class="ot">&lt;-</span>  <span class="dv">60</span> <span class="sc">-</span> iso_K_M_rot</span>
-<span id="cb1-18"><a></a></span>
-<span id="cb1-19"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb1-20"><a></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin=</span><span class="dv">0</span>, <span class="at">xmax=</span><span class="dv">100</span>, <span class="at">ymin=</span><span class="dv">0</span>, <span class="at">ymax=</span><span class="dv">60</span>,</span>
-<span id="cb1-21"><a></a>           <span class="at">fill=</span><span class="cn">NA</span>, <span class="at">color=</span><span class="st">"black"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb1-22"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>cc_L, <span class="at">K=</span>cc_K),</span>
-<span id="cb1-23"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>K), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb1-24"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>iso_L_R, <span class="at">K=</span>iso_K_R),</span>
-<span id="cb1-25"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>K), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb1-26"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>iso_L_M, <span class="at">K=</span>iso_K_M),</span>
-<span id="cb1-27"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>K), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb1-28"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="dv">12</span>), <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb1-29"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="dv">13</span>, <span class="at">label=</span><span class="st">"E (efficient alloc.)"</span>,</span>
-<span id="cb1-30"><a></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb1-31"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">3</span>,  <span class="at">y=</span><span class="dv">3</span>,  <span class="at">label=</span><span class="st">"O[R]"</span>, <span class="at">parse=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb1-32"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">95</span>, <span class="at">y=</span><span class="dv">56</span>, <span class="at">label=</span><span class="st">"O[M]"</span>, <span class="at">parse=</span><span class="cn">TRUE</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb1-33"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">50</span>, <span class="at">y=</span><span class="sc">-</span><span class="dv">6</span>, <span class="at">label=</span><span class="st">"Labour allocated to Rice"</span>,</span>
-<span id="cb1-34"><a></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb1-35"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Contract curve: all Pareto-efficient factor allocations"</span>,</span>
-<span id="cb1-36"><a></a>       <span class="at">subtitle=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"At E: "</span>, MPL[R]<span class="sc">/</span>MPK[R], <span class="st">" = "</span>, MPL[M]<span class="sc">/</span>MPK[M])),</span>
-<span id="cb1-37"><a></a>       <span class="at">x=</span><span class="st">"Labour (L)"</span>, <span class="at">y=</span><span class="st">"Capital (K)"</span>) <span class="sc">+</span></span>
-<span id="cb1-38"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">105</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">8</span>,<span class="dv">65</span>)) <span class="sc">+</span></span>
-<span id="cb1-39"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a></a><span class="co"># Box: total Labour = 100, total Capital = 60</span></span>
+<span id="cb1-4"><a></a><span class="co"># Rice:     Q_R = L_R^0.7 * K_R^0.3  (labour-intensive)</span></span>
+<span id="cb1-5"><a></a><span class="co"># Machines: Q_M = L_M^0.3 * K_M^0.7  (capital-intensive)</span></span>
+<span id="cb1-6"><a></a><span class="co"># Contract curve from MRTS_R = MRTS_M =&gt; K_R = 540*L_R / (4900 - 40*L_R)</span></span>
+<span id="cb1-7"><a></a>L_cc <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">99</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-8"><a></a>K_cc <span class="ot">&lt;-</span> <span class="dv">540</span> <span class="sc">*</span> L_cc <span class="sc">/</span> (<span class="dv">4900</span> <span class="sc">-</span> <span class="dv">40</span> <span class="sc">*</span> L_cc)</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a><span class="co"># Point E exactly on the contract curve at L_R = 50</span></span>
+<span id="cb1-11"><a></a>L_E <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb1-12"><a></a>K_E <span class="ot">&lt;-</span> <span class="dv">540</span> <span class="sc">*</span> L_E <span class="sc">/</span> (<span class="dv">4900</span> <span class="sc">-</span> <span class="dv">40</span> <span class="sc">*</span> L_E)   <span class="co"># = 9.31</span></span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a><span class="co"># Rice isoquant through E</span></span>
+<span id="cb1-15"><a></a>Q_R_E <span class="ot">&lt;-</span> L_E<span class="sc">^</span><span class="fl">0.7</span> <span class="sc">*</span> K_E<span class="sc">^</span><span class="fl">0.3</span></span>
+<span id="cb1-16"><a></a>iL_R  <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">23</span>, <span class="dv">96</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-17"><a></a>iK_R  <span class="ot">&lt;-</span> (Q_R_E <span class="sc">/</span> iL_R<span class="sc">^</span><span class="fl">0.7</span>)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="fl">0.3</span>)</span>
+<span id="cb1-18"><a></a>df_R  <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="fu">data.frame</span>(<span class="at">L =</span> iL_R, <span class="at">K =</span> iK_R), K <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> K <span class="sc">&lt;=</span> <span class="dv">60</span>)</span>
+<span id="cb1-19"><a></a></span>
+<span id="cb1-20"><a></a><span class="co"># Machines isoquant through E (drawn in original coords)</span></span>
+<span id="cb1-21"><a></a>Q_M_E <span class="ot">&lt;-</span> (<span class="dv">100</span> <span class="sc">-</span> L_E)<span class="sc">^</span><span class="fl">0.3</span> <span class="sc">*</span> (<span class="dv">60</span> <span class="sc">-</span> K_E)<span class="sc">^</span><span class="fl">0.7</span></span>
+<span id="cb1-22"><a></a>iLM   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">34</span>, <span class="dv">99</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-23"><a></a>iKM   <span class="ot">&lt;-</span> (Q_M_E <span class="sc">/</span> iLM<span class="sc">^</span><span class="fl">0.3</span>)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="fl">0.7</span>)</span>
+<span id="cb1-24"><a></a>df_M  <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="fu">data.frame</span>(<span class="at">L =</span> <span class="dv">100</span> <span class="sc">-</span> iLM, <span class="at">K =</span> <span class="dv">60</span> <span class="sc">-</span> iKM),</span>
+<span id="cb1-25"><a></a>                K <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> K <span class="sc">&lt;=</span> <span class="dv">60</span> <span class="sc">&amp;</span> L <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> L <span class="sc">&lt;=</span> <span class="dv">100</span>)</span>
+<span id="cb1-26"><a></a></span>
+<span id="cb1-27"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-28"><a></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="dv">0</span>, <span class="at">xmax =</span> <span class="dv">100</span>, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> <span class="dv">60</span>,</span>
+<span id="cb1-29"><a></a>           <span class="at">fill =</span> <span class="st">"#f8f8f8"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb1-30"><a></a>  <span class="co"># Isoquants</span></span>
+<span id="cb1-31"><a></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> df_R, <span class="fu">aes</span>(<span class="at">x =</span> L, <span class="at">y =</span> K),</span>
+<span id="cb1-32"><a></a>            <span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-33"><a></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> df_M, <span class="fu">aes</span>(<span class="at">x =</span> L, <span class="at">y =</span> K),</span>
+<span id="cb1-34"><a></a>            <span class="at">color =</span> <span class="st">"#B9975B"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-35"><a></a>  <span class="co"># Contract curve</span></span>
+<span id="cb1-36"><a></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">L =</span> L_cc, <span class="at">K =</span> K_cc), <span class="fu">aes</span>(<span class="at">x =</span> L, <span class="at">y =</span> K),</span>
+<span id="cb1-37"><a></a>            <span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">1.6</span>) <span class="sc">+</span></span>
+<span id="cb1-38"><a></a>  <span class="co"># Efficient allocation E</span></span>
+<span id="cb1-39"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> L_E, <span class="at">y =</span> K_E), <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-40"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">54</span>, <span class="at">y =</span> <span class="dv">12</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.5</span>,</span>
+<span id="cb1-41"><a></a>           <span class="at">label =</span> <span class="st">"E  (efficient alloc.)"</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-42"><a></a>  <span class="co"># Rice origin</span></span>
+<span id="cb1-43"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">2.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb1-44"><a></a>           <span class="at">label =</span> <span class="st">"O[R]"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-45"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">7.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-46"><a></a>           <span class="at">label =</span> <span class="st">"Rice sector"</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-47"><a></a>  <span class="co"># Machines origin</span></span>
+<span id="cb1-48"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">98</span>, <span class="at">y =</span> <span class="fl">57.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb1-49"><a></a>           <span class="at">label =</span> <span class="st">"O[M]"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-50"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">98</span>, <span class="at">y =</span> <span class="fl">52.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-51"><a></a>           <span class="at">label =</span> <span class="st">"Machines sector"</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-52"><a></a>  <span class="co"># Isoquant labels</span></span>
+<span id="cb1-53"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">82</span>, <span class="at">y =</span> <span class="fl">2.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-54"><a></a>           <span class="at">label =</span> <span class="st">"Rice isoquant"</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-55"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="dv">40</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-56"><a></a>           <span class="at">label =</span> <span class="st">"Machines</span><span class="sc">\n</span><span class="st">isoquant"</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-57"><a></a>  <span class="co"># Contract curve label</span></span>
+<span id="cb1-58"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">64</span>, <span class="at">y =</span> <span class="dv">27</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb1-59"><a></a>           <span class="at">label =</span> <span class="st">"Contract</span><span class="sc">\n</span><span class="st">curve"</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-60"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-61"><a></a>    <span class="at">title    =</span> <span class="st">"Edgeworth box: efficient factor allocations"</span>,</span>
+<span id="cb1-62"><a></a>    <span class="at">subtitle =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"At E: "</span>, MPL[R]<span class="sc">/</span>MPK[R], <span class="st">" = "</span>, MPL[M]<span class="sc">/</span>MPK[M])),</span>
+<span id="cb1-63"><a></a>    <span class="at">x        =</span> <span class="st">"Labour allocated to Rice"</span>,</span>
+<span id="cb1-64"><a></a>    <span class="at">y        =</span> <span class="st">"Capital allocated to Rice"</span></span>
+<span id="cb1-65"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb1-66"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">103</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">62</span>)) <span class="sc">+</span></span>
+<span id="cb1-67"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-edgeworth" class="quarto-float quarto-figure quarto-figure-center">
@@ -321,7 +339,7 @@ Nithin M
 <img data-src="Lecture05_Modern_Theory_files/figure-revealjs/fig-edgeworth-1.png" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-edgeworth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: Author’s illustration.
+Figure&nbsp;1: Edgeworth Box: Efficient Factor Allocation Between Rice and Machines Source: Author’s illustration.
 </figcaption>
 </figure>
 </div>
@@ -380,11 +398,6 @@ Figure&nbsp;1: Edgeworth Box: Factor Allocation Between Two Industries Source: A
 </div>
 </div>
 </div></div>
-</section></section>
-<section>
-<section id="part-iii-three-key-theorems" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Part III: Three Key Theorems</h1>
-
 </section>
 <section id="theorem-1-factor-price-equalisation-fpe" class="slide level2">
 <h2>Theorem 1: Factor Price Equalisation (FPE)</h2>
@@ -586,11 +599,6 @@ Figure&nbsp;2: Rybczynski Effect: Labour Inflow Shifts PPF Source: Author’s il
 </div>
 </div>
 </div></div>
-</section></section>
-<section>
-<section id="part-iv-the-leontief-paradox-and-extensions" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Part IV: The Leontief Paradox and Extensions</h1>
-
 </section>
 <section id="the-leontief-paradox-1953" class="slide level2">
 <h2>The Leontief Paradox (1953)</h2>
@@ -657,11 +665,6 @@ Figure&nbsp;3: Factor Intensity of India’s Exports vs Imports (illustrative) S
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section></section>
-<section>
-<section id="part-v-the-lewis-dual-sector-model-and-agricultural-trade" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Part V: The Lewis Dual-Sector Model and Agricultural Trade</h1>
-
 </section>
 <section id="lewis-1954-structural-transformation" class="slide level2">
 <h2>Lewis (1954): Structural Transformation</h2>
@@ -786,11 +789,6 @@ Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformatio
 <div class="keybox">
 <p>India should invest in agricultural productivity to maintain competitiveness even as wages rise — moving up the value chain rather than defending low-wage advantage.</p>
 </div>
-</section></section>
-<section>
-<section id="part-vi-summary-and-looking-ahead" class="title-slide slide level1 center" data-background-color="#1a3a5c">
-<h1>Part VI: Summary and Looking Ahead</h1>
-
 </section>
 <section id="the-modern-theory-of-trade-summary" class="slide level2 smaller scrollable">
 <h2>The Modern Theory of Trade: Summary</h2>
@@ -801,37 +799,7 @@ Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformatio
 <li><strong>Stolper-Samuelson:</strong> <span class="math inline">\(\hat{P}_R &gt; 0 \Rightarrow \hat{w} &gt; \hat{P}_R &gt; 0 &gt; \hat{r}\)</span> (trade has stark distributional effects)</li>
 <li><strong>Rybczynski:</strong> <span class="math inline">\(\hat{L} &gt; 0 \Rightarrow \hat{Q}_R &gt; \hat{L} &gt; 0 &gt; \hat{Q}_M\)</span> (factor accumulation biases production)</li>
 </ol>
-<p><strong>Empirical scorecard:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Prediction</th>
-<th>Evidence</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Factor content of trade</td>
-<td>Mixed (Trefler 1995)</td>
-</tr>
-<tr class="even">
-<td>India exports labour-intensive</td>
-<td>Confirmed</td>
-</tr>
-<tr class="odd">
-<td>Wage convergence</td>
-<td>Partial (direction correct)</td>
-</tr>
-<tr class="even">
-<td>Stolper-Samuelson effects</td>
-<td>Strong in long run</td>
-</tr>
-<tr class="odd">
-<td>Rybczynski (structural change)</td>
-<td>Strong (East Asia)</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Empirical evidence:</strong> Factor content of trade is mixed (Trefler 1995); India’s labour-intensive export pattern is confirmed; wage convergence is partial (direction correct); Stolper-Samuelson distributional effects are strong in the long run; Rybczynski structural change is well-supported by East Asian data.</p>
 <p><strong>What H-O cannot explain:</strong> Intra-industry trade; trade between similar countries; scale economies → <strong>New Trade Theory</strong> (Lecture 6)</p>
 </section>
 <section id="looking-ahead-new-trade-theory" class="slide level2">
@@ -847,7 +815,7 @@ Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformatio
 <p><span class="math display">\[\text{Specialisation} \Rightarrow \text{Scale economies} \Rightarrow \text{Lower costs} \Rightarrow \text{More variety}\]</span></p>
 <p>Each country specialises in a <em>different</em> variety of the same good — gains arise from <strong>love of variety</strong>, not factor endowments.</p>
 <p><strong>Next lecture:</strong> Economies of scale, monopolistic competition, and the new economic geography — why do trade and production cluster? And what does this mean for India’s agricultural processing sector?</p>
-</section></section>
+</section>
 <section>
 <section id="appendix" class="title-slide slide level1 center" data-background-color="#1a3a5c">
 <h1>Appendix</h1>

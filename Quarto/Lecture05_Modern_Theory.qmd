@@ -39,8 +39,6 @@ theme_set(theme_minimal(base_size=11))
 knitr::opts_chunk$set(echo = knitr::is_html_output())
 ```
 
-# Part I: Why Do Opportunity Costs Differ? {background-color="#1a3a5c"}
-
 ## Recap: The Missing Piece in Ricardo
 
 **Last lecture:** Comparative advantage — trade is driven by *relative* opportunity costs.
@@ -69,8 +67,6 @@ $$\left(\frac{K}{L}\right)^I < \left(\frac{K}{L}\right)^U$$
 
 **Factor abundance (price definition):**
 $$\left(\frac{w}{r}\right)^I < \left(\frac{w}{r}\right)^U \qquad \text{(labour is relatively cheaper in India)}$$
-
-# Part II: The Heckscher-Ohlin Theorem {background-color="#1a3a5c"}
 
 ## H-O Theorem: Formal Statement {.smaller}
 
@@ -110,48 +106,76 @@ The **Edgeworth box** shows all efficient ways to allocate $\bar{L}$ and $\bar{K
 ::: {.column width="62%"}
 ```{r}
 #| label: fig-edgeworth
-#| fig-cap: "Edgeworth Box: Factor Allocation Between Two Industries\nSource: Author's illustration."
+#| fig-cap: "Edgeworth Box: Efficient Factor Allocation Between Rice and Machines\nSource: Author's illustration."
 #| fig-width: 7
 #| fig-height: 5
 library(ggplot2)
 
-t   <- seq(0, 1, by=0.01)
-cc_L <- 100 * t^0.65
-cc_K <-  60 * t^1.40
+# Box: total Labour = 100, total Capital = 60
+# Rice:     Q_R = L_R^0.7 * K_R^0.3  (labour-intensive)
+# Machines: Q_M = L_M^0.3 * K_M^0.7  (capital-intensive)
+# Contract curve from MRTS_R = MRTS_M => K_R = 540*L_R / (4900 - 40*L_R)
+L_cc <- seq(1, 99, by = 0.5)
+K_cc <- 540 * L_cc / (4900 - 40 * L_cc)
 
-# Rice isoquant through E (approx Cobb-Douglas: L^0.7 * K^0.3 = const)
-# E at (L=30, K=12): U_R = 30^0.7 * 12^0.3 = 19.8
-iso_L_R <- seq(5, 55, by=1)
-iso_K_R <- (19.8 / iso_L_R^0.7)^(1/0.3)
+# Point E exactly on the contract curve at L_R = 50
+L_E <- 50
+K_E <- 540 * L_E / (4900 - 40 * L_E)   # = 9.31
 
-# Machine isoquant through E in rotated coords (L_M=70, K_M=48)
-# E at L_M=70, K_M=48: L_M^0.3 * K_M^0.7 = 70^0.3*48^0.7 = 58.0
-iso_L_M_rot <- seq(50, 95, by=1)
-iso_K_M_rot <- (58.0 / iso_L_M_rot^0.3)^(1/0.7)
-iso_L_M <- 100 - iso_L_M_rot
-iso_K_M <-  60 - iso_K_M_rot
+# Rice isoquant through E
+Q_R_E <- L_E^0.7 * K_E^0.3
+iL_R  <- seq(23, 96, by = 0.5)
+iK_R  <- (Q_R_E / iL_R^0.7)^(1 / 0.3)
+df_R  <- subset(data.frame(L = iL_R, K = iK_R), K >= 0 & K <= 60)
+
+# Machines isoquant through E (drawn in original coords)
+Q_M_E <- (100 - L_E)^0.3 * (60 - K_E)^0.7
+iLM   <- seq(34, 99, by = 0.5)
+iKM   <- (Q_M_E / iLM^0.3)^(1 / 0.7)
+df_M  <- subset(data.frame(L = 100 - iLM, K = 60 - iKM),
+                K >= 0 & K <= 60 & L >= 0 & L <= 100)
 
 ggplot() +
-  annotate("rect", xmin=0, xmax=100, ymin=0, ymax=60,
-           fill=NA, color="black", linewidth=1) +
-  geom_line(data=data.frame(L=cc_L, K=cc_K),
-            aes(x=L, y=K), color="#012169", linewidth=1.5) +
-  geom_line(data=data.frame(L=iso_L_R, K=iso_K_R),
-            aes(x=L, y=K), color="#012169", linewidth=0.8, linetype="dashed") +
-  geom_line(data=data.frame(L=iso_L_M, K=iso_K_M),
-            aes(x=L, y=K), color="#B9975B", linewidth=0.8, linetype="dashed") +
-  geom_point(aes(x=30, y=12), size=4, color="darkgreen") +
-  annotate("text", x=33, y=13, label="E (efficient alloc.)",
-           size=3.5, hjust=0, color="darkgreen") +
-  annotate("text", x=3,  y=3,  label="O[R]", parse=TRUE, size=4, color="#012169") +
-  annotate("text", x=95, y=56, label="O[M]", parse=TRUE, size=4, color="#B9975B") +
-  annotate("text", x=50, y=-6, label="Labour allocated to Rice",
-           size=3.5, hjust=0.5) +
-  labs(title="Contract curve: all Pareto-efficient factor allocations",
-       subtitle=expression(paste("At E: ", MPL[R]/MPK[R], " = ", MPL[M]/MPK[M])),
-       x="Labour (L)", y="Capital (K)") +
-  coord_cartesian(xlim=c(-2,105), ylim=c(-8,65)) +
-  theme_minimal(base_size=11)
+  annotate("rect", xmin = 0, xmax = 100, ymin = 0, ymax = 60,
+           fill = "#f8f8f8", color = "black", linewidth = 1.1) +
+  # Isoquants
+  geom_line(data = df_R, aes(x = L, y = K),
+            color = "#012169", linewidth = 0.9, linetype = "dashed") +
+  geom_line(data = df_M, aes(x = L, y = K),
+            color = "#B9975B", linewidth = 0.9, linetype = "dashed") +
+  # Contract curve
+  geom_line(data = data.frame(L = L_cc, K = K_cc), aes(x = L, y = K),
+            color = "#012169", linewidth = 1.6) +
+  # Efficient allocation E
+  geom_point(aes(x = L_E, y = K_E), size = 4, color = "darkgreen") +
+  annotate("text", x = 54, y = 12, hjust = 0, size = 3.5,
+           label = "E  (efficient alloc.)", color = "darkgreen") +
+  # Rice origin
+  annotate("text", x = 2, y = 2.5, hjust = 0, size = 4, fontface = "bold",
+           label = "O[R]", parse = TRUE, color = "#012169") +
+  annotate("text", x = 2, y = 7.5, hjust = 0, size = 3,
+           label = "Rice sector", color = "#012169") +
+  # Machines origin
+  annotate("text", x = 98, y = 57.5, hjust = 1, size = 4, fontface = "bold",
+           label = "O[M]", parse = TRUE, color = "#B9975B") +
+  annotate("text", x = 98, y = 52.5, hjust = 1, size = 3,
+           label = "Machines sector", color = "#B9975B") +
+  # Isoquant labels
+  annotate("text", x = 82, y = 2.5, hjust = 0, size = 3,
+           label = "Rice isoquant", color = "#012169") +
+  annotate("text", x = 5, y = 40, hjust = 0, size = 3,
+           label = "Machines\nisoquant", color = "#B9975B") +
+  # Contract curve label
+  annotate("text", x = 64, y = 27, hjust = 0, size = 3.5, fontface = "bold",
+           label = "Contract\ncurve", color = "#012169") +
+  labs(
+    title    = "Edgeworth box: efficient factor allocations",
+    subtitle = expression(paste("At E: ", MPL[R]/MPK[R], " = ", MPL[M]/MPK[M])),
+    x        = "Labour allocated to Rice",
+    y        = "Capital allocated to Rice"
+  ) +
+  coord_cartesian(xlim = c(-2, 103), ylim = c(-4, 62)) +
+  theme_minimal(base_size = 11)
 ```
 :::
 :::
@@ -208,8 +232,6 @@ ggplot(df_ppf2, aes(x=M, y=R, color=model, linetype=model)) +
 ```
 :::
 :::
-
-# Part III: Three Key Theorems {background-color="#1a3a5c"}
 
 ## Theorem 1: Factor Price Equalisation (FPE)
 
@@ -385,8 +407,6 @@ ggplot(df_ryb, aes(x=M, y=Rice, color=period, linetype=period)) +
 :::
 :::
 
-# Part IV: The Leontief Paradox and Extensions {background-color="#1a3a5c"}
-
 ## The Leontief Paradox (1953)
 
 **The test:** Wassily Leontief (1953) used US input-output tables to measure the capital and labour content of US exports and imports.
@@ -446,8 +466,6 @@ Several resolutions have been proposed:
 :::{.notes}
 **Modern verdict (Trefler 1995):** Allowing for **technology differences** and **factor productivity** differences across countries reconciles most H-O predictions with data.
 :::
-
-# Part V: The Lewis Dual-Sector Model and Agricultural Trade {background-color="#1a3a5c"}
 
 ## Lewis (1954): Structural Transformation
 
@@ -548,8 +566,6 @@ p_agri + p_ind
 India should invest in agricultural productivity to maintain competitiveness even as wages rise — moving up the value chain rather than defending low-wage advantage.
 :::
 
-# Part VI: Summary and Looking Ahead {background-color="#1a3a5c"}
-
 ## The Modern Theory of Trade: Summary {.smaller}
 
 **Three pillars of the H-O framework:**
@@ -559,15 +575,7 @@ India should invest in agricultural productivity to maintain competitiveness eve
 3. **Stolper-Samuelson:** $\hat{P}_R > 0 \Rightarrow \hat{w} > \hat{P}_R > 0 > \hat{r}$ (trade has stark distributional effects)
 4. **Rybczynski:** $\hat{L} > 0 \Rightarrow \hat{Q}_R > \hat{L} > 0 > \hat{Q}_M$ (factor accumulation biases production)
 
-**Empirical scorecard:**
-
-| Prediction | Evidence |
-|---|---|
-| Factor content of trade | Mixed (Trefler 1995) |
-| India exports labour-intensive | Confirmed |
-| Wage convergence | Partial (direction correct) |
-| Stolper-Samuelson effects | Strong in long run |
-| Rybczynski (structural change) | Strong (East Asia) |
+**Empirical evidence:** Factor content of trade is mixed (Trefler 1995); India's labour-intensive export pattern is confirmed; wage convergence is partial (direction correct); Stolper-Samuelson distributional effects are strong in the long run; Rybczynski structural change is well-supported by East Asian data.
 
 **What H-O cannot explain:** Intra-industry trade; trade between similar countries; scale economies → **New Trade Theory** (Lecture 6)
 

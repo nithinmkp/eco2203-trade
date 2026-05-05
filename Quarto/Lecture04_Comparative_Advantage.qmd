@@ -39,8 +39,6 @@ theme_set(theme_minimal(base_size=11))
 knitr::opts_chunk$set(echo = knitr::is_html_output())
 ```
 
-# Part I: The Problem with Absolute Advantage {background-color="#1a3a5c"}
-
 ## Recap: The Gap in Smith's Theory
 
 **Last lecture:** Adam Smith argued that countries should export goods they produce *absolutely* more efficiently.
@@ -72,8 +70,6 @@ Even a country that is absolutely less efficient in *everything* can still gain 
 ::: {.methodbox}
 **Analogy:** A lawyer who types faster than her secretary still benefits from hiring the secretary — because the lawyer's time is more valuably spent on legal work. The same logic applies to nations.
 :::
-
-# Part II: The Ricardian Model — Formal Setup {background-color="#1a3a5c"}
 
 ## The Labor-Value Model: Notation
 
@@ -188,8 +184,6 @@ p1 + p2
 :::
 :::
 
-# Part III: Terms of Trade and Gains from Trade {background-color="#1a3a5c"}
-
 ## The Terms of Trade Range
 
 For trade to be mutually beneficial, the world price ratio must lie **between** the two autarky opportunity costs.
@@ -283,8 +277,6 @@ Budget constraint under trade: $R + 1.5 \cdot Wh = 200$
 Compare with autarky constraint: $R + 2 \cdot Wh = 200$
 
 The trade budget line is **flatter** → larger feasible consumption set.
-
-# Part IV: Indifference Curves and Equilibrium {background-color="#1a3a5c"}
 
 ## Consumer Preferences and Equilibrium
 
@@ -380,8 +372,6 @@ Under free trade, India:
 
 These two points generally differ — the gap is filled by **trade flows**.
 
-# Part V: Assumptions, Extensions, and Critique {background-color="#1a3a5c"}
-
 ## Key Assumptions of the Ricardian Model
 
 | Assumption | Implication |
@@ -414,8 +404,6 @@ These two points generally differ — the gap is filled by **trade flows**.
 :::{.notes}
 **Empirical support:** Golub & Hsieh (2000) and Costinot et al. (2012) find strong evidence that labour productivity differences predict export patterns across countries. Predicts complete specialisation (rarely observed); says nothing about *who* within a country gains or loses.
 :::
-
-# Part VI: India — Revealed Comparative Advantage {background-color="#1a3a5c"}
 
 ## Measuring Comparative Advantage: The Balassa Index
 
@@ -494,14 +482,7 @@ The ban is welfare-reducing under comparative advantage theory: India surrenders
 4. Terms of trade must lie between autarky opportunity costs: $OC_R^W < \frac{P_R}{P_{Wh}} < OC_R^I$
 5. Both countries gain — even the absolutely less productive one
 
-**Empirical verdict:**
-
-| Prediction | Evidence |
-|---|---|
-| Labour productivity → exports | Strong (Costinot et al. 2012) |
-| Full specialisation | Weak (partial observed) |
-| All workers gain | Mixed (short-run losers exist) |
-| India exports rice | Confirmed (RCA = 4.8) |
+**Empirical verdict:** Labour productivity differences strongly predict export patterns — Costinot et al. (2012) find R² ≈ 0.9 across countries. India's rice exports (RCA = 4.8) confirm comparative advantage. Complete specialisation is rarely observed in practice, and short-run distributional losses are documented — but aggregate welfare gains are robust.
 
 **What Ricardo cannot explain:** *Why* labour productivity differs (→ H-O model); income distribution effects (→ Stolper-Samuelson); intra-industry trade (→ Lecture 6)
 
