@@ -267,70 +267,73 @@ Nithin M
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a><span class="co"># Box: total Labour = 100, total Capital = 60</span></span>
-<span id="cb1-4"><a></a><span class="co"># Rice:     Q_R = L_R^0.7 * K_R^0.3  (labour-intensive)</span></span>
-<span id="cb1-5"><a></a><span class="co"># Machines: Q_M = L_M^0.3 * K_M^0.7  (capital-intensive)</span></span>
-<span id="cb1-6"><a></a><span class="co"># Contract curve from MRTS_R = MRTS_M =&gt; K_R = 540*L_R / (4900 - 40*L_R)</span></span>
-<span id="cb1-7"><a></a>L_cc <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">99</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
-<span id="cb1-8"><a></a>K_cc <span class="ot">&lt;-</span> <span class="dv">540</span> <span class="sc">*</span> L_cc <span class="sc">/</span> (<span class="dv">4900</span> <span class="sc">-</span> <span class="dv">40</span> <span class="sc">*</span> L_cc)</span>
-<span id="cb1-9"><a></a></span>
-<span id="cb1-10"><a></a><span class="co"># Point E exactly on the contract curve at L_R = 50</span></span>
-<span id="cb1-11"><a></a>L_E <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb1-12"><a></a>K_E <span class="ot">&lt;-</span> <span class="dv">540</span> <span class="sc">*</span> L_E <span class="sc">/</span> (<span class="dv">4900</span> <span class="sc">-</span> <span class="dv">40</span> <span class="sc">*</span> L_E)   <span class="co"># = 9.31</span></span>
-<span id="cb1-13"><a></a></span>
-<span id="cb1-14"><a></a><span class="co"># Rice isoquant through E</span></span>
-<span id="cb1-15"><a></a>Q_R_E <span class="ot">&lt;-</span> L_E<span class="sc">^</span><span class="fl">0.7</span> <span class="sc">*</span> K_E<span class="sc">^</span><span class="fl">0.3</span></span>
-<span id="cb1-16"><a></a>iL_R  <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">23</span>, <span class="dv">96</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
-<span id="cb1-17"><a></a>iK_R  <span class="ot">&lt;-</span> (Q_R_E <span class="sc">/</span> iL_R<span class="sc">^</span><span class="fl">0.7</span>)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="fl">0.3</span>)</span>
-<span id="cb1-18"><a></a>df_R  <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="fu">data.frame</span>(<span class="at">L =</span> iL_R, <span class="at">K =</span> iK_R), K <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> K <span class="sc">&lt;=</span> <span class="dv">60</span>)</span>
-<span id="cb1-19"><a></a></span>
-<span id="cb1-20"><a></a><span class="co"># Machines isoquant through E (drawn in original coords)</span></span>
-<span id="cb1-21"><a></a>Q_M_E <span class="ot">&lt;-</span> (<span class="dv">100</span> <span class="sc">-</span> L_E)<span class="sc">^</span><span class="fl">0.3</span> <span class="sc">*</span> (<span class="dv">60</span> <span class="sc">-</span> K_E)<span class="sc">^</span><span class="fl">0.7</span></span>
-<span id="cb1-22"><a></a>iLM   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">34</span>, <span class="dv">99</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
-<span id="cb1-23"><a></a>iKM   <span class="ot">&lt;-</span> (Q_M_E <span class="sc">/</span> iLM<span class="sc">^</span><span class="fl">0.3</span>)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="fl">0.7</span>)</span>
-<span id="cb1-24"><a></a>df_M  <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="fu">data.frame</span>(<span class="at">L =</span> <span class="dv">100</span> <span class="sc">-</span> iLM, <span class="at">K =</span> <span class="dv">60</span> <span class="sc">-</span> iKM),</span>
-<span id="cb1-25"><a></a>                K <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> K <span class="sc">&lt;=</span> <span class="dv">60</span> <span class="sc">&amp;</span> L <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> L <span class="sc">&lt;=</span> <span class="dv">100</span>)</span>
-<span id="cb1-26"><a></a></span>
-<span id="cb1-27"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb1-28"><a></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="dv">0</span>, <span class="at">xmax =</span> <span class="dv">100</span>, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> <span class="dv">60</span>,</span>
-<span id="cb1-29"><a></a>           <span class="at">fill =</span> <span class="st">"#f8f8f8"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb1-30"><a></a>  <span class="co"># Isoquants</span></span>
-<span id="cb1-31"><a></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> df_R, <span class="fu">aes</span>(<span class="at">x =</span> L, <span class="at">y =</span> K),</span>
-<span id="cb1-32"><a></a>            <span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb1-33"><a></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> df_M, <span class="fu">aes</span>(<span class="at">x =</span> L, <span class="at">y =</span> K),</span>
-<span id="cb1-34"><a></a>            <span class="at">color =</span> <span class="st">"#B9975B"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb1-35"><a></a>  <span class="co"># Contract curve</span></span>
-<span id="cb1-36"><a></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">L =</span> L_cc, <span class="at">K =</span> K_cc), <span class="fu">aes</span>(<span class="at">x =</span> L, <span class="at">y =</span> K),</span>
-<span id="cb1-37"><a></a>            <span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">1.6</span>) <span class="sc">+</span></span>
-<span id="cb1-38"><a></a>  <span class="co"># Efficient allocation E</span></span>
-<span id="cb1-39"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> L_E, <span class="at">y =</span> K_E), <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb1-40"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">54</span>, <span class="at">y =</span> <span class="dv">12</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.5</span>,</span>
-<span id="cb1-41"><a></a>           <span class="at">label =</span> <span class="st">"E  (efficient alloc.)"</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb1-42"><a></a>  <span class="co"># Rice origin</span></span>
-<span id="cb1-43"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">2.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
-<span id="cb1-44"><a></a>           <span class="at">label =</span> <span class="st">"O[R]"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb1-45"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">7.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb1-46"><a></a>           <span class="at">label =</span> <span class="st">"Rice sector"</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb1-47"><a></a>  <span class="co"># Machines origin</span></span>
-<span id="cb1-48"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">98</span>, <span class="at">y =</span> <span class="fl">57.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
-<span id="cb1-49"><a></a>           <span class="at">label =</span> <span class="st">"O[M]"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb1-50"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">98</span>, <span class="at">y =</span> <span class="fl">52.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb1-51"><a></a>           <span class="at">label =</span> <span class="st">"Machines sector"</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb1-52"><a></a>  <span class="co"># Isoquant labels</span></span>
-<span id="cb1-53"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">82</span>, <span class="at">y =</span> <span class="fl">2.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb1-54"><a></a>           <span class="at">label =</span> <span class="st">"Rice isoquant"</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb1-55"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="dv">40</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb1-56"><a></a>           <span class="at">label =</span> <span class="st">"Machines</span><span class="sc">\n</span><span class="st">isoquant"</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb1-57"><a></a>  <span class="co"># Contract curve label</span></span>
-<span id="cb1-58"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">64</span>, <span class="at">y =</span> <span class="dv">27</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
-<span id="cb1-59"><a></a>           <span class="at">label =</span> <span class="st">"Contract</span><span class="sc">\n</span><span class="st">curve"</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb1-60"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-61"><a></a>    <span class="at">title    =</span> <span class="st">"Edgeworth box: efficient factor allocations"</span>,</span>
-<span id="cb1-62"><a></a>    <span class="at">subtitle =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"At E: "</span>, MPL[R]<span class="sc">/</span>MPK[R], <span class="st">" = "</span>, MPL[M]<span class="sc">/</span>MPK[M])),</span>
-<span id="cb1-63"><a></a>    <span class="at">x        =</span> <span class="st">"Labour allocated to Rice"</span>,</span>
-<span id="cb1-64"><a></a>    <span class="at">y        =</span> <span class="st">"Capital allocated to Rice"</span></span>
-<span id="cb1-65"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb1-66"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">103</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">62</span>)) <span class="sc">+</span></span>
-<span id="cb1-67"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a></a><span class="co"># Rice:     Q_R = L_R^0.6 * K_R^0.4  (labour-intensive)</span></span>
+<span id="cb1-5"><a></a><span class="co"># Machines: Q_M = L_M^0.4 * K_M^0.6  (capital-intensive)</span></span>
+<span id="cb1-6"><a></a><span class="co"># Contract curve from MRTS_R = MRTS_M:</span></span>
+<span id="cb1-7"><a></a><span class="co">#   (0.6/0.4)*(K_R/L_R) = (0.4/0.6)*(K_M/L_M)</span></span>
+<span id="cb1-8"><a></a><span class="co">#   =&gt;  K_R = 240*L_R / (900 - 5*L_R)</span></span>
+<span id="cb1-9"><a></a>L_cc <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">99</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-10"><a></a>K_cc <span class="ot">&lt;-</span> <span class="dv">240</span> <span class="sc">*</span> L_cc <span class="sc">/</span> (<span class="dv">900</span> <span class="sc">-</span> <span class="dv">5</span> <span class="sc">*</span> L_cc)</span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a><span class="co"># Point E at L_R = 70: visually centred (70% of L-axis, ~51% of K-axis)</span></span>
+<span id="cb1-13"><a></a>L_E <span class="ot">&lt;-</span> <span class="dv">70</span></span>
+<span id="cb1-14"><a></a>K_E <span class="ot">&lt;-</span> <span class="dv">240</span> <span class="sc">*</span> L_E <span class="sc">/</span> (<span class="dv">900</span> <span class="sc">-</span> <span class="dv">5</span> <span class="sc">*</span> L_E)   <span class="co"># = 16800/550 ≈ 30.5</span></span>
+<span id="cb1-15"><a></a></span>
+<span id="cb1-16"><a></a><span class="co"># Rice isoquant through E</span></span>
+<span id="cb1-17"><a></a>Q_R_E <span class="ot">&lt;-</span> L_E<span class="sc">^</span><span class="fl">0.6</span> <span class="sc">*</span> K_E<span class="sc">^</span><span class="fl">0.4</span></span>
+<span id="cb1-18"><a></a>iL_R  <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">45</span>, <span class="dv">97</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-19"><a></a>iK_R  <span class="ot">&lt;-</span> (Q_R_E <span class="sc">/</span> iL_R<span class="sc">^</span><span class="fl">0.6</span>)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="fl">0.4</span>)</span>
+<span id="cb1-20"><a></a>df_R  <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="fu">data.frame</span>(<span class="at">L =</span> iL_R, <span class="at">K =</span> iK_R), K <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> K <span class="sc">&lt;=</span> <span class="dv">60</span>)</span>
+<span id="cb1-21"><a></a></span>
+<span id="cb1-22"><a></a><span class="co"># Machines isoquant through E (drawn in original coords)</span></span>
+<span id="cb1-23"><a></a><span class="co"># E in machine coords: L_M = 30, K_M ≈ 29.5</span></span>
+<span id="cb1-24"><a></a>Q_M_E <span class="ot">&lt;-</span> (<span class="dv">100</span> <span class="sc">-</span> L_E)<span class="sc">^</span><span class="fl">0.4</span> <span class="sc">*</span> (<span class="dv">60</span> <span class="sc">-</span> K_E)<span class="sc">^</span><span class="fl">0.6</span></span>
+<span id="cb1-25"><a></a>iLM   <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">11</span>, <span class="dv">99</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-26"><a></a>iKM   <span class="ot">&lt;-</span> (Q_M_E <span class="sc">/</span> iLM<span class="sc">^</span><span class="fl">0.4</span>)<span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="fl">0.6</span>)</span>
+<span id="cb1-27"><a></a>df_M  <span class="ot">&lt;-</span> <span class="fu">subset</span>(<span class="fu">data.frame</span>(<span class="at">L =</span> <span class="dv">100</span> <span class="sc">-</span> iLM, <span class="at">K =</span> <span class="dv">60</span> <span class="sc">-</span> iKM),</span>
+<span id="cb1-28"><a></a>                K <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> K <span class="sc">&lt;=</span> <span class="dv">60</span> <span class="sc">&amp;</span> L <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> L <span class="sc">&lt;=</span> <span class="dv">100</span>)</span>
+<span id="cb1-29"><a></a></span>
+<span id="cb1-30"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-31"><a></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="dv">0</span>, <span class="at">xmax =</span> <span class="dv">100</span>, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> <span class="dv">60</span>,</span>
+<span id="cb1-32"><a></a>           <span class="at">fill =</span> <span class="st">"#f8f8f8"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb1-33"><a></a>  <span class="co"># Isoquants</span></span>
+<span id="cb1-34"><a></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> df_R, <span class="fu">aes</span>(<span class="at">x =</span> L, <span class="at">y =</span> K),</span>
+<span id="cb1-35"><a></a>            <span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-36"><a></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> df_M, <span class="fu">aes</span>(<span class="at">x =</span> L, <span class="at">y =</span> K),</span>
+<span id="cb1-37"><a></a>            <span class="at">color =</span> <span class="st">"#B9975B"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-38"><a></a>  <span class="co"># Contract curve</span></span>
+<span id="cb1-39"><a></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">L =</span> L_cc, <span class="at">K =</span> K_cc), <span class="fu">aes</span>(<span class="at">x =</span> L, <span class="at">y =</span> K),</span>
+<span id="cb1-40"><a></a>            <span class="at">color =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">1.6</span>) <span class="sc">+</span></span>
+<span id="cb1-41"><a></a>  <span class="co"># Efficient allocation E</span></span>
+<span id="cb1-42"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> L_E, <span class="at">y =</span> K_E), <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-43"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">74</span>, <span class="at">y =</span> <span class="dv">33</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.5</span>,</span>
+<span id="cb1-44"><a></a>           <span class="at">label =</span> <span class="st">"E  (efficient alloc.)"</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb1-45"><a></a>  <span class="co"># Rice origin</span></span>
+<span id="cb1-46"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">2.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb1-47"><a></a>           <span class="at">label =</span> <span class="st">"O[R]"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-48"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="fl">7.5</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-49"><a></a>           <span class="at">label =</span> <span class="st">"Rice sector"</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-50"><a></a>  <span class="co"># Machines origin</span></span>
+<span id="cb1-51"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">98</span>, <span class="at">y =</span> <span class="fl">57.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb1-52"><a></a>           <span class="at">label =</span> <span class="st">"O[M]"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-53"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">98</span>, <span class="at">y =</span> <span class="fl">52.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-54"><a></a>           <span class="at">label =</span> <span class="st">"Machines sector"</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-55"><a></a>  <span class="co"># Isoquant labels</span></span>
+<span id="cb1-56"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">82</span>, <span class="at">y =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-57"><a></a>           <span class="at">label =</span> <span class="st">"Rice isoquant"</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-58"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">5</span>, <span class="at">y =</span> <span class="dv">50</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb1-59"><a></a>           <span class="at">label =</span> <span class="st">"Machines</span><span class="sc">\n</span><span class="st">isoquant"</span>, <span class="at">color =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb1-60"><a></a>  <span class="co"># Contract curve label</span></span>
+<span id="cb1-61"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">42</span>, <span class="at">y =</span> <span class="dv">26</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb1-62"><a></a>           <span class="at">label =</span> <span class="st">"Contract</span><span class="sc">\n</span><span class="st">curve"</span>, <span class="at">color =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb1-63"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-64"><a></a>    <span class="at">title    =</span> <span class="st">"Edgeworth box: efficient factor allocations"</span>,</span>
+<span id="cb1-65"><a></a>    <span class="at">subtitle =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"At E: "</span>, MPL[R]<span class="sc">/</span>MPK[R], <span class="st">" = "</span>, MPL[M]<span class="sc">/</span>MPK[M])),</span>
+<span id="cb1-66"><a></a>    <span class="at">x        =</span> <span class="st">"Labour allocated to Rice"</span>,</span>
+<span id="cb1-67"><a></a>    <span class="at">y        =</span> <span class="st">"Capital allocated to Rice"</span></span>
+<span id="cb1-68"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb1-69"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">103</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">62</span>)) <span class="sc">+</span></span>
+<span id="cb1-70"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-edgeworth" class="quarto-float quarto-figure quarto-figure-center">

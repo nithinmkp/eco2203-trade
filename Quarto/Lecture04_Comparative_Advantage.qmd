@@ -212,7 +212,7 @@ $$1 < \frac{P_{Wh}}{P_R} < 2$$
 2. Trades Rice for Wheat at world price $P_{Wh}/P_R = 1.5$
 3. **Consumption** moves to a point **above** the PPF
 
-The trade possibilities line starts at full specialisation point (0, 200) with slope $= -1/1.5 \approx -0.67$ (less steep than PPF slope $-2$).
+The trade possibilities line starts at full specialisation (0, 200) with slope $= -1.5$ (less steep in absolute value than the PPF slope $-2$).
 
 Consumption bundle **above the PPF** = welfare gain!
 :::
@@ -226,7 +226,7 @@ library(ggplot2)
 
 wheat_seq <- seq(0, 120, by=0.5)
 rice_ppf   <- pmax(0, 200 - 2*wheat_seq)
-rice_trade <- pmax(0, 200 - (200/133)*wheat_seq)
+rice_trade <- pmax(0, 200 - 1.5*wheat_seq)   # P_Wh/P_R = 1.5
 
 df_ppf <- data.frame(wheat=wheat_seq, rice_ppf=rice_ppf, rice_trade=rice_trade)
 
@@ -236,19 +236,17 @@ ggplot(df_ppf, aes(x=wheat)) +
   geom_point(aes(x=50, y=100), color="#012169", size=4) +
   annotate("text", x=54, y=100,
            label="Pre-trade\n(50Wh, 100R)", hjust=0, size=3.2, color="#012169") +
-  geom_point(aes(x=80, y=93), color="#B9975B", size=4) +
-  annotate("text", x=84, y=93,
-           label="Post-trade consumption\n(80Wh, 93R) — above PPF!",
+  geom_point(aes(x=67, y=100), color="#B9975B", size=4) +
+  annotate("text", x=71, y=100,
+           label="Post-trade\n(67Wh, 100R)\nabove PPF!",
            hjust=0, size=3.2, color="#B9975B") +
   geom_point(aes(x=0, y=200), color="darkgreen", size=3) +
   annotate("text", x=4, y=204,
            label="Full specialisation\n(0Wh, 200R)", hjust=0, size=3.2, color="darkgreen") +
-  annotate("segment", x=50, y=100, xend=80, yend=93,
+  annotate("segment", x=50, y=100, xend=66, yend=100,
            arrow=arrow(length=unit(0.25,"cm")), color="darkgreen", linewidth=1) +
-  annotate("text", x=58, y=112, label="Gains from\ntrade!",
+  annotate("text", x=55, y=108, label="Gains from trade!",
            color="darkgreen", size=3.5, fontface="bold") +
-  annotate("text", x=5, y=170, label="Trade line\n(slope = -P_R/P_Wh)",
-           color="#B9975B", size=3, hjust=0) +
   labs(title="India specialises in Rice, trades for Wheat",
        subtitle="Trade line lies above the PPF — consumption set expands",
        x="Wheat (units)", y="Rice (units)") +
@@ -263,16 +261,12 @@ ggplot(df_ppf, aes(x=wheat)) +
 
 **Before trade** (autarky): India produces and consumes on the PPF at $(Wh, R) = (50, 100)$
 
-**After trade** (at $P_{Wh}/P_R = 1.5$): India fully specialises → 200 Rice, trades $107$ Rice for $\approx 80$ Wheat:
-$$(Wh, R) = (80, 93)$$
+**After trade** (at $P_{Wh}/P_R = 1.5$): India fully specialises → 200 Rice, trades $\approx 100$ Rice for $\approx 67$ Wheat:
+$$(Wh, R) \approx (67, 100)$$
 
-**Welfare gain:** more Wheat *and* a larger combined bundle. The **real wage** of Indian workers rises.
+**Welfare gain:** 17 more units of Wheat at the same Rice — the **real wage** of Indian workers rises.
 
-**The algebra:** India's income at world prices (fully specialised):
-
-$$Y^I = P_R \times 200$$
-
-Budget constraint under trade: $R + 1.5 \cdot Wh = 200$
+**The algebra:** budget constraint under trade: $R + 1.5 \cdot Wh = 200$
 
 Compare with autarky constraint: $R + 2 \cdot Wh = 200$
 
@@ -312,9 +306,9 @@ library(ggplot2)
 
 wheat_seq <- seq(1, 105, by=0.5)
 rice_ppf   <- pmax(0, 200 - 2*wheat_seq)
-rice_trade <- pmax(0, 200 - wheat_seq)
-rice_ic1   <- 5000 / wheat_seq
-rice_ic2   <- 9600 / wheat_seq
+rice_trade <- pmax(0, 200 - 1.5*wheat_seq)   # P_Wh/P_R = 1.5 (was slope -1 — fixed)
+rice_ic1   <- 5000 / wheat_seq               # U = sqrt(Wh*R), U1^2 = 50*100 = 5000
+rice_ic2   <- 6700 / wheat_seq               # U2^2 = 67*100 = 6700 (E2 = (67,100) on IC2 & trade line)
 
 df <- data.frame(
   wheat = wheat_seq,
@@ -330,9 +324,9 @@ ggplot(df, aes(x=wheat)) +
   geom_line(aes(y=rice_ic1,   color="IC1 (autarky)"),          linewidth=1,   linetype="dotted") +
   geom_line(aes(y=rice_ic2,   color="IC2 (free trade)"),       linewidth=1,   linetype="dotted") +
   geom_point(aes(x=50,  y=100), color="#012169", size=3.5) +
-  geom_point(aes(x=80,  y=120), color="#B9975B", size=3.5) +
-  annotate("text", x=52, y=94,  label="E1 (autarky)",   size=3, hjust=0) +
-  annotate("text", x=82, y=114, label="E2 (free trade)", size=3, hjust=0) +
+  geom_point(aes(x=67,  y=100), color="#B9975B", size=3.5) +
+  annotate("text", x=41, y=97,  label="E1\n(autarky)",   size=3, hjust=0) +
+  annotate("text", x=69, y=106, label="E2\n(free trade)", size=3, hjust=0) +
   scale_color_manual(values=c(
     "PPF"             = "#012169",
     "Trade Line"      = "#B9975B",
