@@ -39,8 +39,6 @@ theme_set(theme_minimal(base_size=11))
 knitr::opts_chunk$set(echo = knitr::is_html_output())
 ```
 
-# Part I: Recap and Overview {background-color="#E8EDF5"}
-
 ## Recap: Lecture 1
 
 ::: {.methodbox}
@@ -89,8 +87,6 @@ ggplot(openness, aes(x=year, y=trade_gdp)) +
 ::: {.keybox}
 Trade/GDP rose from **14% (1990)** to **44% (2024)** — India is significantly more integrated into the global economy post-liberalisation.
 :::
-
-# Part II: Six Key Features {background-color="#E8EDF5"}
 
 ## Features That Make International Trade Distinct {.smaller}
 
@@ -151,8 +147,6 @@ International trade is not simply domestic trade "at a larger scale." Six featur
 **Agricultural export example:** A Punjab wheat exporter quotes **\$250/tonne** FOB Mumbai. At ₹80/USD → realises ₹20,000/tonne; at ₹75/USD → only ₹18,750/tonne. A **5% INR appreciation = 6.25% reduction** in rupee revenue — potentially wiping out margins. **Hedging tools:** Forward contracts, futures on NSE/BSE, ECGC insurance.
 :::
 
-# Part III: Internal vs International Trade {background-color="#E8EDF5"}
-
 ## Internal vs International Trade: Key Differences
 
 ::: {.smaller}
@@ -192,8 +186,6 @@ Where $T_{ij}$ = trade between $i$ and $j$; $Y_i, Y_j$ = GDP; $D_{ij}$ = distanc
 ::: {.highlightbox}
 UAE ranks highly despite moderate GDP: it is a regional trade hub + large Indian diaspora creates demand for Indian food products.
 :::
-
-# Part IV: Advantages and Risks {background-color="#E8EDF5"}
 
 ## Advantages of International Trade for India
 
@@ -235,8 +227,6 @@ Political and structural risks:
 6. **Trade disputes** — India has faced WTO challenges on sugar subsidies, poultry import bans
 7. **Structural unemployment** — Import competition can displace workers; adjustment is slow
 :::
-
-# Part V: India Case Studies {background-color="#E8EDF5"}
 
 ## Case Study: India's Edible Oil Import Dependence
 

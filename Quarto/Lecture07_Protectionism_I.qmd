@@ -88,8 +88,6 @@ Infant industry and optimal tariff have theoretical foundations.
 Employment, revenue, and food security are *political economy* arguments — valid as policy goals but do not imply trade restriction is the *best* tool.
 :::
 
-# Part I: Tariffs {background-color="#012169"}
-
 ## What is a Tariff?
 
 A **tariff** is a tax levied on imported goods at the border.
@@ -409,8 +407,6 @@ $$\text{ERP} = \frac{0.10 - 0}{1 - 0.70} \approx 333\%$$
 ::: {.highlightbox}
 India's tariff structure commonly exhibits cascading — protecting processing industries at the expense of downstream consumers and raw material exporters.
 :::
-
-# Part II: Quotas {background-color="#012169"}
 
 ## What is an Import Quota?
 

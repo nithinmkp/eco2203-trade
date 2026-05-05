@@ -40,8 +40,6 @@ theme_set(theme_minimal(base_size = 11))
 knitr::opts_chunk$set(echo = knitr::is_html_output())
 ```
 
-# Part I: Terms of Trade {background-color="#1a3a5c"}
-
 ## Recap: From Theory to Exchange
 
 **The journey so far:**
@@ -252,8 +250,6 @@ $$\frac{d}{dt}\left(\frac{P_{\text{primary}}}{P_{\text{manufactures}}}\right) < 
 **India's Export Composition Shift:** Raw cereals share fell from 35% (FY2015) to 28% (FY2023); Processed food rose from 22% to 31%; Marine value-added from 18% to 22%; Spice derivatives from 8% to 12% — India slowly shifting toward value-added exports consistent with P-S prescription.
 :::
 
-# Part II: Free Trade — Theory and India's Reality {background-color="#1a3a5c"}
-
 ## The Case for Free Trade {.smaller}
 
 **Standard economic arguments for free trade:**
@@ -333,8 +329,6 @@ Average applied agricultural tariff ~36%; bound tariff ~114%. This large tariff 
 
 *Reduced temporarily in 2022–23 to combat inflation. India uses tariffs *flexibly* — adjusting to domestic supply conditions, consistent with WTO rules under the SSM for developing countries.
 :::
-
-# Part III: Free Trade Agreements {background-color="#1a3a5c"}
 
 ## What is an FTA?
 

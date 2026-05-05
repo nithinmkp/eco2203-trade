@@ -39,8 +39,6 @@ theme_set(theme_minimal(base_size=11))
 knitr::opts_chunk$set(echo = knitr::is_html_output())
 ```
 
-# Part I: The Central Question {background-color="#E8EDF5"}
-
 ## The Central Question
 
 **Why do countries trade?**
@@ -80,8 +78,6 @@ This question has occupied economists for over 500 years. Three broad answers ha
 - **Porter (1990s):** national competitiveness and institutions
 - **Melitz (2000s):** firm heterogeneity; only productive firms export
 - **Course roadmap:** by Lecture 6 we cover the arc; today starts with mercantilism + Smith
-
-# Part II: Mercantilism {background-color="#E8EDF5"}
 
 ## Mercantilism: the setting
 
@@ -280,8 +276,6 @@ While export-led growth produced remarkable results in East Asia (South Korea, T
 
 **For India:** The challenge is to use strategic export promotion (FTP, APEDA, SEZs) without triggering WTO violations or partner retaliation.
 :::
-
-# Part III: Absolute Advantage — Adam Smith {background-color="#E8EDF5"}
 
 ## Adam Smith's Insight
 
@@ -585,8 +579,6 @@ USA has absolute advantage in **both** wheat and software. Smith's theory predic
 | **Colonies** | Essential — raw material source + captive market | Unnecessary and harmful to the coloniser too (waste of resources) |
 | **Legacy** | Colonial trade systems; modern currency wars | Foundation of free trade economics; WTO ideology |
 :::
-
-# Part IV: India Policy Applications {background-color="#E8EDF5"}
 
 ## India Policy Application: Mercantilism vs Smith in Real Decisions
 

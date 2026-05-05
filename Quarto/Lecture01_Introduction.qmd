@@ -39,8 +39,6 @@ theme_set(theme_minimal(base_size=11))
 knitr::opts_chunk$set(echo = knitr::is_html_output())
 ```
 
-# Part I: Setting the Stage {background-color="#E8EDF5"}
-
 ## Course Overview: Econ 2203
 
 **What this course is about**
@@ -129,8 +127,6 @@ Additional demand-side reason: **Income growth** — Rising incomes raise demand
 
 **Fundamental driver:** Countries differ in **opportunity costs** of production. Differences in opportunity costs → gains from specialisation and trade.
 :::
-
-# Part II: The Scale of Global Trade {background-color="#E8EDF5"}
 
 ## Scale of Global Trade
 
@@ -307,8 +303,6 @@ ggplot(global_share, aes(x=country, y=share, fill=highlight)) +
 India holds **2.8%** of world agricultural exports — 7th globally — but punches below its weight given its agricultural size. Significant scope to expand market share in rice, spices, and processed foods.
 :::
 
-# Part III: Key Concepts and Context {background-color="#E8EDF5"}
-
 ## Key Concepts: Theory {.smaller}
 
 **Classical trade theory**
@@ -418,8 +412,6 @@ Additional economic/political features:
 - Electronic goods rising fast (mobile phones, semiconductors policy)
 - India's export ambition: move up the value chain from raw agri commodities to processed food products
 :::
-
-# Part IV: Policy and Frameworks {background-color="#E8EDF5"}
 
 ## Foreign Trade Policy 2023-28: Five Pillars
 
