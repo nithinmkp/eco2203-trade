@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1777088638.33046 "Lecture07_Protectionism_I.xdv" "Lecture07_Protectionism_I.pdf" "Lecture07_Protectionism_I" 1777088639.28837 0
-  "Lecture07_Protectionism_I.xdv" 1777088636 252364 e59b198fbbcaf55a552b2740360178a3 "xelatex"
+["xdvipdfmx"] 1778000883.79811 "Lecture07_Protectionism_I.xdv" "Lecture07_Protectionism_I.pdf" "Lecture07_Protectionism_I" 1778000884.61435 0
+  "Lecture07_Protectionism_I.xdv" 1778000882 258236 e28e0fbaf28c3a3c07584498535e3f78 "xelatex"
   (generated)
   "Lecture07_Protectionism_I.pdf"
   (rewritten before read)
-["xelatex"] 1777088630.58885 "Lecture07_Protectionism_I.tex" "Lecture07_Protectionism_I.xdv" "Lecture07_Protectionism_I" 1777088639.25361 2
+["xelatex"] 1778000877.30036 "Lecture07_Protectionism_I.tex" "Lecture07_Protectionism_I.xdv" "Lecture07_Protectionism_I" 1778000884.5841 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -16,6 +16,7 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi10.tfm" 1256929440 1528 6d36b2385e0ca062a654de6ac59cb34f ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi5.tfm" 1256929440 1508 51526923e80e59e37a4e87448b5af6e0 ""
+  "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi7.tfm" 1256929440 1528 d5b028dd23da623848ef0645c96a1ed7 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi8.tfm" 1256929440 1520 a3fe5596932db2db2cbda300920dd4e9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576433602 40635 c40361e206be584d448876bba8a64a3b ""
@@ -226,13 +227,13 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture07_Protectionism_I.aux" 1777088636 6517 b8393fd3e91744389efae77dc619f8ea "xelatex"
-  "Lecture07_Protectionism_I.nav" 1777088636 2969 5734b160ef74b140b37e35c19980d54f "xelatex"
-  "Lecture07_Protectionism_I.tex" 1777088121 32270 5c775ad086f1e657f098dc8697e265eb ""
-  "Lecture07_Protectionism_I_files/figure-beamer/fig-free-trade-1.pdf" 1777088116 5228 b0ef87546c5e3d1c25326102fe206c7d ""
-  "Lecture07_Protectionism_I_files/figure-beamer/fig-india-tariffs-1.pdf" 1777088117 4954 13c351d1221174b3a84f674c57fc7b7e ""
-  "Lecture07_Protectionism_I_files/figure-beamer/fig-quota-1.pdf" 1777088118 5237 819ef43c6162e8e77566625146e5ac92 ""
-  "Lecture07_Protectionism_I_files/figure-beamer/fig-tariff-welfare-1.pdf" 1777088117 5824 4dfa2c23ccd115a9e5e23e75970586ec ""
+  "Lecture07_Protectionism_I.aux" 1778000882 10229 bcad4616246b8582fdb51c4048cacca0 "xelatex"
+  "Lecture07_Protectionism_I.nav" 1778000882 2842 6f32ae9173fe28384e668a43366d1ee6 "xelatex"
+  "Lecture07_Protectionism_I.tex" 1778000417 32593 8d6d2014d7f25ffc6064fedc27deeaf5 ""
+  "Lecture07_Protectionism_I_files/figure-beamer/fig-free-trade-1.pdf" 1778000396 5228 2c2d6cb094601215a946e06577dd7e0e ""
+  "Lecture07_Protectionism_I_files/figure-beamer/fig-india-tariffs-1.pdf" 1778000398 4954 a0b7fb588f210d543f7cb572f50ee841 ""
+  "Lecture07_Protectionism_I_files/figure-beamer/fig-quota-1.pdf" 1778000399 5237 820843fd40c7a353b2a112909bebfb4e ""
+  "Lecture07_Protectionism_I_files/figure-beamer/fig-tariff-welfare-1.pdf" 1778000397 5824 5e699632cdc2aeb8a8c17f4de4400fa7 ""
   (generated)
   "Lecture07_Protectionism_I.aux"
   "Lecture07_Protectionism_I.log"

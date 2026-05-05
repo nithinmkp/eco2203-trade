@@ -1,5 +1,1 @@
-\beamer@sectionintoc {1}{Part I: The Central Question}{2}{0}{1}
-\beamer@sectionintoc {2}{Part II: Mercantilism}{4}{0}{2}
-\beamer@sectionintoc {3}{Part III: Absolute Advantage --- Adam Smith}{14}{0}{3}
-\beamer@sectionintoc {4}{Part IV: India Policy Applications}{24}{0}{4}
-\beamer@sectionintoc {5}{Appendix}{29}{0}{5}
+\beamer@sectionintoc {1}{Appendix}{36}{0}{1}

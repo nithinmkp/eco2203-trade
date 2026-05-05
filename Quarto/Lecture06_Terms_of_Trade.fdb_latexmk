@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1777088616.75521 "Lecture06_Terms_of_Trade.xdv" "Lecture06_Terms_of_Trade.pdf" "Lecture06_Terms_of_Trade" 1777088617.68202 0
-  "Lecture06_Terms_of_Trade.xdv" 1777088615 308820 cc1d3ccd3a829e5268ac92f63ae5413a "xelatex"
+["xdvipdfmx"] 1778000859.65622 "Lecture06_Terms_of_Trade.xdv" "Lecture06_Terms_of_Trade.pdf" "Lecture06_Terms_of_Trade" 1778000860.44811 0
+  "Lecture06_Terms_of_Trade.xdv" 1778000858 334568 2d8805fe11ec7c2a15f98ab023e665d1 "xelatex"
   (generated)
   "Lecture06_Terms_of_Trade.pdf"
   (rewritten before read)
-["xelatex"] 1777088609.11648 "Lecture06_Terms_of_Trade.tex" "Lecture06_Terms_of_Trade.xdv" "Lecture06_Terms_of_Trade" 1777088617.65274 2
+["xelatex"] 1778000852.94015 "Lecture06_Terms_of_Trade.tex" "Lecture06_Terms_of_Trade.xdv" "Lecture06_Terms_of_Trade" 1778000860.41548 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -16,6 +16,7 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi10.tfm" 1256929440 1528 6d36b2385e0ca062a654de6ac59cb34f ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi5.tfm" 1256929440 1508 51526923e80e59e37a4e87448b5af6e0 ""
+  "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi7.tfm" 1256929440 1528 d5b028dd23da623848ef0645c96a1ed7 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi8.tfm" 1256929440 1520 a3fe5596932db2db2cbda300920dd4e9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576433602 40635 c40361e206be584d448876bba8a64a3b ""
@@ -226,13 +227,13 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture06_Terms_of_Trade.aux" 1777088615 11614 23f0d90117a74f6d01e2a8075a9c3580 "xelatex"
-  "Lecture06_Terms_of_Trade.nav" 1777088615 3532 909b007a6203096804438e6c93653b43 "xelatex"
-  "Lecture06_Terms_of_Trade.tex" 1777088090 38157 a87313ee1c676babefd80fa013679b8d ""
-  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-india-fta-1.pdf" 1777088085 4750 9d13551accaf839ca12d4f6837993db0 ""
-  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-india-tot-1.pdf" 1777088085 5054 4123ace8b9a69167c917f19e2936332f ""
-  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-offer-curves-1.pdf" 1777088084 6306 d3d420ac7d33efbfd56b6628c029e68f ""
-  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-trade-creation-1.pdf" 1777088087 6124 726b500b493f9390de63f92935bc22f6 ""
+  "Lecture06_Terms_of_Trade.aux" 1778000858 11076 a63c563e337c2d0d484b4a8af7555a12 "xelatex"
+  "Lecture06_Terms_of_Trade.nav" 1778000858 3028 1d96ef8e88b7dbef0963b48723dd1ed7 "xelatex"
+  "Lecture06_Terms_of_Trade.tex" 1778000391 40617 c46566b2c59b2278d38c4fa30cf09451 ""
+  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-india-fta-1.pdf" 1778000370 4750 cbd9255e2b358d68243f13837ab8de1f ""
+  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-india-tot-1.pdf" 1778000369 5054 d128b58084348e8eff2980fe0db1f9e4 ""
+  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-offer-curves-1.pdf" 1778000368 6306 76736bac3b1ca410fbf5f1504b16dd36 ""
+  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-trade-creation-1.pdf" 1778000371 6124 eebd2726721d1809d0d9bcce1033b09b ""
   (generated)
   "Lecture06_Terms_of_Trade.aux"
   "Lecture06_Terms_of_Trade.log"

@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -270,15 +297,6 @@ Agriculture}
 \begin{document}
 \frame{\titlepage}
 
-
-\begin{frame}{}
-\phantomsection\label{section}
-\textbf{Lecture 16}
-
-{Export Procedures and Documentation}
-
-From Karnataka Farm to Leicester Kitchen
-\end{frame}
 
 \begin{frame}
 \begin{block}{Opening: The Journey of a Kilo of Tur Dal}
@@ -417,33 +435,23 @@ a higher invoice value and more price control.
 \begin{frame}
 \begin{block}{Export Documents: Proof of Transaction}
 \phantomsection\label{export-documents-proof-of-transaction}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\begin{enumerate}
+\begin{itemize}
 \tightlist
 \item
-  \textbf{Commercial Invoice} --- price, quantity, HSN code, IEC,
-  buyer/seller details; basis for customs valuation
+  \textbf{Commercial Invoice} --- product, quantity, price, HSN/IEC;
+  basis for customs valuation
 \item
-  \textbf{Packing List} --- box-by-box itemisation of weight,
-  dimensions, marks
+  \textbf{Packing List} --- box-by-box weight and dimensions
 \item
-  \textbf{Bill of Lading (B/L)} --- title document issued by shipping
-  line; original B/L needed to claim cargo
+  \textbf{Transport document} --- \textbf{B/L} (sea) or \textbf{AWB}
+  (air)
 \item
-  \textbf{Airway Bill (AWB)} --- air freight equivalent of B/L;
-  non-negotiable consignment note
+  \textbf{Certificate of Origin (CoO)} --- used for FTA preferential
+  tariffs
 \item
-  \textbf{Certificate of Origin (CoO)} --- issued by FIEO/chamber;
-  determines FTA preferential tariff eligibility
-\end{enumerate}
-\end{column}
-
-\begin{column}{0.5\linewidth}
-The \textbf{Bill of Lading} is the only document that is a negotiable
-instrument --- it can be endorsed and transferred like a cheque.
-\end{column}
-\end{columns}
+  \textbf{Key idea:} \textbf{B/L is negotiable} (can be
+  endorsed/transferred)
+\end{itemize}
 
 \note{Detailed descriptions:
 
@@ -470,54 +478,26 @@ instrument --- it can be endorsed and transferred like a cheque.
   preferential duty rate under FTAs.
 \end{enumerate}}
 \end{block}
+\end{frame}
 
+\begin{frame}
 \begin{block}{Export Documents: Compliance and Regulatory}
 \phantomsection\label{export-documents-compliance-and-regulatory}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\begin{enumerate}
-\setcounter{enumi}{5}
+\begin{itemize}
 \tightlist
 \item
-  \textbf{Phytosanitary Certificate} --- issued by PPQS (Plant
-  Protection, Quarantine \& Storage); mandatory for all plant products
+  \textbf{Phytosanitary certificate (PPQS)} --- plant products are
+  pest-free
 \item
-  \textbf{Health / Inspection Certificate} --- issued by EIC for meat,
-  marine, organic, dairy exports
+  \textbf{Health/inspection certificate (EIC)} ---
+  meat/marine/organic/dairy
 \item
-  \textbf{EDPMS declaration} --- RBI's online system linking shipment to
-  forex realization
+  \textbf{Fumigation certificate} --- pulses/oilseeds; treatment details
 \item
-  \textbf{Fumigation Certificate} --- mandatory for pulses, oilseeds;
-  issued by certified fumigators
+  \textbf{Shipping Bill (ICEGATE)} --- customs clearance + \textbf{LEO}
 \item
-  \textbf{Shipping Bill} --- key customs clearance document filed on
-  ICEGATE; must be approved before loading
-\end{enumerate}
-\end{column}
-
-\begin{column}{0.5\linewidth}
-\textbf{Document flow for a typical agri export:}
-
-\begin{enumerate}
-\tightlist
-\item
-  Export contract signed → Commercial Invoice prepared
-\item
-  LC opened by buyer's bank
-\item
-  Shipment arranged → B/L issued
-\item
-  Phytosanitary + Fumigation certificates obtained
-\item
-  Shipping Bill filed on ICEGATE → LEO (Let Export Order) obtained
-\item
-  Documents presented to advising bank → payment
-\item
-  EDPMS updated → forex realization confirmed
-\end{enumerate}
-\end{column}
-\end{columns}
+  \textbf{EDPMS (RBI)} --- links shipment to forex realization
+\end{itemize}
 
 \note{Detailed descriptions:
 
@@ -548,6 +528,25 @@ instrument --- it can be endorsed and transferred like a cheque.
   (Free Shipping Bill, Dutiable SB, SB under claim for Drawback) for
   different incentive claims.
 \end{enumerate}}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Document flow: a typical agri export}
+\phantomsection\label{document-flow-a-typical-agri-export}
+\begin{enumerate}
+\tightlist
+\item
+  Contract signed + invoice prepared
+\item
+  Buyer arranges payment (often via \textbf{LC})
+\item
+  Shipment booked → \textbf{B/L or AWB} issued
+\item
+  Certificates obtained + Shipping Bill filed → \textbf{LEO}
+\item
+  Documents presented to bank → payment + \textbf{EDPMS} closure
+\end{enumerate}
 \end{block}
 \end{frame}
 
@@ -620,10 +619,11 @@ invoice value.
 
 }
 
-\caption{\label{fig-export-credit}Pre-shipment credit dipped during
+\caption{Pre-shipment credit dipped during
 COVID (FY2021) and recovered alongside export growth; post-shipment
 credit tracks pre-shipment with a structural lag. Source: RBI, Handbook
 of Statistics on Indian Economy.}
+\label{fig-export-credit}
 
 \end{figure}%
 \end{block}
@@ -695,11 +695,12 @@ In FY2024, \textasciitilde12,000 entities hold AEO status in India.
 
 }
 
-\caption{\label{fig-export-mode}Sea freight dominates at
+\caption{Sea freight dominates at
 \textasciitilde68\% of India's merchandise exports; air
 (\textasciitilde15\%) and land (\textasciitilde12\%) are secondary
 modes. Share composition is stable across both years. Source: DGCI\&S /
 Ministry of Commerce and Industry, GoI.}
+\label{fig-export-mode}
 
 \end{figure}%
 \end{block}
@@ -1233,10 +1234,15 @@ RoDTEP scrip + drawback + TMA
   \textbf{Cold chain and logistics} remain India's primary structural
   bottleneck --- world-class documentation systems exist, but physical
   infrastructure lags
+\end{enumerate}
+
+\note{\begin{enumerate}
+\setcounter{enumi}{5}
+\tightlist
 \item
   \textbf{Digital India} is working: ICEGATE, SWIFT, e-BRC have
   dramatically reduced transaction costs
-\end{enumerate}
+\end{enumerate}}
 \end{column}
 \end{columns}
 \end{block}
@@ -1261,6 +1267,10 @@ RoDTEP scrip + drawback + TMA
   Export Inspection Council and quality certification
 \item
   NAFED: buffer stocks, MSP procurement, export implications
+\end{itemize}
+
+\note{\begin{itemize}
+\tightlist
 \item
   Farmer Producer Organizations as export units
 \item
@@ -1269,7 +1279,7 @@ RoDTEP scrip + drawback + TMA
 
 \textbf{Preparation:} Review APEDA Annual Report 2023--24 (available at
 apeda.gov.in). Note the top 10 products by export value and the top 5
-destination countries.
+destination countries.}
 \end{block}
 \end{frame}
 

@@ -1,5 +1,5 @@
 ---
-title: "Balance of Trade & Balance of Payments"
+title: "Lecture 9: Balance of Trade & Balance of Payments"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

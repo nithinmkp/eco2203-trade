@@ -1,2 +1,2 @@
 \beamer@sectionintoc {1}{The WTO SPS Agreement}{6}{0}{1}
-\beamer@sectionintoc {2}{Appendix}{28}{0}{2}
+\beamer@sectionintoc {2}{Appendix}{30}{0}{2}

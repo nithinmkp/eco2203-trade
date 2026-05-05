@@ -1,5 +1,5 @@
 ---
-title: "Modern Theories: Heckscher-Ohlin & Lewis Dual-Sector Model"
+title: "Lecture 5: Modern Theories — Heckscher-Ohlin & Lewis"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
@@ -67,6 +67,25 @@ $$\left(\frac{K}{L}\right)^I < \left(\frac{K}{L}\right)^U$$
 
 **Factor abundance (price definition):**
 $$\left(\frac{w}{r}\right)^I < \left(\frac{w}{r}\right)^U \qquad \text{(labour is relatively cheaper in India)}$$
+
+## Assumptions of the H-O Model {.smaller}
+
+| Assumption | Role in the model |
+|---|---|
+| 2 countries, 2 goods, 2 factors (2×2×2) | Tractable analytical framework |
+| **Identical technologies** across countries | Comparative advantage comes *only* from endowments |
+| **Different factor endowments** | This is the sole source of trade |
+| Constant returns to scale | Concave PPF; no scale effects |
+| Perfect competition | Prices equal marginal costs; zero profits |
+| Factors mobile *within* countries | Labour/capital shift freely between sectors |
+| Factors immobile *across* countries | No international migration or capital flows |
+| No transport costs or trade barriers | Goods prices equalise across countries |
+| Incomplete specialisation | Both goods produced in both countries |
+| Identical, homothetic preferences | Demand differences cannot explain trade |
+
+::: {.methodbox}
+**Relaxing assumptions:** Drop identical technologies → Ricardian effects re-enter. Drop immobility → factor flows substitute for goods trade (FPE weakens). Drop 2×2×2 → Heckscher-Ohlin-Vanek factor content theorem.
+:::
 
 ## H-O Theorem: Formal Statement {.smaller}
 
@@ -232,6 +251,97 @@ ggplot(df_ppf2, aes(x=M, y=R, color=model, linetype=model)) +
        x="Machines", y="Rice", color=NULL, linetype=NULL) +
   theme_minimal(base_size=10) +
   theme(legend.position="bottom")
+```
+:::
+:::
+
+## H-O Welfare: Autarky vs Free Trade {.smaller}
+
+::: {.columns}
+::: {.column width="42%"}
+**Autarky (E1):** IC1 tangent to the PPF; India produces and consumes at E1.
+
+**Opening to trade:**
+
+- World price $P_R/P_M = 1.5 <$ autarky slope $2$
+- Production shifts to P $(M=60,\, R=160)$ — more Rice, fewer Machines
+- Trade possibilities line through P, slope $= -1.5$
+- India **exports 35 Rice**, **imports 23 Machines**
+- Consumption at E2 $(M=83,\, R=125)$ on IC2
+
+**IC2 > IC1 → welfare gain from trade**
+
+The gain comes entirely from **reallocation** — not from more resources, but from trading along comparative advantage.
+:::
+::: {.column width="58%"}
+```{r}
+#| label: fig-ho-welfare
+#| fig-cap: "H-O Model: Free Trade Raises Welfare Above the Autarky PPF\nSource: Author's illustration."
+#| fig-width: 6.5
+#| fig-height: 5
+library(ggplot2)
+
+# H-O concave PPF: R = 200*sqrt(1-(M/100)^2)
+M_seq    <- seq(1, 100, by=0.5)
+rice_ppf <- 200 * sqrt(pmax(0, 1 - (M_seq/100)^2))
+
+# Autarky tangency: slope = -2  → M = 100/sqrt(2) ≈ 70.7, R = 200/sqrt(2) ≈ 141.4
+E1_M <- 100/sqrt(2);  E1_R <- 200/sqrt(2)
+# IC1: U = sqrt(R*M), U1^2 = E1_M * E1_R = 10000
+rice_ic1 <- 10000 / M_seq
+
+# Free-trade production: PPF slope = -1.5 → M=60, R=160
+P_M <- 60;  P_R_val <- 160
+# Trade possibilities line: R = 250 - 1.5*M
+M_tr  <- seq(0, 120, by=0.5)
+rice_tr <- pmax(0, 250 - 1.5*M_tr)
+
+# Consumption under trade: MRS=R/M=1.5 → R=1.5*M; budget → M=250/3, R=125
+E2_M <- 250/3;  E2_R <- 125
+# IC2: U2^2 = E2_M * E2_R = (250/3)*125 = 10416.7
+rice_ic2 <- 10416.7 / M_seq
+
+df_ppf   <- data.frame(M=M_seq, R=rice_ppf, IC1=rice_ic1, IC2=rice_ic2)
+df_trade <- data.frame(M=M_tr,  R=rice_tr)
+
+ggplot() +
+  geom_line(data=df_ppf,   aes(x=M, y=R),   color="#012169", linewidth=1.5) +
+  geom_line(data=df_trade, aes(x=M, y=R),   color="#B9975B", linewidth=1.3,
+            linetype="dashed") +
+  geom_line(data=subset(df_ppf, IC1<=245), aes(x=M, y=IC1),
+            color="grey50",   linewidth=1, linetype="dotted") +
+  geom_line(data=subset(df_ppf, IC2<=245), aes(x=M, y=IC2),
+            color="darkgreen", linewidth=1, linetype="dotted") +
+  # Points
+  geom_point(aes(x=E1_M,   y=E1_R),   color="#012169", size=3.5) +
+  geom_point(aes(x=P_M,    y=P_R_val),color="purple",  size=3) +
+  geom_point(aes(x=E2_M,   y=E2_R),   color="#B9975B", size=3.5) +
+  # Trade triangle
+  annotate("segment", x=P_M, y=P_R_val, xend=E2_M, yend=P_R_val,
+           color="darkgreen", linewidth=0.8,
+           arrow=arrow(length=unit(0.2,"cm"))) +
+  annotate("text", x=(P_M+E2_M)/2, y=P_R_val+9,
+           label="Import Machines (+23)", size=2.8, hjust=0.5, color="darkgreen") +
+  annotate("segment", x=E2_M, y=P_R_val, xend=E2_M, yend=E2_R,
+           color="darkgreen", linewidth=0.8,
+           arrow=arrow(length=unit(0.2,"cm"))) +
+  annotate("text", x=E2_M+3, y=(P_R_val+E2_R)/2,
+           label="Export Rice (−35)", size=2.8, hjust=0, color="darkgreen") +
+  # Labels
+  annotate("text", x=E1_M+2,  y=E1_R-12,   label="E1 (autarky)",    size=3, hjust=0) +
+  annotate("text", x=P_M+2,   y=P_R_val+7, label="P (production)",  size=2.8,
+           hjust=0, color="purple") +
+  annotate("text", x=E2_M+2,  y=E2_R-12,   label="E2 (free trade)", size=3,
+           hjust=0, color="#B9975B") +
+  annotate("text", x=3, y=210,
+           label="IC2 (free trade)", size=2.8, hjust=0, color="darkgreen") +
+  annotate("text", x=3, y=175,
+           label="IC1 (autarky)",    size=2.8, hjust=0, color="grey50") +
+  scale_y_continuous(limits=c(0, 240)) +
+  scale_x_continuous(limits=c(0, 115)) +
+  labs(title="H-O: free trade moves consumption above the PPF",
+       x="Machines", y="Rice") +
+  theme_minimal(base_size=11)
 ```
 :::
 :::

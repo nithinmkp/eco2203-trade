@@ -11,7 +11,7 @@
 
   <meta name="author" content="Nithin M">
   <meta name="dcterms.date" content="2026-05-23">
-  <title>Econ 2203 – Modern Theories: Heckscher-Ohlin &amp; Lewis Dual-Sector Model</title>
+  <title>Econ 2203 – Lecture 5: Modern Theories — Heckscher-Ohlin &amp; Lewis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -197,7 +197,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Modern Theories: Heckscher-Ohlin &amp; Lewis Dual-Sector Model</h1>
+  <h1 class="title">Lecture 5: Modern Theories — Heckscher-Ohlin &amp; Lewis</h1>
   <p class="subtitle">Econ 2203 | International Trade and Policy in Agriculture</p>
 
 <div class="quarto-title-authors">
@@ -232,6 +232,66 @@ Nithin M
 <p><strong>Factor intensity:</strong> Rice is <strong>labour-intensive</strong> relative to Machines if: <span class="math display">\[\left(\frac{K}{L}\right)_R &lt; \left(\frac{K}{L}\right)_M\]</span></p>
 <p><strong>Factor abundance (physical definition):</strong> India is <strong>labour-abundant</strong> if: <span class="math display">\[\left(\frac{K}{L}\right)^I &lt; \left(\frac{K}{L}\right)^U\]</span></p>
 <p><strong>Factor abundance (price definition):</strong> <span class="math display">\[\left(\frac{w}{r}\right)^I &lt; \left(\frac{w}{r}\right)^U \qquad \text{(labour is relatively cheaper in India)}\]</span></p>
+</section>
+<section id="assumptions-of-the-h-o-model" class="slide level2 smaller">
+<h2>Assumptions of the H-O Model</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assumption</th>
+<th>Role in the model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2 countries, 2 goods, 2 factors (2×2×2)</td>
+<td>Tractable analytical framework</td>
+</tr>
+<tr class="even">
+<td><strong>Identical technologies</strong> across countries</td>
+<td>Comparative advantage comes <em>only</em> from endowments</td>
+</tr>
+<tr class="odd">
+<td><strong>Different factor endowments</strong></td>
+<td>This is the sole source of trade</td>
+</tr>
+<tr class="even">
+<td>Constant returns to scale</td>
+<td>Concave PPF; no scale effects</td>
+</tr>
+<tr class="odd">
+<td>Perfect competition</td>
+<td>Prices equal marginal costs; zero profits</td>
+</tr>
+<tr class="even">
+<td>Factors mobile <em>within</em> countries</td>
+<td>Labour/capital shift freely between sectors</td>
+</tr>
+<tr class="odd">
+<td>Factors immobile <em>across</em> countries</td>
+<td>No international migration or capital flows</td>
+</tr>
+<tr class="even">
+<td>No transport costs or trade barriers</td>
+<td>Goods prices equalise across countries</td>
+</tr>
+<tr class="odd">
+<td>Incomplete specialisation</td>
+<td>Both goods produced in both countries</td>
+</tr>
+<tr class="even">
+<td>Identical, homothetic preferences</td>
+<td>Demand differences cannot explain trade</td>
+</tr>
+</tbody>
+</table>
+<div class="methodbox">
+<p><strong>Relaxing assumptions:</strong> Drop identical technologies → Ricardian effects re-enter. Drop immobility → factor flows substitute for goods trade (FPE weakens). Drop 2×2×2 → Heckscher-Ohlin-Vanek factor content theorem.</p>
+</div>
 </section>
 <section id="h-o-theorem-formal-statement" class="slide level2 smaller">
 <h2>H-O Theorem: Formal Statement</h2>
@@ -402,6 +462,104 @@ Figure&nbsp;1: Edgeworth Box: Efficient Factor Allocation Between Rice and Machi
 </div>
 </div></div>
 </section>
+<section id="h-o-welfare-autarky-vs-free-trade" class="slide level2 smaller">
+<h2>H-O Welfare: Autarky vs Free Trade</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p><strong>Autarky (E1):</strong> IC1 tangent to the PPF; India produces and consumes at E1.</p>
+<p><strong>Opening to trade:</strong></p>
+<ul>
+<li>World price <span class="math inline">\(P_R/P_M = 1.5 &lt;\)</span> autarky slope <span class="math inline">\(2\)</span></li>
+<li>Production shifts to P <span class="math inline">\((M=60,\, R=160)\)</span> — more Rice, fewer Machines</li>
+<li>Trade possibilities line through P, slope <span class="math inline">\(= -1.5\)</span></li>
+<li>India <strong>exports 35 Rice</strong>, <strong>imports 23 Machines</strong></li>
+<li>Consumption at E2 <span class="math inline">\((M=83,\, R=125)\)</span> on IC2</li>
+</ul>
+<p><strong>IC2 &gt; IC1 → welfare gain from trade</strong></p>
+<p>The gain comes entirely from <strong>reallocation</strong> — not from more resources, but from trading along comparative advantage.</p>
+</div><div class="column" style="width:58%;">
+<div class="cell">
+<details class="code-fold">
+<summary>Show R code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a><span class="co"># H-O concave PPF: R = 200*sqrt(1-(M/100)^2)</span></span>
+<span id="cb3-4"><a></a>M_seq    <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="at">by=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-5"><a></a>rice_ppf <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb3-6"><a></a></span>
+<span id="cb3-7"><a></a><span class="co"># Autarky tangency: slope = -2  → M = 100/sqrt(2) ≈ 70.7, R = 200/sqrt(2) ≈ 141.4</span></span>
+<span id="cb3-8"><a></a>E1_M <span class="ot">&lt;-</span> <span class="dv">100</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span>);  E1_R <span class="ot">&lt;-</span> <span class="dv">200</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span>)</span>
+<span id="cb3-9"><a></a><span class="co"># IC1: U = sqrt(R*M), U1^2 = E1_M * E1_R = 10000</span></span>
+<span id="cb3-10"><a></a>rice_ic1 <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="sc">/</span> M_seq</span>
+<span id="cb3-11"><a></a></span>
+<span id="cb3-12"><a></a><span class="co"># Free-trade production: PPF slope = -1.5 → M=60, R=160</span></span>
+<span id="cb3-13"><a></a>P_M <span class="ot">&lt;-</span> <span class="dv">60</span>;  P_R_val <span class="ot">&lt;-</span> <span class="dv">160</span></span>
+<span id="cb3-14"><a></a><span class="co"># Trade possibilities line: R = 250 - 1.5*M</span></span>
+<span id="cb3-15"><a></a>M_tr  <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">120</span>, <span class="at">by=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-16"><a></a>rice_tr <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">250</span> <span class="sc">-</span> <span class="fl">1.5</span><span class="sc">*</span>M_tr)</span>
+<span id="cb3-17"><a></a></span>
+<span id="cb3-18"><a></a><span class="co"># Consumption under trade: MRS=R/M=1.5 → R=1.5*M; budget → M=250/3, R=125</span></span>
+<span id="cb3-19"><a></a>E2_M <span class="ot">&lt;-</span> <span class="dv">250</span><span class="sc">/</span><span class="dv">3</span>;  E2_R <span class="ot">&lt;-</span> <span class="dv">125</span></span>
+<span id="cb3-20"><a></a><span class="co"># IC2: U2^2 = E2_M * E2_R = (250/3)*125 = 10416.7</span></span>
+<span id="cb3-21"><a></a>rice_ic2 <span class="ot">&lt;-</span> <span class="fl">10416.7</span> <span class="sc">/</span> M_seq</span>
+<span id="cb3-22"><a></a></span>
+<span id="cb3-23"><a></a>df_ppf   <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">M=</span>M_seq, <span class="at">R=</span>rice_ppf, <span class="at">IC1=</span>rice_ic1, <span class="at">IC2=</span>rice_ic2)</span>
+<span id="cb3-24"><a></a>df_trade <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">M=</span>M_tr,  <span class="at">R=</span>rice_tr)</span>
+<span id="cb3-25"><a></a></span>
+<span id="cb3-26"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-27"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span>df_ppf,   <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>R),   <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb3-28"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span>df_trade, <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>R),   <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.3</span>,</span>
+<span id="cb3-29"><a></a>            <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb3-30"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">subset</span>(df_ppf, IC1<span class="sc">&lt;=</span><span class="dv">245</span>), <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>IC1),</span>
+<span id="cb3-31"><a></a>            <span class="at">color=</span><span class="st">"grey50"</span>,   <span class="at">linewidth=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb3-32"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">subset</span>(df_ppf, IC2<span class="sc">&lt;=</span><span class="dv">245</span>), <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>IC2),</span>
+<span id="cb3-33"><a></a>            <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb3-34"><a></a>  <span class="co"># Points</span></span>
+<span id="cb3-35"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>E1_M,   <span class="at">y=</span>E1_R),   <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb3-36"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>P_M,    <span class="at">y=</span>P_R_val),<span class="at">color=</span><span class="st">"purple"</span>,  <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb3-37"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>E2_M,   <span class="at">y=</span>E2_R),   <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">size=</span><span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb3-38"><a></a>  <span class="co"># Trade triangle</span></span>
+<span id="cb3-39"><a></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span>P_M, <span class="at">y=</span>P_R_val, <span class="at">xend=</span>E2_M, <span class="at">yend=</span>P_R_val,</span>
+<span id="cb3-40"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>,</span>
+<span id="cb3-41"><a></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.2</span>,<span class="st">"cm"</span>))) <span class="sc">+</span></span>
+<span id="cb3-42"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(P_M<span class="sc">+</span>E2_M)<span class="sc">/</span><span class="dv">2</span>, <span class="at">y=</span>P_R_val<span class="sc">+</span><span class="dv">9</span>,</span>
+<span id="cb3-43"><a></a>           <span class="at">label=</span><span class="st">"Import Machines (+23)"</span>, <span class="at">size=</span><span class="fl">2.8</span>, <span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb3-44"><a></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span>E2_M, <span class="at">y=</span>P_R_val, <span class="at">xend=</span>E2_M, <span class="at">yend=</span>E2_R,</span>
+<span id="cb3-45"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>,</span>
+<span id="cb3-46"><a></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.2</span>,<span class="st">"cm"</span>))) <span class="sc">+</span></span>
+<span id="cb3-47"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>E2_M<span class="sc">+</span><span class="dv">3</span>, <span class="at">y=</span>(P_R_val<span class="sc">+</span>E2_R)<span class="sc">/</span><span class="dv">2</span>,</span>
+<span id="cb3-48"><a></a>           <span class="at">label=</span><span class="st">"Export Rice (−35)"</span>, <span class="at">size=</span><span class="fl">2.8</span>, <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb3-49"><a></a>  <span class="co"># Labels</span></span>
+<span id="cb3-50"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>E1_M<span class="sc">+</span><span class="dv">2</span>,  <span class="at">y=</span>E1_R<span class="dv">-12</span>,   <span class="at">label=</span><span class="st">"E1 (autarky)"</span>,    <span class="at">size=</span><span class="dv">3</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb3-51"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>P_M<span class="sc">+</span><span class="dv">2</span>,   <span class="at">y=</span>P_R_val<span class="sc">+</span><span class="dv">7</span>, <span class="at">label=</span><span class="st">"P (production)"</span>,  <span class="at">size=</span><span class="fl">2.8</span>,</span>
+<span id="cb3-52"><a></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">color=</span><span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb3-53"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>E2_M<span class="sc">+</span><span class="dv">2</span>,  <span class="at">y=</span>E2_R<span class="dv">-12</span>,   <span class="at">label=</span><span class="st">"E2 (free trade)"</span>, <span class="at">size=</span><span class="dv">3</span>,</span>
+<span id="cb3-54"><a></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb3-55"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">3</span>, <span class="at">y=</span><span class="dv">210</span>,</span>
+<span id="cb3-56"><a></a>           <span class="at">label=</span><span class="st">"IC2 (free trade)"</span>, <span class="at">size=</span><span class="fl">2.8</span>, <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb3-57"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">3</span>, <span class="at">y=</span><span class="dv">175</span>,</span>
+<span id="cb3-58"><a></a>           <span class="at">label=</span><span class="st">"IC1 (autarky)"</span>,    <span class="at">size=</span><span class="fl">2.8</span>, <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">color=</span><span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb3-59"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">240</span>)) <span class="sc">+</span></span>
+<span id="cb3-60"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">115</span>)) <span class="sc">+</span></span>
+<span id="cb3-61"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"H-O: free trade moves consumption above the PPF"</span>,</span>
+<span id="cb3-62"><a></a>       <span class="at">x=</span><span class="st">"Machines"</span>, <span class="at">y=</span><span class="st">"Rice"</span>) <span class="sc">+</span></span>
+<span id="cb3-63"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-ho-welfare" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-ho-welfare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Lecture05_Modern_Theory_files/figure-revealjs/fig-ho-welfare-1.png" width="624">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ho-welfare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: H-O Model: Free Trade Raises Welfare Above the Autarky PPF Source: Author’s illustration.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
 <section id="theorem-1-factor-price-equalisation-fpe" class="slide level2">
 <h2>Theorem 1: Factor Price Equalisation (FPE)</h2>
 <p><strong>Theorem (Samuelson 1948):</strong></p>
@@ -542,51 +700,51 @@ Figure&nbsp;1: Edgeworth Box: Efficient Factor Allocation Between Rice and Machi
 <div class="cell">
 <details class="code-fold">
 <summary>Show R code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a>M_seq       <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">110</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb3-4"><a></a>rice_before <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">200</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
-<span id="cb3-5"><a></a>rice_after  <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">260</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">88</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
-<span id="cb3-6"><a></a></span>
-<span id="cb3-7"><a></a>df_ryb <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-8"><a></a>  <span class="at">M    =</span> <span class="fu">c</span>(M_seq, M_seq),</span>
-<span id="cb3-9"><a></a>  <span class="at">Rice =</span> <span class="fu">c</span>(rice_before, rice_after),</span>
-<span id="cb3-10"><a></a>  <span class="at">period =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Before labour inflow (L=100)"</span>,</span>
-<span id="cb3-11"><a></a>                 <span class="st">"After labour inflow (L=130)"</span>), <span class="at">each=</span><span class="fu">length</span>(M_seq))</span>
-<span id="cb3-12"><a></a>)</span>
-<span id="cb3-13"><a></a></span>
-<span id="cb3-14"><a></a><span class="fu">ggplot</span>(df_ryb, <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>Rice, <span class="at">color=</span>period, <span class="at">linetype=</span>period)) <span class="sc">+</span></span>
-<span id="cb3-15"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb3-16"><a></a>  <span class="co"># Price line (slope = constant P_R/P_M)</span></span>
-<span id="cb3-17"><a></a>  <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="sc">-</span><span class="fl">1.8</span>, <span class="at">intercept=</span><span class="dv">162</span>, <span class="at">color=</span><span class="st">"grey60"</span>,</span>
-<span id="cb3-18"><a></a>              <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb3-19"><a></a>  <span class="co"># Point A (before)</span></span>
-<span id="cb3-20"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">45</span>, <span class="at">y=</span><span class="dv">100</span>), <span class="at">inherit.aes=</span><span class="cn">FALSE</span>,</span>
-<span id="cb3-21"><a></a>             <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb3-22"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">48</span>, <span class="at">y=</span><span class="dv">100</span>, <span class="at">label=</span><span class="st">"A (before)"</span>,</span>
-<span id="cb3-23"><a></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb3-24"><a></a>  <span class="co"># Point B (after) — same price line, more Rice, less M</span></span>
-<span id="cb3-25"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="dv">136</span>), <span class="at">inherit.aes=</span><span class="cn">FALSE</span>,</span>
-<span id="cb3-26"><a></a>             <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb3-27"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="dv">136</span>, <span class="at">label=</span><span class="st">"B (after)</span><span class="sc">\n</span><span class="st">Rice↑, Mach↓"</span>,</span>
-<span id="cb3-28"><a></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb3-29"><a></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">45</span>, <span class="at">y=</span><span class="dv">100</span>, <span class="at">xend=</span><span class="dv">30</span>, <span class="at">yend=</span><span class="dv">136</span>,</span>
-<span id="cb3-30"><a></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>)),</span>
-<span id="cb3-31"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-32"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">22</span>, <span class="at">y=</span><span class="dv">115</span>,</span>
-<span id="cb3-33"><a></a>           <span class="at">label=</span><span class="st">"Rybczynski</span><span class="sc">\n</span><span class="st">effect"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>,</span>
-<span id="cb3-34"><a></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">fontface=</span><span class="st">"bold"</span>) <span class="sc">+</span></span>
-<span id="cb3-35"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(</span>
-<span id="cb3-36"><a></a>    <span class="st">"Before labour inflow (L=100)"</span><span class="ot">=</span><span class="st">"#012169"</span>,</span>
-<span id="cb3-37"><a></a>    <span class="st">"After labour inflow (L=130)"</span> <span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
-<span id="cb3-38"><a></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(</span>
-<span id="cb3-39"><a></a>    <span class="st">"Before labour inflow (L=100)"</span><span class="ot">=</span><span class="st">"solid"</span>,</span>
-<span id="cb3-40"><a></a>    <span class="st">"After labour inflow (L=130)"</span> <span class="ot">=</span><span class="st">"dashed"</span>)) <span class="sc">+</span></span>
-<span id="cb3-41"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Labour inflow expands Rice output and contracts Machines"</span>,</span>
-<span id="cb3-42"><a></a>       <span class="at">subtitle=</span><span class="st">"At constant goods prices — pure Rybczynski movement"</span>,</span>
-<span id="cb3-43"><a></a>       <span class="at">x=</span><span class="st">"Machines"</span>, <span class="at">y=</span><span class="st">"Rice"</span>, <span class="at">color=</span><span class="cn">NULL</span>, <span class="at">linetype=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb3-44"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
-<span id="cb3-45"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a>M_seq       <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">110</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb4-4"><a></a>rice_before <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">200</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb4-5"><a></a>rice_after  <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">260</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>, <span class="dv">1</span> <span class="sc">-</span> (M_seq<span class="sc">/</span><span class="dv">88</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a>df_ryb <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-8"><a></a>  <span class="at">M    =</span> <span class="fu">c</span>(M_seq, M_seq),</span>
+<span id="cb4-9"><a></a>  <span class="at">Rice =</span> <span class="fu">c</span>(rice_before, rice_after),</span>
+<span id="cb4-10"><a></a>  <span class="at">period =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Before labour inflow (L=100)"</span>,</span>
+<span id="cb4-11"><a></a>                 <span class="st">"After labour inflow (L=130)"</span>), <span class="at">each=</span><span class="fu">length</span>(M_seq))</span>
+<span id="cb4-12"><a></a>)</span>
+<span id="cb4-13"><a></a></span>
+<span id="cb4-14"><a></a><span class="fu">ggplot</span>(df_ryb, <span class="fu">aes</span>(<span class="at">x=</span>M, <span class="at">y=</span>Rice, <span class="at">color=</span>period, <span class="at">linetype=</span>period)) <span class="sc">+</span></span>
+<span id="cb4-15"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb4-16"><a></a>  <span class="co"># Price line (slope = constant P_R/P_M)</span></span>
+<span id="cb4-17"><a></a>  <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="sc">-</span><span class="fl">1.8</span>, <span class="at">intercept=</span><span class="dv">162</span>, <span class="at">color=</span><span class="st">"grey60"</span>,</span>
+<span id="cb4-18"><a></a>              <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb4-19"><a></a>  <span class="co"># Point A (before)</span></span>
+<span id="cb4-20"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">45</span>, <span class="at">y=</span><span class="dv">100</span>), <span class="at">inherit.aes=</span><span class="cn">FALSE</span>,</span>
+<span id="cb4-21"><a></a>             <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">48</span>, <span class="at">y=</span><span class="dv">100</span>, <span class="at">label=</span><span class="st">"A (before)"</span>,</span>
+<span id="cb4-23"><a></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb4-24"><a></a>  <span class="co"># Point B (after) — same price line, more Rice, less M</span></span>
+<span id="cb4-25"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="dv">136</span>), <span class="at">inherit.aes=</span><span class="cn">FALSE</span>,</span>
+<span id="cb4-26"><a></a>             <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">size=</span><span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb4-27"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">33</span>, <span class="at">y=</span><span class="dv">136</span>, <span class="at">label=</span><span class="st">"B (after)</span><span class="sc">\n</span><span class="st">Rice↑, Mach↓"</span>,</span>
+<span id="cb4-28"><a></a>           <span class="at">hjust=</span><span class="dv">0</span>, <span class="at">size=</span><span class="fl">3.2</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb4-29"><a></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">45</span>, <span class="at">y=</span><span class="dv">100</span>, <span class="at">xend=</span><span class="dv">30</span>, <span class="at">yend=</span><span class="dv">136</span>,</span>
+<span id="cb4-30"><a></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>)),</span>
+<span id="cb4-31"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-32"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">22</span>, <span class="at">y=</span><span class="dv">115</span>,</span>
+<span id="cb4-33"><a></a>           <span class="at">label=</span><span class="st">"Rybczynski</span><span class="sc">\n</span><span class="st">effect"</span>, <span class="at">color=</span><span class="st">"darkgreen"</span>,</span>
+<span id="cb4-34"><a></a>           <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">hjust=</span><span class="fl">0.5</span>, <span class="at">fontface=</span><span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb4-35"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(</span>
+<span id="cb4-36"><a></a>    <span class="st">"Before labour inflow (L=100)"</span><span class="ot">=</span><span class="st">"#012169"</span>,</span>
+<span id="cb4-37"><a></a>    <span class="st">"After labour inflow (L=130)"</span> <span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb4-38"><a></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(</span>
+<span id="cb4-39"><a></a>    <span class="st">"Before labour inflow (L=100)"</span><span class="ot">=</span><span class="st">"solid"</span>,</span>
+<span id="cb4-40"><a></a>    <span class="st">"After labour inflow (L=130)"</span> <span class="ot">=</span><span class="st">"dashed"</span>)) <span class="sc">+</span></span>
+<span id="cb4-41"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Labour inflow expands Rice output and contracts Machines"</span>,</span>
+<span id="cb4-42"><a></a>       <span class="at">subtitle=</span><span class="st">"At constant goods prices — pure Rybczynski movement"</span>,</span>
+<span id="cb4-43"><a></a>       <span class="at">x=</span><span class="st">"Machines"</span>, <span class="at">y=</span><span class="st">"Rice"</span>, <span class="at">color=</span><span class="cn">NULL</span>, <span class="at">linetype=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-44"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb4-45"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-rybczynski" class="quarto-float quarto-figure quarto-figure-center">
@@ -595,7 +753,7 @@ Figure&nbsp;1: Edgeworth Box: Efficient Factor Allocation Between Rice and Machi
 <img data-src="Lecture05_Modern_Theory_files/figure-revealjs/fig-rybczynski-1.png" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rybczynski-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Rybczynski Effect: Labour Inflow Shifts PPF Source: Author’s illustration.
+Figure&nbsp;3: Rybczynski Effect: Labour Inflow Shifts PPF Source: Author’s illustration.
 </figcaption>
 </figure>
 </div>
@@ -617,32 +775,32 @@ Figure&nbsp;2: Rybczynski Effect: Labour Inflow Shifts PPF Source: Author’s il
 <div class="cell">
 <details class="code-fold">
 <summary>Show R code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a>df_leo <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-4"><a></a>  <span class="at">category =</span> <span class="fu">c</span>(<span class="st">"Agricultural</span><span class="sc">\n</span><span class="st">Exports"</span>, <span class="st">"Textile</span><span class="sc">\n</span><span class="st">Exports"</span>,</span>
-<span id="cb4-5"><a></a>                <span class="st">"Pharma</span><span class="sc">\n</span><span class="st">Exports"</span>, <span class="st">"Capital Goods</span><span class="sc">\n</span><span class="st">Imports"</span>,</span>
-<span id="cb4-6"><a></a>                <span class="st">"Electronics</span><span class="sc">\n</span><span class="st">Imports"</span>, <span class="st">"Crude Oil</span><span class="sc">\n</span><span class="st">Imports"</span>),</span>
-<span id="cb4-7"><a></a>  <span class="at">KL_ratio =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">1.2</span>, <span class="fl">2.1</span>, <span class="fl">7.1</span>, <span class="fl">6.3</span>, <span class="fl">8.5</span>),</span>
-<span id="cb4-8"><a></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Exports"</span>,<span class="st">"Exports"</span>,<span class="st">"Exports"</span>,<span class="st">"Imports"</span>,<span class="st">"Imports"</span>,<span class="st">"Imports"</span>)</span>
-<span id="cb4-9"><a></a>)</span>
-<span id="cb4-10"><a></a>df_leo<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">factor</span>(df_leo<span class="sc">$</span>category,</span>
-<span id="cb4-11"><a></a>                           <span class="at">levels=</span>df_leo<span class="sc">$</span>category[<span class="fu">order</span>(df_leo<span class="sc">$</span>KL_ratio)])</span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a><span class="fu">ggplot</span>(df_leo, <span class="fu">aes</span>(<span class="at">x=</span>category, <span class="at">y=</span>KL_ratio, <span class="at">fill=</span>type)) <span class="sc">+</span></span>
-<span id="cb4-14"><a></a>  <span class="fu">geom_col</span>(<span class="at">width=</span><span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb4-15"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"Exports"</span><span class="ot">=</span><span class="st">"#012169"</span>, <span class="st">"Imports"</span><span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
-<span id="cb4-16"><a></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb4-17"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"India: Capital-Labour Ratios in Export vs Import Industries"</span>,</span>
-<span id="cb4-18"><a></a>       <span class="at">subtitle=</span><span class="st">"India exports labour-intensive goods — consistent with H-O"</span>,</span>
-<span id="cb4-19"><a></a>       <span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="st">"Capital-Labour Ratio (relative units)"</span>, <span class="at">fill=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb4-20"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
-<span id="cb4-21"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a>df_leo <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-4"><a></a>  <span class="at">category =</span> <span class="fu">c</span>(<span class="st">"Agricultural</span><span class="sc">\n</span><span class="st">Exports"</span>, <span class="st">"Textile</span><span class="sc">\n</span><span class="st">Exports"</span>,</span>
+<span id="cb5-5"><a></a>                <span class="st">"Pharma</span><span class="sc">\n</span><span class="st">Exports"</span>, <span class="st">"Capital Goods</span><span class="sc">\n</span><span class="st">Imports"</span>,</span>
+<span id="cb5-6"><a></a>                <span class="st">"Electronics</span><span class="sc">\n</span><span class="st">Imports"</span>, <span class="st">"Crude Oil</span><span class="sc">\n</span><span class="st">Imports"</span>),</span>
+<span id="cb5-7"><a></a>  <span class="at">KL_ratio =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">1.2</span>, <span class="fl">2.1</span>, <span class="fl">7.1</span>, <span class="fl">6.3</span>, <span class="fl">8.5</span>),</span>
+<span id="cb5-8"><a></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Exports"</span>,<span class="st">"Exports"</span>,<span class="st">"Exports"</span>,<span class="st">"Imports"</span>,<span class="st">"Imports"</span>,<span class="st">"Imports"</span>)</span>
+<span id="cb5-9"><a></a>)</span>
+<span id="cb5-10"><a></a>df_leo<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">factor</span>(df_leo<span class="sc">$</span>category,</span>
+<span id="cb5-11"><a></a>                           <span class="at">levels=</span>df_leo<span class="sc">$</span>category[<span class="fu">order</span>(df_leo<span class="sc">$</span>KL_ratio)])</span>
+<span id="cb5-12"><a></a></span>
+<span id="cb5-13"><a></a><span class="fu">ggplot</span>(df_leo, <span class="fu">aes</span>(<span class="at">x=</span>category, <span class="at">y=</span>KL_ratio, <span class="at">fill=</span>type)) <span class="sc">+</span></span>
+<span id="cb5-14"><a></a>  <span class="fu">geom_col</span>(<span class="at">width=</span><span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb5-15"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"Exports"</span><span class="ot">=</span><span class="st">"#012169"</span>, <span class="st">"Imports"</span><span class="ot">=</span><span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb5-16"><a></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb5-17"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"India: Capital-Labour Ratios in Export vs Import Industries"</span>,</span>
+<span id="cb5-18"><a></a>       <span class="at">subtitle=</span><span class="st">"India exports labour-intensive goods — consistent with H-O"</span>,</span>
+<span id="cb5-19"><a></a>       <span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="st">"Capital-Labour Ratio (relative units)"</span>, <span class="at">fill=</span><span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb5-20"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb5-21"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
 <img data-src="Lecture05_Modern_Theory_files/figure-revealjs/fig-leontief-1.png" width="768" class="r-stretch quarto-figure-center" id="fig-leontief"><p class="caption">
-Figure&nbsp;3: Factor Intensity of India’s Exports vs Imports (illustrative) Source: Author’s illustration based on DGCI&amp;S / World Bank data.
+Figure&nbsp;4: Factor Intensity of India’s Exports vs Imports (illustrative) Source: Author’s illustration based on DGCI&amp;S / World Bank data.
 </p><p><strong>India does NOT exhibit a Leontief paradox</strong> — it exports labour-intensive goods, consistent with H-O.</p>
 </section>
 <section id="explanations-for-the-leontief-paradox" class="slide level2 scrollable">
@@ -689,64 +847,64 @@ Figure&nbsp;3: Factor Intensity of India’s Exports vs Imports (illustrative) S
 <div class="cell">
 <details class="code-fold">
 <summary>Show R code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-2"><a></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb5-3"><a></a></span>
-<span id="cb5-4"><a></a><span class="co"># Agriculture: flat MPL (surplus labour) then rising</span></span>
-<span id="cb5-5"><a></a>L_agri <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb5-6"><a></a>MPL_agri <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(L_agri <span class="sc">&lt;=</span> <span class="dv">60</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">0.08</span><span class="sc">*</span>(L_agri <span class="sc">-</span> <span class="dv">60</span>))</span>
-<span id="cb5-7"><a></a>subsistence <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fl">1.5</span>, <span class="dv">101</span>)</span>
-<span id="cb5-8"><a></a></span>
-<span id="cb5-9"><a></a>p_agri <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">L=</span>L_agri, <span class="at">MPL=</span>MPL_agri, <span class="at">sub=</span>subsistence)) <span class="sc">+</span></span>
-<span id="cb5-10"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb5-11"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>sub), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb5-12"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">60</span>, <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">color=</span><span class="st">"grey50"</span>) <span class="sc">+</span></span>
-<span id="cb5-13"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">62</span>, <span class="at">y=</span><span class="fl">1.0</span>,</span>
-<span id="cb5-14"><a></a>           <span class="at">label=</span><span class="st">"Turning</span><span class="sc">\n</span><span class="st">point"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"grey40"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb5-15"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">10</span>, <span class="at">y=</span><span class="fl">1.65</span>,</span>
-<span id="cb5-16"><a></a>           <span class="at">label=</span><span class="st">"Subsistence wage"</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb5-17"><a></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin=</span><span class="dv">0</span>, <span class="at">xmax=</span><span class="dv">60</span>, <span class="at">ymin=</span><span class="dv">0</span>, <span class="at">ymax=</span><span class="fl">0.5</span>,</span>
-<span id="cb5-18"><a></a>           <span class="at">alpha=</span><span class="fl">0.15</span>, <span class="at">fill=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb5-19"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="fl">0.25</span>,</span>
-<span id="cb5-20"><a></a>           <span class="at">label=</span><span class="st">"Surplus</span><span class="sc">\n</span><span class="st">labour"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">hjust=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb5-21"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Agriculture"</span>,</span>
-<span id="cb5-22"><a></a>       <span class="at">x=</span><span class="st">"Labour in Agriculture"</span>, <span class="at">y=</span><span class="st">"Marginal Product of Labour"</span>) <span class="sc">+</span></span>
-<span id="cb5-23"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb5-24"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">2.5</span>)</span>
-<span id="cb5-25"><a></a></span>
-<span id="cb5-26"><a></a><span class="co"># Industry: upward-sloping demand for labour</span></span>
-<span id="cb5-27"><a></a>L_ind <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">80</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb5-28"><a></a>MPL_ind0 <span class="ot">&lt;-</span> <span class="fl">4.0</span> <span class="sc">-</span> <span class="fl">0.03</span><span class="sc">*</span>L_ind   <span class="co"># initial</span></span>
-<span id="cb5-29"><a></a>MPL_ind1 <span class="ot">&lt;-</span> <span class="fl">5.5</span> <span class="sc">-</span> <span class="fl">0.03</span><span class="sc">*</span>L_ind   <span class="co"># after capital accumulation</span></span>
-<span id="cb5-30"><a></a></span>
-<span id="cb5-31"><a></a>p_ind <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb5-32"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>L_ind, <span class="at">MPL=</span>MPL_ind0),</span>
-<span id="cb5-33"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb5-34"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>L_ind, <span class="at">MPL=</span>MPL_ind1),</span>
-<span id="cb5-35"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb5-36"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">1.5</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-37"><a></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">83</span>, <span class="at">y=</span><span class="fl">2.0</span>, <span class="at">xend=</span><span class="dv">83</span>, <span class="at">yend=</span><span class="fl">3.5</span>,</span>
-<span id="cb5-38"><a></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.2</span>,<span class="st">"cm"</span>)),</span>
-<span id="cb5-39"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb5-40"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">84</span>, <span class="at">y=</span><span class="fl">2.75</span>, <span class="at">label=</span><span class="st">"Capital</span><span class="sc">\n</span><span class="st">accum."</span>, <span class="at">size=</span><span class="dv">3</span>,</span>
-<span id="cb5-41"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb5-42"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>(<span class="fl">4.0-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span>, <span class="at">y=</span><span class="fl">1.5</span>), <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb5-43"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>(<span class="fl">5.5-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span>, <span class="at">y=</span><span class="fl">1.5</span>), <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb5-44"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(<span class="fl">4.0-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="at">y=</span><span class="fl">1.3</span>,</span>
-<span id="cb5-45"><a></a>           <span class="at">label=</span><span class="st">"L1"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb5-46"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(<span class="fl">5.5-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="at">y=</span><span class="fl">1.3</span>,</span>
-<span id="cb5-47"><a></a>           <span class="at">label=</span><span class="st">"L2"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb5-48"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Industry"</span>,</span>
-<span id="cb5-49"><a></a>       <span class="at">x=</span><span class="st">"Labour in Industry"</span>, <span class="at">y=</span><span class="st">"Marginal Product of Labour"</span>) <span class="sc">+</span></span>
-<span id="cb5-50"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb5-51"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">5.5</span>)</span>
-<span id="cb5-52"><a></a></span>
-<span id="cb5-53"><a></a>p_agri <span class="sc">+</span> p_ind</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="co"># Agriculture: flat MPL (surplus labour) then rising</span></span>
+<span id="cb6-5"><a></a>L_agri <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb6-6"><a></a>MPL_agri <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(L_agri <span class="sc">&lt;=</span> <span class="dv">60</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">0.08</span><span class="sc">*</span>(L_agri <span class="sc">-</span> <span class="dv">60</span>))</span>
+<span id="cb6-7"><a></a>subsistence <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fl">1.5</span>, <span class="dv">101</span>)</span>
+<span id="cb6-8"><a></a></span>
+<span id="cb6-9"><a></a>p_agri <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">L=</span>L_agri, <span class="at">MPL=</span>MPL_agri, <span class="at">sub=</span>subsistence)) <span class="sc">+</span></span>
+<span id="cb6-10"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>sub), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb6-12"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">60</span>, <span class="at">linetype=</span><span class="st">"dotted"</span>, <span class="at">color=</span><span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">62</span>, <span class="at">y=</span><span class="fl">1.0</span>,</span>
+<span id="cb6-14"><a></a>           <span class="at">label=</span><span class="st">"Turning</span><span class="sc">\n</span><span class="st">point"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"grey40"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb6-15"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">10</span>, <span class="at">y=</span><span class="fl">1.65</span>,</span>
+<span id="cb6-16"><a></a>           <span class="at">label=</span><span class="st">"Subsistence wage"</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb6-17"><a></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin=</span><span class="dv">0</span>, <span class="at">xmax=</span><span class="dv">60</span>, <span class="at">ymin=</span><span class="dv">0</span>, <span class="at">ymax=</span><span class="fl">0.5</span>,</span>
+<span id="cb6-18"><a></a>           <span class="at">alpha=</span><span class="fl">0.15</span>, <span class="at">fill=</span><span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb6-19"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">30</span>, <span class="at">y=</span><span class="fl">0.25</span>,</span>
+<span id="cb6-20"><a></a>           <span class="at">label=</span><span class="st">"Surplus</span><span class="sc">\n</span><span class="st">labour"</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">"#012169"</span>, <span class="at">hjust=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb6-21"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Agriculture"</span>,</span>
+<span id="cb6-22"><a></a>       <span class="at">x=</span><span class="st">"Labour in Agriculture"</span>, <span class="at">y=</span><span class="st">"Marginal Product of Labour"</span>) <span class="sc">+</span></span>
+<span id="cb6-23"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb6-24"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">2.5</span>)</span>
+<span id="cb6-25"><a></a></span>
+<span id="cb6-26"><a></a><span class="co"># Industry: upward-sloping demand for labour</span></span>
+<span id="cb6-27"><a></a>L_ind <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">80</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb6-28"><a></a>MPL_ind0 <span class="ot">&lt;-</span> <span class="fl">4.0</span> <span class="sc">-</span> <span class="fl">0.03</span><span class="sc">*</span>L_ind   <span class="co"># initial</span></span>
+<span id="cb6-29"><a></a>MPL_ind1 <span class="ot">&lt;-</span> <span class="fl">5.5</span> <span class="sc">-</span> <span class="fl">0.03</span><span class="sc">*</span>L_ind   <span class="co"># after capital accumulation</span></span>
+<span id="cb6-30"><a></a></span>
+<span id="cb6-31"><a></a>p_ind <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb6-32"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>L_ind, <span class="at">MPL=</span>MPL_ind0),</span>
+<span id="cb6-33"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb6-34"><a></a>  <span class="fu">geom_line</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">L=</span>L_ind, <span class="at">MPL=</span>MPL_ind1),</span>
+<span id="cb6-35"><a></a>            <span class="fu">aes</span>(<span class="at">x=</span>L, <span class="at">y=</span>MPL), <span class="at">color=</span><span class="st">"#B9975B"</span>, <span class="at">linewidth=</span><span class="fl">1.5</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb6-36"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">1.5</span>, <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">linewidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-37"><a></a>  <span class="fu">annotate</span>(<span class="st">"segment"</span>, <span class="at">x=</span><span class="dv">83</span>, <span class="at">y=</span><span class="fl">2.0</span>, <span class="at">xend=</span><span class="dv">83</span>, <span class="at">yend=</span><span class="fl">3.5</span>,</span>
+<span id="cb6-38"><a></a>           <span class="at">arrow=</span><span class="fu">arrow</span>(<span class="at">length=</span><span class="fu">unit</span>(<span class="fl">0.2</span>,<span class="st">"cm"</span>)),</span>
+<span id="cb6-39"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">linewidth=</span><span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb6-40"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">84</span>, <span class="at">y=</span><span class="fl">2.75</span>, <span class="at">label=</span><span class="st">"Capital</span><span class="sc">\n</span><span class="st">accum."</span>, <span class="at">size=</span><span class="dv">3</span>,</span>
+<span id="cb6-41"><a></a>           <span class="at">color=</span><span class="st">"darkgreen"</span>, <span class="at">hjust=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb6-42"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>(<span class="fl">4.0-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span>, <span class="at">y=</span><span class="fl">1.5</span>), <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb6-43"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>(<span class="fl">5.5-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span>, <span class="at">y=</span><span class="fl">1.5</span>), <span class="at">size=</span><span class="fl">3.5</span>, <span class="at">color=</span><span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb6-44"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(<span class="fl">4.0-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="at">y=</span><span class="fl">1.3</span>,</span>
+<span id="cb6-45"><a></a>           <span class="at">label=</span><span class="st">"L1"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb6-46"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span>(<span class="fl">5.5-1.5</span>)<span class="sc">/</span><span class="fl">0.03</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="at">y=</span><span class="fl">1.3</span>,</span>
+<span id="cb6-47"><a></a>           <span class="at">label=</span><span class="st">"L2"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb6-48"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Industry"</span>,</span>
+<span id="cb6-49"><a></a>       <span class="at">x=</span><span class="st">"Labour in Industry"</span>, <span class="at">y=</span><span class="st">"Marginal Product of Labour"</span>) <span class="sc">+</span></span>
+<span id="cb6-50"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size=</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb6-51"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">5.5</span>)</span>
+<span id="cb6-52"><a></a></span>
+<span id="cb6-53"><a></a>p_agri <span class="sc">+</span> p_ind</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
 <img data-src="Lecture05_Modern_Theory_files/figure-revealjs/fig-lewis-1.png" width="864" class="r-stretch quarto-figure-center" id="fig-lewis"><p class="caption">
-Figure&nbsp;4: Lewis Model: Surplus Labour Transfer and Structural Transformation Source: Author’s illustration after Lewis (1954).
+Figure&nbsp;5: Lewis Model: Surplus Labour Transfer and Structural Transformation Source: Author’s illustration after Lewis (1954).
 </p></section>
 <section id="h-o-lewis-and-indias-agricultural-exports" class="slide level2 smaller">
 <h2>H-O, Lewis, and India’s Agricultural Exports</h2>

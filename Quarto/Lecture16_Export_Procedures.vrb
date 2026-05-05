@@ -45,10 +45,15 @@ RoDTEP scrip + drawback + TMA
   \textbf{Cold chain and logistics} remain India's primary structural
   bottleneck --- world-class documentation systems exist, but physical
   infrastructure lags
+\end{enumerate}
+
+\note{\begin{enumerate}
+\setcounter{enumi}{5}
+\tightlist
 \item
   \textbf{Digital India} is working: ICEGATE, SWIFT, e-BRC have
   dramatically reduced transaction costs
-\end{enumerate}
+\end{enumerate}}
 \end{column}
 \end{columns}
 \end{block}

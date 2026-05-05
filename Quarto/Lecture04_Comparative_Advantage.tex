@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
@@ -270,13 +297,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Theories of Trade II: Comparative Advantage},
+  pdftitle={Lecture 4: Theories of Trade II --- Comparative Advantage},
   pdfauthor={Nithin M},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Theories of Trade II: Comparative Advantage}
+\title{Lecture 4: Theories of Trade II --- Comparative Advantage}
 \subtitle{Econ 2203 \textbar{} International Trade and Policy in
 Agriculture}
 \author{Nithin M}
@@ -286,9 +313,6 @@ Agriculture}
 \begin{document}
 \frame{\titlepage}
 
-
-\section{Part I: The Problem with Absolute
-Advantage}\label{part-i-the-problem-with-absolute-advantage}
 
 \begin{frame}{Recap: The Gap in Smith's Theory}
 \phantomsection\label{recap-the-gap-in-smiths-theory}
@@ -339,9 +363,6 @@ can still gain from trade by exporting the good in which it is
 benefits from hiring the secretary --- because the lawyer's time is more
 valuably spent on legal work. The same logic applies to nations.
 \end{frame}
-
-\section{Part II: The Ricardian Model --- Formal
-Setup}\label{part-ii-the-ricardian-model-formal-setup}
 
 \begin{frame}{The Labor-Value Model: Notation}
 \phantomsection\label{the-labor-value-model-notation}
@@ -416,7 +437,7 @@ Equivalently, rearranging:
 
 India is \emph{relatively} more efficient in Rice than in Wheat.
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, opacityback=0, bottomtitle=1mm, breakable, rightrule=.15mm, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, left=2mm, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Key takeaway}, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, arc=.35mm, leftrule=.75mm, colback=white, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Key takeaway}, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, arc=.35mm, left=2mm, opacitybacktitle=0.6, colback=white, breakable, toptitle=1mm, colframe=quarto-callout-note-color-frame, titlerule=0mm, leftrule=.75mm, rightrule=.15mm, opacityback=0, toprule=.15mm, bottomrule=.15mm, coltitle=black]
 
 Absolute productivity levels (\(a_{LR}^{I}\) vs \(a_{LR}^{W}\)) do
 \textbf{not} determine trade patterns. \textbf{Relative} productivity
@@ -450,16 +471,14 @@ The \textbf{slope} of the PPF = opportunity cost of Wheat.
 
 }
 
-\caption{\label{fig-ppf}Production Possibility Frontiers: India and
+\caption{Production Possibility Frontiers: India and
 World Source: Author's illustration.}
+\label{fig-ppf}
 
 \end{figure}%
 \end{column}
 \end{columns}
 \end{frame}
-
-\section{Part III: Terms of Trade and Gains from
-Trade}\label{part-iii-terms-of-trade-and-gains-from-trade}
 
 \begin{frame}{The Terms of Trade Range}
 \phantomsection\label{the-terms-of-trade-range}
@@ -507,8 +526,8 @@ satisfy:
   \textbf{Consumption} moves to a point \textbf{above} the PPF
 \end{enumerate}
 
-The trade possibilities line starts at full specialisation point (0,
-200) with slope \(= -1/1.5 \approx -0.67\) (less steep than PPF slope
+The trade possibilities line starts at full specialisation (0, 200) with
+slope \(= -1.5\) (less steep in absolute value than the PPF slope
 \(-2\)).
 
 Consumption bundle \textbf{above the PPF} = welfare gain!
@@ -523,8 +542,9 @@ Consumption bundle \textbf{above the PPF} = welfare gain!
 
 }
 
-\caption{\label{fig-gains}India: Gains from Trade --- Consuming Beyond
+\caption{India: Gains from Trade --- Consuming Beyond
 the PPF Source: Author's illustration.}
+\label{fig-gains}
 
 \end{figure}%
 \end{column}
@@ -537,27 +557,20 @@ the PPF Source: Author's illustration.}
 at \((Wh, R) = (50, 100)\)
 
 \textbf{After trade} (at \(P_{Wh}/P_R = 1.5\)): India fully specialises
-→ 200 Rice, trades \(107\) Rice for \(\approx 80\) Wheat:
-\[(Wh, R) = (80, 93)\]
+→ 200 Rice, trades \(\approx 100\) Rice for \(\approx 67\) Wheat:
+\[(Wh, R) \approx (67, 100)\]
 
-\textbf{Welfare gain:} more Wheat \emph{and} a larger combined bundle.
-The \textbf{real wage} of Indian workers rises.
+\textbf{Welfare gain:} 17 more units of Wheat at the same Rice --- the
+\textbf{real wage} of Indian workers rises.
 
-\textbf{The algebra:} India's income at world prices (fully
-specialised):
-
-\[Y^I = P_R \times 200\]
-
-Budget constraint under trade: \(R + 1.5 \cdot Wh = 200\)
+\textbf{The algebra:} budget constraint under trade:
+\(R + 1.5 \cdot Wh = 200\)
 
 Compare with autarky constraint: \(R + 2 \cdot Wh = 200\)
 
 The trade budget line is \textbf{flatter} → larger feasible consumption
 set.
 \end{frame}
-
-\section{Part IV: Indifference Curves and
-Equilibrium}\label{part-iv-indifference-curves-and-equilibrium}
 
 \begin{frame}{Consumer Preferences and Equilibrium}
 \phantomsection\label{consumer-preferences-and-equilibrium}
@@ -600,8 +613,9 @@ Since IC2 is above IC1: \textbf{trade raises welfare}.
 
 }
 
-\caption{\label{fig-ic-ppf}Free Trade Equilibrium: IC tangent to Trade
+\caption{Free Trade Equilibrium: IC tangent to Trade
 Possibilities Line Source: Author's illustration.}
+\label{fig-ic-ppf}
 
 \end{figure}%
 \end{column}
@@ -640,9 +654,6 @@ These two points generally differ --- the gap is filled by \textbf{trade
 flows}.
 \end{frame}
 
-\section{Part V: Assumptions, Extensions, and
-Critique}\label{part-v-assumptions-extensions-and-critique}
-
 \begin{frame}{Key Assumptions of the Ricardian Model}
 \phantomsection\label{key-assumptions-of-the-ricardian-model}
 \begin{longtable}[]{@{}ll@{}}
@@ -659,7 +670,7 @@ Perfect competition & No strategic behaviour \\
 \bottomrule\noalign{}
 \end{longtable}
 
-\textbf{Which matter most?}
+\note{\textbf{Which matter most?}
 
 \begin{itemize}
 \tightlist
@@ -669,7 +680,7 @@ Perfect competition & No strategic behaviour \\
   Relaxing \emph{one factor} → Heckscher-Ohlin model (Lecture 5)
 \item
   Adding \emph{transport costs} → non-traded goods, border effects
-\end{itemize}
+\end{itemize}}
 \end{frame}
 
 \begin{frame}{The Ricardian Model: What It Gets Right}
@@ -684,29 +695,19 @@ Perfect competition & No strategic behaviour \\
   Trade raises real incomes on average
 \item
   Even the ``least competitive'' country has something to export
-\end{itemize}
-
-\textbf{Empirical support:} Golub \& Hsieh (2000) and Costinot et
-al.~(2012) find strong evidence that labour productivity differences
-predict export patterns across countries.
-
-\textbf{Limitations and Extensions:}
-
-\begin{itemize}
-\tightlist
-\item
-  Predicts complete specialisation (rarely observed); says nothing about
-  \emph{who} within a country gains or loses
 \item
   Cannot explain intra-industry trade (→ new trade theory, Lecture 6)
 \item
   \textbf{Extensions:} Many goods (Dornbusch-Fischer-Samuelson chain);
   technology changes shift comparative advantage over time
 \end{itemize}
-\end{frame}
 
-\section{Part VI: India --- Revealed Comparative
-Advantage}\label{part-vi-india-revealed-comparative-advantage}
+\note{\textbf{Empirical support:} Golub \& Hsieh (2000) and Costinot et
+al.~(2012) find strong evidence that labour productivity differences
+predict export patterns across countries. Predicts complete
+specialisation (rarely observed); says nothing about \emph{who} within a
+country gains or loses.}
+\end{frame}
 
 \begin{frame}{Measuring Comparative Advantage: The Balassa Index}
 \phantomsection\label{measuring-comparative-advantage-the-balassa-index}
@@ -751,9 +752,10 @@ where:
 
 }
 
-\caption{\label{fig-rca}India: Revealed Comparative Advantage in
+\caption{India: Revealed Comparative Advantage in
 Agricultural Products (FY2024) Source: Author's calculations using
 DGCI\&S / UN Comtrade data.}
+\label{fig-rca}
 
 \end{figure}%
 \end{frame}
@@ -807,19 +809,12 @@ stability.
   Both countries gain --- even the absolutely less productive one
 \end{enumerate}
 
-\textbf{Empirical verdict:}
-
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-Prediction & Evidence \\
-\midrule\noalign{}
-\endhead
-Labour productivity → exports & Strong (Costinot et al.~2012) \\
-Full specialisation & Weak (partial observed) \\
-All workers gain & Mixed (short-run losers exist) \\
-India exports rice & Confirmed (RCA = 4.8) \\
-\bottomrule\noalign{}
-\end{longtable}
+\textbf{Empirical verdict:} Labour productivity differences strongly
+predict export patterns --- Costinot et al.~(2012) find R² ≈ 0.9 across
+countries. India's rice exports (RCA = 4.8) confirm comparative
+advantage. Complete specialisation is rarely observed in practice, and
+short-run distributional losses are documented --- but aggregate welfare
+gains are robust.
 
 \textbf{What Ricardo cannot explain:} \emph{Why} labour productivity
 differs (→ H-O model); income distribution effects (→

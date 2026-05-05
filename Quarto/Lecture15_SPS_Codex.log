@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  25 APR 2026 09:16
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  5 MAY 2026 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1679,7 +1679,7 @@ y
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 ))
 \pandoc@box=\box93
-LaTeX Info: Redefining \label on input line 203.
+LaTeX Info: Redefining \label on input line 230.
  (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count406
@@ -1712,26 +1712,26 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (Lecture15_SPS_Codex.aux)
 \openout1 = `Lecture15_SPS_Codex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1767,7 +1767,7 @@ LaTeX Font Info:    ... okay on input line 270.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 270.
+Package hyperref Info: Link coloring OFF on input line 297.
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
 r-basic-dictionary-English.dict
@@ -1794,11 +1794,11 @@ r-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 270.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 297.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 270.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 297.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 270.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1829,7 +1829,7 @@ t=math;language=dflt;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 270.
+(Font)              scaled to size 11.28032pt on input line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1872,18 +1872,18 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 270.
+(Font)              scaled to size 11.28032pt on input line 297.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 270.
+(Font)              `operators' in the math version `normal' on input line 297.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 270.
+ line 297.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 270.
+(Font)              `operators' in the math version `bold' on input line 297.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 270.
+t line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1957,15 +1957,15 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 270.
+(Font)              `symbols' in the math version `normal' on input line 297.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 270.
+t line 297.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 270.
+(Font)              `symbols' in the math version `bold' on input line 297.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 270.
+t line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -2034,23 +2034,23 @@ t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 2
-70.
+97.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 270.
+t line 297.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 270
+(Font)              `largesymbols' in the math version `bold' on input line 297
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 270.
-LaTeX Info: Redefining \microtypecontext on input line 270.
-Package microtype Info: Applying patch `item' on input line 270.
-Package microtype Info: Applying patch `toc' on input line 270.
-Package microtype Info: Applying patch `eqnum' on input line 270.
-Package microtype Info: Applying patch `footnote' on input line 270.
-Package microtype Info: Applying patch `verbatim' on input line 270.
-LaTeX Info: Redefining \microtypesetup on input line 270.
+t line 297.
+LaTeX Info: Redefining \microtypecontext on input line 297.
+Package microtype Info: Applying patch `item' on input line 297.
+Package microtype Info: Applying patch `toc' on input line 297.
+Package microtype Info: Applying patch `eqnum' on input line 297.
+Package microtype Info: Applying patch `footnote' on input line 297.
+Package microtype Info: Applying patch `verbatim' on input line 297.
+LaTeX Info: Redefining \microtypesetup on input line 297.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -2065,232 +2065,119 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (Lecture15_SPS_Codex.nav)
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 5.09372pt on input line 270.
+(Font)              scaled to size 5.09372pt on input line 297.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 7.64058pt on input line 270.
+(Font)              scaled to size 7.64058pt on input line 297.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 12.22491pt on input line 271.
+(Font)              scaled to size 12.22491pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 12.13197pt on input line 271.
+(Font)              scaled to size 12.13197pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 8.48953pt on input line 271.
+(Font)              scaled to size 8.48953pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 6.79163pt on input line 271.
+(Font)              scaled to size 6.79163pt on input line 298.
 
-Overfull \vbox (28.63197pt too high) detected at line 271
- []
+
+Class beamer Warning: Frame text is shrunk by a factor of 10.26459 percent inst
+ead of 10 percent on input line 298.
 
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 3.39581pt on input line 271.
+(Font)              scaled to size 3.39581pt on input line 298.
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 9.22536pt on input line 314.
+(Font)              scaled to size 9.22536pt on input line 341.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 10.18744pt on input line 314.
+(Font)              scaled to size 10.18744pt on input line 341.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 10.10999pt on input line 314.
-
-Overfull \vbox (8.39403pt too high) detected at line 314
- []
-
-[2
+(Font)              scaled to size 10.10999pt on input line 341.
+ [2
 
 ]
-Overfull \vbox (86.07307pt too high) detected at line 369
- []
+LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
+(Font)              scaled to size 8.42499pt on input line 396.
+ [3
 
-[3
-
-]
-Overfull \vbox (7.87346pt too high) detected at line 407
- []
-
-[4
-
-] [5
+] [4
 
 ]
-Overfull \vbox (39.75294pt too high) detected at line 454
- []
 
-[6
+Class beamer Warning: Frame text is shrunk by a factor of 12304.13666 percent i
+nstead of 10 percent on input line 437.
+
+[5
+
+] [6
 
 ] [7
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
-(Font)              scaled to size 9.29602pt on input line 536.
+(Font)              scaled to size 8.48953pt on input line 563.
+ [8
 
-Overfull \vbox (70.41455pt too high) detected at line 536
- []
-
-[8
-
-]
-Overfull \vbox (101.6944pt too high) detected at line 583
- []
-
-[9
+] [9
 
 ]
 File: Lecture15_SPS_Codex_files/figure-beamer/fig-codex-standards-1.pdf Graphic
  file (type pdf)
 <use Lecture15_SPS_Codex_files/figure-beamer/fig-codex-standards-1.pdf>
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 7.58249pt on input line 599.
+(Font)              scaled to size 7.58249pt on input line 627.
+ [10
 
-! Undefined control sequence.
-<argument> \label 
-                  {fig-codex-standards}Codex Alimentarius: Standards Portfol...
-l.599 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [11
 
-[10
+] [12
 
-]
-Overfull \vbox (86.07307pt too high) detected at line 657
- []
+] [13
 
-[11
-
-]
-Overfull \hbox (9.16019pt too wide) in paragraph at lines 716--716
-[]|\TU/FiraSansLight(0)/m/n/10.95 Chloramphenicol, 
- []
-
-
-Overfull \hbox (4.93405pt too wide) in paragraph at lines 716--716
-[]|\TU/FiraSansLight(0)/m/n/10.95 Basmati/non- 
- []
-
-
-Overfull \vbox (233.55922pt too high) detected at line 716
- []
-
-[12
+] [14
 
 ]
 File: Lecture15_SPS_Codex_files/figure-beamer/fig-eu-rasff-1.pdf Graphic file (
 type pdf)
 <use Lecture15_SPS_Codex_files/figure-beamer/fig-eu-rasff-1.pdf>
+ [15
 
-! Undefined control sequence.
-<argument> \label 
-                  {fig-eu-rasff}EU RASFF Alerts on Indian Food Products (202...
-l.732 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[13
-
-]
-Overfull \vbox (52.98979pt too high) detected at line 773
- []
-
-[14
+] [16
 
 ]
 File: Lecture15_SPS_Codex_files/figure-beamer/fig-spice-rejection-donut-1.pdf G
 raphic file (type pdf)
 <use Lecture15_SPS_Codex_files/figure-beamer/fig-spice-rejection-donut-1.pdf>
+ [17
 
-! Undefined control sequence.
-<argument> \label 
-                  {fig-spice-rejection-donut}Reasons for Spice Export Reject...
-l.789 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [18
 
-[15
+] [19
+
+] [20
 
 ]
-Overfull \vbox (117.35292pt too high) detected at line 845
- []
-
-[16
-
-]
-Overfull \vbox (117.35292pt too high) detected at line 902
- []
-
-[17
-
-]
-Overfull \vbox (86.07307pt too high) detected at line 945
- []
-
-[18
-
-]
-Overfull \vbox (117.35292pt too high) detected at line 991
- []
-
-[19
-
-]
-Overfull \vbox (55.39287pt too high) detected at line 1040
- []
-
-[20
-
-]
-Overfull \vbox (84.26964pt too high) detected at line 1081
- []
-
 [21
 
-]
-Overfull \vbox (86.13239pt too high) detected at line 1138
- []
+] [22
 
-[22
+] [23
 
-]
-Overfull \vbox (24.11302pt too high) detected at line 1175
- []
+] [24
 
-[23
+] [25
 
-]
-Overfull \vbox (86.07307pt too high) detected at line 1213
- []
+] [26
 
-[24
-
-]
-Overfull \vbox (86.06378pt too high) detected at line 1256
- []
-
-[25
-
-]
-Overfull \vbox (68.7273pt too high) detected at line 1289
- []
-
-[26
-
-]
-Overfull \vbox (52.98979pt too high) detected at line 1341
- []
-
-[27
+] [27
 
 ] [28
+
+]
+LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
+(Font)              scaled to size 9.29602pt on input line 1359.
+ [29
+
+] [30
 
 ]
 \tf@nav=\write5
@@ -2309,12 +2196,12 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 34847 strings out of 402982
- 712426 string characters out of 5447852
- 1269037 words of memory out of 5000000
- 62984 multiletter control sequences out of 15000+600000
- 628629 words of font info for 81 fonts, out of 8000000 for 9000
+ 34871 strings out of 402982
+ 713239 string characters out of 5447852
+ 1265630 words of memory out of 5000000
+ 63006 multiletter control sequences out of 15000+600000
+ 628645 words of font info for 83 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,13n,165p,1890b,737s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Lecture15_SPS_Codex.xdv (28 pages, 412932 bytes).
+Output written on Lecture15_SPS_Codex.xdv (30 pages, 425564 bytes).

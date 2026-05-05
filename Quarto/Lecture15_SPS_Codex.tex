@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -592,8 +619,9 @@ than Codex by demanding the risk assessment justification.
 
 }
 
-\caption{\label{fig-codex-standards}Codex Alimentarius: Standards
+\caption{Codex Alimentarius: Standards
 Portfolio (2023) Source: Codex Alimentarius Commission, FAO/WHO.}
+\label{fig-codex-standards}
 
 \end{figure}%
 \end{frame}
@@ -656,63 +684,58 @@ none) -- not just FSSAI's domestic standard
 \end{columns}
 \end{frame}
 
-\begin{frame}{India's Major SPS Export Challenges}
-\phantomsection\label{indias-major-sps-export-challenges}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\textbf{Product-wise SPS Problems}
+\begin{frame}{India's SPS export challenges (examples I)}
+\phantomsection\label{indias-sps-export-challenges-examples-i}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Spices:} ETO / pesticide residues / aflatoxin (EU, Singapore,
+  USA)
+\item
+  \textbf{Marine products:} antibiotic residues, Salmonella (USA, EU,
+  Japan)
+\item
+  \textbf{Rice:} pesticide MRLs (EU)
+\item
+  \textbf{Fresh grapes:} pesticide MRLs (EU)
+\item
+  \textbf{Mangoes:} pest risks (USA, Japan, Korea)
+\end{itemize}
+\end{frame}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2903}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3548}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3548}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Product
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-SPS Issue
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Key Market
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-Spices (chilli, cumin, pepper) & ETO, chlorpyrifos, aflatoxin & EU,
-Singapore, USA \\
-Marine products (shrimp, fish) & Chloramphenicol, nitrofurans,
-Salmonella & USA, EU, Japan \\
-Basmati/non-basmati rice & Tricyclazole, acephate, isoprothiolane &
-EU \\
-Fresh grapes & Pesticide MRLs (profenofos) & EU \\
-Mangoes & Mango seed weevil, Drosophila & USA, Japan, Korea \\
-Peanuts & Aflatoxin (Aspergillus mould) & EU \\
-Buffalo meat & Veterinary residues, FMD & Gulf, Southeast Asia \\
-Honey & Antibiotic residues, pesticide contamination & EU, USA \\
-\bottomrule\noalign{}
-\end{longtable}
-\end{column}
+\begin{frame}{India's SPS export challenges (examples II)}
+\phantomsection\label{indias-sps-export-challenges-examples-ii}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Peanuts:} aflatoxin (EU)
+\item
+  \textbf{Buffalo meat:} veterinary residues; animal health (Gulf, SEA)
+\item
+  \textbf{Honey:} antibiotics and pesticide contamination (EU, USA)
+\item
+  Common pattern: \textbf{lab testing + traceability + farm practices}
+  must align
+\item
+  SPS barriers often bite hardest in \textbf{premium markets}
+\end{itemize}
+\end{frame}
 
-\begin{column}{0.5\linewidth}
-\textbf{Scale of the Problem}
-
-India's agricultural exports (2023-24): \textasciitilde{}\textbf{USD 50
-billion}
-
-Top export earners at risk: - Marine products: USD 7.4 billion (USA, EU,
-Japan) - Rice: USD 10.5 billion (multiple markets) - Spices: USD 4.5
-billion (EU, USA, Middle East) - Buffalo meat: USD 3.5 billion (Gulf,
-Southeast Asia)
-
-EU RASFF alerts on Indian origin products: \textbf{200+ per year} (among
-top 5 source countries for alerts)
-
-FDA import refusals -- India: consistently \textbf{3rd-5th} most refused
-country
-
-SPS compliance is the single \textbf{largest non-tariff barrier} to
-India's agricultural exports -- more important than tariffs in many
-premium markets
-\end{column}
-\end{columns}
+\begin{frame}{Scale: why SPS matters for India}
+\phantomsection\label{scale-why-sps-matters-for-india}
+\begin{itemize}
+\tightlist
+\item
+  Agri exports (2023--24): about \textbf{\$50B}
+\item
+  High-exposure earners: \textbf{rice, marine, spices, buffalo meat}
+\item
+  EU RASFF alerts on India-origin products: \textbf{200+ per year}
+\item
+  US FDA import refusals: India often ranks \textbf{3rd--5th}
+\item
+  Takeaway: SPS is a major \textbf{non-tariff barrier} for export growth
+\end{itemize}
 \end{frame}
 
 \begin{frame}{EU RASFF Alerts on Indian Food Products}
@@ -725,8 +748,9 @@ premium markets
 
 }
 
-\caption{\label{fig-eu-rasff}EU RASFF Alerts on Indian Food Products
+\caption{EU RASFF Alerts on Indian Food Products
 (2022-2023) Source: European Commission, RASFF Portal (2023).}
+\label{fig-eu-rasff}
 
 \end{figure}%
 \end{frame}
@@ -782,8 +806,9 @@ disinfestation and steam treatment as alternatives
 
 }
 
-\caption{\label{fig-spice-rejection-donut}Reasons for Spice Export
+\caption{Reasons for Spice Export
 Rejections (2022-23) Source: Spices Board India; FSSAI.}
+\label{fig-spice-rejection-donut}
 
 \end{figure}%
 \end{frame}
@@ -1139,39 +1164,32 @@ agricultural sector
 
 \begin{frame}{India's Comprehensive SPS Strategy}
 \phantomsection\label{indias-comprehensive-sps-strategy}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\textbf{A Six-Pillar Strategy}
+\textbf{A Six-Pillar Strategy:}
 
-\textbf{(a) Prevention (Farm Level)} - GAP (Good Agricultural Practice)
-training: Spices Board, APEDA, HORTICULTURE - IPM (Integrated Pest
-Management): reduce pesticide dependence - Farmer training on
-pre-harvest intervals (PHI) for pesticides - FSSAI Eat Right India: food
-safety culture
+\begin{itemize}
+\tightlist
+\item
+  \textbf{(a) Prevention:} GAP training (Spices Board, APEDA), IPM,
+  farmer training on pre-harvest intervals, food safety culture (FSSAI
+  Eat Right India)
+\item
+  \textbf{(b) Detection:} NABL lab accreditation, real-time RASFF
+  monitoring, FSSAI surveillance, pre-shipment testing mandates (EIC,
+  Spices Board, MPEDA)
+\item
+  \textbf{(c) Certification:} FSSAI-accredited labs, EIC health
+  certificates, third-party international certifications
+\item
+  \textbf{(d) Bilateral Negotiation:} Phytosanitary protocols
+  (product-by-product), equivalence agreements, bilateral veterinary
+  certificates
+\item
+  \textbf{(e) WTO Advocacy:} Register Specific Trade Concerns (STCs) at
+  WTO SPS Committee; challenge scientifically unjustified standards
+\end{itemize}
 
-\textbf{(b) Detection (Testing Infrastructure)} - NABL lab accreditation
-expansion - Real-time RASFF monitoring - FSSAI's food safety
-surveillance system - Pre-shipment testing mandates (EIC, Spices Board,
-MPEDA)
-\end{column}
-
-\begin{column}{0.5\linewidth}
-\textbf{(c) Certification} - FSSAI accreditation of testing laboratories
-- EIC health certificates for marine and processed products -
-Third-party international certifications
-
-\textbf{(d) Bilateral Negotiation} - Phytosanitary protocols
-(product-by-product) - Equivalence agreements - Bilateral veterinary
-certificates
-
-\textbf{(e) WTO Advocacy} - Register Specific Trade Concerns (STCs) at
-WTO SPS Committee - Challenge scientifically unjustified standards -
-Support Codex positions beneficial to India (JMPR, JECFA)
-
-\textbf{(f) Domestic Policy} - FSSAI alignment with Codex - Pesticide
-deregistration (remove banned pesticides from Indian market)
-\end{column}
-\end{columns}
+\note{\textbf{(f) Domestic Policy:} - FSSAI alignment with Codex -
+Pesticide deregistration (remove banned pesticides from Indian market)}
 \end{frame}
 
 \begin{frame}{The NTB Dilemma: Safety vs Protectionism}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  25 APR 2026 09:17
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  5 MAY 2026 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1679,7 +1679,7 @@ y
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 ))
 \pandoc@box=\box93
-LaTeX Info: Redefining \label on input line 203.
+LaTeX Info: Redefining \label on input line 230.
  (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count406
@@ -1712,26 +1712,26 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (Lecture17_Export_Organizations.aux)
 \openout1 = `Lecture17_Export_Organizations.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1767,7 +1767,7 @@ LaTeX Font Info:    ... okay on input line 270.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 270.
+Package hyperref Info: Link coloring OFF on input line 297.
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
 r-basic-dictionary-English.dict
@@ -1794,11 +1794,11 @@ r-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 270.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 297.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 270.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 297.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 270.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1829,7 +1829,7 @@ t=math;language=dflt;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 270.
+(Font)              scaled to size 11.28032pt on input line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1872,18 +1872,18 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 270.
+(Font)              scaled to size 11.28032pt on input line 297.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 270.
+(Font)              `operators' in the math version `normal' on input line 297.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 270.
+ line 297.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 270.
+(Font)              `operators' in the math version `bold' on input line 297.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 270.
+t line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1957,15 +1957,15 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 270.
+(Font)              `symbols' in the math version `normal' on input line 297.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 270.
+t line 297.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 270.
+(Font)              `symbols' in the math version `bold' on input line 297.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 270.
+t line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -2034,23 +2034,23 @@ t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 2
-70.
+97.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 270.
+t line 297.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 270
+(Font)              `largesymbols' in the math version `bold' on input line 297
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 270.
-LaTeX Info: Redefining \microtypecontext on input line 270.
-Package microtype Info: Applying patch `item' on input line 270.
-Package microtype Info: Applying patch `toc' on input line 270.
-Package microtype Info: Applying patch `eqnum' on input line 270.
-Package microtype Info: Applying patch `footnote' on input line 270.
-Package microtype Info: Applying patch `verbatim' on input line 270.
-LaTeX Info: Redefining \microtypesetup on input line 270.
+t line 297.
+LaTeX Info: Redefining \microtypecontext on input line 297.
+Package microtype Info: Applying patch `item' on input line 297.
+Package microtype Info: Applying patch `toc' on input line 297.
+Package microtype Info: Applying patch `eqnum' on input line 297.
+Package microtype Info: Applying patch `footnote' on input line 297.
+Package microtype Info: Applying patch `verbatim' on input line 297.
+LaTeX Info: Redefining \microtypesetup on input line 297.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -2065,423 +2065,107 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (Lecture17_Export_Organizations.nav)
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 5.09372pt on input line 270.
+(Font)              scaled to size 5.09372pt on input line 297.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 7.64058pt on input line 270.
+(Font)              scaled to size 7.64058pt on input line 297.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 12.22491pt on input line 271.
+(Font)              scaled to size 12.22491pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 12.13197pt on input line 271.
+(Font)              scaled to size 12.13197pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 8.48953pt on input line 271.
+(Font)              scaled to size 8.48953pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 6.79163pt on input line 271.
+(Font)              scaled to size 6.79163pt on input line 298.
 
-Overfull \vbox (28.63197pt too high) detected at line 271
- []
+
+Class beamer Warning: Frame text is shrunk by a factor of 10.26459 percent inst
+ead of 10 percent on input line 298.
 
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 3.39581pt on input line 271.
+(Font)              scaled to size 3.39581pt on input line 298.
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 9.22536pt on input line 282.
+(Font)              scaled to size 9.22536pt on input line 344.
+LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
+(Font)              scaled to size 10.18744pt on input line 344.
+LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
+(Font)              scaled to size 10.10999pt on input line 344.
  [2
 
 ]
-! Undefined control sequence.
-\beamer@doifinframe ...ts} \phantomsection \label 
-                                                  {the-institutional-archite...
-l.329 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (20.27777pt too high) detected at line 329
- []
-
-[3
+LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
+(Font)              scaled to size 8.42499pt on input line 405.
+ [3
 
 ]
-! Undefined control sequence.
-\beamer@doifinframe ...re} \phantomsection \label 
-                                                  {apeda-mandate-and-structu...
-l.392 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (11.6037pt too high) detected at line 392
- []
-
-[4
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...24} \phantomsection \label 
-                                                  {apeda-scheduled-product-e...
-l.412 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 File: Lecture17_Export_Organizations_files/figure-beamer/fig-apeda-products-1.p
 df Graphic file (type pdf)
 <use Lecture17_Export_Organizations_files/figure-beamer/fig-apeda-products-1.pd
 f>
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 7.58249pt on input line 412.
-! Undefined control sequence.
-<argument> \label 
-                  {fig-apeda-products}Processed food is the single largest A...
-l.412 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+(Font)              scaled to size 7.58249pt on input line 424.
+ [4
+
+]
+Overfull \hbox (21.23969pt too wide) in alignment at lines 501--501
+ [] [] [] 
+ []
+
+
+Overfull \hbox (21.23969pt too wide) in alignment at lines 501--501
+ [] [] [] 
+ []
 
 [5
 
 ]
-! Undefined control sequence.
-\beamer@doifinframe ...ce} \phantomsection \label 
-                                                  {apedas-key-functions-in-p...
-l.491 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (43.7532pt too wide) in alignment at lines 491--491
- [] [] [] 
- []
-
-
-Overfull \hbox (43.7532pt too wide) in alignment at lines 491--491
- [] [] [] 
- []
-
-
-Overfull \vbox (63.60909pt too high) detected at line 491
- []
-
-[6
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...ts} \phantomsection \label 
-                                                  {top-10-destinations-for-i...
-l.510 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 File: Lecture17_Export_Organizations_files/figure-beamer/fig-agri-destinations-
 1.pdf Graphic file (type pdf)
 <use Lecture17_Export_Organizations_files/figure-beamer/fig-agri-destinations-1
 .pdf>
-! Undefined control sequence.
-<argument> \label 
-                  {fig-agri-destinations}USA leads with 11.2\% share driven ...
-l.510 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+ [6
 
-[7
+] [7
 
 ]
-! Undefined control sequence.
-\beamer@doifinframe ...ts} \phantomsection \label 
-                                                  {apedas-success-metrics-se...
-l.589 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (14.08522pt too wide) in alignment at lines 589--589
- [] [] [] 
- []
-
-
-Overfull \hbox (14.08522pt too wide) in alignment at lines 589--589
- [] [] [] 
- []
-
-
-Overfull \vbox (181.93239pt too high) detected at line 589
- []
-
-[8
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...nd} \phantomsection \label 
-                                                  {india-agricultural-export...
-l.609 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 File: Lecture17_Export_Organizations_files/figure-beamer/fig-apeda-trend-1.pdf 
 Graphic file (type pdf)
 <use Lecture17_Export_Organizations_files/figure-beamer/fig-apeda-trend-1.pdf>
-! Undefined control sequence.
-<argument> \label 
-                  {fig-apeda-trend}India's APEDA-promoted exports grew 2.3x ...
-l.609 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+ [8
 
-[9
+] [9
+
+] [10
 
 ]
-! Undefined control sequence.
-\beamer@doifinframe ...ty} \phantomsection \label 
-                                                  {mpeda-indias-seafood-expo...
-l.694 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-Overfull \vbox (119.3727pt too high) detected at line 694
- []
-
-[10
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...ce} \phantomsection \label 
-                                                  {mpeda-quality-systems-and...
-l.747 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (89.89629pt too high) detected at line 747
- []
+Class beamer Warning: Frame text is shrunk by a factor of 29.47083 percent inst
+ead of 10 percent on input line 794.
 
 [11
 
-]
-! Undefined control sequence.
-\beamer@doifinframe ...ew} \phantomsection \label 
-                                                  {the-five-commodity-boards...
-l.794 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [12
 
+] [13
 
-Overfull \vbox (131.09547pt too high) detected at line 794
- []
+] [14
 
-[12
+] [15
+
+] [16
+
+] [17
+
+] [18
 
 ]
-! Undefined control sequence.
-\beamer@doifinframe ...ia} \phantomsection \label 
-                                                  {tea-board-of-india} \begi...
-l.864 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (121.16684pt too high) detected at line 864
- []
-
-[13
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...rd} \phantomsection \label 
-                                                  {coffee-board-and-spices-b...
-l.942 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (173.73901pt too high) detected at line 942
- []
-
-[14
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...C)} \phantomsection \label 
-                                                  {export-inspection-council...
-l.1021 \end{frame}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (152.45598pt too high) detected at line 1021
- []
-
-[15
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...ns} \phantomsection \label 
-                                                  {nafed-price-stabilisation...
-l.1080 \end{frame}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (136.81606pt too high) detected at line 1080
- []
-
-[16
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...ts} \phantomsection \label 
-                                                  {farmer-producer-organizat...
-l.1128 \end{frame}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (152.17921pt too high) detected at line 1128
- []
-
-[17
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...ns} \phantomsection \label 
-                                                  {government-schemes-suppor...
-l.1175 \end{frame}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (90.48663pt too high) detected at line 1175
- []
-
-[18
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...on} \phantomsection \label 
-                                                  {indias-2030-agricultural-...
-l.1229 \end{frame}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (136.53929pt too high) detected at line 1229
- []
-
-[19
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...re} \phantomsection \label 
-                                                  {next-lecture} \textbf {Le...
-l.1266 \end{frame}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
-(Font)              scaled to size 9.29602pt on input line 1266.
-[20
+(Font)              scaled to size 9.29602pt on input line 1252.
+ [19
 
-]
-! Undefined control sequence.
-\beamer@doifinframe ...es} \phantomsection \label 
-                                                  {additional-resources} \be...
-l.1304 \end{frame}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 10.18744pt on input line 1304.
-LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 10.10999pt on input line 1304.
-[21
+] [20
 
 ]
 \tf@nav=\write5
@@ -2493,19 +2177,20 @@ LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
 \tf@snm=\write7
 \openout7 = `Lecture17_Export_Organizations.snm'.
 
- (Lecture17_Export_Organizations.aux)
+
+(Lecture17_Export_Organizations.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 34827 strings out of 402982
- 712347 string characters out of 5447852
- 1266972 words of memory out of 5000000
- 62964 multiletter control sequences out of 15000+600000
- 628629 words of font info for 81 fonts, out of 8000000 for 9000
+ 34841 strings out of 402982
+ 713146 string characters out of 5447852
+ 1269040 words of memory out of 5000000
+ 62977 multiletter control sequences out of 15000+600000
+ 628637 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,13n,165p,1901b,829s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,13n,165p,1901b,737s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Lecture17_Export_Organizations.xdv (21 pages, 301916 bytes).
+Output written on Lecture17_Export_Organizations.xdv (20 pages, 301368 bytes).

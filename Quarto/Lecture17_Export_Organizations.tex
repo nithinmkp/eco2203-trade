@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -271,18 +298,7 @@ Agriculture}
 \frame{\titlepage}
 
 
-\begin{frame}{}
-\phantomsection\label{section}
-\textbf{Lecture 17}
-
-{Agricultural Export Promotion Organizations}
-
-The Institutions Behind India's \$43.7 Billion Agricultural Export
-Ecosystem
-\end{frame}
-
-\begin{frame}
-\begin{block}{The Institutional Architecture of India's Agri Exports}
+\begin{frame}{The Institutional Architecture of India's Agri Exports}
 \phantomsection\label{the-institutional-architecture-of-indias-agri-exports}
 \begin{columns}[T]
 \begin{column}{0.58\linewidth}
@@ -325,11 +341,9 @@ ECGC & 1957 & Finance \\
 \end{longtable}
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{APEDA: Mandate and Structure}
+\begin{frame}{APEDA: Mandate and Structure}
 \phantomsection\label{apeda-mandate-and-structure}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -388,11 +402,9 @@ Cereals and cereal products · Groundnut, oilseeds, oil meals ·
 Floriculture and seeds · Plantation crops · Organic products · Alcoholic
 beverages · Poultry and poultry products · Animal casings ·
 Miscellaneous processed items}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{APEDA Scheduled Product Exports: FY2024}
+\begin{frame}{APEDA Scheduled Product Exports: FY2024}
 \phantomsection\label{apeda-scheduled-product-exports-fy2024}
 \begin{figure}
 
@@ -402,17 +414,16 @@ Miscellaneous processed items}
 
 }
 
-\caption{\label{fig-apeda-products}Processed food is the single largest
+\caption{Processed food is the single largest
 APEDA export category; marine products rank second. Rice (basmati +
 non-basmati) together constitute \textasciitilde28\% of the basket.
 Source: APEDA Annual Report 2023-24.}
+\label{fig-apeda-products}
 
 \end{figure}%
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{APEDA's Key Functions in Practice}
+\begin{frame}{APEDA's Key Functions in Practice}
 \phantomsection\label{apedas-key-functions-in-practice}
 \begin{columns}[T]
 \begin{column}{0.5\linewidth}
@@ -487,11 +498,9 @@ Japan grew from near-zero to \textbf{\$50+ million} in FY2024.
 \item
   Publishes commodity-specific export guidelines and market reports
 \end{itemize}}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Top 10 Destinations for India's Agricultural Exports}
+\begin{frame}{Top 10 Destinations for India's Agricultural Exports}
 \phantomsection\label{top-10-destinations-for-indias-agricultural-exports}
 \begin{figure}
 
@@ -501,16 +510,15 @@ Japan grew from near-zero to \textbf{\$50+ million} in FY2024.
 
 }
 
-\caption{\label{fig-agri-destinations}USA leads with 11.2\% share driven
+\caption{USA leads with 11.2\% share driven
 by marine products and spices; Bangladesh and UAE are the next largest
 markets for rice and meat exports. Source: APEDA Annual Report 2023-24.}
+\label{fig-agri-destinations}
 
 \end{figure}%
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{APEDA's Success Metrics: Selected Achievements}
+\begin{frame}{APEDA's Success Metrics: Selected Achievements}
 \phantomsection\label{apedas-success-metrics-selected-achievements}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -585,11 +593,9 @@ facilitated participation of \textbf{3,200 exporters} across 47
 international fairs.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{India Agricultural Exports: Long-run Trend}
+\begin{frame}{India Agricultural Exports: Long-run Trend}
 \phantomsection\label{india-agricultural-exports-long-run-trend}
 \begin{figure}
 
@@ -599,17 +605,16 @@ international fairs.
 
 }
 
-\caption{\label{fig-apeda-trend}India's APEDA-promoted exports grew 2.3x
+\caption{India's APEDA-promoted exports grew 2.3x
 from FY2014 to the FY2023 peak of 53.2B USD, before declining to 43.7B
 in FY2024 after non-basmati rice and onion export bans. Source: APEDA
 Annual Report 2023-24.}
+\label{fig-apeda-trend}
 
 \end{figure}%
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{MPEDA: India's Seafood Export Authority}
+\begin{frame}{MPEDA: India's Seafood Export Authority}
 \phantomsection\label{mpeda-indias-seafood-export-authority}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -690,11 +695,9 @@ can scan a QR code and trace any pack of Indian shrimp to the source
 farm.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{MPEDA: Quality Systems and International Compliance}
+\begin{frame}{MPEDA: Quality Systems and International Compliance}
 \phantomsection\label{mpeda-quality-systems-and-international-compliance}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -743,11 +746,9 @@ investment in testing, farmer training, and government--industry
 coordination.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{The Five Commodity Boards: Overview}
+\begin{frame}{The Five Commodity Boards: Overview}
 \phantomsection\label{the-five-commodity-boards-overview}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
@@ -790,11 +791,9 @@ standards, market development, financial assistance, and export
 promotion.} Each has a statutory role in the respective value chain ---
 from regulating auctions (Tea, Tobacco) to issuing GI certificates
 (Spices Board for Alleppey Green Cardamom).
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Tea Board of India}
+\begin{frame}{Tea Board of India}
 \phantomsection\label{tea-board-of-india}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -860,11 +859,9 @@ workers linking small growers to certification. Target: 50\% certified
 by 2028.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Coffee Board and Spices Board}
+\begin{frame}{Coffee Board and Spices Board}
 \phantomsection\label{coffee-board-and-spices-board}
 \begin{columns}[T]
 \begin{column}{0.5\linewidth}
@@ -938,11 +935,9 @@ Red dye, aflatoxin). Spices Board's GAP training programme covers
 500,000 chilli farmers in Andhra Pradesh.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Export Inspection Council (EIC)}
+\begin{frame}{Export Inspection Council (EIC)}
 \phantomsection\label{export-inspection-council-eic}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -1017,11 +1012,9 @@ requirements so exporters need not test separately for domestic FSSAI
 and export EIC compliance.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{NAFED: Price Stabilisation and Export Implications}
+\begin{frame}{NAFED: Price Stabilisation and Export Implications}
 \phantomsection\label{nafed-price-stabilisation-and-export-implications}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -1076,11 +1069,9 @@ procurement from 2.5 million farmers.
 1,200+ stores, Amazon/Flipkart --- brand building for Indian agri.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Farmer Producer Organizations as Export Units}
+\begin{frame}{Farmer Producer Organizations as Export Units}
 \phantomsection\label{farmer-producer-organizations-as-export-units}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -1124,11 +1115,9 @@ buyer database and MDA grant system. FPOs can now access MDA grants
 directly --- not just through large exporters.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Government Schemes Supporting Agri Export Organizations}
+\begin{frame}{Government Schemes Supporting Agri Export Organizations}
 \phantomsection\label{government-schemes-supporting-agri-export-organizations}
 \begin{columns}[T]
 \begin{column}{0.5\linewidth}
@@ -1171,34 +1160,21 @@ commodity boards. Target: every DEH district to double export value in 5
 years.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{India's 2030 Agricultural Export Ambition}
+\begin{frame}{India's 2030 Agricultural Export Ambition}
 \phantomsection\label{indias-2030-agricultural-export-ambition}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{APEDA's target: \$60 billion by 2030}\\
-(from \$43.7B in FY2024; required CAGR \textasciitilde5.4\%)
+\textbf{APEDA's target: \$60 billion by 2030} (from \$43.7B in FY2024;
+CAGR \textasciitilde5.4\%)
 
-\textbf{MPEDA's target: \$12 billion in seafood}\\
-(from \$7.6B; focus on value-added and ready-to-eat)
-
-\textbf{Commodity Board targets:} - Spices Board: \$5B (from \$3.7B) -
-Coffee Board: \$2B (from \$1.2B) - Tea Board: \$1.5B (from \$750M)
-
-\textbf{Overall national agri-food export target (FTP 2023--28): \$100
-billion by 2030}
+\textbf{National agri-food export target (FTP 2023--28): \$100 billion
+by 2030}
 
 \textbf{Strategy pillars:} 1. Diversify beyond rice dominance 2. Open
 new markets: Africa, Southeast Asia, South Korea 3. Value addition:
 processed, organic, functional foods 4. Invest in cold chain: PM
-GatiShakti nodes 5. Leverage GI brand premiums 6. FTA market access:
-India-UAE CEPA live; India-UK FTA being negotiated
-\end{column}
+GatiShakti nodes 5. Leverage GI brand premiums
 
-\begin{column}{0.45\linewidth}
 \textbf{Key Takeaways:}
 
 \begin{enumerate}
@@ -1218,18 +1194,25 @@ India-UAE CEPA live; India-UK FTA being negotiated
 \item
   \textbf{FPOs} are solving the small-farm aggregation problem ---
   Mahagrapes, Sahyadri, Amul show it is achievable at scale
+\end{enumerate}
+
+\note{\textbf{Commodity Board targets:} Spices Board: \$5B (from
+\$3.7B); Coffee Board: \$2B (from \$1.2B); Tea Board: \$1.5B (from
+\$750M). MPEDA's target: \$12B in seafood.
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\tightlist
 \item
   \textbf{District-level implementation} through DEH is the newest
   institutional innovation --- connecting national targets to local
-  value chains
+  value chains.
 \end{enumerate}
-\end{column}
-\end{columns}
-\end{block}
+
+FTA market access: India-UAE CEPA live; India-UK FTA being negotiated.}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Next Lecture}
+\begin{frame}{Next Lecture}
 \phantomsection\label{next-lecture}
 \textbf{Lecture 18 --- India's Agricultural Trade and Foreign Trade
 Policy}\\
@@ -1243,16 +1226,20 @@ Policy}\\
 \item
   India's trade performance: FY2024 big picture and 10-year trends
 \item
-  Export composition, import profile, and the value-addition opportunity
-\item
   Foreign Trade Policy 2023--28: vision, themes, and agricultural
   provisions
 \item
   Millets, GIs, and organic exports as strategic niches
 \item
-  Challenges India must overcome and opportunities ahead
-\item
   The farmer welfare vs export competitiveness dilemma
+\end{itemize}
+
+\note{\begin{itemize}
+\tightlist
+\item
+  Export composition, import profile, and the value-addition opportunity
+\item
+  Challenges India must overcome and opportunities ahead
 \item
   Course synthesis: what 18 weeks has taught us
 \item
@@ -1261,13 +1248,12 @@ Policy}\\
 
 \textbf{Final lecture preparation:} Review all lecture notes from
 Lectures 1--17. Bring questions --- we will have a 15-minute open Q\&A
-on examination topics at the end of Lecture 18.
-\end{block}
+on examination topics at the end of Lecture 18.}
 \end{frame}
 
-\begin{frame}{Appendix}
-\phantomsection\label{appendix}
-\begin{block}{Additional Resources}
+\section{Appendix}\label{appendix}
+
+\begin{frame}{Additional Resources}
 \phantomsection\label{additional-resources}
 \begin{columns}[T]
 \begin{column}{0.5\linewidth}
@@ -1300,7 +1286,6 @@ on examination topics at the end of Lecture 18.
 \end{itemize}
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
 

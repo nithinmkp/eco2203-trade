@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  25 APR 2026 09:17
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  5 MAY 2026 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1679,7 +1679,7 @@ y
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 ))
 \pandoc@box=\box93
-LaTeX Info: Redefining \label on input line 203.
+LaTeX Info: Redefining \label on input line 230.
  (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count406
@@ -1712,26 +1712,26 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (Lecture18_India_Agri_Trade_Policy.aux)
 \openout1 = `Lecture18_India_Agri_Trade_Policy.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 270.
-LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 297.
+LaTeX Font Info:    ... okay on input line 297.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1767,7 +1767,7 @@ LaTeX Font Info:    ... okay on input line 270.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 270.
+Package hyperref Info: Link coloring OFF on input line 297.
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
 r-basic-dictionary-English.dict
@@ -1794,11 +1794,11 @@ r-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 270.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 297.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 270.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 297.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 270.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1829,7 +1829,7 @@ t=math;language=dflt;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 270.
+(Font)              scaled to size 11.28032pt on input line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1872,18 +1872,18 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 270.
+(Font)              scaled to size 11.28032pt on input line 297.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 270.
+(Font)              `operators' in the math version `normal' on input line 297.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 270.
+ line 297.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 270.
+(Font)              `operators' in the math version `bold' on input line 297.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 270.
+t line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1957,15 +1957,15 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 270.
+(Font)              `symbols' in the math version `normal' on input line 297.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 270.
+t line 297.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 270.
+(Font)              `symbols' in the math version `bold' on input line 297.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 270.
+t line 297.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -2034,23 +2034,23 @@ t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 2
-70.
+97.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 270.
+t line 297.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 270
+(Font)              `largesymbols' in the math version `bold' on input line 297
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 270.
-LaTeX Info: Redefining \microtypecontext on input line 270.
-Package microtype Info: Applying patch `item' on input line 270.
-Package microtype Info: Applying patch `toc' on input line 270.
-Package microtype Info: Applying patch `eqnum' on input line 270.
-Package microtype Info: Applying patch `footnote' on input line 270.
-Package microtype Info: Applying patch `verbatim' on input line 270.
-LaTeX Info: Redefining \microtypesetup on input line 270.
+t line 297.
+LaTeX Info: Redefining \microtypecontext on input line 297.
+Package microtype Info: Applying patch `item' on input line 297.
+Package microtype Info: Applying patch `toc' on input line 297.
+Package microtype Info: Applying patch `eqnum' on input line 297.
+Package microtype Info: Applying patch `footnote' on input line 297.
+Package microtype Info: Applying patch `verbatim' on input line 297.
+LaTeX Info: Redefining \microtypesetup on input line 297.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -2065,37 +2065,34 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (Lecture18_India_Agri_Trade_Policy.nav)
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 5.09372pt on input line 270.
+(Font)              scaled to size 5.09372pt on input line 297.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 7.64058pt on input line 270.
+(Font)              scaled to size 7.64058pt on input line 297.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 12.22491pt on input line 271.
+(Font)              scaled to size 12.22491pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 12.13197pt on input line 271.
+(Font)              scaled to size 12.13197pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 8.48953pt on input line 271.
+(Font)              scaled to size 8.48953pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 6.79163pt on input line 271.
+(Font)              scaled to size 6.79163pt on input line 298.
 
-Overfull \vbox (28.63197pt too high) detected at line 271
- []
+
+Class beamer Warning: Frame text is shrunk by a factor of 10.26459 percent inst
+ead of 10 percent on input line 298.
 
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 3.39581pt on input line 271.
+(Font)              scaled to size 3.39581pt on input line 298.
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 9.22536pt on input line 281.
-LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
-(Font)              scaled to size 9.29602pt on input line 281.
- [2
+(Font)              scaled to size 9.22536pt on input line 314.
 
-]
 ! Undefined control sequence.
 \beamer@doifinframe ...on} \phantomsection \label 
-                                                  {opening-reflection} \begi...
-l.335 \end{frame}
+                                                  {opening-reflection} \text...
+l.314 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2103,17 +2100,31 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
+(Font)              scaled to size 9.29602pt on input line 314.
+[2
 
-Overfull \vbox (103.73277pt too high) detected at line 335
- []
+]
+! Undefined control sequence.
+\beamer@doifinframe ...s)} \phantomsection \label 
+                                                  {what-we-built-in-5-blocks...
+l.334 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
+(Font)              scaled to size 8.42499pt on input line 334.
 [3
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...am} \phantomsection \label 
                                                   {the-full-chain-course-syn...
-l.373 \end{frame}
+l.372 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2122,8 +2133,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \vbox (58.04845pt too high) detected at line 373
- []
+Class beamer Warning: Frame text is shrunk by a factor of 10.26459 percent inst
+ead of 10 percent on input line 372.
 
 [4
 
@@ -2146,8 +2157,8 @@ df>
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
 (Font)              scaled to size 7.58249pt on input line 393.
 ! Undefined control sequence.
-<argument> \label 
-                  {fig-ftp-timeline}India's trade policy evolved from the 19...
+\beamer@doifinframe ...and Industry, GoI.} \label 
+                                                  {fig-ftp-timeline} \par \e...
 l.393 \end{frame}
                  
 The control sequence at the end of the top line
@@ -2160,119 +2171,79 @@ and I'll forget about whatever was undefined.
 
 ]
 ! Undefined control sequence.
-\beamer@doifinframe ...4)} \phantomsection \label 
+\beamer@doifinframe ...rs} \phantomsection \label 
                                                   {indias-agricultural-trade...
-l.471 \end{frame}
+l.415 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (121.17613pt too high) detected at line 471
- []
 
 [6
 
 ]
 ! Undefined control sequence.
-\beamer@doifinframe ...ld} \phantomsection \label 
-                                                  {export-composition-what-i...
-l.532 \end{frame}
+\beamer@doifinframe ...ar} \phantomsection \label 
+                                                  {why-fy2022-was-a-record-y...
+l.432 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (136.81606pt too high) detected at line 532
- []
 
 [7
 
 ]
 ! Undefined control sequence.
-\beamer@doifinframe ...ts} \phantomsection \label 
-                                                  {geographic-distribution-w...
-l.615 \end{frame}
+\beamer@doifinframe ...ak} \phantomsection \label 
+                                                  {why-fy2024-fell-from-the-...
+l.447 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (15.95091pt too wide) in alignment at lines 615--615
- [] [] [] 
- []
-
-
-Overfull \hbox (15.95091pt too wide) in alignment at lines 615--615
- [] [] [] 
- []
-
-
-Overfull \vbox (137.4157pt too high) detected at line 615
- []
 
 [8
 
 ]
 ! Undefined control sequence.
-\beamer@doifinframe ...es} \phantomsection \label 
-                                                  {import-profile-indias-agr...
-l.688 \end{frame}
+\beamer@doifinframe ...om} \phantomsection \label 
+                                                  {export-composition-fy2024...
+l.470 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (15.2258pt too wide) in alignment at lines 688--688
- [] [] [] 
- []
-
-
-Overfull \hbox (15.2258pt too wide) in alignment at lines 688--688
- [] [] [] 
- []
-
-
-Overfull \vbox (230.6556pt too high) detected at line 688
- []
 
 [9
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...ty} \phantomsection \label 
-                                                  {the-value-addition-opport...
-l.757 \end{frame}
+                                                  {rice-concentration-market...
+l.488 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (215.01567pt too high) detected at line 757
- []
 
 [10
 
 ]
 ! Undefined control sequence.
-\beamer@doifinframe ...28} \phantomsection \label 
-                                                  {foreign-trade-policy-2023...
-l.828 \end{frame}
+\beamer@doifinframe ...ts} \phantomsection \label 
+                                                  {geographic-distribution-w...
+l.513 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2280,17 +2251,181 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \vbox (261.93544pt too high) detected at line 828
- []
-
 [11
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...ch} \phantomsection \label 
+                                                  {emerging-markets-to-watch...
+l.530 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[12
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...2)} \phantomsection \label 
+                                                  {case-indiauae-cepa-may-20...
+l.549 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[13
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...es} \phantomsection \label 
+                                                  {import-profile-indias-agr...
+l.577 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[14
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...ty} \phantomsection \label 
+                                                  {why-edible-oil-dependence...
+l.595 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[15
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...1)} \phantomsection \label 
+                                                  {policy-response-nmeoop-20...
+l.612 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[16
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...ty} \phantomsection \label 
+                                                  {the-value-addition-opport...
+l.632 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[17
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...d)} \phantomsection \label 
+                                                  {example-1-cashew-raw-vs-p...
+l.647 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[18
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...s)} \phantomsection \label 
+                                                  {example-2-turmeric-raw-vs...
+l.662 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[19
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...d)} \phantomsection \label 
+                                                  {example-3-shrimp-commodit...
+l.678 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[20
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...on} \phantomsection \label 
+                                                  {ftp-202328-what-it-implie...
+l.695 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[21
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...ew} \phantomsection \label 
+                                                  {foreign-trade-policy-ftp-...
+l.715 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[22
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...re} \phantomsection \label 
+                                                  {ftp-20232028-what-matters...
+l.737 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[23
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...ls} \phantomsection \label 
                                                   {ftp-2023-28-sector-export...
-l.848 \end{frame}
+l.758 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2303,9 +2438,9 @@ df Graphic file (type pdf)
 <use Lecture18_India_Agri_Trade_Policy_files/figure-beamer/fig-ftp-targets-1.pd
 f>
 ! Undefined control sequence.
-<argument> \label 
-                  {fig-ftp-targets}India's FTP 2023-28 targets USD 2 trillio...
-l.848 \end{frame}
+\beamer@doifinframe ...de Policy 2023-28.} \label 
+                                                  {fig-ftp-targets} \par \en...
+l.758 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2313,13 +2448,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[12
+[24
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {meis-vs-rodtep-indias-exp...
-l.868 \end{frame}
+l.779 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2332,9 +2467,9 @@ df Graphic file (type pdf)
 <use Lecture18_India_Agri_Trade_Policy_files/figure-beamer/fig-meis-rodtep-1.pd
 f>
 ! Undefined control sequence.
-<argument> \label 
-                  {fig-meis-rodtep}RoDTEP covers more products and exporters...
-l.868 \end{frame}
+\beamer@doifinframe ...41 dispute record.} \label 
+                                                  {fig-meis-rodtep} \par \en...
+l.779 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2342,12 +2477,124 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[13
+[25
 
 ]
 ! Undefined control sequence.
-\beamer@doifinframe ...ty} \phantomsection \label 
-                                                  {millets-indias-global-fir...
+\beamer@doifinframe ...de} \phantomsection \label 
+                                                  {millets-why-they-matter-f...
+l.800 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[26
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...s)} \phantomsection \label 
+                                                  {indias-millet-portfolio-e...
+l.819 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[27
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...sh} \phantomsection \label 
+                                                  {apeda-and-the-millet-expo...
+l.842 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[28
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...de} \phantomsection \label 
+                                                  {geographical-indications-...
+l.862 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[29
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...d)} \phantomsection \label 
+                                                  {indias-agri-gi-examples-s...
+l.884 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[30
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...U)} \phantomsection \label 
+                                                  {case-the-basmati-gi-battl...
+l.901 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[31
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...me} \phantomsection \label 
+                                                  {challenges-india-must-ove...
+l.923 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[32
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ....)} \phantomsection \label 
+                                                  {challenges-cont.} \begin ...
+l.940 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[33
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...ge} \phantomsection \label 
+                                                  {the-meta-challenge} India...
 l.955 \end{frame}
                  
 The control sequence at the end of the top line
@@ -2356,91 +2603,41 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (31.9122pt too wide) in alignment at lines 955--955
- [] [] [] 
- []
-
-
-Overfull \hbox (31.9122pt too wide) in alignment at lines 955--955
- [] [] [] 
- []
-
-
-Overfull \vbox (246.29552pt too high) detected at line 955
- []
-
-[14
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...gy} \phantomsection \label 
-                                                  {geographical-indications-...
-l.1030 \end{frame}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (72.47072pt too wide) in alignment at lines 1030--1030
- [] [] [] 
- []
-
-
-Overfull \hbox (72.47072pt too wide) in alignment at lines 1030--1030
- [] [] [] 
- []
-
-
-Overfull \vbox (199.37575pt too high) detected at line 1030
- []
-
-[15
-
-]
-! Undefined control sequence.
-\beamer@doifinframe ...me} \phantomsection \label 
-                                                  {challenges-india-must-ove...
-l.1098 \end{frame}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \vbox (244.49208pt too high) detected at line 1098
- []
-
-[16
+[34
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...ts} \phantomsection \label 
                                                   {opportunities-for-indias-...
-l.1162 \end{frame}
-                  
+l.974 \end{frame}
+                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[35
 
-Overfull \vbox (183.53995pt too high) detected at line 1162
- []
+]
+! Undefined control sequence.
+\beamer@doifinframe ...hy} \phantomsection \label 
+                                                  {opportunities-cont.-marke...
+l.992 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-[17
+[36
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...ss} \phantomsection \label 
-                                                  {the-core-policy-dilemma-f...
-l.1242 \end{frame}
+                                                  {core-policy-dilemma-1-msp...
+l.1017 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2448,24 +2645,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \vbox (297.92186pt too high) detected at line 1242
- []
-
-[18
-
-]
-LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 10.18744pt on input line 1250.
-LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 10.10999pt on input line 1250.
- [19
+[37
 
 ]
 ! Undefined control sequence.
-\beamer@doifinframe ...le} \phantomsection \label 
-                                                  {course-synthesis-module-b...
-l.1314 \end{frame}
+\beamer@doifinframe ...ty} \phantomsection \label 
+                                                  {core-policy-dilemma-2-foo...
+l.1037 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2473,17 +2659,146 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[38
 
-Overfull \vbox (262.53508pt too high) detected at line 1314
- []
+]
+! Undefined control sequence.
+\beamer@doifinframe ...ts} \phantomsection \label 
+                                                  {core-policy-dilemma-3-fis...
+l.1058 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-[20
+[39
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...et} \phantomsection \label 
+                                                  {trade-offs-cheat-sheet} \...
+l.1080 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[40
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...03} \phantomsection \label 
+                                                  {key-insight-from-econ-220...
+l.1090 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[41
+
+]
+LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
+(Font)              scaled to size 10.18744pt on input line 1098.
+LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
+(Font)              scaled to size 10.10999pt on input line 1098.
+ [42
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...oP} \phantomsection \label 
+                                                  {course-synthesis-1-theory...
+l.1121 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[43
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...PS} \phantomsection \label 
+                                                  {course-synthesis-2-forex-...
+l.1143 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[44
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...es} \phantomsection \label 
+                                                  {course-synthesis-3-instit...
+l.1165 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[45
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...es} \phantomsection \label 
+                                                  {export-vision-2030-target...
+l.1186 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[46
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...I)} \phantomsection \label 
+                                                  {pillars-for-growth-i} \be...
+l.1205 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[47
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...I)} \phantomsection \label 
+                                                  {pillars-for-growth-ii} \b...
+l.1224 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[48
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...30} \phantomsection \label 
-                                                  {indias-agricultural-expor...
-l.1382 \end{frame}
+                                                  {scenarios-for-fy2030} \be...
+l.1245 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2491,17 +2806,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \vbox (197.98996pt too high) detected at line 1382
- []
-
-[21
+[49
 
 ]
 ! Undefined control sequence.
-\beamer@doifinframe ...nt} \phantomsection \label 
-                                                  {final-thought-agriculture...
-l.1450 \end{frame}
+\beamer@doifinframe ...rs} \phantomsection \label 
+                                                  {final-thought-why-this-su...
+l.1267 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2509,17 +2820,27 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[50
 
-Overfull \vbox (181.73651pt too high) detected at line 1450
- []
+]
+! Undefined control sequence.
+\beamer@doifinframe ...in} \phantomsection \label 
+                                                  {a-kilo-of-tur-dal-tracing...
+l.1290 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-[22
+[51
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...fe} \phantomsection \label 
                                                   {key-takeaways-for-the-exa...
-l.1487 \end{frame}
+l.1327 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2527,17 +2848,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \vbox (97.68979pt too high) detected at line 1487
- []
-
-[23
+[52
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...on} \phantomsection \label 
                                                   {examination-information} ...
-l.1555 \end{frame}
+l.1344 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2545,17 +2862,55 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[53
 
-Overfull \vbox (168.0959pt too high) detected at line 1555
- []
+]
+! Undefined control sequence.
+\beamer@doifinframe ...w)} \phantomsection \label 
+                                                  {exam-emphasis-what-to-kno...
+l.1363 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-[24
+[54
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...n)} \phantomsection \label 
+                                                  {revision-strategy-simple-...
+l.1380 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[55
+
+]
+! Undefined control sequence.
+\beamer@doifinframe ...rd} \phantomsection \label 
+                                                  {a-final-word} You have wo...
+l.1389 \end{frame}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[56
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
-                                                  {additional-resources} \be...
-l.1593 \end{frame}
+                                                  {additional-resources} \te...
+l.1421 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2563,7 +2918,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[25
+[57
 
 ]
 \tf@nav=\write5
@@ -2582,13 +2937,13 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 34857 strings out of 402982
- 712921 string characters out of 5447852
- 1270420 words of memory out of 5000000
- 62994 multiletter control sequences out of 15000+600000
- 628629 words of font info for 81 fonts, out of 8000000 for 9000
+ 34921 strings out of 402982
+ 713783 string characters out of 5447852
+ 1262936 words of memory out of 5000000
+ 63057 multiletter control sequences out of 15000+600000
+ 628637 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,13n,165p,1904b,900s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,13n,165p,1904b,835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Lecture18_India_Agri_Trade_Policy.xdv (25 pages, 424596 bytes
+Output written on Lecture18_India_Agri_Trade_Policy.xdv (57 pages, 413092 bytes
 ).

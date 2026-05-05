@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -486,9 +513,10 @@ India negotiated high bound rates (113\% average) for similar reasons
 
 }
 
-\caption{\label{fig-aoa-tariff-reduction}AoA Tariff Reduction
+\caption{AoA Tariff Reduction
 Commitments: Developed vs Developing Source: WTO, Agreement on
 Agriculture; UNCTAD.}
+\label{fig-aoa-tariff-reduction}
 
 \end{figure}%
 \end{frame}
@@ -738,9 +766,10 @@ India's AMS commitment: India has no scheduled AMS reduction commitment
 
 }
 
-\caption{\label{fig-india-box-subsidies}India's Agricultural Support by
+\caption{India's Agricultural Support by
 WTO Box (FY2020) Source: India's WTO Domestic Support Notifications;
 Ministry of Agriculture, GoI.}
+\label{fig-india-box-subsidies}
 
 \end{figure}%
 \end{frame}
@@ -1298,8 +1327,9 @@ the Peace Clause's diplomatic protection
 
 }
 
-\caption{\label{fig-india-agri-trade}India Agricultural Trade Balance
+\caption{India Agricultural Trade Balance
 (FY2019-FY2024, USD Billion) Source: APEDA / DGCI\&S.}
+\label{fig-india-agri-trade}
 
 \end{figure}%
 \end{frame}
@@ -1327,6 +1357,10 @@ the Peace Clause's diplomatic protection
   \textbf{FERP is the core injustice:} Using 1986--88 world prices
   (depressed by US/EU subsidies) overstates India's trade distortion.
   Updating FERP to current prices would solve India's problem
+\end{enumerate}
+
+\note{\begin{enumerate}
+\setcounter{enumi}{5}
 \item
   \textbf{Nairobi 2015 eliminated export subsidies} --- a genuine WTO
   success; India's RoDTEP is a legitimate tax refund scheme (if
@@ -1334,7 +1368,7 @@ the Peace Clause's diplomatic protection
 \item
   \textbf{Doha Round dead} --- but AoA framework remains; India must
   push for permanent public stockholding solution at every MC
-\end{enumerate}
+\end{enumerate}}
 \end{frame}
 
 \begin{frame}{Next Lecture: SPS Measures and Codex Alimentarius}

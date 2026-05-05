@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -254,13 +281,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Terms of Trade, Free Trade \& Free Trade Agreements},
+  pdftitle={Lecture 6: Terms of Trade, Free Trade \& FTAs},
   pdfauthor={Nithin M},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Terms of Trade, Free Trade \& Free Trade Agreements}
+\title{Lecture 6: Terms of Trade, Free Trade \& FTAs}
 \subtitle{Econ 2203 \textbar{} International Trade and Policy in
 Agriculture}
 \author{Nithin M}
@@ -270,8 +297,6 @@ Agriculture}
 \begin{document}
 \frame{\titlepage}
 
-
-\section{Part I: Terms of Trade}\label{part-i-terms-of-trade}
 
 \begin{frame}{Recap: From Theory to Exchange}
 \phantomsection\label{recap-from-theory-to-exchange}
@@ -343,6 +368,44 @@ For India's agricultural policy analysis, we primarily use the
 \textbf{commodity ToT}.
 \end{frame}
 
+\begin{frame}{Assumptions of the Terms of Trade Framework}
+\phantomsection\label{assumptions-of-the-terms-of-trade-framework}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Assumption
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Implication
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+Two countries (Home, World) & Bilateral trade relationship \\
+Two goods (exports \(X\), imports \(M\)) & Specialisation already
+determined by comparative advantage \\
+Competitive markets & Prices reflect relative costs and preferences \\
+Fixed factor endowments (short run) & PPF does not shift in the
+analysis \\
+Given tastes and preferences & Demand-side captured by indifference
+curves / offer curves \\
+No transport costs & Law of one price holds;
+\(P_X^{\text{Home}} = P_X^{\text{World}}\) \\
+No trade barriers (for free-trade ToT) & Market prices equal world
+prices \\
+\bottomrule\noalign{}
+\end{longtable}
+
+\textbf{ToT is determined by the intersection of supply and demand for
+exports and imports:}
+
+\[\text{Equilibrium ToT: } \tau^* = \frac{P_X}{P_M} \text{ where export supply = import demand (Offer Curves)}\]
+
+\textbf{Policy relevance:} India cannot control world prices for rice or
+wheat --- but domestic policies (MSP, export bans) \emph{shift} India's
+offer curve, affecting the ToT.
+\end{frame}
+
 \begin{frame}{Offer Curves: Deriving the Equilibrium Terms of Trade}
 \phantomsection\label{offer-curves-deriving-the-equilibrium-terms-of-trade}
 \textbf{Offer Curve (Salvatore, Ch. 4):} Shows the quantity of its
@@ -376,9 +439,10 @@ preferences and PPF:
 
 }
 
-\caption{\label{fig-offer-curves}Offer Curves: Equilibrium Terms of
+\caption{Offer Curves: Equilibrium Terms of
 Trade Between India (Rice) and World (Machinery) Source: Author's
 illustration.}
+\label{fig-offer-curves}
 
 \end{figure}%
 
@@ -459,9 +523,10 @@ insulate farmers from ToT movements.
 
 }
 
-\caption{\label{fig-india-tot}India's Commodity Terms of Trade
+\caption{India's Commodity Terms of Trade
 (Agricultural Exports vs All Imports), 2010--2024 Source: RBI Annual
 Report; DGCI\&S.}
+\label{fig-india-tot}
 
 \end{figure}%
 
@@ -533,9 +598,6 @@ Marine value-added from 18\% to 22\%; Spice derivatives from 8\% to 12\%
 --- India slowly shifting toward value-added exports consistent with P-S
 prescription.
 \end{frame}
-
-\section{Part II: Free Trade --- Theory and India's
-Reality}\label{part-ii-free-trade-theory-and-indias-reality}
 
 \begin{frame}{The Case for Free Trade}
 \phantomsection\label{the-case-for-free-trade}
@@ -677,9 +739,6 @@ tariffs }flexibly* --- adjusting to domestic supply conditions,
 consistent with WTO rules under the SSM for developing countries.
 \end{frame}
 
-\section{Part III: Free Trade
-Agreements}\label{part-iii-free-trade-agreements}
-
 \begin{frame}{What is an FTA?}
 \phantomsection\label{what-is-an-fta}
 \textbf{Levels of Regional Trade Integration (Balassa, 1961)}
@@ -800,9 +859,10 @@ FTA commitments (using permitted safeguard provisions).
 
 }
 
-\caption{\label{fig-india-fta}India's Trade Balance with Key FTA
+\caption{India's Trade Balance with Key FTA
 Partners (USD billion, FY2024) Source: DGCI\&S / Ministry of Commerce
 and Industry, GoI.}
+\label{fig-india-fta}
 
 \end{figure}%
 
@@ -890,8 +950,9 @@ factor endowments} (complementary comparative advantages)
 
 }
 
-\caption{\label{fig-trade-creation}FTA: Trade Creation (gain, left) vs
+\caption{FTA: Trade Creation (gain, left) vs
 Trade Diversion (loss, right) Source: Author's illustration.}
+\label{fig-trade-creation}
 
 \end{figure}%
 \end{frame}

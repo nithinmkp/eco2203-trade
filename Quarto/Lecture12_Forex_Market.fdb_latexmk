@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1777088743.23494 "Lecture12_Forex_Market.xdv" "Lecture12_Forex_Market.pdf" "Lecture12_Forex_Market" 1777088744.1527 0
-  "Lecture12_Forex_Market.xdv" 1777088741 372396 6e3fee78353b026a0bae4c8039f6c136 "xelatex"
+["xdvipdfmx"] 1778001011.69246 "Lecture12_Forex_Market.xdv" "Lecture12_Forex_Market.pdf" "Lecture12_Forex_Market" 1778001012.49139 0
+  "Lecture12_Forex_Market.xdv" 1778001010 358548 69c74472f0917ebaeb21c1b3afb93b3b "xelatex"
   (generated)
   "Lecture12_Forex_Market.pdf"
   (rewritten before read)
-["xelatex"] 1777088735.06106 "Lecture12_Forex_Market.tex" "Lecture12_Forex_Market.xdv" "Lecture12_Forex_Market" 1777088744.12052 2
+["xelatex"] 1778001004.04928 "Lecture12_Forex_Market.tex" "Lecture12_Forex_Market.xdv" "Lecture12_Forex_Market" 1778001012.45961 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -16,8 +16,10 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi10.tfm" 1256929440 1528 6d36b2385e0ca062a654de6ac59cb34f ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi5.tfm" 1256929440 1508 51526923e80e59e37a4e87448b5af6e0 ""
+  "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi6.tfm" 1256929440 1512 94a3fd88c6f27dbd9ecb46987e297a4e ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi7.tfm" 1256929440 1528 d5b028dd23da623848ef0645c96a1ed7 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi8.tfm" 1256929440 1520 a3fe5596932db2db2cbda300920dd4e9 ""
+  "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmmi9.tfm" 1256929440 1524 cdf05765c2a8bdb569ea0aa208fb0947 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576433602 40635 c40361e206be584d448876bba8a64a3b ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty" 1575926576 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
@@ -227,14 +229,14 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture12_Forex_Market.aux" 1777088741 9911 fdff4e3d5438fe7324905d52bb4d8796 "xelatex"
-  "Lecture12_Forex_Market.nav" 1777088741 2842 6f32ae9173fe28384e668a43366d1ee6 "xelatex"
-  "Lecture12_Forex_Market.tex" 1777088284 45940 37273398b86cd108ef0874a152f962dd ""
-  "Lecture12_Forex_Market_files/figure-beamer/fig-forex-reserves-1.pdf" 1777088277 7424 b7348bda1335d0e5034899a7135b3832 ""
-  "Lecture12_Forex_Market_files/figure-beamer/fig-hedging-1.pdf" 1777088278 5954 6f474c0bdfa40f22cae7957703a072fc ""
-  "Lecture12_Forex_Market_files/figure-beamer/fig-inr-agri-exports-1.pdf" 1777088280 7455 4f6b5870921fde6339b141794e01512f ""
-  "Lecture12_Forex_Market_files/figure-beamer/fig-mf-fixed-1.pdf" 1777088274 5760 6832f485a8597177faf0bb6cbfd854b8 ""
-  "Lecture12_Forex_Market_files/figure-beamer/fig-mf-flexible-1.pdf" 1777088276 5821 736afbd55f17817dc008d4f3df44c0bd ""
+  "Lecture12_Forex_Market.aux" 1778001010 13814 3db13cda07b5ddac04b0d5478980e42b "xelatex"
+  "Lecture12_Forex_Market.nav" 1778001010 3865 b9b2518eb21aee31bdf7816ef0aa29da "xelatex"
+  "Lecture12_Forex_Market.tex" 1778000554 41132 b3502b27392106aeea4020fc2a9ae9ac ""
+  "Lecture12_Forex_Market_files/figure-beamer/fig-forex-reserves-1.pdf" 1778000532 7391 c3bde0dee6d6ff481627fb58f3136978 ""
+  "Lecture12_Forex_Market_files/figure-beamer/fig-hedging-1.pdf" 1778000533 5734 c639a28f2db44088f8ccab38aaebf769 ""
+  "Lecture12_Forex_Market_files/figure-beamer/fig-inr-agri-exports-1.pdf" 1778000534 7321 4caf7516ce014ca61d36493cc685f9d5 ""
+  "Lecture12_Forex_Market_files/figure-beamer/fig-mf-fixed-1.pdf" 1778000529 5758 16a261036cff07649fd8bada260f7cdd ""
+  "Lecture12_Forex_Market_files/figure-beamer/fig-mf-flexible-1.pdf" 1778000531 5843 d0ffc03ac80389e2cbe3ae66232a1e87 ""
   (generated)
   "Lecture12_Forex_Market.aux"
   "Lecture12_Forex_Market.log"

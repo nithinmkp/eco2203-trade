@@ -1,5 +1,5 @@
 ---
-title: "Terms of Trade, Free Trade & Free Trade Agreements"
+title: "Lecture 6: Terms of Trade, Free Trade & FTAs"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
@@ -80,6 +80,26 @@ Where $P_X$ = export price index; $P_M$ = import price index. **ToT > 100** → 
 | Single Factoral ToT | $ToT \times Z_X$ | Adjusts for export productivity |
 
 For India's agricultural policy analysis, we primarily use the **commodity ToT**.
+
+## Assumptions of the Terms of Trade Framework {.smaller}
+
+| Assumption | Implication |
+|---|---|
+| Two countries (Home, World) | Bilateral trade relationship |
+| Two goods (exports $X$, imports $M$) | Specialisation already determined by comparative advantage |
+| Competitive markets | Prices reflect relative costs and preferences |
+| Fixed factor endowments (short run) | PPF does not shift in the analysis |
+| Given tastes and preferences | Demand-side captured by indifference curves / offer curves |
+| No transport costs | Law of one price holds; $P_X^{\text{Home}} = P_X^{\text{World}}$ |
+| No trade barriers (for free-trade ToT) | Market prices equal world prices |
+
+**ToT is determined by the intersection of supply and demand for exports and imports:**
+
+$$\text{Equilibrium ToT: } \tau^* = \frac{P_X}{P_M} \text{ where export supply = import demand (Offer Curves)}$$
+
+::: {.methodbox}
+**Policy relevance:** India cannot control world prices for rice or wheat — but domestic policies (MSP, export bans) *shift* India's offer curve, affecting the ToT.
+:::
 
 ## Offer Curves: Deriving the Equilibrium Terms of Trade
 

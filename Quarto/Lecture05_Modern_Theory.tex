@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
@@ -270,13 +297,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Modern Theories: Heckscher-Ohlin \& Lewis Dual-Sector Model},
+  pdftitle={Lecture 5: Modern Theories --- Heckscher-Ohlin \& Lewis},
   pdfauthor={Nithin M},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Modern Theories: Heckscher-Ohlin \& Lewis Dual-Sector Model}
+\title{Lecture 5: Modern Theories --- Heckscher-Ohlin \& Lewis}
 \subtitle{Econ 2203 \textbar{} International Trade and Policy in
 Agriculture}
 \author{Nithin M}
@@ -286,9 +313,6 @@ Agriculture}
 \begin{document}
 \frame{\titlepage}
 
-
-\section{Part I: Why Do Opportunity Costs
-Differ?}\label{part-i-why-do-opportunity-costs-differ}
 
 \begin{frame}{Recap: The Missing Piece in Ricardo}
 \phantomsection\label{recap-the-missing-piece-in-ricardo}
@@ -332,8 +356,44 @@ Machines if: \[\left(\frac{K}{L}\right)_R < \left(\frac{K}{L}\right)_M\]
 \[\left(\frac{w}{r}\right)^I < \left(\frac{w}{r}\right)^U \qquad \text{(labour is relatively cheaper in India)}\]
 \end{frame}
 
-\section{Part II: The Heckscher-Ohlin
-Theorem}\label{part-ii-the-heckscher-ohlin-theorem}
+\begin{frame}{Assumptions of the H-O Model}
+\phantomsection\label{assumptions-of-the-h-o-model}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Assumption
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Role in the model
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+2 countries, 2 goods, 2 factors (2×2×2) & Tractable analytical
+framework \\
+\textbf{Identical technologies} across countries & Comparative advantage
+comes \emph{only} from endowments \\
+\textbf{Different factor endowments} & This is the sole source of
+trade \\
+Constant returns to scale & Concave PPF; no scale effects \\
+Perfect competition & Prices equal marginal costs; zero profits \\
+Factors mobile \emph{within} countries & Labour/capital shift freely
+between sectors \\
+Factors immobile \emph{across} countries & No international migration or
+capital flows \\
+No transport costs or trade barriers & Goods prices equalise across
+countries \\
+Incomplete specialisation & Both goods produced in both countries \\
+Identical, homothetic preferences & Demand differences cannot explain
+trade \\
+\bottomrule\noalign{}
+\end{longtable}
+
+\textbf{Relaxing assumptions:} Drop identical technologies → Ricardian
+effects re-enter. Drop immobility → factor flows substitute for goods
+trade (FPE weakens). Drop 2×2×2 → Heckscher-Ohlin-Vanek factor content
+theorem.
+\end{frame}
 
 \begin{frame}{H-O Theorem: Formal Statement}
 \phantomsection\label{h-o-theorem-formal-statement}
@@ -398,8 +458,9 @@ The \textbf{Edgeworth box} shows all efficient ways to allocate
 
 }
 
-\caption{\label{fig-edgeworth}Edgeworth Box: Factor Allocation Between
-Two Industries Source: Author's illustration.}
+\caption{Edgeworth Box: Efficient Factor Allocation
+Between Rice and Machines Source: Author's illustration.}
+\label{fig-edgeworth}
 
 \end{figure}%
 \end{column}
@@ -447,8 +508,53 @@ gives a \emph{curved} PPF.
 \end{columns}
 \end{frame}
 
-\section{Part III: Three Key
-Theorems}\label{part-iii-three-key-theorems}
+\begin{frame}{H-O Welfare: Autarky vs Free Trade}
+\phantomsection\label{h-o-welfare-autarky-vs-free-trade}
+\begin{columns}[T]
+\begin{column}{0.42\linewidth}
+\textbf{Autarky (E1):} IC1 tangent to the PPF; India produces and
+consumes at E1.
+
+\textbf{Opening to trade:}
+
+\begin{itemize}
+\tightlist
+\item
+  World price \(P_R/P_M = 1.5 <\) autarky slope \(2\)
+\item
+  Production shifts to P \((M=60,\, R=160)\) --- more Rice, fewer
+  Machines
+\item
+  Trade possibilities line through P, slope \(= -1.5\)
+\item
+  India \textbf{exports 35 Rice}, \textbf{imports 23 Machines}
+\item
+  Consumption at E2 \((M=83,\, R=125)\) on IC2
+\end{itemize}
+
+\textbf{IC2 \textgreater{} IC1 → welfare gain from trade}
+
+The gain comes entirely from \textbf{reallocation} --- not from more
+resources, but from trading along comparative advantage.
+\end{column}
+
+\begin{column}{0.58\linewidth}
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Lecture05_Modern_Theory_files/figure-beamer/fig-ho-welfare-1.pdf}}
+
+}
+
+\caption{H-O Model: Free Trade Raises Welfare
+Above the Autarky PPF Source: Author's illustration.}
+\label{fig-ho-welfare}
+
+\end{figure}%
+\end{column}
+\end{columns}
+\end{frame}
 
 \begin{frame}{Theorem 1: Factor Price Equalisation (FPE)}
 \phantomsection\label{theorem-1-factor-price-equalisation-fpe}
@@ -478,7 +584,7 @@ factor prices} across countries --- even without factor mobility:
   In equilibrium: \(w^I = w^U\)
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-important-color!10!white, coltitle=black, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{The FPE insight}, colframe=quarto-callout-important-color-frame, toptitle=1mm, toprule=.15mm, rightrule=.15mm, titlerule=0mm, bottomtitle=1mm, arc=.35mm, colback=white, bottomrule=.15mm, left=2mm, breakable, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6]
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-important-color!10!white, left=2mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{The FPE insight}, leftrule=.75mm, coltitle=black, breakable, opacityback=0, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, rightrule=.15mm, toptitle=1mm, colframe=quarto-callout-important-color-frame, colback=white, titlerule=0mm, toprule=.15mm, opacitybacktitle=0.6]
 
 Free trade is a \textbf{perfect substitute} for factor mobility. This
 explains why labour migration and goods trade are strategic complements
@@ -504,10 +610,8 @@ No transport costs & Violated \\
 \bottomrule\noalign{}
 \end{longtable}
 
-\textbf{Empirical reality:}
-
-Wages in India \(\approx\) \$2/hour; USA \(\approx\) \$30/hour. FPE
-clearly does \emph{not} hold in practice.
+\note{\textbf{Empirical reality:} Wages in India \(\approx\) \$2/hour;
+USA \(\approx\) \$30/hour. FPE clearly does \emph{not} hold in practice.
 
 \textbf{Why study FPE then?}
 
@@ -520,7 +624,7 @@ clearly does \emph{not} hold in practice.
   FPE pressure
 \item
   The direction of change (not the level) is well-predicted
-\end{itemize}
+\end{itemize}}
 \end{frame}
 
 \begin{frame}{Theorem 2: Stolper-Samuelson Theorem}
@@ -652,16 +756,14 @@ constant prices as labour endowment varies.
 
 }
 
-\caption{\label{fig-rybczynski}Rybczynski Effect: Labour Inflow Shifts
+\caption{Rybczynski Effect: Labour Inflow Shifts
 PPF Source: Author's illustration.}
+\label{fig-rybczynski}
 
 \end{figure}%
 \end{column}
 \end{columns}
 \end{frame}
-
-\section{Part IV: The Leontief Paradox and
-Extensions}\label{part-iv-the-leontief-paradox-and-extensions}
 
 \begin{frame}{The Leontief Paradox (1953)}
 \phantomsection\label{the-leontief-paradox-1953}
@@ -692,9 +794,10 @@ country.
 
 }
 
-\caption{\label{fig-leontief}Factor Intensity of India's Exports vs
+\caption{Factor Intensity of India's Exports vs
 Imports (illustrative) Source: Author's illustration based on DGCI\&S /
 World Bank data.}
+\label{fig-leontief}
 
 \end{figure}%
 
@@ -730,13 +833,10 @@ Several resolutions have been proposed:
   flows
 \end{enumerate}
 
-\textbf{Modern verdict (Trefler 1995):} Allowing for \textbf{technology
-differences} and \textbf{factor productivity} differences across
-countries reconciles most H-O predictions with data.
+\note{\textbf{Modern verdict (Trefler 1995):} Allowing for
+\textbf{technology differences} and \textbf{factor productivity}
+differences across countries reconciles most H-O predictions with data.}
 \end{frame}
-
-\section{Part V: The Lewis Dual-Sector Model and Agricultural
-Trade}\label{part-v-the-lewis-dual-sector-model-and-agricultural-trade}
 
 \begin{frame}{Lewis (1954): Structural Transformation}
 \phantomsection\label{lewis-1954-structural-transformation}
@@ -783,9 +883,10 @@ capital-intensive manufactures.
 
 }
 
-\caption{\label{fig-lewis}Lewis Model: Surplus Labour Transfer and
+\caption{Lewis Model: Surplus Labour Transfer and
 Structural Transformation Source: Author's illustration after Lewis
 (1954).}
+\label{fig-lewis}
 
 \end{figure}%
 \end{frame}
@@ -831,9 +932,6 @@ competitiveness even as wages rise --- moving up the value chain rather
 than defending low-wage advantage.
 \end{frame}
 
-\section{Part VI: Summary and Looking
-Ahead}\label{part-vi-summary-and-looking-ahead}
-
 \begin{frame}{The Modern Theory of Trade: Summary}
 \phantomsection\label{the-modern-theory-of-trade-summary}
 \textbf{Three pillars of the H-O framework:}
@@ -856,20 +954,11 @@ Ahead}\label{part-vi-summary-and-looking-ahead}
   (factor accumulation biases production)
 \end{enumerate}
 
-\textbf{Empirical scorecard:}
-
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-Prediction & Evidence \\
-\midrule\noalign{}
-\endhead
-Factor content of trade & Mixed (Trefler 1995) \\
-India exports labour-intensive & Confirmed \\
-Wage convergence & Partial (direction correct) \\
-Stolper-Samuelson effects & Strong in long run \\
-Rybczynski (structural change) & Strong (East Asia) \\
-\bottomrule\noalign{}
-\end{longtable}
+\textbf{Empirical evidence:} Factor content of trade is mixed (Trefler
+1995); India's labour-intensive export pattern is confirmed; wage
+convergence is partial (direction correct); Stolper-Samuelson
+distributional effects are strong in the long run; Rybczynski structural
+change is well-supported by East Asian data.
 
 \textbf{What H-O cannot explain:} Intra-industry trade; trade between
 similar countries; scale economies → \textbf{New Trade Theory} (Lecture

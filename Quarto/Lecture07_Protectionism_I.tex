@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -254,13 +281,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Protectionism I --- Tariffs \& Quotas},
+  pdftitle={Lecture 7: Protectionism I --- Tariffs \& Quotas},
   pdfauthor={Nithin M},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Protectionism I --- Tariffs \& Quotas}
+\title{Lecture 7: Protectionism I --- Tariffs \& Quotas}
 \subtitle{Econ 2203 \textbar{} International Trade and Policy in
 Agriculture}
 \author{Nithin M}
@@ -271,17 +298,7 @@ Agriculture}
 \frame{\titlepage}
 
 
-\begin{frame}{}
-\phantomsection\label{section}
-\textbf{Lecture 7}
-
-{Protectionism I}
-
-Tariffs \& Quotas
-\end{frame}
-
-\begin{frame}
-\begin{block}{Recap: Free Trade and Its Limits}
+\begin{frame}{Recap: Free Trade and Its Limits}
 \phantomsection\label{recap-free-trade-and-its-limits}
 \textbf{Comparative advantage} says free trade maximises global welfare:
 
@@ -301,11 +318,9 @@ Why?
 
 \textbf{Today's question:} When --- if ever --- is protection
 economically justified?
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Overview of Protectionist Instruments}
+\begin{frame}{Overview of Protectionist Instruments}
 \phantomsection\label{overview-of-protectionist-instruments}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
@@ -334,11 +349,9 @@ Pesticide MRLs \\
 
 \textbf{Lectures 7--8} cover each instrument in turn. NTBs revisited in
 Lecture 15.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{The Case for Protection}
+\begin{frame}{The Case for Protection}
 \phantomsection\label{the-case-for-protection}
 Six main arguments:
 
@@ -365,15 +378,9 @@ Six main arguments:
 theoretical foundations. Employment, revenue, and food security are
 \emph{political economy} arguments --- valid as policy goals but do not
 imply trade restriction is the \emph{best} tool.
-\end{block}
 \end{frame}
 
-\begin{frame}{Part I: Tariffs}
-\phantomsection\label{part-i-tariffs}
-\end{frame}
-
-\begin{frame}
-\begin{block}{What is a Tariff?}
+\begin{frame}{What is a Tariff?}
 \phantomsection\label{what-is-a-tariff}
 A \textbf{tariff} is a tax levied on imported goods at the border.
 
@@ -398,11 +405,9 @@ commodities.
 
 Domestic price rises → domestic production rises → imports fall →
 consumer surplus falls → government earns revenue
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Baseline: Free Trade Welfare}
+\begin{frame}{Baseline: Free Trade Welfare}
 \phantomsection\label{baseline-free-trade-welfare}
 \begin{figure}
 
@@ -412,8 +417,9 @@ consumer surplus falls → government earns revenue
 
 }
 
-\caption{\label{fig-free-trade}Free Trade: Domestic Supply, Demand, and
+\caption{Free Trade: Domestic Supply, Demand, and
 World Price Source: Author's illustration.}
+\label{fig-free-trade}
 
 \end{figure}%
 
@@ -422,11 +428,9 @@ World Price Source: Author's illustration.}
 
 At \(P_w=15\): domestic supply \(Q_s=10\), domestic demand \(Q_d=70\),
 \textbf{imports = 60 units}.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Partial Equilibrium Analysis of a Tariff}
+\begin{frame}{Partial Equilibrium Analysis of a Tariff}
 \phantomsection\label{partial-equilibrium-analysis-of-a-tariff}
 \textbf{Free trade equilibrium at \(P_w\):} Domestic supply \(Q_s^0\);
 domestic demand \(Q_d^0\); imports \(M_0 = Q_d^0 - Q_s^0\)
@@ -456,11 +460,9 @@ diverted to inefficient domestic production)
 priced out of market)
 
 Both are pure efficiency loss.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Effect of a Tariff --- Welfare Analysis}
+\begin{frame}{Effect of a Tariff --- Welfare Analysis}
 \phantomsection\label{effect-of-a-tariff-welfare-analysis}
 \begin{figure}
 
@@ -470,15 +472,14 @@ Both are pure efficiency loss.
 
 }
 
-\caption{\label{fig-tariff-welfare}Specific Tariff t=10: CS Lost, PS
+\caption{Specific Tariff t=10: CS Lost, PS
 Gained, DWL Triangles Source: Author's illustration.}
+\label{fig-tariff-welfare}
 
 \end{figure}%
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Welfare Accounting: The Tariff Identity}
+\begin{frame}{Welfare Accounting: The Tariff Identity}
 \phantomsection\label{welfare-accounting-the-tariff-identity}
 \[\Delta CS = -(A + B + C + D)\]
 
@@ -509,11 +510,9 @@ by the deadweight loss triangles \(B + D\).
 \(D = \tfrac{1}{2}(70{-}50)(25{-}15) = 100\) -
 \(B = \frac{1}{2}(30-10)(25-15) = 100\);
 \(D = \frac{1}{2}(70-50)(25-15) = 100\); \textbf{DWL = 200}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Winners and Losers from a Tariff}
+\begin{frame}{Winners and Losers from a Tariff}
 \phantomsection\label{winners-and-losers-from-a-tariff}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
@@ -544,11 +543,9 @@ tariff does not affect the world price.
 \textbf{Large country exception:} If India's import demand is large
 enough to move world prices, a tariff can improve India's \emph{terms of
 trade} → \textbf{optimal tariff} (see later).
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{India's Agricultural Tariff Structure}
+\begin{frame}{India's Agricultural Tariff Structure}
 \phantomsection\label{indias-agricultural-tariff-structure}
 \textbf{WTO commitments (FY2024):}
 
@@ -583,11 +580,9 @@ Milk (SMP) & 60\% \\
 
 India's bound rate of \textasciitilde114\% is one of the \textbf{highest
 among G20 nations} for agriculture.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{India's Agricultural Tariff Profile}
+\begin{frame}{India's Agricultural Tariff Profile}
 \phantomsection\label{indias-agricultural-tariff-profile}
 \begin{figure}
 
@@ -597,15 +592,14 @@ among G20 nations} for agriculture.
 
 }
 
-\caption{\label{fig-india-tariffs}India: Applied MFN Tariff Rates on Key
+\caption{India: Applied MFN Tariff Rates on Key
 Agricultural Imports (2024) Source: WTO, Tariff Profiles (2024); DGFT.}
+\label{fig-india-tariffs}
 
 \end{figure}%
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{The Tariff Rate Quota (TRQ)}
+\begin{frame}{The Tariff Rate Quota (TRQ)}
 \phantomsection\label{the-tariff-rate-quota-trq}
 A \textbf{TRQ} combines two tariff levels:
 
@@ -635,11 +629,9 @@ Crude soybean oil & 45\% & 100\% \\
 
 TRQs were bound at Uruguay Round (1994). India rarely fills its TRQ
 allocations.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Case Study: India's Palm Oil Import Duty}
+\begin{frame}{Case Study: India's Palm Oil Import Duty}
 \phantomsection\label{case-study-indias-palm-oil-import-duty}
 \textbf{Timeline:}
 
@@ -665,11 +657,9 @@ inflation rises.
 largest palm oil importer --- its import demand moves global prices. A
 tariff improves India's ToT at the cost of Malaysian/Indonesian
 exporters.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Effective Rate of Protection (ERP)}
+\begin{frame}{Effective Rate of Protection (ERP)}
 \phantomsection\label{effective-rate-of-protection-erp}
 \textbf{Nominal tariff} = tariff on the final good. \textbf{ERP} =
 protection on \emph{value added} in production, accounting for tariffs
@@ -697,15 +687,9 @@ escalation'' --- processing stages protected far more than raw material.
 India's tariff structure commonly exhibits cascading --- protecting
 processing industries at the expense of downstream consumers and raw
 material exporters.
-\end{block}
 \end{frame}
 
-\begin{frame}{Part II: Quotas}
-\phantomsection\label{part-ii-quotas}
-\end{frame}
-
-\begin{frame}
-\begin{block}{What is an Import Quota?}
+\begin{frame}{What is an Import Quota?}
 \phantomsection\label{what-is-an-import-quota}
 A \textbf{quota} is a quantitative restriction --- it sets the
 \emph{maximum volume} of a good that may be imported in a given period.
@@ -728,11 +712,9 @@ A \textbf{quota} is a quantitative restriction --- it sets the
 volume = \textbf{quota rent}. Who captures the rent? If licences
 \textbf{auctioned} → government; if licences \textbf{given away} →
 importers (or exporters under VER).
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Import Quota --- Same Effect, Different Mechanism}
+\begin{frame}{Import Quota --- Same Effect, Different Mechanism}
 \phantomsection\label{import-quota-same-effect-different-mechanism}
 \begin{figure}
 
@@ -742,15 +724,14 @@ importers (or exporters under VER).
 
 }
 
-\caption{\label{fig-quota}Import Quota: Quantity Restriction Creates
+\caption{Import Quota: Quantity Restriction Creates
 Quota Rent Instead of Revenue Source: Author's illustration.}
+\label{fig-quota}
 
 \end{figure}%
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Tariff vs Quota: Revenue vs Rent}
+\begin{frame}{Tariff vs Quota: Revenue vs Rent}
 \phantomsection\label{tariff-vs-quota-revenue-vs-rent}
 \textbf{Key difference in revenue allocation:}
 
@@ -772,11 +753,9 @@ exporters, quotas are \textbf{worse than equivalent tariffs} --- the
 domestic economy loses both the DWL and the revenue. This is why
 economists generally prefer tariffs over quotas, and why WTO's GATT
 Article XI prohibits quotas.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Tariff vs Quota: Similarities and Differences}
+\begin{frame}{Tariff vs Quota: Similarities and Differences}
 \phantomsection\label{tariff-vs-quota-similarities-and-differences}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
@@ -809,11 +788,9 @@ XI) \\
 (at fixed tariff price). Under a quota, imports are fixed --- domestic
 price must rise to clear the market. Quotas are more price-volatile and
 less transparent.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{India's Quantitative Restrictions: History}
+\begin{frame}{India's Quantitative Restrictions: History}
 \phantomsection\label{indias-quantitative-restrictions-history}
 \textbf{Pre-2001:} India maintained extensive QRs on agricultural
 imports citing \textbf{balance of payments} reasons (GATT Article
@@ -828,11 +805,9 @@ agricultural QRs.
 --- achieving similar protection through a WTO-consistent instrument.
 ``Tariffication'' converted quantity restrictions to price restrictions.
 Tariff flexibility (``water'') provides buffer for future protection.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{The Optimal Tariff Argument}
+\begin{frame}{The Optimal Tariff Argument}
 \phantomsection\label{the-optimal-tariff-argument}
 For a \textbf{large country}, an import tariff reduces demand for
 imports → world price falls → terms of trade improve.
@@ -855,11 +830,9 @@ exports (spices, pharmaceuticals), net welfare impact uncertain.
 \textbf{Optimal tariff is the only trade-restriction argument that
 raises national welfare in economic theory} --- and only for large
 countries.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Infant Industry Protection: India's Experience}
+\begin{frame}{Infant Industry Protection: India's Experience}
 \phantomsection\label{infant-industry-protection-indias-experience}
 \textbf{Argument:} A nascent domestic industry cannot compete initially
 due to high startup costs, lack of accumulated learning-by-doing, and
@@ -887,11 +860,9 @@ everything. Led to License Raj.
 \textbf{Key insight:} Protection that never ends becomes a permanent
 rent transfer from consumers to producers, not an investment in future
 competitiveness.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Voluntary Export Restraints (VERs)}
+\begin{frame}{Voluntary Export Restraints (VERs)}
 \phantomsection\label{voluntary-export-restraints-vers}
 A \textbf{VER} occurs when an exporting country ``voluntarily''
 restricts its exports to a trading partner --- usually under diplomatic
@@ -908,11 +879,9 @@ raised world prices --- effectively a VER from the perspective of
 importing nations like Bangladesh, Benin, and Senegal. India's rice
 export controls demonstrated India's market power as the world's
 dominant rice exporter.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Non-Tariff Barriers (NTBs): Preview}
+\begin{frame}{Non-Tariff Barriers (NTBs): Preview}
 \phantomsection\label{non-tariff-barriers-ntbs-preview}
 \textbf{NTBs} are behind-the-border measures that restrict trade without
 an explicit tariff or quota:
@@ -936,11 +905,9 @@ NTBs have risen to replace them. India's rejection of GM soybean imports
 duties on Indian shrimp are all NTB-related disputes.
 
 \textbf{Detailed treatment: Lecture 15.}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Summary: Tariffs and Quotas}
+\begin{frame}{Summary: Tariffs and Quotas}
 \phantomsection\label{summary-tariffs-and-quotas}
 \textbf{Core findings:}
 
@@ -971,16 +938,14 @@ duties on Indian shrimp are all NTB-related disputes.
 \item
   Welfare identity: \(\Delta W = -(B+D)\) for small country; may be
   positive for large country at optimal tariff.
-\end{enumerate}}
+\end{enumerate}
 
 \textbf{India's agricultural protection architecture:} High applied
 tariffs + TRQs + licensing + SPS/NTBs = multi-layered protection. WTO
-constraints bind only at the margins.
-\end{block}
+constraints bind only at the margins.}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Next Lecture}
+\begin{frame}{Next Lecture}
 \phantomsection\label{next-lecture}
 \textbf{Lecture 8 --- Protectionism II: Subsidies, Dumping \& Cartels}
 \emph{June 16, 2026}
@@ -992,26 +957,29 @@ constraints bind only at the margins.
 \item
   India's MSP and WTO's Amber Box rules
 \item
-  Fertiliser subsidies and trade distortion
-\item
   Dumping: definition, types, anti-dumping duties
 \item
   India as the world's top anti-dumping user
 \item
   Agricultural cartels and commodity agreements
+\end{itemize}
+
+\note{\begin{itemize}
+\tightlist
+\item
+  Fertiliser subsidies and trade distortion
 \item
   India's rice export ban (2023) as market power exercise
 \end{itemize}
 
 \textbf{Preparation:} Read Krugman, Obstfeld \& Melitz, Ch. 9 (Export
 Subsidies and Import Quotas). Review India's WTO notification on
-domestic support (2022).
-\end{block}
+domestic support (2022).}
 \end{frame}
 
-\begin{frame}{Appendix}
-\phantomsection\label{appendix}
-\begin{block}{Additional Resources}
+\section{Appendix}\label{appendix}
+
+\begin{frame}{Additional Resources}
 \phantomsection\label{additional-resources}
 \textbf{Further Reading}
 
@@ -1038,7 +1006,6 @@ domestic support (2022).
 \item
   WTO: Tariff and trade databases
 \end{itemize}
-\end{block}
 \end{frame}
 
 

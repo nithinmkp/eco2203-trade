@@ -1,5 +1,5 @@
 ---
-title: "Theories of Trade II: Comparative Advantage"
+title: "Lecture 4: Theories of Trade II — Comparative Advantage"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

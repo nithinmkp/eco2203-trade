@@ -1,5 +1,5 @@
 ---
-title: "Introduction to International Trade"
+title: "Lecture 1: Introduction to International Trade"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

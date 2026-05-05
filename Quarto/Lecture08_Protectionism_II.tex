@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -254,13 +281,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Protectionism II --- Subsidies, Dumping \& Cartels},
+  pdftitle={Lecture 8: Protectionism II --- Subsidies, Dumping \& Cartels},
   pdfauthor={Nithin M},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Protectionism II --- Subsidies, Dumping \& Cartels}
+\title{Lecture 8: Protectionism II --- Subsidies, Dumping \& Cartels}
 \subtitle{Econ 2203 \textbar{} International Trade and Policy in
 Agriculture}
 \author{Nithin M}
@@ -271,17 +298,7 @@ Agriculture}
 \frame{\titlepage}
 
 
-\begin{frame}{}
-\phantomsection\label{section}
-\textbf{Lecture 8}
-
-{Protectionism II}
-
-Export Subsidies, Dumping \& Cartels
-\end{frame}
-
-\begin{frame}
-\begin{block}{Recap: Tariffs and Quotas}
+\begin{frame}{Recap: Tariffs and Quotas}
 \phantomsection\label{recap-tariffs-and-quotas}
 \textbf{Last lecture (L7):} border instruments that restrict imports
 
@@ -308,15 +325,9 @@ consumers and taxpayers bear the cost:
 \(\text{Producer surplus gain} > \text{Consumer + taxpayer loss?}\) ---
 usually \textbf{no} in aggregate, but politically organised producers
 win.
-\end{block}
 \end{frame}
 
-\begin{frame}{Part I: Export Subsidies}
-\phantomsection\label{part-i-export-subsidies}
-\end{frame}
-
-\begin{frame}
-\begin{block}{What Is an Export Subsidy?}
+\begin{frame}{What Is an Export Subsidy?}
 \phantomsection\label{what-is-an-export-subsidy}
 An \textbf{export subsidy} is a direct government payment \(s\) per unit
 exported.
@@ -343,11 +354,9 @@ Government & \textbf{Pays} & \(s \times \text{export volume}\) \\
 supply increases → terms of trade deteriorate → exporter loses even
 more:
 \(\Delta W_{\text{large country}} < \Delta W_{\text{small country}} < 0\)
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Export Subsidy: Welfare Diagram}
+\begin{frame}{Export Subsidy: Welfare Diagram}
 \phantomsection\label{export-subsidy-welfare-diagram}
 \begin{figure}
 
@@ -357,15 +366,14 @@ more:
 
 }
 
-\caption{\label{fig-export-subsidy}Export Subsidy: Welfare Analysis for
+\caption{Export Subsidy: Welfare Analysis for
 the Exporting Country Source: Author's illustration.}
+\label{fig-export-subsidy}
 
 \end{figure}%
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Welfare Accounting: Export Subsidy}
+\begin{frame}{Welfare Accounting: Export Subsidy}
 \phantomsection\label{welfare-accounting-export-subsidy}
 \textbf{Full decomposition (exporting country, small-country case):}
 
@@ -399,11 +407,9 @@ Area & Formula & Value \\
 
 \(\Delta W = -(b+d) = -(25+25) = -50\); Govt pays: \((b+c+d) = 200\); PS
 gains: \((a+b+c) = 225\); CS loses: \(a = 50\)
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{India's Export Subsidies: Sugar Case (WTO DS579)}
+\begin{frame}{India's Export Subsidies: Sugar Case (WTO DS579)}
 \phantomsection\label{indias-export-subsidies-sugar-case-wto-ds579}
 \textbf{Background:} India's sugar support involves: SMP (Statutory
 Minimum Price); FRP (Fair and Remunerative Price); production assistance
@@ -431,11 +437,9 @@ support food security and rural livelihoods.''
 \textbf{Market impact:} India's subsidised sugar exports depress world
 prices by an estimated 3--7\% --- harming Brazil, Thailand, and African
 sugar exporters.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{MSP, FCI, and the Peace Clause}
+\begin{frame}{MSP, FCI, and the Peace Clause}
 \phantomsection\label{msp-fci-and-the-peace-clause}
 \textbf{MSP mechanism:} CACP recommends MSP for 23 crops pre-season;
 FCI/NAFED/CCI procure at MSP when market falls below; surplus procured
@@ -465,15 +469,9 @@ still pending. India insists on a permanent peace clause without the
 non-distortion condition. USA/EU resist --- argue India's 800M
 tonne/year FCI operations are massively trade-distorting.
 \textbf{High-stakes stalemate.}
-\end{block}
 \end{frame}
 
-\begin{frame}{Part II: Dumping}
-\phantomsection\label{part-ii-dumping}
-\end{frame}
-
-\begin{frame}
-\begin{block}{What Is Dumping? Formal Definition}
+\begin{frame}{What Is Dumping? Formal Definition}
 \phantomsection\label{what-is-dumping-formal-definition}
 \textbf{WTO Anti-Dumping Agreement (Article 2):} Dumping occurs when the
 \textbf{export price} is below \textbf{normal value}:
@@ -493,11 +491,9 @@ disposal; learning curve; input subsidy pass-through.
 
 \textbf{Dumping ≠ comparative advantage:} Genuinely lower costs look
 like dumping when compared to high-cost domestic producers.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Types of Dumping}
+\begin{frame}{Types of Dumping}
 \phantomsection\label{types-of-dumping}
 \textbf{1. Sporadic Dumping:} Occasional disposal of excess inventory at
 below-normal price. \emph{India example:} Bumper harvest years → surplus
@@ -518,11 +514,9 @@ pricing abroad: \(P_d > P_x\) persistently.
 exporter must prevent re-importation of cheaply sold exports back into
 the home market. Methods: different packaging, branding, warranty
 restrictions, official import controls.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Dumping: Price Discrimination Diagram}
+\begin{frame}{Dumping: Price Discrimination Diagram}
 \phantomsection\label{dumping-price-discrimination-diagram}
 \begin{figure}
 
@@ -532,16 +526,15 @@ restrictions, official import controls.
 
 }
 
-\caption{\label{fig-dumping}Dumping as Price Discrimination: Domestic
+\caption{Dumping as Price Discrimination: Domestic
 Monopoly Price \textgreater{} Export Price Source: Author's
 illustration.}
+\label{fig-dumping}
 
 \end{figure}%
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Dumping: Formal Condition and Anti-Dumping Duty}
+\begin{frame}{Dumping: Formal Condition and Anti-Dumping Duty}
 \phantomsection\label{dumping-formal-condition-and-anti-dumping-duty}
 \textbf{Dumping condition (price discrimination version):}
 
@@ -573,11 +566,9 @@ Net welfare & Ambiguous --- DWL likely \\
 \(\Delta W = -b - d + \text{PS gain}\) --- if domestic production is
 efficient, \(\Delta W\) may be positive; if ADD is protectionist,
 \(\Delta W < 0\).
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{India's Anti-Dumping Experience}
+\begin{frame}{India's Anti-Dumping Experience}
 \phantomsection\label{indias-anti-dumping-experience}
 \begin{figure}
 
@@ -587,16 +578,15 @@ efficient, \(\Delta W\) may be positive; if ADD is protectionist,
 
 }
 
-\caption{\label{fig-india-add}India: Anti-Dumping Investigations
+\caption{India: Anti-Dumping Investigations
 Initiated by Sector (2015--2024) Source: DGTR, Ministry of Commerce,
 GoI.}
+\label{fig-india-add}
 
 \end{figure}%
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Indian Agriculture Facing Dumping Allegations Abroad}
+\begin{frame}{Indian Agriculture Facing Dumping Allegations Abroad}
 \phantomsection\label{indian-agriculture-facing-dumping-allegations-abroad}
 \textbf{Indian shrimp exports (USA):} USA imposed CVD + AD duties on
 Indian shrimp (2003, 2013, 2023); margin of dumping: 4.98--6.3\% (2023
@@ -617,15 +607,9 @@ high-cost producers in developed countries.
 \(P_{\text{India}} < P_{\text{USA}} \not\Rightarrow \text{dumping}\).
 Dumping requires \(P_{\text{export}} < \text{normal value}\). In
 practice, AD is often used as disguised protectionism.
-\end{block}
 \end{frame}
 
-\begin{frame}{Part III: Voluntary Export Restraints}
-\phantomsection\label{part-iii-voluntary-export-restraints}
-\end{frame}
-
-\begin{frame}
-\begin{block}{VERs --- Quotas Imposed ``Voluntarily'' by Exporters}
+\begin{frame}{VERs --- Quotas Imposed ``Voluntarily'' by Exporters}
 \phantomsection\label{vers-quotas-imposed-voluntarily-by-exporters}
 A \textbf{Voluntary Export Restraint (VER)} is an agreement where the
 \emph{exporting} country ``voluntarily'' limits its exports --- usually
@@ -655,11 +639,9 @@ VER & \textbf{Foreign exporter} & \textbf{No (UR banned)} \\
 Uruguay Round (1994): VERs explicitly prohibited under WTO safeguards
 agreement. But ``Orderly Marketing Arrangements'' and ``grey area''
 bilateral deals persist under different names.
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{VER Welfare Analysis}
+\begin{frame}{VER Welfare Analysis}
 \phantomsection\label{ver-welfare-analysis}
 A VER is economically equivalent to an import quota --- but worse for
 the importing country:
@@ -692,15 +674,9 @@ holders.
 
 Under tariff: \(\Delta W_{\text{tariff}} = -(b+d) + t \cdot M\); Under
 VER: \(\Delta W_{\text{VER}} = -(b+c+d) < \Delta W_{\text{tariff}}\)
-\end{block}
 \end{frame}
 
-\begin{frame}{Part IV: Cartels \& International Commodity Agreements}
-\phantomsection\label{part-iv-cartels-international-commodity-agreements}
-\end{frame}
-
-\begin{frame}
-\begin{block}{What Is a Cartel? Conditions for Success}
+\begin{frame}{What Is a Cartel? Conditions for Success}
 \phantomsection\label{what-is-a-cartel-conditions-for-success}
 A \textbf{cartel} is a formal/informal agreement among producers to
 restrict output, fix prices, or divide markets.
@@ -721,87 +697,91 @@ substitutes (rice ↔ wheat ↔ maize); perishable goods; low entry
 barriers; political pressure to sell for domestic food security.
 
 \[\Rightarrow \text{Agricultural cartels are theoretically possible, practically unstable}\]
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{International Commodity Agreements: Instruments}
-\phantomsection\label{international-commodity-agreements-instruments}
-\textbf{ICAs} --- multilateral agreements between producing and
-consuming countries to stabilise prices.
+\begin{frame}{International Commodity Agreements (ICAs): instruments}
+\phantomsection\label{international-commodity-agreements-icas-instruments}
+ICAs are multilateral attempts to \textbf{stabilise commodity prices}.
 
-\textbf{Instruments used:}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Buffer stocks:} buy when price is ``too low'', sell when ``too
+  high''
+\item
+  \textbf{Export quotas:} allocate export shares across members
+\item
+  \textbf{Long-term contracts:} guarantee volumes at agreed prices
+\item
+  \textbf{Works best when:} large market share, homogeneous commodity,
+  credible financing
+\item
+  \textbf{Key caution:} agriculture has close substitutes → stability is
+  hard
+\end{itemize}
+\end{frame}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Type
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Mechanism
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\textbf{Buffer stock} & Buy when \(P < P_{floor}\); sell when
-\(P > P_{ceiling}\) \\
-\textbf{Export quota} & Allocate export shares to members \\
-\textbf{Multilateral contract} & Guaranteed volumes at agreed prices \\
-\bottomrule\noalign{}
-\end{longtable}
+\begin{frame}{Why ICAs fail in practice}
+\phantomsection\label{why-icas-fail-in-practice}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Free-rider problem:} non-members expand exports when prices
+  rise
+\item
+  \textbf{Cheating:} members secretly exceed quotas
+\item
+  \textbf{Financing constraint:} buffer stocks become fiscally
+  unsustainable
+\item
+  \textbf{Substitutes + tech change:} demand shifts undermine price
+  bands
+\item
+  \textbf{North--South conflict:} producers want high prices; consumers
+  want low prices
+\end{itemize}
 
-\textbf{Conditions for ICA success:} Large share of world trade covered;
-homogeneous commodity; adequate buffer stock financing; commitment from
-both producers and consumers; no close substitutes.
+\note{UNCTAD's Integrated Programme for Commodities (1976) proposed 18
+ICAs; most collapsed within \textasciitilde15 years.}
+\end{frame}
 
-\textbf{Why ICAs fail:} (1) Free-rider: non-members export outside quota
-at high prices; (2) cheating: members secretly exceed quotas; (3) buffer
-stock cost for perishable agri-commodities; (4) technological change
-(substitutes undermine demand); (5) North-South conflict: producers want
-high prices; consumers want low prices.
-
-\textbf{UNCTAD's Integrated Programme for Commodities (1976):} ambitious
-proposal for 18 ICAs --- most collapsed within 15 years.
-\end{block}
-
-\begin{block}{History of International Commodity Agreements}
+\begin{frame}{History of International Commodity Agreements}
 \phantomsection\label{history-of-international-commodity-agreements}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{Historical ICAs and their fate:}
+\textbf{Examples and outcomes:}
 
-\begin{longtable}[]{@{}lll@{}}
-\toprule\noalign{}
-Agreement & Commodity & Outcome \\
-\midrule\noalign{}
-\endhead
-ICO & Coffee & Collapsed 1989 (free-rider) \\
-ITA & Tin & Collapsed 1985 (buffer stock bankrupt) \\
-ISA & Sugar & Weakened --- price provisions abandoned \\
-IJO & Jute & Wound down 2014 \\
-ICA & Cocoa & Multiple failures; ICCO restructured \\
-INRA & Natural Rubber & Collapsed 1999 \\
-\bottomrule\noalign{}
-\end{longtable}
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{The tin crisis (1985) --- cautionary tale:}
-
-The International Tin Agreement maintained a buffer stock. By 1985,
-prices fell sharply. The buffer stock manager ran out of money --- could
-no longer buy tin. The ITA collapsed overnight, taking with it the
-London Metal Exchange tin market. Prices plunged 40\% in days.
-
-\textbf{Lesson:} Buffer stocks require unlimited financing or credible
-price bands. Neither is politically sustainable.
-\end{column}
-\end{columns}
-\end{block}
+\begin{itemize}
+\tightlist
+\item
+  Coffee (ICO): collapsed (free-riding)
+\item
+  Tin (ITA): collapsed (buffer-stock bankruptcy)
+\item
+  Sugar (ISA): weakened (price provisions abandoned)
+\item
+  Jute (IJO): wound down (2014)
+\item
+  Cocoa (ICCO): repeated failures; restructured
+\end{itemize}
 \end{frame}
 
-\begin{frame}
-\begin{block}{India's Rice Export Ban (2023): Unilateral Market Power}
+\begin{frame}{Tin crisis (1985): why buffer stocks fail}
+\phantomsection\label{tin-crisis-1985-why-buffer-stocks-fail}
+\begin{itemize}
+\tightlist
+\item
+  Prices fell sharply; buffer-stock manager ran out of funds
+\item
+  Agreement collapsed and disrupted the tin market
+\item
+  Prices plunged by about \textbf{40\%} in days
+\item
+  Price bands require \textbf{credible financing} (hard politically)
+\item
+  Takeaway: ICAs are fragile when compliance and funding are weak
+\end{itemize}
+\end{frame}
+
+\begin{frame}{India's Rice Export Ban (2023): Unilateral Market Power}
 \phantomsection\label{indias-rice-export-ban-2023-unilateral-market-power}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -862,11 +842,9 @@ food security threat.
 global externalities.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Strategic Trade Policy and Infant Industry Argument}
+\begin{frame}{Strategic Trade Policy and Infant Industry Argument}
 \phantomsection\label{strategic-trade-policy-and-infant-industry-argument}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -908,11 +886,9 @@ spillovers (externalities) that private firm cannot capture.
 \[\text{Subsidy justified} \iff \text{market failure exists}\]
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{WTO Disciplines: Key Rules Summary}
+\begin{frame}{WTO Disciplines: Key Rules Summary}
 \phantomsection\label{wto-disciplines-key-rules-summary}
 \begin{columns}[T]
 \begin{column}{0.55\linewidth}
@@ -941,9 +917,9 @@ competition law \\
 \bottomrule\noalign{}
 \end{longtable}
 
-\textbf{Key gaps in WTO rules:} - Export restrictions (increasingly used
-by India, China, Indonesia) - State trading enterprises (FCI, COFCO) -
-Input subsidies to developing countries
+\note{\textbf{Key gaps in WTO rules:} - Export restrictions
+(increasingly used by India, China, Indonesia) - State trading
+enterprises (FCI, COFCO) - Input subsidies to developing countries}
 \end{column}
 
 \begin{column}{0.45\linewidth}
@@ -965,11 +941,9 @@ India has used CVDs less frequently than AD duties --- but use is
 growing as India targets subsidised Chinese and EU agricultural exports.
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Key Takeaways: Lecture 8}
+\begin{frame}{Key Takeaways: Lecture 8}
 \phantomsection\label{key-takeaways-lecture-8}
 \textbf{1. Export subsidies} distort production and trade; harm
 importing-country farmers; impose fiscal costs on the subsidising
@@ -994,14 +968,12 @@ substitutes, perishable goods, easy entry. But India's unilateral market
 power in rice (40\% of world exports) achieves cartel-like effects
 without formal coordination.
 
-\textbf{6. WTO disciplines} have significant gaps --- particularly on
-export restrictions, state trading, and developing-country input
-subsidies. This creates ongoing North-South tensions.
-\end{block}
+\note{\textbf{6. WTO disciplines} have significant gaps --- particularly
+on export restrictions, state trading, and developing-country input
+subsidies. This creates ongoing North-South tensions.}
 \end{frame}
 
-\begin{frame}
-\begin{block}{Next Lecture Preview}
+\begin{frame}{Next Lecture Preview}
 \phantomsection\label{next-lecture-preview}
 \textbf{Lecture 9 --- Balance of Trade \& Balance of Payments}
 \emph{June 20, 2026}
@@ -1020,6 +992,10 @@ subsidies. This creates ongoing North-South tensions.
   Capital and financial account: FDI vs FPI, RBI reserve management
 \item
   Marshall-Lerner condition: \(|e_X| + |e_M| > 1\)
+\end{itemize}
+
+\note{\begin{itemize}
+\tightlist
 \item
   J-curve effect: why depreciation worsens trade balance before
   improving it
@@ -1032,13 +1008,12 @@ subsidies. This creates ongoing North-South tensions.
 
 \textbf{Preparation:} Read Salvatore Ch. 12--13; RBI Annual Report
 2023-24, External Sector chapter. Review IS-LM model --- we will use it
-to analyse policy responses to BoP disequilibrium.
-\end{block}
+to analyse policy responses to BoP disequilibrium.}
 \end{frame}
 
-\begin{frame}{Appendix}
-\phantomsection\label{appendix}
-\begin{block}{Additional Resources}
+\section{Appendix}\label{appendix}
+
+\begin{frame}{Additional Resources}
 \phantomsection\label{additional-resources}
 \begin{columns}[T]
 \begin{column}{0.5\linewidth}
@@ -1071,7 +1046,6 @@ to analyse policy responses to BoP disequilibrium.
 \end{itemize}
 \end{column}
 \end{columns}
-\end{block}
 \end{frame}
 
 

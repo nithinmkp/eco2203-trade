@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -271,20 +298,9 @@ Agriculture}
 \frame{\titlepage}
 
 
-\begin{frame}{}
-\phantomsection\label{section}
-\textbf{Lecture 18 --- Final Lecture}
-
-{India's Agricultural Trade and Foreign Trade Policy}
-
-\emph{Bringing It All Together}
-\end{frame}
-
 \begin{frame}
 \begin{block}{Opening Reflection}
 \phantomsection\label{opening-reflection}
-\begin{columns}[T]
-\begin{column}{0.58\linewidth}
 \textbf{Eighteen weeks ago, we asked:}
 
 \begin{quote}
@@ -292,45 +308,28 @@ Agriculture}
 million Indians who depend on agriculture for their livelihoods?}
 \end{quote}
 
-Today, we can answer that question \textbf{fully} --- with theory, data,
-institutions, and policy.
+Today, we can answer this with \textbf{theory + data + institutions +
+policy}.
+\end{block}
+\end{frame}
 
-We have traced the journey from Ricardo's simple insight about
-comparative advantage, through the architecture of WTO rules, the
-mechanics of import tariffs, the politics of MSP and food security, the
-diplomacy of phytosanitary protocols, and the paperwork of a Shipping
-Bill on ICEGATE.
-
-\textbf{This is what Econ 2203 has been about.}
-\end{column}
-
-\begin{column}{0.42\linewidth}
-\textbf{What we built, week by week:}
-
+\begin{frame}
+\begin{block}{What we built (in 5 blocks)}
+\phantomsection\label{what-we-built-in-5-blocks}
 \begin{itemize}
 \tightlist
 \item
   \textbf{Weeks 1--2:} Why trade? Gains and features
 \item
-  \textbf{Weeks 3--6:} Theory --- Ricardo to Heckscher-Ohlin to New
-  Trade Theory
+  \textbf{Weeks 3--6:} Core theory (Ricardo → H--O → new trade)
 \item
-  \textbf{Weeks 7--8:} Protectionism --- tariffs, quotas, subsidies
+  \textbf{Weeks 7--8:} Protectionism tools (tariffs, quotas, subsidies)
 \item
-  \textbf{Weeks 9--10:} Balance of Payments and India's external sector
+  \textbf{Weeks 9--12:} BoP + exchange rates (macro context)
 \item
-  \textbf{Weeks 11--12:} Foreign exchange markets
-\item
-  \textbf{Weeks 13--14:} WTO, AoA, and India's negotiating positions
-\item
-  \textbf{Week 15:} SPS barriers --- India's compliance challenge
-\item
-  \textbf{Weeks 16--17:} Export procedures and organizations
-\item
-  \textbf{Week 18:} Today --- synthesis, FTP, and vision 2030
+  \textbf{Weeks 13--18:} WTO/AoA/SPS + export procedures + India
+  strategy
 \end{itemize}
-\end{column}
-\end{columns}
 \end{block}
 \end{frame}
 
@@ -383,447 +382,357 @@ study of how societies navigate this tension.
 
 }
 
-\caption{\label{fig-ftp-timeline}India's trade policy evolved from the
+\caption{India's trade policy evolved from the
 1991 LPG reforms through WTO accession and successive FTPs, culminating
 in the landmark FTP 2023-28 targeting USD 2 trillion by 2030. Source:
 DGFT, Ministry of Commerce and Industry, GoI.}
+\label{fig-ftp-timeline}
 
 \end{figure}%
 \end{block}
 \end{frame}
 
 \begin{frame}
-\begin{block}{India's Agricultural Trade: The Big Picture (FY2024)}
-\phantomsection\label{indias-agricultural-trade-the-big-picture-fy2024}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{India's agricultural trade balance (FY2024):}
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule\noalign{}
-& FY2024 & FY2022 (Record) \\
-\midrule\noalign{}
-\endhead
-Agri Exports & \textbf{\$43.7 billion} & \$53.1 billion \\
-Agri Imports & \textbf{\$28.2 billion} & \$31.0 billion \\
-Trade Surplus & \textbf{\$15.5 billion} & \$22.1 billion \\
-\bottomrule\noalign{}
-\end{longtable}
-
-\textbf{India's global rank:}
-
+\begin{block}{India's agricultural trade (FY2024): headline numbers}
+\phantomsection\label{indias-agricultural-trade-fy2024-headline-numbers}
 \begin{itemize}
 \tightlist
 \item
-  \textbf{9th largest agricultural exporter} globally (WTO, 2024)
+  \textbf{Exports:} \$43.7B
 \item
-  Agriculture = \textbf{11\% of India's total merchandise exports}
+  \textbf{Imports:} \$28.2B
 \item
-  India accounts for \textasciitilde2.5\% of global agricultural trade
+  \textbf{Surplus:} \$15.5B
+\item
+  \textbf{Global rank:} \textasciitilde9th largest agri exporter (WTO)
+\item
+  Agriculture ≈ \textbf{11\%} of India's merchandise exports
 \end{itemize}
 
-\textbf{Ten-year trend (FY2015--FY2024):}
-
-FY2015: \$33B → FY2019: \$38B → FY2022: \textbf{\$53B (record)} →
-FY2023: \$53B → FY2024: \$43.7B
-
-Decline post-FY2022: rice export ban (Aug 2023) removed
-\textasciitilde\$6B of rice export revenue; global commodity price
-correction.
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{What explains the FY2022 record?}
-
-\begin{enumerate}
-\tightlist
-\item
-  Post-pandemic food commodity price spike: global wheat, rice, edible
-  oil prices hit multi-decade highs
-\item
-  Russia-Ukraine war: major exporters disrupted; India stepped in for
-  wheat (March--May 2022)
-\item
-  Basmati boom: Gulf demand surge
-\item
-  Shrimp expansion: Andhra aquaculture at peak output
-\end{enumerate}
-
-\textbf{What explains the FY2024 decline?}
-
-\begin{enumerate}
-\tightlist
-\item
-  Non-basmati rice export ban (August 2023) --- removed 4M MT from
-  pipeline
-\item
-  Global commodity price correction --- palm oil, wheat down 30--40\%
-  from peaks
-\item
-  Cotton price decline --- Bt cotton bollworm resistance raised costs
-\end{enumerate}
-
-Despite the decline, \$43.7B remains the \textbf{3rd highest ever.} The
-long-run trajectory is strongly upward.
-\end{column}
-\end{columns}
+FY2024 is lower than the FY2022 peak, but still among India's
+highest-ever export years.
 \end{block}
 \end{frame}
 
 \begin{frame}
-\begin{block}{Export Composition: What India Sells to the World}
-\phantomsection\label{export-composition-what-india-sells-to-the-world}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{India's agri export basket (FY2024, \textasciitilde\$43.7B):}
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule\noalign{}
-Product & Value & Share \\
-\midrule\noalign{}
-\endhead
-Basmati rice & \$5.8B & 13.3\% \\
-Non-basmati rice & \$6.4B & 14.6\% \\
-\textbf{Marine products} & \$7.6B & \textbf{17.4\%} \\
-Processed food & \$4.8B & 11.0\% \\
-Spices & \$3.7B & 8.5\% \\
-Cotton & \$2.7B & 6.2\% \\
-Coffee & \$1.2B & 2.7\% \\
-Tea & \$0.8B & 1.8\% \\
-Fruits and vegetables & \$1.5B & 3.4\% \\
-Sugar & \$1.5B & 3.4\% \\
-Others & \$7.7B & 17.6\% \\
-\bottomrule\noalign{}
-\end{longtable}
-
-{Total rice = \$12.2B = 28\% of agricultural exports.}
-
-India accounts for \textbf{40\%+ of global rice trade.} This is market
-power --- but also concentration risk.
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{The rice concentration problem:}
-
-When India restricts rice exports (as in 2023), global prices spike ---
-India is price-setter, not price-taker for rice. This creates:
-
+\begin{block}{Why FY2022 was a record year}
+\phantomsection\label{why-fy2022-was-a-record-year}
 \begin{itemize}
 \tightlist
 \item
-  {Geopolitical responsibility:} Bangladesh, Senegal, Indonesia depend
-  on Indian rice for food security
+  Global food commodity prices spiked post-pandemic
 \item
-  {Policy credibility risk:} export bans damage India's reputation as
-  reliable supplier
+  Russia--Ukraine war disrupted major suppliers
 \item
-  {Revenue volatility:} One policy decision swings India's agri export
-  earnings by \$3--4B
+  Strong basmati demand (Gulf)
+\item
+  Marine exports expanded (high aquaculture output)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Why FY2024 fell from the peak}
+\phantomsection\label{why-fy2024-fell-from-the-peak}
+\begin{itemize}
+\tightlist
+\item
+  Rice export restrictions tightened from 2023 (credibility + volumes)
+\item
+  Global commodity prices corrected from highs
+\item
+  Cotton profitability weakened (cost + pest pressure)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Export composition (FY2024): where the dollars come from}
+\phantomsection\label{export-composition-fy2024-where-the-dollars-come-from}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Marine products} (\textasciitilde17\%): India's single largest
+  agri export category
+\item
+  \textbf{Non-basmati rice} (\textasciitilde15\%)
+\item
+  \textbf{Basmati rice} (\textasciitilde13\%)
+\item
+  \textbf{Processed foods} (\textasciitilde11\%)
+\item
+  \textbf{Spices} (\textasciitilde9\%)
 \end{itemize}
 
-\textbf{Lesson for FTP:} India needs to \textbf{diversify} its export
-basket --- reduce rice's 28\% share to below 20\% by growing processed
-food, spices, marine, and organic exports. Over-dependence on any single
-commodity creates fragility in both domestic policy and international
-trade relationships.
-\end{column}
-\end{columns}
+Rice is \textasciitilde{}\textbf{28\%} of agri exports in FY2024 →
+market power, but also concentration risk.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Rice concentration: market power vs credibility}
+\phantomsection\label{rice-concentration-market-power-vs-credibility}
+\begin{itemize}
+\tightlist
+\item
+  When India restricts rice exports, global prices can spike
+\item
+  Many countries rely on Indian rice for food security
+\item
+  Export controls create \textbf{credibility risk} for India as a
+  supplier
+\item
+  Export earnings become more volatile (policy shocks)
+\end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}
 \begin{block}{Geographic Distribution: Where India Exports}
 \phantomsection\label{geographic-distribution-where-india-exports}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{India's agri export destinations (FY2024):}
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule\noalign{}
-Destination & Share & Key Products \\
-\midrule\noalign{}
-\endhead
-USA & 13\% & Marine, processed food, spices \\
-UAE & 10\% & Rice, meat, fruits, spices \\
-Bangladesh & 9\% & Rice, onion, sugar, cotton \\
-China & 7\% & Castor oil, cotton, marine \\
-Saudi Arabia & 5\% & Rice, meat, fruits \\
-Vietnam & 4\% & Cashew, cotton \\
-UK & 3\% & Basmati, processed food \\
-Africa & 8\% & Rice, pulses, sugar \\
-Southeast Asia & 7\% & Marine, spices, rice \\
-Others & 34\% & Diversified \\
-\bottomrule\noalign{}
-\end{longtable}
-
-\textbf{Growing markets:}
+India's agri export destinations (FY2024, approximate shares):
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Japan and South Korea:} Organic, premium spices, basmati ---
-  high unit value
+  USA (\textasciitilde13\%): marine, processed food, spices
 \item
-  \textbf{East Africa:} Rice and pulses --- growing demand as
-  urbanisation accelerates
+  UAE (\textasciitilde10\%): rice, meat, fruits, spices
 \item
-  \textbf{Gulf (Oman, Qatar, Kuwait):} Processed food and dairy demand
-  rising
+  Bangladesh (\textasciitilde9\%): rice, onion, sugar, cotton
+\item
+  China (\textasciitilde7\%): castor oil, cotton, marine
+\item
+  Saudi Arabia (\textasciitilde5\%): rice, meat, fruits
 \end{itemize}
-\end{column}
 
-\begin{column}{0.45\linewidth}
-\textbf{The India-UAE CEPA advantage (May 2022):}
+\note{We will discuss the broader split (Africa, Southeast Asia, UK,
+etc.) orally. Key point for the exam: India is strong in a few
+corridors, but diversification matters.}
+\end{block}
+\end{frame}
 
-India's first significant FTA with agricultural chapters --- a model for
-future agreements.
+\begin{frame}
+\begin{block}{Emerging markets to watch}
+\phantomsection\label{emerging-markets-to-watch}
+\begin{itemize}
+\tightlist
+\item
+  Japan \& South Korea: premium + organic; high unit value
+\item
+  East Africa: rice and pulses; urban demand rising
+\item
+  Gulf (Oman, Qatar, Kuwait): processed food + dairy demand
+\item
+  Southeast Asia: marine + spices + rice; fast-growing middle class
+\end{itemize}
+\end{block}
+\end{frame}
 
-\textbf{Agricultural gains for India under CEPA:}
+\begin{frame}
+\begin{block}{Case: India--UAE CEPA (May 2022)}
+\phantomsection\label{case-indiauae-cepa-may-2022}
+What CEPA did (agriculture examples):
 
 \begin{itemize}
 \tightlist
 \item
-  Basmati rice: zero duty (was 5\%)
+  Preferential tariffs for basmati, seafood, fruits, and processed foods
+  (select lines)
 \item
-  Seafood: zero duty on 60+ species (was 5--7\%)
-\item
-  Mango, banana, dates: duty-free
-\item
-  Processed food: phased tariff reduction to zero
+  Early outcome: India--UAE agri trade up \textasciitilde28\% (FY2023)
 \end{itemize}
 
-\textbf{FY2023 result:} India-UAE agri trade up \textbf{28\%} in first
-year of CEPA.
-
-\textbf{Future FTAs being negotiated:}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{India-UK FTA:} Could unlock premium seafood, spice, organic,
-  and basmati access to post-Brexit UK market
-\item
-  \textbf{India-EU FTA:} Most complex but highest value --- EU is
-  world's largest agri importer; GI recognition critical
-\end{itemize}
-
-FTAs with agricultural chapters are the next frontier for Indian agri
-exports. The gains from CEPA show what is possible.
-\end{column}
-\end{columns}
+Takeaway: FTAs with meaningful agricultural chapters can raise market
+access and incentivise quality upgrading.
 \end{block}
 \end{frame}
 
 \begin{frame}
 \begin{block}{Import Profile: India's Agricultural Dependencies}
 \phantomsection\label{import-profile-indias-agricultural-dependencies}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{India's agri imports (FY2024, \textasciitilde\$28.2B):}
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule\noalign{}
-Product & Value & Risk \\
-\midrule\noalign{}
-\endhead
-Palm oil (Indonesia/Malaysia) & \$9.5B & Critical \\
-Soybean oil (Argentina/Brazil) & \$2.5B & High \\
-Sunflower oil (Ukraine/Russia) & \$2.2B & High \\
-Pulses (Canada, Myanmar, Australia) & \$2.8B & Moderate \\
-Fresh fruits (USA, South Africa) & \$1.8B & Low \\
-Cashew (West Africa) & \$1.4B & Low \\
-Spices (Vietnam, Indonesia) & \$0.8B & Low \\
-\bottomrule\noalign{}
-\end{longtable}
-
-\textbf{The edible oil problem:}
-
-India imports \textasciitilde14 million MT of edible oil ---
-\textbf{65\% of consumption.} Total oil import bill:
-\textbf{\textasciitilde\$14.2 billion.} Three countries (Indonesia,
-Malaysia, Argentina) supply 90\% of this.
-
-India's agricultural trade surplus would be \textbf{\$29.7 billion}
-without the oil import drag.
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{Why edible oil dependence is a structural vulnerability:}
-
-\begin{enumerate}
-\tightlist
-\item
-  \textbf{Food security risk:} Indonesia's palm oil export ban
-  (April--May 2022) caused immediate price spike in Indian households;
-  sunflower oil crisis (Russia-Ukraine war, 2022)
-\item
-  \textbf{Forex drain:} \$14.2B per year leaves India's current account
-\item
-  \textbf{Geopolitical leverage:} Malaysia used palm oil access as
-  bargaining chip after India's Kashmir statement criticism (2019)
-\end{enumerate}
-
-\textbf{NMEO-OP (National Mission on Edible Oils --- Oil Palm, 2021):}
+India's biggest agricultural import exposure is \textbf{edible oils}.
 
 \begin{itemize}
 \tightlist
 \item
-  ₹11,040 crore over 5 years
+  Edible oils (palm + soy + sunflower): \textasciitilde\$14B+ annual
+  bill; \textasciitilde60--65\% of consumption imported
 \item
-  Target: expand oil palm to 10 lakh ha (Northeast + Andaman)
+  Pulses: \textasciitilde\$2--3B; key sources include Canada, Myanmar,
+  Australia
 \item
-  Current: \textasciitilde3.5 lakh ha
-\item
-  Progress: \textbf{slow} --- land availability constraints, 3--4 year
-  gestation, farmer preference for annual crops
+  Other items (fruits, cashew, spices) are smaller and less
+  macro-critical
 \end{itemize}
 
-Edible oil import dependence is India's \textbf{single largest agri
-trade vulnerability.} Domestic oilseed yield improvement is slower than
-demand growth --- the structural dependency may persist for 10--15 years
-despite policy intervention.
-\end{column}
-\end{columns}
+Key point: edible oils are the single largest driver of India's agri
+import vulnerability.
+
+\note{FY2024 headline agri imports: \textasciitilde\$28B (approx). Main
+suppliers: Indonesia/Malaysia (palm), Argentina/Brazil (soy),
+Ukraine/Russia (sunflower). Without the edible oil drag, the agri trade
+surplus would be much larger.}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Why edible oil dependence is a structural vulnerability}
+\phantomsection\label{why-edible-oil-dependence-is-a-structural-vulnerability}
+\begin{itemize}
+\tightlist
+\item
+  Household inflation sensitivity: global edible oil prices pass through
+  quickly
+\item
+  External vulnerability: export bans and war shocks can create sudden
+  shortages
+\item
+  Persistent gap: demand growth has outpaced domestic oilseed
+  productivity
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Policy response: NMEO--OP (2021)}
+\phantomsection\label{policy-response-nmeoop-2021}
+\begin{itemize}
+\tightlist
+\item
+  Goal: expand oil palm and raise domestic edible oil output
+\item
+  Constraints: land availability, 3--4 year gestation, crop-choice
+  incentives
+\item
+  Implication: dependence likely remains a medium-run constraint even
+  with policy push
+\end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}
 \begin{block}{The Value Addition Opportunity}
 \phantomsection\label{the-value-addition-opportunity}
-\begin{columns}[T]
-\begin{column}{0.58\linewidth}
-India overwhelmingly exports \textbf{raw or semi-processed} agricultural
-commodities. Three case studies in value-addition loss:
-
-\textbf{1. Cashew:} India is the world's 2nd largest raw cashew
-producer. But raw cashew nuts are exported to Vietnam and Brazil for
-processing. Vietnam processes, packages as W320/W180 grade, sells
-globally at \textbf{2.5--3× the raw price.} India loses processing jobs,
-value-added revenue, and brand ownership.
-
-\textbf{2. Turmeric:} India exports dried turmeric (bulk commodity):
-\$200M per year. Curcumin extract (the active compound) sells for
-\$30--80 per kg vs \$2/kg for raw turmeric. Japanese and German
-companies extract, encapsulate, and sell health supplements globally at
-\textbf{5--10× the raw material value.} India captures only the raw
-material margin.
-
-\textbf{3. Shrimp:} India exports mostly raw frozen shrimp. Breaded,
-marinated, stuffed, ready-to-cook formats command a \textbf{35--50\%
-price premium} over commodity-grade frozen shrimp. MPEDA's target:
-double value-added seafood from 18\% to 35\% of export mix by 2030.
-\end{column}
-
-\begin{column}{0.42\linewidth}
-\textbf{The value-chain imperative:}
-
-Moving up the value chain delivers:
+India often exports \textbf{raw / semi-processed} products. Value
+addition raises earnings per tonne.
 
 \begin{itemize}
 \tightlist
 \item
-  Higher export revenue per tonne
+  Value addition = processing + branding + standards + cold chain
 \item
-  More skilled processing and packaging jobs
+  Big gains are in processed foods, nutraceuticals, and ready-to-cook
+  formats
 \item
-  Brand equity: Indian turmeric supplements, Indian ready-to-eat meals,
-  Indian flavoured cashews
-\item
-  Reduced vulnerability to raw commodity price cycles
+  Binding constraints are typically quality compliance, scale, and
+  logistics
 \end{itemize}
-
-\textbf{FTP 2023--28 response:}
-
-\begin{itemize}
-\tightlist
-\item
-  RTE (Ready-to-Eat) meal exports as priority sector
-\item
-  Functional foods and nutraceuticals: turmeric capsules, ashwagandha
-  extracts
-\item
-  PM FME scheme: formalise 2 lakh micro food enterprises → FSSAI
-  compliant → export-ready
-\item
-  ODOP + GI: premium branding of regional specialty products
-\end{itemize}
-
-India's \textbf{processed food export target:} \$10B by 2027 (from
-\$4.8B in FY2024). The MOFPI's Mega Food Parks --- 24 operational as of
-FY2024 --- are India's vehicle for industrial-scale food processing.
-\end{column}
-\end{columns}
 \end{block}
 \end{frame}
 
 \begin{frame}
-\begin{block}{Foreign Trade Policy 2023--2028}
-\phantomsection\label{foreign-trade-policy-20232028}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-India's \textbf{FTP 2023--28} was released on \textbf{March 31, 2023} by
-the Ministry of Commerce.
-
-\textbf{Vision:} India's total merchandise + services exports to reach
-\textbf{\$2 trillion by 2030} (from \textasciitilde\$775B in FY2023).
-
-\textbf{The four strategic themes:}
-
-\begin{enumerate}
-\tightlist
-\item
-  {Incentive to Remission}: Move from export subsidies
-  (WTO-incompatible) to remission of embedded taxes --- RoDTEP as core
-  instrument
-\item
-  {Collaboration}: EPCs, industry associations, Export Houses, start-up
-  exporters
-\item
-  {Ease of Doing Business}: DARPAN platform (real-time incentive
-  tracking), paperless documentation
-\item
-  {Emerging Areas}: Millets, organic, e-commerce exports, services
-  integration
-\end{enumerate}
-
-FTP 2023--28 is India's \textbf{first policy explicitly targeting
-e-commerce exports} --- a revolutionary departure from goods-only
-thinking. Target: \$200B in e-commerce merchandise exports by 2030.
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{Agricultural provisions in FTP 2023--28:}
-
+\begin{block}{Example 1: Cashew (raw vs processed)}
+\phantomsection\label{example-1-cashew-raw-vs-processed}
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Districts as Export Hubs (DEH):} 100+ agri-focused districts;
-  District Export Promotion Committees; product-specific action plans
+  India produces raw cashew, but much processing happens abroad
 \item
-  \textbf{One District One Product (ODOP):} Brand and promote one
-  signature product per district nationally and internationally
+  Processed grades + packaging command multiples of the raw price
 \item
-  \textbf{International Year of Millets alignment:} Position India as
-  global millet hub
+  Domestic processing = jobs + higher export value + brand ownership
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Example 2: Turmeric (raw vs extracts)}
+\phantomsection\label{example-2-turmeric-raw-vs-extracts}
+\begin{itemize}
+\tightlist
 \item
-  \textbf{GI Promotion:} Increased support for registrations and
-  international brand protection
+  Raw turmeric is a bulk commodity
 \item
-  \textbf{RoDTEP rates maintained:} 0.5--4.3\% for agri products
+  Extracts/curcumin and finished supplements capture most of the margin
 \item
-  \textbf{TMA extended:} Transport and Marketing Assistance --- freight
-  subsidy on perishables and processed food
+  Needs certification, R\&D, and consistent quality
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Example 3: Shrimp (commodity vs value-added)}
+\phantomsection\label{example-3-shrimp-commodity-vs-value-added}
+\begin{itemize}
+\tightlist
 \item
-  \textbf{APEDA mandate expanded:} Covers millet-based products,
-  organic, and functional foods
+  Commodity exports: raw frozen shrimp
+\item
+  Value-added: breaded / marinated / ready-to-cook formats (price
+  premium)
+\item
+  Requires cold chain, HACCP compliance, and processing capacity
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{FTP 2023--28: what it implies for value addition}
+\phantomsection\label{ftp-202328-what-it-implies-for-value-addition}
+\begin{itemize}
+\tightlist
+\item
+  Prioritise processed food and RTE/RCC categories
+\item
+  Build compliance: FSSAI-aligned plants, traceability, lab testing
+\item
+  Use branding tools: ODOP + GI where appropriate
 \end{itemize}
 
-\textbf{Amnesty scheme:} 45,000 exporters with unresolved EPCG/Advance
-Authorisation obligations given one-time settlement --- clearing the
-compliance backlog that had frozen export incentives for thousands of
-SME exporters.
-\end{column}
-\end{columns}
+\note{Keep Mega Food Parks / PM-FME details for oral discussion.}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Foreign Trade Policy (FTP) 2023--2028: overview}
+\phantomsection\label{foreign-trade-policy-ftp-20232028-overview}
+\begin{itemize}
+\tightlist
+\item
+  Released \textbf{March 31, 2023} (Ministry of Commerce)
+\item
+  Vision: total exports (goods + services) reach \textbf{\$2T by 2030}
+\item
+  Shift: from export subsidies → \textbf{tax remission} (RoDTEP)
+\item
+  Emphasis: collaboration + paperless, faster processes
+\item
+  New: explicit \textbf{e-commerce export} push (target \textbf{\$200B}
+  by 2030)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{FTP 2023--2028: what matters for agriculture}
+\phantomsection\label{ftp-20232028-what-matters-for-agriculture}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Districts as Export Hubs (DEH)} (district-level export plans)
+\item
+  \textbf{ODOP} branding for district ``signature'' products
+\item
+  \textbf{Millets + organic} positioned as emerging export areas
+\item
+  \textbf{GI promotion} to earn price premia and protect brands
+\item
+  \textbf{TMA + APEDA expansion} to support logistics and market access
+\end{itemize}
+
+\note{Amnesty scheme: one-time settlement for exporters with unresolved
+EPCG/Advance Authorisation obligations.}
 \end{block}
 \end{frame}
 
@@ -838,10 +747,11 @@ SME exporters.
 
 }
 
-\caption{\label{fig-ftp-targets}India's FTP 2023-28 targets USD 2
+\caption{India's FTP 2023-28 targets USD 2
 trillion in total exports by 2030. Agri and Allied targets USD 100B,
 more than doubling the FY2024 actual of USD 43.7B. Log scale used for
 wide value range. Source: DGFT, Foreign Trade Policy 2023-28.}
+\label{fig-ftp-targets}
 
 \end{figure}%
 \end{block}
@@ -858,386 +768,324 @@ wide value range. Source: DGFT, Foreign Trade Policy 2023-28.}
 
 }
 
-\caption{\label{fig-meis-rodtep}RoDTEP covers more products and
+\caption{RoDTEP covers more products and
 exporters than MEIS but at lower outlay, reflecting its design as a
 WTO-compliant tax remission rather than a direct subsidy (MEIS was
 challenged at WTO as DS541). Source: DGFT; WTO DS541 dispute record.}
+\label{fig-meis-rodtep}
 
 \end{figure}%
 \end{block}
 \end{frame}
 
 \begin{frame}
-\begin{block}{Millets: India's Global First-Mover Opportunity}
-\phantomsection\label{millets-indias-global-first-mover-opportunity}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{The Shri Anna (millet) revolution:}
-
-India proposed and the UN General Assembly declared \textbf{2023 as the
-International Year of Millets} --- a diplomatic success for Indian
-agriculture that positioned millets as a global priority crop.
-
-\textbf{India's millet portfolio:}
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule\noalign{}
-Millet & Hindi Name & Key States \\
-\midrule\noalign{}
-\endhead
-Pearl millet & Bajra & Rajasthan, Gujarat, Haryana \\
-Sorghum & Jowar & Maharashtra, Karnataka \\
-Finger millet & Ragi & Karnataka, Andhra Pradesh \\
-Foxtail millet & Kangni & Telangana, Andhra Pradesh \\
-Kodo millet & Kodo & Madhya Pradesh, Chhattisgarh \\
-\bottomrule\noalign{}
-\end{longtable}
-
-\textbf{Why millets, why now:}
-
-\begin{enumerate}
-\tightlist
-\item
-  \textbf{Nutritional superfood trend:} High protein, high fibre,
-  gluten-free --- resonates with urban health consumers in Europe, USA,
-  Gulf
-\item
-  \textbf{Climate resilience:} 30--50\% less water than rice and wheat;
-  suits arid and semi-arid lands
-\item
-  \textbf{India's absolute advantage:} Largest producer globally; deep
-  indigenous variety diversity
-\end{enumerate}
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{APEDA's Millet Export Program:}
-
+\begin{block}{Millets: why they matter for trade}
+\phantomsection\label{millets-why-they-matter-for-trade}
 \begin{itemize}
 \tightlist
 \item
-  Target: \$100M exports by FY2025 (from \textasciitilde\$64M in FY2023)
+  \textbf{2023 International Year of Millets} put ``Shri Anna'' on the
+  global agenda
 \item
-  72 countries introduced to Indian millets at IYM2023 events
+  Nutrition demand: high fibre, gluten-free, ``health food'' positioning
 \item
-  Special pavilions at Gulfood Dubai, SIAL Paris, Annapoorna showcasing
-  millet products: cookies, pasta, snack bars, flour blends,
-  ready-to-eat porridge
+  Climate resilience: lower water needs than rice/wheat
+\item
+  India advantage: large producer base + varietal diversity
+\item
+  Export constraint: processing, packaging, certification, and
+  consistent quality
 \end{itemize}
-
-\textbf{Commercial success stories:}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Tata Sampann millet range:} Available on Amazon USA and UK
-\item
-  \textbf{24 Mantra Organic:} Organic millet exports to EU and USA,
-  \$5M+
-\item
-  \textbf{Grains of India:} DTC millet brand targeting Indian diaspora
-  in UK and USA
-\end{itemize}
-
-\textbf{PM's global diplomacy:}
-
-PM Modi personally served millet-based dishes to G20 leaders at the 2023
-New Delhi Summit --- country branding for Indian millets at the highest
-level.
-
-Global health food market size for millets: \textbf{\$11 billion by
-2028} growing at 4.5\% CAGR. India has first-mover advantage --- but
-must invest in processing, packaging, and certification to convert
-agricultural abundance into export earnings.
-\end{column}
-\end{columns}
 \end{block}
 \end{frame}
 
 \begin{frame}
-\begin{block}{Geographical Indications as Trade Strategy}
-\phantomsection\label{geographical-indications-as-trade-strategy}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{India's GI landscape (2024):}
-
+\begin{block}{India's millet portfolio (examples)}
+\phantomsection\label{indias-millet-portfolio-examples}
 \begin{itemize}
 \tightlist
 \item
-  Total GIs registered: \textbf{400+}
+  \textbf{Bajra (pearl millet):} Rajasthan, Gujarat, Haryana
 \item
-  Agricultural GIs: \textbf{230+} (largest category)
+  \textbf{Jowar (sorghum):} Maharashtra, Karnataka
 \item
-  40 new GIs registered in FY2024
+  \textbf{Ragi (finger millet):} Karnataka, Andhra Pradesh
+\item
+  \textbf{Foxtail millet:} Telangana, Andhra Pradesh
+\item
+  \textbf{Kodo millet:} Madhya Pradesh, Chhattisgarh
 \end{itemize}
+\end{block}
+\end{frame}
 
-\textbf{Marquee agricultural GIs:}
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule\noalign{}
-Product & State & Price Premium \\
-\midrule\noalign{}
-\endhead
-Darjeeling Tea & West Bengal & 40--60\% \\
-Basmati Rice & Punjab/UP belt & 35--50\% \\
-Alphonso Mango & Maharashtra (Ratnagiri) & 50--80\% \\
-Malabar Black Pepper & Kerala & 25--35\% \\
-Alleppey Green Cardamom & Kerala & 30--40\% \\
-Guntur Sannam Chilli & Andhra Pradesh & 20--30\% \\
-Coorg Arabica Coffee & Karnataka & 40--60\% \\
-Kolhapuri Chilli & Maharashtra/Karnataka & 25--35\% \\
-\bottomrule\noalign{}
-\end{longtable}
-
-A GI is, economically, a \textbf{geographic monopoly on a name.}
-Producers in the designated region capture the premium; imitators cannot
-legally use the name in protected jurisdictions.
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{The Basmati GI battle:}
-
-India's application to protect ``Basmati'' as a GI at EU has been
-contentious:
-
+\begin{frame}
+\begin{block}{APEDA and the millet export push}
+\phantomsection\label{apeda-and-the-millet-export-push}
 \begin{itemize}
 \tightlist
 \item
-  \textbf{India's claim:} Only rice from designated districts of Punjab,
-  Haryana, UP, Uttarakhand, J\&K qualifies
+  Target: \textbf{\$100M} exports by FY2025 (from
+  \textasciitilde{}\textbf{\$64M} in FY2023)
 \item
-  \textbf{Pakistan's objection:} Pakistani basmati (Super Kernel, Kainat
-  varieties) has equal claim; both countries should be co-holders
+  Market creation via global events and buyer outreach
 \item
-  \textbf{Stakes:} If EU grants India-only GI, Pakistan loses
-  \textasciitilde\$1B annual EU basmati market access
+  Product formats: flour blends, snacks, pasta, RTE porridge
 \item
-  \textbf{Decision pending 2024--25}
+  Winning requires: branding + lab testing + traceability
+\item
+  Market size: \textbf{\$11B by 2028} (health-food growth)
 \end{itemize}
 
-\textbf{Why GIs matter for development:}
+\note{Examples and diplomacy can be discussed orally (brands, G20
+showcase) without crowding the slide.}
+\end{block}
+\end{frame}
 
-Darjeeling tea's GI protection means the 87 estates and their workers
-capture the ``Darjeeling'' brand premium --- which reaches £20--40 per
-100g in UK specialty retail --- directly benefiting the 500,000+ workers
-in those gardens.
+\begin{frame}
+\begin{block}{Geographical Indications (GIs): why they matter in trade}
+\phantomsection\label{geographical-indications-gis-why-they-matter-in-trade}
+\begin{itemize}
+\tightlist
+\item
+  A GI protects a product name tied to a place (legal brand protection)
+\item
+  Creates a \textbf{price premium} by signaling authenticity/quality
+\item
+  Works best when producers coordinate on standards + traceability
+\item
+  Economically: a \textbf{collective geographic monopoly} on a name
+\end{itemize}
 
-GI policy is \textbf{distribution policy} --- it determines who captures
-the value premium from cultural and geographic heritage.
-\end{column}
-\end{columns}
+GI policy is also distribution policy: it decides who captures the
+premium.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{India's agri GI examples (selected)}
+\phantomsection\label{indias-agri-gi-examples-selected}
+\begin{itemize}
+\tightlist
+\item
+  Darjeeling Tea
+\item
+  Basmati Rice
+\item
+  Alphonso Mango (Ratnagiri)
+\item
+  Malabar Black Pepper
+\item
+  Alleppey Green Cardamom
+\end{itemize}
+
+\note{Other examples include Guntur Sannam chilli, Coorg Arabica coffee,
+Kolhapuri chilli.}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Case: the Basmati GI battle (EU)}
+\phantomsection\label{case-the-basmati-gi-battle-eu}
+\begin{itemize}
+\tightlist
+\item
+  India: basmati should be limited to designated districts
+\item
+  Pakistan: claims co-ownership for basmati varieties
+\item
+  Stakes: EU market access + price premium (large revenue implications)
+\item
+  Status: decision pending (2024--25)
+\end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}
 \begin{block}{Challenges India Must Overcome}
 \phantomsection\label{challenges-india-must-overcome}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\textbf{1. SPS compliance --- the entry ticket to premium markets:}
+Three binding constraints:
 
 \begin{itemize}
 \tightlist
 \item
-  EU rejections of Indian spices (EtO contamination, 2023): Everest and
-  MDH spice brands recalled in Singapore, Hong Kong, USA; reputational
-  damage to all Indian spice exporters
+  \textbf{SPS compliance:} residues/contamination and border rejections
+  block premium markets
 \item
-  Aflatoxin in groundnuts, ochratoxin in coffee: recurring EU border
-  rejections
+  \textbf{Value addition gap:} too much bulk export, low unit values
 \item
-  FDA import alerts on Indian shrimp for antibiotic residues
+  \textbf{Policy credibility:} sudden export restrictions weaken India's
+  reliability
 \end{itemize}
 
-\textbf{Required investment:} Farmer-level GAP training, village-level
-residue testing, cold chain to reduce mycotoxin development.
+\note{Examples to discuss orally: EtO spice recalls (2023), shrimp
+antibiotic alerts, repeated export controls (rice/wheat/onion/sugar).}
+\end{block}
+\end{frame}
 
-\textbf{2. Value addition gap:}
+\begin{frame}
+\begin{block}{Challenges (cont.)}
+\phantomsection\label{challenges-cont.}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Edible oil dependence:} import bill + vulnerability to supply
+  shocks
+\item
+  \textbf{Cold chain + logistics:} losses and high logistics costs
+\item
+  \textbf{Market concentration:} shocks in one product/market
+  reverberate widely
+\end{itemize}
+\end{block}
+\end{frame}
 
-India's agri export unit values are consistently below global averages
-because we export raw and semi-processed commodities. Until the
-processing sector scales, India will underperform its potential.
+\begin{frame}
+\begin{block}{The meta-challenge}
+\phantomsection\label{the-meta-challenge}
+India must reconcile:
 
-\textbf{3. Export restriction credibility:}
-
-Rice bans (2023), wheat ban (2022), sugar quotas (2022), onion bans
-(2023) --- India has a pattern of imposing sudden export restrictions to
-manage domestic inflation. Each restriction: - Damages India's image as
-a reliable supplier - Disrupts long-term trade relationships - Benefits
-domestic consumers short-term but hurts farmers
-\end{column}
-
-\begin{column}{0.5\linewidth}
-\textbf{4. Edible oil import dependence:}
-
-\$14.2B annual import drag; NMEO-OP progress slow; structural
-vulnerability to supply disruptions and price spikes.
-
-\textbf{5. Cold chain and logistics:}
-
-35M MT cold storage vs 90M MT requirement; 25--40\% post-harvest losses;
-logistics cost 14\% of GDP vs 8\% in advanced economies.
-
-\textbf{6. Market concentration:}
-
-Rice at 28\% of agri exports; USA + UAE + Bangladesh = 32\% of
-destinations. Shocks in any one product or market reverberate through
-the whole system.
-
-\textbf{The meta-challenge:}
-
-India's domestic agricultural policy is designed primarily for
-\textbf{food security and farmer welfare} --- these are legitimate and
-important goals. But they frequently conflict with the objectives of
-\textbf{export competitiveness and trade reliability.} Until India
-develops better institutional mechanisms to reconcile these tensions,
-export performance will remain hostage to domestic policy volatility.
-\end{column}
-\end{columns}
+\begin{itemize}
+\tightlist
+\item
+  Food security + farmer welfare objectives
+\item
+  Export competitiveness + trade reliability objectives
+\end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}
 \begin{block}{Opportunities for India's Agricultural Exports}
 \phantomsection\label{opportunities-for-indias-agricultural-exports}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-Despite the challenges, India faces an extraordinary window of
-opportunity:
-
-\textbf{1. Rising global food demand:}
-
-World population reaches 10 billion by 2050; global food demand
-projected to rise 50\% from 2012 levels. India's agricultural land,
-labour, and knowledge base positions it as a key supplier.
-
-\textbf{2. Indian diaspora --- the ready market:}
-
-\textbf{\$4B+} in annual food imports by Indian diaspora communities
-globally (USA, UK, Canada, Australia, Gulf). Indian diaspora is the most
-rapidly growing food import segment in UK supermarkets (Tesco, Waitrose
-Indian ranges up 35\% in 5 years). This is a market that \emph{wants}
-Indian products and pays premiums.
-
-\textbf{3. Organic and clean-label premium markets:}
-
-Global organic food market: \$220B and growing 10\% annually. India has
-4.5 million organic farmers --- the world's largest base --- but
-captures only 0.5\% of global organic market. The upside potential is
-immense.
-
-\textbf{4. Millets and superfoods:}
-
-First-mover advantage in a fast-growing \$11B global segment. India can
-own the ``Shri Anna'' narrative globally.
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{5. FTA market access (India-UAE CEPA live; India-UK FTA
-pending):}
-
-Each FTA opens a new premium market without tariff headwinds. India-UAE
-CEPA showed 28\% trade growth in year one.
-
-\textbf{6. ASEAN's growing middle class:}
-
-Southeast Asia's middle class (Indonesia, Vietnam, Philippines,
-Thailand) is 400M+ and growing. Rising income = rising demand for
-diverse, higher-quality foods including Indian spices, rice varieties,
-processed snacks.
-
-\textbf{7. Africa's rice gap:}
-
-Sub-Saharan Africa imports \$7B in rice annually. India supplies 40\%.
-With logistics investment (AIC --- Africa-India Connectivity), India can
-deepen its dominant position in Africa's food import market.
-
-\textbf{The opportunity is real.} But converting opportunity into
-sustained export growth requires policy stability, infrastructure
-investment, quality compliance, and institutional capacity. All of which
-we have studied in this course.
-\end{column}
-\end{columns}
-\end{block}
-\end{frame}
-
-\begin{frame}
-\begin{block}{The Core Policy Dilemma: Farmer Welfare vs Export
-Competitiveness}
-\phantomsection\label{the-core-policy-dilemma-farmer-welfare-vs-export-competitiveness}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-This dilemma has surfaced in almost every lecture:
-
-\textbf{The MSP--export nexus:}
-
-MSP raises domestic procurement prices → good for farmers → but may
-price Indian exports above global levels, reducing competitiveness.
-
-India's wheat MSP in 2023--24: \textbf{₹2,275/quintal}
-(\textasciitilde\$274/MT). International wheat price (Chicago):
-\textasciitilde\$220/MT. Result: Indian wheat exports not competitive
-without subsidies.
-
-\textbf{The food security--export reliability tension:}
-
-When domestic food prices rise, India bans or restricts exports to
-protect consumers. But:
+Demand-side tailwinds:
 
 \begin{itemize}
 \tightlist
 \item
-  Farmer incomes fall (they lose export premium)
+  Rising global food demand
 \item
-  India's trade partners face sudden supply shock
+  Indian diaspora demand for Indian foods (often premium segment)
 \item
-  Long-term trade relationships damaged
+  Organic / ``clean label'' markets
 \item
-  India's reputation as reliable supplier eroded
+  Millets and other ``superfoods'' (brand + first-mover advantage)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Opportunities (cont.): market access and geography}
+\phantomsection\label{opportunities-cont.-market-access-and-geography}
+\begin{itemize}
+\tightlist
+\item
+  FTAs with agricultural chapters (CEPA; UK/EU negotiations)
+\item
+  ASEAN middle-class growth: processed foods + spices + marine
+\item
+  Africa's rice gap: scale potential if logistics improves
 \end{itemize}
 
-\textbf{The fiscal cost of support:}
+Opportunity is real, but requires quality compliance, infrastructure,
+and policy stability.
+\end{block}
+\end{frame}
 
-India's food subsidy bill: \textbf{₹2.05 lakh crore (FY2024).} FCI
-procurement, PDS distribution, buffer stocks → massive public
-expenditure. This is AMS under WTO's Amber Box --- India is approaching
-WTO limits.
-\end{column}
+\begin{frame}
+\begin{block}{Core policy dilemma (1): MSP vs export competitiveness}
+\phantomsection\label{core-policy-dilemma-1-msp-vs-export-competitiveness}
+\begin{itemize}
+\tightlist
+\item
+  Higher \textbf{MSP} raises farm incomes but can make exports
+  uncompetitive
+\item
+  Example (wheat, 2023--24): MSP \textbf{₹2,275/quintal
+  (\textasciitilde\$274/MT)} vs world price
+  \textbf{\textasciitilde\$220/MT}
+\item
+  If exports still happen, it often requires \textbf{subsidies} or
+  special channels
+\item
+  Political economy: farm support is sticky; export markets are
+  price-sensitive
+\item
+  Result: policy must balance \textbf{income support} and \textbf{market
+  access}
+\end{itemize}
+\end{block}
+\end{frame}
 
-\begin{column}{0.45\linewidth}
-\textbf{There are no easy answers --- only trade-offs:}
+\begin{frame}
+\begin{block}{Core policy dilemma (2): food security vs export
+reliability}
+\phantomsection\label{core-policy-dilemma-2-food-security-vs-export-reliability}
+\begin{itemize}
+\tightlist
+\item
+  When domestic food prices rise, export bans/taxes protect consumers
+\item
+  But restrictions reduce farmers' export premium and incomes
+\item
+  Trade partners face supply shocks and search for alternative suppliers
+\item
+  Repeated bans weaken India's reputation as a reliable exporter
+\item
+  Long-run cost: lost market share even after restrictions end
+\end{itemize}
+\end{block}
+\end{frame}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Policy Goal
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Instrument
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Trade-off
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-Farmer income & High MSP & Fiscal cost; export uncompetitiveness \\
-Consumer welfare & Export ban & Farmer income loss; trade reputation \\
-Export growth & Remove export tax & May raise domestic food prices \\
-WTO compliance & Reduce AMS & Farmer lobby resistance \\
-Food security & Import restriction & Higher domestic prices; consumer
-loss \\
-\bottomrule\noalign{}
-\end{longtable}
+\begin{frame}
+\begin{block}{Core policy dilemma (3): fiscal + WTO constraints}
+\phantomsection\label{core-policy-dilemma-3-fiscal-wto-constraints}
+\begin{itemize}
+\tightlist
+\item
+  Food subsidy bill (FY2024): \textbf{₹2.05 lakh crore} (procurement +
+  PDS + stocks)
+\item
+  Support shows up as WTO \textbf{domestic support (AMS / Amber Box)}
+\item
+  Compliance pressure increases as procurement expands
+\item
+  Reforms face strong political resistance
+\item
+  Bottom line: policy space is constrained by \textbf{budget + WTO
+  rules}
+\end{itemize}
+\end{block}
+\end{frame}
 
-\textbf{The key insight from Econ 2203:}
+\begin{frame}
+\begin{block}{Trade-offs cheat sheet}
+\phantomsection\label{trade-offs-cheat-sheet}
+\begin{itemize}
+\tightlist
+\item
+  Farmer income → \textbf{high MSP} → fiscal cost + weaker export
+  competitiveness
+\item
+  Consumer welfare → \textbf{export restrictions} → farmer loss +
+  reputation damage
+\item
+  Export growth → \textbf{remove export taxes} → possible domestic price
+  rise
+\item
+  WTO compliance → \textbf{reduce AMS} → farmer lobby resistance
+\item
+  Food security → \textbf{import restrictions} → higher domestic prices
+\end{itemize}
+\end{block}
+\end{frame}
 
-Trade policy in agriculture is inherently about distributing gains and
-losses among \textbf{farmers, consumers, traders, and government.} There
-is no free lunch. Understanding these trade-offs --- not choosing one
-side blindly --- is what makes an economist valuable to society.
-\end{column}
-\end{columns}
+\begin{frame}
+\begin{block}{Key insight from Econ 2203}
+\phantomsection\label{key-insight-from-econ-2203}
+Trade policy in agriculture distributes gains and losses among
+\textbf{farmers, consumers, traders, and government}.
+
+Economics helps by making these trade-offs explicit before we choose.
 \end{block}
 \end{frame}
 
@@ -1250,202 +1098,194 @@ agricultural trade reality}
 \end{frame}
 
 \begin{frame}
-\begin{block}{Course Synthesis: Module by Module}
-\phantomsection\label{course-synthesis-module-by-module}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\textbf{Module 1 --- Trade Theory (Lectures 1--6):}
-
-{Comparative advantage} explains why India exports basmati, spices,
-seafood, and cotton --- all labour-intensive, land-intensive, or
-knowledge-intensive goods where India's resource endowment gives a
-production cost advantage. The Heckscher-Ohlin theorem predicts India
-exports labour-intensive goods; the New Trade Theory (Krugman) explains
-why India also imports and exports processed food simultaneously.
-
-\textbf{Module 2 --- Trade Policy (Lectures 7--8):}
-
-India's {tariff} structure (avg. agri applied: 36.4\%, bound: 113.5\%)
-creates massive ``water'' for policy flexibility. Export subsidies under
-WTO scrutiny led India to shift from MEIS to {RoDTEP}. MSP creates
-domestic support that exceeds WTO Amber Box limits --- India's most
-sensitive ongoing WTO compliance challenge.
-
-\textbf{Module 3 --- BoP and External Sector (Lectures 9--10):}
-
-Agriculture contributes a \textbf{net current account surplus} of
-\$15.5B --- providing vital forex earnings. The BoP constraint (Lectures
-9--10) shows how India's agricultural export earnings help finance
-industrial imports.
-\end{column}
-
-\begin{column}{0.5\linewidth}
-\textbf{Module 4 --- Foreign Exchange (Lectures 11--12):}
-
-The rupee's depreciation trend (₹65/\$1 in 2015 → ₹83/\$1 in 2024) has
-boosted {rupee realisation} for Indian agri exporters --- a natural
-export incentive. But it also raises the rupee cost of edible oil
-imports. Forex management affects every agri exporter and importer.
-
-\textbf{Module 5 --- WTO and AoA (Lectures 13--14):}
-
-WTO rules {constrain AND protect}. The AoA's AMS limits constrain
-India's food subsidy policies. But the Special and Differential
-Treatment (S\&DT) provisions, Peace Clause, and Developing Country
-flexibilities give India significant policy space. India's G-33 and G-20
-coalitions at WTO are crucial for protecting this space.
-
-\textbf{Module 6 --- SPS and Quality (Lecture 15):}
-
-{SPS compliance is the entry ticket} to premium markets. EU, USA, Japan
---- the highest-value markets --- have stringent residue and hygiene
-standards. India's FSSAI, EIC, APEDA quality programs are not
-bureaucratic exercises --- they are the gatekeepers to billions of
-dollars of export revenue.
-
-\textbf{Modules 7--8 --- Institutions and Procedures (Lectures 16--17):}
-
-APEDA, MPEDA, Commodity Boards, EIC, and the export documentation
-ecosystem are the operational machinery that converts India's
-agricultural comparative advantage into actual export earnings.
-\end{column}
-\end{columns}
+\begin{block}{Course synthesis (1): Theory → policy → BoP}
+\phantomsection\label{course-synthesis-1-theory-policy-bop}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Trade theory (L1--L6):} comparative advantage shapes India's
+  export basket
+\item
+  \textbf{Trade policy (L7--L8):} tariffs + incentives + MSP determine
+  who gains/loses
+\item
+  \textbf{BoP constraint (L9--L10):} agri exports earn forex that
+  finances key imports
+\item
+  Unifying idea: outcomes depend on \textbf{incentives + constraints}
+\item
+  India lens: agriculture is both a livelihood sector and a
+  forex-earning sector
+\end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}
-\begin{block}{India's Agricultural Export Vision 2030}
-\phantomsection\label{indias-agricultural-export-vision-2030}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{The target:} \$100 billion in agricultural and food exports by
-2030
-
-\textbf{The baseline:} \$43.7 billion (FY2024)
-
-\textbf{Required CAGR:} \textasciitilde12.5\% per year over 6 years
-
-\textbf{Is it achievable?} It is ambitious --- but not impossible.
-
-\textbf{The strategic pillars for \$100B:}
-
-\begin{enumerate}
+\begin{block}{Course synthesis (2): Forex → WTO/AoA → SPS}
+\phantomsection\label{course-synthesis-2-forex-wtoaoa-sps}
+\begin{itemize}
 \tightlist
 \item
-  \textbf{Diversify beyond rice:} Grow processed food, organic, millets,
-  fruits, vegetables to reduce rice from 28\% to below 20\% of basket
+  \textbf{Forex (L11--L12):} INR moves change export realisation and
+  import costs
 \item
-  \textbf{New markets:} Africa deepening, ASEAN penetration, India-UK
-  FTA, India-EU FTA leverage
+  \textbf{WTO/AoA (L13--L14):} rules constrain support but provide
+  flexibilities (S\&DT)
 \item
-  \textbf{Quality investment:} Cold chain (35M → 90M MT), testing labs,
-  farmer GAP training --- reduce post-harvest losses by 50\%
+  \textbf{SPS (L15):} compliance is the entry ticket to premium markets
 \item
-  \textbf{Value addition:} Processed, RTE, functional foods --- double
-  value per tonne exported
+  Unifying idea: \textbf{market access} increasingly depends on
+  standards and credibility
 \item
-  \textbf{Leverage GI and branding:} Premium products command 30--80\%
-  price premiums; scale GI exports
-\item
-  \textbf{Reduce oil import dependence:} Every 1M tonne of domestic oil
-  palm production saves \textasciitilde\$700M in imports
-\item
-  \textbf{Use FTAs strategically:} CEPA, India-UK, India-EU --- each
-  5--10\% market access improvement matters
-\end{enumerate}
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{Scenario analysis:}
-
-\textbf{Conservative (5\% CAGR):} \$58B by FY2030 --- achievable with
-current trajectory and no major policy changes.
-
-\textbf{Base case (8\% CAGR):} \$69B by FY2030 --- requires sustained
-cold chain investment, FTA benefits, and value addition push.
-
-\textbf{Ambitious (12\% CAGR):} \$86B by FY2030 --- requires all
-cylinders firing: processed food scale-up, millets breakthrough, organic
-exports boom, India-EU FTA in force.
-
-\textbf{\$100B by FY2030:} Feasible if India-EU FTA signed by 2026,
-processed food cluster investments bear fruit, and no major export
-restriction episodes damage trade credibility.
-
-\textbf{The honest assessment:} \$100B is a stretch target. \$70B is
-realistic with right policies. Either way, the direction --- toward
-higher value, more diversified, quality-compliant agricultural exports
---- is the correct one for India's 600 million farming dependents.
-\end{column}
-\end{columns}
+  India lens: coalitions (G-33/G-20) protect policy space in agriculture
+\end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}
-\begin{block}{Final Thought: Agriculture and India's Development}
-\phantomsection\label{final-thought-agriculture-and-indias-development}
-\begin{columns}[T]
-\begin{column}{0.6\linewidth}
-India's agricultural trade is not merely an economic topic. It is the
-story of \textbf{600 million lives.}
-
-Every percentage point improvement in agricultural export earnings ---
-whether from a better price for Darjeeling tea, or a new market for
-Karnataka's tur dal, or an organic certification that enables Madhya
-Pradesh soybean to command a premium in Hamburg --- translates into:
-
+\begin{block}{Course synthesis (3): Institutions + procedures}
+\phantomsection\label{course-synthesis-3-institutions-procedures}
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Higher farm incomes} for the cultivator who owns 1.08 hectares
-  and whose children's education depends on the kharif season's outcome
+  \textbf{Institutions (L16--L17):} APEDA/MPEDA/Boards/EIC
+  operationalise exports
 \item
-  \textbf{More rural employment} in post-harvest processing, cold chain
-  logistics, packaging, and trade facilitation
+  \textbf{Documentation:} contracts + certificates + customs make trade
+  executable
 \item
-  \textbf{Better food security} through the forex earnings that fund
-  India's critical imports and stabilise the current account
+  \textbf{Quality infrastructure:} labs, traceability, cold chain reduce
+  rejection risk
 \item
-  \textbf{National pride} --- in the Alphonso mango that Japanese
-  consumers queue for, in the Coorg coffee that wins international
-  awards, in the Indian ready-to-eat meal that a second-generation
-  Indian in Leicester makes on a Tuesday night and calls it home
+  Policy without implementation fails
+\item
+  Implementation without credibility fails
 \end{itemize}
+\end{block}
+\end{frame}
 
-{This is why international trade policy in agriculture matters.}
-
-And this is what Econ 2203 has been about.
-\end{column}
-
-\begin{column}{0.4\linewidth}
-\textbf{A kilo of Kalaburagi tur dal travels from a Karnataka farmer to
-a diaspora kitchen in Leicester.}
-
-We began Lecture 16 with this image.
-
-We can now trace every step:
-
+\begin{frame}
+\begin{block}{Export vision 2030: target and what it implies}
+\phantomsection\label{export-vision-2030-target-and-what-it-implies}
 \begin{itemize}
 \tightlist
 \item
-  The IEC and RCMC that licensed the export
+  Target: \textbf{\$100B} agri + food exports by 2030
 \item
-  The FOB contract and LC that financed it
+  Baseline: \textbf{\$43.7B} (FY2024)
 \item
-  The Phytosanitary Certificate and Shipping Bill that cleared it
+  Implied growth: \textbf{\textasciitilde12.5\% CAGR} (stretch)
 \item
-  The APEDA-linked FPO that aggregated the smallholders
+  Realistic waypoint: \textbf{\textasciitilde\$70B} with the right
+  policies
 \item
-  The RoDTEP scrip that rewarded the exporter
+  Success needs quality investment + credibility (avoid repeated export
+  bans)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Pillars for growth (I)}
+\phantomsection\label{pillars-for-growth-i}
+\begin{itemize}
+\tightlist
 \item
-  The comparative advantage that made it competitive
+  Diversify beyond rice (processed food, fruits/veg, organic, millets)
 \item
-  The WTO rule that kept the market open
+  New markets + FTAs (Africa, ASEAN, UK/EU access)
+\item
+  Quality investment (cold chain, labs, GAP training)
+\item
+  Value addition (RTE/processed/functionals)
+\item
+  GI + branding to earn price premia
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Pillars for growth (II)}
+\phantomsection\label{pillars-for-growth-ii}
+\begin{itemize}
+\tightlist
+\item
+  Reduce edible oil import dependence (saves forex)
+\item
+  Use WTO-compliant support (remission, not subsidies)
+\item
+  Strengthen SPS systems and traceability
+\item
+  Keep policy predictable (credibility = market share)
+\item
+  Coordinate public + private actors across the chain
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Scenarios for FY2030}
+\phantomsection\label{scenarios-for-fy2030}
+\begin{itemize}
+\tightlist
+\item
+  Conservative (5\% CAGR): \textbf{\$58B}
+\item
+  Base case (8\% CAGR): \textbf{\$69B}
+\item
+  Ambitious (12\% CAGR): \textbf{\$86B}
+\item
+  Stretch (\$100B): needs FTAs + processing clusters + no credibility
+  shocks
+\item
+  Takeaway: the direction (higher value, diversified, compliant) is
+  right
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Final Thought: why this subject matters}
+\phantomsection\label{final-thought-why-this-subject-matters}
+\begin{itemize}
+\tightlist
+\item
+  Better export prices can raise \textbf{farm incomes}
+\item
+  Value addition creates \textbf{rural jobs} (processing, cold chain,
+  logistics)
+\item
+  Export earnings support \textbf{macro stability} (forex + current
+  account)
+\item
+  Credibility + quality compliance build \textbf{long-run market access}
 \end{itemize}
 
-\textbf{That journey is Econ 2203.}
-\end{column}
-\end{columns}
+Agricultural trade policy is about growth, distribution, and food
+security at the same time.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{A kilo of tur dal: tracing the chain}
+\phantomsection\label{a-kilo-of-tur-dal-tracing-the-chain}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Permissions:} IEC + registration (RCMC)
+\item
+  \textbf{Contract \& finance:} pricing (FOB/CIF) + payment terms (e.g.,
+  LC)
+\item
+  \textbf{Compliance:} SPS / certificates + documentation
+\item
+  \textbf{Institutions:} boards / agencies + logistics
+\item
+  \textbf{Economics:} comparative advantage + rules (WTO)
+\end{itemize}
+
+\note{In class, you can name specific documents (Shipping Bill,
+Phytosanitary Certificate), and connect to Lectures 16--17.}
 \end{block}
 \end{frame}
 
@@ -1489,68 +1329,62 @@ We can now trace every step:
 \begin{frame}
 \begin{block}{Examination Information}
 \phantomsection\label{examination-information}
-\begin{columns}[T]
-\begin{column}{0.55\linewidth}
-\textbf{Final Examination --- Econ 2203:}
-
-\textbf{Format:}
+\textbf{Final Examination --- Econ 2203}
 
 \begin{itemize}
 \tightlist
 \item
-  Part A: 20 short-answer questions (2 marks each) --- 40 marks
+  Part A: 20 short answers (2 marks each) --- 40 marks
 \item
-  Part B: 4 essay questions from 6 choices (15 marks each) --- 60 marks
+  Part B: 4 essays from 6 choices (15 marks each) --- 60 marks
 \item
   Total: 100 marks; Duration: 3 hours
 \end{itemize}
+\end{block}
+\end{frame}
 
-\textbf{Emphasis areas (all lectures equally weighted):}
-
+\begin{frame}
+\begin{block}{Exam emphasis (what to know)}
+\phantomsection\label{exam-emphasis-what-to-know}
 \begin{itemize}
 \tightlist
 \item
-  Trade theory: comparative advantage, HO theorem, ToT
+  Trade theory + diagrams (Ricardo, H--O, ToT)
 \item
-  Tariffs, quotas, ERP calculations, optimal tariff
+  Protectionism tools (tariffs, quotas, ERP, optimal tariff)
 \item
-  WTO Agreement on Agriculture: three pillars, amber/green/blue boxes
+  WTO + AoA (three pillars; boxes)
 \item
-  SPS Agreement: MRL, risk assessment, India's challenges
+  SPS concepts (MRL, risk assessment; India cases)
 \item
-  Balance of Payments and forex: current account, J-curve
-\item
-  India's trade policy: FTP 2023--28, RoDTEP, APEDA, MPEDA
-\item
-  Export procedures: IEC, Shipping Bill, LC, key documents
+  BoP + forex (current account, J-curve; pass-through)
 \end{itemize}
+\end{block}
+\end{frame}
 
-\textbf{Numerical questions:}
+\begin{frame}
+\begin{block}{Revision strategy (simple 2-week plan)}
+\phantomsection\label{revision-strategy-simple-2-week-plan}
+\begin{itemize}
+\tightlist
+\item
+  Re-read all 18 lecture decks (definitions + institutions)
+\item
+  Practise 3 ``core diagrams'': tariff welfare, ToT, J-curve
+\item
+  Do past papers and rework numerical problems (ERP, DWL, pass-through)
+\item
+  Revise India-specific facts used in class (FY2024 headline numbers)
+\end{itemize}
+\end{block}
+\end{frame}
 
-Be prepared to calculate: ERP, welfare effects of tariff (DWL), terms of
-trade, exchange rate pass-through.
-\end{column}
-
-\begin{column}{0.45\linewidth}
-\textbf{Suggested revision strategy:}
-
-\textbf{Week 1 before exam:} - Re-read lecture slides for all 18
-lectures - Focus on definitions and institutional names (APEDA, ICEGATE,
-RoDTEP, NRCP) - Practise the tariff welfare diagram from memory
-
-\textbf{Week 2 before exam:} - Attempt 2015--2024 past paper questions -
-Practise numerical problems on ERP, ToT, DWL - Revise India-specific
-data: FY2024 export value, top products, WTO bound rates
-
-\textbf{A final word from your instructor:}
-
-You have worked hard across 18 weeks on a subject that matters --- not
-just for your examination, but for understanding one of the most
-consequential policy domains in India's development journey.
+\begin{frame}
+\begin{block}{A final word}
+\phantomsection\label{a-final-word}
+You have worked hard across 18 weeks on a subject that matters.
 
 \textbf{Thank you. Good luck. Go well.}
-\end{column}
-\end{columns}
 \end{block}
 \end{frame}
 
@@ -1558,37 +1392,31 @@ consequential policy domains in India's development journey.
 \phantomsection\label{appendix}
 \begin{block}{Additional Resources}
 \phantomsection\label{additional-resources}
-\begin{columns}[T]
-\begin{column}{0.5\linewidth}
-\textbf{Further Reading}
+\textbf{Further reading}
 
 \begin{itemize}
 \tightlist
 \item
-  Lecture notes and APEDA/WTO official documents
+  Lecture notes + APEDA / WTO official documents
 \item
-  APEDA Annual Report 2023-24
+  APEDA Annual Report 2023--24
 \item
-  RBI/DGCI\&S/APEDA databases for latest data
+  RBI, DGCI\&S, APEDA databases for latest data
 \end{itemize}
-\end{column}
 
-\begin{column}{0.5\linewidth}
-\textbf{Key Data Sources}
+\textbf{Key data sources}
 
 \begin{itemize}
 \tightlist
 \item
   DGCI\&S: India's merchandise trade
 \item
-  RBI: Balance of payments data\\
+  RBI: balance of payments data
 \item
-  APEDA: Agricultural export statistics
+  APEDA: agricultural export statistics
 \item
-  WTO: Tariff and trade databases
+  WTO: tariff + trade databases
 \end{itemize}
-\end{column}
-\end{columns}
 \end{block}
 \end{frame}
 

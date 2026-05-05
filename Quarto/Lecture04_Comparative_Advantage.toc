@@ -1,7 +1,1 @@
-\beamer@sectionintoc {1}{Part I: The Problem with Absolute Advantage}{2}{0}{1}
-\beamer@sectionintoc {2}{Part II: The Ricardian Model --- Formal Setup}{4}{0}{2}
-\beamer@sectionintoc {3}{Part III: Terms of Trade and Gains from Trade}{8}{0}{3}
-\beamer@sectionintoc {4}{Part IV: Indifference Curves and Equilibrium}{11}{0}{4}
-\beamer@sectionintoc {5}{Part V: Assumptions, Extensions, and Critique}{13}{0}{5}
-\beamer@sectionintoc {6}{Part VI: India --- Revealed Comparative Advantage}{15}{0}{6}
-\beamer@sectionintoc {7}{Appendix}{19}{0}{7}
+\beamer@sectionintoc {1}{Appendix}{19}{0}{1}

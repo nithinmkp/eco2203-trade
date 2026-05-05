@@ -1,7 +1,1 @@
-\beamer@sectionintoc {1}{Part I: Why Do Opportunity Costs Differ?}{2}{0}{1}
-\beamer@sectionintoc {2}{Part II: The Heckscher-Ohlin Theorem}{4}{0}{2}
-\beamer@sectionintoc {3}{Part III: Three Key Theorems}{7}{0}{3}
-\beamer@sectionintoc {4}{Part IV: The Leontief Paradox and Extensions}{13}{0}{4}
-\beamer@sectionintoc {5}{Part V: The Lewis Dual-Sector Model and Agricultural Trade}{16}{0}{5}
-\beamer@sectionintoc {6}{Part VI: Summary and Looking Ahead}{19}{0}{6}
-\beamer@sectionintoc {7}{Appendix}{21}{0}{7}
+\beamer@sectionintoc {1}{Appendix}{23}{0}{1}

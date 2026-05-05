@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -254,13 +281,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Introduction to International Trade},
+  pdftitle={Lecture 1: Introduction to International Trade},
   pdfauthor={Nithin M},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Introduction to International Trade}
+\title{Lecture 1: Introduction to International Trade}
 \subtitle{Econ 2203 \textbar{} International Trade and Policy in
 Agriculture}
 \author{Nithin M}
@@ -270,8 +297,6 @@ Agriculture}
 \begin{document}
 \frame{\titlepage}
 
-
-\section{Part I: Setting the Stage}\label{part-i-setting-the-stage}
 
 \begin{frame}{Course Overview: Econ 2203}
 \phantomsection\label{course-overview-econ-2203}
@@ -430,9 +455,6 @@ costs} of production. Differences in opportunity costs → gains from
 specialisation and trade.}
 \end{frame}
 
-\section{Part II: The Scale of Global
-Trade}\label{part-ii-the-scale-of-global-trade}
-
 \begin{frame}{Scale of Global Trade}
 \phantomsection\label{scale-of-global-trade}
 \textbf{Global merchandise trade (2023)}
@@ -483,21 +505,21 @@ Services surplus & +\$160 billion \\
 
 \textbf{Global rank:} {18th} in merchandise exports (WTO 2023)
 
-\begin{itemize}
+\note{\begin{itemize}
 \tightlist
 \item
   India runs a \textbf{large merchandise deficit} but a significant
   \textbf{services surplus}
 \item
-  Merchandise deficit driven mainly by \textbf{crude oil} and
-  \textbf{gold} imports
+  Merchandise deficit driven by \textbf{crude oil} and \textbf{gold}
+  imports
 \item
   Agriculture consistently contributes a \textbf{trade surplus}
-\end{itemize}
-
-India's overall current account deficit is modest (\textasciitilde1\% of
-GDP) because services surplus and remittances (\textasciitilde\$120B in
-FY2024) partially offset the merchandise deficit.
+\item
+  Current account deficit is modest (\textasciitilde1\% of GDP) because
+  services surplus and remittances (\textasciitilde\$120B in FY2024)
+  partially offset the merchandise deficit
+\end{itemize}}
 \end{frame}
 
 \begin{frame}{India's Trade: The Big Picture}
@@ -510,15 +532,17 @@ FY2024) partially offset the merchandise deficit.
 
 }
 
-\caption{\label{fig-india-trade-trend}India's Merchandise Trade
+\caption{India's Merchandise Trade
 (FY2015--FY2024, USD billion) Source: DGCI\&S / Ministry of Commerce and
-Industry, GoI.}
+Industry (GoI).}
+\label{fig-india-trade-trend}
 
 \end{figure}%
 
-\textbf{Key insight:} India's trade deficit widened sharply post-2020.
-Exports plateaued at \textasciitilde\$440--450B while imports surged to
-\textasciitilde\$870B --- largely driven by oil, gold, and electronics.
+\note{\textbf{Key insight:} India's trade deficit widened sharply
+post-2020. Exports plateaued at \textasciitilde\$440--450B while imports
+surged to \textasciitilde\$870B --- largely driven by oil, gold, and
+electronics.}
 \end{frame}
 
 \begin{frame}{India's Agricultural Trade: FY2024}
@@ -568,8 +592,9 @@ Sugar & 2.8 & Spices (select) & 0.8 \\
 
 }
 
-\caption{\label{fig-agri-exports}India's Agricultural Exports by
+\caption{India's Agricultural Exports by
 Commodity, FY2024 (USD billion) Source: APEDA Annual Report 2023--24.}
+\label{fig-agri-exports}
 
 \end{figure}%
 \end{frame}
@@ -621,24 +646,22 @@ as seen in 2021--22 when palm oil prices spiked 50\%.
 
 }
 
-\caption{\label{fig-global-share}Major Agricultural Exporters: Global
+\caption{Major Agricultural Exporters: Global
 Market Share (2023) Source: WTO, World Agricultural Trade Statistics
 2024.}
+\label{fig-global-share}
 
 \end{figure}%
 
-India holds \textbf{2.8\%} of world agricultural exports --- 7th
+\note{India holds \textbf{2.8\%} of world agricultural exports --- 7th
 globally --- but punches below its weight given its agricultural size.
 Significant scope to expand market share in rice, spices, and processed
-foods.
+foods.}
 \end{frame}
 
-\section{Part III: Key Concepts and
-Context}\label{part-iii-key-concepts-and-context}
-
-\begin{frame}{Key Concepts We Will Need}
-\phantomsection\label{key-concepts-we-will-need}
-\textbf{Theory concepts}
+\begin{frame}{Key Concepts: Theory}
+\phantomsection\label{key-concepts-theory}
+\textbf{Classical trade theory}
 
 \begin{itemize}
 \tightlist
@@ -646,17 +669,23 @@ Context}\label{part-iii-key-concepts-and-context}
   \textbf{Comparative advantage} --- trade based on \emph{relative}, not
   absolute, efficiency (Ricardo)
 \item
-  \textbf{Terms of trade} --- ratio of export prices to import prices;
-  determines how much a country gains from trade
-\item
   \textbf{Factor endowments} --- land, labour, capital abundance shapes
   what countries export (Heckscher-Ohlin)
 \item
+  \textbf{Terms of trade} --- ratio of export prices to import prices;
+  determines gains from trade
+\item
   \textbf{Intra-industry trade} --- two-way trade in similar products
-  (India exports basmati rice, imports parboiled rice)
+  (India exports basmati, imports parboiled rice)
 \end{itemize}
 
-\textbf{Policy concepts}
+\note{Comparative advantage explains \emph{what} countries trade; terms
+of trade determine \emph{how much} they gain.}
+\end{frame}
+
+\begin{frame}{Key Concepts: Policy}
+\phantomsection\label{key-concepts-policy}
+\textbf{Trade policy instruments}
 
 \begin{itemize}
 \tightlist
@@ -670,12 +699,12 @@ Context}\label{part-iii-key-concepts-and-context}
   transactions
 \item
   \textbf{Exchange rate} --- price of one currency in terms of another;
-  stronger rupee makes exports more expensive
+  stronger rupee makes exports costlier
 \end{itemize}
 
-\textbf{How these connect:} Comparative advantage explains \emph{what}
-countries trade; terms of trade determine \emph{how much} they gain;
-tariffs and NTBs determine \emph{how much} trade actually occurs.
+\note{Tariffs and NTBs determine \emph{how much} trade actually occurs
+--- constraining the gains that comparative advantage would otherwise
+deliver.}
 \end{frame}
 
 \begin{frame}{Why Study International Trade?}
@@ -692,21 +721,21 @@ tariffs and NTBs determine \emph{how much} trade actually occurs.
   agriculture (AMS limits; tariff bindings)
 \item
   \textbf{Farmer income} --- \textasciitilde50\% of India's workforce in
-  agriculture; export markets expand income opportunities
+  agriculture; export markets expand income
 \item
-  \textbf{Food security} --- Import policy on pulses and oilseeds
+  \textbf{Food security} --- import policy on pulses and oilseeds
   directly affects 1.4 billion people
+\end{itemize}
+
+\note{\begin{itemize}
+\tightlist
 \item
   \textbf{Academic relevance} --- Fastest-growing sub-field in
   development economics; links to climate change, gender, and technology
-\end{itemize}
-
-\textbf{Bottom line:} International trade policy is \emph{agricultural
-policy} in India. They cannot be studied in isolation.
-
-\note{Links to climate change (Scope 3 emissions in supply chains),
-gender (women in agri-export supply chains), and technology (digital
-trade in services).}
+\item
+  \textbf{Bottom line:} International trade policy is \emph{agricultural
+  policy} in India. They cannot be studied in isolation.
+\end{itemize}}
 \end{frame}
 
 \begin{frame}{What Makes Agricultural Trade Special?}
@@ -747,8 +776,8 @@ economy} --- large farm lobbies in US, EU, India influence trade policy
 disproportionately}
 \end{frame}
 
-\begin{frame}{India's Major Trading Partners (FY2024)}
-\phantomsection\label{indias-major-trading-partners-fy2024}
+\begin{frame}{India's Export Destinations (FY2024)}
+\phantomsection\label{indias-export-destinations-fy2024}
 \textbf{Top merchandise export destinations}
 
 \begin{longtable}[]{@{}llll@{}}
@@ -764,24 +793,27 @@ Rank & Country & Share of exports & Key agri exports \\
 \bottomrule\noalign{}
 \end{longtable}
 
+\note{\textbf{Gravity model logic:} India trades most with large (USA,
+China) or geographically close (UAE, Bangladesh) economies --- a pattern
+we will formalise in Lecture 2.}
+\end{frame}
+
+\begin{frame}{India's Import Sources (FY2024)}
+\phantomsection\label{indias-import-sources-fy2024}
 \textbf{Top merchandise import sources}
 
-\begin{longtable}[]{@{}lll@{}}
+\begin{longtable}[]{@{}llll@{}}
 \toprule\noalign{}
-Rank & Country & Share of imports \\
+Rank & Country & Share of imports & Key agri imports \\
 \midrule\noalign{}
 \endhead
-1 & China & \textasciitilde15\% \\
-2 & UAE & \textasciitilde7.5\% \\
-3 & USA & \textasciitilde6.2\% \\
-4 & Russia & \textasciitilde5.8\% \\
-5 & Saudi Arabia & \textasciitilde5.4\% \\
+1 & China & \textasciitilde15\% & Electronics, chemicals \\
+2 & UAE & \textasciitilde7.5\% & Crude oil, gold \\
+3 & USA & \textasciitilde6.2\% & Pulses, capital goods \\
+4 & Russia & \textasciitilde5.8\% & Crude oil, fertilisers \\
+5 & Saudi Arabia & \textasciitilde5.4\% & Crude oil, edible oils \\
 \bottomrule\noalign{}
 \end{longtable}
-
-\textbf{Gravity model logic:} India trades most with large (USA, China)
-or geographically close (UAE, Bangladesh) economies --- a pattern we
-will formalise in Lecture 2.
 \end{frame}
 
 \begin{frame}{Composition of India's Merchandise Exports}
@@ -806,21 +838,21 @@ Electronic goods & 29 & 6.6\% \\
 \begin{itemize}
 \tightlist
 \item
-  Engineering goods = India's largest export category; grew from 12\%
-  (2000) to 26\                                                      (2024)
+  Engineering goods grew from 12\% (2000) to 26\                     (2024)
 \item
   Agriculture has held a \textbf{stable \textasciitilde10--12\%} share
   for two decades
-\item
-  Electronic goods rising fast (mobile phones, semiconductors policy)
 \end{itemize}
 
-India's export ambition: move up the value chain from raw agri
-commodities to processed food products
+\note{\begin{itemize}
+\tightlist
+\item
+  Electronic goods rising fast (mobile phones, semiconductors policy)
+\item
+  India's export ambition: move up the value chain from raw agri
+  commodities to processed food products
+\end{itemize}}
 \end{frame}
-
-\section{Part IV: Policy and
-Frameworks}\label{part-iv-policy-and-frameworks}
 
 \begin{frame}{Foreign Trade Policy 2023-28: Five Pillars}
 \phantomsection\label{foreign-trade-policy-2023-28-five-pillars}
@@ -865,9 +897,9 @@ policy architecture rather than a radical overhaul, reflecting India's
 cautious approach to trade liberalisation.
 \end{frame}
 
-\begin{frame}{A Preview: The Basic Trade Model}
-\phantomsection\label{a-preview-the-basic-trade-model}
-\textbf{Production Possibility Frontier (PPF) --- conceptual preview}
+\begin{frame}{A Preview: The Basic Trade Model (I)}
+\phantomsection\label{a-preview-the-basic-trade-model-i}
+\textbf{PPF --- conceptual preview}
 
 \textbf{Without trade (autarky)}
 
@@ -881,7 +913,10 @@ cautious approach to trade liberalisation.
   Example: India producing only rice and wheat --- the trade-off is
   fixed by domestic technology
 \end{itemize}
+\end{frame}
 
+\begin{frame}{A Preview: The Basic Trade Model (II)}
+\phantomsection\label{a-preview-the-basic-trade-model-ii}
 \textbf{With trade (open economy)}
 
 \begin{itemize}
@@ -895,12 +930,12 @@ cautious approach to trade liberalisation.
   countries gain
 \end{itemize}
 
-\textbf{The core result:} Trade allows a country to \textbf{consume
-beyond its production possibilities} --- achieved through specialisation
-and exchange.
+\note{\textbf{Core result:} Trade allows a country to \textbf{consume
+beyond its production possibilities} --- through specialisation and
+exchange.
 
 Upcoming lectures formalise: why world price differs (Lec 3--5), how
-much each country gains (Lec 7), what tariffs do (Lec 8).
+much each country gains (Lec 7), what tariffs do (Lec 8).}
 \end{frame}
 
 \begin{frame}{Key Definitions (I)}
@@ -964,21 +999,18 @@ much each country gains (Lec 7), what tariffs do (Lec 8).
   success story --- Japan, South Korea, China, and now India's IT sector
 \item
   \textbf{Consumer welfare:} Trade gives 1.4 billion Indians access to
-  goods they cannot produce cheaply at home --- edible oils,
-  electronics, fertilisers
+  goods they cannot produce cheaply at home
 \item
   \textbf{Farmer incomes:} Export markets for rice, spices, and marine
-  products support millions of rural households; global price
-  transmission improves farm income signals
+  products support millions of rural households
 \item
-  \textbf{Policy discipline:} WTO commitments and trade agreements
-  create external pressure for domestic policy reform --- reducing
-  market distortions that hurt productivity
+  \textbf{Policy discipline:} WTO commitments create external pressure
+  for domestic policy reform
 \end{enumerate}
 
-\textbf{India's challenge:} Integrating deeply into global value chains
-while protecting food security and farm incomes --- the central tension
-this course will explore.
+\note{\textbf{India's challenge:} Integrating deeply into global value
+chains while protecting food security and farm incomes --- the central
+tension this course will explore.}
 \end{frame}
 
 \begin{frame}{Key Takeaways: Lecture 1}

@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -254,13 +281,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Features of International Trade},
+  pdftitle={Lecture 2: Features of International Trade},
   pdfauthor={Nithin M},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Features of International Trade}
+\title{Lecture 2: Features of International Trade}
 \subtitle{Econ 2203 \textbar{} International Trade and Policy in
 Agriculture}
 \author{Nithin M}
@@ -270,8 +297,6 @@ Agriculture}
 \begin{document}
 \frame{\titlepage}
 
-
-\section{Part I: Recap and Overview}\label{part-i-recap-and-overview}
 
 \begin{frame}{Recap: Lecture 1}
 \phantomsection\label{recap-lecture-1}
@@ -316,8 +341,9 @@ Agriculture}
 
 }
 
-\caption{\label{fig-trade-gdp}India: Trade Openness (Exports + Imports
+\caption{India: Trade Openness (Exports + Imports
 as \% of GDP) Source: World Bank, World Development Indicators (WDI).}
+\label{fig-trade-gdp}
 
 \end{figure}%
 
@@ -325,8 +351,6 @@ Trade/GDP rose from \textbf{14\% (1990)} to \textbf{44\% (2024)} ---
 India is significantly more integrated into the global economy
 post-liberalisation.
 \end{frame}
-
-\section{Part II: Six Key Features}\label{part-ii-six-key-features}
 
 \begin{frame}{Features That Make International Trade Distinct}
 \phantomsection\label{features-that-make-international-trade-distinct}
@@ -385,6 +409,14 @@ MRL standards.}
   \textbf{Land:} Completely immobile by definition
 \end{itemize}
 
+\textbf{India case: Gulf remittances} --- Indian workers (largely from
+Kerala, UP, Bihar) work in UAE, Saudi Arabia, Kuwait --- sending back
+\textbf{\textasciitilde\$120 billion in remittances (FY2024)}, making
+India the world's largest remittance recipient.
+\end{frame}
+
+\begin{frame}{Feature 1: Factor Immobility (cont.)}
+\phantomsection\label{feature-1-factor-immobility-cont.}
 \textbf{Why this matters for trade theory}
 
 \begin{itemize}
@@ -397,11 +429,6 @@ MRL standards.}
 \item
   If labour moved freely, there would be less need to trade goods
 \end{itemize}
-
-\textbf{India case: Gulf remittances} --- Indian workers (largely from
-Kerala, UP, Bihar) work in UAE, Saudi Arabia, Kuwait --- sending back
-\textbf{\textasciitilde\$120 billion in remittances (FY2024)}, making
-India the world's largest remittance recipient.
 \end{frame}
 
 \begin{frame}{Feature 2: Currency and Exchange Risk}
@@ -440,9 +467,6 @@ reduction} in rupee revenue --- potentially wiping out margins.
 \textbf{Hedging tools:} Forward contracts, futures on NSE/BSE, ECGC
 insurance.
 \end{frame}
-
-\section{Part III: Internal vs International
-Trade}\label{part-iii-internal-vs-international-trade}
 
 \begin{frame}{Internal vs International Trade: Key Differences}
 \phantomsection\label{internal-vs-international-trade-key-differences}
@@ -512,9 +536,6 @@ Bangladesh & Small & Very close & \#5 export dest. \\
 UAE ranks highly despite moderate GDP: it is a regional trade hub +
 large Indian diaspora creates demand for Indian food products.
 \end{frame}
-
-\section{Part IV: Advantages and
-Risks}\label{part-iv-advantages-and-risks}
 
 \begin{frame}{Advantages of International Trade for India}
 \phantomsection\label{advantages-of-international-trade-for-india}
@@ -588,8 +609,6 @@ India has faced WTO challenges on sugar subsidies, poultry import bans
 7. \textbf{Structural unemployment} --- Import competition can displace
 workers; adjustment is slow}
 \end{frame}
-
-\section{Part V: India Case Studies}\label{part-v-india-case-studies}
 
 \begin{frame}{Case Study: India's Edible Oil Import Dependence}
 \phantomsection\label{case-study-indias-edible-oil-import-dependence}
@@ -720,11 +739,11 @@ the AoA bindings create real constraints (Lecture 12).
   aflatoxin levels meet standards
 \end{itemize}
 
-\textbf{Why small agri-exporters struggle:} Indian rice exporters to EU
-must meet \textbf{Maximum Residue Levels (MRLs)} for 300+ pesticides.
-Failure → entire consignment rejected at port. L/C requires strong
-banking relationships. \textbf{ECGC} provides credit insurance ---
-covers non-payment risk for Indian exporters.
+\note{\textbf{Why small agri-exporters struggle:} Indian rice exporters
+to EU must meet \textbf{Maximum Residue Levels (MRLs)} for 300+
+pesticides. Failure → entire consignment rejected at port. L/C requires
+strong banking relationships. \textbf{ECGC} provides credit insurance
+--- covers non-payment risk for Indian exporters.}
 \end{frame}
 
 \begin{frame}{Summary and Key Takeaways}

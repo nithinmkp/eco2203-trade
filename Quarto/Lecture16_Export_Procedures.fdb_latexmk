@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1777088828.53632 "Lecture16_Export_Procedures.xdv" "Lecture16_Export_Procedures.pdf" "Lecture16_Export_Procedures" 1777088829.43221 0
-  "Lecture16_Export_Procedures.xdv" 1777088827 313008 a1e02d7911d3fb22ebafb44007962938 "xelatex"
+["xdvipdfmx"] 1778001102.58029 "Lecture16_Export_Procedures.xdv" "Lecture16_Export_Procedures.pdf" "Lecture16_Export_Procedures" 1778001103.32977 0
+  "Lecture16_Export_Procedures.xdv" 1778001101 313948 6aca4f2ef26e995af96c266eed0ab920 "xelatex"
   (generated)
   "Lecture16_Export_Procedures.pdf"
   (rewritten before read)
-["xelatex"] 1777088820.92102 "Lecture16_Export_Procedures.tex" "Lecture16_Export_Procedures.xdv" "Lecture16_Export_Procedures" 1777088829.40404 2
+["xelatex"] 1778001096.24957 "Lecture16_Export_Procedures.tex" "Lecture16_Export_Procedures.xdv" "Lecture16_Export_Procedures" 1778001103.30285 2
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -212,12 +212,12 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture16_Export_Procedures.aux" 1777088827 5180 a2117a707583d4c88bc993b08bd81239 "xelatex"
-  "Lecture16_Export_Procedures.nav" 1777088827 2318 6bf076db6e1a8e33e3ccecc7cb97fcb8 "xelatex"
-  "Lecture16_Export_Procedures.tex" 1777088410 40926 d832e40ea344e46fe38cd206e3dc5145 ""
-  "Lecture16_Export_Procedures.vrb" 1777088827 1542 0321a03e3bde4db7c4fb77796dd66501 "xelatex"
-  "Lecture16_Export_Procedures_files/figure-beamer/fig-export-credit-1.pdf" 1777088405 6526 971c68080eea0e1c630af84f1c70dcb0 ""
-  "Lecture16_Export_Procedures_files/figure-beamer/fig-export-mode-1.pdf" 1777088406 4809 8d7df3db03ed31d4bb37a9a8df8d9bfa ""
+  "Lecture16_Export_Procedures.aux" 1778001101 5264 fa99a3b9af87ba7936bd7fece914e596 "xelatex"
+  "Lecture16_Export_Procedures.nav" 1778001101 2411 8c6bbe43bf923ac88764b8cf06f7ccff "xelatex"
+  "Lecture16_Export_Procedures.tex" 1778000657 41423 07c7f31ff5e52c8c2b96a1b40a302a7a ""
+  "Lecture16_Export_Procedures.vrb" 1778001101 1617 ab9a82006b96097ab710a061d04b5055 "xelatex"
+  "Lecture16_Export_Procedures_files/figure-beamer/fig-export-credit-1.pdf" 1778000637 6526 f7736da1415c910a782b5b34e8e4f869 ""
+  "Lecture16_Export_Procedures_files/figure-beamer/fig-export-mode-1.pdf" 1778000638 4809 875efb016adc33329bebb02250a4b30c ""
   (generated)
   "Lecture16_Export_Procedures.aux"
   "Lecture16_Export_Procedures.log"

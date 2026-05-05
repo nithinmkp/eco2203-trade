@@ -126,6 +126,7 @@
 % ---- Metropolis colour overrides ---------------------------
 % Main palette
 \setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamercolor{alerted text}{fg=brandgold}
 \setbeamercolor{example text}{fg=brandblue!70!black}
 
@@ -189,15 +190,41 @@
 }
 
 % ---- Misc --------------------------------------------------
-\setlength{\parskip}{0.25em}
+\setlength{\parskip}{2pt}
 \setbeamertemplate{navigation symbols}{}
 
 % tighter column sep for side-by-side content
 \setlength{\columnsep}{0.8em}
 
-% Fix: make \label truly robust in moving arguments (Quarto generates
-% \caption{\label{fig-xxx}...} which crashes Metropolis in batchmode).
-% DeclareRobustCommand creates a self-protecting robust version.
+% ---- Max 6 lines per slide: compact list typesetting -------
+% Smaller fonts at each list depth
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+% Tight vertical spacing injected at the start of each list level
+\setbeamertemplate{itemize/enumerate body begin}{%
+  \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{%
+  \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{%
+  \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}
+
+% Global safety net: default frame shrink = 10 %
+% \beamer@shrinkfalse is called ONCE in beamer's frame init (line 438 of
+% beamerbaseframe.sty) before the user's options are processed (line 444).
+% By redefining it we inject shrink=10 right after the reset; if the frame
+% explicitly specifies [shrink=X], the later \setkeys call overrides it.
+\makeatletter
+\let\beamer@orig@shrinkfalse\beamer@shrinkfalse
+\def\beamer@shrinkfalse{%
+  \beamer@orig@shrinkfalse
+  \setkeys{beamerframe}{shrink=10}}
+\makeatother
+
+% Fix: make \label truly robust in moving arguments.
+% Quarto wraps figure labels inside captions; Metropolis expands them
+% in batchmode causing a crash. DeclareRobustCommand prevents expansion.
 \makeatletter
 \let\quarto@originallabel\label
 \DeclareRobustCommand*{\label}[1]{\quarto@originallabel{#1}}
@@ -207,7 +234,7 @@
 % width=\linewidth: scale to text width (already Quarto default);
 % height=0.6\textheight: cap height so figures never push past the frame bottom.
 % keepaspectratio: never distort — whichever constraint binds first wins.
-\setkeys{Gin}{width=\linewidth,height=0.6\textheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.55\textheight,keepaspectratio}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -436,9 +463,10 @@ preventing cherry-picking.
 
 }
 
-\caption{\label{fig-trade-gdp}Global Trade vs GDP Growth Index
+\caption{Global Trade vs GDP Growth Index
 (2000-2023) Source: WTO, World Trade Statistical Review 2024; World
 Bank, WDI.}
+\label{fig-trade-gdp}
 
 \end{figure}%
 \end{frame}
@@ -503,8 +531,9 @@ one of the most influential developing country voices at the WTO
 
 }
 
-\caption{\label{fig-wto-membership}WTO Membership Growth (1995-2024)
+\caption{WTO Membership Growth (1995-2024)
 Source: WTO Secretariat.}
+\label{fig-wto-membership}
 
 \end{figure}%
 \end{frame}
@@ -808,8 +837,9 @@ respondent, or third party --- reflecting deep WTO engagement
 
 }
 
-\caption{\label{fig-india-wto-disputes}India's WTO Dispute Settlement
+\caption{India's WTO Dispute Settlement
 Cases by Partner Source: WTO Dispute Settlement Gateway (as of 2024).}
+\label{fig-india-wto-disputes}
 
 \end{figure}%
 \end{frame}
@@ -1240,11 +1270,8 @@ wants to preserve policy space to regulate data and digital economy.
 
 \begin{frame}{Next Lecture: Agreement on Agriculture}
 \phantomsection\label{next-lecture-agreement-on-agriculture}
-\begin{columns}[T]
-\begin{column}{0.6\linewidth}
-\textbf{Lecture 14 (July 28, 2026):}
-
-\textbf{Agreement on Agriculture (AoA)}
+\textbf{Lecture 14 (July 28, 2026):} \textbf{Agreement on Agriculture
+(AoA)}
 
 The WTO agreement that \textbf{directly governs India's agricultural
 trade policy}
@@ -1257,35 +1284,27 @@ We will cover:
   \textbf{Three Pillars} in depth: Market Access, Domestic Support,
   Export Competition
 \item
-  Tariffication and Tariff Rate Quotas
+  Tariffication and Tariff Rate Quotas; the Three Boxes: Green, Blue,
+  Amber
 \item
-  The Three Boxes: Green, Blue, Amber
-\item
-  India's AMS challenge --- the numbers
-\item
-  The Peace Clause revisited in technical detail
-\item
-  India's export subsidy constraints
+  India's AMS challenge --- the numbers; the Peace Clause revisited
 \item
   Special and Differential Treatment
 \end{itemize}
-\end{column}
 
-\begin{column}{0.4\linewidth}
-\textbf{Prepare for Lecture 14:}
-
-Think about this question:
-
-\emph{``India provides fertiliser subsidies worth ₹2.25 lakh crore per
-year. Is this WTO-legal? Which `box' does it fall in?''}
-
-We will work through the answer systematically using the AoA framework.
+\note{\begin{itemize}
+\tightlist
+\item
+  India's export subsidy constraints
+\item
+  India provides fertiliser subsidies worth ₹2.25 lakh crore per year.
+  Is this WTO-legal? Which `box' does it fall in? We will work through
+  the answer systematically using the AoA framework.
+\end{itemize}
 
 \textbf{Reading:} - WTO Agreement on Agriculture (full text --- 35
 pages) - CUTS International: \emph{India and WTO Agriculture
-Negotiations} (2023) - Economic Survey 2023-24, Chapter on Agriculture
-\end{column}
-\end{columns}
+Negotiations} (2023) - Economic Survey 2023-24, Chapter on Agriculture}
 \end{frame}
 
 \section{Appendix}\label{appendix}

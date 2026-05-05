@@ -1,5 +1,5 @@
 ---
-title: "Theories of International Trade I"
+title: "Lecture 3: Theories of International Trade I"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
@@ -292,6 +292,24 @@ While export-led growth produced remarkable results in East Asia (South Korea, T
 
 ::: {.methodbox}
 **Absolute advantage:** Country A has an absolute advantage in producing good X if it can produce **more units of X per unit of labour** than Country B.
+:::
+
+## Assumptions of the Absolute Advantage Model {.smaller}
+
+| Assumption | Implication |
+|---|---|
+| Two countries (A, B) | Tractable bilateral comparison |
+| Two goods (X, Y) | One good per country's advantage |
+| One factor — labour | Productivity differences drive trade |
+| Labour mobile *within* country | Workers shift between sectors freely |
+| Labour immobile *across* countries | No international migration |
+| Constant returns to scale | Linear PPF; constant opportunity costs |
+| Perfect competition | Prices equal marginal (labour) costs |
+| Full employment | All labour is always in use |
+| No transport costs | World price fully determines trade |
+
+::: {.methodbox}
+**Key limitation:** If one country is better at *both* goods, the model predicts *no* trade. Ricardo's comparative advantage (Lecture 4) resolves this.
 :::
 
 ## Absolute Advantage: Formal Definition {.smaller}
