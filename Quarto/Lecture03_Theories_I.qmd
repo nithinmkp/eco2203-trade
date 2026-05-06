@@ -1,5 +1,6 @@
 ---
 title: "Lecture 3: Theories of International Trade I"
+shorttitle: "L3 | Trade Theories I"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

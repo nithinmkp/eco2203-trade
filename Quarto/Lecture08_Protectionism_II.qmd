@@ -1,5 +1,6 @@
 ---
 title: "Lecture 8: Protectionism II — Subsidies, Dumping & Cartels"
+shorttitle: "L8 | Protectionism II"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

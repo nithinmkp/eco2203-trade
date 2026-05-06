@@ -1,5 +1,6 @@
 ---
 title: "Lecture 11: Foreign Exchange — Rates and Determination"
+shorttitle: "L11 | Foreign Exchange I"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

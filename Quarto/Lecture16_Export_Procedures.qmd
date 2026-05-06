@@ -1,5 +1,6 @@
 ---
 title: "Lecture 16: Export Procedures and Documentation"
+shorttitle: "L16 | Export Procedures"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

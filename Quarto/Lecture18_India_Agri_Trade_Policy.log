@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  5 MAY 2026 22:42
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  6 MAY 2026 07:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1712,26 +1712,26 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (Lecture18_India_Agri_Trade_Policy.aux)
 \openout1 = `Lecture18_India_Agri_Trade_Policy.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1767,7 +1767,7 @@ LaTeX Font Info:    ... okay on input line 297.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 297.
+Package hyperref Info: Link coloring OFF on input line 298.
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
 r-basic-dictionary-English.dict
@@ -1794,11 +1794,11 @@ r-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 297.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 298.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 297.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 298.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 297.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 298.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1829,7 +1829,7 @@ t=math;language=dflt;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 297.
+(Font)              scaled to size 11.28032pt on input line 298.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1872,18 +1872,18 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 297.
+(Font)              scaled to size 11.28032pt on input line 298.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 297.
+(Font)              `operators' in the math version `normal' on input line 298.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 297.
+ line 298.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 297.
+(Font)              `operators' in the math version `bold' on input line 298.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 297.
+t line 298.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1957,15 +1957,15 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 297.
+(Font)              `symbols' in the math version `normal' on input line 298.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 297.
+t line 298.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 297.
+(Font)              `symbols' in the math version `bold' on input line 298.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 297.
+t line 298.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -2034,23 +2034,23 @@ t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 2
-97.
+98.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 297.
+t line 298.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 297
+(Font)              `largesymbols' in the math version `bold' on input line 298
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 297.
-LaTeX Info: Redefining \microtypecontext on input line 297.
-Package microtype Info: Applying patch `item' on input line 297.
-Package microtype Info: Applying patch `toc' on input line 297.
-Package microtype Info: Applying patch `eqnum' on input line 297.
-Package microtype Info: Applying patch `footnote' on input line 297.
-Package microtype Info: Applying patch `verbatim' on input line 297.
-LaTeX Info: Redefining \microtypesetup on input line 297.
+t line 298.
+LaTeX Info: Redefining \microtypecontext on input line 298.
+Package microtype Info: Applying patch `item' on input line 298.
+Package microtype Info: Applying patch `toc' on input line 298.
+Package microtype Info: Applying patch `eqnum' on input line 298.
+Package microtype Info: Applying patch `footnote' on input line 298.
+Package microtype Info: Applying patch `verbatim' on input line 298.
+LaTeX Info: Redefining \microtypesetup on input line 298.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -2065,34 +2065,34 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (Lecture18_India_Agri_Trade_Policy.nav)
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 5.09372pt on input line 297.
+(Font)              scaled to size 5.09372pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 7.64058pt on input line 297.
+(Font)              scaled to size 7.64058pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 12.22491pt on input line 298.
+(Font)              scaled to size 12.22491pt on input line 299.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 12.13197pt on input line 298.
+(Font)              scaled to size 12.13197pt on input line 299.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 8.48953pt on input line 298.
+(Font)              scaled to size 8.48953pt on input line 299.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 6.79163pt on input line 298.
+(Font)              scaled to size 6.79163pt on input line 299.
 
 
 Class beamer Warning: Frame text is shrunk by a factor of 10.26459 percent inst
-ead of 10 percent on input line 298.
+ead of 10 percent on input line 299.
 
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 3.39581pt on input line 298.
+(Font)              scaled to size 3.39581pt on input line 299.
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 9.22536pt on input line 314.
+(Font)              scaled to size 9.22536pt on input line 315.
 
 ! Undefined control sequence.
 \beamer@doifinframe ...on} \phantomsection \label 
                                                   {opening-reflection} \text...
-l.314 \end{frame}
+l.315 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2101,14 +2101,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
-(Font)              scaled to size 9.29602pt on input line 314.
+(Font)              scaled to size 9.29602pt on input line 315.
 [2
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...s)} \phantomsection \label 
                                                   {what-we-built-in-5-blocks...
-l.334 \end{frame}
+l.335 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2117,14 +2117,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 8.42499pt on input line 334.
+(Font)              scaled to size 8.42499pt on input line 335.
 [3
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...am} \phantomsection \label 
                                                   {the-full-chain-course-syn...
-l.372 \end{frame}
+l.373 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2134,7 +2134,7 @@ and I'll forget about whatever was undefined.
 
 
 Class beamer Warning: Frame text is shrunk by a factor of 10.26459 percent inst
-ead of 10 percent on input line 372.
+ead of 10 percent on input line 373.
 
 [4
 
@@ -2142,7 +2142,7 @@ ead of 10 percent on input line 372.
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {indias-foreign-trade-poli...
-l.393 \end{frame}
+l.394 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2155,11 +2155,11 @@ pdf Graphic file (type pdf)
 <use Lecture18_India_Agri_Trade_Policy_files/figure-beamer/fig-ftp-timeline-1.p
 df>
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 7.58249pt on input line 393.
+(Font)              scaled to size 7.58249pt on input line 394.
 ! Undefined control sequence.
 \beamer@doifinframe ...and Industry, GoI.} \label 
                                                   {fig-ftp-timeline} \par \e...
-l.393 \end{frame}
+l.394 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2173,7 +2173,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...rs} \phantomsection \label 
                                                   {indias-agricultural-trade...
-l.415 \end{frame}
+l.416 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2187,7 +2187,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ar} \phantomsection \label 
                                                   {why-fy2022-was-a-record-y...
-l.432 \end{frame}
+l.433 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2201,7 +2201,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ak} \phantomsection \label 
                                                   {why-fy2024-fell-from-the-...
-l.447 \end{frame}
+l.448 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2215,7 +2215,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...om} \phantomsection \label 
                                                   {export-composition-fy2024...
-l.470 \end{frame}
+l.471 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2229,7 +2229,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ty} \phantomsection \label 
                                                   {rice-concentration-market...
-l.488 \end{frame}
+l.489 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2243,7 +2243,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ts} \phantomsection \label 
                                                   {geographic-distribution-w...
-l.513 \end{frame}
+l.514 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2257,7 +2257,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ch} \phantomsection \label 
                                                   {emerging-markets-to-watch...
-l.530 \end{frame}
+l.531 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2271,7 +2271,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...2)} \phantomsection \label 
                                                   {case-indiauae-cepa-may-20...
-l.549 \end{frame}
+l.550 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2285,7 +2285,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {import-profile-indias-agr...
-l.577 \end{frame}
+l.578 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2299,7 +2299,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ty} \phantomsection \label 
                                                   {why-edible-oil-dependence...
-l.595 \end{frame}
+l.596 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2313,7 +2313,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...1)} \phantomsection \label 
                                                   {policy-response-nmeoop-20...
-l.612 \end{frame}
+l.613 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2327,7 +2327,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ty} \phantomsection \label 
                                                   {the-value-addition-opport...
-l.632 \end{frame}
+l.633 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2341,7 +2341,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...d)} \phantomsection \label 
                                                   {example-1-cashew-raw-vs-p...
-l.647 \end{frame}
+l.648 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2355,7 +2355,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...s)} \phantomsection \label 
                                                   {example-2-turmeric-raw-vs...
-l.662 \end{frame}
+l.663 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2369,7 +2369,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...d)} \phantomsection \label 
                                                   {example-3-shrimp-commodit...
-l.678 \end{frame}
+l.679 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2383,7 +2383,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...on} \phantomsection \label 
                                                   {ftp-202328-what-it-implie...
-l.695 \end{frame}
+l.696 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2397,7 +2397,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ew} \phantomsection \label 
                                                   {foreign-trade-policy-ftp-...
-l.715 \end{frame}
+l.716 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2411,7 +2411,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...re} \phantomsection \label 
                                                   {ftp-20232028-what-matters...
-l.737 \end{frame}
+l.738 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2425,7 +2425,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ls} \phantomsection \label 
                                                   {ftp-2023-28-sector-export...
-l.758 \end{frame}
+l.759 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2440,7 +2440,7 @@ f>
 ! Undefined control sequence.
 \beamer@doifinframe ...de Policy 2023-28.} \label 
                                                   {fig-ftp-targets} \par \en...
-l.758 \end{frame}
+l.759 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2454,7 +2454,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {meis-vs-rodtep-indias-exp...
-l.779 \end{frame}
+l.780 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2469,7 +2469,7 @@ f>
 ! Undefined control sequence.
 \beamer@doifinframe ...41 dispute record.} \label 
                                                   {fig-meis-rodtep} \par \en...
-l.779 \end{frame}
+l.780 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2483,7 +2483,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...de} \phantomsection \label 
                                                   {millets-why-they-matter-f...
-l.800 \end{frame}
+l.801 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2497,7 +2497,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...s)} \phantomsection \label 
                                                   {indias-millet-portfolio-e...
-l.819 \end{frame}
+l.820 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2511,7 +2511,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...sh} \phantomsection \label 
                                                   {apeda-and-the-millet-expo...
-l.842 \end{frame}
+l.843 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2525,7 +2525,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...de} \phantomsection \label 
                                                   {geographical-indications-...
-l.862 \end{frame}
+l.863 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2539,7 +2539,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...d)} \phantomsection \label 
                                                   {indias-agri-gi-examples-s...
-l.884 \end{frame}
+l.885 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2553,7 +2553,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...U)} \phantomsection \label 
                                                   {case-the-basmati-gi-battl...
-l.901 \end{frame}
+l.902 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2567,7 +2567,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...me} \phantomsection \label 
                                                   {challenges-india-must-ove...
-l.923 \end{frame}
+l.924 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2581,7 +2581,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ....)} \phantomsection \label 
                                                   {challenges-cont.} \begin ...
-l.940 \end{frame}
+l.941 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2595,7 +2595,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ge} \phantomsection \label 
                                                   {the-meta-challenge} India...
-l.955 \end{frame}
+l.956 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2609,7 +2609,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ts} \phantomsection \label 
                                                   {opportunities-for-indias-...
-l.974 \end{frame}
+l.975 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2623,7 +2623,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...hy} \phantomsection \label 
                                                   {opportunities-cont.-marke...
-l.992 \end{frame}
+l.993 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2637,7 +2637,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ss} \phantomsection \label 
                                                   {core-policy-dilemma-1-msp...
-l.1017 \end{frame}
+l.1018 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2651,7 +2651,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ty} \phantomsection \label 
                                                   {core-policy-dilemma-2-foo...
-l.1037 \end{frame}
+l.1038 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2665,7 +2665,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...ts} \phantomsection \label 
                                                   {core-policy-dilemma-3-fis...
-l.1058 \end{frame}
+l.1059 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2679,7 +2679,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...et} \phantomsection \label 
                                                   {trade-offs-cheat-sheet} \...
-l.1080 \end{frame}
+l.1081 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2693,7 +2693,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...03} \phantomsection \label 
                                                   {key-insight-from-econ-220...
-l.1090 \end{frame}
+l.1091 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2705,16 +2705,16 @@ and I'll forget about whatever was undefined.
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 10.18744pt on input line 1098.
+(Font)              scaled to size 10.18744pt on input line 1099.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 10.10999pt on input line 1098.
+(Font)              scaled to size 10.10999pt on input line 1099.
  [42
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...oP} \phantomsection \label 
                                                   {course-synthesis-1-theory...
-l.1121 \end{frame}
+l.1122 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2728,7 +2728,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...PS} \phantomsection \label 
                                                   {course-synthesis-2-forex-...
-l.1143 \end{frame}
+l.1144 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2742,7 +2742,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {course-synthesis-3-instit...
-l.1165 \end{frame}
+l.1166 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2756,7 +2756,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {export-vision-2030-target...
-l.1186 \end{frame}
+l.1187 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2770,7 +2770,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...I)} \phantomsection \label 
                                                   {pillars-for-growth-i} \be...
-l.1205 \end{frame}
+l.1206 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2784,7 +2784,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...I)} \phantomsection \label 
                                                   {pillars-for-growth-ii} \b...
-l.1224 \end{frame}
+l.1225 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2798,7 +2798,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...30} \phantomsection \label 
                                                   {scenarios-for-fy2030} \be...
-l.1245 \end{frame}
+l.1246 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2812,7 +2812,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...rs} \phantomsection \label 
                                                   {final-thought-why-this-su...
-l.1267 \end{frame}
+l.1268 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2826,7 +2826,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...in} \phantomsection \label 
                                                   {a-kilo-of-tur-dal-tracing...
-l.1290 \end{frame}
+l.1291 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2840,7 +2840,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...fe} \phantomsection \label 
                                                   {key-takeaways-for-the-exa...
-l.1327 \end{frame}
+l.1328 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2854,7 +2854,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...on} \phantomsection \label 
                                                   {examination-information} ...
-l.1344 \end{frame}
+l.1345 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2868,7 +2868,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...w)} \phantomsection \label 
                                                   {exam-emphasis-what-to-kno...
-l.1363 \end{frame}
+l.1364 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2882,7 +2882,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...n)} \phantomsection \label 
                                                   {revision-strategy-simple-...
-l.1380 \end{frame}
+l.1381 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2896,7 +2896,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...rd} \phantomsection \label 
                                                   {a-final-word} You have wo...
-l.1389 \end{frame}
+l.1390 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2910,7 +2910,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \beamer@doifinframe ...es} \phantomsection \label 
                                                   {additional-resources} \te...
-l.1421 \end{frame}
+l.1422 \end{frame}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2939,11 +2939,11 @@ L3 programming layer <2026-01-19>
 Here is how much of TeX's memory you used:
  34921 strings out of 402982
  713783 string characters out of 5447852
- 1262936 words of memory out of 5000000
+ 1262844 words of memory out of 5000000
  63057 multiletter control sequences out of 15000+600000
  628637 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,13n,165p,1904b,835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Lecture18_India_Agri_Trade_Policy.xdv (57 pages, 413092 bytes
+Output written on Lecture18_India_Agri_Trade_Policy.xdv (57 pages, 404232 bytes
 ).

@@ -1,5 +1,6 @@
 ---
 title: "Lecture 5: Modern Theories — Heckscher-Ohlin & Lewis"
+shorttitle: "L5 | Heckscher-Ohlin & Lewis"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

@@ -1,5 +1,6 @@
 ---
 title: "Lecture 6: Terms of Trade, Free Trade & FTAs"
+shorttitle: "L6 | Terms of Trade & FTAs"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
@@ -650,10 +651,6 @@ Agriculture = the political economy constraint binding all India's FTA negotiati
 
 **Preparation:** Review WTO's Agricultural Agreement (Articles 4–6 on market access) and India's Schedule of Concessions.
 :::
-
----
-
-*Econ 2203 | Department of Agricultural Economics | Lecture 6 of 12*
 
 # Appendix {background-color="#1a3a5c"}
 

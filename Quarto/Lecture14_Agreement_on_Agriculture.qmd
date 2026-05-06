@@ -1,5 +1,6 @@
 ---
 title: "Lecture 14: Agreement on Agriculture"
+shorttitle: "L14 | Agreement on Agriculture"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

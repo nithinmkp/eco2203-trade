@@ -1,5 +1,6 @@
 ---
 title: "Lecture 18: India's Agricultural Trade and Foreign Trade Policy"
+shorttitle: "L18 | India Agri Trade Policy"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"

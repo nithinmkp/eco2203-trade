@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  5 MAY 2026 22:40
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  6 MAY 2026 07:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1712,26 +1712,26 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (Lecture14_Agreement_on_Agriculture.aux)
 \openout1 = `Lecture14_Agreement_on_Agriculture.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 297.
-LaTeX Font Info:    ... okay on input line 297.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 298.
+LaTeX Font Info:    ... okay on input line 298.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1767,7 +1767,7 @@ LaTeX Font Info:    ... okay on input line 297.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 297.
+Package hyperref Info: Link coloring OFF on input line 298.
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
 r-basic-dictionary-English.dict
@@ -1794,11 +1794,11 @@ r-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 297.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 298.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 297.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 298.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 297.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 298.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1829,7 +1829,7 @@ t=math;language=dflt;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 297.
+(Font)              scaled to size 11.28032pt on input line 298.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1872,18 +1872,18 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.28032pt on input line 297.
+(Font)              scaled to size 11.28032pt on input line 298.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 297.
+(Font)              `operators' in the math version `normal' on input line 298.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 297.
+ line 298.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 297.
+(Font)              `operators' in the math version `bold' on input line 298.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 297.
+t line 298.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -1957,15 +1957,15 @@ nmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
 t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 297.
+(Font)              `symbols' in the math version `normal' on input line 298.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 297.
+t line 298.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 297.
+(Font)              `symbols' in the math version `bold' on input line 298.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 297.
+t line 298.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.030162142937972.
@@ -2034,23 +2034,23 @@ t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 2
-97.
+98.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 297.
+t line 298.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 297
+(Font)              `largesymbols' in the math version `bold' on input line 298
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 297.
-LaTeX Info: Redefining \microtypecontext on input line 297.
-Package microtype Info: Applying patch `item' on input line 297.
-Package microtype Info: Applying patch `toc' on input line 297.
-Package microtype Info: Applying patch `eqnum' on input line 297.
-Package microtype Info: Applying patch `footnote' on input line 297.
-Package microtype Info: Applying patch `verbatim' on input line 297.
-LaTeX Info: Redefining \microtypesetup on input line 297.
+t line 298.
+LaTeX Info: Redefining \microtypecontext on input line 298.
+Package microtype Info: Applying patch `item' on input line 298.
+Package microtype Info: Applying patch `toc' on input line 298.
+Package microtype Info: Applying patch `eqnum' on input line 298.
+Package microtype Info: Applying patch `footnote' on input line 298.
+Package microtype Info: Applying patch `verbatim' on input line 298.
+LaTeX Info: Redefining \microtypesetup on input line 298.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -2065,38 +2065,38 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (Lecture14_Agreement_on_Agriculture.nav)
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 5.09372pt on input line 297.
+(Font)              scaled to size 5.09372pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 7.64058pt on input line 297.
+(Font)              scaled to size 7.64058pt on input line 298.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 12.22491pt on input line 298.
+(Font)              scaled to size 12.22491pt on input line 299.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 12.13197pt on input line 298.
+(Font)              scaled to size 12.13197pt on input line 299.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 8.48953pt on input line 298.
+(Font)              scaled to size 8.48953pt on input line 299.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 6.79163pt on input line 298.
+(Font)              scaled to size 6.79163pt on input line 299.
 
 
 Class beamer Warning: Frame text is shrunk by a factor of 10.26459 percent inst
-ead of 10 percent on input line 298.
+ead of 10 percent on input line 299.
 
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 3.39581pt on input line 298.
+(Font)              scaled to size 3.39581pt on input line 299.
 [1
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 9.22536pt on input line 338.
+(Font)              scaled to size 9.22536pt on input line 339.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 10.18744pt on input line 338.
+(Font)              scaled to size 10.18744pt on input line 339.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 10.10999pt on input line 338.
+(Font)              scaled to size 10.10999pt on input line 339.
  [2
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 8.42499pt on input line 381.
+(Font)              scaled to size 8.42499pt on input line 382.
  [3
 
 ] [4
@@ -2104,7 +2104,7 @@ LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
 ]
 
 Class beamer Warning: Frame text is shrunk by a factor of 12304.13666 percent i
-nstead of 10 percent on input line 456.
+nstead of 10 percent on input line 457.
 
 [5
 
@@ -2116,7 +2116,7 @@ uction-1.pdf Graphic file (type pdf)
 <use Lecture14_Agreement_on_Agriculture_files/figure-beamer/fig-aoa-tariff-redu
 ction-1.pdf>
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/b/n' will be
-(Font)              scaled to size 7.58249pt on input line 522.
+(Font)              scaled to size 7.58249pt on input line 523.
  [7
 
 ]
@@ -2128,12 +2128,12 @@ LaTeX Font Info:    Font shape `TU/FiraMono(0)/m/n' will be
 ) [8
 
 ]
-Overfull \hbox (43.91972pt too wide) in alignment at lines 625--625
+Overfull \hbox (43.91972pt too wide) in alignment at lines 626--626
  [] [] [] [] 
  []
 
 
-Overfull \hbox (43.91972pt too wide) in alignment at lines 625--625
+Overfull \hbox (43.91972pt too wide) in alignment at lines 626--626
  [] [] [] [] 
  []
 
@@ -2144,33 +2144,33 @@ Overfull \hbox (43.91972pt too wide) in alignment at lines 625--625
 ]
 
 Class beamer Warning: Frame text is shrunk by a factor of 12304.13666 percent i
-nstead of 10 percent on input line 666.
+nstead of 10 percent on input line 667.
 
 [11
 
 ]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.89621pt on input line 710.
+(Font)              scaled to size 7.89621pt on input line 711.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.64017pt on input line 710.
+(Font)              scaled to size 5.64017pt on input line 711.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-10.
+11.
  (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 11.28131pt on input line 710.
+(Font)              scaled to size 11.28131pt on input line 711.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.89691pt on input line 710.
+(Font)              scaled to size 7.89691pt on input line 711.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.64066pt on input line 710.
+(Font)              scaled to size 5.64066pt on input line 711.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.27914pt on input line 710.
+(Font)              scaled to size 11.27914pt on input line 711.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.8954pt on input line 710.
+(Font)              scaled to size 7.8954pt on input line 711.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.63957pt on input line 710.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 710
+(Font)              scaled to size 5.63957pt on input line 711.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 711
 .
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -2179,7 +2179,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 710
+LaTeX Font Info:    Trying to load font information for U+msb on input line 711
 .
  (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2188,16 +2188,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 6.50722pt on input line 710.
+(Font)              scaled to size 6.50722pt on input line 711.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 4.64801pt on input line 710.
+(Font)              scaled to size 4.64801pt on input line 711.
  [12
 
 ]
 Missing character: There is no 🟢 in font Fira Sans Regular/OT:script=latn;langu
 age=dflt;mapping=tex-text;!
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
-(Font)              scaled to size 9.29602pt on input line 757.
+(Font)              scaled to size 9.29602pt on input line 758.
 Missing character: There is no 🔵 in font Fira Sans Regular/OT:script=latn;langu
 age=dflt;mapping=tex-text;!
 Missing character: There is no 🟡 in font Fira Sans Regular/OT:script=latn;langu
@@ -2213,16 +2213,16 @@ dies-1.pdf>
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
-(Font)              scaled to size 8.48953pt on input line 833.
+(Font)              scaled to size 8.48953pt on input line 834.
  [15
 
 ]
-Overfull \hbox (39.26608pt too wide) in alignment at lines 885--885
+Overfull \hbox (39.26608pt too wide) in alignment at lines 886--886
  [] [] 
  []
 
 
-Overfull \hbox (39.26608pt too wide) in alignment at lines 885--885
+Overfull \hbox (39.26608pt too wide) in alignment at lines 886--886
  [] [] 
  []
 
@@ -2235,7 +2235,7 @@ Overfull \hbox (39.26608pt too wide) in alignment at lines 885--885
 ]
 
 Class beamer Warning: Frame text is shrunk by a factor of 12304.13666 percent i
-nstead of 10 percent on input line 1001.
+nstead of 10 percent on input line 1002.
 
 [19
 
@@ -2302,11 +2302,11 @@ L3 programming layer <2026-01-19>
 Here is how much of TeX's memory you used:
  35055 strings out of 402982
  718971 string characters out of 5447852
- 1267790 words of memory out of 5000000
+ 1267726 words of memory out of 5000000
  63150 multiletter control sequences out of 15000+600000
  631504 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,13n,165p,1905b,789s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Lecture14_Agreement_on_Agriculture.xdv (29 pages, 394468 byte
+Output written on Lecture14_Agreement_on_Agriculture.xdv (29 pages, 390320 byte
 s).

@@ -178,12 +178,12 @@
 \setbeamerfont{block title}{size=\normalsize,series=\bfseries}
 \setbeamerfont{caption}{size=\footnotesize}
 
-% ---- Footer: course info + slide number --------------------
+% ---- Footer: lecture title + course + slide number ----------
 \setbeamertemplate{footline}{%
   \begin{beamercolorbox}[wd=\paperwidth,ht=2.0ex,dp=1ex]{footline}%
     \hspace{0.8em}%
     {\footnotesize\color{brandblue!60}%
-      Econ 2203 \textbar{} International Trade and Policy in Agriculture
+      \insertshorttitle
       \hfill Nithin M \hfill
       \insertframenumber{}/\inserttotalframenumber\hspace{0.8em}}%
   \end{beamercolorbox}%
@@ -287,7 +287,8 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Lecture 10: India's External Sector}
+\title[L10 \textbar{} India's External Sector]{Lecture 10: India's
+External Sector}
 \subtitle{Econ 2203 \textbar{} International Trade and Policy in
 Agriculture}
 \author{Nithin M}

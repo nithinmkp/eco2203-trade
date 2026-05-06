@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778000757.88635 "Lecture02_Features.xdv" "Lecture02_Features.pdf" "Lecture02_Features" 1778000758.73399 0
-  "Lecture02_Features.xdv" 1778000756 196612 5eb06f3a4a95789d1449828a6dbabdb7 "xelatex"
+["xdvipdfmx"] 1778031292.51809 "Lecture02_Features.xdv" "Lecture02_Features.pdf" "Lecture02_Features" 1778031293.52341 0
+  "Lecture02_Features.xdv" 1778031291 194984 64d3cc322f06e00a9ab2d86e060b0406 "xelatex"
   (generated)
   "Lecture02_Features.pdf"
   (rewritten before read)
-["xelatex"] 1778000751.96215 "Lecture02_Features.tex" "Lecture02_Features.xdv" "Lecture02_Features" 1778000758.70259 0
+["xelatex"] 1778031284.84183 "Lecture02_Features.tex" "Lecture02_Features.xdv" "Lecture02_Features" 1778031293.48929 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -226,10 +226,10 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture02_Features.aux" 1778000756 7056 8b10291a452ba655d0f0dc0c99f2061e "xelatex"
-  "Lecture02_Features.nav" 1778000756 2098 a0c98d3144af25a2e271fae5290c02f1 "xelatex"
-  "Lecture02_Features.tex" 1778000279 28887 fb11894804bd35da75fd87cee54d63d4 ""
-  "Lecture02_Features_files/figure-beamer/fig-trade-gdp-1.pdf" 1778000261 5439 4a4b7ac7d2f139c97e7f700fa137e835 ""
+  "Lecture02_Features.aux" 1778031291 7056 8b10291a452ba655d0f0dc0c99f2061e "xelatex"
+  "Lecture02_Features.nav" 1778031291 2098 a0c98d3144af25a2e271fae5290c02f1 "xelatex"
+  "Lecture02_Features.tex" 1778030713 28886 e2db9e8ad9c2885420cb5243bce6050c ""
+  "Lecture02_Features_files/figure-beamer/fig-trade-gdp-1.pdf" 1778030691 5439 355b45a47f2000c7cd4bbdc3f67c4df8 ""
   (generated)
   "Lecture02_Features.aux"
   "Lecture02_Features.log"

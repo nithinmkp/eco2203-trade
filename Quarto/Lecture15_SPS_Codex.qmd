@@ -1,5 +1,6 @@
 ---
 title: "Lecture 15: SPS Measures and Codex Alimentarius"
+shorttitle: "L15 | SPS & Codex"
 subtitle: "Econ 2203 | International Trade and Policy in Agriculture"
 author: "Nithin M"
 institute: "Department of Development Economics"
