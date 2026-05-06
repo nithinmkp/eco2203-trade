@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778031660.11888 "Lecture14_Agreement_on_Agriculture.xdv" "Lecture14_Agreement_on_Agriculture.pdf" "Lecture14_Agreement_on_Agriculture" 1778031661.11013 0
-  "Lecture14_Agreement_on_Agriculture.xdv" 1778031658 390320 efc5f1183fcab956e6cc903ac681c4af "xelatex"
+["xdvipdfmx"] 1778035738.79521 "Lecture14_Agreement_on_Agriculture.xdv" "Lecture14_Agreement_on_Agriculture.pdf" "Lecture14_Agreement_on_Agriculture" 1778035739.89565 0
+  "Lecture14_Agreement_on_Agriculture.xdv" 1778035737 390320 cbaec5611fbb49163d3762fa9580a99c "xelatex"
   (generated)
   "Lecture14_Agreement_on_Agriculture.pdf"
   (rewritten before read)
-["xelatex"] 1778031651.45596 "Lecture14_Agreement_on_Agriculture.tex" "Lecture14_Agreement_on_Agriculture.xdv" "Lecture14_Agreement_on_Agriculture" 1778031661.06892 0
+["xelatex"] 1778035729.96577 "Lecture14_Agreement_on_Agriculture.tex" "Lecture14_Agreement_on_Agriculture.xdv" "Lecture14_Agreement_on_Agriculture" 1778035739.86246 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -226,13 +226,13 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture14_Agreement_on_Agriculture.aux" 1778031658 11986 d70780c106c6439dafe69830e7133cd8 "xelatex"
-  "Lecture14_Agreement_on_Agriculture.nav" 1778031658 3587 63c272ec926f0638502e645fa13ed6e6 "xelatex"
-  "Lecture14_Agreement_on_Agriculture.tex" 1778031111 45735 e5bac31aaf49e023261bc5d9c4aac3a4 ""
-  "Lecture14_Agreement_on_Agriculture.vrb" 1778031656 1577 a51322289f64374b6b8749787ea40dc4 "xelatex"
-  "Lecture14_Agreement_on_Agriculture_files/figure-beamer/fig-aoa-tariff-reduction-1.pdf" 1778031086 5638 6bf1128048924ae0336205d5fd8cb689 ""
-  "Lecture14_Agreement_on_Agriculture_files/figure-beamer/fig-india-agri-trade-1.pdf" 1778031088 5080 5cbda5ec419c35a21c213b7853003beb ""
-  "Lecture14_Agreement_on_Agriculture_files/figure-beamer/fig-india-box-subsidies-1.pdf" 1778031086 4792 e03628fa05c71573d231724b2a31c8c6 ""
+  "Lecture14_Agreement_on_Agriculture.aux" 1778035737 11986 d70780c106c6439dafe69830e7133cd8 "xelatex"
+  "Lecture14_Agreement_on_Agriculture.nav" 1778035737 3587 63c272ec926f0638502e645fa13ed6e6 "xelatex"
+  "Lecture14_Agreement_on_Agriculture.tex" 1778035189 45735 e5bac31aaf49e023261bc5d9c4aac3a4 ""
+  "Lecture14_Agreement_on_Agriculture.vrb" 1778035735 1577 a51322289f64374b6b8749787ea40dc4 "xelatex"
+  "Lecture14_Agreement_on_Agriculture_files/figure-beamer/fig-aoa-tariff-reduction-1.pdf" 1778035165 5638 bf0eb98ca8d7646da20e3602f2389727 ""
+  "Lecture14_Agreement_on_Agriculture_files/figure-beamer/fig-india-agri-trade-1.pdf" 1778035166 5080 31d4f05ff5484daad0856ef9847d1d57 ""
+  "Lecture14_Agreement_on_Agriculture_files/figure-beamer/fig-india-box-subsidies-1.pdf" 1778035165 4792 0cd8adee48e4bdc6f50b43ee218c7e5d ""
   (generated)
   "Lecture14_Agreement_on_Agriculture.aux"
   "Lecture14_Agreement_on_Agriculture.log"

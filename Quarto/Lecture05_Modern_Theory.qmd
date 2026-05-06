@@ -84,10 +84,6 @@ $$\left(\frac{w}{r}\right)^I < \left(\frac{w}{r}\right)^U \qquad \text{(labour i
 | Incomplete specialisation | Both goods produced in both countries |
 | Identical, homothetic preferences | Demand differences cannot explain trade |
 
-::: {.methodbox}
-**Relaxing assumptions:** Drop identical technologies → Ricardian effects re-enter. Drop immobility → factor flows substitute for goods trade (FPE weakens). Drop 2×2×2 → Heckscher-Ohlin-Vanek factor content theorem.
-:::
-
 ## H-O Theorem: Formal Statement {.smaller}
 
 **Theorem (Heckscher 1919; Ohlin 1933):**
@@ -256,93 +252,110 @@ ggplot(df_ppf2, aes(x=M, y=R, color=model, linetype=model)) +
 :::
 :::
 
-## H-O Welfare: Autarky vs Free Trade {.smaller}
+## Basis for and Gains from Trade: H-O Model {.smaller}
 
 ::: {.columns}
-::: {.column width="42%"}
-**Autarky (E1):** IC1 tangent to the PPF; India produces and consumes at E1.
+::: {.column width="40%"}
+**Autarky (point A):**
 
-**Opening to trade:**
+- India produces & consumes at A
+- Domestic price ratio $P_a$: slope $= -2$ (Rice cheap domestically)
+- IC1 tangent to PPF at A
 
-- World price $P_R/P_M = 1.5 <$ autarky slope $2$
-- Production shifts to P $(M=60,\, R=160)$ — more Rice, fewer Machines
-- Trade possibilities line through P, slope $= -1.5$
-- India **exports 35 Rice**, **imports 23 Machines**
-- Consumption at E2 $(M=83,\, R=125)$ on IC2
+**Free trade (world price $P_b$, slope $= -1.5$):**
 
-**IC2 > IC1 → welfare gain from trade**
+- Production shifts to **B** $(M=60,\, R=160)$
+- India exports **35 Rice**, imports **23 Machines**
+- Consumption at **E** $(M=83,\, R=125)$ on IC2
 
-The gain comes entirely from **reallocation** — not from more resources, but from trading along comparative advantage.
+**IC2 $>$ IC1 → welfare gain**
+
+*Adapted from Salvatore, Fig. 5.4*
 :::
-::: {.column width="58%"}
+::: {.column width="60%"}
 ```{r}
 #| label: fig-ho-welfare
-#| fig-cap: "H-O Model: Free Trade Raises Welfare Above the Autarky PPF\nSource: Author's illustration."
+#| fig-cap: "Basis for and Gains from Trade under the H-O Model (after Salvatore Fig. 5.4)"
 #| fig-width: 6.5
 #| fig-height: 5
 library(ggplot2)
 
-# H-O concave PPF: R = 200*sqrt(1-(M/100)^2)
-M_seq    <- seq(1, 100, by=0.5)
-rice_ppf <- 200 * sqrt(pmax(0, 1 - (M_seq/100)^2))
+# PPF: R = 200*sqrt(1-(M/100)^2) — concave H-O frontier
+M_ppf <- seq(0.5, 99.5, by=0.5)
+R_ppf <- 200 * sqrt(1 - (M_ppf/100)^2)
 
-# Autarky tangency: slope = -2  → M = 100/sqrt(2) ≈ 70.7, R = 200/sqrt(2) ≈ 141.4
-E1_M <- 100/sqrt(2);  E1_R <- 200/sqrt(2)
-# IC1: U = sqrt(R*M), U1^2 = E1_M * E1_R = 10000
-rice_ic1 <- 10000 / M_seq
+# Key points (derived from PPF slope conditions)
+A_M <- 100/sqrt(2); A_R <- 200/sqrt(2)   # autarky: PPF slope = -2
+B_M <- 60;          B_R <- 160            # production: PPF slope = -1.5
+E_M <- 250/3;       E_R <- 125            # consumption: MRS = 1.5 on Pb line
 
-# Free-trade production: PPF slope = -1.5 → M=60, R=160
-P_M <- 60;  P_R_val <- 160
-# Trade possibilities line: R = 250 - 1.5*M
-M_tr  <- seq(0, 120, by=0.5)
-rice_tr <- pmax(0, 250 - 1.5*M_tr)
+# Price lines
+M_pa <- seq(20, 115, by=0.5)
+R_pa <- 282.8 - 2*M_pa                    # Pa: autarky price, slope -2 through A
 
-# Consumption under trade: MRS=R/M=1.5 → R=1.5*M; budget → M=250/3, R=125
-E2_M <- 250/3;  E2_R <- 125
-# IC2: U2^2 = E2_M * E2_R = (250/3)*125 = 10416.7
-rice_ic2 <- 10416.7 / M_seq
+M_pb <- seq(0, 115, by=0.5)
+R_pb <- pmax(0, 250 - 1.5*M_pb)           # Pb: world price, slope -1.5 through B & E
 
-df_ppf   <- data.frame(M=M_seq, R=rice_ppf, IC1=rice_ic1, IC2=rice_ic2)
-df_trade <- data.frame(M=M_tr,  R=rice_tr)
+# Indifference curves: U = sqrt(R*M) → R = U^2/M
+M_ic <- seq(5, 115, by=0.5)
+R_ic1 <- pmin(10000 / M_ic, 235)          # IC1 through A  (U^2=10000)
+R_ic2 <- pmin(10417 / M_ic, 235)          # IC2 through E  (U^2=10417)
+
+df_ppf <- data.frame(M=M_ppf, R=R_ppf)
+df_pa  <- data.frame(M=M_pa,  R=R_pa)
+df_pb  <- data.frame(M=M_pb,  R=R_pb)
+df_ic1 <- data.frame(M=M_ic,  R=R_ic1)
+df_ic2 <- data.frame(M=M_ic,  R=R_ic2)
 
 ggplot() +
-  geom_line(data=df_ppf,   aes(x=M, y=R),   color="#012169", linewidth=1.5) +
-  geom_line(data=df_trade, aes(x=M, y=R),   color="#B9975B", linewidth=1.3,
-            linetype="dashed") +
-  geom_line(data=subset(df_ppf, IC1<=245), aes(x=M, y=IC1),
-            color="grey50",   linewidth=1, linetype="dotted") +
-  geom_line(data=subset(df_ppf, IC2<=245), aes(x=M, y=IC2),
-            color="darkgreen", linewidth=1, linetype="dotted") +
-  # Points
-  geom_point(aes(x=E1_M,   y=E1_R),   color="#012169", size=3.5) +
-  geom_point(aes(x=P_M,    y=P_R_val),color="purple",  size=3) +
-  geom_point(aes(x=E2_M,   y=E2_R),   color="#B9975B", size=3.5) +
+  # PPF
+  geom_line(data=df_ppf, aes(x=M, y=R), color="#012169", linewidth=1.8) +
+  # Pa: domestic autarky price line (dotted)
+  geom_line(data=subset(df_pa, R>=0 & R<=235),
+            aes(x=M, y=R), color="grey40", linewidth=0.9, linetype="dotted") +
+  # Pb: world price / trade possibilities line (dashed)
+  geom_line(data=subset(df_pb, R<=235),
+            aes(x=M, y=R), color="#B9975B", linewidth=1.2, linetype="dashed") +
+  # IC1 (autarky) and IC2 (free trade)
+  geom_line(data=subset(df_ic1, M>=8  & R<=235), aes(x=M, y=R),
+            color="grey55", linewidth=0.9, linetype="dotted") +
+  geom_line(data=subset(df_ic2, M>=8  & R<=235), aes(x=M, y=R),
+            color="darkgreen", linewidth=0.9, linetype="dotted") +
+  # Points A, B, E
+  geom_point(aes(x=A_M, y=A_R), color="#012169",  size=3.5) +
+  geom_point(aes(x=B_M, y=B_R), color="#012169",  size=3.5) +
+  geom_point(aes(x=E_M, y=E_R), color="#B9975B",  size=3.5) +
   # Trade triangle
-  annotate("segment", x=P_M, y=P_R_val, xend=E2_M, yend=P_R_val,
-           color="darkgreen", linewidth=0.8,
-           arrow=arrow(length=unit(0.2,"cm"))) +
-  annotate("text", x=(P_M+E2_M)/2, y=P_R_val+9,
-           label="Import Machines (+23)", size=2.8, hjust=0.5, color="darkgreen") +
-  annotate("segment", x=E2_M, y=P_R_val, xend=E2_M, yend=E2_R,
-           color="darkgreen", linewidth=0.8,
-           arrow=arrow(length=unit(0.2,"cm"))) +
-  annotate("text", x=E2_M+3, y=(P_R_val+E2_R)/2,
-           label="Export Rice (−35)", size=2.8, hjust=0, color="darkgreen") +
-  # Labels
-  annotate("text", x=E1_M+2,  y=E1_R-12,   label="E1 (autarky)",    size=3, hjust=0) +
-  annotate("text", x=P_M+2,   y=P_R_val+7, label="P (production)",  size=2.8,
-           hjust=0, color="purple") +
-  annotate("text", x=E2_M+2,  y=E2_R-12,   label="E2 (free trade)", size=3,
-           hjust=0, color="#B9975B") +
-  annotate("text", x=3, y=210,
-           label="IC2 (free trade)", size=2.8, hjust=0, color="darkgreen") +
-  annotate("text", x=3, y=175,
-           label="IC1 (autarky)",    size=2.8, hjust=0, color="grey50") +
-  scale_y_continuous(limits=c(0, 240)) +
-  scale_x_continuous(limits=c(0, 115)) +
-  labs(title="H-O: free trade moves consumption above the PPF",
-       x="Machines", y="Rice") +
-  theme_minimal(base_size=11)
+  annotate("segment", x=B_M, xend=E_M, y=B_R, yend=B_R,
+           color="darkgreen", linewidth=0.8, linetype="solid",
+           arrow=arrow(length=unit(0.18,"cm"), ends="last")) +
+  annotate("segment", x=E_M, xend=E_M, y=B_R, yend=E_R,
+           color="darkgreen", linewidth=0.8, linetype="solid",
+           arrow=arrow(length=unit(0.18,"cm"), ends="last")) +
+  # Point labels
+  annotate("text", x=A_M+2, y=A_R+10, label="A", fontface="bold", size=4, color="#012169") +
+  annotate("text", x=B_M-8, y=B_R+8,  label="B", fontface="bold", size=4, color="#012169") +
+  annotate("text", x=E_M+2, y=E_R-12, label="E", fontface="bold", size=4, color="#B9975B") +
+  # Price line labels
+  annotate("text", x=112, y=282.8-2*112-4, label="P[a]", parse=TRUE,
+           size=3.5, color="grey40", hjust=0) +
+  annotate("text", x=112, y=250-1.5*112+6, label="P[b]", parse=TRUE,
+           size=3.5, color="#B9975B", hjust=0) +
+  # IC labels
+  annotate("text", x=9, y=10417/9-10, label="IC[2]", parse=TRUE,
+           size=3, color="darkgreen", hjust=0) +
+  annotate("text", x=9, y=10000/9+6,  label="IC[1]", parse=TRUE,
+           size=3, color="grey55",    hjust=0) +
+  # Trade annotations
+  annotate("text", x=(B_M+E_M)/2, y=B_R+9,
+           label="Imports Machines", size=2.8, hjust=0.5, color="darkgreen") +
+  annotate("text", x=E_M+2, y=(B_R+E_R)/2,
+           label="Exports Rice", size=2.8, hjust=0, color="darkgreen") +
+  scale_x_continuous(limits=c(0, 118)) +
+  scale_y_continuous(limits=c(0, 235)) +
+  labs(x="Machines (capital-intensive)", y="Rice (labour-intensive)") +
+  theme_minimal(base_size=11) +
+  theme(panel.grid.minor=element_blank())
 ```
 :::
 :::

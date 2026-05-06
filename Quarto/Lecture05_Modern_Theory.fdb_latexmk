@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778031388.25539 "Lecture05_Modern_Theory.xdv" "Lecture05_Modern_Theory.pdf" "Lecture05_Modern_Theory" 1778031389.25542 0
-  "Lecture05_Modern_Theory.xdv" 1778031386 256132 d25fbca2a767def032d56c3208f5c8fe "xelatex"
+["xdvipdfmx"] 1778035450.65329 "Lecture05_Modern_Theory.xdv" "Lecture05_Modern_Theory.pdf" "Lecture05_Modern_Theory" 1778035451.60049 0
+  "Lecture05_Modern_Theory.xdv" 1778035449 252932 970cabc223ad9fa1a56c136cc6c9d32d "xelatex"
   (generated)
   "Lecture05_Modern_Theory.pdf"
   (rewritten before read)
-["xelatex"] 1778031378.76407 "Lecture05_Modern_Theory.tex" "Lecture05_Modern_Theory.xdv" "Lecture05_Modern_Theory" 1778031389.20858 2
+["xelatex"] 1778035442.64368 "Lecture05_Modern_Theory.tex" "Lecture05_Modern_Theory.xdv" "Lecture05_Modern_Theory" 1778035451.56778 2
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -242,15 +242,15 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture05_Modern_Theory.aux" 1778031386 8229 c1b7645d6d5e7edf536fea9d498c7e8a "xelatex"
-  "Lecture05_Modern_Theory.nav" 1778031386 2470 4b429a1a400cd511cd968b547574a3d3 "xelatex"
-  "Lecture05_Modern_Theory.tex" 1778030813 34024 c127d31c55917a56fa372a742cf3eab8 ""
-  "Lecture05_Modern_Theory_files/figure-beamer/fig-edgeworth-1.pdf" 1778030784 8046 874af1cc50af0d2eb08d42de205cd08d ""
-  "Lecture05_Modern_Theory_files/figure-beamer/fig-ho-welfare-1.pdf" 1778030787 8695 a84223fd239aa4042848b7c9ba386164 ""
-  "Lecture05_Modern_Theory_files/figure-beamer/fig-leontief-1.pdf" 1778030788 4656 42ce731762865458f10fef256bc3f194 ""
-  "Lecture05_Modern_Theory_files/figure-beamer/fig-lewis-1.pdf" 1778030789 7262 9799b8dea454c5555f0fd60d45b5f367 ""
-  "Lecture05_Modern_Theory_files/figure-beamer/fig-rybczynski-1.pdf" 1778030788 6898 a5d23859918f2227250f07006da75ab7 ""
-  "Lecture05_Modern_Theory_files/figure-beamer/unnamed-chunk-1-1.pdf" 1778030785 5718 1432206a34aba041847fa83fa78bd2af ""
+  "Lecture05_Modern_Theory.aux" 1778035449 8243 106d7b72baac1dd17a7636cd0417f996 "xelatex"
+  "Lecture05_Modern_Theory.nav" 1778035449 2470 4b429a1a400cd511cd968b547574a3d3 "xelatex"
+  "Lecture05_Modern_Theory.tex" 1778034912 33725 520a2394c042b5e35386666b6ef8068d ""
+  "Lecture05_Modern_Theory_files/figure-beamer/fig-edgeworth-1.pdf" 1778034886 8046 13e67f750e3215802b003796aad833f0 ""
+  "Lecture05_Modern_Theory_files/figure-beamer/fig-ho-welfare-1.pdf" 1778034888 10236 a33f1881011db7373cbaec5f7bbe500e ""
+  "Lecture05_Modern_Theory_files/figure-beamer/fig-leontief-1.pdf" 1778034889 4656 7b2a5442a09210fd35f352120e6864a1 ""
+  "Lecture05_Modern_Theory_files/figure-beamer/fig-lewis-1.pdf" 1778034890 7262 e3db0ad6113459559ddbc0944ebf684a ""
+  "Lecture05_Modern_Theory_files/figure-beamer/fig-rybczynski-1.pdf" 1778034889 6898 b4ac9740e2c17719874c359df084d3b7 ""
+  "Lecture05_Modern_Theory_files/figure-beamer/unnamed-chunk-1-1.pdf" 1778034887 5718 b7f61fa343af033edd9d5fe89c0a5fad ""
   (generated)
   "Lecture05_Modern_Theory.aux"
   "Lecture05_Modern_Theory.log"
