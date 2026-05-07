@@ -273,145 +273,143 @@ th <- theme_minimal(base_size = 9) +
         axis.title = element_text(size = 8),
         plot.margin = margin(4, 8, 4, 4))
 
-# ── Coordinates (Salvatore convention: X = labor-intensive, Y = capital-intensive)
-# Axes: X = Rice (labor-intensive),  Y = Machines (capital-intensive)
+# ── Coordinates (Salvatore Fig 5.4 convention: X = Rice, Y = Machines)
+# India PPF: M = 120√(1-(R/200)²), k=M0/R0=0.6  → Pa slope = -0.6
+# USA   PPF: M = 200√(1-(R/120)²), k=M0/R0=5/3  → Pa* slope = -5/3
+# Pw = -1 lies between Pa and Pa* → basis for trade
+# U = R*M (equal-weight Cobb-Douglas): IC1 tangent to Pa at A; IC2 tangent to Pw at E
 #
-# India (labor-abundant): PPF  M = 100√(1−(R/200)²)  [biased toward Rice]
-#   dM/dR = −R / (400√(1−(R/200)²))
-#   Pa slope −0.5  →  A  = (100√2, 100/√2)  ≈ (141.4,  70.7)
-#   Pw slope −1    →  B  = (80√5,  20√5)    ≈ (178.9,  44.7)  [more Rice, fewer Machines]
-#   Consumption    →  E  = (50√5,  50√5)    ≈ (111.8, 111.8)  [MRS=1 on Pw, ABOVE PPF]
-#
-# USA  (capital-abundant): PPF  M = 200√(1−(R/100)²)  [biased toward Machines]
-#   dM/dR = −R / (50√(1−(R/100)²))
-#   Pa* slope −2   →  A* = (50√2,  100√2)  ≈ ( 70.7, 141.4)
-#   Pw slope −1    →  B* = (20√5,  80√5)   ≈ ( 44.7, 178.9)  [fewer Rice, more Machines]
-#   Consumption    →  E* = (50√5,  50√5)   ≈ (111.8, 111.8)  [symmetric example]
-#
-# Pw:  M = 100√5 − R  (same line for both; intercept 223.6)
-# IC utility: R×M = constant  →  M = U/R
-# India:  U1=10000  (IC1 through A),  U2=12500 (IC2 through E)
-# USA:    U1=10000  (IC1* through A*), U2=12500 (IC2* through E*)
+# India A: |PPF slope|=0.6 → M=0.36R on PPF → R=200/√2≈141.4, M=120/√2≈84.9
+# India B: |PPF slope|=1   → M=0.36R on PPF → R_B²=14400/0.4896 → R≈171.5, M≈61.7
+# Pw_c = R_B + M_B ≈ 233.2  →  E = (Pw_c/2, Pw_c/2) ≈ (116.6, 116.6)
+# USA (symmetric): A*=(84.9,141.4), B*=(61.7,171.5), E*=(116.6,116.6)
+# Tangency checks: IC1 slope at A = -U1/A_R² = -12000/141.4² ≈ -0.6 = Pa ✓
+#                  IC2 slope at E = -U2/E_R² = -13596/116.6² ≈ -1.0 = Pw ✓
+#                  E_M=116.6 < India max M=120 ✓; E_R=116.6 < USA max R=120 ✓
 
-A_R  <- 100*sqrt(2);  A_M  <- 100/sqrt(2)   # India autarky
-B_R  <- 80*sqrt(5);   B_M  <- 20*sqrt(5)    # India production under Pw
-E_R  <- 50*sqrt(5);   E_M  <- 50*sqrt(5)    # India & USA consumption (symmetric)
-Pw_c <- 100*sqrt(5)                          # Pw: M = Pw_c − R
-U1   <- 10000;        U2   <- 12500
+A_R  <- 200 / sqrt(2)              # India autarky A ≈ (141.4, 84.9)
+A_M  <- 120 / sqrt(2)
+B_R  <- sqrt(14400 / 0.4896)       # India production B ≈ (171.5, 61.7)
+B_M  <- 0.36 * B_R
+Pw_c <- B_R + B_M                  # World price line intercept ≈ 233.2
+E_R  <- Pw_c / 2                   # India/USA consumption ≈ (116.6, 116.6)
+E_M  <- Pw_c / 2
+U1   <- A_R * A_M                  # IC1 ≈ 12000 (autarky welfare)
+U2   <- E_R * E_M                  # IC2 ≈ 13596 (trade welfare)
 
-As_R <- 50*sqrt(2);   As_M <- 100*sqrt(2)   # USA autarky
-Bs_R <- 20*sqrt(5);   Bs_M <- 80*sqrt(5)    # USA production under Pw
+As_R <- A_M;  As_M <- A_R         # USA autarky A* ≈ (84.9, 141.4)
+Bs_R <- B_M;  Bs_M <- B_R         # USA production B* ≈ (61.7, 171.5)
 
-ri  <- seq(0.5, 225, len = 600)   # R grid for India panel
-ru  <- seq(0.5, 122, len = 600)   # R grid for USA panel
+ri <- seq(1, 220, len = 800)
+ru <- seq(1, 125, len = 800)
 
 # ── India panel ───────────────────────────────────────────────────────────────
 p_india <- ggplot() +
-  # PPF  (M = 100√(1−(R/200)²))
-  geom_line(data = data.frame(R = seq(0.5,200,len=400),
-                              M = 100*sqrt(1-(seq(0.5,200,len=400)/200)^2)),
+  # PPF
+  geom_line(data = data.frame(R = seq(1, 200, len = 500),
+                              M = 120*sqrt(1-(seq(1,200,len=500)/200)^2)),
             aes(R, M), color = "#012169", linewidth = 1.4) +
-  # Pa: M = 100√2 − 0.5R  (slope −0.5, rice is cheap at autarky)
-  geom_line(data = data.frame(R = ri, M = pmax(0, 100*sqrt(2) - 0.5*ri)),
-            aes(R, M), color = "grey45", linewidth = 0.8, linetype = "dotted") +
-  # Pw: M = Pw_c − R  (slope −1, world price)
+  # Pa (slope -0.6, tangent to PPF and IC1 at A)
+  geom_line(data = data.frame(R = ri,
+                              M = pmax(0, A_M + 0.6*(A_R - ri))),
+            aes(R, M), color = "grey50", linewidth = 0.85, linetype = "dashed") +
+  # Pw (slope -1, world price line through B and E)
   geom_line(data = data.frame(R = ri, M = pmax(0, Pw_c - ri)),
             aes(R, M), color = "#C8952A", linewidth = 1.0, linetype = "dashed") +
-  # IC1 (through A) and IC2 (through E)
+  # IC1 (autarky welfare, tangent to Pa at A)
   geom_line(data = data.frame(R = ri, M = U1/ri), aes(R, M),
-            color = "grey55", linewidth = 0.8, linetype = "dotted") +
+            color = "grey60", linewidth = 0.85, linetype = "solid") +
+  # IC2 (trade welfare, tangent to Pw at E)
   geom_line(data = data.frame(R = ri, M = U2/ri), aes(R, M),
-            color = "#2E7D32", linewidth = 0.8, linetype = "dotted") +
-  # Points A, B, E
-  geom_point(aes(A_R, A_M), color = "#012169", size = 2.8) +
-  geom_point(aes(B_R, B_M), color = "#012169", size = 2.8) +
-  geom_point(aes(E_R, E_M), color = "#C8952A", size = 2.8) +
-  # Trade triangle:
-  #   India EXPORTS Rice  → horizontal arrow from B leftward to E_R
-  #   India IMPORTS Machines → vertical arrow from B_M upward to E_M
+            color = "#2E7D32", linewidth = 0.85, linetype = "solid") +
+  # Trade triangle: B → (E_R, B_M) → E
   annotate("segment", x=B_R, xend=E_R, y=B_M, yend=B_M,
-           color="#2E7D32", linewidth=0.8,
-           arrow=arrow(length=unit(0.13,"cm"), ends="last")) +
+           color="#B22234", linewidth=0.9,
+           arrow=arrow(length=unit(0.15,"cm"), ends="last")) +
   annotate("segment", x=E_R, xend=E_R, y=B_M, yend=E_M,
-           color="#2E7D32", linewidth=0.8,
-           arrow=arrow(length=unit(0.13,"cm"), ends="last")) +
-  # Labels
-  annotate("text", x=A_R+6,  y=A_M+7,  label="A", fontface="bold", size=3.4, color="#012169") +
-  annotate("text", x=B_R+5,  y=B_M-8,  label="B", fontface="bold", size=3.4, color="#012169") +
-  annotate("text", x=E_R-14, y=E_M+7,  label="E", fontface="bold", size=3.4, color="#C8952A") +
-  # Price line labels (near right edge)
-  annotate("text", x=212, y=100*sqrt(2)-0.5*212+7, label="P[a]", parse=TRUE,
-           size=3.0, color="grey45", hjust=0) +
-  annotate("text", x=212, y=Pw_c-212-7, label="P[w]", parse=TRUE,
-           size=3.0, color="#C8952A", hjust=0) +
-  # IC labels (where curves are clearly visible)
-  annotate("text", x=130, y=U2/130+8,  label="IC[2]", parse=TRUE, size=2.8, color="#2E7D32") +
-  annotate("text", x=130, y=U1/130-9,  label="IC[1]", parse=TRUE, size=2.8, color="grey55") +
-  # Trade labels
-  annotate("text", x=(B_R+E_R)/2, y=B_M-10,
-           label="Exports Rice", size=2.5, hjust=0.5, color="#2E7D32") +
-  annotate("text", x=E_R+4, y=(B_M+E_M)/2,
-           label="Imports\nMachines", size=2.5, hjust=0, color="#2E7D32") +
-  scale_x_continuous(expand = c(0,0)) +
-  scale_y_continuous(expand = c(0,0)) +
-  coord_cartesian(xlim = c(0, 222), ylim = c(0, 122)) +
-  labs(title = "India (Labor-Abundant)",
-       x = "Rice (labor-intensive)", y = "Machines (capital-intensive)") + th
+           color="#B22234", linewidth=0.9,
+           arrow=arrow(length=unit(0.15,"cm"), ends="last")) +
+  # Key points
+  geom_point(aes(A_R, A_M), color = "#012169", size = 3.0, shape=16) +
+  geom_point(aes(B_R, B_M), color = "#012169", size = 3.0, shape=16) +
+  geom_point(aes(E_R, E_M), color = "#C8952A", size = 3.0, shape=16) +
+  # Point labels
+  annotate("text", x=A_R+5,  y=A_M+9,  label="A",  fontface="bold", size=3.5, color="#012169") +
+  annotate("text", x=B_R+5,  y=B_M-9,  label="B",  fontface="bold", size=3.5, color="#012169") +
+  annotate("text", x=E_R-14, y=E_M+8,  label="E",  fontface="bold", size=3.5, color="#C8952A") +
+  # Price line labels
+  annotate("text", x=195, y=pmax(1, A_M+0.6*(A_R-195))+5,
+           label="Pa", size=3.0, color="grey40", hjust=1, fontface="italic") +
+  annotate("text", x=202, y=pmax(1, Pw_c-202)+5,
+           label="Pw", size=3.0, color="#C8952A", hjust=1, fontface="italic") +
+  # IC labels
+  annotate("text", x=155, y=U2/155+9,  label="IC2", size=2.8, color="#2E7D32", fontface="italic") +
+  annotate("text", x=155, y=U1/155-9,  label="IC1", size=2.8, color="grey50", fontface="italic") +
+  # Trade arrow labels
+  annotate("text", x=(B_R+E_R)/2, y=B_M-9,
+           label="exports rice", size=2.6, hjust=0.5, color="#B22234") +
+  annotate("text", x=E_R-5, y=(B_M+E_M)/2,
+           label="imports\nmachines", size=2.6, hjust=1, color="#B22234") +
+  scale_x_continuous(expand=c(0,0)) +
+  scale_y_continuous(expand=c(0,0)) +
+  coord_cartesian(xlim=c(0, 218), ylim=c(0, 138)) +
+  labs(title="India (Labor-Abundant)",
+       x="Rice (labor-intensive goods)", y="Machines (capital-intensive goods)") + th
 
 # ── USA panel ─────────────────────────────────────────────────────────────────
 p_usa <- ggplot() +
-  # PPF  (M = 200√(1−(R/100)²))
-  geom_line(data = data.frame(R = seq(0.5,100,len=400),
-                              M = 200*sqrt(1-(seq(0.5,100,len=400)/100)^2)),
+  # PPF
+  geom_line(data = data.frame(R = seq(1, 120, len = 500),
+                              M = 200*sqrt(1-(seq(1,120,len=500)/120)^2)),
             aes(R, M), color = "#B22234", linewidth = 1.4) +
-  # Pa*: M = 200√2 − 2R  (slope −2, machines are cheap at autarky)
-  geom_line(data = data.frame(R = ru, M = pmax(0, 200*sqrt(2) - 2*ru)),
-            aes(R, M), color = "grey45", linewidth = 0.8, linetype = "dotted") +
-  # Pw: M = Pw_c − R  (same world price)
+  # Pa* (slope -5/3, tangent to PPF and IC1 at A*)
+  geom_line(data = data.frame(R = ru,
+                              M = pmax(0, As_M + (5/3)*(As_R - ru))),
+            aes(R, M), color = "grey50", linewidth = 0.85, linetype = "dashed") +
+  # Pw (slope -1, same world price)
   geom_line(data = data.frame(R = ru, M = pmax(0, Pw_c - ru)),
             aes(R, M), color = "#C8952A", linewidth = 1.0, linetype = "dashed") +
-  # IC1* and IC2*
+  # IC1* (autarky welfare, tangent to Pa* at A*)
   geom_line(data = data.frame(R = ru, M = U1/ru), aes(R, M),
-            color = "grey55", linewidth = 0.8, linetype = "dotted") +
+            color = "grey60", linewidth = 0.85, linetype = "solid") +
+  # IC2* (trade welfare, tangent to Pw at E*)
   geom_line(data = data.frame(R = ru, M = U2/ru), aes(R, M),
-            color = "#2E7D32", linewidth = 0.8, linetype = "dotted") +
-  # Points A*, B*, E*
-  geom_point(aes(As_R, As_M), color = "#B22234", size = 2.8) +
-  geom_point(aes(Bs_R, Bs_M), color = "#B22234", size = 2.8) +
-  geom_point(aes(Es_R, Es_M), color = "#C8952A", size = 2.8) +
-  # Trade triangle:
-  #   USA EXPORTS Machines → vertical arrow from B* downward to E*_M level
-  #   USA IMPORTS Rice     → horizontal arrow from B*_R rightward to E*_R
-  annotate("segment", x=Bs_R, xend=Bs_R, y=Bs_M, yend=Es_M,
-           color="#2E7D32", linewidth=0.8,
-           arrow=arrow(length=unit(0.13,"cm"), ends="last")) +
-  annotate("segment", x=Bs_R, xend=Es_R, y=Es_M, yend=Es_M,
-           color="#2E7D32", linewidth=0.8,
-           arrow=arrow(length=unit(0.13,"cm"), ends="last")) +
-  # Labels
-  annotate("text", x=As_R+4,  y=As_M+8,  label="A*", fontface="bold", size=3.4, color="#B22234") +
-  annotate("text", x=Bs_R-13, y=Bs_M+6,  label="B*", fontface="bold", size=3.4, color="#B22234") +
-  annotate("text", x=Es_R+4,  y=Es_M-9,  label="E*", fontface="bold", size=3.4, color="#C8952A") +
+            color = "#2E7D32", linewidth = 0.85, linetype = "solid") +
+  # Trade triangle: B* → (Bs_R, E_M) → E*
+  annotate("segment", x=Bs_R, xend=Bs_R, y=Bs_M, yend=E_M,
+           color="#012169", linewidth=0.9,
+           arrow=arrow(length=unit(0.15,"cm"), ends="last")) +
+  annotate("segment", x=Bs_R, xend=E_R, y=E_M, yend=E_M,
+           color="#012169", linewidth=0.9,
+           arrow=arrow(length=unit(0.15,"cm"), ends="last")) +
+  # Key points
+  geom_point(aes(As_R, As_M), color = "#B22234", size = 3.0, shape=16) +
+  geom_point(aes(Bs_R, Bs_M), color = "#B22234", size = 3.0, shape=16) +
+  geom_point(aes(E_R,  E_M),  color = "#C8952A", size = 3.0, shape=16) +
+  # Point labels
+  annotate("text", x=As_R+5,  y=As_M+9,  label="A*", fontface="bold", size=3.5, color="#B22234") +
+  annotate("text", x=Bs_R-14, y=Bs_M+7,  label="B*", fontface="bold", size=3.5, color="#B22234") +
+  annotate("text", x=E_R+5,   y=E_M-9,   label="E*", fontface="bold", size=3.5, color="#C8952A") +
   # Price line labels
-  annotate("text", x=96, y=200*sqrt(2)-2*96-9,  label="P[a]^'*'", parse=TRUE,
-           size=3.0, color="grey45", hjust=0) +
-  annotate("text", x=96, y=Pw_c-96+7,            label="P[w]",     parse=TRUE,
-           size=3.0, color="#C8952A", hjust=0) +
+  annotate("text", x=95, y=pmax(1, As_M+(5/3)*(As_R-95))-10,
+           label="Pa*", size=3.0, color="grey40", hjust=0, fontface="italic") +
+  annotate("text", x=100, y=pmax(1, Pw_c-100)+7,
+           label="Pw", size=3.0, color="#C8952A", hjust=0, fontface="italic") +
   # IC labels
-  annotate("text", x=78, y=U2/78+8,  label="IC[2]^'*'", parse=TRUE, size=2.8, color="#2E7D32") +
-  annotate("text", x=78, y=U1/78-9,  label="IC[1]^'*'", parse=TRUE, size=2.8, color="grey55") +
-  # Trade labels
-  annotate("text", x=Bs_R-4,        y=(Bs_M+Es_M)/2,
-           label="Exports\nMachines", size=2.5, hjust=1, color="#2E7D32") +
-  annotate("text", x=(Bs_R+Es_R)/2, y=Es_M-10,
-           label="Imports Rice", size=2.5, hjust=0.5, color="#2E7D32") +
-  scale_x_continuous(expand = c(0,0)) +
-  scale_y_continuous(expand = c(0,0)) +
-  coord_cartesian(xlim = c(0, 120), ylim = c(0, 213)) +
-  labs(title = "USA (Capital-Abundant)",
-       x = "Rice (labor-intensive)", y = "Machines (capital-intensive)") + th
+  annotate("text", x=85, y=U2/85+10,  label="IC2*", size=2.8, color="#2E7D32", fontface="italic") +
+  annotate("text", x=85, y=U1/85-10,  label="IC1*", size=2.8, color="grey50", fontface="italic") +
+  # Trade arrow labels
+  annotate("text", x=Bs_R-5, y=(Bs_M+E_M)/2,
+           label="exports\nmachines", size=2.6, hjust=1, color="#012169") +
+  annotate("text", x=(Bs_R+E_R)/2, y=E_M-9,
+           label="imports rice", size=2.6, hjust=0.5, color="#012169") +
+  scale_x_continuous(expand=c(0,0)) +
+  scale_y_continuous(expand=c(0,0)) +
+  coord_cartesian(xlim=c(0, 125), ylim=c(0, 215)) +
+  labs(title="USA (Capital-Abundant)",
+       x="Rice (labor-intensive goods)", y="Machines (capital-intensive goods)") + th
 
-# ── Combine ───────────────────────────────────────────────────────────────────
+# ── Combine with patchwork ────────────────────────────────────────────────────
 p_india + p_usa +
   plot_annotation(
     caption = "After Salvatore, Fig. 5.4",

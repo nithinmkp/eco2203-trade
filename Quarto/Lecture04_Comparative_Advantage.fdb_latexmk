@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778135386.73762 "Lecture04_Comparative_Advantage.xdv" "Lecture04_Comparative_Advantage.pdf" "Lecture04_Comparative_Advantage" 1778135387.79544 0
-  "Lecture04_Comparative_Advantage.xdv" 1778135385 188776 4fd6eeb7606dba29eb8b80fab3ae2f28 "xelatex"
+["xdvipdfmx"] 1778138530.92421 "Lecture04_Comparative_Advantage.xdv" "Lecture04_Comparative_Advantage.pdf" "Lecture04_Comparative_Advantage" 1778138531.97412 0
+  "Lecture04_Comparative_Advantage.xdv" 1778138529 188776 c01b493c7c76e91d6ad0c319f3281f60 "xelatex"
   (generated)
   "Lecture04_Comparative_Advantage.pdf"
   (rewritten before read)
-["xelatex"] 1778135378.48871 "Lecture04_Comparative_Advantage.tex" "Lecture04_Comparative_Advantage.xdv" "Lecture04_Comparative_Advantage" 1778135387.75617 2
+["xelatex"] 1778138522.21113 "Lecture04_Comparative_Advantage.tex" "Lecture04_Comparative_Advantage.xdv" "Lecture04_Comparative_Advantage" 1778138531.93534 2
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -242,13 +242,13 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture04_Comparative_Advantage.aux" 1778135385 6840 c6be917d983f10de98e8d9c7f1a8f0b7 "xelatex"
-  "Lecture04_Comparative_Advantage.nav" 1778135385 2098 a0c98d3144af25a2e271fae5290c02f1 "xelatex"
-  "Lecture04_Comparative_Advantage.tex" 1778134807 26670 bc3f616676c8d3a40749ac3b4081e58e ""
-  "Lecture04_Comparative_Advantage_files/figure-beamer/fig-gains-1.pdf" 1778134780 9131 eb681d66407af3338a9eca7b53b0ca47 ""
-  "Lecture04_Comparative_Advantage_files/figure-beamer/fig-ic-ppf-1.pdf" 1778134781 9797 6b55760157ccba3d7e33985d7a418ecb ""
-  "Lecture04_Comparative_Advantage_files/figure-beamer/fig-ppf-1.pdf" 1778134778 5216 770ed8da9d13173d169f000bc77c2155 ""
-  "Lecture04_Comparative_Advantage_files/figure-beamer/fig-rca-1.pdf" 1778134782 4801 ae53d7281155e55b55cd5cfed187d191 ""
+  "Lecture04_Comparative_Advantage.aux" 1778138529 6840 c6be917d983f10de98e8d9c7f1a8f0b7 "xelatex"
+  "Lecture04_Comparative_Advantage.nav" 1778138529 2098 a0c98d3144af25a2e271fae5290c02f1 "xelatex"
+  "Lecture04_Comparative_Advantage.tex" 1778137927 26670 1721a0507eeab24a90c9f68371ea816a ""
+  "Lecture04_Comparative_Advantage_files/figure-beamer/fig-gains-1.pdf" 1778137902 9131 bab6d2d27147086daa98df7f5e5e20eb ""
+  "Lecture04_Comparative_Advantage_files/figure-beamer/fig-ic-ppf-1.pdf" 1778137903 9797 53e26381ae2a4a20dfc17e0d6f609f7b ""
+  "Lecture04_Comparative_Advantage_files/figure-beamer/fig-ppf-1.pdf" 1778137901 5216 6c447b49763c77a554b5d91c30e0fc4d ""
+  "Lecture04_Comparative_Advantage_files/figure-beamer/fig-rca-1.pdf" 1778137904 4801 e6bc9a014277390da49887190598b2d4 ""
   (generated)
   "Lecture04_Comparative_Advantage.aux"
   "Lecture04_Comparative_Advantage.log"

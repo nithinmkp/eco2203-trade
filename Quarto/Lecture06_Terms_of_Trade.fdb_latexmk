@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778135441.82242 "Lecture06_Terms_of_Trade.xdv" "Lecture06_Terms_of_Trade.pdf" "Lecture06_Terms_of_Trade" 1778135442.8754 0
-  "Lecture06_Terms_of_Trade.xdv" 1778135440 326148 1f996a95bd139d27bdf1415051aa2ba6 "xelatex"
+["xdvipdfmx"] 1778138595.87713 "Lecture06_Terms_of_Trade.xdv" "Lecture06_Terms_of_Trade.pdf" "Lecture06_Terms_of_Trade" 1778138596.83698 0
+  "Lecture06_Terms_of_Trade.xdv" 1778138594 326148 9d15f002349901319812646a3dead968 "xelatex"
   (generated)
   "Lecture06_Terms_of_Trade.pdf"
   (rewritten before read)
-["xelatex"] 1778135433.49124 "Lecture06_Terms_of_Trade.tex" "Lecture06_Terms_of_Trade.xdv" "Lecture06_Terms_of_Trade" 1778135442.84526 0
+["xelatex"] 1778138587.20115 "Lecture06_Terms_of_Trade.tex" "Lecture06_Terms_of_Trade.xdv" "Lecture06_Terms_of_Trade" 1778138596.80441 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -227,13 +227,13 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture06_Terms_of_Trade.aux" 1778135440 10905 aea2f0fcc4d8db1fff96f96f58833069 "xelatex"
-  "Lecture06_Terms_of_Trade.nav" 1778135440 2935 92676084a68e28d484c3a3f76231d46d "xelatex"
-  "Lecture06_Terms_of_Trade.tex" 1778134855 40488 5daf46995a36c912c221819f1983dd3f ""
-  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-india-fta-1.pdf" 1778134826 4750 5077dc3386e92eba86d5bd0a18113284 ""
-  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-india-tot-1.pdf" 1778134825 5054 bdfc564b493db7efd4422d0f6673984e ""
-  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-offer-curves-1.pdf" 1778134824 6306 c1cd050582cdc2501bdd2872ccca795f ""
-  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-trade-creation-1.pdf" 1778134828 6124 e63abc9ad769bdf2f52e1776ff5419e5 ""
+  "Lecture06_Terms_of_Trade.aux" 1778138594 10905 aea2f0fcc4d8db1fff96f96f58833069 "xelatex"
+  "Lecture06_Terms_of_Trade.nav" 1778138594 2935 92676084a68e28d484c3a3f76231d46d "xelatex"
+  "Lecture06_Terms_of_Trade.tex" 1778137999 40488 5daf46995a36c912c221819f1983dd3f ""
+  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-india-fta-1.pdf" 1778137973 4750 99af9e2b7990990a387ce377f028e07f ""
+  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-india-tot-1.pdf" 1778137972 5054 03a2544ecc3d020c370f79d490cdaa62 ""
+  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-offer-curves-1.pdf" 1778137971 6306 acc77a0b853b9c869d97dca8a4cc0bad ""
+  "Lecture06_Terms_of_Trade_files/figure-beamer/fig-trade-creation-1.pdf" 1778137975 6124 d51c578ad459a4aff8203a6cde54662c ""
   (generated)
   "Lecture06_Terms_of_Trade.aux"
   "Lecture06_Terms_of_Trade.log"

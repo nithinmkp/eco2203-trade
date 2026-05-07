@@ -1,0 +1,42 @@
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture01_Introduction_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture02_Features_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture03_Theories_I_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture04_Comparative_Advantage_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture05_Modern_Theory_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture06_Terms_of_Trade_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture07_Protectionism_I_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture08_Protectionism_II_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture09_BoT_BoP_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture10_India_External_Sector_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture11_Foreign_Exchange_I_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture12_Forex_Market_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture13_WTO_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture14_Agreement_on_Agriculture_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture15_SPS_Codex_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARNING (C:/Users/Nithin M/AppData/Local/Apps/Quarto/share/filters/main.lua:9634) 
+This usually indicates a problem with a fenced div in the document. Please check the document for errors.
+WARNING (C:/Users/Nithin M/AppData/Local/Apps/Quarto/share/filters/main.lua:9634) 
+This usually indicates a problem with a fenced div in the document. Please check the document for errors.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture16_Export_Procedures_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture17_Export_Organizations_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+WARN: Refusing to remove directory D:\Teaching\international trade\docs\Lecture18_India_Agri_Trade_Policy_files\figure-revealjs since it is not a subdirectory of the main project directory.
+WARN: Quarto did not expect the path configuration being used in this project, and strange behavior may result.
+  output-file: index.html
+Output created: ..\docs\index.html

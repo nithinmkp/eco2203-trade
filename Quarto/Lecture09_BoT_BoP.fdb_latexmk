@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778135537.07908 "Lecture09_BoT_BoP.xdv" "Lecture09_BoT_BoP.pdf" "Lecture09_BoT_BoP" 1778135538.10745 0
-  "Lecture09_BoT_BoP.xdv" 1778135535 278512 248e65834421b0fcb2c78d4acba36879 "xelatex"
+["xdvipdfmx"] 1778138692.26301 "Lecture09_BoT_BoP.xdv" "Lecture09_BoT_BoP.pdf" "Lecture09_BoT_BoP" 1778138693.26058 0
+  "Lecture09_BoT_BoP.xdv" 1778138690 278512 e3ac42a4af62244e4bcd8bcbefbda1da "xelatex"
   (generated)
   "Lecture09_BoT_BoP.pdf"
   (rewritten before read)
-["xelatex"] 1778135526.88649 "Lecture09_BoT_BoP.tex" "Lecture09_BoT_BoP.xdv" "Lecture09_BoT_BoP" 1778135538.06642 0
+["xelatex"] 1778138683.18579 "Lecture09_BoT_BoP.tex" "Lecture09_BoT_BoP.xdv" "Lecture09_BoT_BoP" 1778138693.216 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -227,13 +227,13 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture09_BoT_BoP.aux" 1778135535 13917 2ce88fd73a8b23333ceb98e80cbd402a "xelatex"
-  "Lecture09_BoT_BoP.nav" 1778135535 4051 650363ba2e1ee9e58c861730fa7e34ad "xelatex"
-  "Lecture09_BoT_BoP.tex" 1778134962 30172 315769afc0ccd46e80ad291526107f58 ""
-  "Lecture09_BoT_BoP_files/figure-beamer/fig-bop-india-1.pdf" 1778134935 5014 c8da485fcd75976b6e6f9f43fd10c7a4 ""
-  "Lecture09_BoT_BoP_files/figure-beamer/fig-ca-waterfall-1.pdf" 1778134936 4884 3ec4d43d4759b613a6921b3e22aa3255 ""
-  "Lecture09_BoT_BoP_files/figure-beamer/fig-forex-reserves-1.pdf" 1778134938 5960 0d86f6ccfd5994869bd21ced330bcebf ""
-  "Lecture09_BoT_BoP_files/figure-beamer/fig-jcurve-1.pdf" 1778134937 6534 1579bc64ae4d60cdbefde3c11678d392 ""
+  "Lecture09_BoT_BoP.aux" 1778138690 13917 2ce88fd73a8b23333ceb98e80cbd402a "xelatex"
+  "Lecture09_BoT_BoP.nav" 1778138690 4051 650363ba2e1ee9e58c861730fa7e34ad "xelatex"
+  "Lecture09_BoT_BoP.tex" 1778138100 30172 315769afc0ccd46e80ad291526107f58 ""
+  "Lecture09_BoT_BoP_files/figure-beamer/fig-bop-india-1.pdf" 1778138072 5014 2e069e41c8b1267cf7321e09209348a7 ""
+  "Lecture09_BoT_BoP_files/figure-beamer/fig-ca-waterfall-1.pdf" 1778138073 4884 79072f1310d9df97b7c5d23b36252d58 ""
+  "Lecture09_BoT_BoP_files/figure-beamer/fig-forex-reserves-1.pdf" 1778138075 5960 650eda44ba44818261f3582fcff87150 ""
+  "Lecture09_BoT_BoP_files/figure-beamer/fig-jcurve-1.pdf" 1778138074 6534 1d88368f2c72038d4bda416de0b7fde1 ""
   (generated)
   "Lecture09_BoT_BoP.aux"
   "Lecture09_BoT_BoP.log"
