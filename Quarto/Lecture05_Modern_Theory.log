@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  6 MAY 2026 08:14
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  7 MAY 2026 10:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2309,22 +2309,15 @@ File: Lecture05_Modern_Theory_files/figure-beamer/fig-ho-welfare-1.pdf Graphic
 file (type pdf)
 <use Lecture05_Modern_Theory_files/figure-beamer/fig-ho-welfare-1.pdf>
 
-! Undefined control sequence.
-\beamer@doifinframe ...alvatore Fig. 5.4)} \label 
-                                                  {fig-ho-welfare} \par \end...
-l.556 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.92493 percent inst
+ead of 10 percent on input line 532.
 
 [8
 
 ]
 LaTeX Font Info:    Font shape `TU/FontAwesome(0)/m/n' will be
-(Font)              scaled to size 11.34615pt on input line 593.
+(Font)              scaled to size 11.34615pt on input line 569.
 
 (C:\Users\Nithin M\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-TU-empt
 y.cfg
@@ -2333,7 +2326,7 @@ ndard glyph set (RS)
 )
 
 Class beamer Warning: Frame text is shrunk by a factor of 26.04218 percent inst
-ead of 10 percent on input line 593.
+ead of 10 percent on input line 569.
 
 [9
 
@@ -2347,7 +2340,7 @@ ern Roman (RS)
 )
 
 Class beamer Warning: Frame text is shrunk by a factor of 28.04108 percent inst
-ead of 10 percent on input line 654.
+ead of 10 percent on input line 630.
 
 [11
 
@@ -2356,7 +2349,7 @@ ead of 10 percent on input line 654.
 ]
 
 Class beamer Warning: Frame text is shrunk by a factor of 26.80511 percent inst
-ead of 10 percent on input line 718.
+ead of 10 percent on input line 694.
 
 [13
 
@@ -2368,7 +2361,7 @@ file (type pdf)
 ! Undefined control sequence.
 \beamer@doifinframe ...or's illustration.} \label 
                                                   {fig-rybczynski} \par \end...
-l.765 \end{frame}
+l.741 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2388,9 +2381,9 @@ le (type pdf)
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 5.94267pt on input line 838.
+(Font)              scaled to size 5.94267pt on input line 814.
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/n' will be
-(Font)              scaled to size 4.24477pt on input line 838.
+(Font)              scaled to size 4.24477pt on input line 814.
  [17
 
 ] [18
@@ -2404,7 +2397,7 @@ File: Lecture05_Modern_Theory_files/figure-beamer/fig-lewis-1.pdf Graphic file
 ]
 
 Class beamer Warning: Frame text is shrunk by a factor of 19.01245 percent inst
-ead of 10 percent on input line 932.
+ead of 10 percent on input line 908.
 
 [20
 
@@ -2414,7 +2407,7 @@ ead of 10 percent on input line 932.
 
 ]
 LaTeX Font Info:    Font shape `TU/FiraSansLight(0)/m/it' will be
-(Font)              scaled to size 8.48953pt on input line 1028.
+(Font)              scaled to size 8.48953pt on input line 1004.
  [23
 
 ]
@@ -2434,12 +2427,12 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 40211 strings out of 402982
- 842389 string characters out of 5447852
- 1408669 words of memory out of 5000000
- 68223 multiletter control sequences out of 15000+600000
+ 40212 strings out of 402982
+ 842405 string characters out of 5447852
+ 1408760 words of memory out of 5000000
+ 68224 multiletter control sequences out of 15000+600000
  634494 words of font info for 132 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,13n,165p,1894b,1018s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Lecture05_Modern_Theory.xdv (23 pages, 252932 bytes).
+Output written on Lecture05_Modern_Theory.xdv (23 pages, 248952 bytes).

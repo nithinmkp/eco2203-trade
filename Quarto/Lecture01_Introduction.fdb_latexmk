@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778035335.53661 "Lecture01_Introduction.xdv" "Lecture01_Introduction.pdf" "Lecture01_Introduction" 1778035336.48998 0
-  "Lecture01_Introduction.xdv" 1778035334 260476 decec9065c856c6e839b367429e265e1 "xelatex"
+["xdvipdfmx"] 1778128485.42049 "Lecture01_Introduction.xdv" "Lecture01_Introduction.pdf" "Lecture01_Introduction" 1778128486.3038 0
+  "Lecture01_Introduction.xdv" 1778128484 260476 4eca62ad40cf4280a1cf48d41a7b9c2d "xelatex"
   (generated)
   "Lecture01_Introduction.pdf"
   (rewritten before read)
-["xelatex"] 1778035327.94256 "Lecture01_Introduction.tex" "Lecture01_Introduction.xdv" "Lecture01_Introduction" 1778035336.45711 0
+["xelatex"] 1778128477.5548 "Lecture01_Introduction.tex" "Lecture01_Introduction.xdv" "Lecture01_Introduction" 1778128486.26632 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -212,12 +212,12 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture01_Introduction.aux" 1778035334 11152 9700ba16a4009c36e3adab11f1725530 "xelatex"
-  "Lecture01_Introduction.nav" 1778035334 3121 278337e5480ada622f9e90e97b587025 "xelatex"
-  "Lecture01_Introduction.tex" 1778034794 35023 dc6f99ec4894b9d5d6fff685ba749aa1 ""
-  "Lecture01_Introduction_files/figure-beamer/fig-agri-exports-1.pdf" 1778034771 4750 f77984267e456b58030748f076c16337 ""
-  "Lecture01_Introduction_files/figure-beamer/fig-global-share-1.pdf" 1778034772 4608 bc99312f31458069799e618eed77fc61 ""
-  "Lecture01_Introduction_files/figure-beamer/fig-india-trade-trend-1.pdf" 1778034770 6381 0bcf86091586089ee733dae1545c84c8 ""
+  "Lecture01_Introduction.aux" 1778128484 11152 9700ba16a4009c36e3adab11f1725530 "xelatex"
+  "Lecture01_Introduction.nav" 1778128484 3121 278337e5480ada622f9e90e97b587025 "xelatex"
+  "Lecture01_Introduction.tex" 1778064421 35023 dc6f99ec4894b9d5d6fff685ba749aa1 ""
+  "Lecture01_Introduction_files/figure-beamer/fig-agri-exports-1.pdf" 1778064392 4750 c472e6b458012650c55dcb3310b1062a ""
+  "Lecture01_Introduction_files/figure-beamer/fig-global-share-1.pdf" 1778064392 4608 01aba6fcfb8211281ba15a8521b0ea8c ""
+  "Lecture01_Introduction_files/figure-beamer/fig-india-trade-trend-1.pdf" 1778064391 6381 019d1a274d189d72c20d69b9d7fecf3c ""
   (generated)
   "Lecture01_Introduction.aux"
   "Lecture01_Introduction.log"

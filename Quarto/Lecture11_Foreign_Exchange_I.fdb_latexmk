@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778035639.22006 "Lecture11_Foreign_Exchange_I.xdv" "Lecture11_Foreign_Exchange_I.pdf" "Lecture11_Foreign_Exchange_I" 1778035640.19447 0
-  "Lecture11_Foreign_Exchange_I.xdv" 1778035637 285512 72c16d4127d9f593d0739073154a7c85 "xelatex"
+["xdvipdfmx"] 1778128768.87441 "Lecture11_Foreign_Exchange_I.xdv" "Lecture11_Foreign_Exchange_I.pdf" "Lecture11_Foreign_Exchange_I" 1778128769.74238 0
+  "Lecture11_Foreign_Exchange_I.xdv" 1778128767 285512 87cf5fb7020df74ebb26fe0b2645f906 "xelatex"
   (generated)
   "Lecture11_Foreign_Exchange_I.pdf"
   (rewritten before read)
-["xelatex"] 1778035630.49232 "Lecture11_Foreign_Exchange_I.tex" "Lecture11_Foreign_Exchange_I.xdv" "Lecture11_Foreign_Exchange_I" 1778035640.15862 2
+["xelatex"] 1778128761.38392 "Lecture11_Foreign_Exchange_I.tex" "Lecture11_Foreign_Exchange_I.xdv" "Lecture11_Foreign_Exchange_I" 1778128769.70669 2
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -227,13 +227,13 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture11_Foreign_Exchange_I.aux" 1778035637 9413 e30d987b99c0aa393bbbc19e3986f295 "xelatex"
-  "Lecture11_Foreign_Exchange_I.nav" 1778035637 2656 abb8913dea13abc33ad83cf8d0538ce7 "xelatex"
-  "Lecture11_Foreign_Exchange_I.tex" 1778035093 37376 e5d25f5542f7fca7e54d66857d01cffc ""
-  "Lecture11_Foreign_Exchange_I_files/figure-beamer/fig-forex-eq-1.pdf" 1778035070 5953 894b0fb8c5e972575619af6b45779a34 ""
-  "Lecture11_Foreign_Exchange_I_files/figure-beamer/fig-inr-trend-1.pdf" 1778035070 6262 0fd47b4c0672edcfe7a4997d0b2443a4 ""
-  "Lecture11_Foreign_Exchange_I_files/figure-beamer/fig-irp-1.pdf" 1778035072 5287 6b7c79c2bb4e44e494a34f3a7bde40d0 ""
-  "Lecture11_Foreign_Exchange_I_files/figure-beamer/fig-ppp-india-1.pdf" 1778035071 5347 da9ab813f0bfa0c542b72cd0373a95d5 ""
+  "Lecture11_Foreign_Exchange_I.aux" 1778128767 9413 e30d987b99c0aa393bbbc19e3986f295 "xelatex"
+  "Lecture11_Foreign_Exchange_I.nav" 1778128767 2656 abb8913dea13abc33ad83cf8d0538ce7 "xelatex"
+  "Lecture11_Foreign_Exchange_I.tex" 1778128247 37376 e5d25f5542f7fca7e54d66857d01cffc ""
+  "Lecture11_Foreign_Exchange_I_files/figure-beamer/fig-forex-eq-1.pdf" 1778128224 5953 ee2ea9abf947d25cdd441a4156e664d7 ""
+  "Lecture11_Foreign_Exchange_I_files/figure-beamer/fig-inr-trend-1.pdf" 1778128224 6262 2cb52c053f5d47a104c7cd2b01ffee79 ""
+  "Lecture11_Foreign_Exchange_I_files/figure-beamer/fig-irp-1.pdf" 1778128226 5287 410156cdb94d7c6c0f5ae2c159b60e10 ""
+  "Lecture11_Foreign_Exchange_I_files/figure-beamer/fig-ppp-india-1.pdf" 1778128225 5347 1a6eabe50e30eca5c790035b66a5ce0f ""
   (generated)
   "Lecture11_Foreign_Exchange_I.aux"
   "Lecture11_Foreign_Exchange_I.log"

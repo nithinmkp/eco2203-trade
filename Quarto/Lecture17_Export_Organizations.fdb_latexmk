@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778035827.49078 "Lecture17_Export_Organizations.xdv" "Lecture17_Export_Organizations.pdf" "Lecture17_Export_Organizations" 1778035828.52222 0
-  "Lecture17_Export_Organizations.xdv" 1778035826 297728 8cdda76d71d85fc6ea49dde2c1adad8e "xelatex"
+["xdvipdfmx"] 1778128924.24369 "Lecture17_Export_Organizations.xdv" "Lecture17_Export_Organizations.pdf" "Lecture17_Export_Organizations" 1778128925.07183 0
+  "Lecture17_Export_Organizations.xdv" 1778128923 297728 290dba22e057e2a1bde06f71cc4a6856 "xelatex"
   (generated)
   "Lecture17_Export_Organizations.pdf"
   (rewritten before read)
-["xelatex"] 1778035818.70979 "Lecture17_Export_Organizations.tex" "Lecture17_Export_Organizations.xdv" "Lecture17_Export_Organizations" 1778035828.48567 0
+["xelatex"] 1778128917.44755 "Lecture17_Export_Organizations.tex" "Lecture17_Export_Organizations.xdv" "Lecture17_Export_Organizations" 1778128925.0398 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -212,12 +212,12 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture17_Export_Organizations.aux" 1778035826 8314 f0a8b673a2282240b5dcbd18648fd6b8 "xelatex"
-  "Lecture17_Export_Organizations.nav" 1778035826 2191 63e6572682b3f0db7f6989ac45bc4c7b "xelatex"
-  "Lecture17_Export_Organizations.tex" 1778035275 40202 ca89e75f87839d5b939098c4e92da5f9 ""
-  "Lecture17_Export_Organizations_files/figure-beamer/fig-agri-destinations-1.pdf" 1778035253 5510 e949204adffd899a44f777f21e659753 ""
-  "Lecture17_Export_Organizations_files/figure-beamer/fig-apeda-products-1.pdf" 1778035252 4954 ff83fb2fbc8ccb42efa33eaf8c0002d0 ""
-  "Lecture17_Export_Organizations_files/figure-beamer/fig-apeda-trend-1.pdf" 1778035254 5737 13f20b97d090c7b934b2d38552854500 ""
+  "Lecture17_Export_Organizations.aux" 1778128923 8314 f0a8b673a2282240b5dcbd18648fd6b8 "xelatex"
+  "Lecture17_Export_Organizations.nav" 1778128923 2191 63e6572682b3f0db7f6989ac45bc4c7b "xelatex"
+  "Lecture17_Export_Organizations.tex" 1778128425 40202 ca89e75f87839d5b939098c4e92da5f9 ""
+  "Lecture17_Export_Organizations_files/figure-beamer/fig-agri-destinations-1.pdf" 1778128404 5510 09388ececf0f90e4643eab6b81af9e82 ""
+  "Lecture17_Export_Organizations_files/figure-beamer/fig-apeda-products-1.pdf" 1778128404 4954 73f7b98b4fa15cb3658dfcc3ad46d421 ""
+  "Lecture17_Export_Organizations_files/figure-beamer/fig-apeda-trend-1.pdf" 1778128405 5737 a54d785104b3abf1dda7cfa12dd50ccb ""
   (generated)
   "Lecture17_Export_Organizations.aux"
   "Lecture17_Export_Organizations.log"

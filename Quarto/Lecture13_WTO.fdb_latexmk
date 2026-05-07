@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778035706.85678 "Lecture13_WTO.xdv" "Lecture13_WTO.pdf" "Lecture13_WTO" 1778035707.77613 0
-  "Lecture13_WTO.xdv" 1778035705 344008 491f631262c4b557e2e89b109b649ece "xelatex"
+["xdvipdfmx"] 1778128824.95188 "Lecture13_WTO.xdv" "Lecture13_WTO.pdf" "Lecture13_WTO" 1778128825.79744 0
+  "Lecture13_WTO.xdv" 1778128823 344008 9254687aaa38f31a9a706925fe280c2b "xelatex"
   (generated)
   "Lecture13_WTO.pdf"
   (rewritten before read)
-["xelatex"] 1778035698.42418 "Lecture13_WTO.tex" "Lecture13_WTO.xdv" "Lecture13_WTO" 1778035707.74129 0
+["xelatex"] 1778128817.65606 "Lecture13_WTO.tex" "Lecture13_WTO.xdv" "Lecture13_WTO" 1778128825.77058 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -212,13 +212,13 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture13_WTO.aux" 1778035705 11347 7b0fcc7a9f7bdd0b87ad39dc5611306e "xelatex"
-  "Lecture13_WTO.nav" 1778035705 3346 491eff8dd6d50790646268fd2eb20a3e "xelatex"
-  "Lecture13_WTO.tex" 1778035159 42125 d1eb189143b8a7da012b9e918d767f09 ""
-  "Lecture13_WTO.vrb" 1778035703 1007 dca55c3ed6087b9328d533c876e34031 "xelatex"
-  "Lecture13_WTO_files/figure-beamer/fig-india-wto-disputes-1.pdf" 1778035136 4673 308e34d57671ae80a3c335dd1a7a8692 ""
-  "Lecture13_WTO_files/figure-beamer/fig-trade-gdp-1.pdf" 1778035135 6041 522b736eb8de8e5e5592b890f25c0373 ""
-  "Lecture13_WTO_files/figure-beamer/fig-wto-membership-1.pdf" 1778035135 5084 02fa0ba7f4483e40a14bee12a1e9613a ""
+  "Lecture13_WTO.aux" 1778128823 11347 7b0fcc7a9f7bdd0b87ad39dc5611306e "xelatex"
+  "Lecture13_WTO.nav" 1778128823 3346 491eff8dd6d50790646268fd2eb20a3e "xelatex"
+  "Lecture13_WTO.tex" 1778128311 42125 d1eb189143b8a7da012b9e918d767f09 ""
+  "Lecture13_WTO.vrb" 1778128822 1007 dca55c3ed6087b9328d533c876e34031 "xelatex"
+  "Lecture13_WTO_files/figure-beamer/fig-india-wto-disputes-1.pdf" 1778128289 4673 8a0d69746fc87b6a8ee71fc103c3a60a ""
+  "Lecture13_WTO_files/figure-beamer/fig-trade-gdp-1.pdf" 1778128288 6041 17c63dc0eaef2107e40b8c8df6901fec ""
+  "Lecture13_WTO_files/figure-beamer/fig-wto-membership-1.pdf" 1778128288 5084 44b6a5a7cb38e0a508a1cd54f67474d2 ""
   (generated)
   "Lecture13_WTO.aux"
   "Lecture13_WTO.log"
