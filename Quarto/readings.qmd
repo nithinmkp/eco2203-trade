@@ -1,0 +1,257 @@
+---
+title: "Readings"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+Per-lecture reading lists for Econ 2203. Each list combines the relevant textbook chapters with key journal papers. Papers marked **★** are considered essential reading.
+
+---
+
+## Lecture 1: Introduction to International Trade
+
+**Textbook:** Salvatore Ch. 1; Appleyard & Field Ch. 1
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Frankel & Romer (1999) | "Does Trade Cause Growth?" | *AER* 89(3) |
+| Krugman (1995) | "Growing World Trade: Causes and Consequences" | *Brookings Papers* 26(1) |
+| Sachs & Warner (1995) | "Economic Reform and the Process of Global Integration" | *Brookings Papers* 1995(1) |
+| WTO (2024) | *World Trade Statistical Review 2024* | WTO, Geneva |
+
+---
+
+## Lecture 2: Features of International Trade
+
+**Textbook:** Salvatore Ch. 2; Appleyard & Field Ch. 2
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Hummels & Klenow (2005) | "The Variety and Quality of a Nation's Exports" | *AER* 95(3) |
+| Helpman (1987) | "Imperfect Competition and International Trade" | *J. Japanese & Int'l Econ.* 1(1) |
+| Lall (2000) | "The Technological Structure and Performance of Developing Country Manufactured Exports" | *Oxford Dev. Studies* 28(3) |
+| DGCI&S (2024) | *Foreign Trade Statistics of India* | Ministry of Commerce |
+
+---
+
+## Lecture 3: Classical Theories — Mercantilism to Smith
+
+**Textbook:** Salvatore Ch. 2 §2.1–2.3; Appleyard & Field Ch. 3
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Smith, A. (1776) | *Wealth of Nations*, Book IV, Ch. 1–2 | Cannan Edition |
+| Viner, J. (1937) | *Studies in the Theory of International Trade*, Ch. 1 | Harper |
+| Irwin, D. A. (1996) | *Against the Tide: An Intellectual History of Free Trade*, Ch. 2 | Princeton UP |
+| Magnusson, L. (1994) | *Mercantilism: The Shaping of an Economic Language* | Routledge |
+
+---
+
+## Lecture 4: Comparative Advantage — Ricardo & Opportunity Cost
+
+**Textbook:** Salvatore Ch. 2 §2.4–2.6; Appleyard & Field Ch. 3–4
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Ricardo, D. (1817) | *Principles of Political Economy*, Ch. 7 | John Murray |
+| **★** MacDougall, G. D. A. (1951) | "British and American Exports: A Study Suggested by the Theory of Comparative Costs" | *Economic Journal* 61(244) |
+| MacDougall, G. D. A. (1952) | "British and American Exports: Part II" | *Economic Journal* 62(247) |
+| Balassa, B. (1963) | "An Empirical Demonstration of Classical Comparative Cost Theory" | *Rev. Economics & Statistics* 45(3) |
+| Dornbusch, Fischer & Samuelson (1977) | "Comparative Advantage, Trade, and Payments in a Ricardian Model with a Continuum of Goods" | *AER* 67(5) |
+| Stern, R. M. (1962) | "British and American Productivity and Comparative Costs in International Trade" | *Oxford Economic Papers* 14(3) |
+
+---
+
+## Lecture 5: Modern Trade Theory — Heckscher–Ohlin & Lewis
+
+**Textbook:** Salvatore Ch. 5; Appleyard & Field Ch. 7–8
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Stolper & Samuelson (1941) | "Protection and Real Wages" | *Review of Economic Studies* 9(1) |
+| **★** Leontief, W. (1953) | "Domestic Production and Foreign Trade: The American Capital Position Re-Examined" | *Proc. Am. Philosophical Society* 97(4) |
+| Heckscher, E. F. (1919) | "The Effect of Foreign Trade on the Distribution of Income" | *Ekonomisk Tidskrift* 21 |
+| Samuelson, P. A. (1948) | "International Trade and the Equalisation of Factor Prices" | *Economic Journal* 58(230) |
+| Rybczynski, T. M. (1955) | "Factor Endowment and Relative Commodity Prices" | *Economica* 22(88) |
+| Bowen, Leamer & Sveikauskas (1987) | "Multicountry, Multifactor Tests of the Factor Abundance Theory" | *AER* 77(5) |
+| Davis & Weinstein (2001) | "An Account of Global Factor Trade" | *AER* 91(5) |
+
+---
+
+## Lecture 6: Terms of Trade, Free Trade & FTAs
+
+**Textbook:** Salvatore Ch. 6, Ch. 10; Appleyard & Field Ch. 12
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Bhagwati, J. N. (1958) | "Immiserizing Growth: A Geometrical Note" | *Review of Economic Studies* 25(3) |
+| **★** Singer, H. W. (1950) | "The Distribution of Gains between Investing and Borrowing Countries" | *AER* 40(2) |
+| Prebisch, R. (1950) | *The Economic Development of Latin America and Its Principal Problems* | ECLA |
+| Viner, J. (1950) | *The Customs Union Issue*, Ch. 4–5 | Carnegie Endowment |
+| Baier & Bergstrand (2007) | "Do Free Trade Agreements Actually Increase Members' International Trade?" | *J. Int'l Economics* 71(1) |
+
+---
+
+## Lecture 7: Protectionism I — Tariffs & Quotas
+
+**Textbook:** Salvatore Ch. 8; Appleyard & Field Ch. 14
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Corden, W. M. (1966) | "The Structure of a Tariff System and the Effective Protective Rate" | *Journal of Political Economy* 74(3) |
+| Bhagwati & Ramaswami (1963) | "Domestic Distortions, Tariffs and the Theory of Optimum Subsidy" | *Journal of Political Economy* 71(1) |
+| Feenstra, R. C. (1992) | "How Costly Is Protectionism?" | *Journal of Economic Perspectives* 6(3) |
+| Irwin, D. A. (2010) | "Does Trade Reform Promote Economic Growth? A Review of Recent Evidence" | *Cato Journal* 30(2) |
+
+---
+
+## Lecture 8: Protectionism II — Subsidies, Dumping & Cartels
+
+**Textbook:** Salvatore Ch. 9; Appleyard & Field Ch. 15
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Brander & Spencer (1985) | "Export Subsidies and International Market Share Rivalry" | *J. Int'l Economics* 18(1–2) |
+| **★** Krugman, P. R. (1987) | "Is Free Trade Passe?" | *J. Economic Perspectives* 1(2) |
+| Dixit, A. (1988) | "Anti-Dumping and Countervailing Duties under Oligopoly" | *European Economic Review* 32(1) |
+| Eaton & Grossman (1986) | "Optimal Trade and Industrial Policy under Oligopoly" | *Quarterly Journal of Economics* 101(2) |
+
+---
+
+## Lecture 9: Balance of Trade & Balance of Payments
+
+**Textbook:** Salvatore Ch. 13; Appleyard & Field Ch. 17–18
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Alexander, S. S. (1952) | "Effects of a Devaluation on a Trade Balance" | *IMF Staff Papers* 2(2) |
+| Harberger, A. C. (1950) | "Currency Depreciation, Income, and the Balance of Trade" | *Journal of Political Economy* 58(1) |
+| Johnson, H. G. (1958) | "Towards a General Theory of the Balance of Payments" | in *Int'l Trade and Economic Growth* |
+| Obstfeld & Rogoff (1995) | "The Intertemporal Approach to the Current Account" | *Handbook of International Economics* Vol. 3 |
+| RBI (2024) | *Annual Report and Balance of Payments Data* | Reserve Bank of India |
+
+---
+
+## Lecture 10: India's External Sector
+
+**Textbook:** Ministry of Commerce, *Annual Report 2023–24*; RBI Handbook of Statistics
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Panagariya, A. (2004) | "India's Trade Reform" | *India Policy Forum* 1(1) |
+| Rodrik & Subramanian (2005) | "From 'Hindu Growth' to Productivity Surge: The Mystery of the Indian Growth Transition" | *IMF Staff Papers* 52(2) |
+| Hasan, Mitra & Ramaswamy (2007) | "Trade Reforms, Labor Regulations and Labor-Demand Elasticities" | *Review of Economics & Statistics* 89(3) |
+| DGCI&S (2024) | *Foreign Trade Statistics — FY2024* | Ministry of Commerce |
+| RBI (2024) | *Balance of Payments — FY2024* | Reserve Bank of India |
+
+---
+
+## Lecture 11: Foreign Exchange — Rates and Determination
+
+**Textbook:** Salvatore Ch. 14; Appleyard & Field Ch. 19
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Dornbusch, R. (1976) | "Expectations and Exchange Rate Dynamics" | *Journal of Political Economy* 84(6) |
+| **★** Meese & Rogoff (1983) | "Empirical Exchange Rate Models of the Seventies: Do They Fit out of Sample?" | *J. Int'l Economics* 14(1–2) |
+| Cassel, G. (1918) | "Abnormal Deviations in International Exchanges" | *Economic Journal* 28(112) |
+| Rogoff, K. (1996) | "The Purchasing Power Parity Puzzle" | *J. Economic Literature* 34(2) |
+| Frankel, J. A. (1979) | "On the Mark: A Theory of Floating Exchange Rates Based on Real Interest Differentials" | *AER* 69(4) |
+
+---
+
+## Lecture 12: Forex Market — Instruments and Policy
+
+**Textbook:** Salvatore Ch. 14–15; Appleyard & Field Ch. 20
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Obstfeld & Rogoff (1995) | "Exchange Rate Dynamics Redux" | *Journal of Political Economy* 103(3) |
+| Mussa, M. (1986) | "Nominal Exchange Rate Regimes and the Behavior of Real Exchange Rates" | *Carnegie-Rochester Conference Series* 25 |
+| Calvo & Reinhart (2002) | "Fear of Floating" | *Quarterly Journal of Economics* 117(2) |
+| RBI (2024) | *Report on Management of Foreign Exchange Reserves* | Reserve Bank of India |
+
+---
+
+## Lecture 13: WTO — Origin, Structure and Functions
+
+**Textbook:** Salvatore Ch. 9 §9.7; WTO, *Understanding the WTO* (2023)
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Bagwell & Staiger (1999) | "An Economic Theory of GATT" | *AER* 89(1) |
+| **★** Rose, A. K. (2004) | "Do We Really Know That the WTO Increases Trade?" | *AER* 94(1) |
+| Subramanian & Wei (2007) | "The WTO Promotes Trade, Strongly but Unevenly" | *J. Int'l Economics* 72(1) |
+| Broda, Limao & Weinstein (2008) | "Optimal Tariffs and Market Power: The Evidence" | *AER* 98(5) |
+| WTO (2024) | *World Trade Statistical Review 2024* | WTO, Geneva |
+
+---
+
+## Lecture 14: Agreement on Agriculture
+
+**Textbook:** WTO, *Agreement on Agriculture* (1994); OECD, *Agricultural Outlook 2024*
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Anderson & Martin (2005) | "Agricultural Trade Reform and the Doha Development Agenda" | *World Economy* 28(9) |
+| Hoekman & Anderson (1999) | "Developing Country Agriculture and the New Trade Agenda" | *Econ. Dev. & Cultural Change* 47(1) |
+| Orden, Chemnitz & Brockmeier (2011) | "WTO Blue Box Agricultural Subsidy Disciplines" | *World Trade Review* 10(4) |
+| Bouet & Laborde (2010) | "The Potential Cost of a Failed Doha Round" | *World Trade Review* 9(2) |
+
+---
+
+## Lecture 15: SPS Measures and Codex Alimentarius
+
+**Textbook:** WTO, *Understanding the SPS Agreement* (2011)
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Henson & Caswell (1999) | "Food Safety Regulation: An Overview of Contemporary Issues" | *Food Policy* 24(6) |
+| **★** Otsuki, Wilson & Sewadeh (2001) | "Saving Two in a Billion: Quantifying the Trade Effect of European Food Safety Standards on African Exports" | *Food Policy* 26(5) |
+| Wilson & Otsuki (2004) | "Standards and Technical Regulations and Firms in Developing Countries" | World Bank Policy Research WP 3256 |
+| Jaffee & Henson (2004) | *Standards and Agro-Food Exports from Developing Countries* | World Bank Policy Research WP 3348 |
+| Codex Alimentarius Commission (2023) | *Procedural Manual*, 27th Edition | FAO/WHO |
+
+---
+
+## Lecture 16: Export Procedures and Documentation
+
+**Textbook:** DGFT, *Foreign Trade Policy 2023–28*; APEDA Export Manual
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Djankov, Freund & Pham (2010) | "Trading on Time" | *Review of Economics & Statistics* 92(1) |
+| Hummels, D. (2007) | "Transportation Costs and International Trade in the Second Era of Globalization" | *J. Economic Perspectives* 21(3) |
+| Portugal-Perez & Wilson (2012) | "Export Performance and Trade Facilitation Reform" | *World Development* 40(7) |
+| WTO (2017) | *Trade Facilitation Agreement: A Business Guide for Developing Countries* | WTO, Geneva |
+
+---
+
+## Lecture 17: Agricultural Export Promotion Organizations
+
+**Textbook:** APEDA Annual Report 2023–24; MPEDA Annual Report 2023–24
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Roberts & Tybout (1997) | "The Decision to Export in Colombia: An Empirical Model of Entry with Sunk Costs" | *AER* 87(4) |
+| **★** Melitz, M. J. (2003) | "The Impact of Trade on Intra-Industry Reallocations and Aggregate Industry Productivity" | *Econometrica* 71(6) |
+| Cadot, Carrere & Strauss-Kahn (2011) | "Export Diversification: What's Behind the Hump?" | *Review of Economics & Statistics* 93(2) |
+| Haidar, J. I. (2012) | "Trade and Productivity: Self-Selection or Learning-by-Exporting in India" | *Economic Modelling* 29(5) |
+| APEDA (2024) | *Agricultural and Processed Food Products Export Development Authority Annual Report 2023–24* | Ministry of Commerce |
+
+---
+
+## Lecture 18: India's Agricultural Trade & Foreign Trade Policy
+
+**Textbook:** Ministry of Commerce, *Foreign Trade Policy 2023–28*; APEDA Trade Data FY2024
+
+| Author(s) | Paper | Journal / Source |
+|---|---|---|
+| **★** Gulati & Narayanan (2003) | "Subsidy Syndrome in Indian Agriculture" | *Economic & Political Weekly* 38(27) |
+| Pursell & Gulati (1995) | "Liberalizing Indian Agriculture" | in *Agriculture and the State* (World Bank) |
+| Anderson & Martin (2009) | *Distortions to Agricultural Incentives in Asia* — India chapter | World Bank |
+| Sharma, R. (2011) | "Food Export Restrictions: Review of the 2007–2010 Experience" | FAO Commodity & Trade Policy WP 32 |
+| Narayanan & Sharma (2001) | "Impact of Trade Liberalization on Indian Agriculture" | *Agro-Economic Research Centres* |
+| DGFT (2023) | *Foreign Trade Policy 2023–28* | Ministry of Commerce, India |

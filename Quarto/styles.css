@@ -187,3 +187,59 @@ table.schedule .lec-links { white-space: nowrap; text-align: center; }
 
 /* --- Footer -------------------------------------------- */
 .nav-footer { font-size: 0.84rem; color: #6c757d; }
+
+/* --- Classic Papers section ---------------------------- */
+.papers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+.paper-group {
+  border: 1px solid #dee2e6;
+  border-top: 3px solid var(--brand-blue);
+  border-radius: 0.4rem;
+  padding: 1rem 1.1rem;
+  background: #fff;
+}
+.paper-group-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--brand-blue);
+  margin-bottom: 0.7rem;
+}
+.paper-item {
+  border-bottom: 1px solid #f1f3f5;
+  padding: 0.45rem 0;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+.paper-item:last-child { border-bottom: none; }
+.paper-authors { font-weight: 600; color: #212529; margin-right: 0.3rem; }
+.paper-title { color: #343a40; }
+.paper-note { display: block; font-size: 0.78rem; color: #6c757d; margin-top: 0.1rem; }
+
+/* --- Readings page ------------------------------------- */
+.readings-toc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+.readings-lec-card {
+  border: 1px solid #e9ecef;
+  border-left: 3px solid var(--brand-gold);
+  border-radius: 0.35rem;
+  padding: 0.7rem 1rem;
+  background: #fff;
+}
+.readings-lec-num { font-size: 0.72rem; font-weight: 700; color: #6c757d; text-transform: uppercase; letter-spacing: 0.06em; }
+.readings-lec-title { font-size: 0.88rem; font-weight: 600; color: var(--brand-blue); margin: 0.15rem 0 0.4rem; }
+.readings-paper { font-size: 0.81rem; color: #495057; padding: 0.25rem 0; border-bottom: 1px solid #f8f9fa; }
+.readings-paper:last-child { border-bottom: none; }
+.readings-paper-auth { font-weight: 600; }
+.readings-paper-title { font-style: italic; }
+.readings-paper-journal { color: #6c757d; font-size: 0.77rem; display: block; }
+
