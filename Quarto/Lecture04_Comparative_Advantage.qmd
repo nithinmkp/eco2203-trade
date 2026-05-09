@@ -92,19 +92,19 @@ $a_{LR}^{I}$ = labour hours required to produce **one unit of Rice in India**.
 
 ## Numerical Example {.smaller}
 
-**Assume:** each country has $L = 100$ workers. One worker per day produces:
+**Assume:** each country has $L = 600$ worker-hours. **Labour required to produce one unit of output:**
 
 | Country | Rice | Wheat |
 |---|---|---|
-| India | **2 units** | **1 unit** |
-| World | **3 units** | **3 units** |
+| India | **3 hours** | **6 hours** |
+| World | **2 hours** | **2 hours** |
 
-Labour coefficients: $a_{LR}^{I} = \tfrac{1}{2}$, $a_{LWh}^{I} = 1$; $a_{LR}^{W} = \tfrac{1}{3}$, $a_{LWh}^{W} = \tfrac{1}{3}$.
-The **World** has absolute advantage in **both** goods.
+Labour coefficients: $a_{LR}^{I} = 3$, $a_{LWh}^{I} = 6$; $a_{LR}^{W} = 2$, $a_{LWh}^{W} = 2$.
+The **World** has absolute advantage in **both** goods (fewer hours needed per unit).
 
 **Opportunity costs:**
 
-$$OC_R^{I} = \frac{a_{LR}^{I}}{a_{LWh}^{I}} = \frac{1/2}{1} = \frac{1}{2} \text{ Wheat} \qquad OC_R^{W} = \frac{a_{LR}^{W}}{a_{LWh}^{W}} = \frac{1/3}{1/3} = 1 \text{ Wheat}$$
+$$OC_R^{I} = \frac{a_{LR}^{I}}{a_{LWh}^{I}} = \frac{3}{6} = \frac{1}{2} \text{ Wheat} \qquad OC_R^{W} = \frac{a_{LR}^{W}}{a_{LWh}^{W}} = \frac{2}{2} = 1 \text{ Wheat}$$
 
 **Comparison:** $OC_R^{I} = \tfrac{1}{2} < OC_R^{W} = 1$ $\Rightarrow$ **India has comparative advantage in Rice.**
 
@@ -129,16 +129,16 @@ Absolute productivity levels ($a_{LR}^{I}$ vs $a_{LR}^{W}$) do **not** determine
 
 ## Production Possibility Frontiers
 
-With $L = 100$ workers, each country's PPF is a straight line (constant opportunity cost):
+With $L = 600$ worker-hours, each country's PPF is a straight line (constant opportunity cost):
 
 ::: {.columns}
 ::: {.column width="40%"}
 **India:**
-$$R + 2 \cdot Wh = 200$$
+$$3R + 6Wh = 600 \;\Rightarrow\; R + 2Wh = 200$$
 Slope $= -2$ (give up 2 Rice per Wheat)
 
 **World:**
-$$R + 1 \cdot Wh = 300$$
+$$2R + 2Wh = 600 \;\Rightarrow\; R + Wh = 300$$
 Slope $= -1$ (give up 1 Rice per Wheat)
 
 The **slope** of the PPF = opportunity cost of Wheat.
