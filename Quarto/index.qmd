@@ -1,5 +1,5 @@
 ---
-title: "Econ 2203 — International Trade and Policy in Agriculture"
+title: "Econ 2203: International Trade and Policy in Agriculture"
 format:
   html:
     toc: false
@@ -10,7 +10,7 @@ format:
   <div class="course-code">Econ 2203 · Undergraduate Course · 2026</div>
   <h1>International Trade and Policy in Agriculture</h1>
   <p class="subtitle">A rigorous introduction to trade theory, open-economy macroeconomics,<br>
-  and agricultural trade institutions — with Indian data throughout.</p>
+  and agricultural trade institutions, with Indian data throughout.</p>
   <div class="meta">
     <div class="meta-item"><span class="label">Instructor</span> Nithin M</div>
     <div class="meta-item"><span class="label">Department</span> Development Economics</div>
@@ -33,11 +33,11 @@ format:
   </div>
   <div class="info-card">
     <div class="card-label">Primary Textbook</div>
-    <div class="card-value">Salvatore — International Economics (2013)</div>
+    <div class="card-value">Salvatore: International Economics (2013)</div>
   </div>
   <div class="info-card">
     <div class="card-label">Secondary Textbook</div>
-    <div class="card-value">Appleyard &amp; Field — International Economics</div>
+    <div class="card-value">Appleyard &amp; Field: International Economics</div>
   </div>
 </div>
 ```
@@ -46,7 +46,7 @@ format:
 
 This course provides a systematic treatment of international trade theory and policy,
 with particular emphasis on India's agricultural trade. We begin with the classical
-foundations — Mercantilism, Absolute Advantage, and Comparative Advantage — and
+foundations of Mercantilism, Absolute Advantage, and Comparative Advantage, and
 progress through modern trade theory (Heckscher–Ohlin, Stolper–Samuelson, Rybczynski),
 trade policy instruments (tariffs, quotas, subsidies, dumping), and open-economy
 macroeconomics (Balance of Payments, Foreign Exchange, Mundell–Fleming).
@@ -93,13 +93,13 @@ with R/ggplot2 figures.
     <tr>
       <td class="lec-num">4</td>
       <td class="lec-date">May 16, 2026</td>
-      <td class="lec-title">Comparative Advantage — Ricardo &amp; Opportunity Cost</td>
+      <td class="lec-title">Comparative Advantage: Ricardo &amp; Opportunity Cost</td>
       <td class="lec-links"><a class="btn-html" href="Lecture04_Comparative_Advantage.html">HTML</a> <a class="btn-pdf" href="Lecture04_Comparative_Advantage.pdf">PDF</a></td>
     </tr>
     <tr>
       <td class="lec-num">5</td>
       <td class="lec-date">May 23, 2026</td>
-      <td class="lec-title">Modern Trade Theory — Heckscher–Ohlin &amp; Lewis</td>
+      <td class="lec-title">Modern Trade Theory: Heckscher–Ohlin &amp; Lewis</td>
       <td class="lec-links"><a class="btn-html" href="Lecture05_Modern_Theory.html">HTML</a> <a class="btn-pdf" href="Lecture05_Modern_Theory.pdf">PDF</a></td>
     </tr>
     <tr>
@@ -111,13 +111,13 @@ with R/ggplot2 figures.
     <tr>
       <td class="lec-num">7</td>
       <td class="lec-date">Jun 6, 2026</td>
-      <td class="lec-title">Protectionism I — Tariffs &amp; Quotas</td>
+      <td class="lec-title">Protectionism I: Tariffs &amp; Quotas</td>
       <td class="lec-links"><a class="btn-html" href="Lecture07_Protectionism_I.html">HTML</a> <a class="btn-pdf" href="Lecture07_Protectionism_I.pdf">PDF</a></td>
     </tr>
     <tr>
       <td class="lec-num">8</td>
       <td class="lec-date">Jun 13, 2026</td>
-      <td class="lec-title">Protectionism II — Subsidies, Dumping &amp; Cartels</td>
+      <td class="lec-title">Protectionism II: Subsidies, Dumping &amp; Cartels</td>
       <td class="lec-links"><a class="btn-html" href="Lecture08_Protectionism_II.html">HTML</a> <a class="btn-pdf" href="Lecture08_Protectionism_II.pdf">PDF</a></td>
     </tr>
     <tr>
@@ -129,25 +129,25 @@ with R/ggplot2 figures.
     <tr>
       <td class="lec-num">10</td>
       <td class="lec-date">Jun 27, 2026</td>
-      <td class="lec-title">India's External Sector — Trade and Reserves</td>
+      <td class="lec-title">India's External Sector: Trade and Reserves</td>
       <td class="lec-links"><a class="btn-html" href="Lecture10_India_External_Sector.html">HTML</a> <a class="btn-pdf" href="Lecture10_India_External_Sector.pdf">PDF</a></td>
     </tr>
     <tr>
       <td class="lec-num">11</td>
       <td class="lec-date">Jul 4, 2026</td>
-      <td class="lec-title">Foreign Exchange — Rates and Determination</td>
+      <td class="lec-title">Foreign Exchange: Rates and Determination</td>
       <td class="lec-links"><a class="btn-html" href="Lecture11_Foreign_Exchange_I.html">HTML</a> <a class="btn-pdf" href="Lecture11_Foreign_Exchange_I.pdf">PDF</a></td>
     </tr>
     <tr>
       <td class="lec-num">12</td>
       <td class="lec-date">Jul 11, 2026</td>
-      <td class="lec-title">Forex Market — Instruments and Policy</td>
+      <td class="lec-title">Forex Market: Instruments and Policy</td>
       <td class="lec-links"><a class="btn-html" href="Lecture12_Forex_Market.html">HTML</a> <a class="btn-pdf" href="Lecture12_Forex_Market.pdf">PDF</a></td>
     </tr>
     <tr>
       <td class="lec-num">13</td>
       <td class="lec-date">Jul 18, 2026</td>
-      <td class="lec-title">WTO — Origin, Structure and Functions</td>
+      <td class="lec-title">WTO: Origin, Structure and Functions</td>
       <td class="lec-links"><a class="btn-html" href="Lecture13_WTO.html">HTML</a> <a class="btn-pdf" href="Lecture13_WTO.pdf">PDF</a></td>
     </tr>
     <tr>
@@ -184,7 +184,7 @@ with R/ggplot2 figures.
 </table>
 </div>
 <p style="font-size:0.82rem;color:#6c757d;margin-top:-0.5rem;">
-  ⁺ August 15 is Independence Day — class may be rescheduled. Confirm with the department.
+  ⁺ August 15 is Independence Day; class may be rescheduled. Confirm with the department.
 </p>
 ```
 
@@ -213,7 +213,7 @@ with R/ggplot2 figures.
   <div class="textbook-card">
     <div class="tb-authors">WTO / APEDA / RBI / DGCI&amp;S</div>
     <div class="tb-title">India Trade Data &amp; Policy Documents</div>
-    <div class="tb-detail">Current — used in all 18 lectures</div>
+    <div class="tb-detail">Current, used in all 18 lectures</div>
     <div style="margin-top:0.5rem;font-size:0.82rem;color:#495057;">
       FY2024 agricultural trade statistics, BoP data, FTP 2023–28
     </div>
@@ -221,18 +221,5 @@ with R/ggplot2 figures.
 </div>
 ```
 
----
 
-## Course Design Notes {.section-heading}
 
-All lecture slides are built in **Quarto RevealJS** and include:
-
-- **ggplot2 figures** using live R code — all data embedded in slides (no external files required)
-- **LaTeX mathematics** — PPF/IC diagrams, welfare decompositions, Marshall–Lerner condition, Mundell–Fleming IS-LM-BP
-- **India-first examples** — every theoretical concept anchored to Indian agricultural trade data
-- Pedagogical approach inspired by **MIT 14.54 (International Trade)**
-- Notation follows **Salvatore (2013)**: Nation 1/Nation 2, Commodity X/Y, welfare areas *a, b, c, d*
-
-```{=html}
-<div style="height:1.5rem;"></div>
-```
