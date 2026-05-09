@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  8 MAY 2026 07:20
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.1) (preloaded format=xelatex 2026.4.24)  9 MAY 2026 20:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2170,6 +2170,18 @@ Missing character: There is no 🇳 in font Fira Sans Light/OT:script=latn;langu
 e=dflt;mapping=tex-text;!
 Missing character: There is no 🇱 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
+Missing character: There is no 🇨 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇳 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇨 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇳 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇨 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇳 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
 Missing character: There is no 🇬 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
 Missing character: There is no 🇧 in font Fira Sans Light/OT:script=latn;languag
@@ -2181,18 +2193,6 @@ e=dflt;mapping=tex-text;!
 Missing character: There is no 🇬 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
 Missing character: There is no 🇧 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇧 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇩 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇧 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇩 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇧 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇩 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
 Missing character: There is no 🇨 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
@@ -2206,18 +2206,6 @@ Missing character: There is no 🇨 in font Fira Sans Light/OT:script=latn;langu
 e=dflt;mapping=tex-text;!
 Missing character: There is no 🇳 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
-Missing character: There is no 🇷 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇺 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇷 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇺 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇷 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 🇺 in font Fira Sans Light/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
 Missing character: There is no 🇦 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
 Missing character: There is no 🇪 in font Fira Sans Light/OT:script=latn;languag
@@ -2229,6 +2217,18 @@ e=dflt;mapping=tex-text;!
 Missing character: There is no 🇦 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
 Missing character: There is no 🇪 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇷 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇺 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇷 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇺 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇷 in font Fira Sans Light/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 🇺 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
 Missing character: There is no 🇺 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
@@ -2242,17 +2242,17 @@ Missing character: There is no 🇺 in font Fira Sans Light/OT:script=latn;langu
 e=dflt;mapping=tex-text;!
 Missing character: There is no 🇸 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
-Missing character: There is no 🇮 in font Fira Sans Light/OT:script=latn;languag
+Missing character: There is no 🇸 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
-Missing character: There is no 🇶 in font Fira Sans Light/OT:script=latn;languag
+Missing character: There is no 🇦 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
-Missing character: There is no 🇮 in font Fira Sans Light/OT:script=latn;languag
+Missing character: There is no 🇸 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
-Missing character: There is no 🇶 in font Fira Sans Light/OT:script=latn;languag
+Missing character: There is no 🇦 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
-Missing character: There is no 🇮 in font Fira Sans Light/OT:script=latn;languag
+Missing character: There is no 🇸 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
-Missing character: There is no 🇶 in font Fira Sans Light/OT:script=latn;languag
+Missing character: There is no 🇦 in font Fira Sans Light/OT:script=latn;languag
 e=dflt;mapping=tex-text;!
 [11
 
@@ -2297,12 +2297,12 @@ File: Lecture10_India_External_Sector_files/figure-beamer/fig-remittances-1.pdf
 ] [22
 
 ]
-Overfull \hbox (21.17188pt too wide) in alignment at lines 989--989
+Overfull \hbox (21.17188pt too wide) in alignment at lines 992--992
  [] [] 
  []
 
 
-Overfull \hbox (21.17188pt too wide) in alignment at lines 989--989
+Overfull \hbox (21.17188pt too wide) in alignment at lines 992--992
  [] [] 
  []
 
@@ -2344,11 +2344,11 @@ L3 programming layer <2026-01-19>
 Here is how much of TeX's memory you used:
  34903 strings out of 402982
  715405 string characters out of 5447852
- 1262762 words of memory out of 5000000
+ 1262763 words of memory out of 5000000
  63036 multiletter control sequences out of 15000+600000
  628645 words of font info for 83 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,13n,165p,1902b,737s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Lecture10_India_External_Sector.xdv (31 pages, 281700 bytes).
+Output written on Lecture10_India_External_Sector.xdv (31 pages, 282928 bytes).
 

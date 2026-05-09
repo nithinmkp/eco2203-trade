@@ -84,16 +84,16 @@ India's external sector shapes:
 
 | Category | Value (USD B) | Share of Total |
 |---|---|---|
-| Engineering goods | $109 | 14.0% |
-| Petroleum products | $96 | 12.3% |
-| **Agriculture & allied** | **$43.7** | **5.6%** |
-| Gems & jewellery | $37 | 4.8% |
-| Chemicals | $32 | 4.1% |
+| Engineering goods | $109 | 25.0% |
+| Petroleum products | $79 | 18.1% |
+| Chemicals & Pharma | $65 | 14.9% |
+| **Agriculture & allied** | **$43.7** | **10.0%** |
+| Gems & jewellery | $35 | 8.0% |
 | **Total merchandise** | **$437** | |
 
 ::: {.fragment}
 ::: {.hi}
-Agriculture contributes ~5.6% of total merchandise exports — a modest but strategically important share.
+Agriculture contributes ~10% of total merchandise exports — a significant share ranking 4th by category.
 :::
 :::
 
@@ -174,11 +174,11 @@ This is India's single largest agricultural import burden.
 #| fig-height: 4.5
 
 import_data <- data.frame(
-  sector    = c("Crude Oil &\nPetroleum", "Gold & Silver", "Edible Oil",
-                "Electronics &\nMachinery", "Chemicals", "Coal",
+  sector    = c("Crude Oil &\nPetroleum", "Electronics &\nMachinery", "Gold & Silver",
+                "Chemicals", "Coal", "Edible Oil",
                 "Fertilizers", "Other"),
-  value     = c(227.8, 47.8, 14.2, 138.4, 38.6, 34.2, 18.9, 72.1),
-  vulnerable = c(TRUE, FALSE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE)
+  value     = c(232.9, 171.0, 45.5, 34.2, 32.5, 14.2, 18.9, 127.8),
+  vulnerable = c(TRUE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE)
 )
 
 import_data <- import_data |>
@@ -191,17 +191,17 @@ ggplot(import_data, aes(x = sector, y = value, fill = vulnerable)) +
   scale_fill_manual(
     values = c("TRUE" = "#cc0000", "FALSE" = "#012169"),
     labels = c("TRUE" = "Commodity vulnerability", "FALSE" = "Strategic import")) +
-  labs(title    = "India's Merchandise Imports by Sector, FY2024 (Total: ~$692B)",
+  labs(title    = "India's Merchandise Imports by Sector, FY2024 (Total: ~$677B)",
        subtitle = "Red = commodity import vulnerabilities (oil, edible oil, coal, fertilizers)",
        x = NULL, y = "USD Billion", fill = NULL) +
-  scale_y_continuous(limits = c(0, 250)) +
+  scale_y_continuous(limits = c(0, 280)) +
   theme(axis.text.x = element_text(angle = 30, hjust = 1),
         legend.position = "bottom")
 ```
 
 ::: {.fragment}
 ::: {.hi}
-**Vulnerability arithmetic:** Crude oil ($228B) + Coal ($34B) + Fertilizers ($19B) + Edible oil ($14B) = **~$295B in commodity imports** — 43% of total imports are subject to global commodity price shocks beyond India's control.
+**Vulnerability arithmetic:** Crude oil ($233B) + Coal ($33B) + Fertilizers ($19B) + Edible oil ($14B) = **~$299B in commodity imports** — 44% of total imports are subject to global commodity price shocks beyond India's control.
 :::
 :::
 
@@ -216,7 +216,7 @@ ggplot(import_data, aes(x = sector, y = value, fill = vulnerable)) +
 | Commodity | USD B |
 |---|---|
 | Marine products | $7.6 |
-| **Non-basmati rice** | **$6.4** |
+| **Non-basmati rice** | **$4.6** |
 | Basmati rice | $5.8 |
 | Processed food | $4.8 |
 :::
@@ -293,21 +293,21 @@ The sharp drop from FY2022 to FY2023 reflects global commodity price corrections
 ::: {.column width="50%"}
 **Top Export Destinations**
 
-1. 🇺🇸 USA — $77B
-2. 🇦🇪 UAE — $35B
-3. 🇳🇱 Netherlands — $23B
-4. 🇬🇧 UK — $19B
-5. 🇧🇩 Bangladesh — $14B
+1. 🇺🇸 USA — $78B
+2. 🇦🇪 UAE — $36B
+3. 🇳🇱 Netherlands — $18B
+4. 🇨🇳 China — $17B
+5. 🇬🇧 UK — $11B
 
 :::
 ::: {.column width="50%"}
 **Top Import Sources**
 
-1. 🇨🇳 China — $101B
-2. 🇷🇺 Russia — $61B
-3. 🇦🇪 UAE — $48B
-4. 🇺🇸 USA — $42B
-5. 🇮🇶 Iraq — $22B
+1. 🇨🇳 China — $102B
+2. 🇦🇪 UAE — $53B
+3. 🇷🇺 Russia — $44B
+4. 🇺🇸 USA — $41B
+5. 🇸🇦 Saudi Arabia — $34B
 :::
 :::
 
@@ -412,11 +412,12 @@ India's agricultural trade geography reflects its structural reliance on SE Asia
 ::: {.column width="55%"}
 | Services Category | USD B |
 |---|---|
-| IT/Software services | $220 |
-| Business process mgmt | $38 |
-| Financial services | $20 |
-| Travel & tourism | $18 |
-| Other services | $42 |
+| IT/Software services | $178 |
+| Business process & other | $88 |
+| Travel & tourism | $28 |
+| Financial services | $11 |
+| Transport | $14 |
+| Other services | $19 |
 
 :::
 ::: {.column width="45%"}
@@ -439,10 +440,11 @@ Without IT services surplus, India's BoP position would be far more stressed.
 #| fig-height: 4.5
 
 services_data <- data.frame(
+  # Source: RBI, Balance of Payments Statistics, FY2024
   category = c("Software &\nIT", "Business\nServices", "Travel\n(Tourism)",
-               "Transport", "Financial\nServices", "Education\n& Health"),
-  exports  = c(194.0, 31.2, 28.1, 14.6, 11.5, 8.3),
-  imports  = c( 11.5, 20.4, 20.2, 27.8,  9.1, 5.3)
+               "Transport", "Financial\nServices", "Other\nServices"),
+  exports  = c(177.7, 87.5, 28.1, 14.4, 10.7, 19.6),  # sum = 338.0
+  imports  = c( 11.4, 54.8, 14.4, 41.8,  8.8, 42.8)   # sum = 174.0
 )
 
 svc_long <- tidyr::pivot_longer(services_data,
@@ -456,7 +458,7 @@ ggplot(svc_long, aes(x = category, y = value, fill = type)) +
     values = c("exports" = "#012169", "imports" = "#B9975B"),
     labels = c("exports" = "Service Exports", "imports" = "Service Imports")) +
   labs(title    = "India's Services Trade, FY2024 (USD Billion)",
-       subtitle = "Software/IT ($194B) dominates — India's 'comparative advantage' in skilled services",
+       subtitle = "Software/IT ($178B) dominates — India's 'comparative advantage' in skilled services",
        x = NULL, y = "USD Billion", fill = NULL) +
   theme(legend.position = "bottom",
         axis.text.x = element_text(angle = 15, hjust = 1))
@@ -464,7 +466,7 @@ ggplot(svc_long, aes(x = category, y = value, fill = type)) +
 
 ::: {.fragment}
 ::: {.hi}
-**Revealed comparative advantage:** India's RCA in Software/IT services is extremely high — the $194B export vs $12B import reflects a structural specialisation that offsets the entire merchandise trade deficit ($76B) by itself.
+**Revealed comparative advantage:** India's RCA in Software/IT services is extremely high — the $178B export vs $11B import reflects a structural specialisation. Combined with $88B in other business services, India's services exports offset most of the merchandise trade deficit.
 :::
 :::
 
@@ -482,12 +484,14 @@ ggplot(svc_long, aes(x = category, y = value, fill = type)) +
 :::
 ::: {.column width="40%"}
 ::: {.keybox}
-**Remittances vs Trade Deficit**
+**Remittances vs External Deficits**
 
-Trade deficit: −$76B  
-Remittances: +$120B  
+Goods trade deficit: −$240B  
++ Services surplus: +$164B  
+= Net goods+services: −$76B  
++ Remittances: +$120B  
 
-Remittances alone more than offset the merchandise trade deficit — a critical BoP stabilizer.
+Remittances alone more than cover the net goods+services deficit.
 :::
 :::
 :::

@@ -262,27 +262,27 @@ Nithin M
 <tr class="odd">
 <td>Engineering goods</td>
 <td>$109</td>
-<td>14.0%</td>
+<td>25.0%</td>
 </tr>
 <tr class="even">
 <td>Petroleum products</td>
-<td>$96</td>
-<td>12.3%</td>
+<td>$79</td>
+<td>18.1%</td>
 </tr>
 <tr class="odd">
-<td><strong>Agriculture &amp; allied</strong></td>
-<td><strong>$43.7</strong></td>
-<td><strong>5.6%</strong></td>
+<td>Chemicals &amp; Pharma</td>
+<td>$65</td>
+<td>14.9%</td>
 </tr>
 <tr class="even">
-<td>Gems &amp; jewellery</td>
-<td>$37</td>
-<td>4.8%</td>
+<td><strong>Agriculture &amp; allied</strong></td>
+<td><strong>$43.7</strong></td>
+<td><strong>10.0%</strong></td>
 </tr>
 <tr class="odd">
-<td>Chemicals</td>
-<td>$32</td>
-<td>4.1%</td>
+<td>Gems &amp; jewellery</td>
+<td>$35</td>
+<td>8.0%</td>
 </tr>
 <tr class="even">
 <td><strong>Total merchandise</strong></td>
@@ -293,7 +293,7 @@ Nithin M
 </table>
 <div class="fragment">
 <div class="hi">
-<p>Agriculture contributes ~5.6% of total merchandise exports — a modest but strategically important share.</p>
+<p>Agriculture contributes ~10% of total merchandise exports — a significant share ranking 4th by category.</p>
 </div>
 </div>
 </section>
@@ -390,11 +390,11 @@ Figure&nbsp;1: India’s Merchandise Export Composition, FY2024 (USD billion) So
 <details class="code-fold">
 <summary>Show R code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>import_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-2"><a></a>  <span class="at">sector    =</span> <span class="fu">c</span>(<span class="st">"Crude Oil &amp;</span><span class="sc">\n</span><span class="st">Petroleum"</span>, <span class="st">"Gold &amp; Silver"</span>, <span class="st">"Edible Oil"</span>,</span>
-<span id="cb2-3"><a></a>                <span class="st">"Electronics &amp;</span><span class="sc">\n</span><span class="st">Machinery"</span>, <span class="st">"Chemicals"</span>, <span class="st">"Coal"</span>,</span>
+<span id="cb2-2"><a></a>  <span class="at">sector    =</span> <span class="fu">c</span>(<span class="st">"Crude Oil &amp;</span><span class="sc">\n</span><span class="st">Petroleum"</span>, <span class="st">"Electronics &amp;</span><span class="sc">\n</span><span class="st">Machinery"</span>, <span class="st">"Gold &amp; Silver"</span>,</span>
+<span id="cb2-3"><a></a>                <span class="st">"Chemicals"</span>, <span class="st">"Coal"</span>, <span class="st">"Edible Oil"</span>,</span>
 <span id="cb2-4"><a></a>                <span class="st">"Fertilizers"</span>, <span class="st">"Other"</span>),</span>
-<span id="cb2-5"><a></a>  <span class="at">value     =</span> <span class="fu">c</span>(<span class="fl">227.8</span>, <span class="fl">47.8</span>, <span class="fl">14.2</span>, <span class="fl">138.4</span>, <span class="fl">38.6</span>, <span class="fl">34.2</span>, <span class="fl">18.9</span>, <span class="fl">72.1</span>),</span>
-<span id="cb2-6"><a></a>  <span class="at">vulnerable =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb2-5"><a></a>  <span class="at">value     =</span> <span class="fu">c</span>(<span class="fl">232.9</span>, <span class="fl">171.0</span>, <span class="fl">45.5</span>, <span class="fl">34.2</span>, <span class="fl">32.5</span>, <span class="fl">14.2</span>, <span class="fl">18.9</span>, <span class="fl">127.8</span>),</span>
+<span id="cb2-6"><a></a>  <span class="at">vulnerable =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
 <span id="cb2-7"><a></a>)</span>
 <span id="cb2-8"><a></a></span>
 <span id="cb2-9"><a></a>import_data <span class="ot">&lt;-</span> import_data <span class="sc">|&gt;</span></span>
@@ -407,10 +407,10 @@ Figure&nbsp;1: India’s Merchandise Export Composition, FY2024 (USD billion) So
 <span id="cb2-16"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
 <span id="cb2-17"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"#cc0000"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"#012169"</span>),</span>
 <span id="cb2-18"><a></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"Commodity vulnerability"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"Strategic import"</span>)) <span class="sc">+</span></span>
-<span id="cb2-19"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India's Merchandise Imports by Sector, FY2024 (Total: ~$692B)"</span>,</span>
+<span id="cb2-19"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India's Merchandise Imports by Sector, FY2024 (Total: ~$677B)"</span>,</span>
 <span id="cb2-20"><a></a>       <span class="at">subtitle =</span> <span class="st">"Red = commodity import vulnerabilities (oil, edible oil, coal, fertilizers)"</span>,</span>
 <span id="cb2-21"><a></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"USD Billion"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb2-22"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">250</span>)) <span class="sc">+</span></span>
+<span id="cb2-22"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">280</span>)) <span class="sc">+</span></span>
 <span id="cb2-23"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
 <span id="cb2-24"><a></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -420,7 +420,7 @@ Figure&nbsp;1: India’s Merchandise Export Composition, FY2024 (USD billion) So
 Figure&nbsp;2: India’s Merchandise Import Composition, FY2024 (USD billion) Source: DGCI&amp;S / Ministry of Commerce and Industry, GoI.
 </p><div class="fragment">
 <div class="hi">
-<p><strong>Vulnerability arithmetic:</strong> Crude oil ($228B) + Coal ($34B) + Fertilizers ($19B) + Edible oil ($14B) = <strong>~$295B in commodity imports</strong> — 43% of total imports are subject to global commodity price shocks beyond India’s control.</p>
+<p><strong>Vulnerability arithmetic:</strong> Crude oil ($233B) + Coal ($33B) + Fertilizers ($19B) + Edible oil ($14B) = <strong>~$299B in commodity imports</strong> — 44% of total imports are subject to global commodity price shocks beyond India’s control.</p>
 </div>
 </div>
 </section>
@@ -445,7 +445,7 @@ Figure&nbsp;2: India’s Merchandise Import Composition, FY2024 (USD billion) So
 </tr>
 <tr class="even">
 <td><strong>Non-basmati rice</strong></td>
-<td><strong>$6.4</strong></td>
+<td><strong>$4.6</strong></td>
 </tr>
 <tr class="odd">
 <td>Basmati rice</td>
@@ -579,20 +579,20 @@ Figure&nbsp;2: India’s Merchandise Import Composition, FY2024 (USD billion) So
 <div class="column" style="width:50%;">
 <p><strong>Top Export Destinations</strong></p>
 <ol type="1">
-<li>🇺🇸 USA — $77B</li>
-<li>🇦🇪 UAE — $35B</li>
-<li>🇳🇱 Netherlands — $23B</li>
-<li>🇬🇧 UK — $19B</li>
-<li>🇧🇩 Bangladesh — $14B</li>
+<li>🇺🇸 USA — $78B</li>
+<li>🇦🇪 UAE — $36B</li>
+<li>🇳🇱 Netherlands — $18B</li>
+<li>🇨🇳 China — $17B</li>
+<li>🇬🇧 UK — $11B</li>
 </ol>
 </div><div class="column" style="width:50%;">
 <p><strong>Top Import Sources</strong></p>
 <ol type="1">
-<li>🇨🇳 China — $101B</li>
-<li>🇷🇺 Russia — $61B</li>
-<li>🇦🇪 UAE — $48B</li>
-<li>🇺🇸 USA — $42B</li>
-<li>🇮🇶 Iraq — $22B</li>
+<li>🇨🇳 China — $102B</li>
+<li>🇦🇪 UAE — $53B</li>
+<li>🇷🇺 Russia — $44B</li>
+<li>🇺🇸 USA — $41B</li>
+<li>🇸🇦 Saudi Arabia — $34B</li>
 </ol>
 </div></div>
 <div class="keybox">
@@ -700,23 +700,27 @@ Figure&nbsp;3: India’s Top 5 Export Destinations and Import Sources, FY2024 So
 <tbody>
 <tr class="odd">
 <td>IT/Software services</td>
-<td>$220</td>
+<td>$178</td>
 </tr>
 <tr class="even">
-<td>Business process mgmt</td>
-<td>$38</td>
+<td>Business process &amp; other</td>
+<td>$88</td>
 </tr>
 <tr class="odd">
-<td>Financial services</td>
-<td>$20</td>
-</tr>
-<tr class="even">
 <td>Travel &amp; tourism</td>
-<td>$18</td>
+<td>$28</td>
+</tr>
+<tr class="even">
+<td>Financial services</td>
+<td>$11</td>
 </tr>
 <tr class="odd">
+<td>Transport</td>
+<td>$14</td>
+</tr>
+<tr class="even">
 <td>Other services</td>
-<td>$42</td>
+<td>$19</td>
 </tr>
 </tbody>
 </table>
@@ -734,27 +738,28 @@ Figure&nbsp;3: India’s Top 5 Export Destinations and Import Sources, FY2024 So
 <details class="code-fold">
 <summary>Show R code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>services_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-2"><a></a>  <span class="at">category =</span> <span class="fu">c</span>(<span class="st">"Software &amp;</span><span class="sc">\n</span><span class="st">IT"</span>, <span class="st">"Business</span><span class="sc">\n</span><span class="st">Services"</span>, <span class="st">"Travel</span><span class="sc">\n</span><span class="st">(Tourism)"</span>,</span>
-<span id="cb4-3"><a></a>               <span class="st">"Transport"</span>, <span class="st">"Financial</span><span class="sc">\n</span><span class="st">Services"</span>, <span class="st">"Education</span><span class="sc">\n</span><span class="st">&amp; Health"</span>),</span>
-<span id="cb4-4"><a></a>  <span class="at">exports  =</span> <span class="fu">c</span>(<span class="fl">194.0</span>, <span class="fl">31.2</span>, <span class="fl">28.1</span>, <span class="fl">14.6</span>, <span class="fl">11.5</span>, <span class="fl">8.3</span>),</span>
-<span id="cb4-5"><a></a>  <span class="at">imports  =</span> <span class="fu">c</span>( <span class="fl">11.5</span>, <span class="fl">20.4</span>, <span class="fl">20.2</span>, <span class="fl">27.8</span>,  <span class="fl">9.1</span>, <span class="fl">5.3</span>)</span>
-<span id="cb4-6"><a></a>)</span>
-<span id="cb4-7"><a></a></span>
-<span id="cb4-8"><a></a>svc_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(services_data,</span>
-<span id="cb4-9"><a></a>                                <span class="at">cols      =</span> <span class="fu">c</span>(exports, imports),</span>
-<span id="cb4-10"><a></a>                                <span class="at">names_to  =</span> <span class="st">"type"</span>,</span>
-<span id="cb4-11"><a></a>                                <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a><span class="fu">ggplot</span>(svc_long, <span class="fu">aes</span>(<span class="at">x =</span> category, <span class="at">y =</span> value, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
-<span id="cb4-14"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
-<span id="cb4-15"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb4-16"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"exports"</span> <span class="ot">=</span> <span class="st">"#012169"</span>, <span class="st">"imports"</span> <span class="ot">=</span> <span class="st">"#B9975B"</span>),</span>
-<span id="cb4-17"><a></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"exports"</span> <span class="ot">=</span> <span class="st">"Service Exports"</span>, <span class="st">"imports"</span> <span class="ot">=</span> <span class="st">"Service Imports"</span>)) <span class="sc">+</span></span>
-<span id="cb4-18"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India's Services Trade, FY2024 (USD Billion)"</span>,</span>
-<span id="cb4-19"><a></a>       <span class="at">subtitle =</span> <span class="st">"Software/IT ($194B) dominates — India's 'comparative advantage' in skilled services"</span>,</span>
-<span id="cb4-20"><a></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"USD Billion"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb4-21"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb4-22"><a></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">15</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a></a>  <span class="co"># Source: RBI, Balance of Payments Statistics, FY2024</span></span>
+<span id="cb4-3"><a></a>  <span class="at">category =</span> <span class="fu">c</span>(<span class="st">"Software &amp;</span><span class="sc">\n</span><span class="st">IT"</span>, <span class="st">"Business</span><span class="sc">\n</span><span class="st">Services"</span>, <span class="st">"Travel</span><span class="sc">\n</span><span class="st">(Tourism)"</span>,</span>
+<span id="cb4-4"><a></a>               <span class="st">"Transport"</span>, <span class="st">"Financial</span><span class="sc">\n</span><span class="st">Services"</span>, <span class="st">"Other</span><span class="sc">\n</span><span class="st">Services"</span>),</span>
+<span id="cb4-5"><a></a>  <span class="at">exports  =</span> <span class="fu">c</span>(<span class="fl">177.7</span>, <span class="fl">87.5</span>, <span class="fl">28.1</span>, <span class="fl">14.4</span>, <span class="fl">10.7</span>, <span class="fl">19.6</span>),  <span class="co"># sum = 338.0</span></span>
+<span id="cb4-6"><a></a>  <span class="at">imports  =</span> <span class="fu">c</span>( <span class="fl">11.4</span>, <span class="fl">54.8</span>, <span class="fl">14.4</span>, <span class="fl">41.8</span>,  <span class="fl">8.8</span>, <span class="fl">42.8</span>)   <span class="co"># sum = 174.0</span></span>
+<span id="cb4-7"><a></a>)</span>
+<span id="cb4-8"><a></a></span>
+<span id="cb4-9"><a></a>svc_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(services_data,</span>
+<span id="cb4-10"><a></a>                                <span class="at">cols      =</span> <span class="fu">c</span>(exports, imports),</span>
+<span id="cb4-11"><a></a>                                <span class="at">names_to  =</span> <span class="st">"type"</span>,</span>
+<span id="cb4-12"><a></a>                                <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
+<span id="cb4-13"><a></a></span>
+<span id="cb4-14"><a></a><span class="fu">ggplot</span>(svc_long, <span class="fu">aes</span>(<span class="at">x =</span> category, <span class="at">y =</span> value, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb4-15"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
+<span id="cb4-16"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb4-17"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"exports"</span> <span class="ot">=</span> <span class="st">"#012169"</span>, <span class="st">"imports"</span> <span class="ot">=</span> <span class="st">"#B9975B"</span>),</span>
+<span id="cb4-18"><a></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"exports"</span> <span class="ot">=</span> <span class="st">"Service Exports"</span>, <span class="st">"imports"</span> <span class="ot">=</span> <span class="st">"Service Imports"</span>)) <span class="sc">+</span></span>
+<span id="cb4-19"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India's Services Trade, FY2024 (USD Billion)"</span>,</span>
+<span id="cb4-20"><a></a>       <span class="at">subtitle =</span> <span class="st">"Software/IT ($178B) dominates — India's 'comparative advantage' in skilled services"</span>,</span>
+<span id="cb4-21"><a></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"USD Billion"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb4-23"><a></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">15</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -762,7 +767,7 @@ Figure&nbsp;3: India’s Top 5 Export Destinations and Import Sources, FY2024 So
 Figure&nbsp;4: India’s Services Trade Composition, FY2024 (USD billion) Source: RBI, Balance of Payments Statistics.
 </p><div class="fragment">
 <div class="hi">
-<p><strong>Revealed comparative advantage:</strong> India’s RCA in Software/IT services is extremely high — the $194B export vs $12B import reflects a structural specialisation that offsets the entire merchandise trade deficit ($76B) by itself.</p>
+<p><strong>Revealed comparative advantage:</strong> India’s RCA in Software/IT services is extremely high — the $178B export vs $11B import reflects a structural specialisation. Combined with $88B in other business services, India’s services exports offset most of the merchandise trade deficit.</p>
 </div>
 </div>
 </section>
@@ -779,10 +784,12 @@ Figure&nbsp;4: India’s Services Trade Composition, FY2024 (USD billion) Source
 <p><strong>Key sending states:</strong> Kerala, UP, Bihar, Rajasthan, Punjab</p>
 </div><div class="column" style="width:40%;">
 <div class="keybox">
-<p><strong>Remittances vs Trade Deficit</strong></p>
-<p>Trade deficit: −$76B<br>
-Remittances: +$120B</p>
-<p>Remittances alone more than offset the merchandise trade deficit — a critical BoP stabilizer.</p>
+<p><strong>Remittances vs External Deficits</strong></p>
+<p>Goods trade deficit: −$240B<br>
++ Services surplus: +$164B<br>
+= Net goods+services: −$76B<br>
++ Remittances: +$120B</p>
+<p>Remittances alone more than cover the net goods+services deficit.</p>
 </div>
 </div></div>
 </section>

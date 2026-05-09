@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778204974.44954 "Lecture08_Protectionism_II.xdv" "Lecture08_Protectionism_II.pdf" "Lecture08_Protectionism_II" 1778204975.36913 0
-  "Lecture08_Protectionism_II.xdv" 1778204973 277268 90165c0fb64da6a099337554f2b2e07c "xelatex"
+["xdvipdfmx"] 1778338244.3165 "Lecture08_Protectionism_II.xdv" "Lecture08_Protectionism_II.pdf" "Lecture08_Protectionism_II" 1778338245.10997 0
+  "Lecture08_Protectionism_II.xdv" 1778338243 277268 1cc7e59cfb034ffd9ea97a8950f30480 "xelatex"
   (generated)
   "Lecture08_Protectionism_II.pdf"
   (rewritten before read)
-["xelatex"] 1778204966.56654 "Lecture08_Protectionism_II.tex" "Lecture08_Protectionism_II.xdv" "Lecture08_Protectionism_II" 1778204975.33221 0
+["xelatex"] 1778338237.71615 "Lecture08_Protectionism_II.tex" "Lecture08_Protectionism_II.xdv" "Lecture08_Protectionism_II" 1778338245.08376 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -227,12 +227,12 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture08_Protectionism_II.aux" 1778204973 9813 817542b7098e63bc082241ec37164656 "xelatex"
-  "Lecture08_Protectionism_II.nav" 1778204973 2749 2206919239bcb546e0663309b790b757 "xelatex"
-  "Lecture08_Protectionism_II.tex" 1778204416 34864 925d3d2b5059a2a0e393be28cfaa4e03 ""
-  "Lecture08_Protectionism_II_files/figure-beamer/fig-dumping-1.pdf" 1778204393 5527 f6badd7eed83d14ae6ebc5c8515c217c ""
-  "Lecture08_Protectionism_II_files/figure-beamer/fig-export-subsidy-1.pdf" 1778204391 5451 7a5151108a51b79270adf7c625603972 ""
-  "Lecture08_Protectionism_II_files/figure-beamer/fig-india-add-1.pdf" 1778204393 4886 87184d4734a0348636ea00ce654027f2 ""
+  "Lecture08_Protectionism_II.aux" 1778338243 9813 817542b7098e63bc082241ec37164656 "xelatex"
+  "Lecture08_Protectionism_II.nav" 1778338243 2749 2206919239bcb546e0663309b790b757 "xelatex"
+  "Lecture08_Protectionism_II.tex" 1778337716 34864 925d3d2b5059a2a0e393be28cfaa4e03 ""
+  "Lecture08_Protectionism_II_files/figure-beamer/fig-dumping-1.pdf" 1778337697 5527 cba719f2de17b2771818197bfbb4fb30 ""
+  "Lecture08_Protectionism_II_files/figure-beamer/fig-export-subsidy-1.pdf" 1778337695 5451 f18b761ce9be862f9cca457781daafca ""
+  "Lecture08_Protectionism_II_files/figure-beamer/fig-india-add-1.pdf" 1778337697 4886 5b2ddf66cf3b5799bdd063b13e7bf8b9 ""
   (generated)
   "Lecture08_Protectionism_II.aux"
   "Lecture08_Protectionism_II.log"

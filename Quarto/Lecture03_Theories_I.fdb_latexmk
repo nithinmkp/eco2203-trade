@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1778204824.32605 "Lecture03_Theories_I.xdv" "Lecture03_Theories_I.pdf" "Lecture03_Theories_I" 1778204825.3882 0
-  "Lecture03_Theories_I.xdv" 1778204823 365100 c1ef4d912e7dc82e2f4f2af8e1980b08 "xelatex"
+["xdvipdfmx"] 1778338117.2265 "Lecture03_Theories_I.xdv" "Lecture03_Theories_I.pdf" "Lecture03_Theories_I" 1778338118.09331 0
+  "Lecture03_Theories_I.xdv" 1778338116 365100 595626281c7a836208fa1889e708db72 "xelatex"
   (generated)
   "Lecture03_Theories_I.pdf"
   (rewritten before read)
-["xelatex"] 1778204816.01742 "Lecture03_Theories_I.tex" "Lecture03_Theories_I.xdv" "Lecture03_Theories_I" 1778204825.35311 0
+["xelatex"] 1778338110.02463 "Lecture03_Theories_I.tex" "Lecture03_Theories_I.xdv" "Lecture03_Theories_I" 1778338118.05759 0
   "C:/Users/Nithin" 1745981094 19000 ebe304d7bdcfbd1a1e83f44adece0818 ""
   "C:/Users/Nithin M/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1777012897 27178332 205896f4b7584ae15836045a2a6afbfe ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136752454 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -227,11 +227,11 @@
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Nithin M/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "Lecture03_Theories_I.aux" 1778204823 13810 93084cc59c890594cb5dbebdbed99eeb "xelatex"
-  "Lecture03_Theories_I.nav" 1778204823 3679 e5d91b93aea160babf3eaf21c2015a38 "xelatex"
-  "Lecture03_Theories_I.tex" 1778204256 44909 d2d2ceb614eb18366412fa7e6ddd8df2 ""
-  "Lecture03_Theories_I_files/figure-beamer/fig-linear-ppf-1.pdf" 1778204232 7875 461409ec930b43c63db433f18d1a346f ""
-  "Lecture03_Theories_I_files/figure-beamer/fig-specialisation-gains-1.pdf" 1778204233 4837 66b21e49cc3b9fbcb26342fcd2235e24 ""
+  "Lecture03_Theories_I.aux" 1778338116 13810 93084cc59c890594cb5dbebdbed99eeb "xelatex"
+  "Lecture03_Theories_I.nav" 1778338116 3679 e5d91b93aea160babf3eaf21c2015a38 "xelatex"
+  "Lecture03_Theories_I.tex" 1778337579 44909 d2d2ceb614eb18366412fa7e6ddd8df2 ""
+  "Lecture03_Theories_I_files/figure-beamer/fig-linear-ppf-1.pdf" 1778337558 7875 cf3b36c74fb7f1f318084f9a45442d1a ""
+  "Lecture03_Theories_I_files/figure-beamer/fig-specialisation-gains-1.pdf" 1778337558 4837 ca19608f723e0b78e2642a033896d0c5 ""
   (generated)
   "Lecture03_Theories_I.aux"
   "Lecture03_Theories_I.log"

@@ -181,9 +181,10 @@ library(ggplot2)
 library(dplyr)
 
 trade_data <- data.frame(
-  year = 2015:2024,
-  exports = c(310, 262, 276, 303, 330, 314, 422, 453, 778, 778),
-  imports = c(448, 381, 384, 465, 507, 478, 573, 715, 854, 872)
+  # FY ending year (FY2015 = Apr 2014–Mar 2015). Source: DGCI&S, MoCI, GoI.
+  year    = 2015:2024,
+  exports = c(310.3, 262.3, 275.8, 303.5, 330.1, 314.3, 291.8, 422.0, 453.0, 437.1),
+  imports = c(448.0, 381.0, 384.4, 465.6, 514.0, 467.2, 394.4, 612.0, 714.2, 677.2)
 )
 trade_long <- tidyr::pivot_longer(trade_data, cols=c(exports, imports), names_to="type", values_to="value")
 trade_long$type <- factor(trade_long$type, levels=c("exports","imports"), 
@@ -197,15 +198,15 @@ ggplot(trade_long, aes(x=year, y=value, color=type, group=type)) +
   scale_color_manual(values=c("Exports"="#012169", "Imports"="#B9975B")) +
   scale_x_continuous(breaks=2015:2024) +
   scale_y_continuous(labels=scales::dollar_format(suffix="B")) +
-  labs(title="India's Merchandise Trade Trend",
-       subtitle="Trade deficit widened post-2020; driven by oil and electronics imports",
+  labs(title="India's Merchandise Trade Trend (FY2015–FY2024)",
+       subtitle="Trade deficit peaked at $261B in FY2023; FY2021 dip reflects COVID. Source: DGCI&S, MoCI, GoI",
        x=NULL, y="USD Billion", color=NULL) +
   theme_minimal(base_size=11) +
   theme(legend.position="bottom", axis.text.x=element_text(angle=45, hjust=1))
 ```
 
 :::{.notes}
-**Key insight:** India's trade deficit widened sharply post-2020. Exports plateaued at ~\$440–450B while imports surged to ~\$870B — largely driven by oil, gold, and electronics.
+**Key insight:** India's trade deficit widened sharply post-2020, peaking at ~\$261B in FY2023. FY2021 saw a COVID-induced contraction (exports fell to \$292B). FY2024 saw partial correction: exports \$437B, imports \$677B — deficit mainly driven by crude oil, gold, and electronics.
 :::
 
 ## India's Agricultural Trade: FY2024 {.smaller}
@@ -214,11 +215,11 @@ ggplot(trade_long, aes(x=year, y=value, color=type, group=type)) +
 
 | Commodity (Exports) | Value (USD bn) | Commodity (Imports) | Value (USD bn) |
 |---------------------|---------------|---------------------|---------------|
-| Rice (Basmati + Non-Basmati) | 10.4 | Edible oils (palm, soy) | 12–14 |
-| Marine products | 7.6 | Pulses | 3.0 |
-| Spices | 3.7 | Cashew (raw) | 1.8 |
+| Rice (Basmati + Non-Basmati) | 10.4 | Edible oils (palm, soy) | 14.2 |
+| Marine products | 7.4 | Pulses | 3.0 |
+| Spices | 4.0 | Cashew (raw) | 1.8 |
 | Buffalo meat | 3.5 | Fresh fruits | 1.5 |
-| Sugar | 2.8 | Spices (select) | 0.8 |
+| Sugar | 2.1 | Spices (select) | 0.8 |
 | **Total agri exports** | **~43.7** | **Total agri imports** | **~28.2** |
 
 **Agricultural trade surplus:** [~\$15.5 billion]{.hi}
@@ -238,7 +239,7 @@ agri_data <- data.frame(
   commodity = c("Rice (Basmati)", "Rice (Non-Basmati)", "Marine Products",
                 "Spices", "Sugar", "Cotton", "Other Cereals", "Processed Food",
                 "Fruits & Veg", "Oil Meals"),
-  value = c(5.8, 6.4, 7.6, 3.7, 2.8, 2.1, 1.9, 3.2, 2.0, 1.5)
+  value = c(5.8, 4.6, 7.4, 4.0, 2.1, 2.7, 1.9, 4.8, 3.9, 3.5)
 )
 agri_data <- agri_data |> arrange(value) |>
   mutate(commodity=factor(commodity, levels=commodity))
@@ -258,7 +259,7 @@ ggplot(agri_data, aes(x=commodity, y=value)) +
 
 **Export side**
 
-- Agriculture: [~11%]{.hi-gold} of total merchandise exports (\$43.7B of \$437B)
+- Agriculture: [~10%]{.hi-gold} of total merchandise exports (\$43.7B of \$437B)
 - Engineering goods: ~26% | Petroleum products: ~17% | Gems & jewellery: ~10%
 - Agriculture is **India's second-largest net foreign exchange earner** after services
 - **India's strengths:** rice, spices, marine products, cotton — all labour-intensive, climate-favoured commodities
@@ -269,7 +270,7 @@ ggplot(agri_data, aes(x=commodity, y=value)) +
 - Pulses: Canada, Australia, Myanmar — ~25% of domestic requirement imported
 
 ::: {.highlightbox}
-**Vulnerability:** India's dependence on imported edible oils (~\$13B/yr) exposes food inflation to global price shocks, as seen in 2021–22 when palm oil prices spiked 50%.
+**Vulnerability:** India's dependence on imported edible oils (~\$14B/yr) exposes food inflation to global price shocks, as seen in 2021–22 when palm oil prices spiked 50%.
 :::
 
 ## India's Position in Global Agricultural Trade
