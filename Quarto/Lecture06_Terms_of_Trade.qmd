@@ -179,6 +179,46 @@ ggplot() +
 **FY2022 was exactly this scenario:** Global commodity supercycle + Russia-Ukraine war → oil price shock. Fertilizer prices (derived from natural gas) tripled. India's agricultural ToT **sharply deteriorated** — farmers received higher output prices but paid much more for inputs → net farm income squeezed.
 :::
 
+## ToT Calculation: India's Actual Data {.smaller}
+
+$$\text{ToT} = \frac{P_x}{P_m} \times 100 \qquad P_x = \text{agri export price index (2015=100)}, \quad P_m = \text{oil import price index (2015=100)}$$
+
+```{r}
+#| label: tbl-tot-calc
+#| tbl-cap: "India: Agricultural ToT — Worked Calculations for Selected Years (oil as import-price proxy)"
+
+data.frame(
+  year      = 2010:2024,
+  tot_agri  = c(85, 92, 95, 102, 100, 100, 96, 94, 97, 99, 95, 105, 102, 98, 96),
+  oil_price = c(79, 95, 105, 105,  99,  52, 43, 54, 64, 57, 41,  68,  99, 83, 80)
+) |>
+  dplyr::mutate(
+    Pm  = round(oil_price / oil_price[year == 2015] * 100),
+    Px  = round(tot_agri  * Pm / 100),
+    ToT = round(Px / Pm * 100),
+    Verdict = dplyr::case_when(
+      ToT > 100 ~ "Improved",
+      ToT < 100 ~ "Worsened",
+      TRUE      ~ "Base year"
+    )
+  ) |>
+  dplyr::filter(year %in% c(2010, 2014, 2015, 2016, 2020, 2022, 2024)) |>
+  dplyr::select(
+    Year           = year,
+    "Px (Agri Export)" = Px,
+    "Pm (Oil Import)"  = Pm,
+    "ToT = (Px/Pm)*100" = ToT,
+    Verdict
+  ) |>
+  knitr::kable(align = "ccccc")
+```
+
+::: {.fragment}
+::: {.hi-gold}
+**Key insight:** In 2016 and 2020, oil crashed — *Pm* fell sharply — yet ToT barely improved, because agri export prices (*Px*) fell in tandem. This asymmetry is Prebisch-Singer in the data.
+:::
+:::
+
 ## India's Agricultural Terms of Trade: Historical Trends {.smaller}
 
 **Long-run trends in India's agricultural ToT:**
@@ -210,22 +250,24 @@ india_tot <- data.frame(
   year      = 2010:2024,
   tot_agri  = c(85, 92, 95, 102, 100, 100, 96, 94, 97, 99, 95, 105, 102, 98, 96),
   oil_price = c(79, 95, 105, 105,  99,  52, 43, 54, 64, 57, 41,  68,  99, 83, 80)
-)
+) |>
+  # Normalise oil price to 2015=100 so both series share the same index scale
+  dplyr::mutate(oil_idx = oil_price / oil_price[year == 2015] * 100)
 
 ggplot(india_tot, aes(x = year)) +
-  geom_line(aes(y = tot_agri,  colour = "Agri ToT index (2015=100)"),
+  geom_line(aes(y = tot_agri, colour = "Agri ToT (2015=100)"),
             linewidth = 1.5) +
-  geom_line(aes(y = oil_price, colour = "Brent crude (USD/bbl)"),
+  geom_line(aes(y = oil_idx, colour = "Brent crude (2015=100)"),
             linewidth = 1.2, linetype = "dashed") +
   geom_hline(yintercept = 100, linetype = "dotted", colour = "grey60") +
-  annotate("text", x = 2010.5, y = 102, label = "Base = 100", size = 3, colour = "grey50") +
+  annotate("text", x = 2010.5, y = 104, label = "Base = 100", size = 3, colour = "grey50") +
   scale_colour_manual(
-    values = c("Agri ToT index (2015=100)" = "#012169",
-               "Brent crude (USD/bbl)"     = "#B9975B")) +
+    values = c("Agri ToT (2015=100)"    = "#012169",
+               "Brent crude (2015=100)" = "#B9975B")) +
   scale_x_continuous(breaks = 2010:2024) +
   labs(title    = "India: Agricultural Terms of Trade vs Oil Prices (2010–2024)",
-       subtitle = "Oil price shocks worsen India's ToT; agri export price booms improve it",
-       x = NULL, y = "Index / Price", colour = NULL) +
+       subtitle = "Both series indexed to 2015=100; oil is far more volatile than agri ToT",
+       x = NULL, y = "Index (2015 = 100)", colour = NULL) +
   theme(legend.position = "bottom",
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```

@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Nithin M">
   <meta name="dcterms.date" content="2026-05-30">
@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -96,7 +99,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-1a68acd8fb4efddae8642613ff1e701e.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-55ddb2f3b944d34338df25ae8813997d.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -411,6 +414,124 @@ Figure&nbsp;1: Offer Curves: Equilibrium Terms of Trade Between India (Rice) and
 <p><strong>FY2022 was exactly this scenario:</strong> Global commodity supercycle + Russia-Ukraine war → oil price shock. Fertilizer prices (derived from natural gas) tripled. India’s agricultural ToT <strong>sharply deteriorated</strong> — farmers received higher output prices but paid much more for inputs → net farm income squeezed.</p>
 </div>
 </section>
+<section id="tot-calculation-indias-actual-data" class="slide level2 smaller">
+<h2>ToT Calculation: India’s Actual Data</h2>
+<p><span class="math display">\[\text{ToT} = \frac{P_x}{P_m} \times 100 \qquad P_x = \text{agri export price index (2015=100)}, \quad P_m = \text{oil import price index (2015=100)}\]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show R code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">data.frame</span>(</span>
+<span id="cb2-2"><a></a>  <span class="at">year      =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>,</span>
+<span id="cb2-3"><a></a>  <span class="at">tot_agri  =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">95</span>, <span class="dv">102</span>, <span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">96</span>, <span class="dv">94</span>, <span class="dv">97</span>, <span class="dv">99</span>, <span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">102</span>, <span class="dv">98</span>, <span class="dv">96</span>),</span>
+<span id="cb2-4"><a></a>  <span class="at">oil_price =</span> <span class="fu">c</span>(<span class="dv">79</span>, <span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">105</span>,  <span class="dv">99</span>,  <span class="dv">52</span>, <span class="dv">43</span>, <span class="dv">54</span>, <span class="dv">64</span>, <span class="dv">57</span>, <span class="dv">41</span>,  <span class="dv">68</span>,  <span class="dv">99</span>, <span class="dv">83</span>, <span class="dv">80</span>)</span>
+<span id="cb2-5"><a></a>) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb2-7"><a></a>    <span class="at">Pm  =</span> <span class="fu">round</span>(oil_price <span class="sc">/</span> oil_price[year <span class="sc">==</span> <span class="dv">2015</span>] <span class="sc">*</span> <span class="dv">100</span>),</span>
+<span id="cb2-8"><a></a>    <span class="at">Px  =</span> <span class="fu">round</span>(tot_agri  <span class="sc">*</span> Pm <span class="sc">/</span> <span class="dv">100</span>),</span>
+<span id="cb2-9"><a></a>    <span class="at">ToT =</span> <span class="fu">round</span>(Px <span class="sc">/</span> Pm <span class="sc">*</span> <span class="dv">100</span>),</span>
+<span id="cb2-10"><a></a>    <span class="at">Verdict =</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb2-11"><a></a>      ToT <span class="sc">&gt;</span> <span class="dv">100</span> <span class="sc">~</span> <span class="st">"Improved"</span>,</span>
+<span id="cb2-12"><a></a>      ToT <span class="sc">&lt;</span> <span class="dv">100</span> <span class="sc">~</span> <span class="st">"Worsened"</span>,</span>
+<span id="cb2-13"><a></a>      <span class="cn">TRUE</span>      <span class="sc">~</span> <span class="st">"Base year"</span></span>
+<span id="cb2-14"><a></a>    )</span>
+<span id="cb2-15"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-16"><a></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2010</span>, <span class="dv">2014</span>, <span class="dv">2015</span>, <span class="dv">2016</span>, <span class="dv">2020</span>, <span class="dv">2022</span>, <span class="dv">2024</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-17"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb2-18"><a></a>    <span class="at">Year           =</span> year,</span>
+<span id="cb2-19"><a></a>    <span class="st">"Px (Agri Export)"</span> <span class="ot">=</span> Px,</span>
+<span id="cb2-20"><a></a>    <span class="st">"Pm (Oil Import)"</span>  <span class="ot">=</span> Pm,</span>
+<span id="cb2-21"><a></a>    <span class="st">"ToT = (Px/Pm)*100"</span> <span class="ot">=</span> ToT,</span>
+<span id="cb2-22"><a></a>    Verdict</span>
+<span id="cb2-23"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-24"><a></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"ccccc"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-tot-calc" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tot-calc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: India: Agricultural ToT — Worked Calculations for Selected Years (oil as import-price proxy)
+</figcaption>
+<div aria-describedby="tbl-tot-calc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 25%">
+<col style="width: 23%">
+<col style="width: 26%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Year</th>
+<th style="text-align: center;">Px (Agri Export)</th>
+<th style="text-align: center;">Pm (Oil Import)</th>
+<th style="text-align: center;">ToT = (Px/Pm)*100</th>
+<th style="text-align: center;">Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2010</td>
+<td style="text-align: center;">129</td>
+<td style="text-align: center;">152</td>
+<td style="text-align: center;">85</td>
+<td style="text-align: center;">Worsened</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2014</td>
+<td style="text-align: center;">190</td>
+<td style="text-align: center;">190</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">Base year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2015</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">Base year</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2016</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">83</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: center;">Worsened</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2020</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">79</td>
+<td style="text-align: center;">95</td>
+<td style="text-align: center;">Worsened</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2022</td>
+<td style="text-align: center;">194</td>
+<td style="text-align: center;">190</td>
+<td style="text-align: center;">102</td>
+<td style="text-align: center;">Improved</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">148</td>
+<td style="text-align: center;">154</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: center;">Worsened</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="fragment">
+<div class="hi-gold">
+<p><strong>Key insight:</strong> In 2016 and 2020, oil crashed — <em>Pm</em> fell sharply — yet ToT barely improved, because agri export prices (<em>Px</em>) fell in tandem. This asymmetry is Prebisch-Singer in the data.</p>
+</div>
+</div>
+</section>
 <section id="indias-agricultural-terms-of-trade-historical-trends" class="slide level2 smaller">
 <h2>India’s Agricultural Terms of Trade: Historical Trends</h2>
 <p><strong>Long-run trends in India’s agricultural ToT:</strong></p>
@@ -470,28 +591,30 @@ Figure&nbsp;1: Offer Curves: Equilibrium Terms of Trade Between India (Rice) and
 <div class="cell">
 <details class="code-fold">
 <summary>Show R code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>india_tot <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-2"><a></a>  <span class="at">year      =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>,</span>
-<span id="cb2-3"><a></a>  <span class="at">tot_agri  =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">95</span>, <span class="dv">102</span>, <span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">96</span>, <span class="dv">94</span>, <span class="dv">97</span>, <span class="dv">99</span>, <span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">102</span>, <span class="dv">98</span>, <span class="dv">96</span>),</span>
-<span id="cb2-4"><a></a>  <span class="at">oil_price =</span> <span class="fu">c</span>(<span class="dv">79</span>, <span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">105</span>,  <span class="dv">99</span>,  <span class="dv">52</span>, <span class="dv">43</span>, <span class="dv">54</span>, <span class="dv">64</span>, <span class="dv">57</span>, <span class="dv">41</span>,  <span class="dv">68</span>,  <span class="dv">99</span>, <span class="dv">83</span>, <span class="dv">80</span>)</span>
-<span id="cb2-5"><a></a>)</span>
-<span id="cb2-6"><a></a></span>
-<span id="cb2-7"><a></a><span class="fu">ggplot</span>(india_tot, <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
-<span id="cb2-8"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> tot_agri,  <span class="at">colour =</span> <span class="st">"Agri ToT index (2015=100)"</span>),</span>
-<span id="cb2-9"><a></a>            <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb2-10"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> oil_price, <span class="at">colour =</span> <span class="st">"Brent crude (USD/bbl)"</span>),</span>
-<span id="cb2-11"><a></a>            <span class="at">linewidth =</span> <span class="fl">1.2</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb2-12"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">100</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>) <span class="sc">+</span></span>
-<span id="cb2-13"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2010.5</span>, <span class="at">y =</span> <span class="dv">102</span>, <span class="at">label =</span> <span class="st">"Base = 100"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
-<span id="cb2-14"><a></a>  <span class="fu">scale_colour_manual</span>(</span>
-<span id="cb2-15"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Agri ToT index (2015=100)"</span> <span class="ot">=</span> <span class="st">"#012169"</span>,</span>
-<span id="cb2-16"><a></a>               <span class="st">"Brent crude (USD/bbl)"</span>     <span class="ot">=</span> <span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
-<span id="cb2-17"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>) <span class="sc">+</span></span>
-<span id="cb2-18"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India: Agricultural Terms of Trade vs Oil Prices (2010–2024)"</span>,</span>
-<span id="cb2-19"><a></a>       <span class="at">subtitle =</span> <span class="st">"Oil price shocks worsen India's ToT; agri export price booms improve it"</span>,</span>
-<span id="cb2-20"><a></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Index / Price"</span>, <span class="at">colour =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb2-21"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb2-22"><a></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>india_tot <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-2"><a></a>  <span class="at">year      =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>,</span>
+<span id="cb3-3"><a></a>  <span class="at">tot_agri  =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">95</span>, <span class="dv">102</span>, <span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">96</span>, <span class="dv">94</span>, <span class="dv">97</span>, <span class="dv">99</span>, <span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">102</span>, <span class="dv">98</span>, <span class="dv">96</span>),</span>
+<span id="cb3-4"><a></a>  <span class="at">oil_price =</span> <span class="fu">c</span>(<span class="dv">79</span>, <span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">105</span>,  <span class="dv">99</span>,  <span class="dv">52</span>, <span class="dv">43</span>, <span class="dv">54</span>, <span class="dv">64</span>, <span class="dv">57</span>, <span class="dv">41</span>,  <span class="dv">68</span>,  <span class="dv">99</span>, <span class="dv">83</span>, <span class="dv">80</span>)</span>
+<span id="cb3-5"><a></a>) <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a></a>  <span class="co"># Normalise oil price to 2015=100 so both series share the same index scale</span></span>
+<span id="cb3-7"><a></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">oil_idx =</span> oil_price <span class="sc">/</span> oil_price[year <span class="sc">==</span> <span class="dv">2015</span>] <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb3-8"><a></a></span>
+<span id="cb3-9"><a></a><span class="fu">ggplot</span>(india_tot, <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
+<span id="cb3-10"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> tot_agri, <span class="at">colour =</span> <span class="st">"Agri ToT (2015=100)"</span>),</span>
+<span id="cb3-11"><a></a>            <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> oil_idx, <span class="at">colour =</span> <span class="st">"Brent crude (2015=100)"</span>),</span>
+<span id="cb3-13"><a></a>            <span class="at">linewidth =</span> <span class="fl">1.2</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb3-14"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">100</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb3-15"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2010.5</span>, <span class="at">y =</span> <span class="dv">104</span>, <span class="at">label =</span> <span class="st">"Base = 100"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb3-16"><a></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb3-17"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Agri ToT (2015=100)"</span>    <span class="ot">=</span> <span class="st">"#012169"</span>,</span>
+<span id="cb3-18"><a></a>               <span class="st">"Brent crude (2015=100)"</span> <span class="ot">=</span> <span class="st">"#B9975B"</span>)) <span class="sc">+</span></span>
+<span id="cb3-19"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2010</span><span class="sc">:</span><span class="dv">2024</span>) <span class="sc">+</span></span>
+<span id="cb3-20"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India: Agricultural Terms of Trade vs Oil Prices (2010–2024)"</span>,</span>
+<span id="cb3-21"><a></a>       <span class="at">subtitle =</span> <span class="st">"Both series indexed to 2015=100; oil is far more volatile than agri ToT"</span>,</span>
+<span id="cb3-22"><a></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Index (2015 = 100)"</span>, <span class="at">colour =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb3-23"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb3-24"><a></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -782,28 +905,28 @@ Figure&nbsp;2: India’s Commodity Terms of Trade (Agricultural Exports vs All I
 <div class="cell">
 <details class="code-fold">
 <summary>Show R code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>fta_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-2"><a></a>  <span class="at">partner =</span> <span class="fu">c</span>(<span class="st">"ASEAN</span><span class="sc">\n</span><span class="st">(AIFTA 2010)"</span>, <span class="st">"South Korea</span><span class="sc">\n</span><span class="st">(CEPA 2010)"</span>, <span class="st">"Japan</span><span class="sc">\n</span><span class="st">(CEPA 2011)"</span>,</span>
-<span id="cb3-3"><a></a>              <span class="st">"UAE</span><span class="sc">\n</span><span class="st">(CEPA 2022)"</span>, <span class="st">"Sri Lanka</span><span class="sc">\n</span><span class="st">(FTA 2000)"</span>, <span class="st">"Mauritius</span><span class="sc">\n</span><span class="st">(CECPA 2021)"</span>),</span>
-<span id="cb3-4"><a></a>  <span class="at">exports  =</span> <span class="fu">c</span>(<span class="fl">44.0</span>,  <span class="fl">7.5</span>,  <span class="fl">6.2</span>, <span class="fl">11.5</span>, <span class="fl">5.9</span>, <span class="fl">0.5</span>),</span>
-<span id="cb3-5"><a></a>  <span class="at">imports  =</span> <span class="fu">c</span>(<span class="fl">87.5</span>, <span class="fl">21.3</span>, <span class="fl">14.8</span>, <span class="fl">34.5</span>, <span class="fl">1.2</span>, <span class="fl">0.2</span>)</span>
-<span id="cb3-6"><a></a>)</span>
-<span id="cb3-7"><a></a></span>
-<span id="cb3-8"><a></a>fta_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(fta_data,</span>
-<span id="cb3-9"><a></a>                                <span class="at">cols      =</span> <span class="fu">c</span>(exports, imports),</span>
-<span id="cb3-10"><a></a>                                <span class="at">names_to  =</span> <span class="st">"type"</span>,</span>
-<span id="cb3-11"><a></a>                                <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
-<span id="cb3-12"><a></a></span>
-<span id="cb3-13"><a></a><span class="fu">ggplot</span>(fta_long, <span class="fu">aes</span>(<span class="at">x =</span> partner, <span class="at">y =</span> value, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
-<span id="cb3-14"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb3-15"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb3-16"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"exports"</span> <span class="ot">=</span> <span class="st">"#012169"</span>, <span class="st">"imports"</span> <span class="ot">=</span> <span class="st">"#B9975B"</span>),</span>
-<span id="cb3-17"><a></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"exports"</span> <span class="ot">=</span> <span class="st">"Exports to partner"</span>, <span class="st">"imports"</span> <span class="ot">=</span> <span class="st">"Imports from partner"</span>)) <span class="sc">+</span></span>
-<span id="cb3-18"><a></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb3-19"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India's Trade with FTA Partners (FY2024, USD Billion)"</span>,</span>
-<span id="cb3-20"><a></a>       <span class="at">subtitle =</span> <span class="st">"India runs deficits with most Asian FTA partners — raises trade diversion concerns"</span>,</span>
-<span id="cb3-21"><a></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"USD Billion"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb3-22"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>fta_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-2"><a></a>  <span class="at">partner =</span> <span class="fu">c</span>(<span class="st">"ASEAN</span><span class="sc">\n</span><span class="st">(AIFTA 2010)"</span>, <span class="st">"South Korea</span><span class="sc">\n</span><span class="st">(CEPA 2010)"</span>, <span class="st">"Japan</span><span class="sc">\n</span><span class="st">(CEPA 2011)"</span>,</span>
+<span id="cb4-3"><a></a>              <span class="st">"UAE</span><span class="sc">\n</span><span class="st">(CEPA 2022)"</span>, <span class="st">"Sri Lanka</span><span class="sc">\n</span><span class="st">(FTA 2000)"</span>, <span class="st">"Mauritius</span><span class="sc">\n</span><span class="st">(CECPA 2021)"</span>),</span>
+<span id="cb4-4"><a></a>  <span class="at">exports  =</span> <span class="fu">c</span>(<span class="fl">44.0</span>,  <span class="fl">7.5</span>,  <span class="fl">6.2</span>, <span class="fl">11.5</span>, <span class="fl">5.9</span>, <span class="fl">0.5</span>),</span>
+<span id="cb4-5"><a></a>  <span class="at">imports  =</span> <span class="fu">c</span>(<span class="fl">87.5</span>, <span class="fl">21.3</span>, <span class="fl">14.8</span>, <span class="fl">34.5</span>, <span class="fl">1.2</span>, <span class="fl">0.2</span>)</span>
+<span id="cb4-6"><a></a>)</span>
+<span id="cb4-7"><a></a></span>
+<span id="cb4-8"><a></a>fta_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(fta_data,</span>
+<span id="cb4-9"><a></a>                                <span class="at">cols      =</span> <span class="fu">c</span>(exports, imports),</span>
+<span id="cb4-10"><a></a>                                <span class="at">names_to  =</span> <span class="st">"type"</span>,</span>
+<span id="cb4-11"><a></a>                                <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
+<span id="cb4-12"><a></a></span>
+<span id="cb4-13"><a></a><span class="fu">ggplot</span>(fta_long, <span class="fu">aes</span>(<span class="at">x =</span> partner, <span class="at">y =</span> value, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb4-14"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb4-16"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"exports"</span> <span class="ot">=</span> <span class="st">"#012169"</span>, <span class="st">"imports"</span> <span class="ot">=</span> <span class="st">"#B9975B"</span>),</span>
+<span id="cb4-17"><a></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"exports"</span> <span class="ot">=</span> <span class="st">"Exports to partner"</span>, <span class="st">"imports"</span> <span class="ot">=</span> <span class="st">"Imports from partner"</span>)) <span class="sc">+</span></span>
+<span id="cb4-18"><a></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb4-19"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"India's Trade with FTA Partners (FY2024, USD Billion)"</span>,</span>
+<span id="cb4-20"><a></a>       <span class="at">subtitle =</span> <span class="st">"India runs deficits with most Asian FTA partners — raises trade diversion concerns"</span>,</span>
+<span id="cb4-21"><a></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"USD Billion"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -851,67 +974,67 @@ Figure&nbsp;3: India’s Trade Balance with Key FTA Partners (USD billion, FY202
 <div class="cell">
 <details class="code-fold">
 <summary>Show R code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Setup: Country A imports good X.</span></span>
-<span id="cb4-2"><a></a><span class="co"># Partner B price PB = 8; Rest-of-World price Pw = 6; MFN tariff t = 4.</span></span>
-<span id="cb4-3"><a></a><span class="co"># Domestic supply Qs = 2P - 4; Domestic demand Qd = 40 - 2P.</span></span>
-<span id="cb4-4"><a></a><span class="co"># Pre-FTA (Pw+t=10): Qs=16, Qd=20, M=4.</span></span>
-<span id="cb4-5"><a></a><span class="co"># Post-FTA with B (PB=8): Qs=12, Qd=24, M=12.</span></span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb4-8"><a></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">40</span>, <span class="at">yend =</span>  <span class="dv">0</span>),</span>
-<span id="cb4-9"><a></a>               <span class="at">colour =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb4-10"><a></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span>  <span class="dv">2</span>, <span class="at">xend =</span> <span class="dv">36</span>, <span class="at">yend =</span> <span class="dv">20</span>),</span>
-<span id="cb4-11"><a></a>               <span class="at">colour =</span> <span class="st">"#B9975B"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb4-12"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">10</span>, <span class="at">colour =</span> <span class="st">"red"</span>,       <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb4-13"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span>  <span class="dv">8</span>, <span class="at">colour =</span> <span class="st">"darkgreen"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb4-14"><a></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">16</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">10</span>),</span>
-<span id="cb4-15"><a></a>           <span class="at">fill =</span> <span class="st">"#B9975B"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb4-16"><a></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">24</span>, <span class="dv">20</span>),     <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">10</span>),</span>
-<span id="cb4-17"><a></a>           <span class="at">fill =</span> <span class="st">"red"</span>,    <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb4-18"><a></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">12</span>, <span class="dv">16</span>),     <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">8</span>),</span>
-<span id="cb4-19"><a></a>           <span class="at">fill =</span> <span class="st">"red"</span>,    <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb4-20"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">18</span>,   <span class="at">y =</span> <span class="fl">9.0</span>,  <span class="at">label =</span> <span class="st">"PS</span><span class="sc">\n</span><span class="st">loss"</span>,  <span class="at">size =</span> <span class="fl">2.8</span>, <span class="at">colour =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb4-21"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">21.5</span>, <span class="at">y =</span> <span class="fl">8.7</span>,  <span class="at">label =</span> <span class="st">"TC</span><span class="sc">\n</span><span class="st">gain"</span>,  <span class="at">size =</span> <span class="fl">2.8</span>, <span class="at">colour =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb4-22"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">14</span>,   <span class="at">y =</span> <span class="fl">8.7</span>,  <span class="at">label =</span> <span class="st">"TC</span><span class="sc">\n</span><span class="st">gain"</span>,  <span class="at">size =</span> <span class="fl">2.8</span>, <span class="at">colour =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb4-23"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">41</span>,   <span class="at">y =</span> <span class="fl">0.5</span>,  <span class="at">label =</span> <span class="st">"D"</span>,         <span class="at">size =</span> <span class="dv">4</span>,   <span class="at">colour =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb4-24"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">37</span>,   <span class="at">y =</span> <span class="fl">19.5</span>, <span class="at">label =</span> <span class="st">"S"</span>,         <span class="at">size =</span> <span class="dv">4</span>,   <span class="at">colour =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb4-25"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span> <span class="fl">10.5</span>, <span class="at">label =</span> <span class="st">"Pw+t=10"</span>,   <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb4-26"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span>  <span class="fl">7.5</span>, <span class="at">label =</span> <span class="st">"P[B]==8"</span>,   <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"darkgreen"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb4-27"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"Trade Creation"</span>,</span>
-<span id="cb4-28"><a></a>       <span class="at">subtitle =</span> <span class="st">"Domestic production → cheaper partner imports"</span>,</span>
-<span id="cb4-29"><a></a>       <span class="at">x =</span> <span class="st">"Quantity"</span>, <span class="at">y =</span> <span class="st">"Price"</span>) <span class="sc">+</span></span>
-<span id="cb4-30"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>)) <span class="sc">+</span></span>
-<span id="cb4-31"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>)</span>
-<span id="cb4-32"><a></a></span>
-<span id="cb4-33"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb4-34"><a></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">40</span>, <span class="at">yend =</span>  <span class="dv">0</span>),</span>
-<span id="cb4-35"><a></a>               <span class="at">colour =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb4-36"><a></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span>  <span class="dv">2</span>, <span class="at">xend =</span> <span class="dv">36</span>, <span class="at">yend =</span> <span class="dv">20</span>),</span>
-<span id="cb4-37"><a></a>               <span class="at">colour =</span> <span class="st">"#B9975B"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb4-38"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">10</span>, <span class="at">colour =</span> <span class="st">"red"</span>,       <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb4-39"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span>  <span class="dv">8</span>, <span class="at">colour =</span> <span class="st">"orange"</span>,    <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb4-40"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span>  <span class="dv">6</span>, <span class="at">colour =</span> <span class="st">"darkgreen"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb4-41"><a></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>,</span>
-<span id="cb4-42"><a></a>           <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">20</span>, <span class="dv">24</span>, <span class="dv">12</span>),</span>
-<span id="cb4-43"><a></a>           <span class="at">y =</span> <span class="fu">c</span>( <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">10</span>,  <span class="dv">8</span>,  <span class="dv">8</span>),</span>
-<span id="cb4-44"><a></a>           <span class="at">fill =</span> <span class="st">"orange"</span>, <span class="at">alpha =</span> <span class="fl">0.35</span>) <span class="sc">+</span></span>
-<span id="cb4-45"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">18</span>,   <span class="at">y =</span>  <span class="fl">9.0</span>, <span class="at">label =</span> <span class="st">"TD</span><span class="sc">\n</span><span class="st">loss"</span>,      <span class="at">size =</span> <span class="fl">2.8</span>, <span class="at">colour =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
-<span id="cb4-46"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span> <span class="fl">10.5</span>, <span class="at">label =</span> <span class="st">"Pw+t=10"</span>,       <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb4-47"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span>  <span class="fl">7.5</span>, <span class="at">label =</span> <span class="st">"P[B]==8~(FTA)"</span>, <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"orange"</span>,    <span class="at">parse =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb4-48"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span>  <span class="fl">5.5</span>, <span class="at">label =</span> <span class="st">"P[w]==6~(ROW)"</span>, <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"darkgreen"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb4-49"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">41</span>,   <span class="at">y =</span>  <span class="fl">0.5</span>, <span class="at">label =</span> <span class="st">"D"</span>,             <span class="at">size =</span> <span class="dv">4</span>,   <span class="at">colour =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
-<span id="cb4-50"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">37</span>,   <span class="at">y =</span> <span class="fl">19.5</span>, <span class="at">label =</span> <span class="st">"S"</span>,             <span class="at">size =</span> <span class="dv">4</span>,   <span class="at">colour =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
-<span id="cb4-51"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"Trade Diversion"</span>,</span>
-<span id="cb4-52"><a></a>       <span class="at">subtitle =</span> <span class="st">"Imports shift from cheap ROW to dearer partner — net welfare loss"</span>,</span>
-<span id="cb4-53"><a></a>       <span class="at">x =</span> <span class="st">"Quantity"</span>, <span class="at">y =</span> <span class="st">"Price"</span>) <span class="sc">+</span></span>
-<span id="cb4-54"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>)) <span class="sc">+</span></span>
-<span id="cb4-55"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>)</span>
-<span id="cb4-56"><a></a></span>
-<span id="cb4-57"><a></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span></span>
-<span id="cb4-58"><a></a>  <span class="fu">plot_annotation</span>(</span>
-<span id="cb4-59"><a></a>    <span class="at">title    =</span> <span class="st">"Free Trade Area: Trade Creation (Beneficial) vs Trade Diversion (Harmful)"</span>,</span>
-<span id="cb4-60"><a></a>    <span class="at">subtitle =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"Net welfare = TC "</span>, <span class="fu">phantom</span>(x), <span class="st">"-"</span>, <span class="fu">phantom</span>(x), <span class="st">" TD. FTA beneficial only if TC &gt; TD"</span>))</span>
-<span id="cb4-61"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Setup: Country A imports good X.</span></span>
+<span id="cb5-2"><a></a><span class="co"># Partner B price PB = 8; Rest-of-World price Pw = 6; MFN tariff t = 4.</span></span>
+<span id="cb5-3"><a></a><span class="co"># Domestic supply Qs = 2P - 4; Domestic demand Qd = 40 - 2P.</span></span>
+<span id="cb5-4"><a></a><span class="co"># Pre-FTA (Pw+t=10): Qs=16, Qd=20, M=4.</span></span>
+<span id="cb5-5"><a></a><span class="co"># Post-FTA with B (PB=8): Qs=12, Qd=24, M=12.</span></span>
+<span id="cb5-6"><a></a></span>
+<span id="cb5-7"><a></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb5-8"><a></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">40</span>, <span class="at">yend =</span>  <span class="dv">0</span>),</span>
+<span id="cb5-9"><a></a>               <span class="at">colour =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span>  <span class="dv">2</span>, <span class="at">xend =</span> <span class="dv">36</span>, <span class="at">yend =</span> <span class="dv">20</span>),</span>
+<span id="cb5-11"><a></a>               <span class="at">colour =</span> <span class="st">"#B9975B"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">10</span>, <span class="at">colour =</span> <span class="st">"red"</span>,       <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-13"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span>  <span class="dv">8</span>, <span class="at">colour =</span> <span class="st">"darkgreen"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">16</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">10</span>),</span>
+<span id="cb5-15"><a></a>           <span class="at">fill =</span> <span class="st">"#B9975B"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb5-16"><a></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">24</span>, <span class="dv">20</span>),     <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">10</span>),</span>
+<span id="cb5-17"><a></a>           <span class="at">fill =</span> <span class="st">"red"</span>,    <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb5-18"><a></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">12</span>, <span class="dv">16</span>),     <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">8</span>),</span>
+<span id="cb5-19"><a></a>           <span class="at">fill =</span> <span class="st">"red"</span>,    <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb5-20"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">18</span>,   <span class="at">y =</span> <span class="fl">9.0</span>,  <span class="at">label =</span> <span class="st">"PS</span><span class="sc">\n</span><span class="st">loss"</span>,  <span class="at">size =</span> <span class="fl">2.8</span>, <span class="at">colour =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb5-21"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">21.5</span>, <span class="at">y =</span> <span class="fl">8.7</span>,  <span class="at">label =</span> <span class="st">"TC</span><span class="sc">\n</span><span class="st">gain"</span>,  <span class="at">size =</span> <span class="fl">2.8</span>, <span class="at">colour =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb5-22"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">14</span>,   <span class="at">y =</span> <span class="fl">8.7</span>,  <span class="at">label =</span> <span class="st">"TC</span><span class="sc">\n</span><span class="st">gain"</span>,  <span class="at">size =</span> <span class="fl">2.8</span>, <span class="at">colour =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb5-23"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">41</span>,   <span class="at">y =</span> <span class="fl">0.5</span>,  <span class="at">label =</span> <span class="st">"D"</span>,         <span class="at">size =</span> <span class="dv">4</span>,   <span class="at">colour =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb5-24"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">37</span>,   <span class="at">y =</span> <span class="fl">19.5</span>, <span class="at">label =</span> <span class="st">"S"</span>,         <span class="at">size =</span> <span class="dv">4</span>,   <span class="at">colour =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb5-25"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span> <span class="fl">10.5</span>, <span class="at">label =</span> <span class="st">"Pw+t=10"</span>,   <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-26"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span>  <span class="fl">7.5</span>, <span class="at">label =</span> <span class="st">"P[B]==8"</span>,   <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"darkgreen"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb5-27"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"Trade Creation"</span>,</span>
+<span id="cb5-28"><a></a>       <span class="at">subtitle =</span> <span class="st">"Domestic production → cheaper partner imports"</span>,</span>
+<span id="cb5-29"><a></a>       <span class="at">x =</span> <span class="st">"Quantity"</span>, <span class="at">y =</span> <span class="st">"Price"</span>) <span class="sc">+</span></span>
+<span id="cb5-30"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>)) <span class="sc">+</span></span>
+<span id="cb5-31"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>)</span>
+<span id="cb5-32"><a></a></span>
+<span id="cb5-33"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb5-34"><a></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">20</span>, <span class="at">xend =</span> <span class="dv">40</span>, <span class="at">yend =</span>  <span class="dv">0</span>),</span>
+<span id="cb5-35"><a></a>               <span class="at">colour =</span> <span class="st">"#012169"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb5-36"><a></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span>  <span class="dv">2</span>, <span class="at">xend =</span> <span class="dv">36</span>, <span class="at">yend =</span> <span class="dv">20</span>),</span>
+<span id="cb5-37"><a></a>               <span class="at">colour =</span> <span class="st">"#B9975B"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb5-38"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">10</span>, <span class="at">colour =</span> <span class="st">"red"</span>,       <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-39"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span>  <span class="dv">8</span>, <span class="at">colour =</span> <span class="st">"orange"</span>,    <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb5-40"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span>  <span class="dv">6</span>, <span class="at">colour =</span> <span class="st">"darkgreen"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-41"><a></a>  <span class="fu">annotate</span>(<span class="st">"polygon"</span>,</span>
+<span id="cb5-42"><a></a>           <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">16</span>, <span class="dv">20</span>, <span class="dv">24</span>, <span class="dv">12</span>),</span>
+<span id="cb5-43"><a></a>           <span class="at">y =</span> <span class="fu">c</span>( <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">10</span>,  <span class="dv">8</span>,  <span class="dv">8</span>),</span>
+<span id="cb5-44"><a></a>           <span class="at">fill =</span> <span class="st">"orange"</span>, <span class="at">alpha =</span> <span class="fl">0.35</span>) <span class="sc">+</span></span>
+<span id="cb5-45"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">18</span>,   <span class="at">y =</span>  <span class="fl">9.0</span>, <span class="at">label =</span> <span class="st">"TD</span><span class="sc">\n</span><span class="st">loss"</span>,      <span class="at">size =</span> <span class="fl">2.8</span>, <span class="at">colour =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
+<span id="cb5-46"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span> <span class="fl">10.5</span>, <span class="at">label =</span> <span class="st">"Pw+t=10"</span>,       <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-47"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span>  <span class="fl">7.5</span>, <span class="at">label =</span> <span class="st">"P[B]==8~(FTA)"</span>, <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"orange"</span>,    <span class="at">parse =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb5-48"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>,   <span class="at">y =</span>  <span class="fl">5.5</span>, <span class="at">label =</span> <span class="st">"P[w]==6~(ROW)"</span>, <span class="at">size =</span> <span class="dv">3</span>,   <span class="at">colour =</span> <span class="st">"darkgreen"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb5-49"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">41</span>,   <span class="at">y =</span>  <span class="fl">0.5</span>, <span class="at">label =</span> <span class="st">"D"</span>,             <span class="at">size =</span> <span class="dv">4</span>,   <span class="at">colour =</span> <span class="st">"#012169"</span>) <span class="sc">+</span></span>
+<span id="cb5-50"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">37</span>,   <span class="at">y =</span> <span class="fl">19.5</span>, <span class="at">label =</span> <span class="st">"S"</span>,             <span class="at">size =</span> <span class="dv">4</span>,   <span class="at">colour =</span> <span class="st">"#B9975B"</span>) <span class="sc">+</span></span>
+<span id="cb5-51"><a></a>  <span class="fu">labs</span>(<span class="at">title    =</span> <span class="st">"Trade Diversion"</span>,</span>
+<span id="cb5-52"><a></a>       <span class="at">subtitle =</span> <span class="st">"Imports shift from cheap ROW to dearer partner — net welfare loss"</span>,</span>
+<span id="cb5-53"><a></a>       <span class="at">x =</span> <span class="st">"Quantity"</span>, <span class="at">y =</span> <span class="st">"Price"</span>) <span class="sc">+</span></span>
+<span id="cb5-54"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>)) <span class="sc">+</span></span>
+<span id="cb5-55"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>)</span>
+<span id="cb5-56"><a></a></span>
+<span id="cb5-57"><a></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span></span>
+<span id="cb5-58"><a></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb5-59"><a></a>    <span class="at">title    =</span> <span class="st">"Free Trade Area: Trade Creation (Beneficial) vs Trade Diversion (Harmful)"</span>,</span>
+<span id="cb5-60"><a></a>    <span class="at">subtitle =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">"Net welfare = TC "</span>, <span class="fu">phantom</span>(x), <span class="st">"-"</span>, <span class="fu">phantom</span>(x), <span class="st">" TD. FTA beneficial only if TC &gt; TD"</span>))</span>
+<span id="cb5-61"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
